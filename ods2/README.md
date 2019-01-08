@@ -1,7 +1,7 @@
 ## Robert Allison's SAS ODS Graphics Examples - #2
 Started: January 2019
 
-To view these examples, view the "aaaindex.htm" file in an Web browser.
+Visit the [index page to view the examples](ods/index.htm).
 
 These are some samples I created using SAS ODS Graphics. 
 I created these to look similar to some graphs from a Microsoft Excel samples gallery, 
