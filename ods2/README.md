@@ -1,7 +1,7 @@
 ## Robert Allison's SAS ODS Graphics Examples - #2
 Started: January 2019
 
-Visit the [index page to view the examples](ods/index.htm).
+Visit the [index page to view the examples](https://sascommunities.github.io/graphics-programming/ods2).
 
 These are some samples I created using SAS ODS Graphics. 
 I created these to look similar to some graphs from a Microsoft Excel samples gallery, 
