@@ -1,2 +1,3 @@
-# graphics-programming
-Examples to create plots and charts with SAS programming, using ODS Graphics and SAS/GRAPH techniques.
+# SAS Graphics Programming Samples
+
+* [/ods2 -- Emulate Microsoft Excel style charts with ODS Graphics](ods2)
