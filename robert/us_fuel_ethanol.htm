@@ -1,0 +1,1783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>Fuel Ethanol production in the US</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="us_fuel_ethanol">
+<Area shape="poly" href="https://www.eia.gov/dnav/pet/hist_xls/M_EPOOXE_YOP_NUS_1m.xls" target="_BLANK" coords="97.5,42.0625,702.5,42.0625,702.5,65.9375,97.5,65.9375,97.5,42.0625,97.5,42.0625"/>
+<Area shape="poly" alt=" Details =  Year 2018382.4 million barrels" title=" Details =  Year 2018382.4 million barrels" coords="755,134,774,134,774,169,755,169,755,134,"/>
+<Area shape="poly" alt=" Details =  Year 2018382.4 million barrels" title=" Details =  Year 2018382.4 million barrels" coords="755,168,774,168,774,223,755,223,755,168,"/>
+<Area shape="poly" alt=" Details =  Year 2018382.4 million barrels" title=" Details =  Year 2018382.4 million barrels" coords="755,222,774,222,774,277,755,277,755,222,"/>
+<Area shape="poly" alt=" Details =  Year 2018382.4 million barrels" title=" Details =  Year 2018382.4 million barrels" coords="755,276,774,276,774,330,755,330,755,276,"/>
+<Area shape="poly" alt=" Details =  Year 2018382.4 million barrels" title=" Details =  Year 2018382.4 million barrels" coords="755,329,774,329,774,384,755,384,755,329,"/>
+<Area shape="poly" alt=" Details =  Year 2018382.4 million barrels" title=" Details =  Year 2018382.4 million barrels" coords="755,383,774,383,774,438,755,438,755,383,"/>
+<Area shape="poly" alt=" Details =  Year 2018382.4 million barrels" title=" Details =  Year 2018382.4 million barrels" coords="755,437,774,437,774,491,755,491,755,437,"/>
+<Area shape="poly" alt=" Details =  Year 2018382.4 million barrels" title=" Details =  Year 2018382.4 million barrels" coords="755,490,774,490,774,545,755,545,755,490,"/>
+<Area shape="poly" alt=" Details =  Year 2017379.4 million barrels" title=" Details =  Year 2017379.4 million barrels" coords="736,137,756,137,756,169,736,169,736,137,"/>
+<Area shape="poly" alt=" Details =  Year 2017379.4 million barrels" title=" Details =  Year 2017379.4 million barrels" coords="736,168,756,168,756,223,736,223,736,168,"/>
+<Area shape="poly" alt=" Details =  Year 2017379.4 million barrels" title=" Details =  Year 2017379.4 million barrels" coords="736,222,756,222,756,277,736,277,736,222,"/>
+<Area shape="poly" alt=" Details =  Year 2017379.4 million barrels" title=" Details =  Year 2017379.4 million barrels" coords="736,276,756,276,756,330,736,330,736,276,"/>
+<Area shape="poly" alt=" Details =  Year 2017379.4 million barrels" title=" Details =  Year 2017379.4 million barrels" coords="736,329,756,329,756,384,736,384,736,329,"/>
+<Area shape="poly" alt=" Details =  Year 2017379.4 million barrels" title=" Details =  Year 2017379.4 million barrels" coords="736,383,756,383,756,438,736,438,736,383,"/>
+<Area shape="poly" alt=" Details =  Year 2017379.4 million barrels" title=" Details =  Year 2017379.4 million barrels" coords="736,437,756,437,756,491,736,491,736,437,"/>
+<Area shape="poly" alt=" Details =  Year 2017379.4 million barrels" title=" Details =  Year 2017379.4 million barrels" coords="736,490,756,490,756,545,736,545,736,490,"/>
+<Area shape="poly" alt=" Details =  Year 2016367.0 million barrels" title=" Details =  Year 2016367.0 million barrels" coords="718,150,737,150,737,169,718,169,718,150,"/>
+<Area shape="poly" alt=" Details =  Year 2016367.0 million barrels" title=" Details =  Year 2016367.0 million barrels" coords="718,168,737,168,737,223,718,223,718,168,"/>
+<Area shape="poly" alt=" Details =  Year 2016367.0 million barrels" title=" Details =  Year 2016367.0 million barrels" coords="718,222,737,222,737,277,718,277,718,222,"/>
+<Area shape="poly" alt=" Details =  Year 2016367.0 million barrels" title=" Details =  Year 2016367.0 million barrels" coords="718,276,737,276,737,330,718,330,718,276,"/>
+<Area shape="poly" alt=" Details =  Year 2016367.0 million barrels" title=" Details =  Year 2016367.0 million barrels" coords="718,329,737,329,737,384,718,384,718,329,"/>
+<Area shape="poly" alt=" Details =  Year 2016367.0 million barrels" title=" Details =  Year 2016367.0 million barrels" coords="718,383,737,383,737,438,718,438,718,383,"/>
+<Area shape="poly" alt=" Details =  Year 2016367.0 million barrels" title=" Details =  Year 2016367.0 million barrels" coords="718,437,737,437,737,491,718,491,718,437,"/>
+<Area shape="poly" alt=" Details =  Year 2016367.0 million barrels" title=" Details =  Year 2016367.0 million barrels" coords="718,490,737,490,737,545,718,545,718,490,"/>
+<Area shape="poly" alt=" Details =  Year 2015352.6 million barrels" title=" Details =  Year 2015352.6 million barrels" coords="699,166,719,166,719,169,699,169,699,166,"/>
+<Area shape="poly" alt=" Details =  Year 2015352.6 million barrels" title=" Details =  Year 2015352.6 million barrels" coords="699,168,719,168,719,223,699,223,699,168,"/>
+<Area shape="poly" alt=" Details =  Year 2015352.6 million barrels" title=" Details =  Year 2015352.6 million barrels" coords="699,222,719,222,719,277,699,277,699,222,"/>
+<Area shape="poly" alt=" Details =  Year 2015352.6 million barrels" title=" Details =  Year 2015352.6 million barrels" coords="699,276,719,276,719,330,699,330,699,276,"/>
+<Area shape="poly" alt=" Details =  Year 2015352.6 million barrels" title=" Details =  Year 2015352.6 million barrels" coords="699,329,719,329,719,384,699,384,699,329,"/>
+<Area shape="poly" alt=" Details =  Year 2015352.6 million barrels" title=" Details =  Year 2015352.6 million barrels" coords="699,383,719,383,719,438,699,438,699,383,"/>
+<Area shape="poly" alt=" Details =  Year 2015352.6 million barrels" title=" Details =  Year 2015352.6 million barrels" coords="699,437,719,437,719,491,699,491,699,437,"/>
+<Area shape="poly" alt=" Details =  Year 2015352.6 million barrels" title=" Details =  Year 2015352.6 million barrels" coords="699,490,719,490,719,545,699,545,699,490,"/>
+<Area shape="poly" alt=" Details =  Year 2014340.8 million barrels" title=" Details =  Year 2014340.8 million barrels" coords="680,178,700,178,700,223,680,223,680,178,"/>
+<Area shape="poly" alt=" Details =  Year 2014340.8 million barrels" title=" Details =  Year 2014340.8 million barrels" coords="680,222,700,222,700,277,680,277,680,222,"/>
+<Area shape="poly" alt=" Details =  Year 2014340.8 million barrels" title=" Details =  Year 2014340.8 million barrels" coords="680,276,700,276,700,330,680,330,680,276,"/>
+<Area shape="poly" alt=" Details =  Year 2014340.8 million barrels" title=" Details =  Year 2014340.8 million barrels" coords="680,329,700,329,700,384,680,384,680,329,"/>
+<Area shape="poly" alt=" Details =  Year 2014340.8 million barrels" title=" Details =  Year 2014340.8 million barrels" coords="680,383,700,383,700,438,680,438,680,383,"/>
+<Area shape="poly" alt=" Details =  Year 2014340.8 million barrels" title=" Details =  Year 2014340.8 million barrels" coords="680,437,700,437,700,491,680,491,680,437,"/>
+<Area shape="poly" alt=" Details =  Year 2014340.8 million barrels" title=" Details =  Year 2014340.8 million barrels" coords="680,490,700,490,700,545,680,545,680,490,"/>
+<Area shape="poly" alt=" Details =  Year 2013316.5 million barrels" title=" Details =  Year 2013316.5 million barrels" coords="662,204,681,204,681,223,662,223,662,204,"/>
+<Area shape="poly" alt=" Details =  Year 2013316.5 million barrels" title=" Details =  Year 2013316.5 million barrels" coords="662,222,681,222,681,277,662,277,662,222,"/>
+<Area shape="poly" alt=" Details =  Year 2013316.5 million barrels" title=" Details =  Year 2013316.5 million barrels" coords="662,276,681,276,681,330,662,330,662,276,"/>
+<Area shape="poly" alt=" Details =  Year 2013316.5 million barrels" title=" Details =  Year 2013316.5 million barrels" coords="662,329,681,329,681,384,662,384,662,329,"/>
+<Area shape="poly" alt=" Details =  Year 2013316.5 million barrels" title=" Details =  Year 2013316.5 million barrels" coords="662,383,681,383,681,438,662,438,662,383,"/>
+<Area shape="poly" alt=" Details =  Year 2013316.5 million barrels" title=" Details =  Year 2013316.5 million barrels" coords="662,437,681,437,681,491,662,491,662,437,"/>
+<Area shape="poly" alt=" Details =  Year 2013316.5 million barrels" title=" Details =  Year 2013316.5 million barrels" coords="662,490,681,490,681,545,662,545,662,490,"/>
+<Area shape="poly" alt=" Details =  Year 2012314.7 million barrels" title=" Details =  Year 2012314.7 million barrels" coords="643,206,663,206,663,223,643,223,643,206,"/>
+<Area shape="poly" alt=" Details =  Year 2012314.7 million barrels" title=" Details =  Year 2012314.7 million barrels" coords="643,222,663,222,663,277,643,277,643,222,"/>
+<Area shape="poly" alt=" Details =  Year 2012314.7 million barrels" title=" Details =  Year 2012314.7 million barrels" coords="643,276,663,276,663,330,643,330,643,276,"/>
+<Area shape="poly" alt=" Details =  Year 2012314.7 million barrels" title=" Details =  Year 2012314.7 million barrels" coords="643,329,663,329,663,384,643,384,643,329,"/>
+<Area shape="poly" alt=" Details =  Year 2012314.7 million barrels" title=" Details =  Year 2012314.7 million barrels" coords="643,383,663,383,663,438,643,438,643,383,"/>
+<Area shape="poly" alt=" Details =  Year 2012314.7 million barrels" title=" Details =  Year 2012314.7 million barrels" coords="643,437,663,437,663,491,643,491,643,437,"/>
+<Area shape="poly" alt=" Details =  Year 2012314.7 million barrels" title=" Details =  Year 2012314.7 million barrels" coords="643,490,663,490,663,545,643,545,643,490,"/>
+<Area shape="poly" alt=" Details =  Year 2011331.6 million barrels" title=" Details =  Year 2011331.6 million barrels" coords="625,188,644,188,644,223,625,223,625,188,"/>
+<Area shape="poly" alt=" Details =  Year 2011331.6 million barrels" title=" Details =  Year 2011331.6 million barrels" coords="625,222,644,222,644,277,625,277,625,222,"/>
+<Area shape="poly" alt=" Details =  Year 2011331.6 million barrels" title=" Details =  Year 2011331.6 million barrels" coords="625,276,644,276,644,330,625,330,625,276,"/>
+<Area shape="poly" alt=" Details =  Year 2011331.6 million barrels" title=" Details =  Year 2011331.6 million barrels" coords="625,329,644,329,644,384,625,384,625,329,"/>
+<Area shape="poly" alt=" Details =  Year 2011331.6 million barrels" title=" Details =  Year 2011331.6 million barrels" coords="625,383,644,383,644,438,625,438,625,383,"/>
+<Area shape="poly" alt=" Details =  Year 2011331.6 million barrels" title=" Details =  Year 2011331.6 million barrels" coords="625,437,644,437,644,491,625,491,625,437,"/>
+<Area shape="poly" alt=" Details =  Year 2011331.6 million barrels" title=" Details =  Year 2011331.6 million barrels" coords="625,490,644,490,644,545,625,545,625,490,"/>
+<Area shape="poly" alt=" Details =  Year 2010316.6 million barrels" title=" Details =  Year 2010316.6 million barrels" coords="606,204,626,204,626,223,606,223,606,204,"/>
+<Area shape="poly" alt=" Details =  Year 2010316.6 million barrels" title=" Details =  Year 2010316.6 million barrels" coords="606,222,626,222,626,277,606,277,606,222,"/>
+<Area shape="poly" alt=" Details =  Year 2010316.6 million barrels" title=" Details =  Year 2010316.6 million barrels" coords="606,276,626,276,626,330,606,330,606,276,"/>
+<Area shape="poly" alt=" Details =  Year 2010316.6 million barrels" title=" Details =  Year 2010316.6 million barrels" coords="606,329,626,329,626,384,606,384,606,329,"/>
+<Area shape="poly" alt=" Details =  Year 2010316.6 million barrels" title=" Details =  Year 2010316.6 million barrels" coords="606,383,626,383,626,438,606,438,606,383,"/>
+<Area shape="poly" alt=" Details =  Year 2010316.6 million barrels" title=" Details =  Year 2010316.6 million barrels" coords="606,437,626,437,626,491,606,491,606,437,"/>
+<Area shape="poly" alt=" Details =  Year 2010316.6 million barrels" title=" Details =  Year 2010316.6 million barrels" coords="606,490,626,490,626,545,606,545,606,490,"/>
+<Area shape="poly" alt=" Details =  Year 2009260.4 million barrels" title=" Details =  Year 2009260.4 million barrels" coords="588,265,607,265,607,277,588,277,588,265,"/>
+<Area shape="poly" alt=" Details =  Year 2009260.4 million barrels" title=" Details =  Year 2009260.4 million barrels" coords="588,276,607,276,607,330,588,330,588,276,"/>
+<Area shape="poly" alt=" Details =  Year 2009260.4 million barrels" title=" Details =  Year 2009260.4 million barrels" coords="588,329,607,329,607,384,588,384,588,329,"/>
+<Area shape="poly" alt=" Details =  Year 2009260.4 million barrels" title=" Details =  Year 2009260.4 million barrels" coords="588,383,607,383,607,438,588,438,588,383,"/>
+<Area shape="poly" alt=" Details =  Year 2009260.4 million barrels" title=" Details =  Year 2009260.4 million barrels" coords="588,437,607,437,607,491,588,491,588,437,"/>
+<Area shape="poly" alt=" Details =  Year 2009260.4 million barrels" title=" Details =  Year 2009260.4 million barrels" coords="588,490,607,490,607,545,588,545,588,490,"/>
+<Area shape="poly" alt=" Details =  Year 2008221.6 million barrels" title=" Details =  Year 2008221.6 million barrels" coords="569,306,589,306,589,330,569,330,569,306,"/>
+<Area shape="poly" alt=" Details =  Year 2008221.6 million barrels" title=" Details =  Year 2008221.6 million barrels" coords="569,329,589,329,589,384,569,384,569,329,"/>
+<Area shape="poly" alt=" Details =  Year 2008221.6 million barrels" title=" Details =  Year 2008221.6 million barrels" coords="569,383,589,383,589,438,569,438,569,383,"/>
+<Area shape="poly" alt=" Details =  Year 2008221.6 million barrels" title=" Details =  Year 2008221.6 million barrels" coords="569,437,589,437,589,491,569,491,569,437,"/>
+<Area shape="poly" alt=" Details =  Year 2008221.6 million barrels" title=" Details =  Year 2008221.6 million barrels" coords="569,490,589,490,589,545,569,545,569,490,"/>
+<Area shape="poly" alt=" Details =  Year 2007155.3 million barrels" title=" Details =  Year 2007155.3 million barrels" coords="550,377,570,377,570,384,550,384,550,377,"/>
+<Area shape="poly" alt=" Details =  Year 2007155.3 million barrels" title=" Details =  Year 2007155.3 million barrels" coords="550,383,570,383,570,438,550,438,550,383,"/>
+<Area shape="poly" alt=" Details =  Year 2007155.3 million barrels" title=" Details =  Year 2007155.3 million barrels" coords="550,437,570,437,570,491,550,491,550,437,"/>
+<Area shape="poly" alt=" Details =  Year 2007155.3 million barrels" title=" Details =  Year 2007155.3 million barrels" coords="550,490,570,490,570,545,550,545,550,490,"/>
+<Area shape="poly" alt=" Details =  Year 2006116.3 million barrels" title=" Details =  Year 2006116.3 million barrels" coords="532,419,551,419,551,438,532,438,532,419,"/>
+<Area shape="poly" alt=" Details =  Year 2006116.3 million barrels" title=" Details =  Year 2006116.3 million barrels" coords="532,437,551,437,551,491,532,491,532,437,"/>
+<Area shape="poly" alt=" Details =  Year 2006116.3 million barrels" title=" Details =  Year 2006116.3 million barrels" coords="532,490,551,490,551,545,532,545,532,490,"/>
+<Area shape="poly" alt=" Details =  Year 200593.0 million barrels" title=" Details =  Year 200593.0 million barrels" coords="513,444,533,444,533,491,513,491,513,444,"/>
+<Area shape="poly" alt=" Details =  Year 200593.0 million barrels" title=" Details =  Year 200593.0 million barrels" coords="513,490,533,490,533,545,513,545,513,490,"/>
+<Area shape="poly" alt=" Details =  Year 200481.1 million barrels" title=" Details =  Year 200481.1 million barrels" coords="495,457,514,457,514,491,495,491,495,457,"/>
+<Area shape="poly" alt=" Details =  Year 200481.1 million barrels" title=" Details =  Year 200481.1 million barrels" coords="495,490,514,490,514,545,495,545,495,490,"/>
+<Area shape="poly" alt=" Details =  Year 200366.8 million barrels" title=" Details =  Year 200366.8 million barrels" coords="476,472,496,472,496,491,476,491,476,472,"/>
+<Area shape="poly" alt=" Details =  Year 200366.8 million barrels" title=" Details =  Year 200366.8 million barrels" coords="476,490,496,490,496,545,476,545,476,490,"/>
+<Area shape="poly" alt=" Details =  Year 200251.0 million barrels" title=" Details =  Year 200251.0 million barrels" coords="458,489,477,489,477,491,458,491,458,489,"/>
+<Area shape="poly" alt=" Details =  Year 200251.0 million barrels" title=" Details =  Year 200251.0 million barrels" coords="458,490,477,490,477,545,458,545,458,490,"/>
+<Area shape="poly" alt=" Details =  Year 200142.0 million barrels" title=" Details =  Year 200142.0 million barrels" coords="439,499,459,499,459,545,439,545,439,499,"/>
+<Area shape="poly" alt=" Details =  Year 200038.6 million barrels" title=" Details =  Year 200038.6 million barrels" coords="420,503,440,503,440,545,420,545,420,503,"/>
+<Area shape="poly" alt=" Details =  Year 199934.9 million barrels" title=" Details =  Year 199934.9 million barrels" coords="402,507,421,507,421,545,402,545,402,507,"/>
+<Area shape="poly" alt=" Details =  Year 199833.5 million barrels" title=" Details =  Year 199833.5 million barrels" coords="383,508,403,508,403,545,383,545,383,508,"/>
+<Area shape="poly" alt=" Details =  Year 199730.7 million barrels" title=" Details =  Year 199730.7 million barrels" coords="365,511,384,511,384,545,365,545,365,511,"/>
+<Area shape="poly" alt=" Details =  Year 199623.2 million barrels" title=" Details =  Year 199623.2 million barrels" coords="346,519,366,519,366,545,346,545,346,519,"/>
+<Area shape="poly" alt=" Details =  Year 199532.3 million barrels" title=" Details =  Year 199532.3 million barrels" coords="328,509,347,509,347,545,328,545,328,509,"/>
+<Area shape="poly" alt=" Details =  Year 199430.7 million barrels" title=" Details =  Year 199430.7 million barrels" coords="309,511,329,511,329,545,309,545,309,511,"/>
+<Area shape="poly" alt=" Details =  Year 199327.5 million barrels" title=" Details =  Year 199327.5 million barrels" coords="290,515,310,515,310,545,290,545,290,515,"/>
+<Area shape="poly" alt=" Details =  Year 199225.8 million barrels" title=" Details =  Year 199225.8 million barrels" coords="272,516,291,516,291,545,272,545,272,516,"/>
+<Area shape="poly" alt=" Details =  Year 199120.6 million barrels" title=" Details =  Year 199120.6 million barrels" coords="253,522,273,522,273,545,253,545,253,522,"/>
+<Area shape="poly" alt=" Details =  Year 199017.8 million barrels" title=" Details =  Year 199017.8 million barrels" coords="235,525,254,525,254,545,235,545,235,525,"/>
+<Area shape="poly" alt=" Details =  Year 198920.1 million barrels" title=" Details =  Year 198920.1 million barrels" coords="216,523,236,523,236,545,216,545,216,523,"/>
+<Area shape="poly" alt=" Details =  Year 198819.8 million barrels" title=" Details =  Year 198819.8 million barrels" coords="198,523,217,523,217,545,198,545,198,523,"/>
+<Area shape="poly" alt=" Details =  Year 198719.5 million barrels" title=" Details =  Year 198719.5 million barrels" coords="179,523,199,523,199,545,179,545,179,523,"/>
+<Area shape="poly" alt=" Details =  Year 198617.0 million barrels" title=" Details =  Year 198617.0 million barrels" coords="160,526,180,526,180,545,160,545,160,526,"/>
+<Area shape="poly" alt=" Details =  Year 198514.7 million barrels" title=" Details =  Year 198514.7 million barrels" coords="142,528,161,528,161,545,142,545,142,528,"/>
+<Area shape="poly" alt=" Details =  Year 198412.2 million barrels" title=" Details =  Year 198412.2 million barrels" coords="123,531,143,531,143,545,123,545,123,531,"/>
+<Area shape="poly" alt=" Details =  Year 19839.9 million barrels" title=" Details =  Year 19839.9 million barrels" coords="105,533,124,533,124,545,105,545,105,533,"/>
+<Area shape="poly" alt=" Details =  Year 19825.4 million barrels" title=" Details =  Year 19825.4 million barrels" coords="86,538,106,538,106,545,86,545,86,538,"/>
+<Area shape="poly" alt=" Details =  Year 19812.0 million barrels" title=" Details =  Year 19812.0 million barrels" coords="68,542,87,542,87,545,68,545,68,542,"/>
+</map>
+<div  class="c">
+<img alt="The SGPlot Procedure" src="us_fuel_ethanol.png" style=" height: 600px; width: 800px;" border="0" usemap="#us_fuel_ethanol" class="c">
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
