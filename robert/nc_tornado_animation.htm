@@ -1,0 +1,2201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>NC Tornado Animation by Year</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+</div>
+<map name="nc_tornado_anima_map">
+<area shape="POLY" title="Yancey" coords="232,168,232,171,235,172,235,170,236,169,237,172,239,173,239,175,241,177,241,175,243,175,243,174,245,174,247,174,248,176,247,175,246,175,248,177,247,180,248,181,247,182,250,186,250,185,251,185,252,185,253,185,252,186,252,188,252,187,253,188,252,191,253,197,253,198,253,197,252,198,252,200,254,200,253,201,252,202,252,203,251,203,250,205,251,206,251,207,249,208,248,209,247,212,246,212,244,213,241,215,240,217,238,216,238,215,237,213,236,212,234,212,232,210,231,210,230,204,231,203,230,201,228,200,227,200,226,199,224,200,223,200,222,194,222,193,220,192,219,189,217,189,216,187,215,188,214,187,215,186,214,185,216,182,214,181,213,177,215,176,216,175,218,174,223,165,225,166,225,164,228,166,230,164,231,165">
+<area shape="POLY" title="Yadkin" coords="424,142,426,140,429,140,430,141,430,143,431,143,434,143,436,144,437,143,438,143,439,145,440,146,441,147,442,149,441,150,440,150,441,153,440,154,441,154,441,155,441,157,441,160,439,163,436,163,433,164,433,165,433,166,432,167,433,169,433,171,435,172,413,172,392,171,393,146,400,144,402,145,404,143,404,142,404,141,405,141,407,143,408,140,409,141,409,142,410,142,412,142,414,142,415,143,415,144,417,144,418,144,419,141,420,141,420,140,420,139">
+<area shape="POLY" title="Wilson" coords="738,200,741,213,748,220,744,223,730,235,730,233,711,233,704,232,704,233,697,231,693,218,692,216,691,215,690,214,689,214,690,213,694,212,721,198,724,197,726,198,727,199,729,195">
+<area shape="POLY" title="Wilkes" coords="371,121,375,122,375,125,377,127,378,128,380,127,382,127,382,125,383,124,386,126,387,128,388,129,389,128,390,129,391,132,394,134,392,171,382,170,374,172,373,174,368,174,367,173,366,173,364,173,361,174,358,173,357,173,355,174,353,174,352,174,350,174,346,177,345,177,344,178,343,178,341,175,339,173,338,172,338,173,337,172,336,172,336,171,334,168,333,168,332,167,330,168,329,165,328,165,328,166,327,164,325,164,324,164,322,164,319,161,324,158,327,153,328,152,329,150,327,145,327,143,329,144,330,142,332,141,332,140,334,139,334,137,335,137,338,140,338,139,339,139,339,138,340,137,341,136,340,135,341,129,342,129,343,127,344,126,345,127,346,128,348,128,349,128,350,129,351,128,353,128,359,124,362,119,365,122,366,120,367,120,369,118,371,119">
+<area shape="POLY" title="Wayne" coords="730,233,730,235,730,253,731,255,733,257,733,260,733,262,732,264,731,266,730,288,725,290,724,292,724,293,722,291,721,290,720,289,718,289,717,290,715,290,714,290,714,288,712,288,712,287,710,287,709,287,707,287,703,289,694,287,694,285,684,283,678,275,679,271,681,270,682,269,683,269,685,270,687,268,687,267,689,267,691,267,691,266,694,266,694,265,694,264,693,263,695,261,694,260,694,256,704,233,704,232,711,233">
+<area shape="POLY" title="Watauga" coords="307,128,310,130,315,136,317,140,319,140,321,141,322,143,323,142,326,145,327,145,329,150,328,152,327,153,324,158,319,161,307,161,305,160,290,162,288,154,285,150,282,151,282,150,280,149,280,147,280,146,279,145,280,144,281,144,280,142,281,142,281,141,281,138,280,139,279,137,280,135,283,134,286,131,288,129,291,129,293,127,293,129,294,129,296,131,298,131,299,130,301,131,302,131,302,130,300,129,300,127,299,125,300,125,300,124">
+<area shape="POLY" title="Washington" coords="888,176,888,177,889,178,888,179,889,180,888,181,889,181,890,181,889,184,890,188,891,189,892,191,886,201,888,213,871,213,861,213,838,214,838,212,840,210,839,210,840,209,840,208,841,208,841,207,841,206,842,206,842,204,842,203,844,202,843,201,842,200,843,198,845,197,844,196,844,194,845,193,847,192,848,191,849,190,851,184,852,184,853,184,853,183,854,181,857,182,862,181,863,182,864,181,863,181,867,180,869,181,871,180,874,179,876,178,878,178,880,177,886,175">
+<area shape="POLY" title="Warren" coords="719,103,720,108,718,112,718,116,717,117,718,119,718,125,715,136,708,149,707,149,706,148,705,149,705,148,704,148,703,148,701,147,701,148,700,148,699,149,699,148,697,148,696,147,695,146,695,145,695,144,694,143,692,144,691,143,690,142,688,144,687,143,685,143,684,142,675,141,678,136,673,103,703,103">
+<area shape="POLY" title="Wake" coords="634,168,649,175,663,181,666,186,671,187,671,190,673,190,674,191,675,192,676,191,677,194,679,195,680,197,680,199,682,201,682,202,668,212,660,218,659,217,658,218,646,231,645,231,632,243,625,241,610,235,601,231,605,215,607,206,610,200,610,196,618,196,621,188,626,189,627,187,628,187,631,184,633,176,632,176,630,174,628,175,627,174,627,171,627,168,630,168">
+<area shape="POLY" title="Vance" coords="673,103,678,136,675,141,672,146,668,146,664,155,663,155,660,155,659,155,656,154,656,153,655,153,655,154,653,153,652,116,653,111,653,110,654,109,654,108,654,107,656,107,657,107,657,106,657,105,658,105,659,104,658,104">
+<area shape="POLY" title="Union" coords="435,291,436,290,436,291,437,292,438,292,439,292,440,293,442,291,443,292,445,292,446,292,448,290,449,292,452,291,453,291,454,290,455,290,455,289,456,288,457,289,458,288,453,340,426,339,400,339,402,323,395,314,399,311,403,310,428,286,433,290">
+<area shape="POLY" title="Tyrrell" coords="925,178,924,178,925,177">
+<area shape="POLY" title="Tyrrell" coords="916,172,923,172,928,175,929,177,927,178,924,176,923,176,923,179,924,180,923,181,918,178,917,178,916,178,918,178,923,183,926,180,927,181,928,180,929,181,925,189,922,189,920,188,921,190,924,191,924,194,925,198,925,202,924,203,924,200,923,203,923,202,922,202,920,198,918,199,918,202,920,202,923,204,925,202,926,206,925,210,925,211,926,211,927,211,927,215,925,214,924,215,922,214,921,215,921,214,919,214,919,212,917,213,916,211,914,212,913,212,912,214,913,216,912,217,912,218,910,219,910,223,908,226,904,225,903,225,902,225,900,225,899,225,902,214,888,213,886,201,892,191,889,184,890,181,892,180,896,181,896,182,898,181,899,183,901,182,902,183,902,182,900,182,899,180,896,180,896,179,900,175,907,173,910,173,911,172,914,172">
+<area shape="POLY" title="Transylvania" coords="198,269,198,270,198,271,199,272,198,275,200,276,199,281,201,289,201,290,202,291,202,292,201,291,200,292,198,292,197,293,196,294,196,293,195,293,194,293,193,294,192,294,191,295,191,293,190,293,190,294,189,295,190,296,189,298,188,297,187,298,185,298,184,300,183,299,182,301,181,301,179,301,180,299,179,299,166,302,154,306,153,304,151,304,150,302,148,302,149,301,150,300,150,299,151,299,157,292,158,291,157,290,157,289,156,289,155,288,156,287,157,287,157,286,157,285,157,284,159,283,159,282,160,282,160,280,163,279,165,273,165,270,165,269,167,268,169,268,170,267,171,267,175,267,175,266,176,265,177,264,177,263,178,263,179,260,180,258,181,257,184,255,184,254,185,253">
+<area shape="POLY" title="Swain" coords="134,215,135,216,137,218,135,221,135,222,136,222,138,223,137,229,138,230,140,234,138,236,137,238,136,239,135,238,134,239,132,237,131,237,128,239,124,243,122,243,121,245,119,244,117,245,116,250,116,252,117,252,118,254,118,255,119,260,118,263,115,264,115,263,114,264,112,263,110,265,108,264,104,267,101,266,101,267,80,269,79,266,79,264,81,262,87,260,90,256,92,252,91,248,89,249,88,248,85,247,84,249,83,248,78,246,77,247,75,246,72,246,70,246,68,244,67,246,65,245,64,245,63,245,60,245,59,243,57,243,56,242,53,245,51,243,53,242,55,241,59,235,65,235,70,232,71,230,73,230,74,230,75,230,77,230,80,229,86,230,90,228,92,231,94,230,102,231,103,230,104,228,108,225,110,225,113,223,114,222,117,221,120,218,122,218,123,219,124,219,125,217,129,214">
+<area shape="POLY" title="Surry" coords="412,102,422,103,441,104,440,143,440,146,439,145,438,143,437,143,436,144,434,143,431,143,430,143,430,141,429,140,426,140,424,142,420,139,420,140,420,141,419,141,418,144,417,144,415,144,415,143,414,142,412,142,410,142,409,142,409,141,408,140,407,143,405,141,404,141,404,142,404,143,402,145,400,144,393,146,394,134,391,132,390,129,389,129,389,128,388,129,387,128,386,126,383,124,386,121,383,117,384,116,388,110,389,109,389,107,388,107,389,105,390,102,391,102,398,102">
+<area shape="POLY" title="Stokes" coords="457,105,484,105,486,105,485,144,440,143,441,104">
+<area shape="POLY" title="Stanly" coords="469,246,470,249,471,250,473,251,474,250,475,251,477,252,477,254,478,255,478,256,479,258,479,260,480,261,481,261,482,262,484,264,483,265,482,266,482,269,480,271,480,273,479,275,479,278,478,280,479,283,480,284,481,285,482,288,482,289,483,291,483,293,482,294,481,295,479,293,477,291,477,289,477,288,475,289,475,291,474,292,472,291,471,292,470,293,471,294,471,295,470,295,468,294,467,292,466,292,466,294,464,294,462,291,462,289,461,287,461,286,460,286,460,287,458,288,457,289,456,288,455,289,455,290,454,290,453,291,452,291,449,292,448,290,446,292,445,292,443,292,442,291,440,293,439,292,438,292,437,292,436,291,436,290,435,291,433,290,433,288,435,286,435,285,436,284,456,246">
+<area shape="POLY" title="Scotland" coords="551,311,553,312,554,314,556,316,557,317,560,320,560,321,561,322,561,324,562,325,561,327,562,328,562,329,563,335,562,336,562,337,561,339,562,341,562,343,563,344,564,345,549,365,525,341,524,341,528,340,530,339,531,340,532,340,531,339,532,337,531,336,532,335,531,335,532,333,538,327,538,326,537,324,536,324,535,322,535,321,536,321,536,320,537,318,536,318,537,316,544,311,548,310,549,309">
+<area shape="POLY" title="Sampson" coords="651,271,657,278,666,279,678,275,684,283,694,285,693,301,694,302,696,326,691,349,696,351,698,353,700,351,700,353,696,357,685,374,684,374,685,373,683,370,682,370,681,368,679,368,678,364,677,364,678,362,677,361,677,359,674,357,674,356,674,355,673,356,673,355,672,355,671,355,672,354,670,352,671,351,669,350,669,348,668,347,667,346,666,345,665,345,665,343,664,343,663,339,661,339,661,337,658,336,657,333,655,332,655,330,654,330,654,329,653,328,652,327,651,325,650,325,649,323,647,322,646,320,645,320,640,315,640,313,639,308,639,307,638,303,637,302,637,301,639,301,639,299,641,298,640,298,639,298,641,295,641,293,641,292,641,291,642,291,641,289,641,288,640,287,642,286,641,285,643,283,643,281,647,277,647,273,647,274,650,272">
+<area shape="POLY" title="Rutherford" coords="296,231,297,231,299,230,299,231,299,232,300,233,300,234,301,234,302,234,300,264,293,283,292,288,281,288,270,287,270,284,271,282,270,279,271,279,270,279,270,277,269,276,267,276,267,274,265,273,265,272,264,271,263,270,262,269,262,268,261,267,260,267,259,266,258,266,258,264,257,264,256,262,255,262,255,260,254,259,251,258,250,257,248,256,247,258,246,258,246,257,244,257,244,258,243,258,241,257,238,258,237,257,237,256,237,254,237,253,236,252,238,248,239,249,240,248,243,244,242,242,242,241,249,240,251,242,260,239,265,239,266,238,267,237,269,239,270,241,285,239,285,237,286,237,287,235,287,234,288,234,289,234,290,234,291,232,293,232,293,231,295,230">
+<area shape="POLY" title="Rowan" coords="415,198,415,199,420,200,422,201,422,202,422,203,424,202,424,203,426,204,428,206,429,206,430,207,430,208,432,208,433,209,434,208,435,210,436,209,437,210,437,212,439,214,439,215,440,215,444,216,445,216,446,217,448,217,452,217,453,218,452,220,453,222,455,224,456,226,457,228,460,229,463,232,463,234,466,236,466,240,467,241,468,242,467,243,469,244,469,246,456,246,429,246,407,245,407,240,404,223,411,198,412,199,412,198,413,198,413,197,414,198">
+<area shape="POLY" title="Rockingham" coords="521,105,543,105,542,115,542,118,542,119,541,145,541,146,485,144,486,105">
+<area shape="POLY" title="Robeson" coords="609,330,610,332,609,333,612,337,613,340,614,340,614,341,616,345,616,347,617,348,617,350,619,351,618,352,619,352,619,353,619,352,619,353,620,353,621,354,623,357,623,359,622,360,621,361,622,362,621,362,621,363,620,364,620,368,619,369,620,369,620,370,619,370,618,372,617,372,617,373,618,375,617,377,618,378,618,380,619,381,619,382,618,382,616,383,616,384,612,388,611,388,610,389,608,389,606,390,605,392,605,393,605,394,605,395,605,397,604,397,603,397,602,397,601,398,600,399,601,401,600,403,598,402,599,403,598,403,598,404,597,405,598,406,598,407,597,407,597,408,596,408,595,408,595,409,594,409,594,410,549,365,564,345,561,339,562,337,580,337,597,321,607,327,608,328">
+<area shape="POLY" title="Richmond" coords="506,290,507,291,510,290,512,291,515,291,517,291,519,291,521,291,523,290,526,291,529,293,532,293,533,294,534,295,535,296,535,297,537,298,536,301,536,303,537,306,545,306,547,307,548,308,549,309,548,310,544,311,537,316,536,318,537,318,536,320,536,321,535,321,535,322,536,324,537,324,538,326,538,327,532,333,531,335,532,335,531,336,532,337,531,339,532,340,531,340,530,339,528,340,524,341,497,341,499,340,499,337,500,334,502,334,504,332,506,328,505,324,503,322,504,318,503,317,500,314,501,312,503,310,503,309,502,308,499,306,499,302,498,300,497,299,496,299,494,299,491,301,491,303,489,303,486,303,484,301,482,300,481,295,487,296,491,293,495,294,495,293,500,293">
+<area shape="POLY" title="Randolph" coords="540,192,540,200,538,245,515,245,482,246,484,190">
+<area shape="POLY" title="Polk" coords="250,257,251,258,254,259,255,260,255,262,256,262,257,264,258,264,258,266,259,266,260,267,261,267,262,268,262,269,263,270,264,271,265,272,265,273,267,274,267,276,269,276,270,277,270,279,271,279,270,279,271,282,270,284,270,287,243,285,235,284,232,286,231,286,230,286,229,286,228,285,227,286,228,280,227,280,227,278,228,278,228,273,230,270,232,270,232,269,232,268,233,267,233,266,234,266,235,264,236,263,236,262,238,259,238,258,241,257,243,258,244,258,244,257,246,257,246,258,247,258,248,256">
+<area shape="POLY" title="Pitt" coords="782,200,792,204,791,206,792,207,794,207,797,208,799,209,798,209,800,209,801,210,802,213,801,213,799,216,800,216,801,217,801,218,802,217,802,218,803,219,801,220,802,224,805,226,806,228,805,229,806,229,807,230,808,229,808,231,809,231,810,232,809,233,810,233,811,234,811,233,812,235,809,236,808,235,802,240,802,243,803,243,802,245,803,249,802,249,802,251,801,252,801,254,800,256,798,256,798,257,797,257,796,258,796,262,794,263,793,263,792,261,789,260,783,267,782,266,780,266,777,263,775,264,774,261,773,262,773,261,773,260,772,259,772,258,770,256,769,251,768,251,769,250,767,249,767,247,765,244,766,241,764,241,763,240,760,239,756,235,754,235,748,228,746,227,746,225,744,223,764,208,768,203,771,203,771,202,774,202,775,199,777,199,777,198">
+<area shape="POLY" title="Person" coords="621,104,621,146,605,146,582,146,584,105">
+<area shape="POLY" title="Perquimans" coords="885,132,885,133,887,135,887,137,890,138,891,139,892,139,894,139,895,142,897,141,899,147,897,148,898,147,898,148,899,147,900,148,902,150,903,151,904,154,908,157,906,158,904,158,903,158,902,157,901,157,900,157,897,155,895,155,894,153,892,153,891,153,890,153,888,153,886,150,886,148,886,149,885,149,883,148,882,148,881,146,880,146,879,146,879,145,878,145,878,147,879,147,879,148,881,148,881,150,882,150,885,152,887,155,888,156,891,155,892,157,895,158,896,158,896,159,894,160,891,160,885,161,884,160,883,157,883,160,882,160,884,161,882,162,881,161,881,162,880,161,879,160,878,160,877,159,875,161,874,161,873,159,870,160,868,159,866,157,864,140,864,139,866,138,866,133,866,130,867,124,878,121,884,131">
+<area shape="POLY" title="Pender" coords="759,395,758,395">
+<area shape="POLY" title="Pender" coords="757,394">
+<area shape="POLY" title="Pender" coords="766,386">
+<area shape="POLY" title="Pender" coords="756,397">
+<area shape="POLY" title="Pender" coords="760,391,760,392">
+<area shape="POLY" title="Pender" coords="747,407,746,407">
+<area shape="POLY" title="Pender" coords="756,398,755,398,756,397">
+<area shape="POLY" title="Pender" coords="759,393">
+<area shape="POLY" title="Pender" coords="761,391,760,391">
+<area shape="POLY" title="Pender" coords="763,390">
+<area shape="POLY" title="Pender" coords="746,409,746,408">
+<area shape="POLY" title="Pender" coords="764,389,765,388">
+<area shape="POLY" title="Pender" coords="766,386,766,387">
+<area shape="POLY" title="Pender" coords="760,392,760,393,761,392,760,393,759,392">
+<area shape="POLY" title="Pender" coords="744,408,743,408,744,407">
+<area shape="POLY" title="Pender" coords="759,393,760,393,759,394,758,394,759,394,758,393">
+<area shape="POLY" title="Pender" coords="751,399,751,400,752,400,751,401,750,401,750,400">
+<area shape="POLY" title="Pender" coords="758,394,759,394,758,395,757,395,758,395,757,395,756,395,757,396,756,395,756,396,757,396,755,396,758,393">
+<area shape="POLY" title="Pender" coords="744,408,744,407,746,405,746,407">
+<area shape="POLY" title="Pender" coords="755,396,756,397,755,397,755,398,754,399,752,400,751,400,751,399,753,398,753,397">
+<area shape="POLY" title="Pender" coords="761,393,753,401,752,401,754,399,756,397,760,394,760,393,761,392,762,392,762,391,763,391,763,390,764,390,763,391,762,391,760,392,764,390,765,390,764,390,764,389,765,390,765,389,767,387,768,388">
+<area shape="POLY" title="Pender" coords="751,401,752,402,747,408,746,407,747,407,746,404,747,403,748,403,747,403,748,402,750,400">
+<area shape="POLY" title="Pender" coords="712,350,713,351,715,352,716,351,717,351,718,352,720,350,720,351,721,350,722,351,749,350,761,383,762,384,764,384,766,386,764,387,764,389,762,389,761,388,762,390,759,391,758,390,760,391,759,392,747,402,747,400,747,403,743,407,742,407,735,400,735,399,736,397,734,396,730,397,727,399,725,399,725,397,723,398,722,400,721,399,721,400,721,398,720,398,719,399,718,399,718,397,717,398,715,398,716,400,715,403,709,404,707,402,707,403,705,403,705,401,704,401,702,401,701,400,700,399,699,399,698,400,697,400,696,401,694,401,691,401,690,399,688,398,687,398,686,396,685,396,685,395,694,386,691,385,690,383,689,383,689,382,689,383,687,382,685,381,685,379,684,379,683,376,696,357,700,353,700,351,703,350,704,351,706,350,708,350,709,350,710,350,712,349">
+<area shape="POLY" title="Pasquotank" coords="881,109,883,110,884,110,885,111,886,111,887,112,888,114,889,114,890,114,890,115,892,114,892,115,894,117,895,117,896,119,897,119,898,119,900,119,900,122,901,122,902,121,903,121,903,124,905,125,905,127,907,127,908,127,908,128,906,128,906,130,905,130,904,131,906,131,906,132,908,132,908,133,910,135,911,135,913,136,915,140,915,141,914,141,913,140,912,142,912,141,913,141,914,141,915,142,916,142,917,142,920,144,920,145,920,146,920,147,921,146,921,148,923,150,922,151,918,153,917,152,917,151,915,152,914,150,913,151,912,150,912,151,914,151,914,152,916,153,913,153,911,154,909,154,906,152,903,148,902,148,901,146,900,146,897,141,895,142,894,139,892,139,891,139,890,138,887,137,887,135,885,133,885,132,879,123,874,109,873,103,880,109">
+<area shape="POLY" title="Pamlico" coords="870,264,873,264,869,266,874,266,875,270,875,265,880,266,878,271,881,269,882,273,878,273,881,275,878,276,875,274,880,278,873,275,872,277,869,276,871,280,873,278,876,281,876,283,870,281,868,278,866,279,869,281,867,281,867,282,864,281,866,284,863,285,860,281,862,283,859,288,856,289,855,287,855,290,852,289,855,294,854,291,858,291,862,286,863,289,866,287,866,289,868,288,866,293,870,288,872,290,870,285,875,288,872,293,870,292,871,295,869,296,869,294,865,296,864,294,865,296,862,298,865,297,866,298,866,297,867,298,868,296,868,299,862,300,864,302,861,304,860,302,858,306,856,302,857,306,854,304,855,306,853,305,857,306,856,309,846,314,839,310,839,305,838,309,831,305,833,302,830,304,831,296,825,289,834,275,840,280,864,277,866,271,868,273,870,272,866,270,867,269,870,269,866,268,867,264">
+<area shape="POLY" title="Orange" coords="582,146,605,146,598,197,591,197,572,195,571,193,571,192,570,191,571,145">
+<area shape="POLY" title="Onslow" coords="766,386">
+<area shape="POLY" title="Onslow" coords="772,384">
+<area shape="POLY" title="Onslow" coords="807,355">
+<area shape="POLY" title="Onslow" coords="804,363">
+<area shape="POLY" title="Onslow" coords="771,383">
+<area shape="POLY" title="Onslow" coords="769,384">
+<area shape="POLY" title="Onslow" coords="774,381">
+<area shape="POLY" title="Onslow" coords="813,352">
+<area shape="POLY" title="Onslow" coords="786,371,787,371,786,372">
+<area shape="POLY" title="Onslow" coords="772,384,769,385,770,384,772,383">
+<area shape="POLY" title="Onslow" coords="799,365,799,366,798,366,800,364,800,365">
+<area shape="POLY" title="Onslow" coords="802,362,803,362,804,363,803,363,803,362">
+<area shape="POLY" title="Onslow" coords="805,360,805,361,805,362,804,363,803,362,804,361,805,361,804,361,804,360,803,361,802,361,805,359">
+<area shape="POLY" title="Onslow" coords="814,356,813,357,812,358,811,358,811,357,812,356,812,355,811,355,811,354,812,354,812,355">
+<area shape="POLY" title="Onslow" coords="798,367,799,366,799,367,791,373,788,375,787,375,788,374,786,372,790,373,791,372,794,370,798,366,799,366">
+<area shape="POLY" title="Onslow" coords="811,357,810,358,810,357,811,359,812,359,811,360,806,362,806,361,805,361,805,360,805,359,810,356,811,355,811,356">
+<area shape="POLY" title="Onslow" coords="787,374,787,376,774,383,768,388,767,387,769,384,769,385,768,387,769,386,770,385,770,386,770,385,771,385,772,385,771,385,771,384,774,383,775,383,773,383,772,383,771,383,773,382,772,383,773,383,774,382,773,382,774,381,775,381,775,382,776,382,775,381,779,379,779,380,778,380,779,380,780,379,779,380,780,379,781,378,783,378,785,377,784,376,785,375,785,376,786,376,786,375,787,375,786,375,786,374,785,374,785,373,786,373,785,373,786,372">
+<area shape="POLY" title="Onslow" coords="783,323,784,321,787,320,789,320,790,320,794,321,798,326,799,326,802,333,804,333,803,337,805,341,806,340,807,341,807,343,810,344,810,348,812,349,812,353,810,354,810,355,809,356,804,350,807,355,806,355,808,357,800,362,795,369,790,373,789,372,787,372,787,369,785,370,784,367,783,369,782,367,781,367,781,369,780,368,787,361,789,360,787,360,785,356,783,356,785,355,780,350,781,349,785,349,785,347,782,349,780,348,778,350,777,347,776,347,777,354,779,352,784,360,781,364,777,363,775,365,779,370,778,371,781,369,781,370,782,370,785,372,785,374,784,373,783,374,782,374,781,375,784,374,784,376,780,378,781,377,778,378,779,379,777,380,774,381,773,380,773,381,770,382,771,383,766,386,764,384,762,384,748,348,751,322,748,316,753,314,768,316">
+<area shape="POLY" title="Northampton" coords="800,101,801,101,801,103,803,104,804,104,805,103,805,104,807,104,806,104,807,104,808,104,809,105,808,106,809,107,810,107,810,106,811,107,810,107,811,109,810,109,809,109,809,110,808,110,807,109,806,110,803,113,804,115,796,141,794,146,792,146,791,145,789,146,787,146,786,147,787,148,786,150,786,152,787,152,786,153,785,152,785,151,784,150,783,149,782,149,781,149,780,148,777,147,777,142,774,140,773,136,770,131,767,132,765,133,764,134,759,135,757,134,756,133,754,130,756,127,758,125,759,122,758,120,757,119,755,118,754,118,753,117,751,116,750,115,747,111,743,111,740,110,738,110,736,111,735,111,733,111,732,110,728,108,724,108,722,108,721,108,720,107,720,108,719,103,785,101,800,100">
+<area shape="POLY" title="New Hanover" coords="727,442">
+<area shape="POLY" title="New Hanover" coords="738,415">
+<area shape="POLY" title="New Hanover" coords="722,458,722,457">
+<area shape="POLY" title="New Hanover" coords="723,457,722,457">
+<area shape="POLY" title="New Hanover" coords="723,446,722,446">
+<area shape="POLY" title="New Hanover" coords="723,441,722,441,722,440,723,440">
+<area shape="POLY" title="New Hanover" coords="736,421,736,420">
+<area shape="POLY" title="New Hanover" coords="735,421">
+<area shape="POLY" title="New Hanover" coords="722,436,722,435,722,433">
+<area shape="POLY" title="New Hanover" coords="720,428,719,427,720,426">
+<area shape="POLY" title="New Hanover" coords="722,456,722,457">
+<area shape="POLY" title="New Hanover" coords="722,448,723,448,723,449,722,450">
+<area shape="POLY" title="New Hanover" coords="736,419,737,419,737,420,736,420,735,419">
+<area shape="POLY" title="New Hanover" coords="736,421,735,423,734,422,735,421">
+<area shape="POLY" title="New Hanover" coords="734,423,735,423,734,425,732,425">
+<area shape="POLY" title="New Hanover" coords="741,412,742,413,741,413,740,416,739,415">
+<area shape="POLY" title="New Hanover" coords="739,415,739,416,738,416,739,416,740,415,740,417,736,423,735,423,737,421,738,419,738,418,737,418,736,418,737,417,738,418,739,418,738,417,737,417">
+<area shape="POLY" title="New Hanover" coords="744,409,744,408,745,409,744,410,745,409,746,408,746,409,744,411,740,416,741,414,742,413,742,412,741,412,743,408">
+<area shape="POLY" title="New Hanover" coords="735,424,736,424,734,427,729,437,728,438,731,428,732,426,734,425">
+<area shape="POLY" title="New Hanover" coords="734,396,735,397,736,397,735,399,735,400,742,407,741,407,742,407,743,408,738,415,738,414,738,415,734,420,734,422,732,425,732,424,732,426,730,428,730,429,728,435,727,441,727,444,728,438,729,438,729,439,722,459,723,456,722,455,723,456,723,454,722,455,721,454,723,453,724,452,723,450,724,447,724,445,725,445,724,445,724,443,724,441,723,439,723,432,723,431,720,429,721,429,721,427,719,425,720,417,719,416,718,416,718,415,717,415,717,414,716,414,716,412,714,412,715,411,715,410,714,411,713,410,712,409,712,407,713,405,711,406,711,404,715,403,715,402,716,400,715,399,715,398,717,398,718,397,718,399,719,399,720,398,721,398,721,399,721,400,721,399,722,400,723,398,725,397,725,399,727,399,730,397,731,397">
+<area shape="POLY" title="Nash" coords="709,150,710,152,711,151,711,152,712,153,713,152,712,150,713,150,715,152,715,151,717,152,717,151,718,152,718,154,720,154,720,155,721,156,722,157,723,157,725,156,726,157,729,157,730,158,731,156,731,157,734,157,734,156,736,156,736,155,737,155,738,155,739,156,739,157,740,158,740,157,740,156,741,156,742,156,742,155,742,157,742,161,738,168,735,175,734,178,729,195,727,199,726,198,724,197,721,198,694,212,690,213,689,214,688,214,687,213,686,211,685,211,684,209,683,208,683,206,683,205,682,203,682,202,691,183,708,149">
+<area shape="POLY" title="Moore" coords="561,245,562,246,563,247,561,250,560,250,561,250,560,251,562,252,561,252,562,252,562,254,564,255,564,257,565,258,567,260,568,260,570,265,570,267,571,268,572,268,576,270,580,273,576,278,578,279,579,281,580,281,582,282,583,283,584,286,585,286,587,287,590,288,590,291,589,291,588,291,587,291,587,292,586,290,585,292,584,291,583,291,583,290,582,290,581,288,580,289,580,288,579,288,579,289,578,288,577,288,575,286,574,286,573,286,572,287,571,288,570,288,568,289,566,292,564,292,564,293,563,293,549,309,548,308,547,307,545,306,537,306,536,303,536,301,537,298,535,297,535,296,534,295,533,294,531,292,531,291,530,291,527,289,526,282,523,281,521,277,521,274,515,250,515,245,561,244">
+<area shape="POLY" title="Montgomery" coords="515,245,515,250,517,255,521,274,521,277,522,278,522,279,523,281,526,282,527,284,527,285,527,286,527,287,527,289,530,291,531,291,531,292,532,293,529,293,526,291,523,290,521,291,519,291,517,291,515,291,512,291,510,290,507,291,506,290,500,293,495,293,495,294,491,293,487,296,481,295,482,294,483,293,483,291,482,289,482,288,481,285,480,284,479,283,478,280,479,278,479,275,480,273,480,271,482,269,482,266,483,265,484,264,482,262,481,261,480,261,479,260,479,258,478,256,478,255,477,254,477,252,475,251,474,250,473,251,471,250,470,249,469,246,482,246">
+<area shape="POLY" title="Mitchell" coords="247,154,248,155,249,155,249,156,250,157,250,156,252,156,253,156,255,162,257,162,258,161,260,162,262,166,261,167,265,175,264,175,264,176,263,176,262,177,263,181,265,184,271,188,271,190,271,192,269,193,268,192,266,192,264,195,263,196,260,197,258,196,257,198,255,199,255,200,254,200,252,200,252,198,253,197,253,198,253,197,252,191,253,190,253,188,252,187,252,188,252,186,253,185,252,185,251,185,250,185,250,186,247,182,248,181,247,180,248,177,247,177,246,175,247,175,248,176,247,174,245,174,243,174,243,175,241,175,241,177,239,175,239,173,237,172,236,169,235,170,235,172,232,171,232,168,230,164,228,166,225,164,225,165,225,166,223,165,225,163,227,162,228,161,229,161,230,160,232,160,237,157,238,158,240,158,241,157,242,158,245,154">
+<area shape="POLY" title="Mecklenburg" coords="402,246,402,247,406,258,404,258,404,260,405,261,407,263,408,264,412,267,415,278,428,286,403,310,399,311,395,314,388,304,385,300,373,308,371,306,371,302,372,301,374,300,374,299,373,297,372,296,373,294,374,294,375,294,376,293,377,293,378,289,377,288,377,286,376,284,377,280,376,279,376,278,378,273,380,270,380,268,381,267,381,266,382,267,383,267,384,267,387,265,384,264,383,263,381,265,380,264,380,262,383,261,383,260,383,258,383,257,383,255,385,252,384,251,384,248,388,244">
+<area shape="POLY" title="Martin" coords="784,167,794,173,796,173,797,174,796,176,798,176,799,180,798,180,799,181,798,181,799,182,798,181,798,182,799,184,801,184,802,183,805,184,806,183,806,185,808,184,809,184,810,185,811,183,812,183,813,183,812,182,814,183,814,182,815,182,816,184,817,184,817,187,818,189,817,189,816,189,817,190,815,191,816,192,815,193,816,194,819,193,820,193,821,192,822,191,823,191,824,190,825,190,827,187,828,188,829,188,831,192,832,192,831,196,832,197,831,198,832,199,834,199,839,194,838,190,839,189,842,189,845,192,847,192,845,193,844,194,844,196,845,197,842,200,844,202,842,203,842,206,841,207,841,208,838,212,838,214,823,221,804,210,803,210,802,211,800,209,798,209,799,209,797,208,794,207,792,207,791,206,792,204,782,200,782,188,775,176,783,165">
+<area shape="POLY" title="Madison" coords="199,166,201,167,201,168,204,170,203,172,201,174,202,176,201,179,203,180,205,179,205,180,207,181,209,179,213,178,214,181,216,182,214,185,215,186,214,187,215,188,216,187,217,189,219,189,220,192,222,193,222,194,222,197,223,200,220,201,219,201,218,201,217,201,217,202,216,203,212,202,194,211,193,211,194,212,192,212,191,211,189,211,189,213,188,213,187,212,187,214,186,213,184,215,180,215,179,217,175,216,174,215,170,218,168,217,169,214,167,212,168,211,167,208,165,208,163,209,162,208,163,204,162,201,164,198,165,197,165,196,167,195,167,192,169,191,170,190,169,190,169,188,168,184,167,184,168,183,169,184,170,181,172,180,174,181,175,181,178,185,180,184,180,183,182,181,183,178,182,177,183,174,186,173,188,172,190,171,190,170,193,169,194,168">
+<area shape="POLY" title="Macon" coords="119,265,120,266,120,267,121,270,120,272,121,272,121,273,122,274,123,276,125,277,128,277,128,276,131,276,131,280,130,283,130,287,132,287,134,291,135,294,138,296,139,298,137,298,136,299,136,301,138,302,140,304,140,303,140,304,140,307,141,307,142,307,142,309,101,309,100,308,98,307,96,308,96,306,96,305,95,303,94,302,92,302,92,300,92,299,92,298,91,298,90,296,89,295,86,293,86,290,85,289,85,290,84,291,83,289,84,289,84,288,83,289,82,288,83,288,83,287,83,286,82,285,81,286,80,286,79,285,79,286,78,286,77,286,76,286,74,287,73,285,74,282,76,281,76,280,75,280,74,279,79,275,79,274,77,273,80,269,81,268,101,267,101,266,104,267,105,267,106,265,108,264,109,265,110,264,110,265,112,263,114,264,115,263,115,264,116,263,118,263">
+<area shape="POLY" title="McDowell" coords="276,184,277,185,277,186,277,188,278,188,278,189,278,190,279,190,279,192,278,196,277,197,276,199,275,199,274,200,273,201,272,201,271,201,270,203,283,215,287,235,286,237,285,237,285,239,270,241,269,239,267,237,266,238,265,239,260,239,251,242,249,240,243,237,240,236,236,231,235,231,237,230,237,229,238,228,239,228,238,226,237,225,236,224,236,222,237,221,237,220,235,219,236,217,238,216,240,217,241,215,244,213,246,212,247,212,248,209,249,208,250,207,251,207,251,206,250,205,251,203,252,203,252,202,253,201,254,200,255,200,255,199,257,198,258,196,260,197,263,196,264,195,265,194,265,193,266,192,268,192,269,193,270,193,271,192,271,190,271,188,274,186,273,185,273,184,275,182">
+<area shape="POLY" title="Lincoln" coords="319,236,383,240,385,242,385,243,383,242,383,243,383,244,382,245,383,247,384,247,384,248,384,251,385,252,383,255,383,257,383,258,383,260,328,256,325,250,322,242,322,239,321,237,319,237">
+<area shape="POLY" title="Lenoir" coords="770,256,771,257,772,258,772,259,773,260,773,261,773,262,774,261,775,262,775,264,777,263,778,264,779,264,779,265,777,265,777,266,776,266,775,267,775,269,774,269,774,270,773,271,774,272,774,274,775,275,775,276,775,278,771,279,770,281,764,279,767,288,756,302,742,311,741,309,740,305,740,304,740,298,738,293,730,288,731,266,732,264,733,262,736,262,744,260,747,265,748,265,749,264,752,264,754,261,755,260,755,261,757,261,757,260,759,260,763,257,764,255,765,254,767,255,767,256,768,255,769,254,770,254">
+<area shape="POLY" title="Lee" coords="588,230,589,230,592,231,594,233,595,237,597,239,598,240,600,241,601,241,603,243,580,273,576,270,572,268,571,268,570,267,570,265,568,260,567,260,566,259,565,258,564,257,564,256,564,255,562,254,562,252,561,252,562,252,560,251,561,250,560,250,561,250,563,247,562,246,561,245,561,244,563,243,564,243,565,243,566,242,564,241,565,241,566,240,567,239,569,239,569,240,568,241,569,242,570,242,573,239,573,238,573,237,576,238,575,239,575,240,578,239,578,236,579,236,582,232,583,231,584,230,586,230,587,229">
+<area shape="POLY" title="Jones" coords="804,303,805,302,807,303,809,301,810,300,811,301,812,306,813,307,812,308,812,334,819,333,818,334,819,335,817,335,816,336,815,336,814,337,815,338,814,338,813,337,812,339,811,339,810,338,808,339,807,339,806,339,807,340,806,340,805,341,806,340,805,340,806,339,805,339,803,338,803,337,803,336,804,335,804,334,804,333,803,334,802,333,802,332,801,331,801,330,800,329,800,328,799,327,799,326,798,326,798,325,796,324,796,323,795,323,794,321,793,321,792,320,791,321,790,320,789,320,787,320,784,321,783,323,768,316,753,314,749,316,742,311,756,302,767,288,764,279,770,281,787,291,803,300,802,300,802,302">
+<area shape="POLY" title="Johnston" coords="683,205,683,206,683,208,684,209,685,211,686,211,687,213,688,214,689,214,690,214,691,215,692,216,693,218,697,231,704,233,694,256,694,260,695,261,693,263,694,264,694,265,694,266,691,266,691,267,689,267,687,267,687,268,685,270,683,269,682,269,681,270,679,271,678,275,666,279,657,278,651,271,652,270,652,269,652,268,652,267,651,266,649,265,649,264,648,263,648,262,647,261,645,260,645,257,644,256,644,255,642,252,640,251,639,250,639,248,638,247,636,246,635,246,634,244,632,243,645,231,646,231,658,218,659,217,660,218,668,212,682,202,682,203">
+<area shape="POLY" title="Jackson" coords="132,237,134,239,135,238,136,239,138,240,139,241,141,242,141,246,144,246,146,247,146,248,148,248,147,250,150,251,151,253,151,256,154,258,155,258,157,259,160,264,160,267,161,267,161,268,164,269,165,270,165,273,163,279,160,280,159,283,157,284,157,287,156,287,156,289,157,289,158,291,150,299,148,302,150,302,151,304,153,304,154,306,142,309,142,307,141,307,140,307,140,303,140,304,138,302,136,301,136,299,137,298,139,298,138,296,135,294,134,291,132,287,130,287,130,283,131,280,131,276,128,276,128,277,125,277,123,276,122,274,121,273,120,272,121,270,120,266,119,265,118,263,119,260,119,256,118,255,118,254,117,252,116,252,116,250,117,245,119,244,121,245,122,243,124,243,125,241,127,240,128,239,131,237">
+<area shape="POLY" title="Iredell" coords="413,172,411,198,404,223,407,240,407,245,402,246,388,244,384,248,384,247,383,247,382,245,383,244,383,243,383,242,385,243,385,242,383,240,383,239,383,238,384,235,386,234,386,233,385,232,385,231,387,230,384,227,382,224,382,223,381,222,378,218,377,217,374,218,372,217,371,214,369,211,369,210,367,210,366,208,370,205,370,204,372,202,372,201,374,197,378,184,379,179,376,172,382,170,392,171">
+<area shape="POLY" title="Hyde" coords="955,282,954,282">
+<area shape="POLY" title="Hyde" coords="926,257,926,256">
+<area shape="POLY" title="Hyde" coords="888,261,888,260">
+<area shape="POLY" title="Hyde" coords="925,252,926,252,926,253">
+<area shape="POLY" title="Hyde" coords="962,279,961,280,961,279">
+<area shape="POLY" title="Hyde" coords="894,261,895,261,895,262,893,261,892,262,891,261,892,262,893,261">
+<area shape="POLY" title="Hyde" coords="902,263,903,263,904,263,905,265,904,266,902,265,903,263">
+<area shape="POLY" title="Hyde" coords="959,280,959,279,960,280,960,279,960,280,960,281,958,281,947,287,941,291,936,296,934,296,935,296,937,293,936,293,936,292,936,291,937,290,938,290,938,291,939,290,939,291,942,289,943,289,944,288,945,288,945,287,946,286,947,287,946,286,947,286,948,286,949,285,950,285,952,283,953,284,953,283,954,283,954,282,955,283,956,282,956,281,956,282,956,281,957,281,958,280,958,279">
+<area shape="POLY" title="Hyde" coords="871,213,902,214,899,225,908,226,913,212,916,212,921,217,925,215,928,219,930,215,943,215,945,228,942,229,942,232,939,233,937,236,935,235,935,236,934,236,933,237,937,239,933,242,932,242,933,243,931,250,930,248,926,247,927,249,924,253,926,255,926,256,921,259,918,258,916,263,915,260,909,261,905,254,905,261,900,260,902,258,898,257,898,255,896,255,894,252,895,260,891,259,889,261,887,257,893,258,887,247,890,246,888,245,887,247,885,245,884,246,886,246,885,248,888,250,885,250,887,251,884,253,885,255,884,254,883,255,882,250,882,253,879,253,881,258,878,256,878,253,876,255,874,254,874,251,875,250,878,252,877,250,874,248,874,250,870,248,871,247,872,248,874,244,878,246,873,242,872,246,868,239,878,240,878,241,880,239,881,239,882,231,882,233,877,229,873,229,873,228,870,227,861,213">
+<area shape="POLY" title="Hoke" coords="573,286,574,286,575,286,577,288,578,288,579,289,579,288,580,288,580,289,581,288,581,289,582,289,582,290,583,290,583,291,584,291,585,292,585,291,586,290,586,291,587,292,587,291,588,291,589,291,590,291,588,297,589,298,589,299,590,302,590,304,591,305,590,307,591,308,590,308,593,313,594,313,595,316,595,317,597,319,597,320,597,321,580,337,562,337,562,336,563,335,562,329,562,328,561,327,562,325,561,324,561,322,560,321,560,320,557,317,556,316,554,314,553,312,551,311,549,309,563,293,564,293,564,292,566,292,568,289,570,288,571,288,572,287">
+<area shape="POLY" title="Hertford" coords="807,100,827,100,827,101,826,101,826,102,827,102,828,103,828,105,827,105,826,107,825,108,825,110,823,110,824,111,824,112,824,114,824,117,824,118,826,119,829,121,830,121,831,122,832,122,835,123,836,123,838,124,841,125,843,124,845,126,846,127,847,129,848,130,850,132,852,133,852,136,851,137,851,138,849,140,830,141,822,142,820,141,818,142,799,142,796,141,798,136,804,115,803,113,804,111,805,110,806,110,807,109,808,110,809,110,809,109,810,109,811,109,810,108,811,107,810,107,811,107,810,106,810,107,809,107,808,106,809,106,809,105,808,104,807,104,806,104,807,104,805,104,805,103,804,103,805,104,804,104,803,104,801,103,801,102,801,101,800,101,800,100,801,101">
+<area shape="POLY" title="Henderson" coords="238,248,236,252,237,253,237,257,238,258,238,259,236,262,234,266,233,266,232,269,232,270,230,270,228,273,228,278,227,278,227,280,228,280,227,286,226,285,226,286,225,287,224,285,224,283,223,282,222,283,220,284,219,286,219,287,218,289,216,289,216,287,214,287,213,287,212,287,211,289,210,288,210,289,209,289,208,290,207,290,207,289,206,289,205,289,205,290,204,290,203,291,202,291,201,289,199,281,200,276,198,275,199,272,198,271,198,270,198,269,185,252,186,252,188,249,190,249,192,249,193,248,194,249,195,249,196,250,198,251,200,250,201,251,202,251,203,252,204,252,205,251,206,250,207,252,207,253,208,254,209,252,208,252,207,250,215,251,216,250,217,250,218,248,219,248,221,247,222,247,223,247,224,247,225,248,227,249,226,247,226,245,228,245,230,245,231,244">
+<area shape="POLY" title="Haywood" coords="163,204,162,208,163,209,165,208,167,208,168,211,167,212,169,214,168,217,170,218,171,219,172,224,173,223,174,224,174,226,175,226,176,226,178,225,179,229,181,230,181,232,183,233,181,235,183,237,181,239,180,243,179,246,180,248,181,250,185,253,184,255,181,257,180,258,179,260,175,267,171,267,170,267,169,268,167,268,165,270,164,269,161,268,161,267,160,267,160,264,158,263,157,259,155,258,154,258,151,256,151,253,150,251,147,250,148,248,146,248,146,247,144,246,141,246,141,242,139,241,138,240,136,239,137,238,138,236,140,234,138,230,137,229,138,223,136,222,135,222,135,221,136,219,137,218,135,216,134,215,129,214,129,211,131,210,134,210,136,210,137,210,140,205,144,205,149,202,151,202,152,202,153,202,154,202,158,204,162,202">
+<area shape="POLY" title="Harnett" coords="625,241,632,243,634,244,635,246,636,246,638,247,639,248,639,250,640,251,642,252,644,255,644,256,645,257,645,260,647,261,648,262,648,263,649,264,649,265,651,266,652,267,652,268,652,269,652,270,651,271,650,272,649,272,648,273,647,274,647,273,647,277,645,278,645,279,643,281,633,279,632,279,631,278,630,279,628,278,628,279,628,278,627,279,627,278,626,279,625,278,625,279,625,278,623,278,622,279,620,279,619,280,617,280,616,281,615,281,614,282,614,283,612,283,609,284,608,285,603,286,601,285,590,288,587,287,585,286,584,286,583,285,583,283,582,282,580,281,579,281,578,279,576,278,580,273,603,243,610,235">
+<area shape="POLY" title="Halifax" coords="721,108,728,108,733,111,735,111,738,110,743,111,747,111,750,115,753,117,754,118,755,118,758,120,758,125,756,127,754,130,756,133,759,135,764,134,767,132,770,131,773,136,774,140,777,142,777,147,781,149,783,149,784,150,785,151,785,152,786,153,788,152,789,154,790,153,790,156,792,157,791,158,793,159,792,159,794,160,794,161,793,162,790,161,785,163,775,175,773,175,771,173,767,170,762,171,762,170,760,167,762,166,761,165,761,163,759,162,758,163,755,162,754,162,753,161,752,161,751,160,750,161,748,157,746,157,745,155,744,156,742,155,740,156,740,158,739,157,739,156,737,155,734,157,731,157,731,156,730,158,729,157,725,156,722,157,720,154,718,154,717,151,717,152,715,151,715,152,712,150,713,152,712,153,711,151,710,152,708,149,715,136,718,125,718,119,717,117,720,107">
+<area shape="POLY" title="Guilford" coords="541,146,540,167,540,192,484,190,485,177,485,144">
+<area shape="POLY" title="Greene" coords="745,224,746,225,746,226,746,227,748,228,752,232,753,233,754,235,756,235,757,237,758,237,760,239,761,239,763,240,764,240,764,241,766,241,766,242,765,243,766,243,765,244,766,245,766,246,767,247,768,248,767,249,768,249,768,250,769,250,768,251,769,251,769,252,769,254,768,255,767,256,767,255,765,254,764,255,763,257,759,260,757,260,757,261,755,261,755,260,754,261,752,264,749,264,748,265,747,265,744,260,736,262,733,262,733,260,733,257,731,255,730,253,730,235,744,223">
+<area shape="POLY" title="Granville" coords="659,104,658,105,657,105,657,106,657,107,656,107,654,107,654,108,654,109,653,110,653,111,652,116,653,153,655,154,649,167,649,175,634,168,630,168,627,168,624,168,623,169,623,168,622,168,622,167,622,166,622,167,621,166,621,165,621,146,621,104,628,104,658,104">
+<area shape="POLY" title="Graham" coords="57,243,58,243,59,243,60,245,63,245,64,245,65,245,67,246,68,244,70,246,72,246,75,246,77,247,78,246,82,248,83,248,84,249,85,249,85,247,88,248,89,249,91,248,91,250,92,252,90,255,90,256,87,260,85,261,83,261,81,262,79,264,79,266,80,269,77,273,77,272,75,272,74,273,71,274,71,273,70,273,67,271,66,272,65,272,64,272,63,271,62,271,61,272,58,273,57,274,56,274,55,273,55,274,52,275,51,275,50,276,48,276,47,275,46,274,44,274,44,273,44,271,43,270,43,268,41,266,42,264,42,263,41,263,42,260,41,259,41,258,41,257,42,257,44,255,44,252,43,251,43,249,44,249,45,248,45,246,46,246,47,246,48,245,49,245,49,244,50,243,51,243,52,244,53,245,54,244,55,243,56,242">
+<area shape="POLY" title="Gates" coords="868,98,873,103,874,109,878,121,867,124,867,125,866,127,864,127,863,128,863,129,861,129,860,128,858,128,858,129,857,130,857,131,857,130,855,130,854,131,855,131,854,131,855,132,854,132,853,132,851,131,851,130,850,129,851,129,850,129,851,128,850,127,849,128,850,127,850,128,850,129,851,131,851,130,850,131,851,130,852,131,851,132,848,129,848,128,846,127,845,126,843,124,841,125,838,124,836,123,835,123,832,122,831,122,830,121,829,121,826,119,824,118,824,117,824,114,824,112,824,111,823,110,825,110,825,108,826,107,827,105,828,105,828,103,827,102,826,102,826,101,827,101,827,100,827,99">
+<area shape="POLY" title="Gaston" coords="383,260,383,261,380,262,380,264,381,265,383,263,384,264,387,265,384,267,383,267,382,267,381,266,381,267,380,268,380,270,378,273,376,278,376,279,377,280,376,284,377,286,377,288,378,289,377,293,376,293,375,294,374,294,341,291,342,288,342,278,339,276,339,273,337,271,338,270,338,269,334,266,328,256">
+<area shape="POLY" title="Franklin" coords="684,142,685,143,687,143,688,144,690,142,691,143,692,144,694,143,695,144,695,145,695,146,696,147,697,148,699,148,699,149,700,148,701,148,701,147,703,148,704,148,705,148,705,149,706,148,707,149,708,149,691,183,682,202,682,201,680,199,680,197,679,195,677,194,676,191,675,192,674,191,673,190,671,190,671,187,666,186,663,181,649,175,649,167,655,154,655,153,656,153,656,154,659,155,660,155,663,155,664,155,668,146,672,146,675,141">
+<area shape="POLY" title="Forsyth" coords="440,143,485,144,485,177,473,175,466,175,466,179,454,179,454,180,451,180,446,182,443,180,444,178,443,176,440,174,439,172,438,170,437,170,437,172,436,173,435,172,433,171,433,169,432,167,433,166,433,165,433,164,436,163,439,163,441,160,441,157,441,155,441,154,440,154,441,153,440,150,441,150,442,149,441,147,440,146">
+<area shape="POLY" title="Edgecombe" coords="745,156,746,157,747,157,748,158,748,157,749,158,749,159,750,159,750,160,750,161,751,160,751,161,752,161,753,161,754,162,755,162,756,162,756,163,756,162,758,163,759,162,760,163,761,163,761,164,761,165,762,166,761,167,760,167,761,168,761,169,762,170,761,170,762,171,767,170,768,171,770,171,771,173,772,173,771,173,772,174,773,175,775,175,775,176,782,188,782,192,782,193,782,200,777,198,777,199,775,199,775,201,774,202,771,202,771,203,768,203,764,208,748,220,741,213,738,200,729,195,734,178,735,175,738,168,742,161,742,157,742,155,744,156,745,155">
+<area shape="POLY" title="Durham" coords="621,146,621,165,621,166,622,167,622,166,622,167,622,168,623,168,623,169,624,168,627,168,627,171,627,174,628,175,630,174,632,176,633,176,631,184,628,187,627,187,626,189,621,188,618,196,610,196,598,197,605,146">
+<area shape="POLY" title="Duplin" coords="710,287,712,287,712,288,714,288,714,290,715,290,717,290,718,289,720,289,721,290,722,291,724,293,724,292,725,290,730,288,738,293,740,298,740,304,740,305,741,309,742,311,749,316,748,316,751,320,751,322,750,335,748,347,748,348,749,350,722,351,721,350,720,351,720,350,720,351,718,351,718,352,718,351,717,351,716,351,716,352,715,351,715,352,714,351,713,351,713,350,712,350,712,349,710,350,709,350,708,350,706,350,704,351,703,350,700,351,698,353,697,352,696,351,691,349,694,336,695,332,696,326,695,317,695,312,694,306,694,302,693,301,693,298,694,294,694,287,703,289,707,287,709,287">
+<area shape="POLY" title="Davie" coords="440,174,443,176,444,178,443,180,446,182,446,183,448,184,448,185,448,187,449,188,448,191,449,193,448,194,446,193,444,193,443,195,446,197,447,198,446,200,445,200,443,199,442,199,442,201,441,202,440,201,439,202,438,202,437,200,436,201,437,202,438,205,437,206,437,207,439,210,439,212,439,213,439,214,437,212,437,210,436,209,435,210,434,208,433,209,432,208,430,208,430,207,429,206,428,206,426,204,424,203,424,202,422,203,422,202,422,201,420,200,415,199,415,198,414,198,413,197,413,198,412,198,412,199,411,198,413,172,435,172,436,173,437,172,437,170,438,170,439,172">
+<area shape="POLY" title="Davidson" coords="473,175,485,177,484,190,482,246,469,246,469,244,467,243,468,242,467,241,466,240,466,236,463,234,463,232,460,229,457,228,456,226,455,224,453,222,452,220,453,218,452,217,448,217,446,217,445,216,444,216,440,215,439,215,439,214,439,213,439,212,439,210,437,207,437,206,438,205,437,202,436,201,437,200,438,202,439,202,440,201,441,202,442,201,442,199,443,199,445,200,446,200,447,198,446,197,443,195,444,193,446,193,448,194,449,193,448,191,449,188,448,187,448,185,448,184,446,183,446,182,451,180,454,180,454,179,466,179,466,175">
+<area shape="POLY" title="Dare" coords="989,216">
+<area shape="POLY" title="Dare" coords="987,266">
+<area shape="POLY" title="Dare" coords="951,140">
+<area shape="POLY" title="Dare" coords="973,193,973,194,972,193">
+<area shape="POLY" title="Dare" coords="971,193,970,193">
+<area shape="POLY" title="Dare" coords="973,195">
+<area shape="POLY" title="Dare" coords="991,228,990,228,990,227">
+<area shape="POLY" title="Dare" coords="974,183,975,183,974,184">
+<area shape="POLY" title="Dare" coords="986,205,985,205">
+<area shape="POLY" title="Dare" coords="952,139,952,140">
+<area shape="POLY" title="Dare" coords="988,214">
+<area shape="POLY" title="Dare" coords="988,213,988,212,989,213">
+<area shape="POLY" title="Dare" coords="988,213,988,212">
+<area shape="POLY" title="Dare" coords="974,185,974,184">
+<area shape="POLY" title="Dare" coords="976,201,977,200">
+<area shape="POLY" title="Dare" coords="968,191,968,192,967,192">
+<area shape="POLY" title="Dare" coords="973,192,973,193">
+<area shape="POLY" title="Dare" coords="973,183,973,184,972,183">
+<area shape="POLY" title="Dare" coords="986,211,987,211">
+<area shape="POLY" title="Dare" coords="977,200,977,199">
+<area shape="POLY" title="Dare" coords="969,191,969,192,968,192">
+<area shape="POLY" title="Dare" coords="988,213,989,213,989,214,988,214">
+<area shape="POLY" title="Dare" coords="969,192,969,193,968,193,969,193">
+<area shape="POLY" title="Dare" coords="963,165,963,166">
+<area shape="POLY" title="Dare" coords="963,165,962,164,963,164">
+<area shape="POLY" title="Dare" coords="979,195,978,194,979,194">
+<area shape="POLY" title="Dare" coords="973,182,972,183,973,183,972,182">
+<area shape="POLY" title="Dare" coords="986,240,985,240,986,239">
+<area shape="POLY" title="Dare" coords="976,196,975,196,975,195">
+<area shape="POLY" title="Dare" coords="972,194,973,194,973,195">
+<area shape="POLY" title="Dare" coords="970,193,971,194,969,193">
+<area shape="POLY" title="Dare" coords="980,195,980,196,979,196,979,195">
+<area shape="POLY" title="Dare" coords="980,199,978,199,979,199">
+<area shape="POLY" title="Dare" coords="962,165,963,165,962,164">
+<area shape="POLY" title="Dare" coords="974,184,975,184,974,185,973,184">
+<area shape="POLY" title="Dare" coords="985,204,984,203,985,202,985,203">
+<area shape="POLY" title="Dare" coords="963,166,963,167,962,166">
+<area shape="POLY" title="Dare" coords="964,166,965,168,964,168,964,169,963,170,962,169,960,169,960,168,960,166,962,166,962,168,963,168,963,167">
+<area shape="POLY" title="Dare" coords="945,173,945,174,944,174,945,174,944,175,941,176,941,178,939,179,936,176,938,174,940,173,942,173,941,174,942,174,943,174,943,173,944,173">
+<area shape="POLY" title="Dare" coords="962,177,966,179,968,180,968,181,967,181,967,182,968,183,968,182,969,182,969,181,970,181,971,184,972,185,973,189,973,188,971,187,971,186,970,187,970,186,970,185,971,188,972,189,973,190,973,192,972,192,972,193,969,192,969,191,968,190,968,189,968,188,968,186,967,185,966,185,966,184,964,182,964,181,963,181,961,179,960,178,961,177">
+<area shape="POLY" title="Dare" coords="985,201,988,208,990,213,992,227,990,239,990,249,988,260,987,275,986,274,984,273,979,273,974,274,964,279,962,279,963,279,964,278,965,278,967,277,968,275,969,273,970,275,969,276,970,275,971,275,973,274,974,274,976,271,978,270,979,269,979,268,979,269,979,268,981,269,985,267,987,268,988,260,987,260,987,259,987,256,988,255,989,255,988,254,989,254,989,252,990,242,990,236,989,235,990,234,989,234,989,233,990,232,991,231,990,231,991,229,991,228,991,225,990,223,991,219,989,218,990,217,989,217,990,217,989,217,989,216,989,215,988,214,989,214,988,213,989,213,989,212,988,211,987,210,987,209,986,209,987,208,986,208,986,206,985,206,986,205,986,206,986,204,985,202,984,202,984,201,983,200,983,199,984,199">
+<area shape="POLY" title="Dare" coords="958,148,961,156,967,165,978,186,983,197,983,198,982,199,982,198,982,197,981,198,981,197,981,196,981,195,980,194,979,194,979,193,978,193,979,192,978,191,977,190,977,189,976,189,975,188,975,187,974,185,975,185,975,184,975,183,974,183,975,183,974,182,973,182,974,181,974,180,973,180,969,174,967,173,967,172,966,171,966,170,966,169,965,169,965,170,965,169,964,168,965,168,964,167,965,167,963,161,962,162,961,163,959,162,959,163,960,163,959,164,959,162,958,162,958,159,958,157,957,152,958,155,957,152,957,150,956,147,956,145,953,138,954,138">
+<area shape="POLY" title="Dare" coords="951,175,952,176,950,176,950,177,951,176,951,178,952,178,952,177,954,178,957,184,958,185,958,190,961,193,960,200,960,203,962,205,963,211,961,212,960,212,960,211,959,210,957,209,956,212,958,213,957,214,958,216,959,217,960,217,961,220,960,222,960,223,956,224,957,226,958,226,950,228,953,226,952,224,952,225,951,225,950,226,948,226,948,225,947,224,947,223,946,223,946,220,947,221,947,220,946,220,945,220,943,215,930,215,931,214,931,208,933,201,932,196,933,192,932,189,933,188,932,185,938,180,939,181,939,182,940,182,941,182,941,186,942,185,943,186,943,185,944,186,946,186,946,188,945,186,947,184,945,184,945,185,943,184,942,184,942,183,940,180,942,179,946,181,947,180,948,180,949,180,949,181,950,180,951,180,947,178,945,178,944,177,946,177,947,175,946,173">
+<area shape="POLY" title="Currituck" coords="939,95">
+<area shape="POLY" title="Currituck" coords="940,96">
+<area shape="POLY" title="Currituck" coords="949,134,949,135">
+<area shape="POLY" title="Currituck" coords="950,136">
+<area shape="POLY" title="Currituck" coords="948,134,949,134">
+<area shape="POLY" title="Currituck" coords="941,107,942,107">
+<area shape="POLY" title="Currituck" coords="934,115">
+<area shape="POLY" title="Currituck" coords="949,134">
+<area shape="POLY" title="Currituck" coords="950,136,950,137">
+<area shape="POLY" title="Currituck" coords="934,121">
+<area shape="POLY" title="Currituck" coords="937,98">
+<area shape="POLY" title="Currituck" coords="949,131">
+<area shape="POLY" title="Currituck" coords="948,134,948,135">
+<area shape="POLY" title="Currituck" coords="945,117">
+<area shape="POLY" title="Currituck" coords="937,96,937,97">
+<area shape="POLY" title="Currituck" coords="942,115">
+<area shape="POLY" title="Currituck" coords="949,131">
+<area shape="POLY" title="Currituck" coords="934,121,934,120">
+<area shape="POLY" title="Currituck" coords="949,132">
+<area shape="POLY" title="Currituck" coords="934,116,935,116">
+<area shape="POLY" title="Currituck" coords="937,97">
+<area shape="POLY" title="Currituck" coords="949,134,949,135">
+<area shape="POLY" title="Currituck" coords="950,136,949,136">
+<area shape="POLY" title="Currituck" coords="938,100">
+<area shape="POLY" title="Currituck" coords="950,136,950,137">
+<area shape="POLY" title="Currituck" coords="934,112">
+<area shape="POLY" title="Currituck" coords="938,96">
+<area shape="POLY" title="Currituck" coords="945,126,945,127">
+<area shape="POLY" title="Currituck" coords="945,129,945,130">
+<area shape="POLY" title="Currituck" coords="949,135,948,135">
+<area shape="POLY" title="Currituck" coords="940,110,939,110,939,109,940,109">
+<area shape="POLY" title="Currituck" coords="939,106,940,106">
+<area shape="POLY" title="Currituck" coords="940,97,939,97">
+<area shape="POLY" title="Currituck" coords="949,133,950,134,949,134">
+<area shape="POLY" title="Currituck" coords="940,105,941,105">
+<area shape="POLY" title="Currituck" coords="938,96,938,97">
+<area shape="POLY" title="Currituck" coords="940,107,939,107">
+<area shape="POLY" title="Currituck" coords="933,116,933,117,932,116">
+<area shape="POLY" title="Currituck" coords="939,106,939,107">
+<area shape="POLY" title="Currituck" coords="938,96,937,96,937,95,938,95">
+<area shape="POLY" title="Currituck" coords="945,128,944,129,945,129,944,129,944,128">
+<area shape="POLY" title="Currituck" coords="948,133,949,133,948,134">
+<area shape="POLY" title="Currituck" coords="951,136,951,138,951,137,950,137">
+<area shape="POLY" title="Currituck" coords="946,130,947,131,946,131">
+<area shape="POLY" title="Currituck" coords="944,134,945,136,944,135,943,135">
+<area shape="POLY" title="Currituck" coords="947,132,946,132,947,133,946,132">
+<area shape="POLY" title="Currituck" coords="941,110,941,111,940,110,941,109">
+<area shape="POLY" title="Currituck" coords="940,99,939,99,940,100,939,99,939,100,939,99,939,98">
+<area shape="POLY" title="Currituck" coords="940,97,940,98,941,98,941,99,940,99,939,97">
+<area shape="POLY" title="Currituck" coords="944,131,944,132,943,132,943,131">
+<area shape="POLY" title="Currituck" coords="941,108,941,109,940,110,940,109">
+<area shape="POLY" title="Currituck" coords="939,97,940,98,939,98,939,100,938,98">
+<area shape="POLY" title="Currituck" coords="938,97,939,98,938,98,939,99,938,100,939,99,938,98,938,99,938,98">
+<area shape="POLY" title="Currituck" coords="921,101,923,101,923,102,922,102,921,102,920,100">
+<area shape="POLY" title="Currituck" coords="946,125,945,125,945,126,947,126,948,128,947,128,946,128,947,128,948,128,947,130,947,129,946,129,947,130,945,128,946,128,945,127,946,126,945,126,944,126,945,125">
+<area shape="POLY" title="Currituck" coords="936,95,936,96,936,97,937,96,937,97,937,99,937,101,937,103,938,104,936,104,935,103,932,103,932,102,931,102,931,103,930,103,930,104,928,103,929,101,930,100,931,100,930,99,927,98,926,96,929,96,930,96,930,97,931,97,931,95,935,95">
+<area shape="POLY" title="Currituck" coords="942,95,948,123,953,138,953,137,951,138,952,138,951,138,952,137,951,137,951,136,950,136,950,135,949,136,950,135,949,134,950,134,951,135,951,136,952,136,952,135,952,136,952,137,953,136,952,135,950,134,950,130,949,129,948,130,948,123,946,121,947,120,946,119,945,118,946,117,945,115,944,115,945,114,945,112,943,112,944,111,943,111,942,110,942,109,941,110,941,109,942,108,942,109,943,107,942,107,941,107,940,107,942,106,941,106,942,106,940,105,940,106,939,106,940,105,939,105,940,105,940,104,940,103,940,105,941,105,941,104,940,102,941,99,940,97,940,96,940,97,940,96,939,96,940,96,939,97,938,96,939,95">
+<area shape="POLY" title="Currituck" coords="914,96,923,96,924,100,923,101,922,99,923,100,921,101,919,100,918,101,919,101,918,103,920,103,923,102,926,110,929,111,931,111,932,114,930,111,929,112,928,112,928,113,928,115,932,118,934,121,934,120,933,116,935,118,936,117,935,114,934,114,935,113,935,112,936,112,937,118,936,121,939,126,941,131,943,131,942,134,943,132,944,132,943,136,948,143,948,144,945,141,946,144,947,147,948,147,949,147,948,150,951,154,952,160,947,156,945,154,944,148,943,145,940,142,939,142,939,141,937,137,939,136,938,135,938,137,934,135,935,133,934,134,934,135,933,135,935,133,934,132,936,131,935,130,935,131,933,131,932,127,933,126,931,126,931,128,930,128,929,128,928,126,926,126,926,124,925,125,924,122,922,122,920,124,916,122,911,117,910,113,893,97">
+<area shape="POLY" title="Cumberland" coords="632,279,633,279,643,281,643,283,641,285,642,286,641,287,640,287,641,288,641,289,642,291,641,291,641,292,641,293,641,295,639,298,640,298,641,298,639,299,639,300,639,301,637,301,637,302,638,303,638,305,639,307,639,308,640,313,640,315,645,320,646,320,647,322,649,323,650,325,651,325,652,326,652,327,653,328,654,329,654,330,655,330,655,332,657,333,655,335,653,334,623,335,618,335,612,337,609,333,609,331,607,327,597,321,595,316,593,313,590,308,591,308,590,307,591,305,590,302,589,299,588,297,590,288,601,285,603,286,608,285,609,284,612,283,614,283,614,282,615,281,616,281,617,280,619,280,620,279,622,279,623,278,625,278,625,279,625,278,626,279,627,278,627,279,628,278,628,279,628,278,630,279,631,278">
+<area shape="POLY" title="Craven" coords="853,319,852,319">
+<area shape="POLY" title="Craven" coords="819,297,821,299,822,299,822,301,825,304,826,309,827,310,829,312,831,314,835,316,836,316,836,317,839,317,841,318,843,318,845,318,851,321,851,322,850,322,849,324,850,322,851,323,850,326,851,327,851,328,851,324,852,320,855,319,856,317,857,315,859,315,862,318,861,320,861,321,859,323,859,327,851,330,850,330,837,331,838,332,829,334,829,336,814,337,815,336,816,336,817,335,819,335,818,334,819,333,812,334,812,308,813,307,812,306,811,301,812,301,815,301,816,300,817,301,817,300,817,299">
+<area shape="POLY" title="Craven" coords="801,254,827,269,834,275,833,278,830,279,829,280,829,282,827,283,827,285,826,286,826,288,826,289,825,289,826,292,829,293,831,296,830,296,830,299,831,299,829,302,827,302,827,301,825,299,827,301,827,302,825,301,824,300,822,296,821,296,821,295,820,292,816,290,815,290,815,288,814,288,815,289,814,289,815,290,813,289,814,290,817,292,817,293,818,294,819,295,820,296,818,296,817,299,816,300,814,301,810,300,807,303,805,302,804,303,802,302,803,300,787,291,770,281,771,279,775,278,775,276,775,275,774,274,774,272,773,271,774,270,774,269,775,269,775,267,776,266,777,266,777,265,779,265,780,266,782,266,783,267,789,260,791,260,792,261,793,263,794,263,796,262,796,258,797,257,798,257,798,256,800,256">
+<area shape="POLY" title="Columbus" coords="617,386,621,387,639,386,639,387,640,388,640,389,641,388,643,389,644,388,647,391,649,392,664,399,669,399,673,399,676,400,685,395,687,398,688,398,690,399,690,401,691,401,694,401,696,401,686,420,672,422,673,424,672,424,670,426,667,431,663,429,661,428,660,428,658,427,656,427,654,430,653,430,654,433,653,433,652,434,653,435,652,436,653,436,651,437,652,442,651,443,650,442,650,443,650,442,649,443,650,444,649,446,648,446,647,446,647,447,645,447,645,448,644,447,643,449,644,454,644,453,642,455,642,456,642,458,594,410,594,409,595,409,596,408,597,408,598,402,600,403,601,401,600,399,602,397,603,397,604,397,605,397,605,392,606,390,608,389,610,389,611,388,612,388,616,385,617,385">
+<area shape="POLY" title="Cleveland" coords="304,236,305,236,307,237,308,236,311,236,312,236,313,236,314,236,314,237,315,237,316,237,319,237,321,237,322,239,322,242,325,250,328,256,334,266,338,269,338,270,337,271,339,273,339,276,342,278,342,288,341,291,337,291,292,288,293,283,300,264,302,234">
+<area shape="POLY" title="Clay" coords="73,285,74,287,76,286,77,286,78,286,79,286,79,285,80,286,81,286,82,286,82,285,82,286,83,286,83,287,83,288,82,288,83,289,84,288,84,289,83,289,84,291,85,290,85,289,86,290,86,291,87,292,86,292,86,293,89,295,90,295,90,296,91,298,92,298,91,298,92,299,92,300,92,302,94,302,95,303,96,305,96,306,96,307,96,308,98,307,100,308,101,309,93,308,85,308,85,309,50,307,42,307,43,306,45,305,48,302,48,301,48,300,47,300,47,299,48,298,50,298,51,296,52,297,52,296,54,295,54,294,55,293,58,291,59,290,59,289,60,287,61,287,64,287,67,286,69,286,69,285,71,285">
+<area shape="POLY" title="Chowan" coords="854,135,853,135,853,134,852,134,853,133,853,134">
+<area shape="POLY" title="Chowan" coords="866,128,867,129,866,130,866,133,866,135,866,138,864,139,864,140,866,157,868,159,870,160,873,159,874,161,875,161,877,160,877,161,879,161,880,162,882,162,882,163,883,162,884,163,884,162,885,163,883,164,881,166,879,169,874,171,873,172,869,171,866,171,863,168,863,165,862,165,861,165,861,166,862,165,861,167,859,168,858,168,855,167,854,164,853,163,854,162,853,161,854,160,854,158,852,158,851,154,850,153,850,152,850,146,851,143,853,141,853,140,855,136,855,135,854,133,855,132,854,131,855,131,854,131,855,130,857,130,857,131,857,130,858,129,858,128,860,128,861,129,863,129,863,128,864,127,866,127,867,125,867,127">
+<area shape="POLY" title="Cherokee" coords="43,268,43,270,44,271,44,273,44,274,46,274,47,275,48,276,50,276,51,275,52,275,55,274,55,273,56,274,57,274,58,273,61,272,62,271,63,271,64,272,65,272,66,272,67,271,70,273,71,273,71,274,74,273,75,272,77,272,77,273,79,274,79,275,78,276,75,278,74,279,75,280,76,280,76,281,74,282,74,283,73,285,71,285,69,285,69,286,67,286,64,287,61,287,60,287,59,289,59,290,58,291,55,293,54,294,54,295,52,296,52,297,51,296,50,298,48,298,47,299,47,300,48,300,48,301,48,302,45,305,43,306,42,307,7,305,12,273,13,273,16,270,17,270,19,268,21,268,22,270,22,271,23,271,23,272,24,272,25,271,26,272,28,271,30,272,30,271,31,271,32,271,33,271,35,270,38,269,40,267,41,266">
+<area shape="POLY" title="Chatham" coords="591,197,598,197,610,196,610,200,607,206,605,215,601,231,610,235,603,243,601,241,600,241,598,240,597,239,595,237,594,233,592,231,589,230,588,230,587,229,586,230,584,230,583,231,582,232,579,236,578,236,578,239,575,240,575,239,576,238,573,237,573,238,573,239,570,242,569,242,568,241,569,240,569,239,567,239,566,240,565,241,564,241,566,242,565,243,564,243,563,243,561,244,538,245,540,200,573,200,573,199,572,198,572,195">
+<area shape="POLY" title="Catawba" coords="363,201,363,204,364,205,365,207,366,208,367,210,369,210,369,211,371,214,372,217,374,218,377,217,378,218,381,222,382,223,382,224,384,227,387,230,385,231,385,232,386,233,386,234,384,235,383,238,383,239,383,240,319,236,322,231,323,230,332,219,339,209,340,209,339,208,341,206,342,205,344,205,345,205,346,205,348,204,349,204,351,204,351,203,354,204,356,202,359,202,362,201">
+<area shape="POLY" title="Caswell" coords="584,105,582,146,571,145,541,145,542,119,542,118,542,115,543,105,547,105,561,105,575,105">
+<area shape="POLY" title="Carteret" coords="884,349">
+<area shape="POLY" title="Carteret" coords="868,345,868,346">
+<area shape="POLY" title="Carteret" coords="829,351,828,351">
+<area shape="POLY" title="Carteret" coords="882,351">
+<area shape="POLY" title="Carteret" coords="872,347">
+<area shape="POLY" title="Carteret" coords="887,345">
+<area shape="POLY" title="Carteret" coords="881,351">
+<area shape="POLY" title="Carteret" coords="855,350">
+<area shape="POLY" title="Carteret" coords="889,298,888,297,889,297">
+<area shape="POLY" title="Carteret" coords="927,292">
+<area shape="POLY" title="Carteret" coords="892,310,893,310">
+<area shape="POLY" title="Carteret" coords="912,309,912,308">
+<area shape="POLY" title="Carteret" coords="878,353">
+<area shape="POLY" title="Carteret" coords="884,349">
+<area shape="POLY" title="Carteret" coords="904,322">
+<area shape="POLY" title="Carteret" coords="872,353,871,353,871,352">
+<area shape="POLY" title="Carteret" coords="913,314,913,315">
+<area shape="POLY" title="Carteret" coords="915,313,915,312,914,312,915,312">
+<area shape="POLY" title="Carteret" coords="822,354,821,354">
+<area shape="POLY" title="Carteret" coords="827,351,828,351">
+<area shape="POLY" title="Carteret" coords="882,352,881,352">
+<area shape="POLY" title="Carteret" coords="894,303">
+<area shape="POLY" title="Carteret" coords="860,346,860,345">
+<area shape="POLY" title="Carteret" coords="884,348">
+<area shape="POLY" title="Carteret" coords="898,304,897,304">
+<area shape="POLY" title="Carteret" coords="906,308,906,307">
+<area shape="POLY" title="Carteret" coords="881,353">
+<area shape="POLY" title="Carteret" coords="890,338,891,338">
+<area shape="POLY" title="Carteret" coords="879,356,879,357,878,357,878,356">
+<area shape="POLY" title="Carteret" coords="883,351,883,350,884,350">
+<area shape="POLY" title="Carteret" coords="871,353,872,353,872,354">
+<area shape="POLY" title="Carteret" coords="862,348,861,348,862,347">
+<area shape="POLY" title="Carteret" coords="825,354,824,354">
+<area shape="POLY" title="Carteret" coords="823,353,822,354">
+<area shape="POLY" title="Carteret" coords="861,349,861,348">
+<area shape="POLY" title="Carteret" coords="858,343">
+<area shape="POLY" title="Carteret" coords="868,347,868,348,867,347">
+<area shape="POLY" title="Carteret" coords="858,343,859,343">
+<area shape="POLY" title="Carteret" coords="878,355,879,355">
+<area shape="POLY" title="Carteret" coords="894,334,895,334,894,333,895,333">
+<area shape="POLY" title="Carteret" coords="884,349,883,349">
+<area shape="POLY" title="Carteret" coords="915,312">
+<area shape="POLY" title="Carteret" coords="907,307">
+<area shape="POLY" title="Carteret" coords="885,347,885,348,884,348,884,347">
+<area shape="POLY" title="Carteret" coords="882,341,882,342">
+<area shape="POLY" title="Carteret" coords="880,344,881,344,880,343">
+<area shape="POLY" title="Carteret" coords="903,307,902,307,903,306">
+<area shape="POLY" title="Carteret" coords="888,341,888,342,887,341">
+<area shape="POLY" title="Carteret" coords="927,297,927,298,926,297">
+<area shape="POLY" title="Carteret" coords="881,344,881,345,880,344">
+<area shape="POLY" title="Carteret" coords="858,347,858,346,859,346">
+<area shape="POLY" title="Carteret" coords="896,332,897,332,896,333">
+<area shape="POLY" title="Carteret" coords="852,349,851,349,852,348">
+<area shape="POLY" title="Carteret" coords="906,310,907,310,907,311,906,311,905,310">
+<area shape="POLY" title="Carteret" coords="887,299,887,300,886,299,886,298">
+<area shape="POLY" title="Carteret" coords="895,303,897,304,895,304">
+<area shape="POLY" title="Carteret" coords="864,348,863,349,862,348">
+<area shape="POLY" title="Carteret" coords="814,355,814,356,812,355,812,354">
+<area shape="POLY" title="Carteret" coords="907,308,908,308,908,309,907,309">
+<area shape="POLY" title="Carteret" coords="870,347,870,348,869,349,869,348">
+<area shape="POLY" title="Carteret" coords="866,349,868,349,867,349,864,349,865,348">
+<area shape="POLY" title="Carteret" coords="903,307,904,307,905,307,905,308,905,307,904,307,905,308,905,309,904,307,903,308,904,307">
+<area shape="POLY" title="Carteret" coords="869,345,870,346,870,347,868,348,868,347,868,346,868,347,869,346,869,347,869,346,868,346">
+<area shape="POLY" title="Carteret" coords="928,297,929,297,929,298,927,299,927,298,928,298,927,297">
+<area shape="POLY" title="Carteret" coords="869,351,867,351,870,349,870,350">
+<area shape="POLY" title="Carteret" coords="861,344,860,345,859,346,858,345,858,344,859,344,860,343,861,343">
+<area shape="POLY" title="Carteret" coords="862,346,862,347,861,347,861,348,861,349,860,349,860,348,860,347,861,347,860,346,861,346">
+<area shape="POLY" title="Carteret" coords="877,348,879,348,879,349,878,349,876,349,876,348">
+<area shape="POLY" title="Carteret" coords="872,348,874,348,874,349,875,349,875,350,876,350,878,350,878,352,872,350,871,349,872,349,871,349,871,348">
+<area shape="POLY" title="Carteret" coords="864,351,867,352,870,354,871,353,872,354,873,354,875,356,877,356,877,357,878,357,879,358,878,359,877,359,876,357,874,356,869,354,864,353,862,351,863,351">
+<area shape="POLY" title="Carteret" coords="898,331,892,339,882,355,878,362,878,365,877,364,875,361,875,360,876,359,876,361,877,361,877,362,878,361,878,360,879,359,881,355,882,354,881,353,882,353,882,352,883,352,882,351,883,350,883,351,884,350,883,350,883,349,884,350,884,349,885,349,884,348,885,348,885,347,886,347,885,346,887,345,886,346,887,346,888,344,887,344,888,343,887,343,888,342,889,342,889,343,889,342,888,341,888,340,889,341,889,340,889,342,890,341,890,340,891,340,890,339,891,338,891,339,891,338,892,339,892,338,892,339,891,338,891,336,892,336,892,338,893,336,895,334,896,333,897,332,897,331,899,329,900,327,900,328">
+<area shape="POLY" title="Carteret" coords="930,297,931,298,931,299,929,300,927,302,916,313,901,328,900,327,903,325,904,323,904,324,906,322,907,322,906,321,907,321,908,320,910,318,912,315,913,314,914,313,915,313,915,312,916,312,915,311,916,311,915,311,916,311,917,311,916,310,917,310,918,310,917,309,918,309,918,308,919,308,919,307,920,307,919,306,920,306,921,306,920,305,921,306,921,305,921,306,921,305,922,304,923,305,923,304,923,303,923,302,924,303,924,302,925,302,924,301,925,301,926,301,926,300,926,301,926,300,926,299,925,299,926,299,927,299,926,299,926,298,927,299,926,302,928,301,928,300,930,298,931,298,929,297">
+<area shape="POLY" title="Carteret" coords="854,349,855,350,857,349,858,350,859,350,858,350,858,349,859,348,861,350,861,351,853,351,845,351,825,355,815,359,813,358,814,358,815,356,815,355,816,355,816,356,817,355,820,355,819,355,819,356,824,354,823,355,824,355,825,355,827,354,835,353,837,352,838,352,839,352,840,352,840,351,842,351,844,350,845,350,849,350,851,350,850,350,851,350,852,349,853,350,853,349,853,350,853,349">
+<area shape="POLY" title="Carteret" coords="883,298,885,299,885,300,886,300,887,302,886,303,887,304,888,305,887,304,886,305,887,305,886,306,887,307,887,308,886,308,887,309,888,308,888,309,888,311,887,311,888,312,887,313,886,313,885,313,884,312,884,313,881,313,881,312,882,312,882,311,882,310,882,309,881,309,880,308,881,308,880,308,881,307,880,307,881,307,881,306,882,306,882,307,882,306,881,305,880,306,880,305,881,305,881,304,881,302,882,302,882,304,883,304,884,305,884,304,884,303,883,303,883,302,884,302,884,301,883,301,883,300,882,300,882,298">
+<area shape="POLY" title="Carteret" coords="898,304,902,306,902,308,902,306,901,307,901,306,900,306,901,308,901,309,902,310,903,312,905,313,904,314,903,314,903,315,904,315,905,316,904,316,903,316,902,316,902,317,903,317,903,318,901,318,899,316,898,316,898,317,896,318,896,317,895,318,893,317,893,316,892,315,893,314,893,313,894,314,894,313,893,312,893,311,895,312,895,311,896,312,897,312,898,313,899,312,899,313,900,314,900,312,900,311,897,308,896,305,897,306,900,307,899,306,899,305,898,305">
+<area shape="POLY" title="Carteret" coords="879,308,877,311,880,310,880,315,881,313,885,315,887,320,886,317,891,313,890,317,892,316,896,319,898,318,897,321,901,320,893,328,891,323,890,331,888,331,887,333,884,332,886,334,883,340,881,339,883,335,880,338,881,339,879,339,881,341,878,341,879,347,878,345,878,346,876,347,875,345,875,346,872,346,873,337,871,340,867,335,865,347,868,349,862,347,863,343,860,337,860,340,856,339,856,338,851,343,853,343,855,342,858,343,855,346,859,348,849,346,836,347,832,349,831,348,831,349,825,352,823,351,822,354,819,352,819,354,814,355,812,354,817,350,815,348,813,349,810,342,807,343,807,339,829,336,829,334,838,332,837,331,851,330,859,327,862,322,865,323,862,321,865,319,860,313,866,310,870,312,869,316,873,317,874,321,875,320,878,323,875,319,877,318,872,315,871,310,873,309,874,311,873,309,878,308">
+<area shape="POLY" title="Camden" coords="873,98,893,97,910,113,911,117,915,120,916,122,918,123,919,123,920,124,920,123,921,123,922,122,923,122,924,122,925,123,925,125,926,124,926,126,927,126,928,126,927,128,928,127,928,129,931,129,929,130,929,131,931,130,932,132,933,131,934,131,934,133,932,133,932,134,933,136,932,137,933,136,934,138,934,142,933,143,932,141,932,142,931,141,930,143,932,142,934,145,935,144,936,146,939,147,939,148,937,148,930,146,927,145,926,143,924,142,923,139,920,138,919,137,917,136,917,134,914,131,914,132,912,132,910,131,909,130,907,131,906,130,905,131,905,130,907,130,906,128,908,128,908,127,907,127,905,127,905,125,903,124,903,121,900,122,900,119,898,119,896,119,892,115,892,114,890,115,890,114,889,114,888,114,886,111,880,109,868,98">
+<area shape="POLY" title="Caldwell" coords="307,161,319,161,322,163,322,164,324,164,325,164,327,164,327,165,328,166,328,165,329,165,330,168,332,167,333,168,334,168,336,171,336,172,337,172,338,173,338,172,339,173,341,175,343,178,341,188,342,194,341,202,342,202,341,203,342,203,341,203,342,204,342,205,341,206,339,208,340,209,339,209,338,209,337,211,335,210,332,209,330,208,329,207,317,208,312,201,311,202,309,200,310,200,309,199,308,198,301,194,299,192,298,190,297,189,296,187,295,187,294,187,293,187,293,186,293,185,293,184,292,184,291,183,291,184,290,182,298,168,298,167,296,167,295,165,294,163,293,163,290,162,305,160">
+<area shape="POLY" title="Cabarrus" coords="429,246,456,246,436,284,435,285,435,286,433,288,433,290,428,286,415,278,412,267,408,264,407,263,405,261,404,260,404,258,406,258,402,247,402,246,407,245">
+<area shape="POLY" title="Burke" coords="283,180,286,180,287,181,289,181,290,182,291,184,291,183,292,184,293,184,293,187,294,187,295,187,296,187,297,189,298,190,299,192,301,194,308,198,309,199,310,200,309,200,311,202,312,201,317,208,329,207,330,208,332,209,335,210,337,211,338,209,339,209,332,219,323,230,322,231,319,237,316,237,315,237,314,237,314,236,313,236,312,236,311,236,308,236,307,237,305,236,304,236,302,234,301,234,300,234,300,233,299,232,299,231,299,230,297,231,296,231,295,230,293,231,293,232,291,232,290,234,289,234,288,234,287,234,287,235,283,215,270,203,271,201,272,201,273,201,274,200,275,199,276,199,277,197,278,196,279,192,279,190,278,190,278,189,278,188,277,188,277,186,277,185,276,184,275,182,280,177,282,178,282,179">
+<area shape="POLY" title="Buncombe" coords="227,200,228,200,231,203,230,204,231,210,234,212,236,212,238,215,238,216,235,219,237,221,236,224,238,228,237,229,236,231,240,236,243,237,249,240,242,241,243,244,239,249,231,244,230,245,228,245,226,245,227,249,221,247,215,251,207,250,208,252,209,252,208,254,207,253,206,250,205,251,204,252,202,251,201,251,200,250,198,251,195,249,194,249,193,248,192,249,190,249,188,249,185,253,181,250,180,248,179,246,180,243,181,239,183,237,181,235,183,233,181,230,179,229,178,225,176,226,175,226,174,226,174,224,172,224,171,219,170,218,174,215,175,216,179,217,180,215,184,215,186,213,187,214,187,212,188,213,189,213,189,211,191,211,192,212,194,212,193,211,194,211,212,202,216,203,217,202,217,201,220,201,221,201,222,201,226,199">
+<area shape="POLY" title="Brunswick" coords="690,459">
+<area shape="POLY" title="Brunswick" coords="690,459,689,459">
+<area shape="POLY" title="Brunswick" coords="674,461,674,460">
+<area shape="POLY" title="Brunswick" coords="662,466">
+<area shape="POLY" title="Brunswick" coords="721,460">
+<area shape="POLY" title="Brunswick" coords="674,457,673,457">
+<area shape="POLY" title="Brunswick" coords="722,457,722,456">
+<area shape="POLY" title="Brunswick" coords="674,461,673,461">
+<area shape="POLY" title="Brunswick" coords="706,460,707,460">
+<area shape="POLY" title="Brunswick" coords="721,448">
+<area shape="POLY" title="Brunswick" coords="674,460,673,461,673,460">
+<area shape="POLY" title="Brunswick" coords="718,457,718,458">
+<area shape="POLY" title="Brunswick" coords="722,439,721,439,721,438">
+<area shape="POLY" title="Brunswick" coords="717,463,717,462">
+<area shape="POLY" title="Brunswick" coords="721,457,721,458,722,457">
+<area shape="POLY" title="Brunswick" coords="716,461,716,462,715,462,715,461">
+<area shape="POLY" title="Brunswick" coords="672,462,673,462">
+<area shape="POLY" title="Brunswick" coords="718,460,718,461,717,460">
+<area shape="POLY" title="Brunswick" coords="673,460,673,459,674,460">
+<area shape="POLY" title="Brunswick" coords="691,459,691,460">
+<area shape="POLY" title="Brunswick" coords="690,456,690,457">
+<area shape="POLY" title="Brunswick" coords="718,462,717,462">
+<area shape="POLY" title="Brunswick" coords="693,460,693,461,691,460">
+<area shape="POLY" title="Brunswick" coords="717,460,717,461">
+<area shape="POLY" title="Brunswick" coords="721,456,721,457">
+<area shape="POLY" title="Brunswick" coords="718,461,717,462,717,461">
+<area shape="POLY" title="Brunswick" coords="717,456,718,454,718,455">
+<area shape="POLY" title="Brunswick" coords="718,460,718,461">
+<area shape="POLY" title="Brunswick" coords="722,443,722,442">
+<area shape="POLY" title="Brunswick" coords="722,438,721,438,721,435,722,436">
+<area shape="POLY" title="Brunswick" coords="714,461,714,462,713,461">
+<area shape="POLY" title="Brunswick" coords="719,455,718,455,720,453,720,454">
+<area shape="POLY" title="Brunswick" coords="706,460,706,461,705,460">
+<area shape="POLY" title="Brunswick" coords="719,462,718,461,719,461">
+<area shape="POLY" title="Brunswick" coords="711,460,712,461,712,462">
+<area shape="POLY" title="Brunswick" coords="691,460,691,461,690,461,690,460,689,461,689,460,690,460">
+<area shape="POLY" title="Brunswick" coords="720,459,721,460,720,461">
+<area shape="POLY" title="Brunswick" coords="722,457,722,458,722,459,721,459,721,458">
+<area shape="POLY" title="Brunswick" coords="719,460,720,460,720,461,718,460">
+<area shape="POLY" title="Brunswick" coords="710,460,711,461,711,462,710,461">
+<area shape="POLY" title="Brunswick" coords="721,432,722,433,721,434,720,432,721,431">
+<area shape="POLY" title="Brunswick" coords="718,455,718,454,719,453,720,453,719,454">
+<area shape="POLY" title="Brunswick" coords="660,465,661,466,660,467,658,466">
+<area shape="POLY" title="Brunswick" coords="665,464,665,465,663,465,661,467,661,466,660,465">
+<area shape="POLY" title="Brunswick" coords="719,463,719,464,719,465,717,464,716,463,718,462">
+<area shape="POLY" title="Brunswick" coords="672,463,671,464,661,467,663,466,665,465,665,464,670,463">
+<area shape="POLY" title="Brunswick" coords="688,460,687,461,677,462,674,463,672,463,672,462,673,463,673,462,674,462,678,461,685,461,687,461">
+<area shape="POLY" title="Brunswick" coords="660,467,659,467,661,467,658,468,654,470,654,469,653,469,652,468,654,467,658,466">
+<area shape="POLY" title="Brunswick" coords="722,459,720,464,720,471,715,468,714,467,716,465,716,464,718,465,719,465,720,465,719,464,720,464,720,463,720,462,720,461,721,460,722,460,721,459,722,458">
+<area shape="POLY" title="Brunswick" coords="696,459,703,460,705,460,706,461,706,460,707,460,709,460,709,461,711,462,711,463,712,463,713,463,714,464,713,464,707,462,700,461,695,461,689,461,690,461,694,461,695,460,695,461,695,460,694,460,693,460,694,459">
+<area shape="POLY" title="Brunswick" coords="699,399,700,399,704,401,705,401,705,403,707,403,707,402,709,404,711,404,711,406,713,405,712,409,713,410,714,411,715,411,714,412,716,412,716,414,717,414,717,415,718,415,718,416,719,416,720,417,719,424,716,417,721,434,721,445,720,447,720,452,718,453,715,459,712,460,707,459,703,460,703,459,702,460,696,459,693,460,691,460,691,456,690,457,688,455,690,459,689,460,684,461,679,461,674,462,674,460,675,460,676,459,674,459,674,456,672,458,673,459,673,461,671,461,670,460,671,461,669,460,672,462,671,462,667,464,667,463,665,464,654,466,652,468,651,467,652,467,651,466,653,465,654,466,655,465,653,465,650,466,642,458,642,455,644,454,643,449,647,446,648,446,649,446,649,443,652,442,651,437,653,436,652,434,653,433,654,433,653,430,658,427,667,431,673,424,672,422,686,420,696,401">
+<area shape="POLY" title="Bladen" coords="658,334,658,336,661,337,661,339,663,339,664,343,665,343,665,345,667,346,668,347,669,348,669,350,671,351,670,352,672,354,671,355,672,355,673,355,673,356,674,355,674,356,674,357,677,359,677,361,678,362,677,364,678,364,679,368,681,368,682,370,683,370,685,372,685,373,684,374,685,374,683,376,684,379,685,379,685,381,687,382,689,383,689,382,689,383,690,383,691,385,694,386,685,395,676,400,673,399,669,399,664,399,649,392,647,391,644,388,643,389,641,388,640,389,640,388,639,387,639,386,621,387,617,386,617,385,616,385,616,383,618,382,619,382,619,381,618,380,617,377,618,375,617,373,618,372,620,370,619,369,620,368,620,366,622,362,621,361,623,359,623,357,621,354,620,353,619,353,619,352,619,353,617,350,616,345,612,337,618,335,623,335,653,334,655,335,657,333">
+<area shape="POLY" title="Bertie" coords="850,182,849,182">
+<area shape="POLY" title="Bertie" coords="799,142,818,142,820,141,822,142,830,141,849,140,849,142,849,141,848,141,846,145,846,153,850,160,850,165,852,167,852,172,852,173,853,172,854,172,855,174,851,178,849,183,852,181,853,181,853,183,851,184,848,191,845,192,842,189,839,189,839,194,834,199,832,199,831,198,832,197,831,196,832,192,829,188,827,187,825,190,823,191,822,191,820,193,819,193,816,194,815,191,817,190,816,189,818,189,817,184,816,184,815,182,814,182,814,183,812,182,813,183,811,183,810,185,809,184,806,185,806,183,805,184,802,183,801,184,799,184,798,182,799,182,798,181,799,181,798,180,799,180,798,176,796,176,797,174,784,167,783,165,785,163,790,161,793,162,794,161,794,160,792,159,793,159,791,158,792,157,790,156,790,153,789,154,786,152,786,147,791,145,794,146,796,141">
+<area shape="POLY" title="Beaufort" coords="875,230">
+<area shape="POLY" title="Beaufort" coords="866,247,866,246">
+<area shape="POLY" title="Beaufort" coords="823,221,838,214,861,213,866,224,880,232,878,236,873,236,874,233,873,237,867,235,868,234,864,236,859,233,860,230,859,235,856,234,862,236,863,238,857,241,852,239,857,243,862,239,866,243,865,247,862,246,866,247,869,256,860,253,861,251,863,252,861,248,860,251,858,249,858,252,854,251,849,252,843,250,843,246,846,245,845,244,842,245,843,240,841,249,838,247,832,247,832,245,828,246,826,242,824,244,819,239,819,243,814,240,824,246,826,255,825,251,830,249,842,254,838,260,842,258,843,259,843,255,856,260,850,262,845,266,848,270,846,266,850,267,853,262,856,262,855,267,856,263,858,265,858,262,864,263,861,265,865,265,862,268,865,270,863,271,859,270,861,271,866,271,864,277,840,280,827,269,801,254,802,240,808,235,812,235,802,224,799,216,804,210">
+<area shape="POLY" title="Avery" coords="280,139,281,138,281,141,281,142,280,142,281,144,280,144,279,145,280,146,280,147,280,149,282,150,282,151,285,150,288,154,290,162,293,163,294,163,295,165,296,167,298,167,298,168,290,182,289,181,287,181,286,180,283,180,282,179,282,178,280,177,275,182,273,184,273,185,274,186,271,188,265,184,263,181,262,177,263,176,264,176,264,175,265,175,261,167,262,166,261,165,261,163,260,162,262,161,263,159,266,160,266,159,277,140,279,137">
+<area shape="POLY" title="Ashe" coords="306,97,314,97,339,100,340,99,341,99,342,101,341,103,342,103,342,104,344,107,345,110,346,112,346,113,347,113,347,114,348,115,350,117,351,119,351,122,353,125,353,127,352,128,351,128,350,129,349,128,348,128,346,128,345,127,344,126,343,127,342,128,342,129,341,129,340,135,341,136,340,137,339,138,339,139,338,139,338,140,337,139,335,137,334,137,334,139,332,140,332,141,330,142,329,144,327,143,327,145,326,145,323,142,322,143,321,141,319,140,317,140,315,136,310,130,307,128,300,124,299,123,298,121,299,121,301,119,301,118,301,116,302,116,301,115,302,114,303,114,304,113,303,111,304,110,303,109,304,108,303,106,302,106,302,104,303,104,304,102,304,100,306,100,306,99">
+<area shape="POLY" title="Anson" coords="461,287,462,289,462,291,464,294,466,294,466,292,467,292,468,294,470,295,471,295,471,294,470,293,471,292,472,291,474,292,475,291,475,289,477,288,477,289,477,291,479,293,481,295,482,300,484,301,486,303,489,303,491,303,491,301,494,299,496,299,497,299,498,300,499,302,499,306,502,308,503,309,503,310,501,312,500,314,503,317,504,318,503,322,505,324,506,328,504,332,502,334,500,334,499,337,499,340,497,341,453,340,458,288,460,287,460,286,461,286">
+<area shape="POLY" title="Alleghany" coords="350,100,391,102,390,102,389,105,388,107,389,107,389,109,388,110,384,116,383,117,386,121,383,124,382,125,382,127,380,127,378,128,377,127,375,125,375,122,371,121,371,119,370,119,369,118,367,120,366,120,365,121,365,122,363,120,362,119,359,124,356,125,356,126,354,127,353,128,352,128,353,127,353,125,351,122,351,119,350,117,348,115,347,114,347,113,346,113,346,112,345,110,344,107,342,104,342,103,341,103,342,101,341,99">
+<area shape="POLY" title="Alexander" coords="376,172,379,179,378,184,374,197,372,201,372,202,370,204,370,205,366,208,365,207,364,205,363,204,363,201,362,201,359,202,356,202,354,204,351,203,351,204,349,204,348,204,346,205,345,205,344,205,342,205,342,204,341,203,342,203,341,203,342,202,341,202,342,194,341,188,343,178,344,178,345,177,346,177,350,174,352,174,353,174,355,174,356,173,357,173,358,173,361,174,364,173,366,173,367,173,368,174,373,174,374,172">
+<area shape="POLY" title="Alamance" coords="571,145,570,191,571,192,571,193,572,195,572,198,573,199,573,200,540,200,540,192,540,167,541,146,541,145">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="779,460,962,478">
+<area shape="RECT" href="http://www.spc.noaa.gov/wcm/#data" coords="257,15,742,61">
+</map>
+<div  class="c">
+<img src="nc_tornado_animation.gif" style=" height: 500px; width: 1000px;" border="0" usemap="#nc_tornado_anima_map" class="c graph">
+</div>
+</body>
+</html>
