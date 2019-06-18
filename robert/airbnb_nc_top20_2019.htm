@@ -1,0 +1,1791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>Airbnb&#39;s Top 20 &#39;Wish-Listed&#39; Homes in NC</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="gd7j8hia_map">
+<area shape="POLY" title="Updated and Spacious Cary ApartmentCary" href="https://www.airbnb.com/rooms/9494142" coords="632,203,632,200,630,197,628,195,624,194,621,194,618,195,616,197,614,200,613,203,614,207,616,210,618,212,621,213,624,213,628,212,630,210,632,207">
+<area shape="POLY" title="Quiet country setting yet close to everythingMonroe" href="https://www.airbnb.com/rooms/23605923" coords="438,312,437,309,436,306,433,304,430,303,427,303,424,304,421,306,419,309,419,312,419,315,421,318,424,320,427,321,430,321,433,320,436,318,437,315">
+<area shape="POLY" title="PRIVATE 1B/1b Apt Historic Main St. Mt AiryMount Airy" href="https://www.airbnb.com/rooms/1031582" coords="430,110,429,107,428,104,425,102,422,101,419,101,416,102,413,104,412,107,411,110,412,113,413,116,416,118,419,119,422,119,425,118,428,116,429,113">
+<area shape="POLY" title="Charming Tiny House at Wildwoods Community FarmChapel Hill" href="https://www.airbnb.com/rooms/15716532" coords="602,183,602,180,600,177,597,175,594,174,591,174,588,175,585,177,584,180,583,183,584,187,585,189,588,191,591,193,594,193,597,191,600,189,602,187">
+<area shape="POLY" title="Gorgeous Basement Apt Near UptownCharlotte" href="https://www.airbnb.com/rooms/4763962" coords="406,280,405,277,404,274,401,272,398,271,395,271,392,272,389,274,388,277,387,280,388,283,389,286,392,288,395,289,398,289,401,288,404,286,405,283">
+<area shape="POLY" title="Eco-friendly Treehouse: The Roost!Greensboro" href="https://www.airbnb.com/rooms/11141498" coords="520,164,519,161,518,158,515,156,512,155,509,155,506,156,503,158,501,161,501,164,501,167,503,170,506,172,509,173,512,173,515,172,518,170,519,167">
+<area shape="POLY" title="Artists Loft, DowntownWinston-Salem" href="https://www.airbnb.com/rooms/11043784" coords="471,160,471,157,469,154,467,152,463,151,460,151,457,152,455,154,453,157,452,160,453,164,455,166,457,169,460,170,463,170,467,169,469,166,471,164">
+<area shape="POLY" title="Tiny House in the TreesDurham" href="https://www.airbnb.com/rooms/8537233" coords="619,174,618,171,616,168,614,166,611,165,607,165,604,166,602,168,600,171,600,174,600,178,602,181,604,183,607,184,611,184,614,183,616,181,618,178">
+<area shape="POLY" title="Cozy school bus in NC foothills.Shelby" href="https://www.airbnb.com/rooms/15181845" coords="327,269,326,266,325,263,322,261,319,260,316,260,313,261,310,263,308,266,308,269,308,273,310,275,313,278,316,279,319,279,322,278,325,275,326,273">
+<area shape="POLY" title="Chalet RuisseauBoone" href="https://www.airbnb.com/rooms/9448891" coords="317,143,316,139,315,137,312,135,309,133,306,133,303,135,300,137,298,139,298,143,298,146,300,149,303,151,306,152,309,152,312,151,315,149,316,146">
+<area shape="POLY" title="Spectacular Valley Views - Rustic Smokies ComfortWhittier" href="https://www.airbnb.com/rooms/7657209" coords="135,241,135,238,133,235,131,233,128,231,124,231,121,233,119,235,117,238,116,241,117,244,119,247,121,249,124,250,128,250,131,249,133,247,135,244">
+<area shape="POLY" title="Moonbeam Bungalows:Satellite CabinHorse Shoe" href="https://www.airbnb.com/rooms/828744" coords="214,256,213,253,212,250,209,248,206,247,203,247,200,248,197,250,195,253,195,256,195,259,197,262,200,264,203,266,206,266,209,264,212,262,213,259">
+<area shape="POLY" title="PIGEON RIVER CABINSClyde" href="https://www.airbnb.com/rooms/19951500" coords="177,231,176,228,175,225,172,223,169,222,166,222,163,223,160,225,158,228,158,231,158,234,160,237,163,239,166,240,169,240,172,239,175,237,176,234">
+<area shape="POLY" title="Enchanting Riverfront Retreat- Romantic GetawayBlowing Rock" href="https://www.airbnb.com/rooms/9554179" coords="315,156,314,153,313,150,310,148,307,147,304,147,301,148,298,150,296,153,296,156,296,159,298,162,301,164,304,165,307,165,310,164,313,162,314,159">
+<area shape="POLY" title="Nature Lover's Retreat W/AshevilleAsheville" href="https://www.airbnb.com/rooms/2014453" coords="217,227,216,224,214,221,212,219,209,218,206,218,202,219,200,221,198,224,198,227,198,230,200,233,202,235,206,236,209,236,212,235,214,233,216,230">
+<area shape="POLY" title="The Suite On Rock Spring RoadGreenville" href="https://www.airbnb.com/rooms/18444056" coords="788,224,787,221,786,218,783,216,780,214,777,214,774,216,771,218,770,221,769,224,770,227,771,230,774,232,777,233,780,233,783,232,786,230,787,227">
+<area shape="POLY" title="Wilmington's 'The Great Escape' with Hot Tub!Wilmington" href="https://www.airbnb.com/rooms/7581778" coords="732,419,731,416,730,413,727,411,724,410,721,410,718,411,715,413,713,416,713,419,713,422,715,425,718,427,721,428,724,428,727,427,730,425,731,422">
+<area shape="POLY" title="Farmhouse Feel, 5 miles from Ft BraggFayetteville" href="https://www.airbnb.com/rooms/15178711" coords="618,301,618,297,616,294,614,292,611,291,607,291,604,292,602,294,600,297,599,301,600,304,602,307,604,309,607,310,611,310,614,309,616,307,618,304">
+<area shape="POLY" title="Quiet 2 bedroom 1/2 duplexEmerald Isle" href="https://www.airbnb.com/rooms/4997928" coords="833,350,832,347,831,344,828,342,825,341,822,341,819,342,816,344,815,347,814,350,815,353,816,356,819,358,822,360,825,360,828,358,831,356,832,353">
+<area shape="POLY" title="Snow's Nest ~highest crowsnest in the OuterBanks!Kill Devil Hills" href="https://www.airbnb.com/rooms/518527" coords="973,161,972,158,971,155,968,153,965,152,962,152,959,153,956,155,954,158,954,161,954,164,956,167,959,169,962,170,965,170,968,169,971,167,972,164">
+<area shape="RECT" href='https://www.wraltechwire.com/2019/06/17/airbnbs-top-wish-listed-homes-for-future-stays-across-nc-range-from-tiny-to-towering/' coords="117,17,882,50">
+</map>
+<div  class="c">
+<img src="airbnb_nc_top20_2019.png" style=" height: 500px; width: 1000px;" border="0" usemap="#gd7j8hia_map" class="c graph">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<a name="IDX1"></a>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK.MY_DATA">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l header" style=" font-size: 11pt;" scope="col">Description label</th>
+<th class="l header" style=" font-size: 11pt;" scope="col">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/518527" target="_self">Snow's Nest ~highest crowsnest in the OuterBanks!</a></td>
+<td class="l data" style=" font-size: 11pt;">Kill Devil Hills, The Outer Banks</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/4997928" target="_self">Quiet 2 bedroom 1/2 duplex</a></td>
+<td class="l data" style=" font-size: 11pt;">Emerald Isle</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/15178711" target="_self">Farmhouse Feel, 5 miles from Ft Bragg</a></td>
+<td class="l data" style=" font-size: 11pt;">Fayetteville</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/7581778" target="_self">Wilmington's 'The Great Escape' with Hot Tub!</a></td>
+<td class="l data" style=" font-size: 11pt;">Wilmington</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/18444056" target="_self">The Suite On Rock Spring Road</a></td>
+<td class="l data" style=" font-size: 11pt;">Greenville</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/2014453" target="_self">Nature Lover's Retreat W/Asheville</a></td>
+<td class="l data" style=" font-size: 11pt;">Asheville</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/9554179" target="_self">Enchanting Riverfront Retreat- Romantic Getaway</a></td>
+<td class="l data" style=" font-size: 11pt;">Blowing Rock</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/19951500" target="_self">PIGEON RIVER CABINS</a></td>
+<td class="l data" style=" font-size: 11pt;">Clyde</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/828744" target="_self">Moonbeam Bungalows:Satellite Cabin</a></td>
+<td class="l data" style=" font-size: 11pt;">Horse Shoe</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/7657209" target="_self">Spectacular Valley Views - Rustic Smokies Comfort</a></td>
+<td class="l data" style=" font-size: 11pt;">Whittier</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/9448891" target="_self">Chalet Ruisseau</a></td>
+<td class="l data" style=" font-size: 11pt;">Boone</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/15181845" target="_self">Cozy school bus in NC foothills.</a></td>
+<td class="l data" style=" font-size: 11pt;">Shelby</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/8537233" target="_self">Tiny House in the Trees</a></td>
+<td class="l data" style=" font-size: 11pt;">Durham</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/11043784" target="_self">Artists Loft, Downtown</a></td>
+<td class="l data" style=" font-size: 11pt;">Winston-Salem</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/11141498" target="_self">Eco-friendly Treehouse: The Roost!</a></td>
+<td class="l data" style=" font-size: 11pt;">Greensboro</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/4763962" target="_self">Gorgeous Basement Apt Near Uptown</a></td>
+<td class="l data" style=" font-size: 11pt;">Charlotte</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/15716532" target="_self">Charming Tiny House at Wildwoods Community Farm</a></td>
+<td class="l data" style=" font-size: 11pt;">Chapel Hill</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/1031582" target="_self">PRIVATE 1B/1b Apt Historic Main St. Mt Airy</a></td>
+<td class="l data" style=" font-size: 11pt;">Mount Airy</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/23605923" target="_self">Quiet country setting yet close to everything</a></td>
+<td class="l data" style=" font-size: 11pt;">Monroe</td>
+</tr>
+<tr>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.airbnb.com/rooms/9494142" target="_self">Updated and Spacious Cary Apartment</a></td>
+<td class="l data" style=" font-size: 11pt;">Cary</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
