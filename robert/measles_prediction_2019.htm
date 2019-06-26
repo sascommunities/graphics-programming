@@ -1,0 +1,1785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>US Measles Prediction 2019</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="gd7rdcai_map">
+<area shape="RECT" title="Wayne County, MIRank = #11" href="https://www.google.com/search?q=2019+measles+Wayne county, MI" coords="613,195,668,209">
+<area shape="RECT" title="Travis County, TXRank = #22" href="https://www.google.com/search?q=2019+measles+Travis county, TX" coords="390,441,443,455">
+<area shape="RECT" title="Tarrant County, TXRank = #12" href="https://www.google.com/search?q=2019+measles+Tarrant county, TX" coords="407,394,466,408">
+<area shape="RECT" title="Suffolk County, MARank = #20" href="https://www.google.com/search?q=2019+measles+Suffolk county, MA" coords="785,161,844,175">
+<area shape="RECT" title="San Mateo County, CARank = #18" href="https://www.google.com/search?q=2019+measles+San Mateo county, CA" coords="17,246,97,260">
+<area shape="RECT" title="San Diego County, CARank = #25" href="https://www.google.com/search?q=2019+measles+San Diego county, CA" coords="60,396,140,410">
+<area shape="RECT" title="Salt Lake County, UTRank = #19" href="https://www.google.com/search?q=2019+measles+Salt Lake county, UT" coords="188,219,261,233">
+<area shape="RECT" title="Queens County, NYRank = #4" href="https://www.google.com/search?q=2019+measles+Queens county, NY" coords="799,223,865,237">
+<area shape="RECT" title="Orange County, FLRank = #14" href="https://www.google.com/search?q=2019+measles+Orange county, FL" coords="692,458,753,472">
+<area shape="RECT" title="Multnomah County, ORRank = #13" href="https://www.google.com/search?q=2019+measles+Multnomah county, OR" coords="54,135,139,149">
+<area shape="RECT" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="748,534,835,548">
+<area shape="RECT" title="Maricopa County, AZRank = #6" href="https://www.google.com/search?q=2019+measles+Maricopa county, AZ" coords="156,360,226,374">
+<area shape="RECT" title="Loudoun County, VARank = #24" href="https://www.google.com/search?q=2019+measles+Loudoun county, VA" coords="700,244,769,258">
+<area shape="RECT" title="Los Angeles County, CARank = #2" href="https://www.google.com/search?q=2019+measles+Los Angeles county, CA" coords="26,321,117,335">
+<area shape="RECT" title="King County, WARank = #5" href="https://www.google.com/search?q=2019+measles+King county, WA" coords="134,82,182,96">
+<area shape="RECT" title="Honolulu County, HIRank = #10" href="https://www.google.com/search?q=2019+measles+Honolulu county, HI" coords="204,480,272,494">
+<area shape="RECT" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="588,494,679,508">
+<area shape="RECT" title="Hennepin County, MNRank = #23" href="https://www.google.com/search?q=2019+measles+Hennepin county, MN" coords="454,153,532,167">
+<area shape="RECT" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="452,451,506,465">
+<area shape="RECT" title="Essex County, NJRank = #15" href="https://www.google.com/search?q=2019+measles+Essex county, NJ" coords="706,218,761,232">
+<area shape="RECT" title="Denver County, CORank = #16" href="https://www.google.com/search?q=2019+measles+Denver county, CO" coords="293,250,356,264">
+<area shape="RECT" title="Cook County, ILRank = #1" href="https://www.google.com/search?q=2019+measles+Cook county, IL" coords="545,211,589,225">
+<area shape="RECT" title="Clayton County, GARank = #21" href="https://www.google.com/search?q=2019+measles+Clayton county, GA" coords="615,368,678,382">
+<area shape="RECT" title="Clark County, NVRank = #8" href="https://www.google.com/search?q=2019+measles+Clark county, NV" coords="129,295,180,309">
+<area shape="RECT" title="Broward County, FLRank = #7" href="https://www.google.com/search?q=2019+measles+Broward county, FL" coords="742,512,808,526">
+<area shape="POLY" title="King County, WARank = #5" href="https://www.google.com/search?q=2019+measles+King county, WA" coords="112,85,111,86,111,85">
+<area shape="POLY" title="King County, WARank = #5" href="https://www.google.com/search?q=2019+measles+King county, WA" coords="108,86,108,87,109,88,107,88,108,88,108,87,108,88,107,88,107,89,107,88,107,86,108,85">
+<area shape="POLY" title="King County, WARank = #5" href="https://www.google.com/search?q=2019+measles+King county, WA" coords="127,85,127,87,126,87,126,89,125,89,123,90,121,91,121,92,120,92,121,92,120,93,121,93,122,94,121,95,122,95,121,96,120,96,120,97,119,97,119,96,118,96,117,95,115,94,114,94,113,94,111,93,111,91,109,90,108,89,109,89,109,88,109,87,109,86,109,84,110,84,110,85,110,84,109,83,110,83,111,83,111,84,111,83,111,84,111,85,111,86,112,85,112,84,112,83,113,83,112,82,112,83,111,83,110,83,111,82,111,81,116,82,123,84">
+<area shape="POLY" title="Loudoun County, VARank = #24" href="https://www.google.com/search?q=2019+measles+Loudoun county, VA" coords="734,268,734,269,736,270,735,271,735,272,736,273,738,272,736,277,735,276,734,276,729,275,730,274,730,272,731,269,732,268">
+<area shape="POLY" title="Salt Lake County, UTRank = #19" href="https://www.google.com/search?q=2019+measles+Salt Lake county, UT" coords="224,245,227,245,228,245,228,246,228,247,229,248,228,249,229,250,228,251,227,251,225,251,222,253,221,252,220,252,220,251,219,251,220,247,219,245,223,243,224,243,224,244">
+<area shape="POLY" title="Travis County, TXRank = #22" href="https://www.google.com/search?q=2019+measles+Travis county, TX" coords="425,465,425,466,426,466,426,468,427,468,429,467,431,467,434,469,432,473,429,476,428,476,421,470,422,468,422,467,423,465,424,465">
+<area shape="POLY" title="Tarrant County, TXRank = #12" href="https://www.google.com/search?q=2019+measles+Tarrant county, TX" coords="432,418,435,418,441,419,440,427,432,427">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="473,481">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="473,481">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="473,481">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="473,481">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="473,481">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="474,486">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="474,486">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="475,483">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="473,481,473,482">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="474,482,474,483">
+<area shape="POLY" title="Harris County, TXRank = #9" href="https://www.google.com/search?q=2019+measles+Harris county, TX" coords="465,474,466,474,466,475,467,475,469,477,473,474,474,477,475,478,474,479,475,479,476,480,475,483,476,483,475,483,475,482,475,483,474,483,474,482,474,481,473,482,473,481,473,480,473,481,473,482,474,482,474,483,475,483,474,484,474,485,475,485,474,486,473,486,472,487,471,486,470,486,470,485,467,485,460,481,458,474,460,476,461,475,463,475">
+<area shape="POLY" title="Multnomah County, ORRank = #13" href="https://www.google.com/search?q=2019+measles+Multnomah county, OR" coords="95,117,95,119,95,120,98,122,99,122,100,122,101,123,106,122,105,124,106,126,95,123,94,123,94,121,92,118,93,117">
+<area shape="POLY" title="Queens County, NYRank = #4" href="https://www.google.com/search?q=2019+measles+Queens county, NY" coords="783,231">
+<area shape="POLY" title="Queens County, NYRank = #4" href="https://www.google.com/search?q=2019+measles+Queens county, NY" coords="783,231">
+<area shape="POLY" title="Queens County, NYRank = #4" href="https://www.google.com/search?q=2019+measles+Queens county, NY" coords="783,232">
+<area shape="POLY" title="Queens County, NYRank = #4" href="https://www.google.com/search?q=2019+measles+Queens county, NY" coords="783,232,783,231">
+<area shape="POLY" title="Queens County, NYRank = #4" href="https://www.google.com/search?q=2019+measles+Queens county, NY" coords="784,231,784,232,781,233">
+<area shape="POLY" title="Queens County, NYRank = #4" href="https://www.google.com/search?q=2019+measles+Queens county, NY" coords="783,228,784,229,784,231,783,232,783,231,782,231,782,230,781,231,780,230,781,229,782,229,782,228">
+<area shape="POLY" title="Essex County, NJRank = #15" href="https://www.google.com/search?q=2019+measles+Essex county, NJ" coords="775,228,778,229,777,229,777,230,778,230,778,231,774,231,774,230,774,228">
+<area shape="POLY" title="Clark County, NVRank = #8" href="https://www.google.com/search?q=2019+measles+Clark county, NV" coords="159,312,178,316,176,329,175,330,174,332,172,332,171,331,172,330,171,329,170,329,169,329,169,328,167,328,165,329,165,330,165,331,165,333,164,334,164,337,165,338,164,339,164,340,164,343,164,347,164,348,163,348,163,349,163,350,150,331,148,328,148,324,148,323,150,311">
+<area shape="POLY" title="Hennepin County, MNRank = #23" href="https://www.google.com/search?q=2019+measles+Hennepin county, MN" coords="495,180,496,181,496,182,497,182,497,184,497,185,497,186,495,187,492,186,492,185,489,185,489,183,489,181,491,179,490,179,492,178">
+<area shape="POLY" title="Wayne County, MIRank = #11" href="https://www.google.com/search?q=2019+measles+Wayne county, MI" coords="643,229">
+<area shape="POLY" title="Wayne County, MIRank = #11" href="https://www.google.com/search?q=2019+measles+Wayne county, MI" coords="646,220,648,221,647,222,644,223,643,225,644,227,644,229,643,229,642,229,642,228,641,228,638,229,637,222,643,221">
+<area shape="POLY" title="Suffolk County, MARank = #20" href="https://www.google.com/search?q=2019+measles+Suffolk county, MA" coords="815,188">
+<area shape="POLY" title="Suffolk County, MARank = #20" href="https://www.google.com/search?q=2019+measles+Suffolk county, MA" coords="813,188">
+<area shape="POLY" title="Suffolk County, MARank = #20" href="https://www.google.com/search?q=2019+measles+Suffolk county, MA" coords="815,189">
+<area shape="POLY" title="Suffolk County, MARank = #20" href="https://www.google.com/search?q=2019+measles+Suffolk county, MA" coords="814,188,813,188">
+<area shape="POLY" title="Suffolk County, MARank = #20" href="https://www.google.com/search?q=2019+measles+Suffolk county, MA" coords="814,187,815,187,815,189,815,188,814,188,815,188,815,189,814,188">
+<area shape="POLY" title="Suffolk County, MARank = #20" href="https://www.google.com/search?q=2019+measles+Suffolk county, MA" coords="813,189,814,188,814,189,815,189,814,189,814,190,814,191,813,191,812,191,813,190,812,189">
+<area shape="POLY" title="Cook County, ILRank = #1" href="https://www.google.com/search?q=2019+measles+Cook county, IL" coords="571,234,577,234,578,235,579,238,580,239,579,239,580,240,581,241,581,242,581,247,578,247,577,245,576,246,576,244,574,244,574,243,575,243,575,242,575,237,570,238,570,234">
+<area shape="POLY" title="Honolulu County, HIRank = #10" href="https://www.google.com/search?q=2019+measles+Honolulu county, HI" coords="243,511">
+<area shape="POLY" title="Honolulu County, HIRank = #10" href="https://www.google.com/search?q=2019+measles+Honolulu county, HI" coords="240,505,240,506">
+<area shape="POLY" title="Honolulu County, HIRank = #10" href="https://www.google.com/search?q=2019+measles+Honolulu county, HI" coords="239,504,240,506,240,508,241,508,241,510,242,511,242,510,243,510,242,511,243,512,243,513,244,513,243,514,241,515,241,514,241,513,241,514,240,513,239,513,239,512,240,512,239,512,239,513,238,512,239,512,239,513,237,514,237,512,235,509,235,508,234,507,237,507,238,505,239,505">
+<area shape="POLY" title="Clayton County, GARank = #21" href="https://www.google.com/search?q=2019+measles+Clayton county, GA" coords="646,395,647,394,648,395,648,396,647,396,647,399,646,399,647,400,646,400,646,399,646,398,645,398,645,397,644,395">
+<area shape="POLY" title="Orange County, FLRank = #14" href="https://www.google.com/search?q=2019+measles+Orange county, FL" coords="707,482,707,483,707,484,707,485,709,485,715,484,716,485,716,486,717,486,718,487,717,487,717,488,718,489,705,491,703,483,704,483">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="737,537">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="739,541">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="735,547">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="738,533">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="738,544">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="736,547">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="739,541">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="738,544">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="738,536,739,536">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="739,537">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="738,544,738,545">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="739,542,739,543,738,544,739,543,738,543">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="739,537,739,538,738,538,738,537">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="739,534,739,535,739,536,739,537,739,536,738,536,739,535,738,535,739,535,738,534">
+<area shape="POLY" title="Miami-Dade County, FLRank = #3" href="https://www.google.com/search?q=2019+measles+Miami-Dade county, FL" coords="729,534,738,532,739,534,738,533,738,534,738,535,738,537,737,538,737,539,736,540,736,541,736,543,737,543,736,544,737,544,737,546,736,546,736,547,735,547,734,548,733,548,733,549,733,548,732,549,731,549,732,549,731,550,732,550,731,549,731,550,730,550,729,550,730,550,729,550,728,550,726,538,725,535">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="689,500">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="689,500">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="689,500">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="693,505">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506,691,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,505">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="693,503">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="693,505,693,506">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,501">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="693,503">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="693,502">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="692,501,692,502">
+<area shape="POLY" title="Hillsborough County, FLRank = #17" href="https://www.google.com/search?q=2019+measles+Hillsborough county, FL" coords="697,496,698,496,700,506,691,507,691,506,692,506,693,506,692,505,693,504,693,505,693,504,694,504,693,504,694,503,693,503,693,502,693,503,693,502,693,501,693,502,693,501,692,501,692,502,692,501,691,502,692,503,691,503,691,502,691,501,690,501,689,501,690,501,690,500,690,501,690,500,690,501,689,501,690,501,690,500,689,500,688,497">
+<area shape="POLY" title="Broward County, FLRank = #7" href="https://www.google.com/search?q=2019+measles+Broward county, FL" coords="735,526,736,526,738,526,738,530,738,529,738,530,738,532,729,534,725,535,724,529,724,528">
+<area shape="POLY" title="Denver County, CORank = #16" href="https://www.google.com/search?q=2019+measles+Denver county, CO" coords="329,277,329,278,327,278,327,279,325,279,326,279,325,280,325,281,325,280,325,281,325,282,324,282,324,281,323,281,323,282,322,282,321,282,322,281,323,278,325,279,325,278,326,279,327,278,328,277,324,281,322,281,324,281">
+<area shape="POLY" title="San Mateo County, CARank = #18" href="https://www.google.com/search?q=2019+measles+San Mateo county, CA" coords="57,270,57,271,57,272,58,273,59,275,60,275,60,276,58,276,58,277,58,278,58,279,58,280,56,280,55,280,55,282,55,281,54,279,55,276,55,274,54,273,55,269">
+<area shape="POLY" title="San Diego County, CARank = #25" href="https://www.google.com/search?q=2019+measles+San Diego county, CA" coords="115,371,133,376,130,391,113,389,113,387,112,386,113,385,113,386,113,388,114,388,114,386,113,385,112,385,112,386,112,384,113,384,112,384,112,383,113,381,112,377,110,372,109,371,110,370,111,370,111,369,113,370">
+<area shape="POLY" title="Los Angeles County, CARank = #2" href="https://www.google.com/search?q=2019+measles+Los Angeles county, CA" coords="102,362">
+<area shape="POLY" title="Los Angeles County, CARank = #2" href="https://www.google.com/search?q=2019+measles+Los Angeles county, CA" coords="103,362,102,362">
+<area shape="POLY" title="Los Angeles County, CARank = #2" href="https://www.google.com/search?q=2019+measles+Los Angeles county, CA" coords="101,361,101,362,100,362,101,362,100,362">
+<area shape="POLY" title="Los Angeles County, CARank = #2" href="https://www.google.com/search?q=2019+measles+Los Angeles county, CA" coords="92,374,93,376,94,379,95,379,94,379,93,379,92,378">
+<area shape="POLY" title="Los Angeles County, CARank = #2" href="https://www.google.com/search?q=2019+measles+Los Angeles county, CA" coords="114,343,112,353,110,358,109,358,109,359,109,360,106,359,106,360,104,360,103,362,102,362,103,362,101,361,101,362,101,361,100,361,100,362,98,361,98,360,99,359,98,357,99,356,98,357,98,355,94,354,93,355,92,354,91,353,94,352,96,352,96,351,97,351,97,350,95,339,96,339,102,340,110,342,113,343">
+<area shape="POLY" title="Maricopa County, AZRank = #6" href="https://www.google.com/search?q=2019+measles+Maricopa county, AZ" coords="205,378,209,378,209,379,209,380,210,380,209,381,210,382,209,383,212,387,213,385,214,390,205,388,205,393,197,392,196,392,195,391,195,390,192,405,174,402,177,385,179,373,189,375,196,378,197,377,198,376">
+<area shape="RECT" href='https://fivethirtyeight.com/features/we-can-predict-where-measles-will-happen-why-dont-we/' coords="488,582,617,599">
+<area shape="RECT" href='https://ksltv.com/wp-content/uploads/2019/05/PIIS1473309919302312.pdf' coords="379,582,488,599">
+</map>
+<div  class="c">
+<img src="measles_prediction_2019.png" style=" height: 600px; width: 900px;" border="0" usemap="#gd7rdcai_map" class="c graph">
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
