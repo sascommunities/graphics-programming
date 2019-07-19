@@ -1,0 +1,2128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>World Travel in Perfect Weather</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="gd8ke528_map">
+<area shape="POLY" title="#52 Freeport, Bahamas (Dec 25)------------------------------With a final flight we end this epic year in the Bahamas, flying into Freeport. We suggest getting yourself straight to one of their numerous beaches to end the last few days of this year enjoying that perfect weather. This is the end of your epic around the world journey, and you're probably exhausted - so why not just stay right here for another year?" href="https://www.google.com/search?q=Freeport, Bahamas" coords="320,307,320,305,319,303,317,301,315,301,312,301,310,301,309,303,307,305,307,307,307,309,309,311,310,313,312,314,315,314,317,313,319,311,320,309">
+<area shape="POLY" title="#51 Mount Pleasant, Bermuda (Dec 15)------------------------------Taking a quick flight, we reach out into the Atlantic to Mount Pleasant, Bermuda where you can relax in tiny beach coves of rock and pink sand, enjoy the clear waters of this island paradise." href="https://www.google.com/search?q=Mount Pleasant, Bermuda" coords="362,289,361,287,360,285,358,283,356,282,354,282,352,283,350,285,349,287,349,289,349,291,350,293,352,294,354,295,356,295,358,294,360,293,361,291">
+<area shape="POLY" title="#50 Everglades FL, USA (Dec 9)------------------------------Driving to the western side of Florida we head over to the enchanting Everglades. The largest national park within the continental United States, here you will encounter mangroves, coral reefs and untouched wildlife." href="https://www.google.com/search?q=Everglades FL, USA" coords="313,310,313,307,311,305,310,304,307,303,305,303,303,304,301,305,300,307,300,310,300,312,301,314,303,315,305,316,307,316,310,315,311,314,313,312">
+<area shape="POLY" title="#49 Orlando FL, USA (Dec 2)------------------------------Entering the final month of our long year of beautifully temperate travels, we head further East to Orlando, Florida. Most know this city for being home to hyper-realistic yet otherworldly and magical theme parks." href="https://www.google.com/search?q=Orlando FL, USA" coords="312,301,312,298,310,296,309,295,307,294,304,294,302,295,300,296,299,298,299,301,299,303,300,305,302,306,304,307,307,307,309,306,310,305,312,303">
+<area shape="POLY" title="#48 New Orleans LA, USA (Nov 22)------------------------------Directly east of Austin, a short flight sends us to swampy New Orleans, Louisiana. A rich French-Creole history and Bourbon Street to boot, flavors this easy-going, swinging city that will reinvigorate your spirit." href="https://www.google.com/search?q=New Orleans LA, USA" coords="286,296,285,294,284,292,283,290,280,290,278,290,276,290,274,292,273,294,273,296,273,298,274,300,276,302,278,303,280,303,283,302,284,300,285,298">
+<area shape="POLY" title="#47 Austin TX, USA (Nov 15)------------------------------Next we fly Southeast, down to Austin, Texas. With longhorns decorating the barbeque joints, Tex-Mex that's off the chain, live music (dare we say 'Live Music Capital of the World'), and fresh springs to dip into, this friendly city is hard not to like." href="https://www.google.com/search?q=Austin TX, USA" coords="263,295,263,293,261,291,260,290,257,289,255,289,253,290,251,291,250,293,250,295,250,297,251,299,253,301,255,302,257,302,260,301,261,299,263,297">
+<area shape="POLY" title="#46 Las Vegas NV, USA (Nov 9)------------------------------An even shorter drive just north-east, takes you past Death Valley to Las Vegas, Nevada. This flashy, high rolling city is a nice crisp 70 in November, so whether you're into the shows or the money, this is the time to be here." href="https://www.google.com/search?q=Las Vegas NV, USA" coords="211,276,210,274,209,272,207,270,205,270,203,270,201,270,199,272,198,274,198,276,198,278,199,280,201,282,203,283,205,283,207,282,209,280,210,278">
+<area shape="POLY" title="#45 Los Angeles CA, USA (Nov 5)------------------------------An easy drive South will take you further into the golden land of California straight to the heart of Los Angeles where you are sure to find sunny skies as you explore this star-filled city." href="https://www.google.com/search?q=Los Angeles CA, USA" coords="201,283,200,281,199,279,197,277,195,277,193,277,191,277,189,279,188,281,188,283,188,285,189,287,191,289,193,290,195,290,197,289,199,287,200,285">
+<area shape="POLY" title="#44 Napa CA, USA (Oct 27)------------------------------As we approach the year's end, we take a couple days to journey up, up North and far West across the vast Pacific Ocean to Napa, California. Luckily there's plenty of wine in Napa Valley to help you unwind and relax after that trek." href="https://www.google.com/search?q=Napa CA, USA" coords="189,269,189,267,188,265,186,263,184,263,182,263,179,263,178,265,177,267,176,269,177,271,178,273,179,275,182,276,184,276,186,275,188,273,189,271">
+<area shape="POLY" title="#43 Sydney, Australia (Oct 20)------------------------------Heading back West, Sydney is our last stop as we fly again across the Australian continent. This famous metropolis is photo ready with instantly recognizable landmarks such as the Sydney Opera House, Harbor Bridge and Bondi Beach." href="https://www.google.com/search?q=Sydney, Australia" coords="1009,492,1009,490,1008,488,1006,486,1004,486,1002,486,1000,486,998,488,997,490,996,492,997,494,998,496,1000,498,1002,499,1004,499,1006,498,1008,496,1009,494">
+<area shape="POLY" title="#42 Perth, Australia (Oct 13)------------------------------Sticking to the island, we fly to the far west across the Outback to the isolated city of Perth. A treasure of a city far from the rest of the world, you can find everything you need. We recommend checking out their extensive zoo to meet some of Australia's unique wildlife." href="https://www.google.com/search?q=Perth, Australia" coords="903,486,903,484,902,482,900,480,898,479,896,479,893,480,892,482,891,484,890,486,891,488,892,490,893,492,896,492,898,492,900,492,902,490,903,488">
+<area shape="POLY" title="#41 Adelaide, Australia (Oct 6)------------------------------Shifting gears as the months start getting later in the year we head down under to Adelaide, Australia. Allow a day or two for getting to this young, bright city with renowned museums that explore the unique history and art of this once upon a time convict island." href="https://www.google.com/search?q=Adelaide, Australia" coords="972,496,971,493,970,491,968,490,966,489,964,489,962,490,960,491,959,493,959,496,959,498,960,500,962,501,964,502,966,502,968,501,970,500,971,498">
+<area shape="POLY" title="#40 Tokyo, Japan (Sep 29)------------------------------With a zig-zag, we head back East into Japan to get a taste of Tokyo, not just of the food and service, but also of the complementary dissonance of the bright, modern zing with the warm, traditional rigor and spirit." href="https://www.google.com/search?q=Tokyo, Japan" coords="975,278,975,275,974,273,972,272,970,271,967,271,965,272,964,273,962,275,962,278,962,280,964,282,965,283,967,284,970,284,972,283,974,282,975,280">
+<area shape="POLY" title="#39 Beijing, China (Sep 22)------------------------------Continuing West towards China mainland, we take a quick flight into Beijing. An intriguing and fascinating city with both modern and ancient elements, be sure to visit the massive Great Wall slung along the nearby hills." href="https://www.google.com/search?q=Beijing, China" coords="905,264,905,261,904,259,902,258,900,257,897,257,895,258,893,259,892,261,892,264,892,266,893,268,895,269,897,270,900,270,902,269,904,268,905,266">
+<area shape="POLY" title="#38 Sokcho, South Korea (Sep 15)------------------------------Just a short flight across the Japanese Sea and then a swift train and you will be in Sokcho, South Korea. After a Pokemon Go glitch attracted many young South Koreans to this city it's exploded in popularity. Nearby mountains in the Seoraksan National Park and a thriving food scene (Korean Fried Chicken is the KFC around here) are what have kept this city in the spotlight." href="https://www.google.com/search?q=Sokcho, South Korea" coords="942,269,941,267,940,265,938,264,936,263,934,263,932,264,930,265,929,267,929,269,929,272,930,274,932,275,934,276,936,276,938,275,940,274,941,272">
+<area shape="POLY" title="#37 Sapporo, Japan (Sep 8)------------------------------Our next flight is a long day of travel to the edge of the Pacific to Sapporo, Japan. Better known as host to the 1972 Olympic Winter Games, now this thriving city is in close proximity to beautiful mountains and hot springs and a great place to find delicious Japanese ramen and beer." href="https://www.google.com/search?q=Sapporo, Japan" coords="980,253,979,251,978,249,977,247,974,247,972,247,970,247,968,249,967,251,967,253,967,255,968,257,970,259,972,260,974,260,977,259,978,257,979,255">
+<area shape="POLY" title="#36 Ulaanbaatar, Mongolia (Sep 1)------------------------------Mongolia, Ulaanbaatar is a longish (and a tad bit bumpy) bus ride but it's the best way to travel south into Mongolia to the surprisingly populous capital city. Originally a mobile monastic tent community that settled into this spot in 1778, it is now a major hub for trade and culture." href="https://www.google.com/search?q=Ulaanbaatar, Mongolia" coords="876,236,876,234,875,232,873,231,871,230,869,230,867,231,865,232,864,234,863,236,864,239,865,241,867,242,869,243,871,243,873,242,875,241,876,239">
+<area shape="POLY" title="#35 Ulan-Ude, Russia (Aug 23)------------------------------Now moving far North, we take a day to travel past the bulk of China and up to the edge of Russia in the Siberian city of Ulan-Ude. This quiet, friendly city offers a look into the Buryat culture and food traditions and their signature throat singing." href="https://www.google.com/search?q=Ulan-Ude, Russia" coords="879,222,878,220,877,218,875,216,873,216,871,216,869,216,867,218,866,220,866,222,866,224,867,226,869,228,871,229,873,229,875,228,877,226,878,224">
+<area shape="POLY" title="#34 Paro, Bhutan (Aug 18)------------------------------Just a days drive North-East will allow you to dive deeper into the meditative and pure subtropics of Bhutan. Head to Paro, a valley town with beautiful views and phenomenal architecture including Tiger's Nest, a monastery perched on the side of a cliff." href="https://www.google.com/search?q=Paro, Bhutan" coords="824,304,824,302,823,300,821,299,819,298,816,298,814,299,813,300,811,302,811,304,811,307,813,309,814,310,816,311,819,311,821,310,823,309,824,307">
+<area shape="POLY" title="#33 Darjeeling, India (Aug 13)------------------------------Allow two days to transition (travel) your body and spirit to Darjeeling, India. Soak in the views of snowcapped Kanchenjunga (the 3rd highest peaks in the world) and melt into lush Himalayan life. Become one with mind, body and nature in this Buddhist paradise." href="https://www.google.com/search?q=Darjeeling, India" coords="821,305,820,303,819,301,817,300,815,299,813,299,811,300,809,301,808,303,808,305,808,308,809,310,811,311,813,312,815,312,817,311,819,310,820,308">
+<area shape="POLY" title="#32 Tombeau Bay, Mauritius (Aug 6)------------------------------Our final African destination is in the blue Indian waters. We dive directly East into Baie du Tombeau, Mauritius Island. Influenced by previous French and British occupation, this paradise of an island has lovely beaches and stunning interior forested mountains." href="https://www.google.com/search?q=Tombeau Bay, Mauritius" coords="729,449,728,446,727,445,725,443,723,442,721,442,719,443,717,445,716,446,715,449,716,451,717,453,719,454,721,455,723,455,725,454,727,453,728,451">
+<area shape="POLY" title="#31 Pretoria, South Africa (Jul 30)------------------------------Now we head straight south into proper city-scapes to Pretoria, South Africa, a multicultural home to Afrikaners from every corner and known for blooming purple Jacaranda trees planted throughout." href="https://www.google.com/search?q=Pretoria, South Africa" coords="640,466,640,464,639,462,637,461,635,460,633,460,631,461,629,462,628,464,627,466,628,469,629,470,631,472,633,473,635,473,637,472,639,470,640,469">
+<area shape="POLY" title="#30 Hwange, Zimbabwe (Jul 19)------------------------------Continuing West with a slight Southern slant, we head to Hwange, Zimbabwe. A true wildlife experience can be had at Hwange National Park where you can catch a glimpse of elephants and lions wandering the grasslands. (Be sure to book a proper tour to see that)." href="https://www.google.com/search?q=Hwange, Zimbabwe" coords="636,443,635,441,634,439,632,438,630,437,628,437,626,438,624,439,623,441,622,443,623,446,624,448,626,449,628,450,630,450,632,449,634,448,635,446">
+<area shape="POLY" title="#29 Siavonga, Zambia (Jul 14)------------------------------A combination of Bus, westward Flight and shuttle gets us to Siavonga, Zambia. This riviera is a temperate peaceful and hilly fisherman's dream that's worth the trouble." href="https://www.google.com/search?q=Siavonga, Zambia" coords="642,438,642,435,641,433,639,432,637,431,634,431,632,432,631,433,629,435,629,438,629,440,631,442,632,443,634,444,637,444,639,443,641,442,642,440">
+<area shape="POLY" title="#28 Monkey Bay, Malawi (Jul 9)------------------------------It might be worth it to book a driver for this leg or you can take the bus directly South to Monkey Bay, Malawi. Just know here they operate on 'Malawi Time', so allow two days for travel. This lakeside village is adjacent to the lush and green Cape McClear Nature Reserve, a beautiful African retreat." href="https://www.google.com/search?q=Monkey Bay, Malawi" coords="661,430,660,428,659,426,658,425,655,424,653,424,651,425,649,426,648,428,648,430,648,432,649,434,651,436,653,437,655,437,658,436,659,434,660,432">
+<area shape="POLY" title="#27 Nairobi, Kenya (Jul 2)------------------------------As summer settles in we move our trip way, way South to deep Africa, into the hemisphere where July means winter. Allow a solid day to get to Nairobi, Kenya, named cool water (Enkare Nairobi) after the river flowing through." href="https://www.google.com/search?q=Nairobi, Kenya" coords="666,392,666,390,665,388,663,386,661,385,659,385,657,386,655,388,654,390,653,392,654,394,655,396,657,397,659,398,661,398,663,397,665,396,666,394">
+<area shape="POLY" title="#26 Berlin, Germany (Jun 25)------------------------------Our final European stop is a short flight North to Berlin, Germany. A city transformed since the fall of the wall, don't forget to see that now Graffitied remnant of the past along with all the other stately and impressive government architecture and memorials." href="https://www.google.com/search?q=Berlin, Germany" coords="596,220,596,217,595,215,593,214,591,213,588,213,586,214,584,215,583,217,583,220,583,222,584,224,586,225,588,226,591,226,593,225,595,224,596,222">
+<area shape="POLY" title="#25 Geneva, Switzerland (Jun 18)------------------------------A quick flight over France drops us into the Alpine City of Geneva, Switzerland. A peaceful and serene city destination near a gorgeous glittering lake where you can breath in the fresh mountain air coming off the Jura Mountains and The Alps." href="https://www.google.com/search?q=Geneva, Switzerland" coords="574,242,574,240,573,238,571,236,569,236,567,236,565,236,563,238,562,240,561,242,562,244,563,246,565,248,567,249,569,249,571,248,573,246,574,244">
+<area shape="POLY" title="#24 Bordeaux, France (Jun 11)------------------------------Turning a bit North as summer heat creeps in, a direct north-east flight takes us into wine territory. Bordeaux, France is of course home to world-famous vineyards, we suggest sipping a nice glass along with buttery French cuisine or touring the vineyards." href="https://www.google.com/search?q=Bordeaux, France" coords="554,247,554,245,553,243,551,241,549,240,547,240,544,241,543,243,542,245,541,247,542,249,543,251,544,253,547,253,549,253,551,253,553,251,554,249">
+<area shape="POLY" title="#23 Lisbon, Portugal (Jun 4)------------------------------At the edge of Western Europe is Lisbon, Portugal. A quick flight puts you back on the Atlantic and in the second oldest European capital city. Built across seven hills, walking the city streets will have your calves beach-ready in no time (or you could just take the tram)." href="https://www.google.com/search?q=Lisbon, Portugal" coords="529,268,528,265,527,263,525,262,523,261,521,261,519,262,517,263,516,265,515,268,516,270,517,272,519,273,521,274,523,274,525,273,527,272,528,270">
+<area shape="POLY" title="#22 Barcelona, Spain (May 28)------------------------------Continuing our European exploration we head further West to Barcelona, Spain. A city renowned for the intoxicatingly original and innovative Gaudi architecture, there is also world class gastronomy, thriving nightlife and numerous beaches." href="https://www.google.com/search?q=Barcelona, Spain" coords="563,259,562,256,561,254,559,253,557,252,555,252,553,253,551,254,550,256,549,259,550,261,551,263,553,264,555,265,557,265,559,264,561,263,562,261">
+<area shape="POLY" title="#21 Rabat, Malta (May 21)------------------------------Back to the Mediterranean, our next flight is to the every so tiny island of Malta and into the city of Rabat. This small island is an unexpected mashup of Arabic (Rabat is named after the Arabic word for Suburb), Mediterranean and Latin traditions." href="https://www.google.com/search?q=Rabat, Malta" coords="599,277,599,275,598,273,596,271,594,271,591,271,589,271,588,273,586,275,586,277,586,279,588,281,589,283,591,284,594,284,596,283,598,281,599,279">
+<area shape="POLY" title="#20 Split, Croatia (May 14)------------------------------A short hop and a skip across the Adriatic Sea takes us on to Split, Croatia. If only old walls could speak, this historic Roman coastal town is a bustling hive that was home to the emperor Diocletian upon his retirement." href="https://www.google.com/search?q=Split, Croatia" coords="605,252,605,249,604,247,602,246,600,245,598,245,595,246,594,247,593,249,592,252,593,254,594,256,595,257,598,258,600,258,602,257,604,256,605,254">
+<area shape="POLY" title="#19 Napoli, Italy (May 7)------------------------------A quick northern flight up the boot of Italy to Napoli, will take you directly to that gooey traditional wood baked Neapolitan pizza. This sprawling historical metropolis offers beautiful architectural cathedrals and busy fresh markets full of local fish and products." href="https://www.google.com/search?q=Napoli, Italy" coords="599,261,598,258,597,256,596,255,593,254,591,254,589,255,587,256,586,258,586,261,586,263,587,265,589,266,591,267,593,267,596,266,597,265,598,263">
+<area shape="POLY" title="#18 Catania, Italy (Apr 30)------------------------------Our next destination flies us further west to Catania, Italy. This Sicilian port city is a hefty 2,700 years strong, it has resisted terror posed by the ever active and towering Mt. Etna Volcano." href="https://www.google.com/search?q=Catania, Italy" coords="601,272,601,269,600,268,598,266,596,265,593,265,591,266,589,268,588,269,588,272,588,274,589,276,591,277,593,278,596,278,598,277,600,276,601,274">
+<area shape="POLY" title="#17 Chania, Crete (Apr 23)------------------------------Taking a turn West, we fly to a popular summer destination, Chania, Crete. Say hello to Greek Island paradise. Here life slows way down, you might lose yourself meandering tiny alley ways or simply laze endless hours on epic beaches." href="https://www.google.com/search?q=Chania, Crete" coords="628,278,628,276,627,274,625,273,623,272,620,272,618,273,616,274,615,276,615,278,615,281,616,283,618,284,620,285,623,285,625,284,627,283,628,281">
+<area shape="POLY" title="#16 Larnaca, Cyprus (Apr 16)------------------------------Next up: Larnaca, Cyprus, fly first to the Turkish side of the island and then walk to the Cypriot side for the easiest and most direct route. This tiny (now) amicably shared island territory is enclosed with crystal clear water and home to mountains, caves, and sunken ships." href="https://www.google.com/search?q=Larnaca, Cyprus" coords="657,280,656,278,655,276,654,275,651,274,649,274,647,275,645,276,644,278,644,280,644,283,645,284,647,286,649,287,651,287,654,286,655,284,656,283">
+<area shape="POLY" title="#15 Antalya, Turkey (Apr 9)------------------------------No this isn't Istanbul nor Constantinople, but our next stop is a short northwestern foray to Antalya, Turkey. Here you can find Roman ruins (Hadrians Gate) alongside turquoise waters and immaculate beaches." href="https://www.google.com/search?q=Antalya, Turkey" coords="648,274,648,271,647,269,645,268,643,267,640,267,638,268,636,269,635,271,635,274,635,276,636,278,638,279,640,280,643,280,645,279,647,278,648,276">
+<area shape="POLY" title="#14 Baalbek, Lebanon (Apr 2)------------------------------The next stop isn't far but does require a combination of travel methods to get you to Baalbek, Lebanon where you can find impressive 23 meter high columns of the The Temple of Jupiter and the unbelievably preserved carvings of the Temple of Bacchus." href="https://www.google.com/search?q=Baalbek, Lebanon" coords="665,283,664,281,663,279,661,277,659,277,657,277,655,277,653,279,652,281,651,283,652,285,653,287,655,289,657,290,659,290,661,289,663,287,664,285">
+<area shape="POLY" title="#13 Haifa, Israel (Mar 6)------------------------------Taking a swift train along that Mediterranean coastline, our next stop is nestled in the slopes of Mount Carmel where you will find the hip, beach town of Haifa, Israel. This surprisingly green city is located near the largest National Park in Israel." href="https://www.google.com/search?q=Haifa, Israel" coords="661,287,661,285,659,283,658,281,656,281,653,281,651,281,649,283,648,285,648,287,648,289,649,291,651,293,653,294,656,294,658,293,659,291,661,289">
+<area shape="POLY" title="#12 Tel Aviv, Israel (Mar 19)------------------------------Continuing along this path of typically hot destinations, our next two stops are in Israel, starting with Tel Aviv which sits on the Eastern part of the Mediterranean coast." href="https://www.google.com/search?q=Tel Aviv, Israel" coords="660,289,660,287,659,285,657,284,655,283,653,283,651,284,649,285,648,287,647,289,648,292,649,294,651,295,653,296,655,296,657,295,659,294,660,292">
+<area shape="POLY" title="#11 Cairo, Egypt (Mar 12)------------------------------Sliding into Cairo, Egypt right before the temperatures really start heating up allows you to explore the ancient pyramids without melting in the Nile's humid wake." href="https://www.google.com/search?q=Cairo, Egypt" coords="650,296,649,294,648,292,646,290,644,289,642,289,640,290,638,292,637,294,637,296,637,298,638,300,640,302,642,302,644,302,646,302,648,300,649,298">
+<area shape="POLY" title="#10 Tozeur, Tunisia (Mar 5)------------------------------Our next stop is Tozeur, Tunisia, about as close as we could get to the Sahara while maintaining our ideal temperature. With mountains and salt lakes and palm trees, this slightly off the map destination is also quite near the Star Wars, Tatooine filming locations." href="https://www.google.com/search?q=Tozeur, Tunisia" coords="580,283,580,281,579,279,577,278,575,277,573,277,571,278,569,279,568,281,567,283,568,286,569,288,571,289,573,290,575,290,577,289,579,288,580,286">
+<area shape="POLY" title="#9 Marrakesh, Morocco (Feb 26)------------------------------With a quick flight into Marrakesh, Morocco, we fit in a visit to this impressive city before the heat settles. Breezily explore the markets and alleys and luxurious mosques, palaces and hidden gardens." href="https://www.google.com/search?q=Marrakesh, Morocco" coords="532,291,532,289,531,287,529,285,527,284,524,284,522,285,520,287,519,289,519,291,519,293,520,295,522,297,524,297,527,297,529,297,531,295,532,293">
+<area shape="POLY" title="#8 Las Palmas, Canary Islands (Spain) (Feb 19)------------------------------Allow two days for this leg of the trip as we traverse the Atlantic to get to Las Palmas, Spain. Once you arrive all that's left to do is rest easy on a beach underneath one of those glorious palms found on this Spanish Island port-paradise." href="https://www.google.com/search?q=Las Palmas, Canary Islands (Spain)" coords="510,302,509,300,508,298,506,296,504,296,502,296,500,296,498,298,497,300,497,302,497,304,498,306,500,308,502,309,504,309,506,308,508,306,509,304">
+<area shape="POLY" title="#7 Monterrey, Mexico (Feb 12)------------------------------We turn our trip east to Monterrey, Mexico. Known mostly for being Mexico's industrial hub, this modern city is the perfect place to explore both museums and nightlife, while enjoying the mountains just beyond." href="https://www.google.com/search?q=Monterrey, Mexico" coords="255,310,255,307,254,305,252,304,250,303,247,303,245,304,244,305,242,307,242,310,242,312,244,314,245,315,247,316,250,316,252,315,254,314,255,312">
+<area shape="POLY" title="#6 La Paz, Mexico (Feb 5)------------------------------Now entering, Mexico. La Paz to be exact, a city perched just at the tip of the Baja California Peninsula. Rich with beachy wildlife, you just might catch a distant glimpse of a sea lion flapping his flippers or a splashing whale tail." href="https://www.google.com/search?q=La Paz, Mexico" coords="225,315,225,312,224,310,222,309,220,308,217,308,215,309,214,310,212,312,212,315,212,317,214,319,215,320,217,321,220,321,222,320,224,319,225,317">
+<area shape="POLY" title="#5 Panajachel, Guatemala (Jan 29)------------------------------Now shifting directions a bit, we veer to the northwest and fly to Central America, landing in Panajachel, Guatemala. Here the enormous Lago de Atitlan provides shimmery water and those ever so perfect temperatures we're following." href="https://www.google.com/search?q=Panajachel, Guatemala" coords="283,343,282,341,281,339,279,338,277,337,275,337,273,338,271,339,270,341,270,343,270,346,271,348,273,349,275,350,277,350,279,349,281,348,282,346">
+<area shape="POLY" title="#4 Guatape, Colombia (Jan 22)------------------------------Continuing along our Northern trajectory, take a day to fly to the Colombian resort town of Guatape. Between always warm Medellin and chilly Bogota, we had a hard time finding a city within the temperature range and delightfully uncovered this gem." href="https://www.google.com/search?q=Guatape, Colombia" coords="331,369,330,367,329,365,327,363,325,363,323,363,321,363,319,365,318,367,317,369,318,371,319,373,321,375,323,376,325,376,327,375,329,373,330,371">
+<area shape="POLY" title="#3 Arequipa, Peru (Jan 15)------------------------------Either by car (a rather lengthy 28 hours but exceptional views) or simply hopping on a plane, will get you to our next destination. With a magnificent volcano in the distance Arequipa, Peru is a beautifully baroque, colonial city worth exploring." href="https://www.google.com/search?q=Arequipa, Peru" coords="342,437,341,435,340,433,338,432,336,431,334,431,332,432,330,433,329,435,328,437,329,440,330,442,332,443,334,444,336,444,338,443,340,442,341,440">
+<area shape="POLY" title="#2 Valparaiso, Chile (Jan 8)------------------------------An easy coastline drive or short flight straight North gets us over to Valparaiso, Chile, a colorful, bohemian port town that inspired the famous poet Pablo Neruda to write his own lyrical ode to the city." href="https://www.google.com/search?q=Valparaiso, Chile" coords="341,489,341,487,340,485,338,484,336,483,334,483,331,484,330,485,329,487,328,489,329,492,330,494,331,495,334,496,336,496,338,495,340,494,341,492">
+<area shape="POLY" title="#1 Bariloche, Argentina (Jan 1)------------------------------First we head deep down to the South to Bariloche, Argentina, a city nestled perfectly within our temperature range, sitting near a glacial lake with unbelievable scenery and Swiss-level chocolates." href="https://www.google.com/search?q=Bariloche, Argentina" coords="342,516,342,514,341,512,339,511,337,510,334,510,332,511,331,512,329,514,329,516,329,518,331,520,332,522,334,523,337,523,339,522,341,520,342,518">
+<area shape="RECT" href='https://www.reservations.com/blog/resources/around-the-world-perfect-weather/' coords="659,573,860,590">
+</map>
+<div  class="c">
+<img src="world_travel_70_degrees.png" style=" height: 600px; width: 1100px;" border="0" usemap="#gd8ke528_map" class="c graph">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX1"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle" style=" font-size: 20pt;">Year-Long Trip Around the World, in Perfect Weather!</td>
+</tr>
+<tr>
+<td class="c systemtitle2" style=" font-family: 'albany amt'; font-size: 13pt; font-style: normal; font-weight: bold;">Route &amp; timing for trip keeping temperatures 70-75° F (21-24° C)</td>
+</tr>
+</table><br>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK.TABLE_DATA">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r header" style=" font-size: 11pt;" scope="col"> </th>
+<th class="l header" style=" font-size: 11pt;" scope="col">Date</th>
+<th class="l header" style=" font-size: 11pt;" scope="col">Country</th>
+<th class="l header" style=" font-size: 11pt;" scope="col">Location</th>
+<th class="l header" style=" font-size: 11pt;" scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data" style=" font-size: 11pt;">1</td>
+<td class="l data" style=" font-size: 11pt;">Jan 1</td>
+<td class="l data" style=" font-size: 11pt;">Argentina</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Bariloche, Argentina" target="_self">Bariloche</a></td>
+<td class="l data" style=" font-size: 11pt;">First we head deep down to the South to Bariloche, Argentina, a city nestled perfectly within our temperature range, sitting near a glacial lake with unbelievable scenery and Swiss-level chocolates.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">2</td>
+<td class="l data" style=" font-size: 11pt;">Jan 8</td>
+<td class="l data" style=" font-size: 11pt;">Chile</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Valparaiso, Chile" target="_self">Valparaiso</a></td>
+<td class="l data" style=" font-size: 11pt;">An easy coastline drive or short flight straight North gets us over to Valparaiso, Chile, a colorful, bohemian port town that inspired the famous poet Pablo Neruda to write his own lyrical ode to the city.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">3</td>
+<td class="l data" style=" font-size: 11pt;">Jan 15</td>
+<td class="l data" style=" font-size: 11pt;">Peru</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Arequipa, Peru" target="_self">Arequipa</a></td>
+<td class="l data" style=" font-size: 11pt;">Either by car (a rather lengthy 28 hours but exceptional views) or simply hopping on a plane, will get you to our next destination. With a magnificent volcano in the distance Arequipa, Peru is a beautifully baroque, colonial city worth exploring.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">4</td>
+<td class="l data" style=" font-size: 11pt;">Jan 22</td>
+<td class="l data" style=" font-size: 11pt;">Colombia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Guatape, Colombia" target="_self">Guatape</a></td>
+<td class="l data" style=" font-size: 11pt;">Continuing along our Northern trajectory, take a day to fly to the Colombian resort town of Guatape. Between always warm Medellin and chilly Bogota, we had a hard time finding a city within the temperature range and delightfully uncovered this gem.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">5</td>
+<td class="l data" style=" font-size: 11pt;">Jan 29</td>
+<td class="l data" style=" font-size: 11pt;">Guatemala</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Panajachel, Guatemala" target="_self">Panajachel</a></td>
+<td class="l data" style=" font-size: 11pt;">Now shifting directions a bit, we veer to the northwest and fly to Central America, landing in Panajachel, Guatemala. Here the enormous Lago de Atitlan provides shimmery water and those ever so perfect temperatures we&#39;re following.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">6</td>
+<td class="l data" style=" font-size: 11pt;">Feb 5</td>
+<td class="l data" style=" font-size: 11pt;">Mexico</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=La Paz, Mexico" target="_self">La Paz</a></td>
+<td class="l data" style=" font-size: 11pt;">Now entering, Mexico. La Paz to be exact, a city perched just at the tip of the Baja California Peninsula. Rich with beachy wildlife, you just might catch a distant glimpse of a sea lion flapping his flippers or a splashing whale tail.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">7</td>
+<td class="l data" style=" font-size: 11pt;">Feb 12</td>
+<td class="l data" style=" font-size: 11pt;">Mexico</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Monterrey, Mexico" target="_self">Monterrey</a></td>
+<td class="l data" style=" font-size: 11pt;">We turn our trip east to Monterrey, Mexico. Known mostly for being Mexico&#39;s industrial hub, this modern city is the perfect place to explore both museums and nightlife, while enjoying the mountains just beyond.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">8</td>
+<td class="l data" style=" font-size: 11pt;">Feb 19</td>
+<td class="l data" style=" font-size: 11pt;">Canary Islands (Spain)</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Las Palmas, Canary Islands (Spain)" target="_self">Las Palmas</a></td>
+<td class="l data" style=" font-size: 11pt;">Allow two days for this leg of the trip as we traverse the Atlantic to get to Las Palmas, Spain. Once you arrive all that&#39;s left to do is rest easy on a beach underneath one of those glorious palms found on this Spanish Island port-paradise.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">9</td>
+<td class="l data" style=" font-size: 11pt;">Feb 26</td>
+<td class="l data" style=" font-size: 11pt;">Morocco</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Marrakesh, Morocco" target="_self">Marrakesh</a></td>
+<td class="l data" style=" font-size: 11pt;">With a quick flight into Marrakesh, Morocco, we fit in a visit to this impressive city before the heat settles. Breezily explore the markets and alleys and luxurious mosques, palaces and hidden gardens.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">10</td>
+<td class="l data" style=" font-size: 11pt;">Mar 5</td>
+<td class="l data" style=" font-size: 11pt;">Tunisia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Tozeur, Tunisia" target="_self">Tozeur</a></td>
+<td class="l data" style=" font-size: 11pt;">Our next stop is Tozeur, Tunisia, about as close as we could get to the Sahara while maintaining our ideal temperature. With mountains and salt lakes and palm trees, this slightly off the map destination is also quite near the Star Wars, Tatooine filming locations.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">11</td>
+<td class="l data" style=" font-size: 11pt;">Mar 12</td>
+<td class="l data" style=" font-size: 11pt;">Egypt</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Cairo, Egypt" target="_self">Cairo</a></td>
+<td class="l data" style=" font-size: 11pt;">Sliding into Cairo, Egypt right before the temperatures really start heating up allows you to explore the ancient pyramids without melting in the Nile&#39;s humid wake.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">12</td>
+<td class="l data" style=" font-size: 11pt;">Mar 19</td>
+<td class="l data" style=" font-size: 11pt;">Israel</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Tel Aviv, Israel" target="_self">Tel Aviv</a></td>
+<td class="l data" style=" font-size: 11pt;">Continuing along this path of typically hot destinations, our next two stops are in Israel, starting with Tel Aviv which sits on the Eastern part of the Mediterranean coast.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">13</td>
+<td class="l data" style=" font-size: 11pt;">Mar 6</td>
+<td class="l data" style=" font-size: 11pt;">Israel</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Haifa, Israel" target="_self">Haifa</a></td>
+<td class="l data" style=" font-size: 11pt;">Taking a swift train along that Mediterranean coastline, our next stop is nestled in the slopes of Mount Carmel where you will find the hip, beach town of Haifa, Israel. This surprisingly green city is located near the largest National Park in Israel.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">14</td>
+<td class="l data" style=" font-size: 11pt;">Apr 2</td>
+<td class="l data" style=" font-size: 11pt;">Lebanon</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Baalbek, Lebanon" target="_self">Baalbek</a></td>
+<td class="l data" style=" font-size: 11pt;">The next stop isn&#39;t far but does require a combination of travel methods to get you to Baalbek, Lebanon where you can find impressive 23 meter high columns of the The Temple of Jupiter and the unbelievably preserved carvings of the Temple of Bacchus.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">15</td>
+<td class="l data" style=" font-size: 11pt;">Apr 9</td>
+<td class="l data" style=" font-size: 11pt;">Turkey</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Antalya, Turkey" target="_self">Antalya</a></td>
+<td class="l data" style=" font-size: 11pt;">No this isn&#39;t Istanbul nor Constantinople, but our next stop is a short northwestern foray to Antalya, Turkey. Here you can find Roman ruins (Hadrians Gate) alongside turquoise waters and immaculate beaches.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">16</td>
+<td class="l data" style=" font-size: 11pt;">Apr 16</td>
+<td class="l data" style=" font-size: 11pt;">Cyprus</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Larnaca, Cyprus" target="_self">Larnaca</a></td>
+<td class="l data" style=" font-size: 11pt;">Next up: Larnaca, Cyprus, fly first to the Turkish side of the island and then walk to the Cypriot side for the easiest and most direct route. This tiny (now) amicably shared island territory is enclosed with crystal clear water and home to mountains, caves, and sunken ships.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">17</td>
+<td class="l data" style=" font-size: 11pt;">Apr 23</td>
+<td class="l data" style=" font-size: 11pt;">Crete</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Chania, Crete" target="_self">Chania</a></td>
+<td class="l data" style=" font-size: 11pt;">Taking a turn West, we fly to a popular summer destination, Chania, Crete. Say hello to Greek Island paradise. Here life slows way down, you might lose yourself meandering tiny alley ways or simply laze endless hours on epic beaches.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">18</td>
+<td class="l data" style=" font-size: 11pt;">Apr 30</td>
+<td class="l data" style=" font-size: 11pt;">Italy</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Catania, Italy" target="_self">Catania</a></td>
+<td class="l data" style=" font-size: 11pt;">Our next destination flies us further west to Catania, Italy. This Sicilian port city is a hefty 2,700 years strong, it has resisted terror posed by the ever active and towering Mt. Etna Volcano.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">19</td>
+<td class="l data" style=" font-size: 11pt;">May 7</td>
+<td class="l data" style=" font-size: 11pt;">Italy</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Napoli, Italy" target="_self">Napoli</a></td>
+<td class="l data" style=" font-size: 11pt;">A quick northern flight up the boot of Italy to Napoli, will take you directly to that gooey traditional wood baked Neapolitan pizza. This sprawling historical metropolis offers beautiful architectural cathedrals and busy fresh markets full of local fish and products.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">20</td>
+<td class="l data" style=" font-size: 11pt;">May 14</td>
+<td class="l data" style=" font-size: 11pt;">Croatia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Split, Croatia" target="_self">Split</a></td>
+<td class="l data" style=" font-size: 11pt;">A short hop and a skip across the Adriatic Sea takes us on to Split, Croatia. If only old walls could speak, this historic Roman coastal town is a bustling hive that was home to the emperor Diocletian upon his retirement.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">21</td>
+<td class="l data" style=" font-size: 11pt;">May 21</td>
+<td class="l data" style=" font-size: 11pt;">Malta</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Rabat, Malta" target="_self">Rabat</a></td>
+<td class="l data" style=" font-size: 11pt;">Back to the Mediterranean, our next flight is to the every so tiny island of Malta and into the city of Rabat. This small island is an unexpected mashup of Arabic (Rabat is named after the Arabic word for Suburb), Mediterranean and Latin traditions.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">22</td>
+<td class="l data" style=" font-size: 11pt;">May 28</td>
+<td class="l data" style=" font-size: 11pt;">Spain</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Barcelona, Spain" target="_self">Barcelona</a></td>
+<td class="l data" style=" font-size: 11pt;">Continuing our European exploration we head further West to Barcelona, Spain. A city renowned for the intoxicatingly original and innovative Gaudi architecture, there is also world class gastronomy, thriving nightlife and numerous beaches.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">23</td>
+<td class="l data" style=" font-size: 11pt;">Jun 4</td>
+<td class="l data" style=" font-size: 11pt;">Portugal</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Lisbon, Portugal" target="_self">Lisbon</a></td>
+<td class="l data" style=" font-size: 11pt;">At the edge of Western Europe is Lisbon, Portugal. A quick flight puts you back on the Atlantic and in the second oldest European capital city. Built across seven hills, walking the city streets will have your calves beach-ready in no time (or you could just take the tram).</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">24</td>
+<td class="l data" style=" font-size: 11pt;">Jun 11</td>
+<td class="l data" style=" font-size: 11pt;">France</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Bordeaux, France" target="_self">Bordeaux</a></td>
+<td class="l data" style=" font-size: 11pt;">Turning a bit North as summer heat creeps in, a direct north-east flight takes us into wine territory. Bordeaux, France is of course home to world-famous vineyards, we suggest sipping a nice glass along with buttery French cuisine or touring the vineyards.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">25</td>
+<td class="l data" style=" font-size: 11pt;">Jun 18</td>
+<td class="l data" style=" font-size: 11pt;">Switzerland</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Geneva, Switzerland" target="_self">Geneva</a></td>
+<td class="l data" style=" font-size: 11pt;">A quick flight over France drops us into the Alpine City of Geneva, Switzerland. A peaceful and serene city destination near a gorgeous glittering lake where you can breath in the fresh mountain air coming off the Jura Mountains and The Alps.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">26</td>
+<td class="l data" style=" font-size: 11pt;">Jun 25</td>
+<td class="l data" style=" font-size: 11pt;">Germany</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Berlin, Germany" target="_self">Berlin</a></td>
+<td class="l data" style=" font-size: 11pt;">Our final European stop is a short flight North to Berlin, Germany. A city transformed since the fall of the wall, don&#39;t forget to see that now Graffitied remnant of the past along with all the other stately and impressive government architecture and memorials.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">27</td>
+<td class="l data" style=" font-size: 11pt;">Jul 2</td>
+<td class="l data" style=" font-size: 11pt;">Kenya</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Nairobi, Kenya" target="_self">Nairobi</a></td>
+<td class="l data" style=" font-size: 11pt;">As summer settles in we move our trip way, way South to deep Africa, into the hemisphere where July means winter. Allow a solid day to get to Nairobi, Kenya, named cool water (Enkare Nairobi) after the river flowing through.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">28</td>
+<td class="l data" style=" font-size: 11pt;">Jul 9</td>
+<td class="l data" style=" font-size: 11pt;">Malawi</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Monkey Bay, Malawi" target="_self">Monkey Bay</a></td>
+<td class="l data" style=" font-size: 11pt;">It might be worth it to book a driver for this leg or you can take the bus directly South to Monkey Bay, Malawi. Just know here they operate on &#39;Malawi Time&#39;, so allow two days for travel. This lakeside village is adjacent to the lush and green Cape McClear Nature Reserve, a beautiful African retreat.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">29</td>
+<td class="l data" style=" font-size: 11pt;">Jul 14</td>
+<td class="l data" style=" font-size: 11pt;">Zambia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Siavonga, Zambia" target="_self">Siavonga</a></td>
+<td class="l data" style=" font-size: 11pt;">A combination of Bus, westward Flight and shuttle gets us to Siavonga, Zambia. This riviera is a temperate peaceful and hilly fisherman&#39;s dream that&#39;s worth the trouble.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">30</td>
+<td class="l data" style=" font-size: 11pt;">Jul 19</td>
+<td class="l data" style=" font-size: 11pt;">Zimbabwe</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Hwange, Zimbabwe" target="_self">Hwange</a></td>
+<td class="l data" style=" font-size: 11pt;">Continuing West with a slight Southern slant, we head to Hwange, Zimbabwe. A true wildlife experience can be had at Hwange National Park where you can catch a glimpse of elephants and lions wandering the grasslands. (Be sure to book a proper tour to see that).</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">31</td>
+<td class="l data" style=" font-size: 11pt;">Jul 30</td>
+<td class="l data" style=" font-size: 11pt;">South Africa</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Pretoria, South Africa" target="_self">Pretoria</a></td>
+<td class="l data" style=" font-size: 11pt;">Now we head straight south into proper city-scapes to Pretoria, South Africa, a multicultural home to Afrikaners from every corner and known for blooming purple Jacaranda trees planted throughout.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">32</td>
+<td class="l data" style=" font-size: 11pt;">Aug 6</td>
+<td class="l data" style=" font-size: 11pt;">Mauritius</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Tombeau Bay, Mauritius" target="_self">Tombeau Bay</a></td>
+<td class="l data" style=" font-size: 11pt;">Our final African destination is in the blue Indian waters. We dive directly East into Baie du Tombeau, Mauritius Island. Influenced by previous French and British occupation, this paradise of an island has lovely beaches and stunning interior forested mountains.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">33</td>
+<td class="l data" style=" font-size: 11pt;">Aug 13</td>
+<td class="l data" style=" font-size: 11pt;">India</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Darjeeling, India" target="_self">Darjeeling</a></td>
+<td class="l data" style=" font-size: 11pt;">Allow two days to transition (travel) your body and spirit to Darjeeling, India. Soak in the views of snowcapped Kanchenjunga (the 3rd highest peaks in the world) and melt into lush Himalayan life. Become one with mind, body and nature in this Buddhist paradise.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">34</td>
+<td class="l data" style=" font-size: 11pt;">Aug 18</td>
+<td class="l data" style=" font-size: 11pt;">Bhutan</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Paro, Bhutan" target="_self">Paro</a></td>
+<td class="l data" style=" font-size: 11pt;">Just a days drive North-East will allow you to dive deeper into the meditative and pure subtropics of Bhutan. Head to Paro, a valley town with beautiful views and phenomenal architecture including Tiger&#39;s Nest, a monastery perched on the side of a cliff.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">35</td>
+<td class="l data" style=" font-size: 11pt;">Aug 23</td>
+<td class="l data" style=" font-size: 11pt;">Russia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Ulan-Ude, Russia" target="_self">Ulan-Ude</a></td>
+<td class="l data" style=" font-size: 11pt;">Now moving far North, we take a day to travel past the bulk of China and up to the edge of Russia in the Siberian city of Ulan-Ude. This quiet, friendly city offers a look into the Buryat culture and food traditions and their signature throat singing.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">36</td>
+<td class="l data" style=" font-size: 11pt;">Sep 1</td>
+<td class="l data" style=" font-size: 11pt;">Mongolia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Ulaanbaatar, Mongolia" target="_self">Ulaanbaatar</a></td>
+<td class="l data" style=" font-size: 11pt;">Mongolia, Ulaanbaatar is a longish (and a tad bit bumpy) bus ride but it&#39;s the best way to travel south into Mongolia to the surprisingly populous capital city. Originally a mobile monastic tent community that settled into this spot in 1778, it is now a major hub for trade and culture.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">37</td>
+<td class="l data" style=" font-size: 11pt;">Sep 8</td>
+<td class="l data" style=" font-size: 11pt;">Japan</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Sapporo, Japan" target="_self">Sapporo</a></td>
+<td class="l data" style=" font-size: 11pt;">Our next flight is a long day of travel to the edge of the Pacific to Sapporo, Japan. Better known as host to the 1972 Olympic Winter Games, now this thriving city is in close proximity to beautiful mountains and hot springs and a great place to find delicious Japanese ramen and beer.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">38</td>
+<td class="l data" style=" font-size: 11pt;">Sep 15</td>
+<td class="l data" style=" font-size: 11pt;">South Korea</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Sokcho, South Korea" target="_self">Sokcho</a></td>
+<td class="l data" style=" font-size: 11pt;">Just a short flight across the Japanese Sea and then a swift train and you will be in Sokcho, South Korea. After a Pokemon Go glitch attracted many young South Koreans to this city it&#39;s exploded in popularity. Nearby mountains in the Seoraksan National Park and a thriving food scene (Korean Fried Chicken is the KFC around here) are what have kept this city in the spotlight.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">39</td>
+<td class="l data" style=" font-size: 11pt;">Sep 22</td>
+<td class="l data" style=" font-size: 11pt;">China</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Beijing, China" target="_self">Beijing</a></td>
+<td class="l data" style=" font-size: 11pt;">Continuing West towards China mainland, we take a quick flight into Beijing. An intriguing and fascinating city with both modern and ancient elements, be sure to visit the massive Great Wall slung along the nearby hills.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">40</td>
+<td class="l data" style=" font-size: 11pt;">Sep 29</td>
+<td class="l data" style=" font-size: 11pt;">Japan</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Tokyo, Japan" target="_self">Tokyo</a></td>
+<td class="l data" style=" font-size: 11pt;">With a zig-zag, we head back East into Japan to get a taste of Tokyo, not just of the food and service, but also of the complementary dissonance of the bright, modern zing with the warm, traditional rigor and spirit.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">41</td>
+<td class="l data" style=" font-size: 11pt;">Oct 6</td>
+<td class="l data" style=" font-size: 11pt;">Australia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Adelaide, Australia" target="_self">Adelaide</a></td>
+<td class="l data" style=" font-size: 11pt;">Shifting gears as the months start getting later in the year we head down under to Adelaide, Australia. Allow a day or two for getting to this young, bright city with renowned museums that explore the unique history and art of this once upon a time convict island.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">42</td>
+<td class="l data" style=" font-size: 11pt;">Oct 13</td>
+<td class="l data" style=" font-size: 11pt;">Australia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Perth, Australia" target="_self">Perth</a></td>
+<td class="l data" style=" font-size: 11pt;">Sticking to the island, we fly to the far west across the Outback to the isolated city of Perth. A treasure of a city far from the rest of the world, you can find everything you need. We recommend checking out their extensive zoo to meet some of Australia&#39;s unique wildlife.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">43</td>
+<td class="l data" style=" font-size: 11pt;">Oct 20</td>
+<td class="l data" style=" font-size: 11pt;">Australia</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Sydney, Australia" target="_self">Sydney</a></td>
+<td class="l data" style=" font-size: 11pt;">Heading back West, Sydney is our last stop as we fly again across the Australian continent. This famous metropolis is photo ready with instantly recognizable landmarks such as the Sydney Opera House, Harbor Bridge and Bondi Beach.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">44</td>
+<td class="l data" style=" font-size: 11pt;">Oct 27</td>
+<td class="l data" style=" font-size: 11pt;">USA</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Napa CA, USA" target="_self">Napa CA</a></td>
+<td class="l data" style=" font-size: 11pt;">As we approach the year&#39;s end, we take a couple days to journey up, up North and far West across the vast Pacific Ocean to Napa, California. Luckily there&#39;s plenty of wine in Napa Valley to help you unwind and relax after that trek.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">45</td>
+<td class="l data" style=" font-size: 11pt;">Nov 5</td>
+<td class="l data" style=" font-size: 11pt;">USA</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Los Angeles CA, USA" target="_self">Los Angeles CA</a></td>
+<td class="l data" style=" font-size: 11pt;">An easy drive South will take you further into the golden land of California straight to the heart of Los Angeles where you are sure to find sunny skies as you explore this star-filled city.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">46</td>
+<td class="l data" style=" font-size: 11pt;">Nov 9</td>
+<td class="l data" style=" font-size: 11pt;">USA</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Las Vegas NV, USA" target="_self">Las Vegas NV</a></td>
+<td class="l data" style=" font-size: 11pt;">An even shorter drive just north-east, takes you past Death Valley to Las Vegas, Nevada. This flashy, high rolling city is a nice crisp 70 in November, so whether you&#39;re into the shows or the money, this is the time to be here.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">47</td>
+<td class="l data" style=" font-size: 11pt;">Nov 15</td>
+<td class="l data" style=" font-size: 11pt;">USA</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Austin TX, USA" target="_self">Austin TX</a></td>
+<td class="l data" style=" font-size: 11pt;">Next we fly Southeast, down to Austin, Texas. With longhorns decorating the barbeque joints, Tex-Mex that&#39;s off the chain, live music (dare we say &#39;Live Music Capital of the World&#39;), and fresh springs to dip into, this friendly city is hard not to like.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">48</td>
+<td class="l data" style=" font-size: 11pt;">Nov 22</td>
+<td class="l data" style=" font-size: 11pt;">USA</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=New Orleans LA, USA" target="_self">New Orleans LA</a></td>
+<td class="l data" style=" font-size: 11pt;">Directly east of Austin, a short flight sends us to swampy New Orleans, Louisiana. A rich French-Creole history and Bourbon Street to boot, flavors this easy-going, swinging city that will reinvigorate your spirit.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">49</td>
+<td class="l data" style=" font-size: 11pt;">Dec 2</td>
+<td class="l data" style=" font-size: 11pt;">USA</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Orlando FL, USA" target="_self">Orlando FL</a></td>
+<td class="l data" style=" font-size: 11pt;">Entering the final month of our long year of beautifully temperate travels, we head further East to Orlando, Florida. Most know this city for being home to hyper-realistic yet otherworldly and magical theme parks.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">50</td>
+<td class="l data" style=" font-size: 11pt;">Dec 9</td>
+<td class="l data" style=" font-size: 11pt;">USA</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Everglades FL, USA" target="_self">Everglades FL</a></td>
+<td class="l data" style=" font-size: 11pt;">Driving to the western side of Florida we head over to the enchanting Everglades. The largest national park within the continental United States, here you will encounter mangroves, coral reefs and untouched wildlife.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">51</td>
+<td class="l data" style=" font-size: 11pt;">Dec 15</td>
+<td class="l data" style=" font-size: 11pt;">Bermuda</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Mount Pleasant, Bermuda" target="_self">Mount Pleasant</a></td>
+<td class="l data" style=" font-size: 11pt;">Taking a quick flight, we reach out into the Atlantic to Mount Pleasant, Bermuda where you can relax in tiny beach coves of rock and pink sand, enjoy the clear waters of this island paradise.</td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">52</td>
+<td class="l data" style=" font-size: 11pt;">Dec 25</td>
+<td class="l data" style=" font-size: 11pt;">Bahamas</td>
+<td class="l data" style=" font-size: 11pt;"><a href="https://www.google.com/search?q=Freeport, Bahamas" target="_self">Freeport</a></td>
+<td class="l data" style=" font-size: 11pt;">With a final flight we end this epic year in the Bahamas, flying into Freeport. We suggest getting yourself straight to one of their numerous beaches to end the last few days of this year enjoying that perfect weather. This is the end of your epic around the world journey, and you&#39;re probably exhausted - so why not just stay right here for another year?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemfooter" style=" font-size: 10pt;"><a href="https://www.reservations.com/blog/resources/around-the-world-perfect-weather/">Data source: https://www.reservations.com/blog/resources/around-the-world-perfect-weather/</a>
+</td>
+</tr>
+</table><br>
+</div>
+</body>
+</html>
