@@ -1,0 +1,273 @@
+1                                                          The SAS System                            13:40 Friday, December 13, 2019
+
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M5) 
+      Licensed to Fuller Joan-6143, Site 70068118.
+NOTE: This session is executing on the Linux 2.6.32-696.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.3
+      SAS/ETS 14.3
+      SAS/OR 14.3
+      SAS/QC 14.3
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-696.el6.x86_64 #1 SMP Tue Feb 21 00:53:17 EST 2017 x86_64 Red Hat Enterprise Linux Server release 6.9 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.16 seconds
+      cpu time            0.02 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /r/ge.unx.sas.com/vol/vol310/u31/realliso/autoexec.sas.
+
+
+NOTE: AUTOEXEC processing completed.
+
+1          %let name=donald_trump_daily_tweet_count;
+2          
+3          /*
+4          Set your current-working-directory (to read/write files), if you need to ...
+5          %let rc=%sysfunc(dlgcdir('c:\someplace\public_html'));
+6          */
+7          filename odsout '.';
+8          
+9          /*
+10         Using data from:
+11         http://trumptwitterarchive.com/archive
+2                                                          The SAS System                            13:40 Friday, December 13, 2019
+
+12         
+13         Subset to the desired date range.
+14         Sort so most recent are at the top.
+15         Clicked Export->CSV  (took about a minute to process)
+16         Then the tweets showed up in a box at top of page, in csv format,
+17         and I copy-n-pasted them into trump_tweets.csv (which can take a while).
+18         */
+19         
+20         /*
+21         Then modified the code it generated in the log, to import data
+22         exactly the way I wanted it.
+23         */
+24         data my_data;
+25         infile '../democd96/trump_tweets.csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2;
+26            informat source $138.;
+27            informat text $312.;
+28            informat created_at anydtdtm19.;
+29            informat retweet_count best32.;
+30            informat favorite_count best32.;
+31            informat is_retweet $18.;
+32            informat id_str $100.;
+33            format source $138.;
+34            format text $312.;
+35            format created_at datetime.;
+36            format retweet_count comma12.0;
+37            format favorite_count comma12.0;
+38            format is_retweet $18.;
+39            format id_str $100.;
+40         input
+41            source $
+42            text $
+43            created_at
+44            retweet_count
+45            favorite_count
+46            is_retweet $
+47            id_str $;
+48         format date date9.;
+49         date=datepart(created_at);
+50         if date^=. then output;
+51         run;
+
+NOTE: The infile '../democd96/trump_tweets.csv' is:
+      Filename=/r/ge.unx.sas.com/vol/vol310/u31/realliso/public_html/democd96/trump_tweets.csv,
+      Owner Name=realliso,Group Name=isd,
+      Access Permission=-rw-r--r--,
+      Last Modified=13Dec2019:07:48:44,
+      File Size (bytes)=8608759
+
+NOTE: Invalid data for favorite_count in line 43048 61-65.
+RULE:     ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0                      
+43048     My in. (cont) http://t.co/YNX1msYh,09-19-2011 17:54:28,18,7,false,115846232714391552 84
+source=My in. (cont) http://t.co/YNX1msYh text=09-19-2011 17:54:28 created_at=. retweet_count=7 favorite_count=.
+is_retweet=115846232714391552 id_str=  date=. _ERROR_=1 _N_=43047
+NOTE: Invalid data for favorite_count in line 43172 102-106.
+43172     #Apprentice Andy and I talk about politics an. (cont) http://deck.ly/~9Q2fk,08-09-2011 19:33:31,20,3
+     101  ,false,101013255950053376 125
+source=#Apprentice Andy and I talk about politics an. (cont) http://deck.ly/~9Q2fk text=08-09-2011 19:33:31 created_at=.
+retweet_count=3 favorite_count=. is_retweet=101013255950053376 id_str=  date=. _ERROR_=1 _N_=43171
+3                                                          The SAS System                            13:40 Friday, December 13, 2019
+
+NOTE: Invalid data for favorite_count in line 43200 118-122.
+RULE:     ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0                      
+43200       My  interview yesterday on CNBC's Squawk Box:  Debt Deal a. (cont) http://deck.ly/~HZMKL,08-02-201
+     101  1 19:56:31,13,12,false,98482327390396416 140
+source=My  interview yesterday on CNBC's Squawk Box:  Debt Deal a. (cont) http://deck.ly/~HZMKL text=08-02-2011 19:56:31
+created_at=. retweet_count=12 favorite_count=. is_retweet=98482327390396416 id_str=  date=. _ERROR_=1 _N_=43199
+NOTE: 43571 records were read from the infile '../democd96/trump_tweets.csv'.
+      The minimum record length was 0.
+      The maximum record length was 392.
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      10 at 49:6   
+NOTE: The data set WORK.MY_DATA has 43561 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.16 seconds
+      cpu time            0.16 seconds
+      
+
+52         
+53         proc sql noprint;
+54         create table summarized_data as
+55         select unique date, count(*) as daily_tweet_count
+56         from my_data
+57         group by date;
+NOTE: Table WORK.SUMMARIZED_DATA created, with 3101 rows and 2 columns.
+
+58         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.04 seconds
+      
+
+58       !       run;
+59         
+60         proc sql noprint;
+61         select max(date) format=date9. into :max_date separated by ' ' from my_data;
+62         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.03 seconds
+      
+
+62       !       run;
+63         
+64         
+65         ODS LISTING CLOSE;
+66         ODS HTML path=odsout body="&name..htm"
+67          (title="Donald Trump Daily Tweet Count")
+68          style=htmlblue;
+NOTE: Writing HTML Body file: donald_trump_daily_tweet_count.htm
+69         
+70         ods graphics /
+71          noscale /* if you don't use this option, the text will be resized */
+72          imagemap tipmax=10000
+73          imagefmt=png imagename="&name"
+74          width=1200px height=600px noborder;
+75         
+76         title1 c=gray33 height=18pt "Donald Trump's Number of Tweets Per Day";
+4                                                          The SAS System                            13:40 Friday, December 13, 2019
+
+77         footnote c=gray height=12pt "Data source: trumptwitterarchive.com (through &max_date)";
+78         
+79         proc sgplot data=summarized_data noborder;
+80         scatter y=daily_tweet_count x=date /
+81          markerattrs=(color=cx0276FD size=7px) transparency=.40;
+82         xaxis display=(nolabel noline) offsetmin=0 offsetmax=0
+83          grid gridattrs=(pattern=dot color=gray88);
+84         yaxis display=(nolabel noline noticks) offsetmin=0 offsetmax=0
+85          values=(0 to 175 by 25)
+86          grid gridattrs=(pattern=dot color=gray88);
+87         run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           5.01 seconds
+      cpu time            0.14 seconds
+      
+NOTE: The column format DATE9 is replaced by an auto-generated format on the axis.
+NOTE: There were 3101 observations read from the data set WORK.SUMMARIZED_DATA.
+
+88         
+89         data summarized_data; set summarized_data;
+90         month_date_string='15'||put(date,monname3.)||put(date,year4.);
+91         format month_date mmyys10.;
+92         month_date=input(month_date_string,date9.);
+93         run;
+
+NOTE: There were 3101 observations read from the data set WORK.SUMMARIZED_DATA.
+NOTE: The data set WORK.SUMMARIZED_DATA has 3101 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+94         
+95         /*
+96         title2 c=gray33 h=14pt "Grouped by Month";
+97         proc sgplot data=summarized_data noborder;
+98         scatter y=daily_tweet_count x=month_date /
+99          markerattrs=(color=cx0276FD size=7px) transparency=.40;
+100        xaxis display=(nolabel noline) offsetmin=0 offsetmax=0
+101         grid gridattrs=(pattern=dot color=gray88);
+102        yaxis display=(nolabel noline noticks) offsetmin=0 offsetmax=0
+103         values=(0 to 175 by 25)
+104         grid gridattrs=(pattern=dot color=gray88);
+105        run;
+106        */
+107        
+108        /*
+109        title2 c=gray33 h=14pt "Grouped by Month";
+110        proc sgplot data=summarized_data noborder;
+111        vbox daily_tweet_count / category=month_date
+112         outlierattrs=(color=cx0276FD size=7px);
+113        xaxis display=(nolabel noline) offsetmin=0 offsetmax=0
+114         grid gridattrs=(pattern=dot color=gray88);
+115        yaxis display=(nolabel noline noticks) offsetmin=0 offsetmax=0
+116         values=(0 to 175 by 25)
+117         grid gridattrs=(pattern=dot color=gray88);
+118        run;
+5                                                          The SAS System                            13:40 Friday, December 13, 2019
+
+119        */
+120        
+121        ods html anchor='box';
+122        title2 c=gray33 h=14pt "Grouped by Month";
+123        proc sgplot data=summarized_data noborder;
+124        vbox daily_tweet_count / category=month_date
+125         outlierattrs=(color=cx0276FD size=7px);
+126        xaxis display=(nolabel noline) offsetmin=0 offsetmax=0
+127         grid gridattrs=(pattern=dot color=gray88)
+128         type=time;
+129        yaxis display=(nolabel noline noticks) offsetmin=0 offsetmax=0
+130         values=(0 to 175 by 25)
+131         grid gridattrs=(pattern=dot color=gray88);
+132        run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           1.59 seconds
+      cpu time            0.22 seconds
+      
+NOTE: The column format MMYYS10 is replaced by an auto-generated format on the axis.
+NOTE: There were 3101 observations read from the data set WORK.SUMMARIZED_DATA.
+
+133        
+134        quit;
+135        ODS HTML CLOSE;
+136        ODS LISTING;
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           7.20 seconds
+      cpu time            0.74 seconds
+      
