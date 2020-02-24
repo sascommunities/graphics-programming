@@ -742,6 +742,7 @@ on (graph_all.country_region=graph_deaths.country_region) and (graph_all.snapsho
 quit; run;
 
 data graph_all; set graph_all;
+if country_region='United Arab Emirates' then country_region='UAE';
 if recovered=. then recovered=0;
 if deaths=. then deaths=0;
 length my_html $300;
