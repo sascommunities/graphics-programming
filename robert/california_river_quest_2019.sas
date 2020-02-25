@@ -132,7 +132,7 @@ yaxis display=(noline noticks)
  labelattrs=(size=11pt weight=bold) labelpos=top
  grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(size=11pt) offsetmin=0 offsetmax=0;
-xaxis labalattrs=(size=11pt weight=bold)
+xaxis labelattrs=(size=11pt weight=bold)
  values=(0 to 100 by 25) valueattrs=(size=11pt);
 run;
 
