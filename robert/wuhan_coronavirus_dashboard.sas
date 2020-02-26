@@ -24,12 +24,12 @@ folder name each time, with the date & time in the name.
 
 %let gitfolder=./github_clone_&sysdate9;
 /*
+*/
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-*/
 
 /* ------------------ Import the confirmed cases data ---------------------- */
 
@@ -218,7 +218,10 @@ size=11;
 
 y=87; html=''; function='label'; 
 x=3; color="graycc"; text="Visualization by: "; output;
+html='target="cor2" href='||quote('https://blogs.sas.com/content/graphicallyspeaking/2020/02/03/improving-the-wuhan-coronavirus-dashboard/');
+/*
 html='target="cor2" href='||quote('https://blogs.sas.com/content/author/robertallison/');
+*/
 x=30; color="dodgerblue"; text="Robert Allison using SAS Software"; output;
 
 y=y-24; html='';  
@@ -718,14 +721,12 @@ create table graph_recovered as
 select unique country_region, snapshot, sum(recovered) as recovered
 from recovered_data
 group by country_region, snapshot
-having recovered^=0
 order by country_region, snapshot;
 
 create table graph_deaths as
 select unique country_region, snapshot, sum(deaths) as deaths
 from death_data
 group by country_region, snapshot
-having deaths^=0
 order by country_region, snapshot;
 
 
@@ -743,8 +744,6 @@ quit; run;
 
 data graph_all; set graph_all;
 if country_region='United Arab Emirates' then country_region='UAE';
-if recovered=. then recovered=0;
-if deaths=. then deaths=0;
 length my_html $300;
 my_html='title='||quote(
  trim(left(put(snapshot,nldate20.)))||'0d'x||
@@ -787,7 +786,6 @@ plot confirmed*snapshot=1 recovered*snapshot=2 deaths*snapshot=3 / overlay
  html=my_html
  des='' name="wuhan_coronavirus_#byval(country_region)";
 run;
-proc print data=graph_all; run;
 
 quit;
 ODS HTML CLOSE;
