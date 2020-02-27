@@ -24,12 +24,12 @@ folder name each time, with the date & time in the name.
 
 %let gitfolder=./github_clone_&sysdate9;
 /*
-*/
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
+*/
 
 /* ------------------ Import the confirmed cases data ---------------------- */
 
@@ -51,6 +51,7 @@ run;
 data confirmed_data (drop = month day year datestring);
  set confirmed_data;
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
+if Country_Region='United Arab Emirates' then Country_Region='UAE';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_'); 
@@ -94,6 +95,7 @@ run;
 data death_data (drop = month day year datestring);
  set death_data;
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
+if Country_Region='United Arab Emirates' then Country_Region='UAE';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_');
@@ -129,6 +131,7 @@ run;
 data recovered_data (drop = month day year datestring);
  set recovered_data;
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
+if Country_Region='United Arab Emirates' then Country_Region='UAE';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_');
@@ -217,19 +220,19 @@ function='label'; position='6';
 size=11; 
 
 y=87; html=''; function='label'; 
-x=3; color="graycc"; text="Visualization by: "; output;
+x=3; color="graycc"; style="albany amt"; text="Visualization by: "; output;
 html='target="cor2" href='||quote('https://blogs.sas.com/content/graphicallyspeaking/2020/02/03/improving-the-wuhan-coronavirus-dashboard/');
-x=30; color="dodgerblue"; text="Robert Allison using SAS Software"; output;
+x=30; color="dodgerblue"; style="albany amt/bold"; text="Robert Allison using SAS Software"; output;
 
 y=y-24; html='';  
-x=3; color="graycc"; text="Designed after: "; output;
+x=3; color="graycc"; style="albany amt"; text="Designed after: "; output;
 html='target="cor2" href='||quote('https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6');
-x=29; color="dodgerblue"; text="Johns Hopkins dashboard"; output;
+x=29; color="dodgerblue"; style="albany amt/bold"; text="Johns Hopkins dashboard"; output;
 
 y=y-24; html=''; 
-x=3; color="graycc"; text="Data sources: "; output;
+x=3; color="graycc"; style="albany amt"; text="Data sources: "; output;
 html='target="cor2" href='||quote('https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports');
-x=28; color="dodgerblue"; text="WHO,"; output;
+x=28; color="dodgerblue"; style="albany amt/bold"; text="WHO,"; output;
 html='target="cor2" href='||quote('https://www.cdc.gov/coronavirus/2019-ncov/index.html');
 x=x+11; color="dodgerblue"; text="CDC,"; output;
 html='target="cor2" href='||quote('https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases');
@@ -240,9 +243,9 @@ html='target="cor2" href='||quote('https://3g.dxy.cn/newh5/view/pneumonia?scene=
 x=x+10; color="dodgerblue"; text="and DXY"; output;
 
 y=y-24; html=''; 
-x=3; color="graycc"; text="Data: "; output;
+x=3; color="graycc"; style="albany amt"; text="Data: "; output;
 html='target="cor2" href='||quote('https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series');
-x=14; color="dodgerblue"; text="GitHub"; output;
+x=14; color="dodgerblue"; style="albany amt/bold"; text="GitHub"; output;
 
 run;
 data anno_info; set anno_gray_background anno_info;
@@ -370,6 +373,8 @@ if idname='United States' then country_region='US';
 if idname='United Kingdom' then country_region='UK';
 if idname='Viet Nam' then country_region='Vietnam';
 if idname='China/Taiwan_POC' then country_region='Taiwan';
+if idname='United Arab Emirates' then country_region='UAE';
+if idname='Macedonia' then country_region='North Macedonia';
 run;
 proc gproject data=my_map out=my_map latlong eastlong degrees 
  project=miller2 parmout=projparm;
@@ -575,10 +580,11 @@ Therefore I'm annotating 'invisible' circles around the gplot markers,
 with the html mouse-over on the annotated circles.
 */
 data anno_mouseover; set summarized_series;
-length function $8 color $12 style $35 html $300;
+length function $8 color $12 style $35;
 xsys='2'; ysys='2'; hsys='3'; when='b';
 x=snapshot; y=confirmed;
 function='pie'; style='pempty'; size=3; rotate=360; color='gray22';
+html=trim(left(html))||' href='||quote('#newbar');
 run;
 proc sql noprint;
 select min(snapshot) format=date9. into :mindate from summarized_series;
@@ -691,13 +697,79 @@ proc greplay nofs igout=work.gseg tc=tempcat;
     des='' name="&name";
 run;
 
-/* We don't have Hong Kong and Macau in our world map */
-/* That's ok - those polygons would be too small to see anyway */
-/* They still get a red bubble. */
+/* -------------------------------------------------------------------- */
+
+ods graphics /
+ noscale /* if you don't use this option, the text will be resized */
+ imagemap tipmax=2500 
+ imagefmt=png 
+ width=800px height=600px
+ noborder; 
+
+/* -------------------------------------------------------------------- */
+
 /*
-title "country_region names not in the map"; 
-proc print data=not_in_map; run;
+Create the bar chart, below the dashboard.
 */
+
+proc sql noprint;
+
+create table bar_confirmed as
+select unique snapshot, 'Confirmed' as type, sum(confirmed) as cumulative_cases
+from confirmed_data
+group by snapshot
+order by snapshot;
+
+create table bar_recovered as
+select unique snapshot, 'Recovered' as type, sum(recovered) as cumulative_cases
+from recovered_data
+group by snapshot
+order by snapshot;
+
+quit; run;
+
+data bar_confirmed; set bar_confirmed;
+new_cases=cumulative_cases-lag(cumulative_cases);
+run;
+
+data bar_recovered; set bar_recovered;
+new_cases=cumulative_cases-lag(cumulative_cases);
+run;
+
+data bar_data; set bar_confirmed bar_recovered;
+run;
+
+ods html anchor="newbar";
+ods graphics / imagename="wuhan_coronavirus_newbar";
+
+title1 h=18pt font='albany amt/bold' c=gray33 "2019-nCoV Wuhan Coronavirus new cases per day";
+title2 h=4pt ' ';
+
+ods graphics / width=1400px height=600px;
+
+proc sgplot data=bar_data noborder;
+format snapshot nldate20.;
+format new_cases comma10.0;
+styleattrs datacolors=(red cx71a81e);
+vbarparm category=snapshot response=new_cases / 
+ group=type groupdisplay=cluster
+ outlineattrs=(color=black)
+ tip=(snapshot type new_cases)
+ tipformat=(nldate20. auto auto)
+ ;
+keylegend / title=''
+ location=inside position=topleft opaque border
+ across=2 outerpad=(left=10pt top=10pt);
+yaxis display=(nolabel noline noticks)
+ grid gridattrs=(pattern=dot color=gray88)
+ valueattrs=(color=gray33 size=10pt)
+/* thresholdmax=1 */
+ ;
+xaxis display=(nolabel) 
+ type=time values=("&mindate"d to "&maxdate"d by &byval)
+ valueattrs=(color=gray33 size=10pt);
+run;
+
 
 /* -------------------------------------------------------------------- */
 
@@ -747,13 +819,6 @@ proc sort data=graph_all out=graph_all;
 by country_region snapshot;
 run;
 
-ods graphics /
- noscale /* if you don't use this option, the text will be resized */
- imagemap tipmax=2500 
- imagefmt=png 
- width=800px height=600px
- noborder; 
-
 ods html anchor="#byval(country_region)";
 ods graphics / imagename="wuhan_coronavirus_#byval(country_region)";
 
@@ -761,6 +826,7 @@ options nobyline;
 title1 h=18pt font='albany amt/bold' c=gray33 "2019-nCoV Wuhan Coronavirus cases in: #byval(country_region)";
 title2 h=4pt ' ';
 
+ods graphics / width=800px height=600px;
 proc sgplot data=graph_all noborder;
 by country_region;
 format snapshot nldate.;
@@ -783,6 +849,17 @@ yaxis display=(nolabel noline noticks)
 xaxis display=(nolabel) 
  type=time values=("&mindate"d to "&maxdate"d by &byval)
  valueattrs=(color=gray33 size=10pt);
+run;
+
+/* ------------------------------------------------------------------ */
+
+/* We don't have Hong Kong and Macau in our world map */
+/* That's ok - those polygons would be too small to see anyway */
+/* They still get a red bubble. */
+/*
+*/
+title "country_region names not in the map"; 
+proc print data=not_in_map (where=(country_region not in ('Macau' 'Hong Kong' 'Cruise ships, etc'))); 
 run;
 
 quit;
