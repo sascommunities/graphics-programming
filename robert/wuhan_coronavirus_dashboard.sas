@@ -729,11 +729,11 @@ order by snapshot;
 quit; run;
 
 data bar_confirmed; set bar_confirmed;
-new_cases=cumulative_cases-lag(cumulative_cases);
+on_this_day=cumulative_cases-lag(cumulative_cases);
 run;
 
 data bar_recovered; set bar_recovered;
-new_cases=cumulative_cases-lag(cumulative_cases);
+on_this_day=cumulative_cases-lag(cumulative_cases);
 run;
 
 data bar_data; set bar_confirmed bar_recovered;
@@ -742,19 +742,20 @@ run;
 ods html anchor="newbar";
 ods graphics / imagename="wuhan_coronavirus_newbar";
 
-title1 h=18pt font='albany amt/bold' c=gray33 "2019-nCoV Wuhan Coronavirus new cases per day";
+title1 h=18pt font='albany amt/bold' c=gray33 "2019-nCoV Wuhan Coronavirus - Number of new confirmed & recovered cases each day";
 title2 h=4pt ' ';
 
 ods graphics / width=1400px height=600px;
 
 proc sgplot data=bar_data noborder;
 format snapshot nldate20.;
-format new_cases comma10.0;
+format on_this_day comma10.0;
+label on_this_day='Cases on this day';
 styleattrs datacolors=(red cx71a81e);
-vbarparm category=snapshot response=new_cases / 
+vbarparm category=snapshot response=on_this_day / 
  group=type groupdisplay=cluster
  outlineattrs=(color=black)
- tip=(snapshot type new_cases)
+ tip=(snapshot type on_this_day)
  tipformat=(nldate20. auto auto)
  ;
 keylegend / title=''
