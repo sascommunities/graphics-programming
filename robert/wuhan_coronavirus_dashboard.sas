@@ -24,12 +24,12 @@ folder name each time, with the date & time in the name.
 
 %let gitfolder=./github_clone_&sysdate9;
 /*
+*/
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-*/
 
 /* ------------------ Import the confirmed cases data ---------------------- */
 
@@ -860,7 +860,7 @@ run;
 /*
 */
 title "country_region names not in the map"; 
-proc print data=not_in_map (where=(country_region not in ('Macau' 'Hong Kong' 'Cruise ships, etc'))); 
+proc print data=not_in_map (where=(country_region not in ('Macau' 'Hong Kong' 'North Ireland' 'San Marino' 'Cruise ships, etc'))); 
 run;
 
 quit;
