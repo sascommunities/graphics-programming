@@ -29,7 +29,7 @@ https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData04.csv
 https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData07.csv
 */
 
-%let latest=https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData07.csv;
+%let latest=https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData08.csv;
 
 filename csv_file url "&latest";
 /*
@@ -43,6 +43,18 @@ format flu_deaths comma8.0;
 input year week pct_deaths_due_to_pneu_and_flu expected 
  threshold all_deaths pneumonia_deaths flu_deaths;
 if year>=2010 then output;
+run;
+
+/* this extra variable is to plot the text label on the last value */
+data my_data; set my_data end=last;
+output;
+if last then do;
+ week=week+1;
+ latest=flu_deaths;
+ latest_text='latest';
+ flu_deaths=.;
+ output;
+ end;
 run;
 
 data last; set my_data end=last;
@@ -92,6 +104,9 @@ panelby year / onepanel columns=8 novarname
  headerattrs=(size=12pt color=gray33) noborder;
 band x=week lower=0 upper=flu_deaths / fill fillattrs=(color=red) 
  tip=(flu_deaths year week);
+scatter x=week y=latest / markerattrs=(color=blue symbol=triangleleftfilled)
+ datalabel=latest_text datalabelpos=right tip=(flu_deaths year week)
+ datalabelattrs=(color=blue size=10pt);
 rowaxis labelpos=top values=(0 to 1750 by 250)
  valueattrs=(size=11pt color=gray33)
  labelattrs=(size=11pt color=gray33)
