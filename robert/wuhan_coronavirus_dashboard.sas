@@ -74,6 +74,10 @@ proc sql noprint;
 select unique(snapshot) format=nldate20. into :datestr separated by ' ' from latest_confirmed;
 quit; run;
 
+/* save a copy of the dataset, to use in other programs */
+libname robsdata '.';
+data robsdata.confirmed_data; set confirmed_data;
+run;
 
 /* ------------------ Import the deaths data ---------------------- */
 
@@ -197,9 +201,9 @@ data anno_title;
 length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d'; 
 function='label'; position='6'; color="graycc";
-html='title='||quote("Wuhan Coronavirus dashboard - As of &datestr");
+html='title='||quote("Wuhan Coronavirus dashboard - &datestr snapshot");
 size=20; x=2; y=60; text="2019-nCoV Wuhan Coronavirus Global Cases"; output;
-size=14; x=44; y=53; text="As of &datestr"; output;
+size=14; x=44; y=53; text="&datestr snapshot"; output;
 run;
 data anno_title; set anno_gray_background anno_title;
 run;
