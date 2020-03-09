@@ -159,7 +159,7 @@ goptions border;
  
 ODS LISTING CLOSE;
 ODS html path=odsout body="&name..htm"
- (title="Wuhan Coronavirus Dashboard") 
+ (title="COVID-19 Coronavirus Dashboard") 
  style=htmlblue;
 
 goptions gunit=pct ftitle='albany amt/bold' ftext='albany amt' htitle=28pt htext=12pt;
@@ -201,8 +201,8 @@ data anno_title;
 length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d'; 
 function='label'; position='6'; color="graycc";
-html='title='||quote("Wuhan Coronavirus dashboard - &datestr snapshot");
-size=20; x=2; y=60; text="2019-nCoV Wuhan Coronavirus Global Cases"; output;
+html='title='||quote("COVID-19 Coronavirus dashboard - &datestr snapshot");
+size=20; x=2; y=60; text="COVID-19 Coronavirus Global Cases"; output;
 size=14; x=44; y=53; text="&datestr snapshot"; output;
 run;
 data anno_title; set anno_gray_background anno_title;
@@ -275,7 +275,7 @@ xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; position='5'; 
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="Total Confirmed"; output;
-html='title='||quote(trim(left(put(sum_confirmed,comma12.0)))||" total confirmed cases of Wuhan Coronavirus worldwide");
+html='title='||quote(trim(left(put(sum_confirmed,comma12.0)))||" total confirmed cases of COVID-19 Coronavirus worldwide");
 style='albany amt/bold'; color="red"; size=40;
 x=50; y=50; text=trim(left(put(sum_confirmed,comma12.0))); output;
 run;
@@ -299,7 +299,7 @@ xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="Total Deaths"; output;
-html='title='||quote(trim(left(put(sum_deaths,comma12.0)))||" deaths from Wuhan Coronavirus worldwide");
+html='title='||quote(trim(left(put(sum_deaths,comma12.0)))||" deaths from COVID-19 Coronavirus worldwide");
 style='albany amt/bold'; color="white"; size=40;
 x=50; y=50; text=trim(left(put(sum_deaths,comma12.0))); output;
 run;
@@ -324,7 +324,7 @@ xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="Total Recovered"; output;
-html='title='||quote(trim(left(put(sum_recovered,comma12.0)))||" recovered from Wuhan Coronavirus worldwide");
+html='title='||quote(trim(left(put(sum_recovered,comma12.0)))||" recovered from COVID-19 Coronavirus worldwide");
 style='albany amt/bold'; color="cx71a81e"; size=40;
 x=50; y=50; text=trim(left(put(sum_recovered,comma12.0))); output;
 run;
@@ -445,7 +445,7 @@ y=99-(_n_*6);
 text=trim(left(put(confirmed,comma12.0))); x=28; position='4'; color="red"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
-html='title='||quote(trim(left(put(confirmed,comma12.0)))||" confirmed cases of Wuhan Coronavirus in "||trim(left(country_region)))||
+html='title='||quote(trim(left(put(confirmed,comma12.0)))||" confirmed cases of COVID-19 Coronavirus in "||trim(left(country_region)))||
  ' href='||quote('#'||trim(left(country_region)));
 function='move'; x=0; y=y-3; output;
 function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
@@ -453,7 +453,7 @@ run;
 data anno_table_confirmed; set anno_table_confirmed;
 output;
 if _n_=1 then do;
- style='albany amt'; color="graycc"; text='- up to top 16 -'; x=50; y=y+5;  position='5'; output;
+ style='albany amt'; color="graycc"; text='- top 16 -'; x=50; y=y+5;  position='5'; output;
  end;
 run;
 data anno_table_confirmed; set anno_gray_background anno_table_confirmed;
@@ -490,7 +490,7 @@ y=98-(_n_*7);
 text=trim(left(put(deaths,comma12.0))); x=28; position='4'; color="white"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
-html='title='||quote(trim(left(put(deaths,comma12.0)))||" deaths from Wuhan Coronavirus in "||trim(left(country_region)))||
+html='title='||quote(trim(left(put(deaths,comma12.0)))||" deaths from COVID-19 Coronavirus in "||trim(left(country_region)))||
  ' href='||quote('#'||trim(left(country_region)));
 function='move'; x=0; y=y-3; output;
 function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
@@ -498,7 +498,7 @@ run;
 data anno_table_deaths; set anno_table_deaths;
 output;
 if _n_=1 then do;
- style='albany amt'; color="graycc"; text='- up to top 13 -'; x=50; y=y+6;  position='5'; output;
+ style='albany amt'; color="graycc"; text='- top 13 -'; x=50; y=y+6;  position='5'; output;
  end;
 run;
 data anno_table_deaths; set anno_gray_background anno_table_deaths;
@@ -534,7 +534,7 @@ y=98-(_n_*7);
 text=trim(left(put(recovered,comma12.0))); x=28; position='4'; color="cx71a81e"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
-html='title='||quote(trim(left(put(recovered,comma12.0)))||" recovered from Wuhan Coronavirus in "||trim(left(country_region)))||
+html='title='||quote(trim(left(put(recovered,comma12.0)))||" recovered from COVID-19 Coronavirus in "||trim(left(country_region)))||
  ' href='||quote('#'||trim(left(country_region)));
 function='move'; x=0; y=y-3; output;
 function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
@@ -542,7 +542,7 @@ run;
 data anno_table_recovered; set anno_table_recovered;
 output;
 if _n_=1 then do;
- style='albany amt'; color="graycc"; text='- up to top 13 -'; x=50; y=y+6;  position='5'; output;
+ style='albany amt'; color="graycc"; text='- top 13 -'; x=50; y=y+6;  position='5'; output;
  end;
 run;
 data anno_table_recovered; set anno_gray_background anno_table_recovered;
@@ -629,7 +629,7 @@ goptions display;
 %let border=gray44;
 goptions xpixels=1400 ypixels=700;
 proc greplay nofs igout=work.gseg tc=tempcat;
-   tdef dash des='Wuhan Coronavirus Dashboard'
+   tdef dash des='COVID-19 Coronavirus Dashboard'
    0/ llx=0       lly=0
       ulx=0       uly=100
       urx=100     ury=100
@@ -746,7 +746,7 @@ run;
 ods html anchor="newbar";
 ods graphics / imagename="wuhan_coronavirus_newbar";
 
-title1 h=18pt font='albany amt/bold' c=gray33 "2019-nCoV Wuhan Coronavirus - Number of new confirmed & recovered cases each day";
+title1 h=18pt font='albany amt/bold' c=gray33 "COVID-19 Coronavirus - Number of new confirmed & recovered cases each day";
 title2 h=4pt ' ';
 
 ods graphics / width=1400px height=600px;
@@ -828,7 +828,7 @@ ods html anchor="#byval(country_region)";
 ods graphics / imagename="wuhan_coronavirus_#byval(country_region)";
 
 options nobyline;
-title1 h=18pt font='albany amt/bold' c=gray33 "2019-nCoV Wuhan Coronavirus cases in: #byval(country_region)";
+title1 h=18pt font='albany amt/bold' c=gray33 "COVID-19 Coronavirus cases in: #byval(country_region)";
 title2 h=4pt ' ';
 
 ods graphics / width=800px height=600px;
@@ -864,7 +864,14 @@ run;
 /*
 */
 title "country_region names not in the map"; 
-proc print data=not_in_map (where=(country_region not in ('Macau' 'Hong Kong' 'North Ireland' 'San Marino' 'Cruise ships, etc'))); 
+proc print data=not_in_map (where=(country_region not in ( 
+ 'Monaco'
+ 'Macau'  
+ 'Hong Kong'  
+ 'North Ireland'  
+ 'San Marino'  
+ 'Cruise ships, etc' 
+ ))); 
 run;
 
 quit;
