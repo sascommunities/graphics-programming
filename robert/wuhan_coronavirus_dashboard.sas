@@ -24,12 +24,12 @@ folder name each time, with the date & time in the name.
 
 %let gitfolder=./github_clone_&sysdate9;
 /*
-*/
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
+*/
 
 /* ------------------ Import the confirmed cases data ---------------------- */
 
@@ -50,8 +50,10 @@ run;
 /* The date/timestamp is in a string - parse it apart, and create a real date variable */
 data confirmed_data (drop = month day year datestring);
  set confirmed_data;
+Country_Region=trim(left(Country_Region));
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
+if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_'); 
@@ -98,8 +100,10 @@ run;
 /* The date/timestamp is in a string - parse it apart, and create a real date variable */
 data death_data (drop = month day year datestring);
  set death_data;
+Country_Region=trim(left(Country_Region));
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
+if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_');
@@ -134,8 +138,10 @@ run;
 /* The date/timestamp is in a string - parse it apart, and create a real date variable */
 data recovered_data (drop = month day year datestring);
  set recovered_data;
+Country_Region=trim(left(Country_Region));
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
+if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_');
@@ -356,7 +362,7 @@ if country_region='Canada' then do;
 if country_region='Sweden' then do;
  lat=63.7425748; long=16.5564647;
  end;
-if country_region='Russia' then do;
+if country_region='Russian Federation' then do;
  lat=55.4645521; long=37.3415677;
  end;
 length html $300;
@@ -368,18 +374,27 @@ html=
 run;
 
 /* The country names have to match in the data & map, for the choro map */
-data my_map; set mapsgfk.world (where=(density<=2 and idname^='Antarctica') drop=resolution);
+/* So, let's make our SAS map names match the names in the data. */
+data my_map; set mapsgfk.world (where=((density<=2 or 
+ idname in ('Vatican City State' 'Gibraltar' 'San Marino' 'Monaco')) 
+ and idname^='Antarctica') drop=resolution);
 length country_region $100;
 country_region=idname;
-if idname='Russian Federation' then country_region='Russia';
 if idname='China' then country_region='Mainland China';
 if idname='United States' then country_region='US';
 if idname='United Kingdom' then country_region='UK';
-if idname='Viet Nam' then country_region='Vietnam';
 if idname='China/Taiwan_POC' then country_region='Taiwan';
 if idname='United Arab Emirates' then country_region='UAE';
 if idname='Macedonia' then country_region='North Macedonia';
+if idname='Brunei Darussalam' then country_region='Brunei';
+if idname='Vatican City State' then country_region='Holy See';
+if idname='South Korea' then country_region='Republic of Korea';
+if idname='Moldova' then country_region='Republic of Moldova';
 run;
+/*
+Some code to help find the matches...
+proc print data=mapsgfk.world (where=(index(idname,'Vatican')^=0)); run;
+*/
 proc gproject data=my_map out=my_map latlong eastlong degrees 
  project=miller2 parmout=projparm;
 id country_region;
@@ -436,6 +451,7 @@ by descending confirmed country_region;
 run;
 data anno_table_confirmed; set anno_table_confirmed (obs=16);
 if country_region='United Arab Emirates' then country_region='UAE';
+if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 run;
 data anno_table_confirmed; set anno_table_confirmed;
 length function $8 color $12 style $35 text $300 html $300;
@@ -481,6 +497,7 @@ data anno_table_deaths; set anno_table_deaths (where=(deaths>0));
 run;
 data anno_table_deaths; set anno_table_deaths (obs=13);
 if country_region='United Arab Emirates' then country_region='UAE';
+if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 run;
 data anno_table_deaths; set anno_table_deaths;
 length function $8 color $12 style $35 text $300 html $300;
@@ -525,6 +542,7 @@ data anno_table_recovered; set anno_table_recovered (where=(recovered>0));
 run;
 data anno_table_recovered; set anno_table_recovered (obs=13);
 if country_region='United Arab Emirates' then country_region='UAE';
+if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 run;
 data anno_table_recovered; set anno_table_recovered;
 length function $8 color $12 style $35 text $300 html $300;
@@ -818,6 +836,7 @@ quit; run;
 
 data graph_all; set graph_all;
 if country_region='United Arab Emirates' then country_region='UAE';
+if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 run;
 
 proc sort data=graph_all out=graph_all;
@@ -867,9 +886,13 @@ title "country_region names not in the map";
 proc print data=not_in_map (where=(country_region not in ( 
  'Monaco'
  'Macau'  
- 'Hong Kong'  
+ 'Macao SAR'  
+ 'Hong Kong SAR'  
  'North Ireland'  
  'San Marino'  
+ 'Channel Islands'  
+ 'Taipei and environs'  
+ 'occupied Palestinian territory'  
  'Cruise ships, etc' 
  ))); 
 run;
