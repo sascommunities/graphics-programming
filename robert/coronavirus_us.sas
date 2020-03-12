@@ -14,6 +14,9 @@ https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_c
 libname robsdata ".";
 
 data confirmed_data; set robsdata.confirmed_data (where=(country_region='US' and confirmed^=0 and confirmed^=.));
+format confirmed comma10.0;
+/* their data said Camden, NC but their lat/long was for Camden, SC */
+if province_state='Camden, NC' then province_state='Camden, SC';
 length statecode $2;
 statecode=scan(trim(left(scan(province_state,2,','))),1,' ');
 run;
@@ -27,7 +30,7 @@ having snapshot=max(snapshot);
 
 /* sum up all the confirmed cases in each state */
 create table us_summary as
-select unique statecode, sum(confirmed) as confirmed
+select unique statecode, sum(confirmed) format=comma10.0 as confirmed
 from latest
 group by statecode;
 
