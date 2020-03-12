@@ -48,6 +48,12 @@ getnames=yes;
 guessingrows=all;
 run;
 
+/* Needed, because of https://github.com/CSSEGISandData/COVID-19/issues/559 */
+/* The state summary has no comma in the province_state variable - don't output those lines, or you'll double-count) */
+data confirmed_data; set confirmed_data;
+if country_region^='US' or (country_region='US' and (index(province_state,',')^=0 or province_state in ('Diamond Princess' 'Grand Princess')))  then output;
+run;
+
 proc transpose data=confirmed_data out=confirmed_data (rename=(_name_=datestring col1=confirmed));
 by Province_State Country_Region Lat Long notsorted;
 run;
@@ -100,6 +106,12 @@ getnames=yes;
 guessingrows=all;
 run;
 
+/* Needed, because of https://github.com/CSSEGISandData/COVID-19/issues/559 */
+/* The state summary has no comma in the province_state variable - don't output those lines, or you'll double-count) */
+data death_data; set death_data;
+if country_region^='US' or (country_region='US' and (index(province_state,',')^=0 or province_state in ('Diamond Princess' 'Grand Princess')))  then output;
+run;
+
 proc transpose data=death_data out=death_data (rename=(_name_=datestring col1=deaths));
 by Province_State Country_Region Lat Long notsorted;
 run;
@@ -138,6 +150,12 @@ proc import datafile=recodata
  out=recovered_data dbms=csv replace;
 getnames=yes;
 guessingrows=all;
+run;
+
+/* Needed, because of https://github.com/CSSEGISandData/COVID-19/issues/559 */
+/* The state summary has no comma in the province_state variable - don't output those lines, or you'll double-count) */
+data recovered_data; set recovered_data;
+if country_region^='US' or (country_region='US' and (index(province_state,',')^=0 or province_state in ('Diamond Princess' 'Grand Princess')))  then output;
 run;
 
 proc transpose data=recovered_data out=recovered_data (rename=(_name_=datestring col1=recovered));
@@ -377,7 +395,7 @@ if country_region='Russia' then do;
  lat=55.4645521; long=37.3415677;
  end;
 if country_region='United Kingdom' then do;
- lat=51.5188601; long=-0.3941821;
+ lat=53.7970459; long=-1.5191599;
  end;
 if country_region='France' then do;
  lat=48.8283932; long=2.3443639;
