@@ -31,6 +31,11 @@ data _null_;
 run;
 */
 
+/*
+John D. accesses the data like this:
+https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv
+*/
+
 /* ------------------ Import the confirmed cases data ---------------------- */
 
 /*
@@ -51,7 +56,9 @@ run;
 data confirmed_data (drop = month day year datestring);
  set confirmed_data;
 Country_Region=trim(left(Country_Region));
+/*
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
+*/
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -101,7 +108,9 @@ run;
 data death_data (drop = month day year datestring);
  set death_data;
 Country_Region=trim(left(Country_Region));
+/*
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
+*/
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -139,7 +148,9 @@ run;
 data recovered_data (drop = month day year datestring);
  set recovered_data;
 Country_Region=trim(left(Country_Region));
+/*
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
+*/
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -362,8 +373,14 @@ if country_region='Canada' then do;
 if country_region='Sweden' then do;
  lat=63.7425748; long=16.5564647;
  end;
-if country_region='Russian Federation' then do;
+if country_region='Russia' then do;
  lat=55.4645521; long=37.3415677;
+ end;
+if country_region='United Kingdom' then do;
+ lat=51.5188601; long=-0.3941821;
+ end;
+if country_region='France' then do;
+ lat=48.8283932; long=2.3443639;
  end;
 length html $300;
 html=
@@ -380,17 +397,28 @@ data my_map; set mapsgfk.world (where=((density<=2 or
  and idname^='Antarctica') drop=resolution);
 length country_region $100;
 country_region=idname;
-if idname='China' then country_region='Mainland China';
+if idname='China/Taiwan_POC' then country_region='Taiwan*';
 if idname='United States' then country_region='US';
-if idname='United Kingdom' then country_region='UK';
-if idname='China/Taiwan_POC' then country_region='Taiwan';
+if idname='Bolivia, Plurinational State of' then country_region='Bolivia';
+if idname='Russian Federation' then country_region='Russia';
+if idname='Viet Nam' then country_region='Vietnam';
 if idname='United Arab Emirates' then country_region='UAE';
 if idname='Macedonia' then country_region='North Macedonia';
 if idname='Brunei Darussalam' then country_region='Brunei';
 if idname='Vatican City State' then country_region='Holy See';
-if idname='South Korea' then country_region='Republic of Korea';
-if idname='Moldova' then country_region='Republic of Moldova';
+if idname='South Korea' then country_region='Korea, South';
+if idname='Czech Republic' then country_region='Czechia';
+if idname='Ivory Coast' then country_region="Cote d'Ivoire";
+if idname='Democratic Republic of Congo' then country_region='Congo (Kinshasa)';
 run;
+/*
+if idname='China/Taiwan_POC' then country_region='Taiwan';
+if idname='Moldova' then country_region='Republic of Moldova';
+if idname='China' then country_region='Mainland China';
+if idname='United Kingdom' then country_region='UK';
+if idname='South Korea' then country_region='Republic of Korea';
+*/
+
 /*
 Some code to help find the matches...
 proc print data=mapsgfk.world (where=(index(idname,'Vatican')^=0)); run;
@@ -893,7 +921,7 @@ proc print data=not_in_map (where=(country_region not in (
  'Channel Islands'  
  'Taipei and environs'  
  'occupied Palestinian territory'  
- 'Cruise ships, etc' 
+ 'Cruise ship' 
  ))); 
 run;
 
