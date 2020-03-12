@@ -74,7 +74,7 @@ title2 ls=1.0
  link='https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series'
  "Data source: Johns Hopkind CSSE (&freshness snapshot)";
 
-proc gmap data=us_summary map=mapsgfk.us all;
+proc gmap data=us_summary (where=(statecode^='Unassigned')) map=mapsgfk.us all;
 label confirmed='Confirmed cases';
 id statecode;
 choro confirmed / levels=5 legend=legend1 
