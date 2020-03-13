@@ -50,9 +50,11 @@ run;
 
 /* Needed, because of https://github.com/CSSEGISandData/COVID-19/issues/559 */
 /* The state summary has no comma in the province_state variable - don't output those lines, or you'll double-count) */
+/*
 data confirmed_data; set confirmed_data;
 if country_region^='US' or (country_region='US' and (index(province_state,',')^=0 or province_state in ('Diamond Princess' 'Grand Princess')))  then output;
 run;
+*/
 
 proc transpose data=confirmed_data out=confirmed_data (rename=(_name_=datestring col1=confirmed));
 by Province_State Country_Region Lat Long notsorted;
@@ -108,9 +110,11 @@ run;
 
 /* Needed, because of https://github.com/CSSEGISandData/COVID-19/issues/559 */
 /* The state summary has no comma in the province_state variable - don't output those lines, or you'll double-count) */
+/*
 data death_data; set death_data;
 if country_region^='US' or (country_region='US' and (index(province_state,',')^=0 or province_state in ('Diamond Princess' 'Grand Princess')))  then output;
 run;
+*/
 
 proc transpose data=death_data out=death_data (rename=(_name_=datestring col1=deaths));
 by Province_State Country_Region Lat Long notsorted;
@@ -154,9 +158,11 @@ run;
 
 /* Needed, because of https://github.com/CSSEGISandData/COVID-19/issues/559 */
 /* The state summary has no comma in the province_state variable - don't output those lines, or you'll double-count) */
+/*
 data recovered_data; set recovered_data;
 if country_region^='US' or (country_region='US' and (index(province_state,',')^=0 or province_state in ('Diamond Princess' 'Grand Princess')))  then output;
 run;
+*/
 
 proc transpose data=recovered_data out=recovered_data (rename=(_name_=datestring col1=recovered));
 by Province_State Country_Region Lat Long notsorted;
@@ -939,7 +945,7 @@ proc print data=not_in_map (where=(country_region not in (
  'Channel Islands'  
  'Taipei and environs'  
  'occupied Palestinian territory'  
- 'Cruise ship' 
+ 'Cruise Ship' 
  ))); 
 run;
 
