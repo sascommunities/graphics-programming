@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
+/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-/*
 */
 
 /*
@@ -406,6 +406,10 @@ if country_region='United Kingdom' then do;
 if country_region='France' then do;
  lat=48.8283932; long=2.3443639;
  end;
+/* https://github.com/CSSEGISandData/COVID-19/issues/836 */
+if country_region='Congo (Brazzaville)' then do;
+ lat=-0.7134667; long=15.7399857;
+ end;
 length html $300;
 html=
  'title='||quote(
@@ -433,6 +437,11 @@ if idname='Vatican City State' then country_region='Holy See';
 if idname='South Korea' then country_region='Korea, South';
 if idname='Czech Republic' then country_region='Czechia';
 if idname='Ivory Coast' then country_region="Cote d'Ivoire";
+if idname='Swaziland' then country_region='Eswatini';
+if idname='Venezuela, Bolivarian Republic of' then country_region='Venezuela';
+if idname='Bailiwick of Jersey' then country_region='Jersey';
+if idname='Bailiwick of Guernsey' then country_region='Guernsey';
+if idname='Congo' then country_region='Congo (Brazzaville)';
 if idname='Democratic Republic of Congo' then country_region='Congo (Kinshasa)';
 run;
 /*
@@ -948,6 +957,12 @@ proc print data=not_in_map (where=(country_region not in (
  'Cruise Ship' 
  ))); 
 run;
+/*
+data foo; set mapsgfk.world_attr (where=(index(idname,'Venezuela')^=0));
+run;
+proc print data=foo; run;
+proc print data=map_data; run;
+*/
 
 quit;
 ODS HTML CLOSE;
