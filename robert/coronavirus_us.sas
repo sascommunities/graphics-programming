@@ -72,7 +72,7 @@ pattern5 v=s c=cxa50026;
 title1 ls=1.5 h=18pt "&total Coronavirus (COVID-19) Cases in the US";
 title2 ls=1.0
  link='https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series'
- "Data source: Johns Hopkind CSSE (&freshness snapshot)";
+ "Data source: Johns Hopkins CSSE (&freshness snapshot)";
 
 proc gmap data=us_summary /*(where=(statecode^='Unassigned'))*/ map=mapsgfk.us all;
 label confirmed='Confirmed cases';
