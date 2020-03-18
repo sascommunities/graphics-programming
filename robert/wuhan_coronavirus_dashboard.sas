@@ -67,7 +67,8 @@ Country_Region=trim(left(Country_Region));
 /*
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 */
-if Country_Region='United Arab Emirates' then Country_Region='UAE';
+if province_state='Curacao' then Country_Region='Curacao';
+if country_region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
@@ -406,6 +407,9 @@ if country_region='United Kingdom' then do;
 if country_region='France' then do;
  lat=48.8283932; long=2.3443639;
  end;
+if country_region='Mauritania' then do;
+ lat=19.5488367; long=-10.3433656;
+ end;
 /* https://github.com/CSSEGISandData/COVID-19/issues/836 */
 if country_region='Congo (Brazzaville)' then do;
  lat=-0.7134667; long=15.7399857;
@@ -441,8 +445,14 @@ if idname='Swaziland' then country_region='Eswatini';
 if idname='Venezuela, Bolivarian Republic of' then country_region='Venezuela';
 if idname='Bailiwick of Jersey' then country_region='Jersey';
 if idname='Bailiwick of Guernsey' then country_region='Guernsey';
-if idname='Congo' then country_region='Congo (Brazzaville)';
+if idname='Bahamas' then country_region='The Bahamas';
+if idname='Tanzania, United Republic of' then country_region='Tanzania';
 if idname='Democratic Republic of Congo' then country_region='Congo (Kinshasa)';
+if idname='Congo' then country_region='Congo (Brazzaville)';
+if idname='Gambia' then country_region='The Gambia';
+/*
+if idname='Congo' then country_region='Republic of the Congo';
+*/
 run;
 /*
 if idname='China/Taiwan_POC' then country_region='Taiwan';
@@ -640,7 +650,7 @@ data summarized_series;
 length grouping $50;
 set confirmed_data;
 if index(country_region,'China')^=0 then grouping='Mainland China';
-else grouping='Other Locations';
+else grouping='All Other Locations';
 run;
 proc sql noprint;
 create table summarized_series as
@@ -676,7 +686,8 @@ select max(snapshot)-min(snapshot) into :byval from summarized_series;
 quit; run;
 axis1 value=(c=graycc h=11pt) label=none minor=none offset=(0,0);
 axis2 label=none order=("&mindate"d to "&maxdate"d by &byval)
- major=(height=8pt) value=(c=graycc h=11pt font='albany amt');
+ major=(height=8pt) value=(c=graycc h=11pt font='albany amt')
+ offset=(1,2);
 legend1 value=(c=graycc font="albany amt/bold" h=11pt) shape=symbol(4pct,4pct)
  label=(position=top font="albany amt/bold" h=11pt c=graycc "Total Confirmed Cases") 
  position=(top left inside) mode=share across=1 repeat=2 offset=(3pct, -8pct);
@@ -955,6 +966,7 @@ proc print data=not_in_map (where=(country_region not in (
  'Taipei and environs'  
  'occupied Palestinian territory'  
  'Cruise Ship' 
+ 'Republic of the Congo' 
  ))); 
 run;
 /*
