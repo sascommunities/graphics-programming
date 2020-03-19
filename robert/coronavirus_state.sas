@@ -209,7 +209,7 @@ length my_html $300;
 my_html='title='||quote(
  trim(left(county_name))||', '||trim(left("&statecode"))||'0d'x||
  '------------------------------'||'0d'x||
- trim(left(put(confirmed,comma20.0)))||' cases in '||trim(left(put(pop_2018,comma20.0)))||' residents.'||'0d'x||
+ trim(left(put(confirmed,comma20.0)))||' confirmed cases in '||trim(left(put(pop_2018,comma20.0)))||' residents.'||'0d'x||
  'That is '||trim(left(put(per100k,comma10.3)))||' cases per 100,000 residents,'||'0d'x||
  'or '||trim(left(put(pct,percent12.6)))||' of the county population.'
  );
@@ -225,7 +225,7 @@ pattern3 v=s c=cxfd8d3c;
 pattern4 v=s c=cxf03b20;
 pattern5 v=s c=cxbd0026;
 
-title1 ls=1.5 "&total Coronavirus (COVID-19) Cases in " c=blue "&stname";
+title1 ls=1.5 "&total Confirmed Coronavirus (COVID-19) Cases in " c=blue "&stname";
 
 footnote 
  link='https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/'
