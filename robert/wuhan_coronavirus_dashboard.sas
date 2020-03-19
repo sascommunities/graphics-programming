@@ -68,6 +68,7 @@ Country_Region=trim(left(Country_Region));
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 */
 if province_state='Curacao' then Country_Region='Curacao';
+if province_state='Aruba' then Country_Region='Aruba';
 if country_region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -128,6 +129,8 @@ Country_Region=trim(left(Country_Region));
 /*
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 */
+if province_state='Curacao' then Country_Region='Curacao';
+if province_state='Aruba' then Country_Region='Aruba';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -176,6 +179,8 @@ Country_Region=trim(left(Country_Region));
 /*
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 */
+if province_state='Curacao' then Country_Region='Curacao';
+if province_state='Aruba' then Country_Region='Aruba';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -449,7 +454,7 @@ if idname='Bahamas' then country_region='The Bahamas';
 if idname='Tanzania, United Republic of' then country_region='Tanzania';
 if idname='Democratic Republic of Congo' then country_region='Congo (Kinshasa)';
 if idname='Congo' then country_region='Congo (Brazzaville)';
-if idname='Gambia' then country_region='The Gambia';
+if idname='Gambia' then country_region='Gambia, The';
 /*
 if idname='Congo' then country_region='Republic of the Congo';
 */
@@ -483,7 +488,7 @@ data anno_bubbles; set map_data;
 length function $8 color $12 style $35 text $300 html $300;
 xsys='2'; ysys='2'; hsys='3'; when='a';
 function='pie'; rotate=360; style='psolid'; color="red"; 
-size=.5+sqrt((confirmed/&max_val)*&max_area/3.14);
+size=.3+sqrt((confirmed/&max_val)*&max_area/3.14);
 output;
 run;
 
