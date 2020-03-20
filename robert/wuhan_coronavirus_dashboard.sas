@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
-/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
+/*
 */
 
 /*
@@ -68,6 +68,8 @@ Country_Region=trim(left(Country_Region));
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 */
 if province_state='Curacao' then Country_Region='Curacao';
+if province_state='Greenland' then Country_Region='Greenland';
+if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
 if country_region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
@@ -130,6 +132,8 @@ Country_Region=trim(left(Country_Region));
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 */
 if province_state='Curacao' then Country_Region='Curacao';
+if province_state='Greenland' then Country_Region='Greenland';
+if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
@@ -180,6 +184,8 @@ Country_Region=trim(left(Country_Region));
 if Country_Region='Others' then Country_Region='Cruise ships, etc';
 */
 if province_state='Curacao' then Country_Region='Curacao';
+if province_state='Greenland' then Country_Region='Greenland';
+if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
@@ -450,7 +456,10 @@ if idname='Swaziland' then country_region='Eswatini';
 if idname='Venezuela, Bolivarian Republic of' then country_region='Venezuela';
 if idname='Bailiwick of Jersey' then country_region='Jersey';
 if idname='Bailiwick of Guernsey' then country_region='Guernsey';
+/*
 if idname='Bahamas' then country_region='The Bahamas';
+*/
+if idname='Bahamas' then country_region='Bahamas, The';
 if idname='Tanzania, United Republic of' then country_region='Tanzania';
 if idname='Democratic Republic of Congo' then country_region='Congo (Kinshasa)';
 if idname='Congo' then country_region='Congo (Brazzaville)';
