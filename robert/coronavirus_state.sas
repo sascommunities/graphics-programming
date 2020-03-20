@@ -158,7 +158,7 @@ ODS HTML path=odsout body="coronavirus_&lcstate..htm"
  (title="Coronavirus in &statecode") 
  style=htmlblue;
 
-goptions gunit=pct htitle=5.5 htext=3.0 ftitle="albany amt/bold" ftext="albany amt";
+goptions gunit=pct htitle=5.5 htext=3.0 ftitle="albany amt" ftext="albany amt";
 goptions ctext=gray33 border;
 
 data state_confirmed; set confirmed_data (where=(state="&statecode"));
@@ -225,11 +225,11 @@ pattern3 v=s c=cxfd8d3c;
 pattern4 v=s c=cxf03b20;
 pattern5 v=s c=cxbd0026;
 
-title1 ls=1.5 "&total Confirmed Coronavirus (COVID-19) Cases in " c=blue "&stname";
+title1 ls=1.5 h=18pt c=gray33 "&total confirmed Coronavirus (COVID-19) cases in " c=blue "&stname";
 
 footnote 
  link='https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/'
- c=gray "Coronavirus data source: usafacts.org (&datestr snapshot)";
+ ls=1.2 h=12pt c=gray "Coronavirus data source: usafacts.org (&datestr snapshot)";
 
 legend1 label=(position=top justify=center font='albany amt/bold' 'Cases')
  across=1 position=(bottom left inside) order=descending
@@ -249,6 +249,7 @@ legend2 label=(position=top justify=center font='albany amt/bold' 'Cases per 100
  across=1 position=(bottom left inside) order=descending
  shape=bar(.15in,.15in) offset=(15,5);
 
+ods html anchor='per100k';
 proc gmap data=latest_data map=my_map all;
 format confirmed comma8.0;
 id county;
@@ -256,14 +257,18 @@ choro per100k / midpoints=old levels=5 range
  coutline=gray22 cempty=graybb
  legend=legend2
  html=my_html
- des='' name="coronavirus_&statecode";
+ des='' name="coronavirus_&statecode._100k";
 run;
 
 proc sort data=latest_data out=latest_data;
 by descending confirmed county_name;
 run;
 
-proc print data=latest_data label; 
+proc print data=latest_data label
+ style(data)={font_size=11pt}
+ style(header)={font_size=11pt}
+ style(grandtotal)={font_size=11pt}
+ ;
 label county_name='County';
 label confirmed='Coronavirus cases';
 label pop_2018='Population (2018)';
@@ -272,6 +277,33 @@ label pct='Percent of residents with Coronavirus';
 format pop_2018 comma12.0;
 var county_name confirmed pop_2018 per100k pct;
 sum confirmed;
+run;
+
+proc sql noprint;
+create table summarized_series as 
+select unique date, sum(confirmed) as confirmed
+from state_confirmed
+group by date;
+quit; run;
+
+proc sql noprint;
+select min(date) format=date9. into :mindate from summarized_series;
+select max(date) format=date9. into :maxdate from summarized_series;
+select max(date)-min(date) into :byval from summarized_series;
+quit; run;
+
+axis1 value=(c=gray33 h=11pt) label=none minor=none offset=(0,0);
+axis2 value=(c=gray33 h=11pt) label=none order=("&mindate"d to "&maxdate"d by &byval) offset=(1,2);
+symbol1 interpol=sm50 line=33 height=8pt width=2 color=red value=square;
+
+ods html anchor='graph';
+goptions xpixels=800 ypixels=550 noborder;
+proc gplot data=summarized_series;
+format confirmed comma12.0;
+format date nldate20.;
+plot confirmed*date / nolegend
+ vaxis=axis1 haxis=axis2
+ des='' name="coronavirus_&statecode._map";
 run;
 
 quit;
