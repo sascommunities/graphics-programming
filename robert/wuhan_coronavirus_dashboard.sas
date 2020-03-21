@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
+/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-/*
 */
 
 /*
@@ -71,11 +71,13 @@ if province_state='Curacao' then Country_Region='Curacao';
 if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
+if province_state='Sint Maarten' then Country_Region='Sint Maarten';
 if country_region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_'); 
+if confirmed=0 then confirmed=.;
 format snapshot date9.;
 snapshot=mdy(month,day,year);
 run;
@@ -135,11 +137,13 @@ if province_state='Curacao' then Country_Region='Curacao';
 if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
+if province_state='Sint Maarten' then Country_Region='Sint Maarten';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_');
+if deaths=0 then deaths=.;
 format snapshot date9.;
 snapshot=mdy(month,day,year);
 run;
@@ -187,11 +191,13 @@ if province_state='Curacao' then Country_Region='Curacao';
 if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
+if province_state='Sint Maarten' then Country_Region='Sint Maarten';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_');
+if recovered=0 then recovered=.;
 format snapshot dateampm.;
 snapshot=mdy(month,day,year);
 run;
@@ -493,12 +499,21 @@ run;
 /* these control the size of the blue bubbles */
 %let max_val=150000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
 %let max_area=200; /* maximum bubble size (area) */
-data anno_bubbles; set map_data;
+proc sort data=map_data out=anno_bubbles;
+by descending confirmed;
+run;
+data anno_bubbles; set anno_bubbles;
 length function $8 color $12 style $35 text $300 html $300;
 xsys='2'; ysys='2'; hsys='3'; when='a';
 function='pie'; rotate=360; style='psolid'; color="red"; 
 size=.3+sqrt((confirmed/&max_val)*&max_area/3.14);
 output;
+if size>.5 then do;
+ style='pempty';
+ color='gray77';
+ html=''; 
+ output;
+ end;
 run;
 
 data anno_bubbles; set anno_gray_background anno_bubbles;
@@ -645,7 +660,10 @@ run;
 data anno_table_recovered; set anno_table_recovered;
 output;
 if _n_=1 then do;
+/*
  style='albany amt'; color="graycc"; text='- top 13 -'; x=50; y=y+6;  position='5'; output;
+*/
+ style='albany amt'; color="graycc"; text='- where reported -'; x=50; y=y+6;  position='5'; output;
  end;
 run;
 data anno_table_recovered; set anno_gray_background anno_table_recovered;
@@ -953,7 +971,7 @@ series y=deaths x=snapshot / name='deaths'
 keylegend 'confirmed' 'recovered' 'deaths' / 
  location=inside position=topleft opaque border
  across=1 outerpad=(left=10pt top=10pt);
-yaxis display=(nolabel noline noticks) 
+yaxis display=(nolabel noline noticks) min=0
  integer thresholdmax=1 grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt);
 xaxis display=(nolabel) 
@@ -972,6 +990,7 @@ title "country_region names not in the map";
 proc print data=not_in_map (where=(country_region not in ( 
  'Monaco'
  'Macau'  
+ 'Cabo Verde'  
  'Macao SAR'  
  'Hong Kong SAR'  
  'North Ireland'  
