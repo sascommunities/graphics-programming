@@ -11,10 +11,10 @@ Using data from:
 https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/
 */
 
-/*
 filename confdata url "https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv";
-*/
+/*
 filename confdata "covid_confirmed_usafacts.csv";
+*/
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
 getnames=yes;
