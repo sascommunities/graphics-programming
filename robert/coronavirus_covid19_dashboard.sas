@@ -40,8 +40,9 @@ https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_d
 
 /*
 filename confdata "./&gitfolder/time_series/time_series_2019-ncov-Confirmed.csv";
-*/
 filename confdata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+*/
+filename confdata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
 getnames=yes;
@@ -106,8 +107,9 @@ run;
 
 /*
 filename deatdata "./&gitfolder/time_series/time_series_2019-ncov-Deaths.csv";
-*/
 filename deatdata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
+*/
+filename deatdata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
 proc import datafile=deatdata
  out=death_data dbms=csv replace;
 getnames=yes;
@@ -508,12 +510,12 @@ xsys='2'; ysys='2'; hsys='3'; when='a';
 function='pie'; rotate=360; style='psolid'; color="red"; 
 size=.3+sqrt((confirmed/&max_val)*&max_area/3.14);
 output;
-if size>.5 then do;
- style='pempty';
- color='gray77';
- html=''; 
- output;
- end;
+/* gray outline around bubbles (especially important for overlapping bubbles */
+size=size+.1;
+style='pempty';
+color='gray77';
+html=''; 
+output;
 run;
 
 data anno_bubbles; set anno_gray_background anno_bubbles;
@@ -663,7 +665,7 @@ if _n_=1 then do;
 /*
  style='albany amt'; color="graycc"; text='- top 13 -'; x=50; y=y+6;  position='5'; output;
 */
- style='albany amt'; color="graycc"; text='- where reported -'; x=50; y=y+6;  position='5'; output;
+ style='albany amt'; color="graycc"; text='- data ended March 22 -'; x=50; y=y+6;  position='5'; output;
  end;
 run;
 data anno_table_recovered; set anno_gray_background anno_table_recovered;
@@ -962,9 +964,11 @@ format confirmed recovered deaths comma10.0;
 series y=confirmed x=snapshot / name='confirmed'
  lineattrs=(color=red thickness=2px) 
  markers markerattrs=(color=red symbol=square);
+/*
 series y=recovered x=snapshot / name='recovered'
  lineattrs=(color=cx71a81e thickness=2px) 
  markers markerattrs=(color=cx71a81e symbol=triangle);
+*/
 series y=deaths x=snapshot / name='deaths'
  lineattrs=(color=gray77 thickness=2px) 
  markers markerattrs=(color=gray77 symbol=circle);
@@ -1000,6 +1004,8 @@ proc print data=not_in_map (where=(country_region not in (
  'occupied Palestinian territory'  
  'Cruise Ship' 
  'Republic of the Congo' 
+ 'East Timor' 
+ 'Timor-Leste' 
  ))); 
 run;
 /*
