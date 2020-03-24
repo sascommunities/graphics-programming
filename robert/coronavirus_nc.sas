@@ -1,4 +1,5 @@
-%let name=coronavirus_nc;
+%let st=nc;
+%let name=coronavirus_&st;
 
 /* 
 Set your current-working-directory (to read/write files), if you need to ...
@@ -7,14 +8,21 @@ Set your current-working-directory (to read/write files), if you need to ...
 filename odsout '.';
 
 /*
-Using data from: 
+Using coronavirus data from: 
 https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/
+And county population data from:
+https://factfinder.census.gov/bkmk/table/1.0/en/PEP/2018/PEPANNCHG.ST05?#
+
+To change the state: 
+Change the 'st=nc;' at the top of the SAS program to your desired state.
+Copy-and-paste the new state's population under the 'datalines' section.
+Change the xpixels & ypixels, and the legend placement & offset as needed.
 */
 
-filename confdata url "https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv";
 /*
-filename confdata "covid_confirmed_usafacts.csv";
+filename confdata url "https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv";
 */
+filename confdata "covid_confirmed_usafacts.csv";
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
 getnames=yes;
@@ -37,7 +45,7 @@ input county_name pop_2017 pop_2018 change change_pct
  rank_pop_2017 rank_pop_2018 rank_change rank_change_pct;
 format change_pct percentn7.1;
 change_pct=change_pct/100;
-statecode='NC';
+statecode=upcase("&st");
 datalines;
 Alamance County	163,529	166,436	2,907	1.8	17	17	12	11
 Alexander County	37,146	37,353	207	0.6	65	65	48	47
@@ -142,7 +150,11 @@ Yancey County	17,712	17,903	191	1.1	85	85	51	34
 ;
 run;
 
+
+/* ------------------------------------------------------------------- */
+
 %macro do_state(statecode);
+%let statecode=%upcase(&statecode);
 
 proc sql noprint;
 select idname into :stname separated by ' ' from mapsgfk.us_states_attr where statecode="&statecode";
@@ -224,7 +236,7 @@ pattern4 v=s c=cxf03b20;
 pattern5 v=s c=cxbd0026;
 
 legend1 label=(position=top justify=center font='albany amt/bold' 'Cases')
- across=1 position=(bottom left inside) order=descending
+ across=1 position=(bottom left inside) order=descending mode=protect
  shape=bar(.15in,.15in) offset=(21,5);
 
 title1 ls=1.5 h=18pt c=gray33 "&total confirmed Coronavirus (COVID-19) cases in " c=blue "&stname";
@@ -244,7 +256,7 @@ choro confirmed / midpoints=old levels=5 range
 run;
 
 legend2 label=(position=top justify=center font='albany amt/bold' 'Cases per 100,000 Residents')
- across=1 position=(bottom left inside) order=descending
+ across=1 position=(bottom left inside) order=descending mode=protect
  shape=bar(.15in,.15in) offset=(15,5);
 
 ods html anchor='per100k';
@@ -256,25 +268,6 @@ choro per100k / midpoints=old levels=5 range
  legend=legend2
  html=my_html
  des='' name="&name._100k";
-run;
-
-proc sort data=latest_data out=latest_data;
-by descending confirmed county_name;
-run;
-
-proc print data=latest_data label
- style(data)={font_size=11pt}
- style(header)={font_size=11pt}
- style(grandtotal)={font_size=11pt}
- ;
-label county_name='County';
-label confirmed='Coronavirus cases';
-label pop_2018='Population (2018)';
-label per100k='Cases per 100,000 residents';
-label pct='Percent of residents with Coronavirus';
-format pop_2018 comma12.0;
-var county_name confirmed pop_2018 per100k pct;
-sum confirmed;
 run;
 
 proc sql noprint;
@@ -304,11 +297,32 @@ plot confirmed*date / nolegend
  des='' name="&name._graph";
 run;
 
+proc sort data=latest_data out=latest_data;
+by descending confirmed county_name;
+run;
+
+ods html anchor='table';
+proc print data=latest_data label
+ style(data)={font_size=11pt}
+ style(header)={font_size=11pt}
+ style(grandtotal)={font_size=11pt}
+ ;
+label county_name='County';
+label confirmed='Coronavirus cases';
+label pop_2018='Population (2018)';
+label per100k='Cases per 100,000 residents';
+label pct='Percent of residents with Coronavirus';
+format pop_2018 comma12.0;
+var county_name confirmed pop_2018 per100k pct;
+sum confirmed;
+run;
+
 quit;
 ODS HTML CLOSE;
 ODS LISTING;
 
 %mend do_state;
 
-%do_state(NC);
+/* Call the macro, for the desired state */
+%do_state(&st);
 
