@@ -19,10 +19,10 @@ Copy-and-paste the new state's population under the 'datalines' section.
 Change the xpixels & ypixels, and the legend placement & offset as needed.
 */
 
-/*
 filename confdata url "https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv";
-*/
+/*
 filename confdata "covid_confirmed_usafacts.csv";
+*/
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
 getnames=yes;
@@ -235,37 +235,56 @@ pattern3 v=s c=cxfd8d3c;
 pattern4 v=s c=cxf03b20;
 pattern5 v=s c=cxbd0026;
 
-legend1 label=(position=top justify=center font='albany amt/bold' 'Cases')
- across=1 position=(bottom left inside) order=descending mode=protect
- shape=bar(.15in,.15in) offset=(21,5);
-
 title1 ls=1.5 h=18pt c=gray33 "&total confirmed Coronavirus (COVID-19) cases in " c=blue "&stname";
 
 footnote 
  link='https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/'
  ls=1.2 h=12pt c=gray "Coronavirus data source: usafacts.org (&datestr snapshot)";
 
+
+legend1 label=(position=top justify=center font='albany amt/bold' 'Cases (quintile binning)')
+ across=1 position=(bottom left inside) order=descending mode=protect
+ shape=bar(.15in,.15in) offset=(16,5);
+
+ods html anchor='quintile';
 proc gmap data=latest_data map=my_map all;
 format confirmed comma8.0;
 id county;
-choro confirmed / midpoints=old levels=5 range 
+choro confirmed / levels=5 range
  coutline=gray22 cempty=graybb
  legend=legend1
  html=my_html
  des='' name="&name";
 run;
 
-legend2 label=(position=top justify=center font='albany amt/bold' 'Cases per 100,000 Residents')
+
+legend1 label=(position=top justify=center font='albany amt/bold' 'Cases')
+ across=1 position=(bottom left inside) order=descending mode=protect
+ shape=bar(.15in,.15in) offset=(21,5);
+
+ods html anchor='old';
+proc gmap data=latest_data map=my_map all;
+format confirmed comma8.0;
+id county;
+choro confirmed / levels=5 range midpoints=old
+ coutline=gray22 cempty=graybb
+ legend=legend1
+ html=my_html
+ des='' name="&name";
+run;
+
+
+legend1 label=(position=top justify=center font='albany amt/bold' 'Cases per 100,000 Residents')
  across=1 position=(bottom left inside) order=descending mode=protect
  shape=bar(.15in,.15in) offset=(15,5);
 
 ods html anchor='per100k';
 proc gmap data=latest_data map=my_map all;
-format confirmed comma8.0;
+format per100k comma8.1;
 id county;
 choro per100k / midpoints=old levels=5 range
  coutline=gray22 cempty=graybb
- legend=legend2
+ legend=legend1
  html=my_html
  des='' name="&name._100k";
 run;
@@ -314,7 +333,7 @@ label per100k='Cases per 100,000 residents';
 label pct='Percent of residents with Coronavirus';
 format pop_2018 comma12.0;
 var county_name confirmed pop_2018 per100k pct;
-sum confirmed;
+sum confirmed pop_2018;
 run;
 
 quit;
