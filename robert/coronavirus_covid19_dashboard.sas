@@ -65,9 +65,6 @@ run;
 data confirmed_data (drop = month day year datestring);
  set confirmed_data;
 Country_Region=trim(left(Country_Region));
-/*
-if Country_Region='Others' then Country_Region='Cruise ships, etc';
-*/
 if province_state='Curacao' then Country_Region='Curacao';
 if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
@@ -132,9 +129,6 @@ run;
 data death_data (drop = month day year datestring);
  set death_data;
 Country_Region=trim(left(Country_Region));
-/*
-if Country_Region='Others' then Country_Region='Cruise ships, etc';
-*/
 if province_state='Curacao' then Country_Region='Curacao';
 if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
@@ -186,9 +180,6 @@ run;
 data recovered_data (drop = month day year datestring);
  set recovered_data;
 Country_Region=trim(left(Country_Region));
-/*
-if Country_Region='Others' then Country_Region='Cruise ships, etc';
-*/
 if province_state='Curacao' then Country_Region='Curacao';
 if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
@@ -466,13 +457,13 @@ if idname='Bailiwick of Jersey' then country_region='Jersey';
 if idname='Bailiwick of Guernsey' then country_region='Guernsey';
 /*
 if idname='Bahamas' then country_region='The Bahamas';
-*/
 if idname='Bahamas' then country_region='Bahamas, The';
+*/
 if idname='Tanzania, United Republic of' then country_region='Tanzania';
 if idname='Democratic Republic of Congo' then country_region='Congo (Kinshasa)';
 if idname='Congo' then country_region='Congo (Brazzaville)';
-if idname='Gambia' then country_region='Gambia, The';
 /*
+if idname='Gambia' then country_region='Gambia, The';
 if idname='Congo' then country_region='Republic of the Congo';
 */
 run;
@@ -680,23 +671,16 @@ run;
 
 /* xpixels=(69.5-15.5)/100*1400 ypixels=(34-1)/100*700 */
 goptions xpixels=756 ypixels=231;
-data summarized_series; 
-length grouping $50;
-set confirmed_data;
-if index(country_region,'China')^=0 then grouping='Mainland China';
-else grouping='All Other Locations';
-run;
 proc sql noprint;
 create table summarized_series as
-select unique snapshot, grouping, sum(confirmed) as confirmed
-from summarized_series
-group by snapshot, grouping
-order by grouping, snapshot;
+select unique snapshot, sum(confirmed) as confirmed
+from confirmed_data
+group by snapshot
+order by snapshot;
 quit; run;
 data summarized_series; set summarized_series;
 length html $300;
 html='title='||quote(
- trim(left(grouping))||'0d'x||
  trim(left(put(snapshot,nldate20.)))||'0d'x||
  trim(left(put(confirmed,comma12.0)))||' confirmed cases'
  );
@@ -734,9 +718,9 @@ run;
 proc gplot data=summarized_series anno=anno_mouseover;
 format confirmed comma12.0;
 format snapshot nldate20.;
-plot confirmed*snapshot=grouping / 
+note move=(15,77) font='albany amt/bold' "Total Confirmed Cases Worldwide";
+plot confirmed*snapshot / 
  vaxis=axis1 haxis=axis2
- legend=legend1 
  des='' name="series";
 run;
 
@@ -848,47 +832,30 @@ from confirmed_data
 group by snapshot
 order by snapshot;
 
-create table bar_recovered as
-select unique snapshot, 'Recovered' as type, sum(recovered) as cumulative_cases
-from recovered_data
-group by snapshot
-order by snapshot;
-
 quit; run;
 
 data bar_confirmed; set bar_confirmed;
 on_this_day=cumulative_cases-lag(cumulative_cases);
 run;
 
-data bar_recovered; set bar_recovered;
-on_this_day=cumulative_cases-lag(cumulative_cases);
-run;
-
-data bar_data; set bar_confirmed bar_recovered;
-run;
-
 ods html anchor="newbar";
 ods graphics / imagename="coronavirus_covid19_newbar";
 
-title1 h=18pt font='albany amt/bold' c=gray33 "COVID-19 Coronavirus - Number of new confirmed & recovered cases each day";
+title1 h=18pt font='albany amt/bold' c=gray33 "COVID-19 Coronavirus - Number of new confirmed cases each day";
 title2 h=4pt ' ';
 
-ods graphics / width=1400px height=600px;
+ods graphics / width=900px height=600px;
 
-proc sgplot data=bar_data noborder;
+proc sgplot data=bar_confirmed noborder;
 format snapshot nldate20.;
 format on_this_day comma10.0;
 label on_this_day='Cases on this day';
-styleattrs datacolors=(red cx71a81e);
 vbarparm category=snapshot response=on_this_day / 
- group=type groupdisplay=cluster
- outlineattrs=(color=black)
- tip=(snapshot type on_this_day)
+ fillattrs=(color=cxff5555) 
+ outlineattrs=(color=gray77)
+ tip=(snapshot on_this_day)
  tipformat=(nldate20. auto auto)
  ;
-keylegend / title=''
- location=inside position=topleft opaque border
- across=2 outerpad=(left=10pt top=10pt);
 yaxis display=(nolabel noline noticks)
  grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt)
@@ -1003,6 +970,7 @@ proc print data=not_in_map (where=(country_region not in (
  'Taipei and environs'  
  'occupied Palestinian territory'  
  'Cruise Ship' 
+ 'Diamond Princess' 
  'Republic of the Congo' 
  'East Timor' 
  'Timor-Leste' 
