@@ -156,8 +156,9 @@ quit; run;
 
 /*
 filename recodata "./&gitfolder/time_series/time_series_2019-ncov-Recovered.csv";
-*/
 filename recodata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
+*/
+filename recodata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
 proc import datafile=recodata
  out=recovered_data dbms=csv replace;
 getnames=yes;
@@ -199,6 +200,25 @@ proc sql noprint;
 create table latest_recovered as
 select unique *
 from recovered_data
+having snapshot=max(snapshot);
+quit; run;
+
+
+proc sql noprint;
+create table confirmed_increase as
+select unique country_region, snapshot, sum(confirmed) as confirmed
+from confirmed_data
+group by country_region, snapshot
+order by country_region, snapshot;
+quit; run;
+data confirmed_increase; set confirmed_increase;
+confirmed_this_day=confirmed-lag(confirmed);
+if country_region^=lag(country_region) then confirmed_this_day=.;
+run;
+proc sql noprint;
+create table latest_increase as
+select unique snapshot, country_region, confirmed_this_day
+from confirmed_increase
 having snapshot=max(snapshot);
 quit; run;
 
@@ -385,6 +405,29 @@ run;
 proc gslide anno=anno_recovered_total des='' name='recosum';
 run;
 
+/*------------------------------incsum-------------------------------------*/
+
+goptions xpixels=203 ypixels=98;
+proc sql noprint;
+create table anno_increase_total as
+select sum(confirmed_this_day) as sum_increase from latest_increase;
+quit; run;
+data anno_increase_total; set anno_increase_total;
+length function $8 color $12 style $35 text $300 html $300;
+xsys='3'; ysys='3'; when='a'; hsys='d';
+function='label'; position='5';
+style='albany amt/bold'; color="graycc"; size=11;
+x=50; y=84; text="Increase Today"; output;
+html='title='||quote(trim(left(put(sum_increase,comma12.0)))||" increase in COVID-19 Coronavirus cases worldwide on &datestr");
+style='albany amt/bold'; color="orange"; size=40;
+x=50; y=50; text=trim(left(put(sum_increase,comma12.0))); output;
+run;
+data anno_increase_total; set anno_gray_background anno_increase_total;
+run;
+proc gslide anno=anno_increase_total des='' name='incsum';
+run;
+
+
 
 /*----------------------------map---------------------------------------*/
 
@@ -491,7 +534,7 @@ run;
 
 /* these control the size of the blue bubbles */
 %let max_val=150000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
-%let max_area=200; /* maximum bubble size (area) */
+%let max_area=120; /* maximum bubble size (area) */
 proc sort data=map_data out=anno_bubbles;
 by descending confirmed;
 run;
@@ -617,6 +660,49 @@ proc gslide anno=anno_table_deaths des='' name='deadtab';
 run;
 
 
+/*---------------------------inctab----------------------------------------*/
+
+/* daily increase table */
+
+goptions xpixels=203 ypixels=406;
+proc sort data=latest_increase out=anno_table_increase;
+by descending confirmed_this_day country_region;
+run;
+data anno_table_increase; set anno_table_increase (where=(confirmed_this_day>0));
+run;
+data anno_table_increase; set anno_table_increase (obs=13);
+if country_region='United Arab Emirates' then country_region='UAE';
+if country_region='Iran (Islamic Republic of)' then country_region='Iran';
+run;
+
+data anno_table_increase; set anno_table_increase;
+length function $8 color $12 style $35 text $300 html $300;
+xsys='3'; ysys='3'; when='a'; hsys='d';
+function='label'; style='albany amt/bold'; size=11;
+y=98-(_n_*7);
+/* green was cx71a81e */
+text=trim(left(put(confirmed_this_day,comma12.0))); x=28; position='4'; color="orange"; output;
+text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
+/* annotate an invisible box, for the html= mouse-over text */
+html='title='||quote(trim(left(put(confirmed_this_day,comma12.0)))||
+ " increase in COVID-19 Coronavirus in "||trim(left(country_region))||' on '||trim(left(put(snapshot,nldate20.))))||
+ ' href='||quote('#'||trim(left(country_region)));
+function='move'; x=0; y=y-3; output;
+function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
+run;
+data anno_table_increase; set anno_table_increase;
+output;
+if _n_=1 then do;
+ style='albany amt'; color="graycc"; text='- top 13 -'; x=50; y=y+6;  position='5'; output;
+ end;
+run;
+data anno_table_increase; set anno_gray_background anno_table_increase;
+run;
+proc gslide anno=anno_table_increase des='' name='incrtab';
+run;
+
+
+
 /*---------------------------recotab----------------------------------------*/
 
 /* recovered table */
@@ -710,7 +796,6 @@ legend1 value=(c=graycc font="albany amt/bold" h=11pt) shape=symbol(4pct,4pct)
  label=(position=top font="albany amt/bold" h=11pt c=graycc "Total Confirmed Cases") 
  position=(top left inside) mode=share across=1 repeat=2 offset=(3pct, -8pct);
 symbol1 interpol=sm50 height=8pt width=2 color=orange value=square;
-symbol2 interpol=sm50 height=8pt width=2 color=cyan value=triangle;
 title1 h=2pct ' ';
 footnote1 h=2pct ' ';
 data anno_mouseover; set anno_mouseover anno_gray_background;
@@ -800,10 +885,13 @@ proc greplay nofs igout=work.gseg tc=tempcat;
     1:title
     2:confsum
     3:conftab 
-    4:deadsum
-    5:deadtab
-    6:recosum
+    4:incsum
+    5:incrtab
+    6:deadsum
+    7:deadtab
+/*
     7:recotab
+*/
     8:map  
    10:info
     des='' name="&name";
@@ -931,11 +1019,6 @@ format confirmed recovered deaths comma10.0;
 series y=confirmed x=snapshot / name='confirmed'
  lineattrs=(color=red thickness=2px) 
  markers markerattrs=(color=red symbol=square);
-/*
-series y=recovered x=snapshot / name='recovered'
- lineattrs=(color=cx71a81e thickness=2px) 
- markers markerattrs=(color=cx71a81e symbol=triangle);
-*/
 series y=deaths x=snapshot / name='deaths'
  lineattrs=(color=gray77 thickness=2px) 
  markers markerattrs=(color=gray77 symbol=circle);
@@ -974,6 +1057,7 @@ proc print data=not_in_map (where=(country_region not in (
  'Republic of the Congo' 
  'East Timor' 
  'Timor-Leste' 
+ 'West Bank and Gaza' 
  ))); 
 run;
 /*
