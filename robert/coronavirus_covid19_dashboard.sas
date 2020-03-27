@@ -417,7 +417,7 @@ length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
-x=50; y=84; text="Increase Today"; output;
+x=50; y=84; text="New Cases Today"; output;
 html='title='||quote(trim(left(put(sum_increase,comma12.0)))||" increase in COVID-19 Coronavirus cases worldwide on &datestr");
 style='albany amt/bold'; color="orange"; size=40;
 x=50; y=50; text=trim(left(put(sum_increase,comma12.0))); output;
@@ -939,7 +939,7 @@ format snapshot nldate20.;
 format on_this_day comma10.0;
 label on_this_day='Cases on this day';
 vbarparm category=snapshot response=on_this_day / 
- fillattrs=(color=cxff5555) 
+ fillattrs=(color=orange) 
  outlineattrs=(color=gray77)
  tip=(snapshot on_this_day)
  tipformat=(nldate20. auto auto)
