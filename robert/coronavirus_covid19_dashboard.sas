@@ -1044,6 +1044,7 @@ title "country_region names not in the map";
 proc print data=not_in_map (where=(country_region not in ( 
  'Monaco'
  'Macau'  
+ 'Burma'  
  'Cabo Verde'  
  'Macao SAR'  
  'Hong Kong SAR'  
