@@ -23,6 +23,7 @@ filename confdata url "https://static.usafacts.org/public/data/covid-19/covid_co
 /*
 filename confdata "covid_confirmed_usafacts.csv";
 */
+filename confdata url "https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv";
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
 getnames=yes;
@@ -202,7 +203,7 @@ having date=max(date);
 /* merge in the population data */
 create table latest_data as
 select latest_data.*, state_pop.pop_2018
-from latest_data left join state_pop
+from latest_data full join state_pop
 on latest_data.county_name = state_pop.county_name;
 
 select sum(confirmed) format=comma12.0 into :total  separated by ' ' from latest_data;
@@ -254,7 +255,7 @@ choro confirmed / levels=5 range
  coutline=gray22 cempty=graybb
  legend=legend1
  html=my_html
- des='' name="&name";
+ des='' name="&name._quin";
 run;
 
 
@@ -270,7 +271,7 @@ choro confirmed / levels=5 range midpoints=old
  coutline=gray22 cempty=graybb
  legend=legend1
  html=my_html
- des='' name="&name";
+ des='' name="&name._old";
 run;
 
 
@@ -282,7 +283,7 @@ ods html anchor='per100k';
 proc gmap data=latest_data map=my_map all;
 format per100k comma8.1;
 id county;
-choro per100k / midpoints=old levels=5 range
+choro per100k / levels=5 range midpoints=old
  coutline=gray22 cempty=graybb
  legend=legend1
  html=my_html
