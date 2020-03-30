@@ -202,16 +202,17 @@ having date=max(date);
 
 /* merge in the population data */
 create table latest_data as
-select latest_data.*, state_pop.pop_2018
+select latest_data.*, state_pop.county_name as county_name2, state_pop.pop_2018
 from latest_data full join state_pop
 on latest_data.county_name = state_pop.county_name;
 
 select sum(confirmed) format=comma12.0 into :total  separated by ' ' from latest_data;
-select unique(date) format=nldate20. into :datestr separated by ' ' from latest_data;
+select unique(date) format=nldate20. into :datestr separated by ' ' from latest_data where date^=.;
 
 quit; run;
 
 data latest_data; set latest_data;
+if county_name='' then county_name=county_name2;
 format per100k comma10.3;
 per100k=confirmed/(pop_2018/100000);
 format pct percent12.6;
@@ -259,7 +260,7 @@ choro confirmed / levels=5 range
 run;
 
 
-legend1 label=(position=top justify=center font='albany amt/bold' 'Cases')
+legend2 label=(position=top justify=center font='albany amt/bold' 'Cases')
  across=1 position=(bottom left inside) order=descending mode=protect
  shape=bar(.15in,.15in) offset=(21,5);
 
@@ -269,13 +270,27 @@ format confirmed comma8.0;
 id county;
 choro confirmed / levels=5 range midpoints=old
  coutline=gray22 cempty=graybb
- legend=legend1
+ legend=legend2
  html=my_html
  des='' name="&name._old";
 run;
 
+legend3 label=(position=top justify=center font='albany amt/bold' 'Cases per 100k (quintile binning)')
+ across=1 position=(bottom left inside) order=descending mode=protect
+ shape=bar(.15in,.15in) offset=(12,5);
 
-legend1 label=(position=top justify=center font='albany amt/bold' 'Cases per 100,000 Residents')
+ods html anchor='quin100k';
+proc gmap data=latest_data map=my_map all;
+format per100k comma8.1;
+id county;
+choro per100k / levels=5 range
+ coutline=gray22 cempty=graybb
+ legend=legend3
+ html=my_html
+ des='' name="&name._100k";
+run;
+
+legend4 label=(position=top justify=center font='albany amt/bold' 'Cases per 100,000 Residents')
  across=1 position=(bottom left inside) order=descending mode=protect
  shape=bar(.15in,.15in) offset=(15,5);
 
@@ -285,10 +300,12 @@ format per100k comma8.1;
 id county;
 choro per100k / levels=5 range midpoints=old
  coutline=gray22 cempty=graybb
- legend=legend1
+ legend=legend4
  html=my_html
  des='' name="&name._100k";
 run;
+
+
 
 proc sql noprint;
 create table summarized_series as 
@@ -332,6 +349,7 @@ label confirmed='Coronavirus cases';
 label pop_2018='Population (2018)';
 label per100k='Cases per 100,000 residents';
 label pct='Percent of residents with Coronavirus';
+format confirmed comma12.0;
 format pop_2018 comma12.0;
 var county_name confirmed pop_2018 per100k pct;
 sum confirmed pop_2018;
