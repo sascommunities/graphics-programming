@@ -498,6 +498,7 @@ if idname='Swaziland' then country_region='Eswatini';
 if idname='Venezuela, Bolivarian Republic of' then country_region='Venezuela';
 if idname='Bailiwick of Jersey' then country_region='Jersey';
 if idname='Bailiwick of Guernsey' then country_region='Guernsey';
+if idname='Myanmar' then country_region='Burma';
 /*
 if idname='Bahamas' then country_region='The Bahamas';
 if idname='Bahamas' then country_region='Bahamas, The';
@@ -795,7 +796,7 @@ axis2 label=none order=("&mindate"d to "&maxdate"d by &byval)
 legend1 value=(c=graycc font="albany amt/bold" h=11pt) shape=symbol(4pct,4pct)
  label=(position=top font="albany amt/bold" h=11pt c=graycc "Total Confirmed Cases") 
  position=(top left inside) mode=share across=1 repeat=2 offset=(3pct, -8pct);
-symbol1 interpol=sm50 height=8pt width=2 color=orange value=square;
+symbol1 interpol=sm50 height=8pt width=2 color=red value=square;
 title1 h=2pct ' ';
 footnote1 h=2pct ' ';
 data anno_mouseover; set anno_mouseover anno_gray_background;
@@ -1044,7 +1045,6 @@ title "country_region names not in the map";
 proc print data=not_in_map (where=(country_region not in ( 
  'Monaco'
  'Macau'  
- 'Burma'  
  'Cabo Verde'  
  'Macao SAR'  
  'Hong Kong SAR'  
@@ -1059,6 +1059,7 @@ proc print data=not_in_map (where=(country_region not in (
  'East Timor' 
  'Timor-Leste' 
  'West Bank and Gaza' 
+ 'MS Zaandam' 
  ))); 
 run;
 /*
