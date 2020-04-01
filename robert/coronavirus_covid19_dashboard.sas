@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
+/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-/*
 */
 
 /*
@@ -534,8 +534,8 @@ id;
 run;
 
 /* these control the size of the blue bubbles */
-%let max_val=150000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
-%let max_area=120; /* maximum bubble size (area) */
+%let max_val=200000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
+%let max_area=80; /* maximum bubble size (area) */
 proc sort data=map_data out=anno_bubbles;
 by descending confirmed;
 run;
