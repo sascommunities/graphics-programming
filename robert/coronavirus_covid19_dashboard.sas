@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
+/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-/*
 */
 
 /*
@@ -348,7 +348,7 @@ function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="Total Confirmed"; output;
 html='title='||quote(trim(left(put(sum_confirmed,comma12.0)))||" total confirmed cases of COVID-19 Coronavirus worldwide");
-style='albany amt/bold'; color="red"; size=40;
+style='albany amt/bold'; color="red"; size=31;
 x=50; y=50; text=trim(left(put(sum_confirmed,comma12.0))); output;
 run;
 data anno_confirmed_total; set anno_gray_background anno_confirmed_total;
