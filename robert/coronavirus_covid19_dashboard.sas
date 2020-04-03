@@ -70,6 +70,7 @@ if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
 if province_state='Sint Maarten' then Country_Region='Sint Maarten';
+if province_state='Bonaire, Sint Eustatius and Saba' then Country_Region='Bonaire, Sint Eustatius and Saba';
 if country_region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -134,6 +135,7 @@ if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
 if province_state='Sint Maarten' then Country_Region='Sint Maarten';
+if province_state='Bonaire, Sint Eustatius and Saba' then Country_Region='Bonaire, Sint Eustatius and Saba';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -186,6 +188,7 @@ if province_state='Greenland' then Country_Region='Greenland';
 if province_state='Faroe Islands' then Country_Region='Faroe Islands';
 if province_state='Aruba' then Country_Region='Aruba';
 if province_state='Sint Maarten' then Country_Region='Sint Maarten';
+if province_state='Bonaire, Sint Eustatius and Saba' then Country_Region='Bonaire, Sint Eustatius and Saba';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 month=.; month=scan(datestring,1,'_');
@@ -1060,6 +1063,7 @@ proc print data=not_in_map (where=(country_region not in (
  'Timor-Leste' 
  'West Bank and Gaza' 
  'MS Zaandam' 
+ 'Bonaire, Sint Eustatius and Saba' 
  ))); 
 run;
 /*
