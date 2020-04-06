@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
-/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
+/*
 */
 
 /*
@@ -771,7 +771,7 @@ quit; run;
 data summarized_series; set summarized_series;
 length html $300;
 html='title='||quote(
- trim(left(put(snapshot,nldate20.)))||'0d'x||
+ trim(left(put(snapshot,weekdate30.)))||'0d'x||
  trim(left(put(confirmed,comma12.0)))||' confirmed cases'
  );
 run;
@@ -939,6 +939,9 @@ title2 h=4pt ' ';
 ods graphics / width=900px height=600px;
 
 proc sgplot data=bar_confirmed noborder;
+/*
+format snapshot nldate20.;
+*/
 format snapshot nldate20.;
 format on_this_day comma10.0;
 label on_this_day='Cases on this day';
@@ -946,7 +949,7 @@ vbarparm category=snapshot response=on_this_day /
  fillattrs=(color=orange) 
  outlineattrs=(color=gray77)
  tip=(snapshot on_this_day)
- tipformat=(nldate20. auto auto)
+ tipformat=(weekdate30. auto auto)
  ;
 yaxis display=(nolabel noline noticks)
  grid gridattrs=(pattern=dot color=gray88)
@@ -1018,7 +1021,10 @@ title2 h=4pt ' ';
 ods graphics / width=800px height=600px;
 proc sgplot data=graph_all noborder;
 by country_region;
+/*
 format snapshot nldate.;
+*/
+format snapshot weekdate30.;
 format confirmed recovered deaths comma10.0;
 series y=confirmed x=snapshot / name='confirmed'
  lineattrs=(color=red thickness=2px) 
