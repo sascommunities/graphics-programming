@@ -318,64 +318,17 @@ legend1 label=(position=top justify=center font='albany amt/bold' j=c 'COVID-19 
  across=1 position=(top right inside) order=descending mode=protect
  value=(justify=left) shape=bar(.15in,.15in) offset=(-7,-0);
 
-proc format;
- value bucfmt
- 1 = "0"
- 2 = "1-41"
- 3 = "42-82"
- 4 = "83-123"
- 5 = "124-164"
- 6 = "165-204"
- 7 = ">204"
- ;
-run;
-
-data latest_data; set latest_data; 
-format bucket bucfmt.;
-if confirmed=. then bucket=0;
-else if confirmed=0 then bucket=1;
-else if confirmed<=41 then bucket=2;
-else if confirmed<=82 then bucket=3;
-else if confirmed<=123 then bucket=4; 
-else if confirmed<=164 then bucket=5;
-else if confirmed<=204 then bucket=6;
-else bucket=7;
-run;
-
 ods html anchor='cases';
 proc gmap data=latest_data (where=(county^=0)) map=my_map all;
+format confirmed comma8.0;
 id county;
-choro bucket / discrete midpoints = 1 2 3 4 5 6 7 
+choro confirmed / levels=7 midpoints=old range
  coutline=cx103052 cempty=graybb
  legend=legend1
  html=my_html
  des='' name="&name._cases";
 run;
 
-
-proc format;
- value buc2fmt
- 1 = "0"
- 2 = "1-50"
- 3 = "51-100"
- 4 = "101-200"
- 5 = "201-300"
- 6 = "301-400"
- 7 = ">400"
- ;
-run;
-
-data latest_data; set latest_data;
-format bucket2 buc2fmt.;
-if per100k=. then bucket2=0;
-else if per100k=0 then bucket2=1;
-else if per100k<=50 then bucket2=2;
-else if per100k<=100 then bucket2=3;
-else if per100k<=200 then bucket2=4;
-else if per100k<=300 then bucket2=5;
-else if per100k<=400 then bucket2=6;
-else bucket2=7;
-run;
 
 
 legend2 label=(position=top justify=center font='albany amt/bold' j=c 'Cases per 100k Residents')
@@ -384,13 +337,15 @@ legend2 label=(position=top justify=center font='albany amt/bold' j=c 'Cases per
 
 ods html anchor='per100k';
 proc gmap data=latest_data (where=(county^=0)) map=my_map all;
+format per100k comma8.0;
 id county;
-choro bucket2 / discrete midpoints = 1 2 3 4 5 6 7 
+choro per100k / levels=7 midpoints=old range
  coutline=gray22 cempty=graybb
  legend=legend2
  html=my_html
  des='' name="&name._100k";
 run;
+
 
 
 ods html anchor='table';
