@@ -314,13 +314,23 @@ from state_confirmed
 group by date;
 quit; run;
 
+data summarized_series; set summarized_series;
+todays_confirmed=confirmed-lag(confirmed);
+length my_html $300;
+my_html='title='||quote(
+ put(date,weekdate30.)||'0d'x||
+ 'New cases on this day: '||trim(left(put(todays_confirmed,comma8.0)))||'0d'x||
+ 'Total cumulative cases: '||trim(left(put(confirmed,comma8.0)))
+ );
+run;
+
 proc sql noprint;
 select min(date) format=date9. into :mindate from summarized_series;
 select max(date) format=date9. into :maxdate from summarized_series;
 select max(date)-min(date) into :byval from summarized_series;
 quit; run;
 
-axis1 value=(c=gray33 h=11pt) label=none minor=none offset=(0,0);
+axis1 value=(c=gray33 h=11pt) label=(angle=90 'Cumulative') minor=none offset=(0,0);
 axis2 value=(c=gray33 h=11pt) label=none order=("&mindate"d to "&maxdate"d by &byval) offset=(1,2);
 symbol1 interpol=sm50 line=33 height=8pt width=2 color=red value=square;
 
@@ -329,9 +339,27 @@ goptions xpixels=800 ypixels=550 noborder;
 proc gplot data=summarized_series;
 format confirmed comma12.0;
 format date nldate20.;
-plot confirmed*date / nolegend
+plot confirmed*date=1 / nolegend
  vaxis=axis1 haxis=axis2
+ autovref cvref=graydd
+ html=my_html
  des='' name="&name._graph";
+run;
+
+/* hard-coding the axis range, so it won't show negative/below-zero ticks */
+axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily') order=(0 to 400 by 100) minor=none offset=(1,0) mode=include;
+symbol2 interpol=needle height=10pt width=3 color=red value=circle;
+
+ods html anchor='daily';
+goptions xpixels=800 ypixels=550 noborder;
+proc gplot data=summarized_series;
+format todays_confirmed comma12.0;
+format date nldate20.;
+plot todays_confirmed*date=2 / nolegend
+ vaxis=axis3 haxis=axis2
+ autovref cvref=graydd
+ html=my_html
+ des='' name="&name._daily";
 run;
 
 proc sort data=latest_data out=latest_data;
