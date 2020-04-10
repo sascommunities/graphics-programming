@@ -1,1927 +1,0 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
-<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
-<title>Germany Coronavirus Data</title>
-<style type="text/css">
-<!--
-.accessiblecaption
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.activelink
-{
-  color: #800080;
-}
-.aftercaption
-{
-  background-color: #FAFBFE;
-  border-spacing: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-  padding-top: 4pt;
-}
-.batch
-{
-  background-color: #FAFBFE;
-  border: 1px solid #C1C1C1;
-  border-collapse: separate;
-  border-spacing: 1px;
-  color: #000000;
-  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  padding: 7px;
-}
-.beforecaption
-{
-  background-color: #FAFBFE;
-  border-spacing: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.body
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-.bodydate
-{
-  background-color: #FAFBFE;
-  border-spacing: 0px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  text-align: right;
-  vertical-align: top;
-  width: 100%;
-}
-.bycontentfolder
-{
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: none;
-  margin-left: 6pt;
-}
-.byline
-{
-  background-color: #FAFBFE;
-  border-spacing: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.bylinecontainer
-{
-  background-color: #FAFBFE;
-  border: 0px solid #000000;
-  border-spacing: 1px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  width: 100%;
-}
-.caption
-{
-  background-color: #FAFBFE;
-  border-spacing: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.cell
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.container
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.contentfolder
-{
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: none;
-  margin-left: 6pt;
-}
-.contentitem
-{
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: none;
-  margin-left: 6pt;
-}
-.contentproclabel
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.contentprocname
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.contents
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: decimal;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-.contentsdate
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  width: 100%;
-}
-.contenttitle
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: bold;
-}
-.continued
-{
-  background-color: #FAFBFE;
-  border-spacing: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-  width: 100%;
-}
-.data
-{
-  background-color: #FFFFFF;
-  border-bottom-width: 1px;
-  border-color: #C1C1C1;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.dataemphasis
-{
-  background-color: #FFFFFF;
-  border-bottom-width: 1px;
-  border-color: #C1C1C1;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.dataemphasisfixed
-{
-  background-color: #FFFFFF;
-  border-bottom-width: 1px;
-  border-color: #C1C1C1;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.dataempty
-{
-  background-color: #FFFFFF;
-  border-bottom-width: 1px;
-  border-color: #C1C1C1;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.datafixed
-{
-  background-color: #FFFFFF;
-  border-bottom-width: 1px;
-  border-color: #C1C1C1;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.datastrong
-{
-  background-color: #FFFFFF;
-  border-bottom-width: 1px;
-  border-color: #C1C1C1;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.datastrongfixed
-{
-  background-color: #FFFFFF;
-  border-bottom-width: 1px;
-  border-color: #C1C1C1;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #000000;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.date
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  width: 100%;
-}
-.document
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-a:link {
-color:#0000FF
-}
-a:visited {
-color:#800080
-}
-a:active {
-color:#800080
-}
-.errorbanner
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.errorcontent
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.errorcontentfixed
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.extendedpage
-{
-  background-color: #FAFBFE;
-  border: 1pt solid #000000;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-  text-align: center;
-}
-.fatalbanner
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.fatalcontent
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.fatalcontentfixed
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.folderaction
-{
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: none;
-  margin-left: 6pt;
-}
-.footer
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.footeremphasis
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.footeremphasisfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.footerempty
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.footerfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.footerstrong
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.footerstrongfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.frame
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.graph
-{
-  background-color: #FAFBFE;
-  border: 1px solid #C1C1C1;
-  border-collapse: separate;
-  border-spacing: 1px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.header
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.headeremphasis
-{
-  background-color: #D8DBD3;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.headeremphasisfixed
-{
-  background-color: #D8DBD3;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #000000;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.headerempty
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.headerfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.headersandfooters
-{
-  background-color: #EDF2F9;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.headerstrong
-{
-  background-color: #D8DBD3;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.headerstrongfixed
-{
-  background-color: #D8DBD3;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #000000;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.heading1
-{
-  font-family: Arial, Helvetica, sans-serif;
-}
-.heading2
-{
-  font-family: Arial, Helvetica, sans-serif;
-}
-.heading3
-{
-  font-family: Arial, Helvetica, sans-serif;
-}
-.heading4
-{
-  font-family: Arial, Helvetica, sans-serif;
-}
-.heading5
-{
-  font-family: Arial, Helvetica, sans-serif;
-}
-.heading6
-{
-  font-family: Arial, Helvetica, sans-serif;
-}
-.index
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.indexaction
-{
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: none;
-  margin-left: 6pt;
-}
-.indexitem
-{
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: none;
-  margin-left: 6pt;
-}
-.indexprocname
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.indextitle
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: bold;
-}
-.layoutcontainer
-{
-  border: 0px solid #000000;
-  border-spacing: 30px;
-}
-.layoutregion
-{
-  border: 0px solid #000000;
-  border-spacing: 30px;
-}
-.linecontent
-{
-  background-color: #FAFBFE;
-  border-bottom-width: 1px;
-  border-color: #C1C1C1;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.link
-{
-  color: #0000FF;
-}
-.list
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: disc;
-}
-.list10
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.list2
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: circle;
-}
-.list3
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.list4
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.list5
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.list6
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.list7
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.list8
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.list9
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.listitem
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: disc;
-}
-.listitem10
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.listitem2
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: circle;
-}
-.listitem3
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.listitem4
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.listitem5
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.listitem6
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.listitem7
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.listitem8
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.listitem9
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: square;
-}
-.note
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.notebanner
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.notecontent
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.notecontentfixed
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.output
-{
-  background-color: #FAFBFE;
-  border: 1px solid #C1C1C1;
-  border-collapse: separate;
-  border-spacing: 1px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.pageno
-{
-  background-color: #FAFBFE;
-  border-spacing: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-  text-align: right;
-  vertical-align: top;
-}
-.pages
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: decimal;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-.pagesdate
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  width: 100%;
-}
-.pagesitem
-{
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  list-style-type: none;
-  margin-left: 6pt;
-}
-.pagesproclabel
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.pagesprocname
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.pagestitle
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: bold;
-}
-.paragraph
-{
-  background-color: #FAFBFE;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.parskip
-{
-  border: 0px solid #000000;
-  border-spacing: 0px;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.prepage
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  text-align: left;
-}
-.proctitle
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.proctitlefixed
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.rowfooter
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.rowfooteremphasis
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.rowfooteremphasisfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.rowfooterempty
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.rowfooterfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.rowfooterstrong
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.rowfooterstrongfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.rowheader
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.rowheaderemphasis
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.rowheaderemphasisfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: italic;
-  font-weight: normal;
-}
-.rowheaderempty
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.rowheaderfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.rowheaderstrong
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.rowheaderstrongfixed
-{
-  background-color: #EDF2F9;
-  border-bottom-width: 1px;
-  border-color: #B0B7BB;
-  border-left-width: 0px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
-  color: #112277;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemfooter
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter10
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter2
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter3
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter4
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter5
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter6
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter7
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter8
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemfooter9
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.systemtitle
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle10
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle2
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle3
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle4
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle5
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle6
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle7
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle8
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systemtitle9
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: small;
-  font-style: normal;
-  font-weight: bold;
-}
-.systitleandfootercontainer
-{
-  background-color: #FAFBFE;
-  border: 0px solid #000000;
-  border-spacing: 1px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  width: 100%;
-}
-.table
-{
-  border-bottom-width: 0px;
-  border-collapse: collapse;
-  border-color: #C1C1C1;
-  border-left-width: 1px;
-  border-right-width: 0px;
-  border-spacing: 0px;
-  border-style: solid;
-  border-top-width: 1px;
-}
-.top_stacked_value
-{
-  padding-bottom: 1px;
-  border: 0;
-}
-.middle_stacked_value
-{
-  padding-top: 1px;
-  padding-bottom: 1px;
-  border: 0;
-}
-.bottom_stacked_value
-{
-  padding-top: 1px;
-  border: 0;
-}
-.titleandnotecontainer
-{
-  background-color: #FAFBFE;
-  border: 0px solid #000000;
-  border-spacing: 1px;
-  color: #000000;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-  width: 100%;
-}
-.titlesandfooters
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.usertext
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.visitedlink
-{
-  color: #800080;
-}
-.warnbanner
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: bold;
-}
-.warncontent
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: Arial, 'Albany AMT', Helvetica, Helv;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.warncontentfixed
-{
-  background-color: #FAFBFE;
-  color: #112277;
-  font-family: 'Courier New', Courier;
-  font-size: x-small;
-  font-style: normal;
-  font-weight: normal;
-}
-.l {text-align: left }
-.c {text-align: center }
-.r {text-align: right }
-.d {text-align: right }
-.j {text-align: justify }
-.t {vertical-align: top }
-.m {vertical-align: middle }
-.b {vertical-align: bottom }
-TD, TH {vertical-align: top }
-.stacked_cell{padding: 0 }
--->
-</style>
-<script language="javascript" type="text/javascript">
-<!-- 
-function startup(){
-
-}
-function shutdown(){
-
-}
-
-//-->
-</script>
-
-</head>
-<body onload="startup()" onunload="shutdown()" class="body">
-
-<script language="javascript" type="text/javascript">
-<!-- 
-var _info = navigator.userAgent
-var _ie = (_info.indexOf("MSIE") > 0
-          && _info.indexOf("Win") > 0
-          && _info.indexOf("Windows 3.1") < 0);
-var _ie64 = _info.indexOf("x64") > 0
-
-//-->
-</script>
-
-<div class="branch">
-<a name="IDX"></a>
-<div>
-<map name="ge5bhiie_map">
-<area shape="RECT" title="ThüringenFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3966,67%" coords="325,348,343,358">
-<area shape="RECT" title="ThüringenFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3966,67%" coords="327,334,341,348">
-<area shape="RECT" title="ThüringenFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3966,67%" coords="327,320,341,334">
-<area shape="RECT" title="Sachsen-AnhaltFaelle Covid Aktuell Beatmet: 28Faelle Covid Aktuell: 3971,79%" coords="342,275,360,285">
-<area shape="RECT" title="Sachsen-AnhaltFaelle Covid Aktuell Beatmet: 28Faelle Covid Aktuell: 3971,79%" coords="344,261,358,275">
-<area shape="RECT" title="Sachsen-AnhaltFaelle Covid Aktuell Beatmet: 28Faelle Covid Aktuell: 3971,79%" coords="344,247,358,261">
-<area shape="RECT" title="SachsenFaelle Covid Aktuell Beatmet: 33Faelle Covid Aktuell: 4376,74%" coords="419,346,437,356">
-<area shape="RECT" title="SachsenFaelle Covid Aktuell Beatmet: 33Faelle Covid Aktuell: 4376,74%" coords="421,333,435,347">
-<area shape="RECT" title="SachsenFaelle Covid Aktuell Beatmet: 33Faelle Covid Aktuell: 4376,74%" coords="421,319,435,333">
-<area shape="RECT" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="379,144,397,154">
-<area shape="RECT" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="381,130,395,144">
-<area shape="RECT" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="385,116,392,130">
-<area shape="RECT" title="BrandenburgFaelle Covid Aktuell Beatmet: 14Faelle Covid Aktuell: 1593,33%" coords="444,240,462,250">
-<area shape="RECT" title="BrandenburgFaelle Covid Aktuell Beatmet: 14Faelle Covid Aktuell: 1593,33%" coords="446,227,460,241">
-<area shape="RECT" title="BrandenburgFaelle Covid Aktuell Beatmet: 14Faelle Covid Aktuell: 1593,33%" coords="446,213,460,227">
-<area shape="RECT" title="BerlinFaelle Covid Aktuell Beatmet: 43Faelle Covid Aktuell: 6566,15%" coords="413,237,431,247">
-<area shape="RECT" title="BerlinFaelle Covid Aktuell Beatmet: 43Faelle Covid Aktuell: 6566,15%" coords="415,224,429,238">
-<area shape="RECT" title="BerlinFaelle Covid Aktuell Beatmet: 43Faelle Covid Aktuell: 6566,15%" coords="415,210,429,224">
-<area shape="RECT" title="SaarlandFaelle Covid Aktuell Beatmet: 28Faelle Covid Aktuell: 5253,85%" coords="136,450,154,460">
-<area shape="RECT" title="SaarlandFaelle Covid Aktuell Beatmet: 28Faelle Covid Aktuell: 5253,85%" coords="138,437,152,451">
-<area shape="RECT" title="SaarlandFaelle Covid Aktuell Beatmet: 28Faelle Covid Aktuell: 5253,85%" coords="138,423,152,437">
-<area shape="RECT" title="BayernFaelle Covid Aktuell Beatmet: 492Faelle Covid Aktuell: 61979,48%" coords="365,485,383,495">
-<area shape="RECT" title="BayernFaelle Covid Aktuell Beatmet: 492Faelle Covid Aktuell: 61979,48%" coords="364,472,385,485">
-<area shape="RECT" title="BayernFaelle Covid Aktuell Beatmet: 492Faelle Covid Aktuell: 61979,48%" coords="364,458,385,472">
-<area shape="RECT" title="Baden-WürttembergFaelle Covid Aktuell Beatmet: 334Faelle Covid Aktuell: 42478,77%" coords="228,501,246,511">
-<area shape="RECT" title="Baden-WürttembergFaelle Covid Aktuell Beatmet: 334Faelle Covid Aktuell: 42478,77%" coords="227,488,248,502">
-<area shape="RECT" title="Baden-WürttembergFaelle Covid Aktuell Beatmet: 334Faelle Covid Aktuell: 42478,77%" coords="227,474,248,488">
-<area shape="RECT" title="Rheinland-PfalzFaelle Covid Aktuell Beatmet: 69Faelle Covid Aktuell: 9771,13%" coords="152,412,170,422">
-<area shape="RECT" title="Rheinland-PfalzFaelle Covid Aktuell Beatmet: 69Faelle Covid Aktuell: 9771,13%" coords="154,399,168,413">
-<area shape="RECT" title="Rheinland-PfalzFaelle Covid Aktuell Beatmet: 69Faelle Covid Aktuell: 9771,13%" coords="154,385,168,399">
-<area shape="RECT" title="HessenFaelle Covid Aktuell Beatmet: 100Faelle Covid Aktuell: 11785,47%" coords="228,375,246,385">
-<area shape="RECT" title="HessenFaelle Covid Aktuell Beatmet: 100Faelle Covid Aktuell: 11785,47%" coords="227,361,248,375">
-<area shape="RECT" title="HessenFaelle Covid Aktuell Beatmet: 100Faelle Covid Aktuell: 11785,47%" coords="227,347,248,361">
-<area shape="RECT" title="Nordrhein-WestfalenFaelle Covid Aktuell Beatmet: 437Faelle Covid Aktuell: 60971,76%" coords="168,311,186,321">
-<area shape="RECT" title="Nordrhein-WestfalenFaelle Covid Aktuell Beatmet: 437Faelle Covid Aktuell: 60971,76%" coords="167,297,188,311">
-<area shape="RECT" title="Nordrhein-WestfalenFaelle Covid Aktuell Beatmet: 437Faelle Covid Aktuell: 60971,76%" coords="167,283,188,297">
-<area shape="RECT" title="BremenFaelle Covid Aktuell Beatmet: 4Faelle Covid Aktuell: 757,14%" coords="216,168,234,178">
-<area shape="RECT" title="BremenFaelle Covid Aktuell Beatmet: 4Faelle Covid Aktuell: 757,14%" coords="222,155,229,169">
-<area shape="RECT" title="BremenFaelle Covid Aktuell Beatmet: 4Faelle Covid Aktuell: 757,14%" coords="222,141,229,155">
-<area shape="RECT" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="223,214,241,224">
-<area shape="RECT" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="225,201,239,215">
-<area shape="RECT" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="225,187,239,201">
-<area shape="RECT" title="HamburgFaelle Covid Aktuell Beatmet: 67Faelle Covid Aktuell: 8677,91%" coords="277,159,295,169">
-<area shape="RECT" title="HamburgFaelle Covid Aktuell Beatmet: 67Faelle Covid Aktuell: 8677,91%" coords="279,146,293,160">
-<area shape="RECT" title="HamburgFaelle Covid Aktuell Beatmet: 67Faelle Covid Aktuell: 8677,91%" coords="279,132,293,146">
-<area shape="RECT" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="252,123,270,133">
-<area shape="RECT" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="254,110,268,124">
-<area shape="RECT" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="254,96,268,110">
-<area shape="POLY" title="ThüringenFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3966,67%" coords="275,358,278,346,281,345,283,341,278,337,283,337,282,332,289,333,287,329,288,325,286,324,288,323,289,326,291,321,279,314,278,308,293,300,296,293,309,295,308,291,313,289,320,292,318,294,321,297,323,305,340,307,344,313,339,318,343,320,344,326,352,325,356,330,361,329,367,335,374,334,376,337,379,331,377,330,378,326,386,326,389,332,392,332,395,337,388,339,386,343,377,345,379,347,376,350,381,355,375,359,373,358,372,361,374,362,369,363,368,358,366,359,361,364,366,368,361,374,358,373,346,376,342,371,342,366,339,366,334,369,336,377,335,383,330,382,329,376,323,378,321,375,316,375,311,377,311,380,317,384,312,385,312,388,307,386,306,379,302,378,300,374,297,375,295,368,290,367,289,364,285,363,282,366,282,360,284,358,283,356,278,356,279,359">
-<area shape="POLY" title="Sachsen-AnhaltFaelle Covid Aktuell Beatmet: 28Faelle Covid Aktuell: 3971,79%" coords="304,265,308,268,305,280,310,290,320,292,318,294,321,297,322,304,340,307,344,313,339,318,343,320,344,326,352,325,356,330,361,329,367,335,374,334,376,337,379,330,377,330,378,326,376,325,375,320,374,320,375,318,372,311,374,310,374,304,372,301,374,299,374,296,376,294,384,293,384,291,391,290,395,287,398,288,401,285,405,288,408,286,409,288,415,282,413,271,409,272,409,270,406,270,405,268,401,268,400,266,393,263,391,265,388,265,385,262,383,263,374,253,377,249,375,247,378,231,370,228,371,222,374,221,372,215,374,209,373,205,369,206,369,203,363,205,357,202,357,199,351,198,348,194,345,197,343,196,343,201,335,205,324,203,320,207,313,208,314,216,319,223,322,222,320,226,323,231,321,231,320,234,326,239,322,242,326,249,323,251,325,253,325,256,320,258,321,261,311,262,305,265">
-<area shape="POLY" title="SachsenFaelle Covid Aktuell Beatmet: 33Faelle Covid Aktuell: 4376,74%" coords="361,364,366,368,362,371,367,374,366,377,375,379,380,386,380,389,382,389,382,384,389,373,398,373,403,369,408,372,411,369,412,365,419,365,421,359,424,360,426,355,430,358,433,355,433,351,447,349,449,344,456,342,464,336,469,336,470,333,463,330,465,325,470,328,474,326,478,329,477,334,480,333,479,338,487,340,494,322,496,309,492,303,491,295,482,292,480,288,479,291,474,289,465,295,456,292,454,297,452,297,453,299,451,304,449,303,441,306,431,305,425,300,420,305,418,304,414,290,408,286,405,288,401,285,398,288,395,287,391,290,384,291,384,293,376,294,374,296,374,299,372,301,374,310,372,311,375,323,377,326,386,326,389,332,392,332,395,337,388,339,386,343,377,345,379,347,376,350,381,355,378,358,375,357,375,359,373,358,372,361,374,362,368,363,367,358,362,363">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="444,129">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="382,103,383,103">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="382,103,383,102">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="434,120">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="383,103,383,104">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="443,128,444,128,444,129,443,129">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="382,102">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="406,98,406,97">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="383,103,383,104">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="341,127,342,127,342,126">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="410,95,410,94">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="387,99,387,98">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="407,92,408,92">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="434,118,434,119">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="390,100,391,99,390,99">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="453,145,454,145,454,144,453,144">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="406,105,407,106,406,106">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="342,125,342,126,343,126,343,124,343,123,342,124">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="422,105,422,104,423,104,423,103,422,104,423,104">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="388,99,389,99,390,99,391,99,390,98,389,98,388,98">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="400,97,401,97,402,97,403,97,403,96,403,95,403,96,402,96,401,96,401,97">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="406,96,406,97,407,96,408,96,408,95,409,95,408,95,409,95,410,94,410,93,409,93,408,93,407,93,407,94,406,95">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="337,129,338,128,340,127,341,127,342,127,342,128,341,128,341,130,341,131,340,131,340,130,340,129,339,129,339,131,338,130,337,131,338,131,337,131,337,130">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="403,95,404,95,404,96,404,95,404,94,404,93,404,92,404,91,405,91,405,90,406,90,405,90,405,89,405,88,405,87,406,87,406,86,406,87,407,88,407,86,407,87,407,88,407,87,407,86,406,85,405,86,405,87,405,89,404,90,404,91,404,93">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="432,115,432,114,433,114,434,114,435,117,437,119,439,120,443,121,450,128,452,130,451,130,450,131,451,131,451,134,450,133,447,134,446,134,445,134,444,134,442,136,440,136,440,135,441,136,441,135,440,134,439,136,438,136,437,136,436,136,436,135,436,134,438,134,439,133,440,132,439,129,438,128,439,126,440,126,441,126,441,127,440,128,441,128,440,129,441,130,441,129,441,128,442,128,443,128,443,129,444,129,444,128,444,126,444,125,444,124,443,124,442,124,442,122,441,121,440,121,438,121,439,121,438,122,439,122,440,123,439,124,439,123,438,125,437,125,436,125,437,123,436,122,435,123,434,124,433,124,434,122,434,118,433,117,433,116,432,116">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="406,104,409,106,408,106,407,108,409,106,409,108,410,108,412,109,414,109,415,107,414,110,413,109,417,111,418,109,416,108,416,110,416,108,417,107,417,108,420,105,419,103,424,102,426,103,428,102,426,104,429,103,427,106,429,106,430,107,429,106,430,107,430,104,432,102,428,98,425,98,424,95,424,93,427,90,428,87,426,86,418,87,416,83,418,81,417,80,410,82,409,86,407,89,410,86,410,84,412,82,411,88,414,87,415,84,416,87,418,89,421,87,420,88,421,90,421,93,423,94,422,95,423,96,422,97,423,97,420,97,420,96,422,96,420,95,421,93,419,94,417,93,416,88,415,89,416,90,415,91,415,89,414,89,415,87,413,89,413,91,412,90,411,89,407,89,408,92,410,92,410,93,412,94,409,96,408,96,407,98,410,97,412,100,410,101,406,101,406,103">
-<area shape="POLY" title="Mecklenburg-VorpommernFaelle Covid Aktuell Beatmet: 9Faelle Covid Aktuell: 1275,00%" coords="306,172,307,166,315,162,315,157,319,157,320,150,312,146,312,140,317,134,321,135,318,132,329,127,332,129,332,133,335,131,340,135,343,126,347,123,346,121,343,123,349,118,365,115,365,120,368,122,366,115,375,107,383,94,387,97,400,97,379,102,376,107,378,111,380,111,378,108,383,102,385,103,389,99,388,102,393,100,394,104,402,97,406,107,413,110,417,114,414,115,419,115,417,117,421,120,430,114,434,118,432,124,439,131,435,136,447,143,454,142,452,145,455,146,461,170,456,175,449,175,454,164,441,165,436,156,436,161,432,161,426,167,425,172,420,178,416,175,413,180,410,178,403,184,403,182,394,182,390,178,381,179,372,172,365,171,364,176,355,179,356,181,348,180,345,182,345,188,336,189,330,187,330,184,325,181,322,174,315,176,310,172">
-<area shape="POLY" title="BrandenburgFaelle Covid Aktuell Beatmet: 14Faelle Covid Aktuell: 1593,33%" coords="333,188,344,188,345,182,348,180,356,181,355,179,364,176,365,171,372,172,381,179,390,178,394,182,403,182,403,184,410,178,413,180,416,175,420,178,425,172,426,167,432,161,436,161,436,156,441,165,454,164,449,175,456,175,461,170,463,175,460,179,460,188,452,196,451,204,473,221,470,233,472,241,478,244,477,252,480,255,478,267,474,272,482,287,479,291,474,289,465,295,456,292,452,297,451,304,449,303,441,306,431,305,425,300,418,304,417,295,410,287,415,282,413,272,409,272,405,268,401,268,393,263,388,265,376,257,374,253,377,249,375,247,378,230,370,228,371,222,374,221,373,205,359,204,356,202,357,199,348,196,349,194,341,191,336,193,333,189,410,235,413,228,411,228,411,223,414,223,417,218,420,220,425,216,427,222,433,226,431,230,437,232,433,239,433,236,425,234,424,237,420,235,410,235">
-<area shape="POLY" title="BerlinFaelle Covid Aktuell Beatmet: 43Faelle Covid Aktuell: 6566,15%" coords="410,235,411,233,410,232,411,231,413,228,412,228,411,228,411,225,412,225,412,224,412,223,411,224,411,223,412,222,414,223,414,222,415,220,416,220,416,219,417,219,417,218,418,218,418,219,418,220,420,220,422,218,423,219,424,218,425,218,424,217,425,216,425,217,426,218,427,218,426,221,427,222,430,223,430,225,432,225,432,226,433,226,432,228,431,230,432,230,435,230,435,231,435,230,436,231,437,232,436,232,437,233,436,234,437,234,435,236,435,237,434,237,433,239,433,236,432,236,431,237,431,235,428,236,428,235,426,235,425,234,423,235,424,237,422,237,422,236,421,236,420,235,419,236,418,234,417,235,416,235,416,234,415,234,413,236,412,236,413,236,412,236,411,237,412,236,411,236">
-<area shape="POLY" title="SaarlandFaelle Covid Aktuell Beatmet: 28Faelle Covid Aktuell: 5253,85%" coords="119,429,120,427,122,428,126,429,128,429,130,430,132,428,133,428,133,429,134,428,136,428,139,426,140,426,141,425,144,424,145,423,145,424,147,423,147,424,149,423,150,423,151,426,155,426,155,427,156,427,157,428,159,427,159,430,160,430,161,431,160,432,159,434,160,435,160,436,158,436,158,437,160,439,159,440,162,441,163,442,164,442,164,444,163,445,164,446,163,447,162,448,161,448,162,449,161,450,160,449,159,451,160,452,159,453,162,456,162,457,161,457,159,459,157,458,155,459,154,458,153,458,151,457,150,457,151,456,150,456,149,456,150,458,148,459,147,455,148,453,146,454,145,452,144,452,143,451,141,452,140,451,139,451,140,454,138,456,136,454,134,455,133,453,134,452,134,451,133,451,132,449,131,448,132,446,129,445,127,442,127,441,128,442,129,440,126,438,127,437,122,433,119,433,119,431">
-<area shape="POLY" title="BayernFaelle Covid Aktuell Beatmet: 492Faelle Covid Aktuell: 61979,48%" coords="235,398,246,391,259,395,258,385,265,386,270,373,278,373,285,363,295,368,311,388,317,385,311,380,316,375,329,376,335,383,334,369,339,366,346,376,364,372,373,380,379,397,392,406,386,417,398,439,414,447,432,468,442,471,452,482,448,500,438,495,430,514,405,528,417,547,413,555,419,556,422,561,418,573,408,567,407,559,394,562,391,558,383,559,383,555,379,558,381,564,354,566,338,579,324,579,320,570,299,567,299,580,287,588,290,580,284,582,278,569,261,566,272,560,285,560,282,553,285,551,283,547,286,532,278,513,281,507,294,503,292,490,296,494,302,491,298,487,300,474,285,456,285,435,283,433,278,437,276,430,271,432,274,428,271,420,265,423,265,416,261,419,255,416,249,419,253,420,254,425,244,430,239,428,243,419,385,451,385,453,386,453,386,451,385,451">
-<area shape="POLY" title="Baden-WürttembergFaelle Covid Aktuell Beatmet: 334Faelle Covid Aktuell: 42478,77%" coords="242,558">
-<area shape="POLY" title="Baden-WürttembergFaelle Covid Aktuell Beatmet: 334Faelle Covid Aktuell: 42478,77%" coords="217,558,218,558,218,557,219,557,220,557,220,558,219,558,218,559">
-<area shape="POLY" title="Baden-WürttembergFaelle Covid Aktuell Beatmet: 334Faelle Covid Aktuell: 42478,77%" coords="165,556,169,564,173,563,170,566,173,568,179,564,184,567,191,567,196,562,204,566,210,566,208,564,211,562,214,565,215,559,209,562,206,559,213,550,216,554,217,551,221,554,221,558,224,559,224,555,228,561,233,558,230,556,234,557,233,555,238,558,235,558,243,560,235,550,248,560,256,562,259,566,267,565,272,560,277,562,280,559,283,563,286,559,282,553,285,551,283,547,286,532,278,512,281,507,287,507,294,503,292,490,296,494,298,491,298,493,302,491,298,487,300,474,295,468,291,467,289,463,291,460,285,456,285,435,283,433,278,437,276,430,271,432,274,428,271,420,265,423,265,416,261,416,261,419,258,416,250,417,252,422,254,421,254,425,249,425,246,430,239,430,241,434,233,435,229,442,227,441,231,435,224,434,222,426,217,428,217,433,211,429,212,449,208,453,203,469,180,496,177,514,169,527,170,538">
-<area shape="POLY" title="Rheinland-PfalzFaelle Covid Aktuell Beatmet: 69Faelle Covid Aktuell: 9771,13%" coords="110,392,112,399,114,400,115,403,118,408,127,410,126,416,122,420,119,426,120,427,130,430,145,423,149,423,157,428,159,427,160,435,158,437,159,440,164,442,164,444,159,453,162,456,166,455,165,456,168,456,169,461,174,464,181,463,184,466,187,464,194,469,200,471,206,462,208,453,213,449,211,447,214,439,211,438,210,429,207,422,213,417,210,416,209,412,207,403,201,398,187,402,183,396,186,391,190,393,188,388,189,386,192,384,194,385,195,381,198,381,196,374,192,372,194,369,193,364,195,362,199,364,200,360,199,353,196,352,193,347,193,342,187,339,188,336,183,337,184,342,180,343,180,346,176,349,167,350,165,355,160,356,159,354,157,357,153,357,147,360,144,367,141,364,139,365,141,373,137,375,135,372,133,373,133,371,126,374,126,372,123,371,125,375,119,375,118,378,113,380,114,384,112,385">
-<area shape="POLY" title="HessenFaelle Covid Aktuell Beatmet: 100Faelle Covid Aktuell: 11785,47%" coords="183,396,187,402,203,398,207,404,210,416,213,417,207,421,210,429,217,433,217,428,222,426,224,434,231,435,227,441,229,442,233,435,241,434,239,427,243,419,240,412,238,412,236,395,242,393,243,395,246,391,253,392,254,396,259,395,258,385,265,386,265,383,269,380,270,373,275,374,281,370,283,357,280,355,279,359,275,358,278,346,283,341,278,337,283,337,282,332,287,334,290,332,287,329,288,325,286,324,288,323,289,326,291,321,278,313,277,305,274,305,275,308,272,305,268,308,269,311,271,310,269,313,261,309,266,305,264,295,268,294,265,290,260,290,259,288,253,291,254,293,251,298,245,303,239,297,234,299,235,306,225,307,219,313,221,316,227,315,226,325,218,326,218,331,214,338,210,342,206,340,200,346,200,362,193,364,192,372,196,374,198,381,188,387,190,393,186,391,183,395">
-<area shape="POLY" title="Nordrhein-WestfalenFaelle Covid Aktuell Beatmet: 437Faelle Covid Aktuell: 60971,76%" coords="103,324,107,325,117,317,117,315,113,316,113,311,120,304,120,293,115,287,117,283,110,277,110,271,119,271,117,267,119,266,129,272,129,269,143,268,148,263,142,258,145,253,180,237,182,230,197,242,193,249,198,252,197,256,192,258,196,261,208,255,214,257,219,251,216,249,216,239,211,232,215,234,225,228,227,237,233,238,244,231,244,237,238,245,242,249,239,251,240,255,246,256,246,266,250,266,252,275,258,275,254,282,254,289,257,289,253,291,251,298,244,303,242,298,236,299,234,300,235,306,222,309,219,313,226,314,228,318,226,325,217,326,214,338,210,342,206,340,200,346,199,353,196,352,193,343,186,335,179,347,167,350,165,355,159,354,147,360,144,367,139,365,141,373,137,375,133,371,126,374,124,370,124,375,122,363,115,359,119,354,115,354,107,341,113,333,110,329,104,329">
-<area shape="POLY" title="BremenFaelle Covid Aktuell Beatmet: 4Faelle Covid Aktuell: 757,14%" coords="227,154,227,155">
-<area shape="POLY" title="BremenFaelle Covid Aktuell Beatmet: 4Faelle Covid Aktuell: 757,14%" coords="221,164,221,163,221,162,223,161,224,159,223,158,224,158,223,158,224,157,224,156,223,155,222,155,223,155,222,155,222,156,222,155,222,154,222,155,222,154,223,155,225,155,226,155,227,155,226,155,227,155,226,156,226,157,226,158,227,158,227,159,226,159,226,160,227,161,226,161,226,162,225,163,224,163,222,163,221,163">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="173,173,174,173,174,174">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="154,153,155,152,155,153">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="201,143,202,143,202,142,201,142">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="201,144,201,143,202,144">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="270,159,271,159,273,159,272,159">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="268,158,270,159,269,159">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="215,139,215,140,216,139,216,138">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="264,156,265,157,266,157,265,156">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="259,147,260,149,260,148">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="155,150,155,151,156,151,156,150,157,150,156,149,155,149">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="175,145,176,145,178,145,178,144,177,144,176,144">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="206,147,207,147,208,146,209,146,208,146,208,145,207,145,207,146,206,146">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="222,155,222,156,223,158,224,158,223,158,224,157,224,156,223,155">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="195,141,196,142,196,141,197,142,199,142,200,142,198,141,197,141,196,141">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="155,148,156,148,159,148,159,147,160,147,160,148,162,147,164,147,164,148,164,147,163,147,161,147">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="187,143,188,142,189,141,190,141,191,142,192,142,193,142,194,142,192,142,191,143,189,143,188,143,188,144,188,143">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="166,146,166,145,167,145,168,145,170,145,174,145,174,146,171,146,169,146,168,146,167,146">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="179,144,180,143,184,143,186,143,186,144,184,144,182,144,181,144,181,145,180,145,181,145,180,145,179,145">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="146,152,146,153,148,154,148,155,149,155,149,154,150,154,150,155,150,154,149,154,149,153,150,152,152,152,151,151,150,151,148,152">
-<area shape="POLY" title="NiedersachsenFaelle Covid Aktuell Beatmet: 60Faelle Covid Aktuell: 7580,00%" coords="143,223,147,223,146,217,159,218,167,193,168,174,173,172,176,178,173,172,159,169,166,151,201,147,207,159,203,163,208,168,213,165,213,160,210,160,212,154,223,159,220,172,221,164,227,161,227,155,222,154,220,148,228,135,234,139,253,138,276,167,284,165,289,170,294,167,315,176,322,174,336,193,347,194,335,205,324,203,313,208,314,216,322,222,323,231,320,234,326,239,322,242,326,249,321,261,304,265,308,268,305,278,310,290,309,295,296,293,287,304,278,308,272,305,268,308,269,313,261,309,267,293,254,289,258,274,252,275,250,266,246,266,246,256,240,255,242,249,238,245,245,232,233,238,227,237,225,228,211,232,219,251,214,257,208,255,196,261,192,258,198,252,193,250,197,242,195,238,182,230,180,237,158,245,156,230,147,230,144,226,227,154,227,155,227,154">
-<area shape="POLY" title="HamburgFaelle Covid Aktuell Beatmet: 67Faelle Covid Aktuell: 8677,91%" coords="221,133,221,134,222,133,222,132,221,132">
-<area shape="POLY" title="HamburgFaelle Covid Aktuell Beatmet: 67Faelle Covid Aktuell: 8677,91%" coords="218,131,218,132,219,131,220,131,220,130,219,130">
-<area shape="POLY" title="HamburgFaelle Covid Aktuell Beatmet: 67Faelle Covid Aktuell: 8677,91%" coords="271,158,279,160,277,160,275,159,274,161,272,160,273,161,272,161,272,162,273,163,274,163,273,164,274,165,275,166,276,167,276,166,278,166,278,167,278,168,279,168,279,167,281,168,281,169,281,168,283,167,282,167,282,166,283,166,284,165,285,166,286,168,287,168,288,169,289,170,291,170,292,168,294,167,295,166,294,166,294,167,294,166,292,165,292,164,291,164,291,163,290,163,291,162,290,161,289,162,288,161,288,160,288,159,288,158,288,157,290,157,289,155,291,154,289,153,290,152,287,150,288,150,288,149,289,148,289,147,288,146,287,148,285,148,284,148,285,149,284,150,281,150,281,153,278,152,277,154,274,157,273,156,273,155,272,155,272,154,271,157">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="223,92,223,91">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="231,96,232,96">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="224,96,225,96">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="198,114,199,114">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="231,85,232,85,232,84,231,84">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="197,114,197,115,198,115,197,115,198,115,198,114">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="220,89,220,88,221,88,221,89,221,90,220,90">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="316,132,317,133,317,132,318,132,317,131,317,132">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="229,124,229,123,230,123,229,123,230,124,230,125,229,125">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="223,88,224,88,225,88,225,89,226,89,225,90,224,89,223,89">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="261,148,262,149,262,150,262,151,263,151,263,150,262,149,262,148">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="221,91,221,90,222,91,222,92,222,93,222,94,221,94,221,92">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="220,97,221,99,222,99,222,98,222,97,221,96,220,96">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="226,92,226,91,228,91,229,90,230,90,231,90,231,91,230,92,230,93,229,94,227,94,226,93">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="214,82,216,80,217,79,217,80,216,80,216,81,217,81,217,82,217,83,218,83,218,84,218,85,219,85,218,85,218,86,219,85,219,86,218,86,217,86,216,85,215,83">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="219,79,219,78,220,77,222,76,223,76,224,76,225,76,226,76,226,77,226,78,227,79,226,79,226,80,225,81,222,81,221,81,221,80,220,80,219,80">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="322,98,322,95,323,93,324,92,325,92,328,93,329,93,329,94,331,94,331,95,332,96,332,97,333,97,333,98,333,99,334,100,334,101,331,100,330,100,329,101,329,100,330,100,329,100,328,100,329,101,326,101,325,101,326,100,325,100,326,99,325,98,324,98,323,98,323,99">
-<area shape="POLY" title="Schleswig-HolsteinFaelle Covid Aktuell Beatmet: 26Faelle Covid Aktuell: 3868,42%" coords="214,76,215,65,220,55,222,56,219,56,221,58,218,62,220,68,241,66,252,70,254,74,259,71,260,75,267,69,267,72,276,77,278,74,280,75,283,83,281,81,271,93,264,94,270,95,280,83,283,83,282,93,275,96,290,97,290,102,285,103,288,104,287,107,294,99,310,108,319,102,327,102,324,104,325,115,317,123,314,121,312,126,317,130,312,140,312,146,320,150,319,157,315,157,315,162,307,166,305,172,288,161,291,154,287,150,289,147,278,152,275,157,272,154,271,158,268,158,264,154,262,148,254,138,240,135,234,126,241,124,234,116,235,111,241,106,236,110,229,110,225,106,229,103,226,102,228,101,238,100,243,94,242,92,239,96,235,96,237,91,234,90,238,88,235,87,231,79,229,84,224,85,231,81,227,67,220,70,217,67,215,77,308,143,312,141,311,140,308,143">
-</map>
-<div  class="c">
-<img src="cv_gmap.png" style=" background-color: #EFEFEF; height: 600px; width: 600px;" border="0" usemap="#ge5bhiie_map" class="c graph">
-</div>
-</div>
-<br>
-</div>
-<div class="branch">
-<p style="page-break-after: always;"><br/></p><hr size="3"/>
-<a name="IDX1"></a>
-<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
-<tr>
-<td class="c systemtitle" style=" font-size: small;">Germany Coronavirus Data</td>
-</tr>
-</table><br>
-<div>
-<div align="center">
-<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK.CV_DATA">
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr>
-<th class="l header" scope="col">State</th>
-<th class="r header" scope="col">Faelle Covid Aktuell</th>
-<th class="r header" scope="col">Faelle Covid Aktuell<br/>Beatmet</th>
-<th class="r header" scope="col">Figures Relative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="l data">Baden-Württemberg</td>
-<td class="r data">424</td>
-<td class="r data">334</td>
-<td class="r data">78,77%</td>
-</tr>
-<tr>
-<td class="l data">Bayern</td>
-<td class="r data">619</td>
-<td class="r data">492</td>
-<td class="r data">79,48%</td>
-</tr>
-<tr>
-<td class="l data">Berlin</td>
-<td class="r data">65</td>
-<td class="r data">43</td>
-<td class="r data">66,15%</td>
-</tr>
-<tr>
-<td class="l data">Brandenburg</td>
-<td class="r data">15</td>
-<td class="r data">14</td>
-<td class="r data">93,33%</td>
-</tr>
-<tr>
-<td class="l data">Bremen</td>
-<td class="r data">7</td>
-<td class="r data">4</td>
-<td class="r data">57,14%</td>
-</tr>
-<tr>
-<td class="l data">Hamburg</td>
-<td class="r data">86</td>
-<td class="r data">67</td>
-<td class="r data">77,91%</td>
-</tr>
-<tr>
-<td class="l data">Hessen</td>
-<td class="r data">117</td>
-<td class="r data">100</td>
-<td class="r data">85,47%</td>
-</tr>
-<tr>
-<td class="l data">Mecklenburg-Vorpommern</td>
-<td class="r data">12</td>
-<td class="r data">9</td>
-<td class="r data">75,00%</td>
-</tr>
-<tr>
-<td class="l data">Niedersachsen</td>
-<td class="r data">75</td>
-<td class="r data">60</td>
-<td class="r data">80,00%</td>
-</tr>
-<tr>
-<td class="l data">Nordrhein-Westfalen</td>
-<td class="r data">609</td>
-<td class="r data">437</td>
-<td class="r data">71,76%</td>
-</tr>
-<tr>
-<td class="l data">Rheinland-Pfalz</td>
-<td class="r data">97</td>
-<td class="r data">69</td>
-<td class="r data">71,13%</td>
-</tr>
-<tr>
-<td class="l data">Saarland</td>
-<td class="r data">52</td>
-<td class="r data">28</td>
-<td class="r data">53,85%</td>
-</tr>
-<tr>
-<td class="l data">Sachsen</td>
-<td class="r data">43</td>
-<td class="r data">33</td>
-<td class="r data">76,74%</td>
-</tr>
-<tr>
-<td class="l data">Sachsen-Anhalt</td>
-<td class="r data">39</td>
-<td class="r data">28</td>
-<td class="r data">71,79%</td>
-</tr>
-<tr>
-<td class="l data">Schleswig-Holstein</td>
-<td class="r data">38</td>
-<td class="r data">26</td>
-<td class="r data">68,42%</td>
-</tr>
-<tr>
-<td class="l data">Thüringen</td>
-<td class="r data">39</td>
-<td class="r data">26</td>
-<td class="r data">66,67%</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<br>
-</div>
-</body>
-</html>
