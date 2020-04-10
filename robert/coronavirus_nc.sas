@@ -347,8 +347,8 @@ plot confirmed*date=1 / nolegend
 run;
 
 /* hard-coding the axis range, so it won't show negative/below-zero ticks */
-axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily') order=(0 to 400 by 100) minor=none offset=(1,0) mode=include;
-symbol2 interpol=needle height=10pt width=3 color=red value=circle;
+axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily') order=(0 to 400 by 100) minor=none offset=(1,0);
+symbol2 interpol=needle height=10pt width=3 color=red value=circle mode=include;
 
 ods html anchor='daily';
 goptions xpixels=800 ypixels=550 noborder;
