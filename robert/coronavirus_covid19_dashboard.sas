@@ -537,7 +537,7 @@ id;
 run;
 
 /* these control the size of the blue bubbles */
-%let max_val=200000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
+%let max_val=500000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
 %let max_area=80; /* maximum bubble size (area) */
 proc sort data=map_data out=anno_bubbles;
 by descending confirmed;
