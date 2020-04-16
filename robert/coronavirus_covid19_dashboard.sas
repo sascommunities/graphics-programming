@@ -814,6 +814,75 @@ plot confirmed*snapshot /
 run;
 
 
+/* Rather than cumulative line, create daily bar */
+
+proc sql noprint;
+
+create table bar_confirmed as
+select unique snapshot, 'Confirmed' as type, sum(confirmed) as cumulative_cases
+from confirmed_data
+group by snapshot
+order by snapshot;
+quit; run;
+
+data bar_confirmed; set bar_confirmed;
+on_this_day=cumulative_cases-lag(cumulative_cases);
+run;
+
+data anno_mouseover; set bar_confirmed (where=(on_this_day^=.));
+length function $8 color $12 style $35;
+xsys='2'; ysys='2'; hsys='3'; when='b';
+x=snapshot; y=on_this_day;
+function='pie'; style='pempty'; size=1.5; rotate=360; color='graycc';
+length html $300;
+html='title='||quote(
+ trim(left(put(snapshot,weekdate30.)))||'0d'x||
+ trim(left(put(on_this_day,comma12.0)))||' new confirmed cases on this day'
+ );
+run;
+data anno_mouseover; set anno_mouseover anno_gray_background;
+run;
+
+axis1 value=(c=graycc h=11pt) label=none minor=none offset=(0,0);
+axis2 label=none order=("&mindate"d to "&maxdate"d by &byval)
+ major=(height=8pt) value=(c=graycc h=11pt font='albany amt')
+ offset=(.5,.5);
+
+symbol1 interpol=needle width=3 color=orange value=circle height=9pt cv=graycc;
+
+title1 h=2pct ' ';
+footnote1 h=2pct ' ';
+
+proc gplot data=bar_confirmed anno=anno_mouseover;
+format on_this_day comma12.0;
+format snapshot nldate20.;
+note move=(15,77) font='albany amt/bold' "Daily New Confirmed Cases Worldwide";
+plot on_this_day*snapshot /
+ vaxis=axis1 haxis=axis2
+ des='' name="series2";
+run;
+
+/*
+format snapshot nldate20.;
+format on_this_day comma10.0;
+label on_this_day='Cases on this day';
+vbarparm category=snapshot response=on_this_day /
+ fillattrs=(color=orange)
+ outlineattrs=(color=gray77)
+ tip=(snapshot on_this_day)
+ tipformat=(weekdate30. auto auto)
+ ;
+yaxis display=(nolabel noline noticks)
+ grid gridattrs=(pattern=dot color=gray88)
+ valueattrs=(color=gray33 size=10pt)
+ ;
+xaxis display=(nolabel)
+ type=time values=("&mindate"d to "&maxdate"d by &byval)
+ valueattrs=(color=gray33 size=10pt);
+run;
+*/
+
+
 /*-------------------------------------------------------------------*/
 
 /* 
@@ -884,7 +953,6 @@ proc greplay nofs igout=work.gseg tc=tempcat;
    ;
    template dash;
    treplay
-    9:series
     0:back
     1:title
     2:confsum
@@ -897,6 +965,7 @@ proc greplay nofs igout=work.gseg tc=tempcat;
     7:recotab
 */
     8:map  
+    9:series2
    10:info
     des='' name="&name";
 run;
@@ -916,6 +985,7 @@ ods graphics /
 Create the bar chart, below the dashboard.
 */
 
+/*
 proc sql noprint;
 
 create table bar_confirmed as
@@ -939,9 +1009,6 @@ title2 h=4pt ' ';
 ods graphics / width=900px height=600px;
 
 proc sgplot data=bar_confirmed noborder;
-/*
-format snapshot nldate20.;
-*/
 format snapshot nldate20.;
 format on_this_day comma10.0;
 label on_this_day='Cases on this day';
@@ -954,12 +1021,12 @@ vbarparm category=snapshot response=on_this_day /
 yaxis display=(nolabel noline noticks)
  grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt)
-/* thresholdmax=1 */
  ;
 xaxis display=(nolabel) 
  type=time values=("&mindate"d to "&maxdate"d by &byval)
  valueattrs=(color=gray33 size=10pt);
 run;
+*/
 
 
 /* -------------------------------------------------------------------- */
@@ -1021,9 +1088,6 @@ title2 h=4pt ' ';
 ods graphics / width=800px height=600px;
 proc sgplot data=graph_all noborder;
 by country_region;
-/*
-format snapshot nldate.;
-*/
 format snapshot weekdate30.;
 format confirmed recovered deaths comma10.0;
 series y=confirmed x=snapshot / name='confirmed'
@@ -1042,6 +1106,8 @@ xaxis display=(nolabel)
  type=time values=("&mindate"d to "&maxdate"d by &byval)
  valueattrs=(color=gray33 size=10pt);
 run;
+/*
+*/
 
 /* ------------------------------------------------------------------ */
 
