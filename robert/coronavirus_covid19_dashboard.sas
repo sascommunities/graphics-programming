@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
+/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-/*
 */
 
 /*
@@ -826,7 +826,8 @@ order by snapshot;
 quit; run;
 
 data bar_confirmed; set bar_confirmed;
-on_this_day=cumulative_cases-lag(cumulative_cases);
+if _n_=1 then on_this_day=cumulative_cases;
+else on_this_day=cumulative_cases-lag(cumulative_cases);
 run;
 
 data anno_mouseover; set bar_confirmed (where=(on_this_day^=.));
@@ -1078,27 +1079,39 @@ proc sort data=graph_all out=graph_all;
 by country_region snapshot;
 run;
 
+data graph_all; set graph_all;
+if first.country_region then daily=confirmed;
+else daily=confirmed-lag(confirmed);
+run;
+
+
 ods html anchor="#byval(country_region)";
 ods graphics / imagename="coronavirus_covid19_#byval(country_region)";
 
 options nobyline;
-title1 h=18pt font='albany amt/bold' c=gray33 "COVID-19 Coronavirus cases in: #byval(country_region)";
-title2 h=4pt ' ';
+title1 h=18pt font='albany amt/bold' c=gray33 "Daily New COVID-19 Coronavirus cases";
+title2 h=18pt font='albany amt/bold' c=gray33 "in: #byval(country_region)";
+title3 h=4pt ' ';
 
 ods graphics / width=800px height=600px;
 proc sgplot data=graph_all noborder;
 by country_region;
 format snapshot weekdate30.;
-format confirmed recovered deaths comma10.0;
+format confirmed recovered deaths daily comma10.0;
+needle y=daily x=snapshot / name='daily'
+ lineattrs=(color=orange thickness=2px) 
+ markers markerattrs=(color=graycc symbol=circle);
+/*
 series y=confirmed x=snapshot / name='confirmed'
  lineattrs=(color=red thickness=2px) 
  markers markerattrs=(color=red symbol=square);
 series y=deaths x=snapshot / name='deaths'
  lineattrs=(color=gray77 thickness=2px) 
  markers markerattrs=(color=gray77 symbol=circle);
-keylegend 'confirmed' 'recovered' 'deaths' / 
+keylegend 'confirmed' 'deaths' 'daily' / 
  location=inside position=topleft opaque border
  across=1 outerpad=(left=10pt top=10pt);
+*/
 yaxis display=(nolabel noline noticks) min=0
  integer thresholdmax=1 grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt);
