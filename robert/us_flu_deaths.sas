@@ -27,9 +27,10 @@ https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData01.csv
 https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData02.csv
 https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData04.csv
 https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData07.csv
+https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData14.csv
 */
 
-%let latest=https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData08.csv;
+%let latest=https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData14.csv;
 
 filename csv_file url "&latest";
 /*
@@ -70,15 +71,20 @@ Since ods graphics title2 does not support url links yet,
 annotate the title2 (annotated text supports url links).
 */
 data anno_title2;
-length label $100 anchor x1space y1space function $50 textcolor $12;
+length label $100 anchor x1space y1space function $50 textcolor $12 url $300;
 function='text';
-x1=50; y1=90;
 x1space='graphpercent'; y1space='graphpercent';
 anchor='center';
 textcolor="gray33"; textsize=11; textweight='normal'; 
 width=100; widthunit='percent'; 
+x1=42; y1=90;
+url="https://www.cdc.gov/flu/weekly/index.htm";
+label="Data source: cdc.gov ";
+output;
+x1=57; y1=90;
 url="&latest";
-label="Data source: cdc.gov (through &maxyear, week &maxweek)"; output;
+label="(through &maxyear, week &maxweek)"; 
+output;
 run;
 
 
