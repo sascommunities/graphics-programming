@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
-/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
+/*
 */
 
 /*
@@ -215,8 +215,8 @@ group by country_region, snapshot
 order by country_region, snapshot;
 quit; run;
 data confirmed_increase; set confirmed_increase;
-confirmed_this_day=confirmed-lag(confirmed);
 if country_region^=lag(country_region) then confirmed_this_day=.;
+else confirmed_this_day=confirmed-lag(confirmed);
 run;
 proc sql noprint;
 create table latest_increase as
@@ -982,56 +982,6 @@ ods graphics /
 
 /* -------------------------------------------------------------------- */
 
-/*
-Create the bar chart, below the dashboard.
-*/
-
-/*
-proc sql noprint;
-
-create table bar_confirmed as
-select unique snapshot, 'Confirmed' as type, sum(confirmed) as cumulative_cases
-from confirmed_data
-group by snapshot
-order by snapshot;
-
-quit; run;
-
-data bar_confirmed; set bar_confirmed;
-on_this_day=cumulative_cases-lag(cumulative_cases);
-run;
-
-ods html anchor="newbar";
-ods graphics / imagename="coronavirus_covid19_newbar";
-
-title1 h=18pt font='albany amt/bold' c=gray33 "COVID-19 Coronavirus - Number of new confirmed cases each day";
-title2 h=4pt ' ';
-
-ods graphics / width=900px height=600px;
-
-proc sgplot data=bar_confirmed noborder;
-format snapshot nldate20.;
-format on_this_day comma10.0;
-label on_this_day='Cases on this day';
-vbarparm category=snapshot response=on_this_day / 
- fillattrs=(color=orange) 
- outlineattrs=(color=gray77)
- tip=(snapshot on_this_day)
- tipformat=(weekdate30. auto auto)
- ;
-yaxis display=(nolabel noline noticks)
- grid gridattrs=(pattern=dot color=gray88)
- valueattrs=(color=gray33 size=10pt)
- ;
-xaxis display=(nolabel) 
- type=time values=("&mindate"d to "&maxdate"d by &byval)
- valueattrs=(color=gray33 size=10pt);
-run;
-*/
-
-
-/* -------------------------------------------------------------------- */
-
 /* 
 Create drilldown graphs for each country. 
 We will jump to these graphs using html 'anchors' (by the name of the country)
@@ -1080,7 +1030,7 @@ by country_region snapshot;
 run;
 
 data graph_all; set graph_all;
-if first.country_region then daily=confirmed;
+if country_region^=lag(country_region) then daily=.;
 else daily=confirmed-lag(confirmed);
 run;
 
@@ -1089,7 +1039,7 @@ ods html anchor="#byval(country_region)";
 ods graphics / imagename="coronavirus_covid19_#byval(country_region)";
 
 options nobyline;
-title1 h=18pt font='albany amt/bold' c=gray33 "Daily New COVID-19 Coronavirus cases";
+title1 h=18pt font='albany amt/bold' c=gray33 "Daily New Confirmed COVID-19 Coronavirus cases";
 title2 h=18pt font='albany amt/bold' c=gray33 "in: #byval(country_region)";
 title3 h=4pt ' ';
 
@@ -1101,17 +1051,6 @@ format confirmed recovered deaths daily comma10.0;
 needle y=daily x=snapshot / name='daily'
  lineattrs=(color=orange thickness=2px) 
  markers markerattrs=(color=graycc symbol=circle);
-/*
-series y=confirmed x=snapshot / name='confirmed'
- lineattrs=(color=red thickness=2px) 
- markers markerattrs=(color=red symbol=square);
-series y=deaths x=snapshot / name='deaths'
- lineattrs=(color=gray77 thickness=2px) 
- markers markerattrs=(color=gray77 symbol=circle);
-keylegend 'confirmed' 'deaths' 'daily' / 
- location=inside position=topleft opaque border
- across=1 outerpad=(left=10pt top=10pt);
-*/
 yaxis display=(nolabel noline noticks) min=0
  integer thresholdmax=1 grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt);
@@ -1119,8 +1058,6 @@ xaxis display=(nolabel)
  type=time values=("&mindate"d to "&maxdate"d by &byval)
  valueattrs=(color=gray33 size=10pt);
 run;
-/*
-*/
 
 /* ------------------------------------------------------------------ */
 
