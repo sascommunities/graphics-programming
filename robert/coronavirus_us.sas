@@ -16,10 +16,10 @@ https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_d
 %let srclink=https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv;
 
 /* local copy works much faster, for the 'proc import' */
-filename confdata "time_series_covid19_confirmed_US.csv";
 /*
-filename confdata url "&srclink";
+filename confdata "time_series_covid19_confirmed_US.csv";
 */
+filename confdata url "&srclink";
 
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
