@@ -181,10 +181,13 @@ if confirmed^=0 then do;
  color='Aff000099'; output;
  length html $300;
  html=
-  'title='||quote(trim(left(put(confirmed,comma10.0)))||' confirmed cases  in '||trim(left(combined_key)))||
+  'title='||quote(trim(left(put(confirmed,comma10.0)))||' confirmed cases  in '||trim(left(combined_key)))
+/*
+  ||
   ' href='||quote('http://sww.sas.com/sww-bin/broker94?_service=appdev94&_program=ctntest.coronavirus_substate.sas'||
-   '&substate='||trim(left(combined_key))||'&lat='||trim(left(lat))||'&long='||trim(left(long))
-   );
+   '&substate='||trim(left(combined_key))||'&lat='||trim(left(lat))||'&long='||trim(left(long)))
+*/
+   ;
  style='pempty'; color='gray55'; output;
  end;
 run;
