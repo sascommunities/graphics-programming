@@ -100,6 +100,8 @@ quit; run;
 libname robsdata '.';
 data robsdata.confirmed_data; set confirmed_data;
 run;
+/*
+*/
 
 /* ------------------ Import the deaths data ---------------------- */
 
