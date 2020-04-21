@@ -97,10 +97,10 @@ select unique(snapshot) format=nldate20. into :datestr separated by ' ' from lat
 quit; run;
 
 /* save a copy of the dataset, to use in other programs */
+/*
 libname robsdata '.';
 data robsdata.confirmed_data; set confirmed_data;
 run;
-/*
 */
 
 /* ------------------ Import the deaths data ---------------------- */
