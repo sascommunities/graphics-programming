@@ -336,6 +336,7 @@ symbol1 interpol=sm50 line=33 height=8pt width=2 color=red value=square;
 
 ods html anchor='graph';
 goptions xpixels=800 ypixels=550 noborder;
+/*
 proc gplot data=summarized_series;
 format confirmed comma12.0;
 format date nldate20.;
@@ -345,6 +346,7 @@ plot confirmed*date=1 / nolegend
  html=my_html
  des='' name="&name._graph";
 run;
+*/
 
 /* hard-coding the axis range, so it won't show negative/below-zero ticks */
 axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily New Cases') order=(0 to 500 by 100) minor=none offset=(1,0);
