@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
+/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-/*
 */
 
 /*
@@ -73,6 +73,10 @@ if province_state='Sint Maarten' then Country_Region='Sint Maarten';
 if province_state='Bonaire, Sint Eustatius and Saba' then Country_Region='Bonaire, Sint Eustatius and Saba';
 if country_region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
+/* Tip/suggestion from Frank Poppe in the blog */
+if country_region in ( 'Netherlands' , 'Denmark' , 'France' , 'United Kingdom') 
+ and province_state ^= '' 
+ then country_region = province_state ;
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_'); 
@@ -97,10 +101,10 @@ select unique(snapshot) format=nldate20. into :datestr separated by ' ' from lat
 quit; run;
 
 /* save a copy of the dataset, to use in other programs */
-/*
 libname robsdata '.';
 data robsdata.confirmed_data; set confirmed_data;
 run;
+/*
 */
 
 /* ------------------ Import the deaths data ---------------------- */
@@ -140,6 +144,10 @@ if province_state='Sint Maarten' then Country_Region='Sint Maarten';
 if province_state='Bonaire, Sint Eustatius and Saba' then Country_Region='Bonaire, Sint Eustatius and Saba';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
+/* Tip/suggestion from Frank Poppe in the blog */
+if country_region in ( 'Netherlands' , 'Denmark' , 'France' , 'United Kingdom') 
+ and province_state ^= '' 
+ then country_region = province_state ;
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_');
@@ -193,6 +201,10 @@ if province_state='Sint Maarten' then Country_Region='Sint Maarten';
 if province_state='Bonaire, Sint Eustatius and Saba' then Country_Region='Bonaire, Sint Eustatius and Saba';
 if Country_Region='United Arab Emirates' then Country_Region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
+/* Tip/suggestion from Frank Poppe in the blog */
+if country_region in ( 'Netherlands' , 'Denmark' , 'France' , 'United Kingdom') 
+ and province_state ^= '' 
+ then country_region = province_state ;
 month=.; month=scan(datestring,1,'_');
 day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_');
@@ -504,6 +516,8 @@ if idname='Venezuela, Bolivarian Republic of' then country_region='Venezuela';
 if idname='Bailiwick of Jersey' then country_region='Jersey';
 if idname='Bailiwick of Guernsey' then country_region='Guernsey';
 if idname='Myanmar' then country_region='Burma';
+if idname='Virgin Islands, British' then country_region='British Virgin Islands';
+if idname='Saint Martin' then country_region='St Martin';
 /*
 if idname='Bahamas' then country_region='The Bahamas';
 if idname='Bahamas' then country_region='Bahamas, The';
