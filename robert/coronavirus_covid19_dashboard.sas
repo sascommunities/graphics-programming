@@ -23,12 +23,12 @@ folder name each time, with the date & time in the name.
 */
 
 %let gitfolder=./github_clone_&sysdate9;
+/*
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-/*
 */
 
 /*
@@ -363,8 +363,8 @@ length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; position='5'; 
 style='albany amt/bold'; color="graycc"; size=11;
-x=50; y=84; text="Total Confirmed/Reported"; output;
-html='title='||quote(trim(left(put(sum_confirmed,comma12.0)))||" total confirmed/reported cases of COVID-19 Coronavirus worldwide");
+x=50; y=84; text="Total Reported"; output;
+html='title='||quote(trim(left(put(sum_confirmed,comma12.0)))||" total reported cases of COVID-19 Coronavirus worldwide");
 style='albany amt/bold'; color="red"; size=31;
 x=50; y=50; text=trim(left(put(sum_confirmed,comma12.0))); output;
 run;
@@ -488,7 +488,7 @@ length html $300;
 html=
  'title='||quote(
   trim(left(country_region))||'0d'x||
-  trim(left(put(confirmed,comma12.0)))||' confirmed/reported cases')||
+  trim(left(put(confirmed,comma12.0)))||' reported cases')||
  ' href='||quote('#'||trim(left(country_region)));
 run;
 
@@ -617,7 +617,7 @@ y=99-(_n_*6);
 text=trim(left(put(confirmed,comma12.0))); x=28; position='4'; color="red"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
-html='title='||quote(trim(left(put(confirmed,comma12.0)))||" confirmed/reported cases of COVID-19 Coronavirus in "||trim(left(country_region)))||
+html='title='||quote(trim(left(put(confirmed,comma12.0)))||" Reported cases of COVID-19 Coronavirus in "||trim(left(country_region)))||
  ' href='||quote('#'||trim(left(country_region)));
 function='move'; x=0; y=y-3; output;
 function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
@@ -788,7 +788,7 @@ data summarized_series; set summarized_series;
 length html $300;
 html='title='||quote(
  trim(left(put(snapshot,weekdate30.)))||'0d'x||
- trim(left(put(confirmed,comma12.0)))||' confirmed/reported cases'
+ trim(left(put(confirmed,comma12.0)))||' reported cases'
  );
 run;
 /* 
@@ -813,7 +813,7 @@ axis2 label=none order=("&mindate"d to "&maxdate"d by &byval)
  major=(height=8pt) value=(c=graycc h=11pt font='albany amt')
  offset=(1,2);
 legend1 value=(c=graycc font="albany amt/bold" h=11pt) shape=symbol(4pct,4pct)
- label=(position=top font="albany amt/bold" h=11pt c=graycc "Total Confirmed/Reported Cases") 
+ label=(position=top font="albany amt/bold" h=11pt c=graycc "Total Reported Cases") 
  position=(top left inside) mode=share across=1 repeat=2 offset=(3pct, -8pct);
 symbol1 interpol=sm50 height=8pt width=2 color=red value=square;
 title1 h=2pct ' ';
@@ -823,7 +823,7 @@ run;
 proc gplot data=summarized_series anno=anno_mouseover;
 format confirmed comma12.0;
 format snapshot nldate20.;
-note move=(15,77) font='albany amt/bold' "Total Confirmed/Reported Cases Worldwide";
+note move=(15,77) font='albany amt/bold' "Total Reported Cases Worldwide";
 plot confirmed*snapshot / 
  vaxis=axis1 haxis=axis2
  des='' name="series";
@@ -854,7 +854,7 @@ function='pie'; style='pempty'; size=1.5; rotate=360; color='graycc';
 length html $300;
 html='title='||quote(
  trim(left(put(snapshot,weekdate30.)))||'0d'x||
- trim(left(put(on_this_day,comma12.0)))||' new confirmed/reported cases on this day'
+ trim(left(put(on_this_day,comma12.0)))||' new Reported cases on this day'
  );
 run;
 data anno_mouseover; set anno_mouseover anno_gray_background;
@@ -873,7 +873,7 @@ footnote1 h=2pct ' ';
 proc gplot data=bar_confirmed anno=anno_mouseover;
 format on_this_day comma12.0;
 format snapshot nldate20.;
-note move=(15,77) font='albany amt/bold' "Daily New Confirmed/Reported Cases Worldwide";
+note move=(15,77) font='albany amt/bold' "Daily New Reported Cases Worldwide";
 plot on_this_day*snapshot /
  vaxis=axis1 haxis=axis2
  des='' name="series2";
@@ -1055,7 +1055,7 @@ ods html anchor="#byval(country_region)";
 ods graphics / imagename="coronavirus_covid19_#byval(country_region)";
 
 options nobyline;
-title1 h=18pt font='albany amt/bold' c=gray33 "Daily New Confirmed/Reported COVID-19 Coronavirus cases";
+title1 h=18pt font='albany amt/bold' c=gray33 "Daily New Reported COVID-19 Coronavirus cases";
 title2 h=18pt font='albany amt/bold' c=gray33 "in: #byval(country_region)";
 title3 h=4pt ' ';
 
