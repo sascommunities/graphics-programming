@@ -614,7 +614,8 @@ length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; style='albany amt/bold'; size=11;
 y=99-(_n_*6);
-text=trim(left(put(confirmed,comma12.0))); x=28; position='4'; color="red"; output;
+/* foofoo */
+text=trim(left(put(confirmed,comma12.0))); x=35; position='4'; color="red"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
 html='title='||quote(trim(left(put(confirmed,comma12.0)))||" Reported cases of COVID-19 Coronavirus in "||trim(left(country_region)))||
