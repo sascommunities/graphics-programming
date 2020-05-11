@@ -1,0 +1,1030 @@
+1                                                          The SAS System                                 07:46 Monday, May 11, 2020
+
+NOTE: Unable to open SASUSER.REGSTRY. WORK.REGSTRY will be opened instead.
+NOTE: All registry changes will be lost at the end of the session.
+
+WARNING: Unable to copy SASUSER registry to WORK registry. Because of this, you will not see registry customizations during this 
+         session.
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M6) 
+      Licensed to SAS IT, Site 70068128.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.1
+      SAS/ETS 15.1
+      SAS/IML 15.1
+      SAS/QC 15.1
+
+WARNING: Your system is scheduled to expire on May 19, 2020, which is 8 days from now. The SAS 
+         System will no longer function on or after that date. Please contact your SAS 
+         Installation Representative to obtain your updated SAS Installation Data (SID) file, 
+         which includes SETINIT information.
+2                                        The SAS System               07:46 Monday, May 11, 2020
+
+To locate the name of your SAS Installation Representative go to 
+http://support.sas.com/repfinder and provide your site number 70068128 and company name as SAS 
+IT. On the SAS REP list provided, locate the REP for operating system Windows.
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.18362  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.18 seconds
+      cpu time            0.21 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is U:\autoexec.sas.
+
+
+NOTE: AUTOEXEC processing completed.
+
+1          %let st=nc;
+2          %let name=coronavirus_&st;
+3          
+4          /*
+5          Set your current-working-directory (to read/write files), if you need to ...
+6          %let rc=%sysfunc(dlgcdir('c:\someplace\public_html'));
+7          */
+8          filename odsout '.';
+3                                        The SAS System               07:46 Monday, May 11, 2020
+
+9          
+10         /*
+11         Using coronavirus data from:
+12         https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/
+13         And county population data from:
+14         https://factfinder.census.gov/bkmk/table/1.0/en/PEP/2018/PEPANNCHG.ST05?#
+15         
+16         To change the state:
+17         Change the 'st=nc;' at the top of the SAS program to your desired state.
+18         Copy-and-paste the new state's population under the 'datalines' section.
+19         Change the xpixels & ypixels, and the legend placement & offset as needed.
+20         */
+21         
+22         filename confdata url
+22       ! "https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv";
+23         /*
+24         filename confdata "covid_confirmed_usafacts.csv";
+25         */
+26         filename confdata url
+26       ! "https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv";
+27         proc import datafile=confdata
+WARNING: The Base SAS Software product with which IMPORT is associated will be expiring soon, 
+         and is currently in warning mode to indicate this upcoming expiration. Please run PROC 
+         SETINIT to obtain more information on your warning period.
+28          out=confirmed_data dbms=csv replace;
+4                                        The SAS System               07:46 Monday, May 11, 2020
+
+29         getnames=yes;
+30         guessingrows=all;
+31         run;
+
+32          /**********************************************************************
+33          *   PRODUCT:   SAS
+34          *   VERSION:   9.4
+35          *   CREATOR:   External File Interface
+36          *   DATE:      11MAY20
+37          *   DESC:      Generated SAS Datastep Code
+38          *   TEMPLATE SOURCE:  (None Specified.)
+39          ***********************************************************************/
+40             data WORK.CONFIRMED_DATA    ;
+41             %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+42             infile CONFDATA delimiter = ',' MISSOVER DSD  firstobs=2 ;
+43                informat countyFIPS best32. ;
+44                informat County_Name $56. ;
+45                informat State $2. ;
+46                informat stateFIPS best32. ;
+47                informat _1_22_20 best32. ;
+48                informat _1_23_20 best32. ;
+49                informat _1_24_20 best32. ;
+50                informat _1_25_20 best32. ;
+51                informat _1_26_20 best32. ;
+52                informat _1_27_20 best32. ;
+5                                        The SAS System               07:46 Monday, May 11, 2020
+
+53                informat _1_28_20 best32. ;
+54                informat _1_29_20 best32. ;
+55                informat _1_30_20 best32. ;
+56                informat _1_31_20 best32. ;
+57                informat _2_1_20 best32. ;
+58                informat _2_2_20 best32. ;
+59                informat _2_3_20 best32. ;
+60                informat _2_4_20 best32. ;
+61                informat _2_5_20 best32. ;
+62                informat _2_6_20 best32. ;
+63                informat _2_7_20 best32. ;
+64                informat _2_8_20 best32. ;
+65                informat _2_9_20 best32. ;
+66                informat _2_10_20 best32. ;
+67                informat _2_11_20 best32. ;
+68                informat _2_12_20 best32. ;
+69                informat _2_13_20 best32. ;
+70                informat _2_14_20 best32. ;
+71                informat _2_15_20 best32. ;
+72                informat _2_16_20 best32. ;
+73                informat _2_17_20 best32. ;
+74                informat _2_18_20 best32. ;
+75                informat _2_19_20 best32. ;
+76                informat _2_20_20 best32. ;
+77                informat _2_21_20 best32. ;
+6                                        The SAS System               07:46 Monday, May 11, 2020
+
+78                informat _2_22_20 best32. ;
+79                informat _2_23_20 best32. ;
+80                informat _2_24_20 best32. ;
+81                informat _2_25_20 best32. ;
+82                informat _2_26_20 best32. ;
+83                informat _2_27_20 best32. ;
+84                informat _2_28_20 best32. ;
+85                informat _2_29_20 best32. ;
+86                informat _3_1_20 best32. ;
+87                informat _3_2_20 best32. ;
+88                informat _3_3_20 best32. ;
+89                informat _3_4_20 best32. ;
+90                informat _3_5_20 best32. ;
+91                informat _3_6_20 best32. ;
+92                informat _3_7_20 best32. ;
+93                informat _3_8_20 best32. ;
+94                informat _3_9_20 best32. ;
+95                informat _3_10_20 best32. ;
+96                informat _3_11_20 best32. ;
+97                informat _3_12_20 best32. ;
+98                informat _3_13_20 best32. ;
+99                informat _3_14_20 best32. ;
+100               informat _3_15_20 best32. ;
+101               informat _3_16_20 best32. ;
+102               informat _3_17_20 best32. ;
+7                                        The SAS System               07:46 Monday, May 11, 2020
+
+103               informat _3_18_20 best32. ;
+104               informat _3_19_20 best32. ;
+105               informat _3_20_20 best32. ;
+106               informat _3_21_20 best32. ;
+107               informat _3_22_20 best32. ;
+108               informat _3_23_20 best32. ;
+109               informat _3_24_20 best32. ;
+110               informat _3_25_20 best32. ;
+111               informat _3_26_20 best32. ;
+112               informat _3_27_20 best32. ;
+113               informat _3_28_20 best32. ;
+114               informat _3_29_20 best32. ;
+115               informat _3_30_20 best32. ;
+116               informat _3_31_20 best32. ;
+117               informat _4_1_20 best32. ;
+118               informat _4_2_20 best32. ;
+119               informat _4_3_20 best32. ;
+120               informat _4_4_20 best32. ;
+121               informat _4_5_20 best32. ;
+122               informat _4_6_20 best32. ;
+123               informat _4_7_20 best32. ;
+124               informat _4_8_20 best32. ;
+125               informat _4_9_20 best32. ;
+126               informat _4_10_20 best32. ;
+127               informat _4_11_20 best32. ;
+8                                        The SAS System               07:46 Monday, May 11, 2020
+
+128               informat _4_12_20 best32. ;
+129               informat _4_13_20 best32. ;
+130               informat _4_14_20 best32. ;
+131               informat _4_15_20 best32. ;
+132               informat _4_16_20 best32. ;
+133               informat _4_17_20 best32. ;
+134               informat _4_18_20 best32. ;
+135               informat _4_19_20 best32. ;
+136               informat _4_20_20 best32. ;
+137               informat _4_21_20 best32. ;
+138               informat _4_22_20 best32. ;
+139               informat _4_23_20 best32. ;
+140               informat _4_24_20 best32. ;
+141               informat _4_25_20 best32. ;
+142               informat _4_26_20 best32. ;
+143               informat _4_27_20 best32. ;
+144               informat _4_28_20 best32. ;
+145               informat _4_29_20 best32. ;
+146               informat _4_30_20 best32. ;
+147               informat _5_1_20 best32. ;
+148               informat _5_2_20 best32. ;
+149               informat _5_3_20 best32. ;
+150               informat _5_4_20 best32. ;
+151               informat _5_5_20 best32. ;
+152               informat _5_6_20 best32. ;
+9                                        The SAS System               07:46 Monday, May 11, 2020
+
+153               informat _5_7_20 best32. ;
+154               informat _5_8_20 best32. ;
+155               informat _5_9_20 best32. ;
+156               informat _5_10_20 best32. ;
+157               format countyFIPS best12. ;
+158               format County_Name $56. ;
+159               format State $2. ;
+160               format stateFIPS best12. ;
+161               format _1_22_20 best12. ;
+162               format _1_23_20 best12. ;
+163               format _1_24_20 best12. ;
+164               format _1_25_20 best12. ;
+165               format _1_26_20 best12. ;
+166               format _1_27_20 best12. ;
+167               format _1_28_20 best12. ;
+168               format _1_29_20 best12. ;
+169               format _1_30_20 best12. ;
+170               format _1_31_20 best12. ;
+171               format _2_1_20 best12. ;
+172               format _2_2_20 best12. ;
+173               format _2_3_20 best12. ;
+174               format _2_4_20 best12. ;
+175               format _2_5_20 best12. ;
+176               format _2_6_20 best12. ;
+177               format _2_7_20 best12. ;
+10                                       The SAS System               07:46 Monday, May 11, 2020
+
+178               format _2_8_20 best12. ;
+179               format _2_9_20 best12. ;
+180               format _2_10_20 best12. ;
+181               format _2_11_20 best12. ;
+182               format _2_12_20 best12. ;
+183               format _2_13_20 best12. ;
+184               format _2_14_20 best12. ;
+185               format _2_15_20 best12. ;
+186               format _2_16_20 best12. ;
+187               format _2_17_20 best12. ;
+188               format _2_18_20 best12. ;
+189               format _2_19_20 best12. ;
+190               format _2_20_20 best12. ;
+191               format _2_21_20 best12. ;
+192               format _2_22_20 best12. ;
+193               format _2_23_20 best12. ;
+194               format _2_24_20 best12. ;
+195               format _2_25_20 best12. ;
+196               format _2_26_20 best12. ;
+197               format _2_27_20 best12. ;
+198               format _2_28_20 best12. ;
+199               format _2_29_20 best12. ;
+200               format _3_1_20 best12. ;
+201               format _3_2_20 best12. ;
+202               format _3_3_20 best12. ;
+11                                       The SAS System               07:46 Monday, May 11, 2020
+
+203               format _3_4_20 best12. ;
+204               format _3_5_20 best12. ;
+205               format _3_6_20 best12. ;
+206               format _3_7_20 best12. ;
+207               format _3_8_20 best12. ;
+208               format _3_9_20 best12. ;
+209               format _3_10_20 best12. ;
+210               format _3_11_20 best12. ;
+211               format _3_12_20 best12. ;
+212               format _3_13_20 best12. ;
+213               format _3_14_20 best12. ;
+214               format _3_15_20 best12. ;
+215               format _3_16_20 best12. ;
+216               format _3_17_20 best12. ;
+217               format _3_18_20 best12. ;
+218               format _3_19_20 best12. ;
+219               format _3_20_20 best12. ;
+220               format _3_21_20 best12. ;
+221               format _3_22_20 best12. ;
+222               format _3_23_20 best12. ;
+223               format _3_24_20 best12. ;
+224               format _3_25_20 best12. ;
+225               format _3_26_20 best12. ;
+226               format _3_27_20 best12. ;
+227               format _3_28_20 best12. ;
+12                                       The SAS System               07:46 Monday, May 11, 2020
+
+228               format _3_29_20 best12. ;
+229               format _3_30_20 best12. ;
+230               format _3_31_20 best12. ;
+231               format _4_1_20 best12. ;
+232               format _4_2_20 best12. ;
+233               format _4_3_20 best12. ;
+234               format _4_4_20 best12. ;
+235               format _4_5_20 best12. ;
+236               format _4_6_20 best12. ;
+237               format _4_7_20 best12. ;
+238               format _4_8_20 best12. ;
+239               format _4_9_20 best12. ;
+240               format _4_10_20 best12. ;
+241               format _4_11_20 best12. ;
+242               format _4_12_20 best12. ;
+243               format _4_13_20 best12. ;
+244               format _4_14_20 best12. ;
+245               format _4_15_20 best12. ;
+246               format _4_16_20 best12. ;
+247               format _4_17_20 best12. ;
+248               format _4_18_20 best12. ;
+249               format _4_19_20 best12. ;
+250               format _4_20_20 best12. ;
+251               format _4_21_20 best12. ;
+252               format _4_22_20 best12. ;
+13                                       The SAS System               07:46 Monday, May 11, 2020
+
+253               format _4_23_20 best12. ;
+254               format _4_24_20 best12. ;
+255               format _4_25_20 best12. ;
+256               format _4_26_20 best12. ;
+257               format _4_27_20 best12. ;
+258               format _4_28_20 best12. ;
+259               format _4_29_20 best12. ;
+260               format _4_30_20 best12. ;
+261               format _5_1_20 best12. ;
+262               format _5_2_20 best12. ;
+263               format _5_3_20 best12. ;
+264               format _5_4_20 best12. ;
+265               format _5_5_20 best12. ;
+266               format _5_6_20 best12. ;
+267               format _5_7_20 best12. ;
+268               format _5_8_20 best12. ;
+269               format _5_9_20 best12. ;
+270               format _5_10_20 best12. ;
+271            input
+272                        countyFIPS
+273                        County_Name  $
+274                        State  $
+275                        stateFIPS
+276                        _1_22_20
+277                        _1_23_20
+14                                       The SAS System               07:46 Monday, May 11, 2020
+
+278                        _1_24_20
+279                        _1_25_20
+280                        _1_26_20
+281                        _1_27_20
+282                        _1_28_20
+283                        _1_29_20
+284                        _1_30_20
+285                        _1_31_20
+286                        _2_1_20
+287                        _2_2_20
+288                        _2_3_20
+289                        _2_4_20
+290                        _2_5_20
+291                        _2_6_20
+292                        _2_7_20
+293                        _2_8_20
+294                        _2_9_20
+295                        _2_10_20
+296                        _2_11_20
+297                        _2_12_20
+298                        _2_13_20
+299                        _2_14_20
+300                        _2_15_20
+301                        _2_16_20
+302                        _2_17_20
+15                                       The SAS System               07:46 Monday, May 11, 2020
+
+303                        _2_18_20
+304                        _2_19_20
+305                        _2_20_20
+306                        _2_21_20
+307                        _2_22_20
+308                        _2_23_20
+309                        _2_24_20
+310                        _2_25_20
+311                        _2_26_20
+312                        _2_27_20
+313                        _2_28_20
+314                        _2_29_20
+315                        _3_1_20
+316                        _3_2_20
+317                        _3_3_20
+318                        _3_4_20
+319                        _3_5_20
+320                        _3_6_20
+321                        _3_7_20
+322                        _3_8_20
+323                        _3_9_20
+324                        _3_10_20
+325                        _3_11_20
+326                        _3_12_20
+327                        _3_13_20
+16                                       The SAS System               07:46 Monday, May 11, 2020
+
+328                        _3_14_20
+329                        _3_15_20
+330                        _3_16_20
+331                        _3_17_20
+332                        _3_18_20
+333                        _3_19_20
+334                        _3_20_20
+335                        _3_21_20
+336                        _3_22_20
+337                        _3_23_20
+338                        _3_24_20
+339                        _3_25_20
+340                        _3_26_20
+341                        _3_27_20
+342                        _3_28_20
+343                        _3_29_20
+344                        _3_30_20
+345                        _3_31_20
+346                        _4_1_20
+347                        _4_2_20
+348                        _4_3_20
+349                        _4_4_20
+350                        _4_5_20
+351                        _4_6_20
+352                        _4_7_20
+17                                       The SAS System               07:46 Monday, May 11, 2020
+
+353                        _4_8_20
+354                        _4_9_20
+355                        _4_10_20
+356                        _4_11_20
+357                        _4_12_20
+358                        _4_13_20
+359                        _4_14_20
+360                        _4_15_20
+361                        _4_16_20
+362                        _4_17_20
+363                        _4_18_20
+364                        _4_19_20
+365                        _4_20_20
+366                        _4_21_20
+367                        _4_22_20
+368                        _4_23_20
+369                        _4_24_20
+370                        _4_25_20
+371                        _4_26_20
+372                        _4_27_20
+373                        _4_28_20
+374                        _4_29_20
+375                        _4_30_20
+376                        _5_1_20
+377                        _5_2_20
+18                                       The SAS System               07:46 Monday, May 11, 2020
+
+378                        _5_3_20
+379                        _5_4_20
+380                        _5_5_20
+381                        _5_6_20
+382                        _5_7_20
+383                        _5_8_20
+384                        _5_9_20
+385                        _5_10_20
+386            ;
+387            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro
+387      ! variable */
+388            run;
+
+NOTE: The infile CONFDATA is:
+      Filename=https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv,
+      Local Host Name=l10h879,
+      Local Host IP addr=fe80::5d98:b5b1:4f83:8abf%12,
+      Service Hostname Name=static.usafacts.org,
+      Service IP addr=104.26.5.147,Service Name=N/A,
+      Service Portno=443,Lrecl=32767,Recfm=Variable
+
+NOTE: 3195 records were read from the infile CONFDATA.
+      The minimum record length was 240.
+      The maximum record length was 472.
+NOTE: The data set WORK.CONFIRMED_DATA has 3195 observations and 114 variables.
+19                                       The SAS System               07:46 Monday, May 11, 2020
+
+NOTE: DATA statement used (Total process time):
+      real time           9.15 seconds
+      cpu time            0.01 seconds
+      
+
+3195 rows created in WORK.CONFIRMED_DATA from CONFDATA.
+  
+  
+  
+NOTE: WORK.CONFIRMED_DATA data set was successfully created.
+NOTE: The data set WORK.CONFIRMED_DATA has 3195 observations and 114 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           50.09 seconds
+      cpu time            4.28 seconds
+      
+
+389        
+390        /*
+391        Population data copy-n-pasted from...
+392        https://factfinder.census.gov/bkmk/table/1.0/en/PEP/2018/PEPANNCHG.ST05?#
+393        Select North Carolina from the Geography pull-down
+394        copy-n-paste the table below the 'datalines'
+395        (make sure your copy-n-paste preserves the tabs between columns!)
+396        */
+397        
+20                                       The SAS System               07:46 Monday, May 11, 2020
+
+398        data pop_data (keep = statecode county_name pop_2018);
+399        length county_name $100;
+400        informat pop_2017 pop_2018 change comma12.0;
+401        infile datalines dlm='09'x; /* tab-delimited */
+402        input county_name pop_2017 pop_2018 change change_pct
+403         rank_pop_2017 rank_pop_2018 rank_change rank_change_pct;
+404        format change_pct percentn7.1;
+405        change_pct=change_pct/100;
+406        statecode=upcase("&st");
+407        datalines;
+
+NOTE: The data set WORK.POP_DATA has 100 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.00 seconds
+      
+
+508        ;
+509        run;
+510        
+511        
+512        /* ------------------------------------------------------------------- */
+513        
+514        %macro do_state(statecode);
+515        %let statecode=%upcase(&statecode);
+21                                       The SAS System               07:46 Monday, May 11, 2020
+
+516        
+517        proc sql noprint;
+518        select idname into :stname separated by ' ' from mapsgfk.us_states_attr where
+518      ! statecode="&statecode";
+519        quit; run;
+520        
+521        goptions device=png;
+522        goptions xpixels=1000 ypixels=450;
+523        
+524        ODS LISTING CLOSE;
+525        ODS HTML path=odsout body="&name..htm"
+526         (title="Coronavirus in &statecode")
+527         style=htmlblue;
+528        
+529        goptions gunit=pct htitle=5.5 htext=3.0 ftitle="albany amt" ftext="albany amt";
+530        goptions ctext=gray33 border;
+531        
+532        data state_confirmed; set confirmed_data (where=(state="&statecode"));
+533        run;
+534        
+535        proc transpose data=state_confirmed out=state_confirmed;
+536        by countyFIPS County_Name State stateFIPS notsorted;
+537        run;
+538        
+539        data state_confirmed (drop = year month day datestring);
+22                                       The SAS System               07:46 Monday, May 11, 2020
+
+540         set state_confirmed (rename=(_name_=datestring col1=confirmed));
+541        year=.; year=scan(datestring,-1,'_');
+542        day=.; day=scan(datestring,-2,'_');
+543        month=.; month=scan(datestring,-3,'_');
+544        format date date9.;
+545        date=mdy(month,day,year);
+546        county=.; county=substr(put(countyFIPS,z5.),3,3);
+547        if confirmed>0 then output;
+548        run;
+549        
+550        data state_pop; set pop_data (where=(statecode="&statecode"));
+551        run;
+552        
+553        proc sql noprint;
+554        
+555        /* get the coronavirus data with the latest date */
+556        create table latest_data as
+557        select * from state_confirmed
+558        having date=max(date);
+559        
+560        /* merge in the population data */
+561        create table latest_data as
+562        select latest_data.*, state_pop.county_name as county_name2, state_pop.pop_2018
+563        from latest_data full join state_pop
+564        on latest_data.county_name = state_pop.county_name;
+23                                       The SAS System               07:46 Monday, May 11, 2020
+
+565        
+566        select sum(confirmed) format=comma12.0 into :total  separated by ' ' from latest_data
+566      ! ;
+567        select unique(date) format=nldate20. into :datestr separated by ' ' from latest_data
+567      ! where date^=.;
+568        
+569        quit; run;
+570        
+571        data latest_data; set latest_data;
+572        if county_name='' then county_name=county_name2;
+573        format per100k comma10.3;
+574        per100k=confirmed/(pop_2018/100000);
+575        format pct percent12.6;
+576        pct=confirmed/pop_2018;
+577        length my_html $300;
+578        my_html='title='||quote(
+579         trim(left(county_name))||', '||trim(left("&statecode"))||'0d'x||
+580         '------------------------------'||'0d'x||
+581         trim(left(put(confirmed,comma20.0)))||' confirmed cases in
+581      ! '||trim(left(put(pop_2018,comma20.0)))||' residents.'||'0d'x||
+582         'That is '||trim(left(put(per100k,comma10.3)))||' cases per 100,000
+582      ! residents,'||'0d'x||
+583         'or '||trim(left(put(pct,percent12.6)))||' of the county population.'
+584         );
+585        run;
+24                                       The SAS System               07:46 Monday, May 11, 2020
+
+586        
+587        data my_map; set mapsgfk.us_counties (where=(statecode="&statecode" and density<=4)
+588         drop=resolution);
+589        run;
+590        
+591        pattern1 v=s c=cxffffb2;
+592        pattern2 v=s c=cxfecc5c;
+593        pattern3 v=s c=cxfd8d3c;
+594        pattern4 v=s c=cxf03b20;
+595        pattern5 v=s c=cxbd0026;
+596        
+597        title1 ls=1.5 h=18pt c=gray33 "&total confirmed Coronavirus (COVID-19) cases in "
+597      ! c=blue "&stname";
+598        
+599        footnote
+600         link='https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/'
+601         ls=1.2 h=12pt c=gray "Coronavirus data source: usafacts.org (&datestr snapshot)";
+602        
+603        
+604        legend1 label=(position=top justify=center font='albany amt/bold' 'Cases (quintile
+604      ! binning)')
+605         across=1 position=(bottom left inside) order=descending mode=protect
+606         shape=bar(.15in,.15in) offset=(16,5);
+607        
+608        ods html anchor='quintile';
+25                                       The SAS System               07:46 Monday, May 11, 2020
+
+609        proc gmap data=latest_data map=my_map all;
+610        format confirmed comma8.0;
+611        id county;
+612        choro confirmed / levels=5 range
+613         coutline=gray22 cempty=graybb
+614         legend=legend1
+615         html=my_html
+616         des='' name="&name._quin";
+617        run;
+618        
+619        
+620        legend2 label=(position=top justify=center font='albany amt/bold' 'Cases')
+621         across=1 position=(bottom left inside) order=descending mode=protect
+622         shape=bar(.15in,.15in) offset=(21,5);
+623        
+624        ods html anchor='old';
+625        proc gmap data=latest_data map=my_map all;
+626        format confirmed comma8.0;
+627        id county;
+628        choro confirmed / levels=5 range midpoints=old
+629         coutline=gray22 cempty=graybb
+630         legend=legend2
+631         html=my_html
+632         des='' name="&name._old";
+633        run;
+26                                       The SAS System               07:46 Monday, May 11, 2020
+
+634        
+635        legend3 label=(position=top justify=center font='albany amt/bold' j=c 'Cases per
+635      ! 100,000 Residents' j=c '(quintile binning)')
+636         across=1 position=(bottom left inside) order=descending mode=protect
+637         shape=bar(.15in,.15in) offset=(12,5);
+638        
+639        ods html anchor='quin100k';
+640        proc gmap data=latest_data map=my_map all;
+641        format per100k comma8.1;
+642        id county;
+643        choro per100k / levels=5 range
+644         coutline=gray22 cempty=graybb
+645         legend=legend3
+646         html=my_html
+647         des='' name="&name._100k";
+648        run;
+649        
+650        legend4 label=(position=top justify=center font='albany amt/bold' 'Cases per 100,000
+650      ! Residents')
+651         across=1 position=(bottom left inside) order=descending mode=protect
+652         shape=bar(.15in,.15in) offset=(15,5);
+653        
+654        ods html anchor='per100k';
+655        proc gmap data=latest_data map=my_map all;
+656        format per100k comma8.1;
+27                                       The SAS System               07:46 Monday, May 11, 2020
+
+657        id county;
+658        choro per100k / levels=5 range midpoints=old
+659         coutline=gray22 cempty=graybb
+660         legend=legend4
+661         html=my_html
+662         des='' name="&name._100k";
+663        run;
+664        
+665        
+666        
+667        proc sql noprint;
+668        create table summarized_series as
+669        select unique date, sum(confirmed) as confirmed
+670        from state_confirmed
+671        group by date;
+672        quit; run;
+673        
+674        data summarized_series; set summarized_series;
+675        todays_confirmed=confirmed-lag(confirmed);
+676        length my_html $300;
+677        my_html='title='||quote(
+678         put(date,weekdate30.)||'0d'x||
+679         'New cases on this day: '||trim(left(put(todays_confirmed,comma8.0)))||'0d'x||
+680         'Total cumulative cases: '||trim(left(put(confirmed,comma8.0)))
+681         );
+28                                       The SAS System               07:46 Monday, May 11, 2020
+
+682        run;
+683        
+684        proc sql noprint;
+685        select min(date) format=date9. into :mindate from summarized_series;
+686        select max(date) format=date9. into :maxdate from summarized_series;
+687        select max(date)-min(date) into :byval from summarized_series;
+688        quit; run;
+689        
+690        axis1 value=(c=gray33 h=11pt) label=(angle=90 'Cumulative') minor=none offset=(0,0);
+691        axis2 value=(c=gray33 h=11pt) label=none order=("&mindate"d to "&maxdate"d by &byval)
+691      !  offset=(1,2);
+692        symbol1 interpol=sm50 line=33 height=8pt width=2 color=red value=square;
+693        
+694        ods html anchor='graph';
+695        goptions xpixels=800 ypixels=550 noborder;
+696        /*
+697        proc gplot data=summarized_series;
+698        format confirmed comma12.0;
+699        format date nldate20.;
+700        plot confirmed*date=1 / nolegend
+701         vaxis=axis1 haxis=axis2
+702         autovref cvref=graydd
+703         html=my_html
+704         des='' name="&name._graph";
+705        run;
+29                                       The SAS System               07:46 Monday, May 11, 2020
+
+706        */
+707        
+708        /* hard-coding the axis range, so it won't show negative/below-zero ticks */
+709        axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily New Cases') order=(0 to 1000 by
+709      ! 100) minor=none offset=(1,0);
+710        symbol2 interpol=needle height=10pt width=3 color=Affa500aa value=circle cv=gray00
+710      ! mode=include;
+711        
+712        ods html anchor='daily';
+713        goptions xpixels=800 ypixels=550 noborder;
+714        proc gplot data=summarized_series;
+715        format todays_confirmed comma12.0;
+716        format date nldate20.;
+717        plot todays_confirmed*date=2 / nolegend
+718         vaxis=axis3 haxis=axis2
+719         autovref cvref=graydd
+720         html=my_html
+721         des='' name="&name._daily";
+722        run;
+723        
+724        proc sort data=latest_data out=latest_data;
+725        by descending confirmed county_name;
+726        run;
+727        
+728        ods html anchor='table';
+30                                       The SAS System               07:46 Monday, May 11, 2020
+
+729        proc print data=latest_data label
+730         style(data)={font_size=11pt}
+731         style(header)={font_size=11pt}
+732         style(grandtotal)={font_size=11pt}
+733         ;
+734        label county_name='County';
+735        label confirmed='Coronavirus cases';
+736        label pop_2018='Population (2018)';
+737        label per100k='Cases per 100,000 residents';
+738        label pct='Percent of residents with Coronavirus';
+739        format confirmed comma12.0;
+740        format pop_2018 comma12.0;
+741        var county_name confirmed pop_2018 per100k pct;
+742        sum confirmed pop_2018;
+743        run;
+744        
+745        quit;
+746        ODS HTML CLOSE;
+747        ODS LISTING;
+748        
+749        %mend do_state;
+750        
+751        /* Call the macro, for the desired state */
+752        %do_state(&st);
+NOTE: The map data sets in library MAPSGFK are based on the digital maps from GfK GeoMarketing 
+31                                       The SAS System               07:46 Monday, May 11, 2020
+
+      and are covered by their Copyright. For additional information, see 
+      http://support.sas.com/mapsonline/gfklicense.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Writing HTML Body file: coronavirus_nc.htm
+NOTE: No units specified for the HTITLE option. The current units associated with GUNIT will be 
+      used.
+NOTE: No units specified for the HTEXT option. The current units associated with GUNIT will be 
+      used.
+
+NOTE: There were 101 observations read from the data set WORK.CONFIRMED_DATA.
+      WHERE state='NC';
+NOTE: The data set WORK.STATE_CONFIRMED has 101 observations and 114 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 101 observations read from the data set WORK.STATE_CONFIRMED.
+NOTE: The data set WORK.STATE_CONFIRMED has 11110 observations and 6 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+32                                       The SAS System               07:46 Monday, May 11, 2020
+
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      752:250   752:33    752:73    752:161   
+NOTE: There were 11110 observations read from the data set WORK.STATE_CONFIRMED.
+NOTE: The data set WORK.STATE_CONFIRMED has 4556 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 100 observations read from the data set WORK.POP_DATA.
+      WHERE statecode='NC';
+NOTE: The data set WORK.STATE_POP has 100 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: The query requires remerging summary statistics back with the original data.
+33                                       The SAS System               07:46 Monday, May 11, 2020
+
+NOTE: Table WORK.LATEST_DATA created, with 100 rows and 7 columns.
+
+WARNING: This CREATE TABLE statement recursively references the target table. A consequence of 
+         this is a possible data integrity problem.
+NOTE: Table WORK.LATEST_DATA created, with 101 rows and 9 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+
+
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      1 at 752:169   1 at 752:179   2 at 752:226   
+NOTE: There were 101 observations read from the data set WORK.LATEST_DATA.
+NOTE: The data set WORK.LATEST_DATA has 101 observations and 12 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 24340 observations read from the data set MAPSGFK.US_COUNTIES.
+      WHERE (statecode='NC') and (density<=4);
+34                                       The SAS System               07:46 Monday, May 11, 2020
+
+NOTE: The data set WORK.MY_MAP has 24340 observations and 12 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.06 seconds
+      
+
+WARNING: The SAS/GRAPH product with which GMAP is associated will be expiring soon, and is 
+         currently in warning mode to indicate this upcoming expiration. Please run PROC 
+         SETINIT to obtain more information on your warning period.
+
+NOTE: This SAS session is using a registry in WORK.  All changes will be lost at the end of 
+      this session.
+NOTE: 74386 bytes written to 
+      U:\web\democd103\coronavirus_nc_quin.png.
+NOTE: There were 24340 observations read from the data set 
+      WORK.MY_MAP.
+NOTE: PROCEDURE GMAP used (Total process time):
+      real time           0.42 seconds
+      cpu time            0.23 seconds
+      
+
+
+NOTE: Graph's name, CORONAVI, changed to CORONAV1. CORONAVI is 
+      already used or not a valid SAS name.
+NOTE: 70621 bytes written to 
+      U:\web\democd103\coronavirus_nc_old.png.
+NOTE: There were 24340 observations read from the data set 
+      WORK.MY_MAP.
+NOTE: PROCEDURE GMAP used (Total process time):
+      real time           0.37 seconds
+      cpu time            0.17 seconds
+      
+
+
+NOTE: Graph's name, CORONAVI, changed to CORONAV2. CORONAVI is 
+      already used or not a valid SAS name.
+NOTE: 77450 bytes written to 
+      U:\web\democd103\coronavirus_nc_100k.png.
+NOTE: There were 24340 observations read from the data set 
+      WORK.MY_MAP.
+NOTE: PROCEDURE GMAP used (Total process time):
+      real time           0.38 seconds
+      cpu time            0.24 seconds
+      
+
+
+NOTE: Graph's name, CORONAVI, changed to CORONAV3. CORONAVI is 
+      already used or not a valid SAS name.
+NOTE: 75037 bytes written to 
+      U:\web\democd103\coronavirus_nc_100k3.png.
+35                       The SAS System
+                                      07:46 Monday, May 11, 2020
+
+
+NOTE: There were 24340 observations read from the data set 
+      WORK.MY_MAP.
+NOTE: PROCEDURE GMAP used (Total process time):
+      real time           0.38 seconds
+      cpu time            0.20 seconds
+      
+
+NOTE: Table WORK.SUMMARIZED_SERIES created, with 69 rows and 2 
+      columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Missing values were generated as a result of performing 
+      an operation on missing values.
+      Each place is given by: 
+      (Number of times) at (Line):(Column).
+      1 at 752:28   
+NOTE: There were 69 observations read from the data set 
+      WORK.SUMMARIZED_SERIES.
+NOTE: The data set WORK.SUMMARIZED_SERIES has 69 observations 
+      and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: 1 observation(s) contained a MISSING value for the 
+      todays_confirmed * date request.
+NOTE: 1 observation(s) outside the axis range for the 
+      todays_confirmed * date request.
+NOTE: Graph's name, CORONAVI, changed to CORONAV4. CORONAVI is 
+      already used or not a valid SAS name.
+NOTE: This SAS session is using a registry in WORK.  All 
+      changes will be lost at the end of this session.
+NOTE: 32174 bytes written to 
+36                       The SAS System
+                                      07:46 Monday, May 11, 2020
+
+      U:\web\democd103\coronavirus_nc_daily.png.
+
+NOTE: There were 69 observations read from the data set 
+      WORK.SUMMARIZED_SERIES.
+NOTE: PROCEDURE GPLOT used (Total process time):
+      real time           0.30 seconds
+      cpu time            0.17 seconds
+      
+
+
+NOTE: There were 101 observations read from the data set 
+      WORK.LATEST_DATA.
+NOTE: The data set WORK.LATEST_DATA has 101 observations and 12 
+      variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 101 observations read from the data set 
+      WORK.LATEST_DATA.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+753        
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 
+      27513-2414
+NOTE: The SAS System used:
+      real time           52.74 seconds
+      cpu time            5.85 seconds
+      
