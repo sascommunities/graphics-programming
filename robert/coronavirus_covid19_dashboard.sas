@@ -1067,7 +1067,7 @@ format snapshot weekdate30.;
 format confirmed recovered deaths daily comma10.0;
 needle y=daily x=snapshot / name='daily'
  lineattrs=(color=orange thickness=2px) 
- markers markerattrs=(color=grayaa symbol=circle);
+ markers markerattrs=(color=gray77 symbol=circle);
 yaxis display=(nolabel noline noticks) min=0
  integer thresholdmax=1 grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt);
