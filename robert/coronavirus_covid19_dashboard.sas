@@ -24,12 +24,12 @@ folder name each time, with the date & time in the name.
 
 %let gitfolder=./github_clone_&sysdate9;
 /*
+*/
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-*/
 
 /*
 John D. accesses the data like this:
@@ -1075,6 +1075,12 @@ xaxis display=(nolabel)
  type=time values=("&mindate"d to "&maxdate"d by &byval)
  valueattrs=(color=gray33 size=10pt);
 run;
+/*
+proc print data=graph_all (where=(country_region='Germany')) noobs;
+format snapshot date9.;
+var snapshot daily;
+run;
+*/
 
 /* ------------------------------------------------------------------ */
 
