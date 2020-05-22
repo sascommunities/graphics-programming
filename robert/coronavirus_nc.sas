@@ -7,6 +7,11 @@ Set your current-working-directory (to read/write files), if you need to ...
 */
 filename odsout '.';
 
+/* Turn on "sticky headers" for the proc print table */
+/* https://blogs.sas.com/content/sgf/2020/05/14/add-sticky-headers-ods-html/ */
+/* Note: sticky headers work in Chrome, but not in Internet Explorer */
+ods html headtext="<style> .header {position: sticky;top:0}</style>";
+
 /*
 Using coronavirus data from: 
 https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/
