@@ -28,9 +28,14 @@ https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData02.csv
 https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData04.csv
 https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData07.csv
 https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData14.csv
+https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData15.csv
+https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData16.csv
+https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData17.csv
+https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData18.csv
+https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData19.csv
 */
 
-%let latest=https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData14.csv;
+%let latest=https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/NCHSData19.csv;
 
 filename csv_file url "&latest";
 /*
@@ -116,7 +121,7 @@ scatter x=week y=latest / markerattrs=(color=blue symbol=triangleleftfilled)
 rowaxis labelpos=top values=(0 to 1750 by 250)
  valueattrs=(size=11pt color=gray33)
  labelattrs=(size=11pt color=gray33)
- offsetmax=0 offsetmin=0;
+ offsetmax=0 offsetmin=.015;
 colaxis values=(1 to 52 by 1) display=(nolabel noticks novalues) 
  offsetmax=0 offsetmin=0;
 refline 52 / axis=x lineattrs=(color=graycc thickness=1px);
