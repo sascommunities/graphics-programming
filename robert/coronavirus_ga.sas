@@ -225,10 +225,14 @@ end;
 goptions device=png;
 goptions xpixels=700 ypixels=750;
 
+/* Turn on "sticky headers" for the proc print table */
+/* https://blogs.sas.com/content/sgf/2020/05/14/add-sticky-headers-ods-html/ */
+/* Note: sticky headers work in Chrome, but not in Internet Explorer */
+
 ODS LISTING CLOSE;
 ODS HTML path=odsout body="&name..htm"
- (title="Coronavirus in &statecode") 
- style=blueback;
+ (title="Coronavirus in &statecode") style=blueback
+ headtext="<style> .header {position: sticky;top:0}</style>";
 
 goptions gunit=pct htitle=5.5 htext=2.1 ftitle="albany amt" ftext="albany amt";
 goptions ctitle=white ctext=white noborder;

@@ -7,11 +7,6 @@ Set your current-working-directory (to read/write files), if you need to ...
 */
 filename odsout '.';
 
-/* Turn on "sticky headers" for the proc print table */
-/* https://blogs.sas.com/content/sgf/2020/05/14/add-sticky-headers-ods-html/ */
-/* Note: sticky headers work in Chrome, but not in Internet Explorer */
-ods html headtext="<style> .header {position: sticky;top:0}</style>";
-
 /*
 Using coronavirus data from: 
 https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/
@@ -169,10 +164,14 @@ quit; run;
 goptions device=png;
 goptions xpixels=1000 ypixels=450;
 
+/* Turn on "sticky headers" for the proc print table */
+/* https://blogs.sas.com/content/sgf/2020/05/14/add-sticky-headers-ods-html/ */
+/* Note: sticky headers work in Chrome, but not in Internet Explorer */
+
 ODS LISTING CLOSE;
 ODS HTML path=odsout body="&name..htm"
- (title="Coronavirus in &statecode") 
- style=htmlblue;
+ (title="Coronavirus in &statecode") style=htmlblue
+ headtext="<style> .header {position: sticky;top:0}</style>";
 
 goptions gunit=pct htitle=5.5 htext=3.0 ftitle="albany amt" ftext="albany amt";
 goptions ctext=gray33 border;
@@ -354,7 +353,7 @@ run;
 */
 
 /* hard-coding the axis range, so it won't show negative/below-zero ticks */
-axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily New Cases') order=(0 to 1000 by 100) minor=none offset=(1,0);
+axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily New Cases') order=(0 to 1200 by 100) minor=none offset=(1,0);
 symbol2 interpol=needle height=10pt width=3 color=Affa500aa value=circle cv=gray00 mode=include;
 
 ods html anchor='daily';
