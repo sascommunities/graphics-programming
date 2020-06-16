@@ -100,7 +100,7 @@ choro confirmed / levels=5 range legend=legend1
  des='' name="&name";
 run;
 
-legend2 label=(position=top justify=left 'Nelder binning (another way to look at this data)') 
+legend2 label=(position=top justify=left 'Nelder binning (each color range represents a somewhat equal numeric range)') 
  shape=bar(.15in,.15in) across=5;
 
 proc gmap data=us_summary map=mapsgfk.us all;
@@ -232,7 +232,7 @@ my_html='title='||quote(
  );
 run;
 
-symbol1 value=circle height=8pt cv=gray88 interpol=needle ci=orange width=2;
+symbol1 value=circle height=8pt cv=gray00 interpol=needle ci=Affa500aa width=2;
 
 axis1 label=none minor=none offset=(1,0);
 axis2 label=none;
@@ -241,7 +241,7 @@ title1 ls=1.5 c=gray33 h=20pt font="albany amt" "Confirmed New Coronavirus Cases
 title2 ls=1.0 link="&srclink" "Data source: Johns Hopkins CSSE (&freshness snapshot)";
 
 goptions noborder;
-proc gplot data=temp_series;
+proc gplot data=temp_series (where=(snapshot>='01mar2020'd));
 format daily_confirmed comma10.0;
 plot daily_confirmed*snapshot=1 /
  vaxis=axis1 autovref cvref=graydd 
