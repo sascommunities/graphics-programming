@@ -1,0 +1,1920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="charset=windows-1252">
+<title>U.S. Covid-19 trend</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.aftercaption
+{
+  background-color: #111111;
+  border: 0px solid #4D4D4D;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-left: 2.5pt;
+  padding-right: 2.5pt;
+  padding-top: 0px;
+}
+.batch
+{
+  background-color: #333333;
+  border: 1.5pt solid #666666;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  color: #CCCCCC;
+  font-family: 'Courier New', 'courier new', monospace;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.beforecaption
+{
+  background-color: #111111;
+  border: 0px solid #4D4D4D;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-left: 2.5pt;
+  padding-right: 2.5pt;
+  padding-top: 0px;
+}
+.body
+{
+  background-color: #111111;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.bodydate
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.bycontentfolder
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.byline
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.bylinecontainer
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.caption
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.cell
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.container
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentfolder
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentitem
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentproclabel
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentprocname
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contents
+{
+  background-color: #333333;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentsdate
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contenttitle
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.continued
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.data
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.dataemphasis
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-style: italic;
+  padding: 2.5pt;
+}
+.dataemphasisfixed
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-style: italic;
+  padding: 2.5pt;
+}
+.dataempty
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.datafixed
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: 'Courier New', 'courier new', monospace;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.datastrong
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.datastrongfixed
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.document
+{
+  background-color: #111111;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+a:link {
+color:#EEEEEE
+}
+a:visited {
+color:#EEEEEE
+}
+a:active {
+color:#EEEEEE
+}
+.errorbanner
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.errorcontent
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.errorcontentfixed
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.extendedpage
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.fatalbanner
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.fatalcontentfixed
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.folderaction
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.footer
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footeremphasis
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footeremphasisfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footerempty
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footerfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footerstrong
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footerstrongfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.frame
+{
+  background-color: #111111;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.graph
+{
+  border: 1px solid #666666;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.header
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headeremphasis
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headeremphasisfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headerempty
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headerfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headersandfooters
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.headerstrong
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headerstrongfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.indexaction
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.linecontent
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.list
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list10
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list2
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list3
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list4
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list5
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list6
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list7
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list8
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list9
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem10
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem2
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem3
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem4
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem5
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem6
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem7
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem8
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem9
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.notebanner
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.notecontent
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.notecontentfixed
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.output
+{
+  border: 1.5pt solid #666666;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagebreak
+{
+  height: 1em;
+}
+.pageno
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pages
+{
+  background-color: #333333;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagesdate
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagesitem
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagesproclabel
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagesprocname
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagestitle
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.paragraph
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.parskip
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.prepage
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.proctitle
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.proctitlefixed
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.rowfooter
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooteremphasis
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooterempty
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooterfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooterstrong
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooterstrongfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheader
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderemphasis
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderempty
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderstrong
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderstrongfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.systemfooter
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter10
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter2
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter3
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter4
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter5
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter6
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter7
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter8
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter9
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle10
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle2
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle3
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle4
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle5
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle6
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle7
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle8
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle9
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systitleandfootercontainer
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.table
+{
+  border: 1.5pt solid #666666;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.usertext
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.warnbanner
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.warncontent
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.warncontentfixed
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="covid19_us_trend">
+<Area shape="poly" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/" target="_BLANK" coords="142.5,493.546875,697.5,493.546875,697.5,512.953125,142.5,512.953125,142.5,493.546875,142.5,493.546875"/>
+<Area shape="poly" alt=" date = June 28, 2020 
+ day = Sunday 
+ cases_this_day = 38,845" title=" date = June 28, 2020 
+ day = Sunday 
+ cases_this_day = 38,845" coords="848,141,853,141,853,146,848,146,848,141,"/>
+<Area shape="poly" alt=" date = June 27, 2020 
+ day = Saturday 
+ cases_this_day = 42,597" title=" date = June 27, 2020 
+ day = Saturday 
+ cases_this_day = 42,597" coords="841,111,846,111,846,116,841,116,841,111,"/>
+<Area shape="poly" alt=" date = June 26, 2020 
+ day = Friday 
+ cases_this_day = 45,255" title=" date = June 26, 2020 
+ day = Friday 
+ cases_this_day = 45,255" coords="833,90,838,90,838,95,833,95,833,90,"/>
+<Area shape="poly" alt=" date = June 25, 2020 
+ day = Thursday 
+ cases_this_day = 39,972" title=" date = June 25, 2020 
+ day = Thursday 
+ cases_this_day = 39,972" coords="826,132,831,132,831,137,826,137,826,132,"/>
+<Area shape="poly" alt=" date = June 24, 2020 
+ day = Wednesday 
+ cases_this_day = 34,836" title=" date = June 24, 2020 
+ day = Wednesday 
+ cases_this_day = 34,836" coords="818,173,823,173,823,178,818,178,818,173,"/>
+<Area shape="poly" alt=" date = June 23, 2020 
+ day = Tuesday 
+ cases_this_day = 35,189" title=" date = June 23, 2020 
+ day = Tuesday 
+ cases_this_day = 35,189" coords="811,170,816,170,816,175,811,175,811,170,"/>
+<Area shape="poly" alt=" date = June 22, 2020 
+ day = Monday 
+ cases_this_day = 30,647" title=" date = June 22, 2020 
+ day = Monday 
+ cases_this_day = 30,647" coords="803,207,808,207,808,212,803,212,803,207,"/>
+<Area shape="poly" alt=" date = June 21, 2020 
+ day = Sunday 
+ cases_this_day = 26,358" title=" date = June 21, 2020 
+ day = Sunday 
+ cases_this_day = 26,358" coords="796,241,801,241,801,246,796,246,796,241,"/>
+<Area shape="poly" alt=" date = June 20, 2020 
+ day = Saturday 
+ cases_this_day = 32,718" title=" date = June 20, 2020 
+ day = Saturday 
+ cases_this_day = 32,718" coords="788,190,793,190,793,195,788,195,788,190,"/>
+<Area shape="poly" alt=" date = June 19, 2020 
+ day = Friday 
+ cases_this_day = 31,527" title=" date = June 19, 2020 
+ day = Friday 
+ cases_this_day = 31,527" coords="781,200,786,200,786,205,781,205,781,200,"/>
+<Area shape="poly" alt=" date = June 18, 2020 
+ day = Thursday 
+ cases_this_day = 27,762" title=" date = June 18, 2020 
+ day = Thursday 
+ cases_this_day = 27,762" coords="774,230,779,230,779,235,774,235,774,230,"/>
+<Area shape="poly" alt=" date = June 17, 2020 
+ day = Wednesday 
+ cases_this_day = 25,559" title=" date = June 17, 2020 
+ day = Wednesday 
+ cases_this_day = 25,559" coords="766,248,771,248,771,253,766,253,766,248,"/>
+<Area shape="poly" alt=" date = June 16, 2020 
+ day = Tuesday 
+ cases_this_day = 23,705" title=" date = June 16, 2020 
+ day = Tuesday 
+ cases_this_day = 23,705" coords="759,263,764,263,764,268,759,268,759,263,"/>
+<Area shape="poly" alt=" date = June 15, 2020 
+ day = Monday 
+ cases_this_day = 19,968" title=" date = June 15, 2020 
+ day = Monday 
+ cases_this_day = 19,968" coords="751,293,756,293,756,298,751,298,751,293,"/>
+<Area shape="poly" alt=" date = June 14, 2020 
+ day = Sunday 
+ cases_this_day = 19,532" title=" date = June 14, 2020 
+ day = Sunday 
+ cases_this_day = 19,532" coords="744,296,749,296,749,301,744,301,744,296,"/>
+<Area shape="poly" alt=" date = June 13, 2020 
+ day = Saturday 
+ cases_this_day = 25,540" title=" date = June 13, 2020 
+ day = Saturday 
+ cases_this_day = 25,540" coords="736,248,741,248,741,253,736,253,736,248,"/>
+<Area shape="poly" alt=" date = June 12, 2020 
+ day = Friday 
+ cases_this_day = 25,396" title=" date = June 12, 2020 
+ day = Friday 
+ cases_this_day = 25,396" coords="729,249,734,249,734,254,729,254,729,249,"/>
+<Area shape="poly" alt=" date = June 11, 2020 
+ day = Thursday 
+ cases_this_day = 22,888" title=" date = June 11, 2020 
+ day = Thursday 
+ cases_this_day = 22,888" coords="721,269,726,269,726,274,721,274,721,269,"/>
+<Area shape="poly" alt=" date = June 10, 2020 
+ day = Wednesday 
+ cases_this_day = 20,834" title=" date = June 10, 2020 
+ day = Wednesday 
+ cases_this_day = 20,834" coords="714,286,719,286,719,291,714,291,714,286,"/>
+<Area shape="poly" alt=" date = June 09, 2020 
+ day = Tuesday 
+ cases_this_day = 18,087" title=" date = June 09, 2020 
+ day = Tuesday 
+ cases_this_day = 18,087" coords="707,308,712,308,712,313,707,313,707,308,"/>
+<Area shape="poly" alt=" date = June 08, 2020 
+ day = Monday 
+ cases_this_day = 17,472" title=" date = June 08, 2020 
+ day = Monday 
+ cases_this_day = 17,472" coords="699,313,704,313,704,318,699,318,699,313,"/>
+<Area shape="poly" alt=" date = June 07, 2020 
+ day = Sunday 
+ cases_this_day = 17,771" title=" date = June 07, 2020 
+ day = Sunday 
+ cases_this_day = 17,771" coords="692,310,697,310,697,315,692,315,692,310,"/>
+<Area shape="poly" alt=" date = June 06, 2020 
+ day = Saturday 
+ cases_this_day = 22,684" title=" date = June 06, 2020 
+ day = Saturday 
+ cases_this_day = 22,684" coords="684,271,689,271,689,276,684,276,684,271,"/>
+<Area shape="poly" alt=" date = June 05, 2020 
+ day = Friday 
+ cases_this_day = 25,311" title=" date = June 05, 2020 
+ day = Friday 
+ cases_this_day = 25,311" coords="677,250,682,250,682,255,677,255,677,250,"/>
+<Area shape="poly" alt=" date = June 04, 2020 
+ day = Thursday 
+ cases_this_day = 21,295" title=" date = June 04, 2020 
+ day = Thursday 
+ cases_this_day = 21,295" coords="669,282,674,282,674,287,669,287,669,282,"/>
+<Area shape="poly" alt=" date = June 03, 2020 
+ day = Wednesday 
+ cases_this_day = 19,881" title=" date = June 03, 2020 
+ day = Wednesday 
+ cases_this_day = 19,881" coords="662,293,667,293,667,298,662,298,662,293,"/>
+<Area shape="poly" alt=" date = June 02, 2020 
+ day = Tuesday 
+ cases_this_day = 20,891" title=" date = June 02, 2020 
+ day = Tuesday 
+ cases_this_day = 20,891" coords="654,285,659,285,659,290,654,290,654,285,"/>
+<Area shape="poly" alt=" date = June 01, 2020 
+ day = Monday 
+ cases_this_day = 17,354" title=" date = June 01, 2020 
+ day = Monday 
+ cases_this_day = 17,354" coords="647,314,652,314,652,319,647,319,647,314,"/>
+<Area shape="poly" alt=" date = May 31, 2020 
+ day = Sunday 
+ cases_this_day = 20,129" title=" date = May 31, 2020 
+ day = Sunday 
+ cases_this_day = 20,129" coords="639,291,644,291,644,296,639,296,639,291,"/>
+<Area shape="poly" alt=" date = May 30, 2020 
+ day = Saturday 
+ cases_this_day = 24,246" title=" date = May 30, 2020 
+ day = Saturday 
+ cases_this_day = 24,246" coords="632,258,637,258,637,263,632,263,632,258,"/>
+<Area shape="poly" alt=" date = May 29, 2020 
+ day = Friday 
+ cases_this_day = 24,488" title=" date = May 29, 2020 
+ day = Friday 
+ cases_this_day = 24,488" coords="625,256,630,256,630,261,625,261,625,256,"/>
+<Area shape="poly" alt=" date = May 28, 2020 
+ day = Thursday 
+ cases_this_day = 22,836" title=" date = May 28, 2020 
+ day = Thursday 
+ cases_this_day = 22,836" coords="617,270,622,270,622,275,617,275,617,270,"/>
+<Area shape="poly" alt=" date = May 27, 2020 
+ day = Wednesday 
+ cases_this_day = 18,366" title=" date = May 27, 2020 
+ day = Wednesday 
+ cases_this_day = 18,366" coords="610,306,615,306,615,311,610,311,610,306,"/>
+<Area shape="poly" alt=" date = May 26, 2020 
+ day = Tuesday 
+ cases_this_day = 18,848" title=" date = May 26, 2020 
+ day = Tuesday 
+ cases_this_day = 18,848" coords="602,302,607,302,607,307,602,307,602,302,"/>
+<Area shape="poly" alt=" date = May 25, 2020 
+ day = Monday 
+ cases_this_day = 18,970" title=" date = May 25, 2020 
+ day = Monday 
+ cases_this_day = 18,970" coords="595,301,600,301,600,306,595,306,595,301,"/>
+<Area shape="poly" alt=" date = May 24, 2020 
+ day = Sunday 
+ cases_this_day = 20,789" title=" date = May 24, 2020 
+ day = Sunday 
+ cases_this_day = 20,789" coords="587,286,592,286,592,291,587,291,587,286,"/>
+<Area shape="poly" alt=" date = May 23, 2020 
+ day = Saturday 
+ cases_this_day = 21,827" title=" date = May 23, 2020 
+ day = Saturday 
+ cases_this_day = 21,827" coords="580,278,585,278,585,283,580,283,580,278,"/>
+<Area shape="poly" alt=" date = May 22, 2020 
+ day = Friday 
+ cases_this_day = 24,137" title=" date = May 22, 2020 
+ day = Friday 
+ cases_this_day = 24,137" coords="572,259,577,259,577,264,572,264,572,259,"/>
+<Area shape="poly" alt=" date = May 21, 2020 
+ day = Thursday 
+ cases_this_day = 25,537" title=" date = May 21, 2020 
+ day = Thursday 
+ cases_this_day = 25,537" coords="565,248,570,248,570,253,565,253,565,248,"/>
+<Area shape="poly" alt=" date = May 20, 2020 
+ day = Wednesday 
+ cases_this_day = 23,612" title=" date = May 20, 2020 
+ day = Wednesday 
+ cases_this_day = 23,612" coords="558,263,563,263,563,268,558,268,558,263,"/>
+<Area shape="poly" alt=" date = May 19, 2020 
+ day = Tuesday 
+ cases_this_day = 20,498" title=" date = May 19, 2020 
+ day = Tuesday 
+ cases_this_day = 20,498" coords="550,288,555,288,555,293,550,293,550,288,"/>
+<Area shape="poly" alt=" date = May 18, 2020 
+ day = Monday 
+ cases_this_day = 21,708" title=" date = May 18, 2020 
+ day = Monday 
+ cases_this_day = 21,708" coords="543,279,548,279,548,284,543,284,543,279,"/>
+<Area shape="poly" alt=" date = May 17, 2020 
+ day = Sunday 
+ cases_this_day = 19,004" title=" date = May 17, 2020 
+ day = Sunday 
+ cases_this_day = 19,004" coords="535,300,540,300,540,305,535,305,535,300,"/>
+<Area shape="poly" alt=" date = May 16, 2020 
+ day = Saturday 
+ cases_this_day = 25,101" title=" date = May 16, 2020 
+ day = Saturday 
+ cases_this_day = 25,101" coords="528,251,533,251,533,256,528,256,528,251,"/>
+<Area shape="poly" alt=" date = May 15, 2020 
+ day = Friday 
+ cases_this_day = 25,300" title=" date = May 15, 2020 
+ day = Friday 
+ cases_this_day = 25,300" coords="520,250,525,250,525,255,520,255,520,250,"/>
+<Area shape="poly" alt=" date = May 14, 2020 
+ day = Thursday 
+ cases_this_day = 27,617" title=" date = May 14, 2020 
+ day = Thursday 
+ cases_this_day = 27,617" coords="513,231,518,231,518,236,513,236,513,231,"/>
+<Area shape="poly" alt=" date = May 13, 2020 
+ day = Wednesday 
+ cases_this_day = 21,195" title=" date = May 13, 2020 
+ day = Wednesday 
+ cases_this_day = 21,195" coords="505,283,510,283,510,288,505,288,505,283,"/>
+<Area shape="poly" alt=" date = May 12, 2020 
+ day = Tuesday 
+ cases_this_day = 21,952" title=" date = May 12, 2020 
+ day = Tuesday 
+ cases_this_day = 21,952" coords="498,277,503,277,503,282,498,282,498,277,"/>
+<Area shape="poly" alt=" date = May 11, 2020 
+ day = Monday 
+ cases_this_day = 18,878" title=" date = May 11, 2020 
+ day = Monday 
+ cases_this_day = 18,878" coords="491,301,496,301,496,306,491,306,491,301,"/>
+<Area shape="poly" alt=" date = May 10, 2020 
+ day = Sunday 
+ cases_this_day = 19,778" title=" date = May 10, 2020 
+ day = Sunday 
+ cases_this_day = 19,778" coords="483,294,488,294,488,299,483,299,483,294,"/>
+<Area shape="poly" alt=" date = May 09, 2020 
+ day = Saturday 
+ cases_this_day = 25,740" title=" date = May 09, 2020 
+ day = Saturday 
+ cases_this_day = 25,740" coords="476,246,481,246,481,251,476,251,476,246,"/>
+<Area shape="poly" alt=" date = May 08, 2020 
+ day = Friday 
+ cases_this_day = 27,157" title=" date = May 08, 2020 
+ day = Friday 
+ cases_this_day = 27,157" coords="468,235,473,235,473,240,468,240,468,235,"/>
+<Area shape="poly" alt=" date = May 07, 2020 
+ day = Thursday 
+ cases_this_day = 27,882" title=" date = May 07, 2020 
+ day = Thursday 
+ cases_this_day = 27,882" coords="461,229,466,229,466,234,461,234,461,229,"/>
+<Area shape="poly" alt=" date = May 06, 2020 
+ day = Wednesday 
+ cases_this_day = 25,256" title=" date = May 06, 2020 
+ day = Wednesday 
+ cases_this_day = 25,256" coords="453,250,458,250,458,255,453,255,453,250,"/>
+<Area shape="poly" alt=" date = May 05, 2020 
+ day = Tuesday 
+ cases_this_day = 24,185" title=" date = May 05, 2020 
+ day = Tuesday 
+ cases_this_day = 24,185" coords="446,259,451,259,451,264,446,264,446,259,"/>
+<Area shape="poly" alt=" date = May 04, 2020 
+ day = Monday 
+ cases_this_day = 22,475" title=" date = May 04, 2020 
+ day = Monday 
+ cases_this_day = 22,475" coords="438,273,443,273,443,278,438,278,438,273,"/>
+<Area shape="poly" alt=" date = May 03, 2020 
+ day = Sunday 
+ cases_this_day = 25,587" title=" date = May 03, 2020 
+ day = Sunday 
+ cases_this_day = 25,587" coords="431,248,436,248,436,253,431,253,431,248,"/>
+<Area shape="poly" alt=" date = May 02, 2020 
+ day = Saturday 
+ cases_this_day = 29,195" title=" date = May 02, 2020 
+ day = Saturday 
+ cases_this_day = 29,195" coords="423,219,428,219,428,224,423,224,423,219,"/>
+<Area shape="poly" alt=" date = May 01, 2020 
+ day = Friday 
+ cases_this_day = 34,162" title=" date = May 01, 2020 
+ day = Friday 
+ cases_this_day = 34,162" coords="416,179,421,179,421,184,416,184,416,179,"/>
+<Area shape="poly" alt=" date = April 30, 2020 
+ day = Thursday 
+ cases_this_day = 29,741" title=" date = April 30, 2020 
+ day = Thursday 
+ cases_this_day = 29,741" coords="409,214,414,214,414,219,409,219,409,214,"/>
+<Area shape="poly" alt=" date = April 29, 2020 
+ day = Wednesday 
+ cases_this_day = 27,408" title=" date = April 29, 2020 
+ day = Wednesday 
+ cases_this_day = 27,408" coords="401,233,406,233,406,238,401,238,401,233,"/>
+<Area shape="poly" alt=" date = April 28, 2020 
+ day = Tuesday 
+ cases_this_day = 24,525" title=" date = April 28, 2020 
+ day = Tuesday 
+ cases_this_day = 24,525" coords="394,256,399,256,399,261,394,261,394,256,"/>
+<Area shape="poly" alt=" date = April 27, 2020 
+ day = Monday 
+ cases_this_day = 22,476" title=" date = April 27, 2020 
+ day = Monday 
+ cases_this_day = 22,476" coords="386,273,391,273,391,278,386,278,386,273,"/>
+<Area shape="poly" alt=" date = April 26, 2020 
+ day = Sunday 
+ cases_this_day = 27,688" title=" date = April 26, 2020 
+ day = Sunday 
+ cases_this_day = 27,688" coords="379,231,384,231,384,236,379,236,379,231,"/>
+<Area shape="poly" alt=" date = April 25, 2020 
+ day = Saturday 
+ cases_this_day = 32,921" title=" date = April 25, 2020 
+ day = Saturday 
+ cases_this_day = 32,921" coords="371,189,376,189,376,194,371,194,371,189,"/>
+<Area shape="poly" alt=" date = April 24, 2020 
+ day = Friday 
+ cases_this_day = 36,291" title=" date = April 24, 2020 
+ day = Friday 
+ cases_this_day = 36,291" coords="364,162,369,162,369,167,364,167,364,162,"/>
+<Area shape="poly" alt=" date = April 23, 2020 
+ day = Thursday 
+ cases_this_day = 34,203" title=" date = April 23, 2020 
+ day = Thursday 
+ cases_this_day = 34,203" coords="356,178,361,178,361,183,356,183,356,178,"/>
+<Area shape="poly" alt=" date = April 22, 2020 
+ day = Wednesday 
+ cases_this_day = 28,201" title=" date = April 22, 2020 
+ day = Wednesday 
+ cases_this_day = 28,201" coords="349,227,354,227,354,232,349,232,349,227,"/>
+<Area shape="poly" alt=" date = April 21, 2020 
+ day = Tuesday 
+ cases_this_day = 25,497" title=" date = April 21, 2020 
+ day = Tuesday 
+ cases_this_day = 25,497" coords="342,248,347,248,347,253,342,253,342,248,"/>
+<Area shape="poly" alt=" date = April 20, 2020 
+ day = Monday 
+ cases_this_day = 27,341" title=" date = April 20, 2020 
+ day = Monday 
+ cases_this_day = 27,341" coords="334,233,339,233,339,238,334,238,334,233,"/>
+<Area shape="poly" alt=" date = April 19, 2020 
+ day = Sunday 
+ cases_this_day = 26,058" title=" date = April 19, 2020 
+ day = Sunday 
+ cases_this_day = 26,058" coords="327,244,332,244,332,249,327,249,327,244,"/>
+<Area shape="poly" alt=" date = April 18, 2020 
+ day = Saturday 
+ cases_this_day = 28,321" title=" date = April 18, 2020 
+ day = Saturday 
+ cases_this_day = 28,321" coords="319,226,324,226,324,231,319,231,319,226,"/>
+<Area shape="poly" alt=" date = April 17, 2020 
+ day = Friday 
+ cases_this_day = 32,724" title=" date = April 17, 2020 
+ day = Friday 
+ cases_this_day = 32,724" coords="312,190,317,190,317,195,312,195,312,190,"/>
+<Area shape="poly" alt=" date = April 16, 2020 
+ day = Thursday 
+ cases_this_day = 31,298" title=" date = April 16, 2020 
+ day = Thursday 
+ cases_this_day = 31,298" coords="304,202,309,202,309,207,304,207,304,202,"/>
+<Area shape="poly" alt=" date = April 15, 2020 
+ day = Wednesday 
+ cases_this_day = 29,129" title=" date = April 15, 2020 
+ day = Wednesday 
+ cases_this_day = 29,129" coords="297,219,302,219,302,224,297,224,297,219,"/>
+<Area shape="poly" alt=" date = April 14, 2020 
+ day = Tuesday 
+ cases_this_day = 27,035" title=" date = April 14, 2020 
+ day = Tuesday 
+ cases_this_day = 27,035" coords="289,236,294,236,294,241,289,241,289,236,"/>
+<Area shape="poly" alt=" date = April 13, 2020 
+ day = Monday 
+ cases_this_day = 25,293" title=" date = April 13, 2020 
+ day = Monday 
+ cases_this_day = 25,293" coords="282,250,287,250,287,255,282,255,282,250,"/>
+<Area shape="poly" alt=" date = April 12, 2020 
+ day = Sunday 
+ cases_this_day = 28,559" title=" date = April 12, 2020 
+ day = Sunday 
+ cases_this_day = 28,559" coords="274,224,279,224,279,229,274,229,274,224,"/>
+<Area shape="poly" alt=" date = April 11, 2020 
+ day = Saturday 
+ cases_this_day = 30,015" title=" date = April 11, 2020 
+ day = Saturday 
+ cases_this_day = 30,015" coords="267,212,272,212,272,217,267,217,267,212,"/>
+<Area shape="poly" alt=" date = April 10, 2020 
+ day = Friday 
+ cases_this_day = 33,501" title=" date = April 10, 2020 
+ day = Friday 
+ cases_this_day = 33,501" coords="260,184,265,184,265,189,260,189,260,184,"/>
+<Area shape="poly" alt=" date = April 09, 2020 
+ day = Thursday 
+ cases_this_day = 34,756" title=" date = April 09, 2020 
+ day = Thursday 
+ cases_this_day = 34,756" coords="252,174,257,174,257,179,252,179,252,174,"/>
+<Area shape="poly" alt=" date = April 08, 2020 
+ day = Wednesday 
+ cases_this_day = 31,694" title=" date = April 08, 2020 
+ day = Wednesday 
+ cases_this_day = 31,694" coords="245,198,250,198,250,203,245,203,245,198,"/>
+<Area shape="poly" alt=" date = April 07, 2020 
+ day = Tuesday 
+ cases_this_day = 30,782" title=" date = April 07, 2020 
+ day = Tuesday 
+ cases_this_day = 30,782" coords="237,206,242,206,242,211,237,211,237,206,"/>
+<Area shape="poly" alt=" date = April 06, 2020 
+ day = Monday 
+ cases_this_day = 29,637" title=" date = April 06, 2020 
+ day = Monday 
+ cases_this_day = 29,637" coords="230,215,235,215,235,220,230,220,230,215,"/>
+<Area shape="poly" alt=" date = April 05, 2020 
+ day = Sunday 
+ cases_this_day = 27,874" title=" date = April 05, 2020 
+ day = Sunday 
+ cases_this_day = 27,874" coords="222,229,227,229,227,234,222,234,222,229,"/>
+<Area shape="poly" alt=" date = April 04, 2020 
+ day = Saturday 
+ cases_this_day = 33,164" title=" date = April 04, 2020 
+ day = Saturday 
+ cases_this_day = 33,164" coords="215,187,220,187,220,192,215,192,215,187,"/>
+<Area shape="poly" alt=" date = April 03, 2020 
+ day = Friday 
+ cases_this_day = 31,942" title=" date = April 03, 2020 
+ day = Friday 
+ cases_this_day = 31,942" coords="207,196,212,196,212,201,207,201,207,196,"/>
+<Area shape="poly" alt=" date = April 02, 2020 
+ day = Thursday 
+ cases_this_day = 30,399" title=" date = April 02, 2020 
+ day = Thursday 
+ cases_this_day = 30,399" coords="200,209,205,209,205,214,200,214,200,209,"/>
+<Area shape="poly" alt=" date = April 01, 2020 
+ day = Wednesday 
+ cases_this_day = 25,493" title=" date = April 01, 2020 
+ day = Wednesday 
+ cases_this_day = 25,493" coords="193,248,198,248,198,253,193,253,193,248,"/>
+<Area shape="poly" alt=" date = March 31, 2020 
+ day = Tuesday 
+ cases_this_day = 26,011" title=" date = March 31, 2020 
+ day = Tuesday 
+ cases_this_day = 26,011" coords="185,244,190,244,190,249,185,249,185,244,"/>
+<Area shape="poly" alt=" date = March 30, 2020 
+ day = Monday 
+ cases_this_day = 21,496" title=" date = March 30, 2020 
+ day = Monday 
+ cases_this_day = 21,496" coords="178,280,183,280,183,285,178,285,178,280,"/>
+<Area shape="poly" alt=" date = March 29, 2020 
+ day = Sunday 
+ cases_this_day = 19,140" title=" date = March 29, 2020 
+ day = Sunday 
+ cases_this_day = 19,140" coords="170,299,175,299,175,304,170,304,170,299,"/>
+<Area shape="poly" alt=" date = March 28, 2020 
+ day = Saturday 
+ cases_this_day = 19,800" title=" date = March 28, 2020 
+ day = Saturday 
+ cases_this_day = 19,800" coords="163,294,168,294,168,299,163,299,163,294,"/>
+<Area shape="poly" alt=" date = March 27, 2020 
+ day = Friday 
+ cases_this_day = 18,174" title=" date = March 27, 2020 
+ day = Friday 
+ cases_this_day = 18,174" coords="155,307,160,307,160,312,155,312,155,307,"/>
+<Area shape="poly" alt=" date = March 26, 2020 
+ day = Thursday 
+ cases_this_day = 18,036" title=" date = March 26, 2020 
+ day = Thursday 
+ cases_this_day = 18,036" coords="148,308,153,308,153,313,148,313,148,308,"/>
+<Area shape="poly" alt=" date = March 25, 2020 
+ day = Wednesday 
+ cases_this_day = 11,936" title=" date = March 25, 2020 
+ day = Wednesday 
+ cases_this_day = 11,936" coords="140,357,145,357,145,362,140,362,140,357,"/>
+<Area shape="poly" alt=" date = March 24, 2020 
+ day = Tuesday 
+ cases_this_day = 10,263" title=" date = March 24, 2020 
+ day = Tuesday 
+ cases_this_day = 10,263" coords="133,371,138,371,138,376,133,376,133,371,"/>
+<Area shape="poly" alt=" date = March 23, 2020 
+ day = Monday 
+ cases_this_day = 10,089" title=" date = March 23, 2020 
+ day = Monday 
+ cases_this_day = 10,089" coords="126,372,131,372,131,377,126,377,126,372,"/>
+<Area shape="poly" alt=" date = March 22, 2020 
+ day = Sunday 
+ cases_this_day = 7,938" title=" date = March 22, 2020 
+ day = Sunday 
+ cases_this_day = 7,938" coords="118,389,123,389,123,394,118,394,118,389,"/>
+<Area shape="poly" alt=" date = March 21, 2020 
+ day = Saturday 
+ cases_this_day = 6,339" title=" date = March 21, 2020 
+ day = Saturday 
+ cases_this_day = 6,339" coords="111,402,116,402,116,407,111,407,111,402,"/>
+<Area shape="poly" alt=" date = March 20, 2020 
+ day = Friday 
+ cases_this_day = 5,326" title=" date = March 20, 2020 
+ day = Friday 
+ cases_this_day = 5,326" coords="103,410,108,410,108,415,103,415,103,410,"/>
+<Area shape="poly" alt=" date = March 19, 2020 
+ day = Thursday 
+ cases_this_day = 5,239" title=" date = March 19, 2020 
+ day = Thursday 
+ cases_this_day = 5,239" coords="96,411,101,411,101,416,96,416,96,411,"/>
+<Area shape="poly" alt=" date = March 18, 2020 
+ day = Wednesday 
+ cases_this_day = 2,773" title=" date = March 18, 2020 
+ day = Wednesday 
+ cases_this_day = 2,773" coords="88,431,93,431,93,436,88,436,88,431,"/>
+<Area shape="poly" alt=" date = March 17, 2020 
+ day = Tuesday 
+ cases_this_day = 1,781" title=" date = March 17, 2020 
+ day = Tuesday 
+ cases_this_day = 1,781" coords="81,439,86,439,86,444,81,444,81,439,"/>
+<Area shape="poly" alt=" date = March 16, 2020 
+ day = Monday 
+ cases_this_day = 1,392" title=" date = March 16, 2020 
+ day = Monday 
+ cases_this_day = 1,392" coords="73,442,78,442,78,447,73,447,73,442,"/>
+<Area shape="poly" alt=" date = March 15, 2020 
+ day = Sunday 
+ cases_this_day = 98" title=" date = March 15, 2020 
+ day = Sunday 
+ cases_this_day = 98" coords="66,452,71,452,71,457,66,457,66,452,"/>
+<Area shape="poly" alt=" date = March 14, 2020 
+ day = Saturday 
+ cases_this_day = 713" title=" date = March 14, 2020 
+ day = Saturday 
+ cases_this_day = 713" coords="61,447,63,447,63,452,61,452,61,447,"/>
+</map>
+<div  class="c">
+<img alt="The SGPlot Procedure" src="covid19_us_trend.png" style=" height: 550px; width: 900px;" border="0" usemap="#covid19_us_trend" class="c">
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
