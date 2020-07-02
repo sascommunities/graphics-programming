@@ -1,0 +1,1385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="charset=iso-8859-1">
+<title>U.S. Covid-19 trend, by state</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.aftercaption
+{
+  background-color: #111111;
+  border: 0px solid #4D4D4D;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-left: 2.5pt;
+  padding-right: 2.5pt;
+  padding-top: 0px;
+}
+.batch
+{
+  background-color: #333333;
+  border: 1.5pt solid #666666;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  color: #CCCCCC;
+  font-family: 'Courier New', 'courier new', monospace;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.beforecaption
+{
+  background-color: #111111;
+  border: 0px solid #4D4D4D;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-left: 2.5pt;
+  padding-right: 2.5pt;
+  padding-top: 0px;
+}
+.body
+{
+  background-color: #111111;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.bodydate
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.bycontentfolder
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.byline
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.bylinecontainer
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.caption
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.cell
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.container
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentfolder
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentitem
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentproclabel
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentprocname
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contents
+{
+  background-color: #333333;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contentsdate
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.contenttitle
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.continued
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.data
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.dataemphasis
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-style: italic;
+  padding: 2.5pt;
+}
+.dataemphasisfixed
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-style: italic;
+  padding: 2.5pt;
+}
+.dataempty
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.datafixed
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: 'Courier New', 'courier new', monospace;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.datastrong
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.datastrongfixed
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.document
+{
+  background-color: #111111;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+a:link {
+color:#EEEEEE
+}
+a:visited {
+color:#EEEEEE
+}
+a:active {
+color:#EEEEEE
+}
+.errorbanner
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.errorcontent
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.errorcontentfixed
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.extendedpage
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.fatalbanner
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.fatalcontentfixed
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.folderaction
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.footer
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footeremphasis
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footeremphasisfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footerempty
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footerfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footerstrong
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.footerstrongfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.frame
+{
+  background-color: #111111;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.graph
+{
+  border: 1px solid #666666;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.header
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headeremphasis
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headeremphasisfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headerempty
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headerfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headersandfooters
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.headerstrong
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.headerstrongfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.indexaction
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.linecontent
+{
+  background-color: #111111;
+  border: 1pt solid #4D4D4D;
+  color: #FFFFFF;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  padding: 2.5pt;
+}
+.list
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list10
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list2
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list3
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list4
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list5
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list6
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list7
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list8
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.list9
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem10
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem2
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem3
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem4
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem5
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem6
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem7
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem8
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.listitem9
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.notebanner
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.notecontent
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.notecontentfixed
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.output
+{
+  border: 1.5pt solid #666666;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagebreak
+{
+  height: 1em;
+}
+.pageno
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pages
+{
+  background-color: #333333;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagesdate
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagesitem
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagesproclabel
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagesprocname
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.pagestitle
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.paragraph
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.parskip
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.prepage
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.proctitle
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.proctitlefixed
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.rowfooter
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooteremphasis
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooterempty
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooterfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooterstrong
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowfooterstrongfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheader
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderemphasis
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderempty
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderstrong
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.rowheaderstrongfixed
+{
+  background-color: #333333;
+  background-image: linear-gradient(top, #4D4D4D, #333333);
+  background-image: -webkit-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -moz-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -o-linear-gradient(top, #4D4D4D, #333333);
+  background-image: -ms-linear-gradient(top, #4D4D4D, #333333);
+  border: 1pt solid #4D4D4D;
+  color: #CCCCCC;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4D4D4D", endColorstr="#333333");
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: normal;
+  padding: 2.5pt;
+  text-align: center;
+  vertical-align: middle;
+}
+.systemfooter
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter10
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter2
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter3
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter4
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter5
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter6
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter7
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter8
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemfooter9
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle10
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle2
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle3
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle4
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle5
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle6
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle7
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle8
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systemtitle9
+{
+  border: 0px solid #000000;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.systitleandfootercontainer
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.table
+{
+  border: 1.5pt solid #666666;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.usertext
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.warnbanner
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+}
+.warncontent
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.warncontentfixed
+{
+  color: #EEEEEE;
+  font-family: Arial, arial, helvetica, sans-serif;
+  font-size: 8pt;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="covid19_us_states">
+<Area shape="poly" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/" target="_BLANK" coords="158.7,551.296875,713.7,551.296875,713.7,570.703125,158.7,570.703125,158.7,551.296875,158.7,551.296875"/>
+</map>
+<div  class="c">
+<img alt="The SGPlot Procedure" src="covid19_us_states.png" style=" height: 600px; width: 950px;" border="0" usemap="#covid19_us_states" class="c">
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
