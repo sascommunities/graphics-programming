@@ -228,7 +228,7 @@ image='covid19_us_states_map.png';
 /*layer='back'; ... bummer - this puts it behind the black background */
 drawspace='datapercent';
 anchor='bottomleft';
-x1=38;
+x1=52;
 y1=60;
 imagescale='fit';
 heightunit='pixel';
@@ -273,9 +273,9 @@ series y=avg x=date / group=statename_color nomissinggroup name='max'
 yaxis  labelattrs=(size=11.5pt weight=normal) offsetmin=0 offsetmax=.05 values=(0 to &axismax by 100);
 y2axis offsetmin=0 offsetmax=.05 values=(0 to &axismax by 100) display=(nolabel);
 xaxis display=(nolabel) 
- values=("01mar2020"d to "01aug2020"d by month)
+ values=("01mar2020"d to "01jul2020"d by month)
  valueattrs=(size=9pt)
- offsetmin=0 offsetmax=0;
+ offsetmin=0 offsetmax=.03;
 keylegend 'max' / title='' linelength=15px 
  position=topleft location=inside outerpad=(left=10pt top=11pt)
  valueattrs=(size=9pt weight=normal) 
