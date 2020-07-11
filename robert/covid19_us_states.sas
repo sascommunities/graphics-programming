@@ -195,6 +195,7 @@ ods graphics /
  width=240px height=160px noborder;
  width=270px height=180px noborder;
  width=300px height=200px noborder;
+ width=800px height=600px noborder;
 */
 
 data my_map; set mapsgfk.us;
@@ -207,6 +208,7 @@ if rank=. then rank=99;
 run;
 
 proc sgmap mapdata=my_map maprespdata=my_map_data noautolegend /*noopaque*/;
+/* you *must* run this with SAS 9.4m6a or higher, for the styleattrs colors to work this way! */
 styleattrs datacolors=(red orange yellow lime dodgerblue purple violet gray88);
 choromap rank / mapid=statename discrete lineattrs=(thickness=1 color=gray33)
 /*
@@ -216,6 +218,10 @@ old SAS/Graph Proc Greplay did), so don't bother using the tip=.
 */
  ;
 run;
+
+/*
+proc print data=my_map_data; run;
+*/
 
 quit;
 ODS HTML CLOSE;
@@ -275,7 +281,7 @@ y2axis offsetmin=0 offsetmax=.05 values=(0 to &axismax by 100) display=(nolabel)
 xaxis display=(nolabel) 
  values=("01mar2020"d to "01jul2020"d by month)
  valueattrs=(size=9pt)
- offsetmin=0 offsetmax=.03;
+ offsetmin=0 offsetmax=.05;
 keylegend 'max' / title='' linelength=15px 
  position=topleft location=inside outerpad=(left=10pt top=11pt)
  valueattrs=(size=9pt weight=normal) 
