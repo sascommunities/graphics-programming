@@ -12,28 +12,33 @@ https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_c
 https://github.com/CSSEGISandData/COVID-19/
 */
 
-/* 
-Make a local copy/clone of the GitHub data.
-gitfn_clone() needs an empty folder, therefore use a new
-folder name each time, with the date & time in the name.
-*/
+%macro getdata(csvname);
+%let csvurl=https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series;
+filename csvfile url "&csvurl./&csvname";
+data _null_;
+ n=-1;
+ infile csvfile recfm=s nbyte=n length=len _infile_=tmp;
+ input;
+ file "&csvname" recfm=n;
+ put tmp $varying32767. len;
+run;
+%mend getdata;
+
+%getdata(time_series_covid19_confirmed_global.csv);
+%getdata(time_series_covid19_deaths_global.csv);
+%getdata(time_series_covid19_recovered_global.csv);
 /*
-%let gitfolder=./github_clone_&sysdate9._%sysfunc(tranwrd(&systime,:,_));
-%let gitfolder=./github_clone_17FEB2020;
 */
 
-%let gitfolder=./github_clone_&sysdate9;
+
+/* the slow way of downloading the data (it downloads a *lot* of extra github files, that I don't need */
 /*
-*/
+%let gitfolder=./github_clone_&sysdate9;
 data _null_;
  rc = gitfn_clone("https://github.com/CSSEGISandData/COVID-19/",
    "&gitfolder");
  put rc=;
 run;
-
-/*
-John D. accesses the data like this:
-https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv
 */
 
 /* ------------------ Import the confirmed cases data ---------------------- */
@@ -41,8 +46,9 @@ https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_d
 /*
 filename confdata "./&gitfolder/time_series/time_series_2019-ncov-Confirmed.csv";
 filename confdata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-*/
 filename confdata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+*/
+filename confdata "time_series_covid19_confirmed_global.csv";
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
 getnames=yes;
@@ -112,8 +118,9 @@ run;
 /*
 filename deatdata "./&gitfolder/time_series/time_series_2019-ncov-Deaths.csv";
 filename deatdata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
-*/
 filename deatdata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+*/
+filename deatdata "time_series_covid19_deaths_global.csv";
 proc import datafile=deatdata
  out=death_data dbms=csv replace;
 getnames=yes;
@@ -169,8 +176,9 @@ quit; run;
 /*
 filename recodata "./&gitfolder/time_series/time_series_2019-ncov-Recovered.csv";
 filename recodata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv";
-*/
 filename recodata "./&gitfolder/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv";
+*/
+filename recodata "time_series_covid19_recovered_global.csv";
 proc import datafile=recodata
  out=recovered_data dbms=csv replace;
 getnames=yes;
@@ -365,7 +373,7 @@ function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="Total Reported"; output;
 html='title='||quote(trim(left(put(sum_confirmed,comma12.0)))||" total reported cases of COVID-19 Coronavirus worldwide");
-style='albany amt/bold'; color="red"; size=31;
+style='albany amt/bold'; color="red"; size=28;
 x=50; y=50; text=trim(left(put(sum_confirmed,comma12.0))); output;
 run;
 data anno_confirmed_total; set anno_gray_background anno_confirmed_total;
@@ -389,7 +397,7 @@ function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="Total Deaths"; output;
 html='title='||quote(trim(left(put(sum_deaths,comma12.0)))||" deaths from COVID-19 Coronavirus worldwide");
-style='albany amt/bold'; color="white"; size=40;
+style='albany amt/bold'; color="white"; size=38;
 x=50; y=50; text=trim(left(put(sum_deaths,comma12.0))); output;
 run;
 data anno_deaths_total; set anno_gray_background anno_deaths_total;
@@ -436,7 +444,7 @@ function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="New Cases Today"; output;
 html='title='||quote(trim(left(put(sum_increase,comma12.0)))||" increase in COVID-19 Coronavirus cases worldwide on &datestr");
-style='albany amt/bold'; color="orange"; size=40;
+style='albany amt/bold'; color="orange"; size=38;
 x=50; y=50; text=trim(left(put(sum_increase,comma12.0))); output;
 run;
 data anno_increase_total; set anno_gray_background anno_increase_total;
@@ -553,8 +561,8 @@ id;
 run;
 
 /* these control the size of the blue bubbles */
-%let max_val=500000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
-%let max_area=80; /* maximum bubble size (area) */
+%let max_val=3000000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
+%let max_area=100; /* maximum bubble size (area) */
 proc sort data=map_data out=anno_bubbles;
 by descending confirmed;
 run;
@@ -614,7 +622,6 @@ length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; style='albany amt/bold'; size=11;
 y=99-(_n_*6);
-/* foofoo */
 text=trim(left(put(confirmed,comma12.0))); x=35; position='4'; color="red"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
@@ -821,6 +828,7 @@ title1 h=2pct ' ';
 footnote1 h=2pct ' ';
 data anno_mouseover; set anno_mouseover anno_gray_background;
 run;
+/* not using this one anymore (see the next gplot) */
 proc gplot data=summarized_series anno=anno_mouseover;
 format confirmed comma12.0;
 format snapshot nldate20.;
@@ -861,10 +869,16 @@ run;
 data anno_mouseover; set anno_mouseover anno_gray_background;
 run;
 
-axis1 value=(c=graycc h=11pt) label=none minor=none offset=(0,0);
-axis2 label=none order=("&mindate"d to "&maxdate"d by &byval)
- major=(height=8pt) value=(c=graycc h=11pt font='albany amt')
- offset=(.5,.5);
+axis1 value=(c=graycc h=11pt) label=none major=none minor=none offset=(0,0)
+ order=(0 to 250000 by 50000) style=0;
+
+axis2 label=none 
+/*
+ order=("&mindate"d to "&maxdate"d by &byval)
+*/
+ order=('01feb2020'd to '10aug2020'd by month)
+ major=(height=4pt) value=(c=graycc h=11pt font='albany amt')
+ offset=(0,0);
 
 symbol1 interpol=needle width=3 color=orange value=circle height=9pt cv=graycc;
 
@@ -872,11 +886,15 @@ title1 h=2pct ' ';
 footnote1 h=2pct ' ';
 
 proc gplot data=bar_confirmed anno=anno_mouseover;
-format on_this_day comma12.0;
+format on_this_day comma8.0;
+/*
 format snapshot nldate20.;
-note move=(15,77) font='albany amt/bold' "Daily New Reported Cases Worldwide";
-plot on_this_day*snapshot /
+*/
+format snapshot monname3.;
+note move=(15,81) font='albany amt/bold' "Daily New Reported Cases Worldwide";
+plot on_this_day*snapshot / noframe
  vaxis=axis1 haxis=axis2
+ autovref lvref=33 cvref=graycc
  des='' name="series2";
 run;
 
@@ -1056,14 +1074,18 @@ ods html anchor="#byval(country_region)";
 ods graphics / imagename="coronavirus_covid19_#byval(country_region)";
 
 options nobyline;
-title1 h=18pt font='albany amt/bold' c=gray33 "Daily New Reported COVID-19 Coronavirus cases";
-title2 h=18pt font='albany amt/bold' c=gray33 "in: #byval(country_region)";
-title3 h=4pt ' ';
+/* bummer - sgplot doesn't support most of these title options */
+title1 ls=1.5 h=18pt font='albany amt/bold' c=gray33 "Daily New Reported COVID-19 cases in: #byval(country_region)";
+title2 ls=0.8 h=11pt font='albany amt' c=gray77 link="&csvurl" "Data source: Johns Hopkins CSSE (&datestr snapshot)";
+title3 h=2pt ' ';
 
 ods graphics / width=800px height=600px;
 proc sgplot data=graph_all noborder;
 by country_region;
+/*
 format snapshot weekdate30.;
+*/
+format snapshot monname3.;
 format confirmed recovered deaths daily comma10.0;
 needle y=daily x=snapshot / name='daily'
  lineattrs=(color=orange thickness=2px) 
@@ -1071,8 +1093,11 @@ needle y=daily x=snapshot / name='daily'
 yaxis display=(nolabel noline noticks) min=0
  integer thresholdmax=1 grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt);
-xaxis display=(nolabel) 
- type=time values=("&mindate"d to "&maxdate"d by &byval)
+xaxis display=(nolabel) type=time 
+/*
+ values=("&mindate"d to "&maxdate"d by &byval)
+*/
+ values=('01feb2020'd to '01aug2020'd by month) 
  valueattrs=(color=gray33 size=10pt);
 run;
 /*
