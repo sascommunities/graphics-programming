@@ -24,10 +24,10 @@ data _null_;
 run;
 %mend getdata;
 
+/*
 %getdata(time_series_covid19_confirmed_global.csv);
 %getdata(time_series_covid19_deaths_global.csv);
 %getdata(time_series_covid19_recovered_global.csv);
-/*
 */
 
 
@@ -816,6 +816,7 @@ select min(snapshot) format=date9. into :mindate from summarized_series;
 select max(snapshot) format=date9. into :maxdate from summarized_series;
 select max(snapshot)-min(snapshot) into :byval from summarized_series;
 quit; run;
+/* Not using this one anymore - using 'series2' plot instead */
 axis1 value=(c=graycc h=11pt) label=none minor=none offset=(0,0);
 axis2 label=none order=("&mindate"d to "&maxdate"d by &byval)
  major=(height=8pt) value=(c=graycc h=11pt font='albany amt')
@@ -870,17 +871,17 @@ data anno_mouseover; set anno_mouseover anno_gray_background;
 run;
 
 axis1 value=(c=graycc h=11pt) label=none major=none minor=none offset=(0,0)
- order=(0 to 250000 by 50000) style=0;
+ order=(0 to 300000 by 50000) style=0;
 
 axis2 label=none 
 /*
  order=("&mindate"d to "&maxdate"d by &byval)
 */
- order=('01feb2020'd to '10aug2020'd by month)
+ order=('01feb2020'd to '01sep2020'd by month)
  major=(height=4pt) value=(c=graycc h=11pt font='albany amt')
  offset=(0,0);
 
-symbol1 interpol=needle width=3 color=orange value=circle height=9pt cv=graycc;
+symbol1 interpol=needle width=3 color=orange value=circle height=9pt cv=graycc mode=include;
 
 title1 h=2pct ' ';
 footnote1 h=2pct ' ';
@@ -1067,8 +1068,16 @@ run;
 data graph_all; set graph_all;
 if country_region^=lag(country_region) then daily=.;
 else daily=confirmed-lag(confirmed);
+length day_color $100;
+if trim(left(put(snapshot,downame.))) in ('Saturday' 'Sunday') then day_color='Weekends';
+else day_color='Weekdays';
 run;
 
+proc expand data=graph_all out=graph_all;
+by country_region;
+label avg_7='7-day moving average (centered)';
+convert daily=avg_7 / method=none transformout=(cmovave 7 trim 3);
+run;
 
 ods html anchor="#byval(country_region)";
 ods graphics / imagename="coronavirus_covid19_#byval(country_region)";
@@ -1080,16 +1089,21 @@ title2 ls=0.8 h=11pt font='albany amt' c=gray77 link="&csvurl" "Data source: Joh
 title3 h=2pt ' ';
 
 ods graphics / width=800px height=600px;
-proc sgplot data=graph_all noborder;
-by country_region;
+proc sgplot data=graph_all 
 /*
-format snapshot weekdate30.;
+ (where=(country_region='US'))
 */
+ noborder;
+by country_region;
 format snapshot monname3.;
 format confirmed recovered deaths daily comma10.0;
+styleattrs datacontrastcolors=(orange gray99);
 needle y=daily x=snapshot / name='daily'
- lineattrs=(color=orange thickness=2px) 
- markers markerattrs=(color=gray77 symbol=circle);
+ group=day_color
+ lineattrs=(/*color=orange*/ thickness=2px) 
+ markers markerattrs=(color=gray77 symbol=circle size=4pt);
+series y=avg_7 x=snapshot / name='avg'
+ lineattrs=(color=dodgerblue thickness=3) tip=none;
 yaxis display=(nolabel noline noticks) min=0
  integer thresholdmax=1 grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt);
@@ -1097,8 +1111,11 @@ xaxis display=(nolabel) type=time
 /*
  values=("&mindate"d to "&maxdate"d by &byval)
 */
- values=('01feb2020'd to '01aug2020'd by month) 
+ values=('01feb2020'd to '01sep2020'd by month) 
  valueattrs=(color=gray33 size=10pt);
+keylegend 'avg' 'daily' / title='' position=bottom location=outside 
+ valueattrs=(color=gray33 size=11pt weight=normal)
+ /*opaque*/ noborder across=3 outerpad=(left=10pt top=8pt);
 run;
 /*
 proc print data=graph_all (where=(country_region='Germany')) noobs;
