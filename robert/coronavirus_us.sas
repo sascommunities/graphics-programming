@@ -17,9 +17,9 @@ https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_d
 
 /* local copy works much faster, for the 'proc import' */
 /*
-filename confdata "time_series_covid19_confirmed_US.csv";
-*/
 filename confdata url "&srclink";
+*/
+filename confdata "time_series_covid19_confirmed_US.csv";
 
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
@@ -199,20 +199,6 @@ proc sql noprint;
 select sum(confirmed) format=comma10.0 into :stotal separated by ' ' from temp_latest;
 quit; run;
 
-title1 ls=1.5 c=gray33 h=20pt font="albany amt" "&stotal Confirmed Coronavirus Cases in &statecode";
-title2 ls=1.0 link="&srclink" "Data source: Johns Hopkins CSSE (&freshness snapshot)";
-
-goptions border;
-proc gmap map=my_map data=temp_latest anno=anno_bubbles;
-id state county;
-choro confirmed / levels=1 nolegend
- cdefault=cxF7FFF7
- coutline=graybb
- html=my_html
- name="&name._map_&statecode"
- des='';
-run;
-
 
 proc sql noprint;
 create table temp_series as
@@ -226,38 +212,67 @@ quit; run;
 data temp_series; set temp_series;
 by snapshot;
 daily_confirmed=confirmed-lag(confirmed);
+length day_type $30;
+if trim(left(put(snapshot,downame.))) in ('Saturday' 'Sunday') then day_type='Weekends';
+else day_type='Weekdays';
 length my_html $300;
 my_html='title='||quote(
  put(daily_confirmed,comma10.0)||' new confirmed cases on '||trim(left(put(snapshot,nldate20.)))
  );
 run;
 
-symbol1 value=circle height=8pt cv=gray00 interpol=needle ci=Affa500aa width=2;
+proc expand data=temp_series out=temp_series;
+label avg_7='7-day moving average (centered)';
+convert daily_confirmed=avg_7 / method=none transformout=(cmovave 7 trim 3);
+run;
+
+data anno_avg; set temp_series (where=(snapshot>='01mar2020'd));
+xsys='2'; ysys='2'; hsys='3'; when='a';
+x=snapshot; y=avg_7;
+if _n_=1 then function='move';
+else function='draw';
+color='dodgerblue'; size=.4;
+run;
+
+symbol1 value=circle height=5pt cv=gray88 interpol=needle ci=cxFFC469 width=2;
+symbol2 value=circle height=5pt cv=gray88 interpol=needle ci=graybb width=2;
 
 axis1 label=none minor=none offset=(1,0);
 axis2 label=none;
+
+legend1 label=none repeat=2;
 
 title1 ls=1.5 c=gray33 h=20pt font="albany amt" "Confirmed New Coronavirus Cases in &statecode, each day";
 title2 ls=1.0 link="&srclink" "Data source: Johns Hopkins CSSE (&freshness snapshot)";
 
 goptions noborder;
-proc gplot data=temp_series (where=(snapshot>='01mar2020'd));
+goptions xpixels=900;
+proc gplot data=temp_series (where=(snapshot>='01mar2020'd)) anno=anno_avg;
 format daily_confirmed comma10.0;
-plot daily_confirmed*snapshot=1 /
+plot daily_confirmed*snapshot=day_type /
  vaxis=axis1 autovref cvref=graydd 
- haxis=axis2
+ haxis=axis2 legend=legend1
  html=my_html
  name="&name._plot_&statecode"
  des='';
 run;
 
-/*
-length my_html $300;
-my_html='title='||quote(
- trim(left(put(confirmed,comma10.0)))||' confirmed cases in '||'0d'x||
- trim(left(combined_key))
- );
-*/
+
+title1 ls=1.5 c=gray33 h=20pt font="albany amt" "&stotal Confirmed Coronavirus Cases in &statecode";
+title2 ls=1.0 link="&srclink" "Data source: Johns Hopkins CSSE (&freshness snapshot)";
+
+goptions border;
+goptions xpixels=800;
+proc gmap map=my_map data=temp_latest anno=anno_bubbles;
+id state county;
+choro confirmed / levels=1 nolegend
+ cdefault=cxF7FFF7
+ coutline=graybb
+ html=my_html
+ name="&name._map_&statecode"
+ des='';
+run;
+
 
 title1 c=gray33 h=20pt font="albany amt" "&stotal Confirmed Coronavirus (COVID-19) Cases in &statecode Counties";
 title2 link="&srclink" "Data source: Johns Hopkins CSSE (&freshness snapshot)";
@@ -276,7 +291,6 @@ var combined_key confirmed;
 sum confirmed;
 run;
 
-
 %mend do_map;
 
 
@@ -288,8 +302,8 @@ quit; run;
 
 data _null_; set loop 
 /*
- (where=(statecode in ('CA')))
  (where=(statecode in ('NC')))
+ (where=(statecode in ('CA')))
  (where=(statecode in ('NY' 'WI' 'FL' 'NC')))
  (where=(statecode in ('FL' 'NC')))
 */
