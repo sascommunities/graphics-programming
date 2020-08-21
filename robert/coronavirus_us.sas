@@ -16,10 +16,10 @@ https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_d
 %let srclink=https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv;
 
 /* local copy works much faster, for the 'proc import' */
-/*
 filename confdata url "&srclink";
-*/
+/*
 filename confdata "time_series_covid19_confirmed_US.csv";
+*/
 
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
@@ -58,6 +58,7 @@ group by statecode;
 
 select sum(confirmed) format=comma10.0 into :total separated by ' ' from latest;
 select unique(snapshot) format=nldate20. into :freshness separated by ' ' from latest where snapshot^=.;
+select unique(snapshot-3) format=date9. into :max_3 separated by ' ' from latest where snapshot^=.;
 
 quit; run;
 
@@ -226,7 +227,8 @@ label avg_7='7-day moving average (centered)';
 convert daily_confirmed=avg_7 / method=none transformout=(cmovave 7 trim 3);
 run;
 
-data anno_avg; set temp_series (where=(snapshot>='01mar2020'd));
+/* hmm ... for some reason the 'trim 3' didn't chop off the last 3 moving avg obsns, and they look wrong/high */
+data anno_avg; set temp_series (where=(snapshot>="01mar2020"d and snapshot<="&max_3"d));
 xsys='2'; ysys='2'; hsys='3'; when='a';
 x=snapshot; y=avg_7;
 if _n_=1 then function='move';
@@ -238,7 +240,7 @@ symbol1 value=circle height=5pt cv=gray88 interpol=needle ci=cxFFC469 width=2;
 symbol2 value=circle height=5pt cv=gray88 interpol=needle ci=graybb width=2;
 
 axis1 label=none minor=none offset=(1,0);
-axis2 label=none;
+axis2 label=none minor=none;
 
 legend1 label=none repeat=2;
 

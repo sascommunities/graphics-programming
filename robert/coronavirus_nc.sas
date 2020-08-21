@@ -23,7 +23,6 @@ filename confdata url "https://static.usafacts.org/public/data/covid-19/covid_co
 /*
 filename confdata "covid_confirmed_usafacts.csv";
 */
-filename confdata url "https://static.usafacts.org/public/data/covid-19/covid_confirmed_usafacts.csv";
 proc import datafile=confdata
  out=confirmed_data dbms=csv replace;
 getnames=yes;
@@ -339,7 +338,7 @@ axis2 value=(c=gray33 h=11pt) label=none order=("&mindate"d to "&maxdate"d by &b
 symbol1 interpol=sm50 line=33 height=8pt width=2 color=red value=square;
 
 ods html anchor='graph';
-goptions xpixels=800 ypixels=550 noborder;
+goptions xpixels=900 ypixels=550 noborder;
 /*
 proc gplot data=summarized_series;
 format confirmed comma12.0;
@@ -352,16 +351,65 @@ plot confirmed*date=1 / nolegend
 run;
 */
 
+data summarized_series; set summarized_series;
+length day_type $30;
+if trim(left(put(date,downame.))) in ('Saturday' 'Sunday') then day_type='Weekends';
+else day_type='Weekdays';
+run;
+
 /* hard-coding the axis range, so it won't show negative/below-zero ticks */
-axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily New Cases') order=(0 to 1200 by 100) minor=none offset=(1,0);
-symbol2 interpol=needle height=10pt width=3 color=Affa500aa value=circle cv=gray00 mode=include;
+axis3 value=(c=gray33 h=11pt) label=(angle=90 'Daily New Cases') /*order=(0 to 1200 by 100)*/ minor=none offset=(1,0);
+
+goptions reset=symbol;
+symbol1 value=circle height=5pt cv=gray88 interpol=needle ci=cxFFC469 width=2;
+symbol2 value=circle height=5pt cv=gray88 interpol=needle ci=graybb width=2;
 
 ods html anchor='daily';
-goptions xpixels=800 ypixels=550 noborder;
+goptions xpixels=900 ypixels=550 noborder;
 proc gplot data=summarized_series;
 format todays_confirmed comma12.0;
 format date nldate20.;
-plot todays_confirmed*date=2 / nolegend
+plot todays_confirmed*date=day_type / nolegend
+ vaxis=axis3 haxis=axis2
+ autovref cvref=graydd
+ html=my_html
+ des='' name="&name._daily";
+run;
+
+proc sql;
+create table county_data as
+select unique state, county_name, date, sum(confirmed) as confirmed
+from state_confirmed
+group by state, county_name, date
+order by state, county_name, date;
+quit; run;
+
+data county_data; set county_data;
+by county_name;
+previous_day=lag(confirmed);
+if first.county_name then todays_confirmed=.;
+else todays_confirmed=confirmed-previous_day;
+length my_html $300;
+my_html='title='||quote(
+ put(date,weekdate30.)||'0d'x||
+ 'New cases on this day: '||trim(left(put(todays_confirmed,comma8.0)))||'0d'x||
+ 'Total cumulative cases: '||trim(left(put(confirmed,comma8.0)))
+ );
+run;
+
+data county_data; set county_data;
+length day_type $30;
+if trim(left(put(date,downame.))) in ('Saturday' 'Sunday') then day_type='Weekends';
+else day_type='Weekdays';
+run;
+
+options nobyline;
+
+title1 ls=1.5 h=18pt c=gray33 "Daily Confirmed Coronavirus (COVID-19) cases in " c=blue "#byval(county_name)";
+
+proc gplot data=county_data (where=(county_name in ('Wake County' 'Mecklenburg County')));
+by county_name;
+plot todays_confirmed*date=day_type / nolegend
  vaxis=axis3 haxis=axis2
  autovref cvref=graydd
  html=my_html
@@ -373,6 +421,7 @@ by descending confirmed county_name;
 run;
 
 ods html anchor='table';
+title1 ls=1.5 h=18pt c=gray33 "&total confirmed Coronavirus (COVID-19) cases in " c=blue "&stname";
 proc print data=latest_data label
  style(data)={font_size=11pt}
  style(header)={font_size=11pt}
