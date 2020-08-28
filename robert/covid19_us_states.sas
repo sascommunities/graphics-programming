@@ -32,6 +32,10 @@ data _null_;
 run;
 %mend getdata;
 
+/* 
+In our R&D development environment...
+I have to run this with non-sdssas. I have to run the graph part with sdssas. 
+*/
 /*
 %getdata(time_series_covid19_confirmed_US.csv);
 */
@@ -190,13 +194,6 @@ ods graphics /
  imagemap tipmax=25000
  imagefmt=png imagename="&name._map"
  width=240px height=160px noborder;
-/*
- width=210px height=140px noborder;
- width=240px height=160px noborder;
- width=270px height=180px noborder;
- width=300px height=200px noborder;
- width=800px height=600px noborder;
-*/
 
 data my_map; set mapsgfk.us;
 statename=fipnamel(state);
@@ -207,21 +204,16 @@ data my_map_data; set current_highest;
 if rank=. then rank=99;
 run;
 
-proc sgmap mapdata=my_map maprespdata=my_map_data noautolegend /*noopaque*/;
-/* you *must* run this with SAS 9.4m6a or higher, for the styleattrs colors to work this way! */
-styleattrs datacolors=(red orange yellow lime dodgerblue purple violet gray88);
-choromap rank / mapid=statename discrete lineattrs=(thickness=1 color=gray33)
 /*
 Annotated images don't support html mouse-over text for the states (like the 
 old SAS/Graph Proc Greplay did), so don't bother using the tip=.
  tip=(statename_color)
+You *must* run this with SAS 9.4m6a or higher, for the styleattrs colors to work this way! 
 */
- ;
+proc sgmap mapdata=my_map maprespdata=my_map_data noautolegend /*noopaque*/;
+styleattrs datacolors=(red orange yellow lime dodgerblue purple violet gray88);
+choromap rank / mapid=statename discrete lineattrs=(thickness=1 color=gray33);
 run;
-
-/*
-proc print data=my_map_data; run;
-*/
 
 quit;
 ODS HTML CLOSE;
@@ -234,7 +226,7 @@ image='covid19_us_states_map.png';
 /*layer='back'; ... bummer - this puts it behind the black background */
 drawspace='datapercent';
 anchor='bottomleft';
-x1=52;
+x1=27;
 y1=60;
 imagescale='fit';
 heightunit='pixel';
@@ -265,7 +257,7 @@ title1 h=12pt "United States Daily Reported COVID-19 Cases per Million Persons, 
 title2 h=12pt ls=0.7 "Current 7 Highest States (based on &maxdate data snapshot) Plotted in Color";
 title3 h=4pt " ";
 
-%let axismax=600;
+%let axismax=700;
 
 /* first, plot all the states, as gray lines */
 proc sgplot data=reported_data noautolegend pad=(left=3pct right=5pct bottom=12pct) sganno=anno_all;;
@@ -279,14 +271,25 @@ series y=avg x=date / group=statename_color nomissinggroup name='max'
 yaxis  labelattrs=(size=11.5pt weight=normal) offsetmin=0 offsetmax=.05 values=(0 to &axismax by 100);
 y2axis offsetmin=0 offsetmax=.05 values=(0 to &axismax by 100) display=(nolabel);
 xaxis display=(nolabel) 
- values=("01mar2020"d to "01jul2020"d by month)
+/*
+ values=("01mar2020"d to "01aug2020"d by month) offsetmax=.09
+*/
+ values=("01mar2020"d to "01sep2020"d by month) offsetmax=0
+ offsetmin=0 
  valueattrs=(size=9pt)
- offsetmin=0 offsetmax=.05;
+ ;
 keylegend 'max' / title='' linelength=15px 
  position=topleft location=inside outerpad=(left=10pt top=11pt)
  valueattrs=(size=9pt weight=normal) 
  noopaque noborder across=1;
 run;
+
+/* 
+Delete the map now that you're done with it, so you don't acidentally use it later 
+(if the map fails to run, you don't want the graph to use the map from the previous run!)
+Since I have to run it in 9.4m6a sdssas on unix, I use the unix rm command.
+*/
+x 'rm covid19_us_states_map.png';
 
 quit;
 ODS HTML CLOSE;
