@@ -150,14 +150,14 @@ run;
 data reported_data; set reported_data;
 format range rng_fmt.;
 range=.;
-if cases_this_day_per_million<50 then range=1;
-else if cases_this_day_per_million<100 then range=2;
-else if cases_this_day_per_million<150 then range=3;
-else if cases_this_day_per_million<200 then range=4;
-else if cases_this_day_per_million<250 then range=5;
-else if cases_this_day_per_million<300 then range=6;
-else if cases_this_day_per_million<350 then range=7;
-else if cases_this_day_per_million>=350 then range=8;
+if avg<50 then range=1;
+else if avg<100 then range=2;
+else if avg<150 then range=3;
+else if avg<200 then range=4;
+else if avg<250 then range=5;
+else if avg<300 then range=6;
+else if avg<350 then range=7;
+else if avg>=350 then range=8;
 length my_html $300;
 my_html='title='||quote(trim(left(statename)));
 run;
@@ -187,9 +187,10 @@ footnote1
 
 %let colordt=dodgerblue;
 
+/* do the big date label as separate pieces via 'note', so won't visually jump around in the animation */
+
 proc gmap map=mapsgfk.us data=reported_data (where=(date>="10mar2020"d));
 by date year2 month2 day2;
-/* do the big date label this way, so won't visually jump around in the animation */
 note move=(37.5,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(month2)";
 note move=(47,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(day2),";
 note move=(54,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(year2)";
@@ -203,7 +204,6 @@ run;
 /* repeat the last frame a few times, for a simulated gif animation 'pause' */
 proc gmap map=mapsgfk.us data=reported_data (where=(date="&maxdate"d));
 by date year2 month2 day2;
-/* do the big date label this way, so won't visually jump around in the animation */
 note move=(37.5,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(month2)";
 note move=(47,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(day2),";
 note move=(54,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(year2)";
@@ -229,7 +229,9 @@ run;
 
 
 /*
-proc print data=reported_data (obs=10);
+proc print data=reported_data (where=(statename='Nebraska'));
+format range comma8.0;
+var statename date cases_this_day population_mil cases_this_day_per_million avg range;
 run;
 */
 
