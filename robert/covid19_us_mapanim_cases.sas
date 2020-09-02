@@ -18,8 +18,8 @@ data _null_;
 run;
 %mend getdata;
 
-/*
 %getdata(time_series_covid19_confirmed_US.csv);
+/*
 */
 
 filename confcsv "\\sashq\root\u\realliso\public_html\ods10\time_series_covid19_confirmed_US.csv";
@@ -109,7 +109,7 @@ select max(date) format=date9. into :maxdate separated by ' ' from reported_data
 quit; run;
 
 /* this is the 'secret sauce' that creates the gif animation */
-options dev=sasprtc printerpath=gif animduration=.6 animloop=0 
+options dev=sasprtc printerpath=gif animduration=.4 animloop=0 
  animoverlay=no animate=start center nobyline;
 
 ODS LISTING CLOSE;
@@ -120,7 +120,7 @@ ODS HTML path=odsout body="&name..htm"
 goptions gunit=pct border device=gif
  ctitle=gray33 ctext=gray33 
  ftitle='albany amt' ftext='albany amt'
- htitle=3.7 htext=2.2;
+ htitle=3.7 htext=2.3;
 
 /* create some extra variables I want to be able to access using #byval */
 data reported_data; set reported_data;
@@ -162,10 +162,10 @@ length my_html $300;
 my_html='title='||quote(trim(left(statename)));
 run;
 
-legend1 label=(position=top h=2.0 j=c 'Cases' j=c 'per million')
+legend1 label=(position=top h=2.0 j=c 'New cases' j=c 'per million')
  value=(h=2.0 justify=center)
  position=(bottom right) mode=share across=1 order=descending
- shape=bar(.15in,.15in) offset=(-2,8);
+ shape=bar(.15in,.15in) offset=(0,8);
 
 
 pattern1 v=s c=cx1a9850;
