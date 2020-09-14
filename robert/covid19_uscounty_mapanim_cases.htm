@@ -1,0 +1,2012 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>US Covid-19 animation map</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+</div>
+<div class="branch">
+</div>
+<div class="branch">
+</div>
+<map name="covid19_uscounty_map">
+<area shape="POLY" title="Wyoming" coords="213,243,226,246,239,247,254,249,262,250,268,251,275,252,277,252,289,253,294,254,306,255,306,248,307,245,307,242,307,237,308,226,309,219,310,211,310,210,310,204,311,199,311,198,311,191,312,184,299,183,299,182,287,181,284,181,263,178,259,178,254,177,239,175,237,175,224,173,223,179,222,182,221,191,220,199,219,203,218,208,217,217,215,226,214,233,213,239">
+<area shape="POLY" title="Wisconsin" coords="478,152,478,151">
+<area shape="POLY" title="Wisconsin" coords="476,151,476,152">
+<area shape="POLY" title="Wisconsin" coords="482,151,483,150,483,149,482,150">
+<area shape="POLY" title="Wisconsin" coords="528,177,529,177,529,176,528,175">
+<area shape="POLY" title="Wisconsin" coords="478,155,480,153,481,154,480,154,480,155,479,155">
+<area shape="POLY" title="Wisconsin" coords="523,185,524,183,524,182,525,180,526,180,526,178,527,178,528,178,528,179,527,179,527,180,527,181,527,182,526,182,526,183,526,184,525,185,526,185,524,187,523,186">
+<area shape="POLY" title="Wisconsin" coords="453,176,456,171,457,170,458,170,459,169,460,169,460,168,460,158,461,158,461,157,462,156,464,157,466,157,471,155,473,153,473,154,474,154,476,152,477,152,479,153,477,155,478,156,477,158,479,157,479,156,478,156,482,158,486,159,487,162,501,166,504,167,506,167,507,166,509,167,511,167,513,168,513,169,512,170,516,171,517,172,517,174,517,175,516,178,518,178,519,177,518,181,521,182,520,184,517,185,516,189,516,192,517,192,518,191,519,190,521,186,521,187,523,185,524,187,523,191,522,195,523,198,521,200,520,203,521,207,519,215,520,219,522,223,522,228,484,231,483,228,479,227,478,224,477,224,477,220,478,218,476,216,475,207,473,205,467,201,466,199,462,197,461,195,458,195,455,192,455,188,454,186,455,185,455,182,456,180,455,177,453,177">
+<area shape="POLY" title="West Virginia" coords="600,298,600,296,600,293,603,292,604,290,605,289,604,286,606,281,608,282,608,284,609,282,610,282,609,280,610,279,609,278,610,276,612,276,612,275,613,273,614,274,616,273,620,268,620,266,620,263,621,263,621,260,622,255,621,253,620,251,621,250,622,249,625,266,639,263,640,273,642,270,644,267,647,267,648,263,649,264,650,265,653,265,653,264,653,263,654,263,653,263,655,262,656,261,659,262,661,261,661,262,661,263,662,263,661,263,662,263,662,264,663,264,664,266,663,270,655,265,655,271,653,275,651,277,650,279,648,278,645,286,643,286,641,284,640,284,639,290,637,292,637,295,633,301,635,302,633,304,634,304,632,306,631,305,628,308,626,307,627,309,625,310,622,311,620,310,617,313,616,313,614,312,613,312,610,309,611,308,608,308,608,306,607,306,606,306,605,304,603,302,603,301">
+<area shape="POLY" title="Washington" coords="96,80,97,80,97,81">
+<area shape="POLY" title="Washington" coords="71,112,72,112,72,111,71,111,72,112">
+<area shape="POLY" title="Washington" coords="94,89,94,90,95,88,94,88">
+<area shape="POLY" title="Washington" coords="77,118,77,119">
+<area shape="POLY" title="Washington" coords="98,77,98,79,99,79">
+<area shape="POLY" title="Washington" coords="88,102,88,101,89,101,89,102,89,103,88,103">
+<area shape="POLY" title="Washington" coords="94,97,95,97,95,96,95,95,94,96">
+<area shape="POLY" title="Washington" coords="91,79,91,80,93,81,93,80,94,80,93,80,93,79,92,78,91,78">
+<area shape="POLY" title="Washington" coords="93,78,95,77,97,78,96,79,95,77,95,79,94,79,94,78,94,79">
+<area shape="POLY" title="Washington" coords="95,85,96,84,97,83,98,83,97,84,98,85,97,86,97,85,96,86,96,87,96,89,97,89,97,90,98,90,98,92,97,92,97,91,96,91,96,90,96,89,96,87,95,87">
+<area shape="POLY" title="Washington" coords="69,114,71,108,71,113,73,108,74,108,72,106,72,103,73,104,75,103,73,101,71,103,73,88,71,83,73,76,80,83,87,86,90,85,92,89,93,88,94,87,95,92,91,95,91,92,86,99,90,99,87,99,86,98,95,93,95,91,96,95,94,95,93,94,93,97,92,98,94,97,94,99,92,103,92,101,90,104,90,99,85,104,87,103,86,104,87,103,87,105,88,104,89,103,90,105,93,102,94,103,95,102,96,96,100,92,99,87,98,87,98,90,97,88,99,85,97,82,98,81,99,83,99,80,100,80,100,78,98,78,98,76,98,73,165,90,154,135,155,142,129,136,127,136,122,135,111,136,109,135,101,136,99,133,94,132,87,133,82,129,83,124,80,119,78,119,74,115,72,115,70,114,93,101,95,99,94,101,95,101,94,102,94,101,93,101">
+<area shape="POLY" title="Virginia" coords="694,297,695,296,695,298,695,300,696,300,696,296,696,295,697,295,696,292,697,292,696,293,697,293,698,293,697,293,697,292,698,292,698,293,698,291,698,292,698,291,697,290,698,289,698,290,698,291,698,289,698,288,698,289,699,287,698,287,699,287,700,285,699,285,700,284,699,284,700,283,697,284,697,285,696,285,697,285,697,286,697,287,697,288,696,288,696,287,695,288,696,289,696,288,695,289,696,289,695,289,695,290,696,290,695,290,695,291,696,291,695,291,695,292,694,292,695,292,695,294,695,293,695,294,695,295,695,294,695,295,695,296">
+<area shape="POLY" title="Virginia" coords="589,328,640,321,668,316,695,311,696,308,697,310,697,307,699,310,695,304,695,305,691,304,693,308,691,305,688,308,689,304,686,303,685,301,685,302,680,300,676,300,681,300,682,301,682,299,683,300,686,301,686,302,690,304,691,301,689,301,689,300,685,299,682,295,688,299,689,298,688,299,688,296,689,297,689,296,690,298,691,296,690,295,686,294,689,293,685,293,679,287,685,290,686,292,685,290,687,290,687,292,688,292,689,289,686,288,689,289,689,287,684,286,683,284,682,285,681,284,682,286,681,284,677,284,676,281,672,282,675,273,667,269,668,267,666,266,664,266,663,270,655,265,655,271,650,279,648,278,645,286,640,284,639,290,633,301,635,302,634,304,628,308,626,307,627,309,622,311,620,310,616,313,612,311,611,308,601,316,596,324,591,326,675,312">
+<area shape="POLY" title="Vermont" coords="699,157,699,158,700,157,700,156,699,156">
+<area shape="POLY" title="Vermont" coords="699,155,700,157,700,159,700,158,701,157,700,156,700,154,699,154">
+<area shape="POLY" title="Vermont" coords="700,160,700,161,701,161,701,162,701,161,702,162,703,162,702,162,701,162,702,163,703,163,703,164,703,165,702,164,702,167,703,167,702,169,702,171,702,172,702,173,703,174,703,175,704,176,703,179,704,179,704,180,704,179,705,178,705,179,706,179,709,193,709,194,720,191,719,191,718,190,718,188,719,187,718,186,718,185,718,184,718,181,717,180,717,176,717,174,718,172,718,170,719,169,718,168,719,167,718,163,718,162,720,161,721,160,722,160,722,159,723,158,723,157,722,157,723,156,722,155,721,154,722,153,722,152,722,151,721,149,722,149,702,154,702,155,701,155,701,154,701,155,702,158,702,157,702,158,702,159,702,161,701,161,701,160,701,161,701,159,701,158,700,159">
+<area shape="POLY" title="Utah" coords="195,237,196,238,196,237">
+<area shape="POLY" title="Utah" coords="196,242,197,241,196,240,197,240,198,242,197,243,197,244,197,243">
+<area shape="POLY" title="Utah" coords="159,307,175,310,180,311,196,313,205,315,216,317,229,319,232,298,233,292,235,276,237,261,238,254,239,247,226,246,213,243,215,226,209,225,201,223,190,221,176,219,173,236,169,256,163,287,161,296,187,234,188,234,188,232,188,231,187,230,188,229,188,228,188,229,188,228,190,228,191,227,192,228,192,229,191,229,192,229,191,230,192,232,193,232,194,233,194,234,194,236,195,237,196,236,196,233,196,232,197,232,196,233,197,233,197,234,198,234,200,234,200,235,199,236,199,234,197,234,196,236,200,241,201,242,200,243,198,243,198,244,197,243,197,245,196,246,194,246,194,245,193,244,193,241,192,242,192,243,191,244,191,243,191,241,192,241,193,240,192,240,192,239,191,240,192,240,192,241,191,241,190,240,190,236,189,235,188,234,188,235,187,234">
+<area shape="POLY" title="Texas" coords="428,473,433,468,433,469,431,469,432,469,430,470,428,472">
+<area shape="POLY" title="Texas" coords="400,491,401,490,407,487,407,486,407,485,407,486,404,487,403,488,402,489,400,489,401,490">
+<area shape="POLY" title="Texas" coords="391,507,392,506,392,510,393,517,394,520,394,521,394,523,395,527,394,526,394,522,393,520,392,517,392,516,391,514,392,514,392,513,391,513">
+<area shape="POLY" title="Texas" coords="391,506,392,505,392,504,394,500,394,499,394,498,394,499,395,497,397,495,397,494,398,493,398,492,399,491,400,490,400,491,397,495,394,500,392,505,392,506">
+<area shape="POLY" title="Texas" coords="253,414,253,412,257,412,307,417,313,336,357,339,355,374,359,377,364,376,368,381,377,383,382,382,386,388,389,385,393,388,396,387,397,390,399,386,402,388,405,387,408,391,411,388,420,386,424,387,425,386,438,393,442,392,443,421,452,438,448,447,449,455,445,460,447,463,444,462,433,468,438,464,432,465,434,462,432,461,429,463,431,469,426,471,425,474,427,473,424,476,408,485,414,481,410,482,411,479,406,482,406,480,403,480,407,484,403,487,401,484,401,488,399,490,399,488,398,490,395,489,396,492,397,490,395,495,389,495,392,495,392,499,394,497,391,504,389,505,389,500,388,505,385,502,386,505,391,505,388,513,393,528,395,527,395,529,390,530,386,527,378,526,364,520,358,509,357,499,346,486,340,471,330,458,316,456,314,458,310,458,306,467,299,471,281,457,277,440">
+<area shape="POLY" title="Tennessee" coords="496,365,547,361,583,357,583,353,584,352,586,353,587,351,587,349,589,347,590,346,594,346,596,344,597,344,597,343,599,341,601,341,602,339,601,338,602,338,603,338,603,337,605,335,606,335,606,337,609,334,610,333,611,333,612,333,613,333,615,330,616,328,618,328,617,327,618,323,610,325,589,328,581,329,559,331,550,331,548,332,548,331,530,333,527,333,527,336,509,337,508,337,507,338,507,337,506,337,506,340,505,340,505,341,506,342,504,342,506,344,504,345,504,346,505,348,505,349,504,348,503,349,504,349,504,350,503,350,503,351,501,351,501,352,501,353,502,353,501,354,502,355,501,355,500,355,500,357,500,358,499,356,498,358,499,358,499,357,499,358,499,359,498,360,499,361,500,362,499,363,498,363,498,364,497,364">
+<area shape="POLY" title="South Dakota" coords="309,219,316,220,325,220,334,221,346,222,359,222,368,223,371,223,381,223,382,224,384,225,386,226,387,228,389,227,389,226,392,226,394,226,397,226,398,226,398,227,399,227,399,228,401,228,401,229,402,228,403,229,403,230,405,230,405,231,405,232,406,232,406,233,407,232,407,233,408,233,407,232,408,232,407,232,407,231,407,230,406,229,406,228,406,227,407,227,407,225,407,224,407,223,408,222,408,221,408,220,407,220,407,219,406,219,406,218,407,218,407,217,406,216,406,215,408,215,408,196,408,183,408,182,407,181,405,181,403,178,403,177,406,175,407,173,407,171,399,171,389,171,380,171,367,170,365,170,358,170,339,169,326,168,313,167,312,180,312,184,311,198,310,204,310,211">
+<area shape="POLY" title="South Carolina" coords="642,402,642,401,644,399,642,398,642,399,642,400">
+<area shape="POLY" title="South Carolina" coords="641,395,642,394,644,394,644,396,644,395,645,395,646,395,645,396,646,396,645,397,644,397,645,397,644,398,644,397,644,396,643,397,643,396,643,395,643,396,643,398,642,397">
+<area shape="POLY" title="South Carolina" coords="598,360,599,357,601,356,601,355,606,353,607,352,610,351,611,350,630,348,630,350,632,348,635,351,635,353,651,351,670,365,667,367,664,371,663,376,661,376,663,373,661,375,661,374,661,377,663,378,662,380,662,379,661,379,662,379,660,381,660,382,658,382,655,387,653,387,653,388,652,387,654,388,653,389,654,389,650,391,652,390,653,391,650,392,650,391,649,392,649,391,650,389,649,390,648,390,648,391,650,392,649,393,647,394,645,394,644,393,643,393,644,394,641,393,641,394,640,394,641,398,640,397,640,398,640,397,642,398,642,400,641,399,641,400,642,400,641,401,641,403,638,402,635,396,632,394,629,387,625,385,624,384,623,382,622,382,622,380,618,378,615,375,611,372,605,364,603,364,598,361">
+<area shape="POLY" title="Rhode Island" coords="738,204,739,205,739,204">
+<area shape="POLY" title="Rhode Island" coords="739,209,740,209">
+<area shape="POLY" title="Rhode Island" coords="739,206,739,207">
+<area shape="POLY" title="Rhode Island" coords="737,215,737,216,738,216,738,215,737,214,738,215">
+<area shape="POLY" title="Rhode Island" coords="739,208,739,210,739,209">
+<area shape="POLY" title="Rhode Island" coords="739,204,740,205,739,205,740,206,739,206">
+<area shape="POLY" title="Rhode Island" coords="740,208,740,209,741,209,740,207,740,206,740,207">
+<area shape="POLY" title="Rhode Island" coords="740,205,741,206,742,208,741,209,741,207">
+<area shape="POLY" title="Rhode Island" coords="731,202,735,201,736,200,737,201,737,202,738,202,738,204,739,205,738,205,737,205,738,205,738,206,737,206,737,207,738,206,738,207,738,208,737,208,738,209,738,210,738,212,738,211,738,212,737,211,737,212,738,212,735,213,734,213,734,214,734,213,733,214,734,213,733,212,734,212,733,209,733,208,732,207">
+<area shape="POLY" title="Pennsylvania" coords="618,226,623,223,623,222,623,221,623,222,623,223,627,219,628,224,630,223,637,222,639,222,647,220,654,219,664,217,665,217,670,216,675,215,685,213,687,214,687,215,688,214,689,215,690,215,689,216,690,216,690,217,691,218,691,219,692,221,693,221,695,221,696,221,696,222,695,223,695,224,695,226,694,228,694,227,693,228,692,230,694,232,693,232,693,233,692,234,692,235,693,235,692,236,693,237,694,237,695,237,695,240,697,240,697,241,698,241,699,242,700,242,701,243,699,244,699,245,698,246,697,247,696,248,696,249,695,250,694,250,693,251,692,251,690,251,689,252,688,254,684,255,682,255,675,257,672,257,669,258,666,258,657,260,653,261,648,262,639,263,635,264,633,264,625,266,624,261,620,234,619,228">
+<area shape="POLY" title="Oregon" coords="44,184,45,187,50,188,88,199,108,204,138,211,145,179,146,176,146,175,148,174,148,173,147,173,147,172,146,172,146,171,145,171,144,169,145,167,146,166,148,163,150,163,151,160,152,159,154,157,155,154,159,149,158,147,157,146,156,145,155,142,129,136,127,136,123,136,122,135,120,136,116,136,114,136,113,137,111,136,110,136,109,135,104,136,103,135,102,136,101,136,101,134,99,133,98,133,97,132,95,132,94,132,92,132,88,133,87,133,82,129,83,124,82,122,80,119,77,119,76,116,74,116,74,117,71,116,71,117,70,115,70,118,70,120,69,120,69,121,68,123,68,125,66,128,66,130,65,130,66,131,65,133,62,140,61,142,56,155,54,159,51,162,50,163,50,164,47,169,45,171,46,171,46,173,46,175,44,180,45,183">
+<area shape="POLY" title="Oklahoma" coords="314,337,357,339,355,374,356,374,359,377,361,378,361,377,364,378,364,376,367,378,367,381,368,381,369,381,373,383,375,382,377,383,378,383,379,382,382,383,382,382,383,385,385,385,384,387,386,387,389,385,390,386,390,387,392,387,393,388,394,387,395,388,395,387,396,387,396,389,397,390,397,389,398,388,399,388,399,387,399,386,400,386,401,388,402,387,402,388,403,388,404,387,405,387,404,388,406,388,406,389,407,389,408,391,409,389,411,389,411,388,413,388,415,387,416,388,417,388,417,387,418,387,420,386,421,387,420,387,424,387,425,386,427,386,427,387,428,388,429,388,430,390,431,390,431,389,431,390,432,389,432,390,434,390,434,391,435,391,435,392,436,392,436,360,433,340,433,331,380,331,335,329,314,328">
+<area shape="POLY" title="Ohio" coords="562,239,580,236,581,236,582,236,583,237,586,238,585,238,586,238,587,239,585,239,588,238,589,237,590,238,589,238,591,238,591,239,590,238,586,240,587,240,588,240,589,239,590,240,591,239,592,240,591,239,593,240,597,239,597,238,600,237,602,237,603,237,609,231,618,226,622,249,621,250,620,251,621,253,621,254,622,255,621,260,621,263,620,263,621,264,620,266,620,268,619,269,616,273,614,274,613,273,612,275,612,276,610,276,609,278,610,279,609,280,610,281,610,282,609,282,609,283,608,284,608,282,606,281,605,284,605,285,604,286,605,289,604,290,603,292,601,293,600,293,599,292,598,291,596,291,596,290,595,288,593,288,592,290,590,291,589,290,586,290,585,290,585,291,584,291,583,291,583,290,581,289,577,289,575,285,573,285,573,284,570,285,569,284,568,285,563,242">
+<area shape="POLY" title="North Dakota" coords="313,167,339,169,365,170,389,171,407,171,407,170,407,169,407,167,406,165,405,163,405,160,404,159,404,157,404,156,405,154,404,154,404,153,404,152,404,151,404,150,404,149,404,148,404,147,403,146,404,146,403,145,404,144,403,143,404,143,403,143,404,142,403,142,403,141,403,140,403,139,402,138,402,137,402,136,401,136,401,134,400,132,400,131,400,130,401,130,400,128,400,127,400,126,400,125,400,124,401,124,400,124,401,124,401,123,400,122,400,121,400,120,399,118,399,117,378,117,364,116,342,115,331,114,318,113,314,161">
+<area shape="POLY" title="North Carolina" coords="679,363,679,362">
+<area shape="POLY" title="North Carolina" coords="680,356,680,355,681,355">
+<area shape="POLY" title="North Carolina" coords="695,345,697,346,697,345,696,345">
+<area shape="POLY" title="North Carolina" coords="679,359,680,357,679,357,680,357,679,358">
+<area shape="POLY" title="North Carolina" coords="697,310,698,310,697,311,698,311,699,311,698,310">
+<area shape="POLY" title="North Carolina" coords="699,310,700,312,700,314,701,315">
+<area shape="POLY" title="North Carolina" coords="696,346,697,346,697,345,699,340,697,343,697,345,697,346">
+<area shape="POLY" title="North Carolina" coords="702,316,707,322,706,322,705,320,705,321,705,320,704,319,703,318">
+<area shape="POLY" title="North Carolina" coords="706,333,709,332,708,325,707,323,707,322,708,326,709,331,708,332,707,332,706,332">
+<area shape="POLY" title="North Carolina" coords="583,353,587,351,589,347,594,346,601,341,602,338,605,335,606,337,609,334,613,333,615,330,618,328,617,324,648,320,697,310,702,318,698,314,700,317,695,315,698,317,694,317,696,319,692,318,695,319,691,321,688,319,688,317,689,324,693,322,696,322,695,321,698,320,698,324,700,326,700,322,702,322,701,320,704,324,699,332,696,332,695,331,695,332,694,332,693,330,695,330,694,329,691,330,693,332,686,331,687,334,688,332,691,333,691,335,692,334,693,334,693,333,695,334,692,337,694,336,691,340,687,338,690,341,695,339,696,341,695,339,696,340,696,337,697,340,699,339,698,338,699,338,697,344,695,342,695,344,694,343,693,344,694,344,688,346,687,345,686,349,683,346,685,350,681,353,679,362,678,357,678,363,673,363,670,365,651,351,635,353,635,351,632,348,630,350,630,348,611,350,601,355,583,357">
+<area shape="POLY" title="New York" coords="705,235,706,235,706,234,706,233,707,233,708,233,707,235,705,236">
+<area shape="POLY" title="New York" coords="708,233,709,230,710,230,710,229,711,229,711,230,711,228,712,229,711,228,712,228,712,227,713,226,713,227,714,226,714,227,714,225,715,226,716,226,715,225,715,226,715,225,716,225,718,225,718,224,719,224,720,224,725,222,728,219,729,218,729,219,729,218,728,218,727,220,728,220,727,221,727,222,727,221,727,222,725,223,728,223,729,220,730,221,730,220,731,221,731,220,732,220,733,218,734,219,734,218,735,218,729,223,729,222,729,223,727,224,728,224,727,224,725,226,724,225,723,226,723,227,722,227,722,228,721,228,720,228,719,228,719,229,718,229,718,230,714,231,713,232,712,232,711,232,709,233,710,233,709,233,710,233,708,234">
+<area shape="POLY" title="New York" coords="627,219,634,212,635,210,637,208,636,205,635,205,635,203,634,203,633,200,640,197,650,196,653,197,655,196,660,195,663,193,664,191,666,189,668,188,668,186,667,183,666,183,667,182,668,183,668,182,669,180,667,181,668,179,667,179,668,179,667,179,666,179,666,180,667,180,666,181,666,179,665,179,668,175,667,176,667,175,668,175,668,174,670,173,671,171,671,170,675,163,679,160,682,159,699,155,699,160,700,165,701,165,702,167,701,169,701,172,704,176,704,179,704,180,704,179,705,178,706,179,709,194,709,206,712,220,713,221,710,224,711,225,711,226,710,228,710,229,709,229,708,231,708,223,706,222,707,221,706,221,708,226,696,222,696,221,693,221,692,221,691,219,690,215,688,214,687,215,687,214,685,213,628,224">
+<area shape="POLY" title="New Mexico" coords="215,419,228,421,229,413,243,415,254,416,253,414,253,413,253,412,257,412,263,413,279,415,280,415,292,416,293,416,297,416,303,417,307,417,307,415,308,408,308,400,309,392,309,389,310,384,310,376,311,368,311,364,311,360,312,352,312,350,313,344,313,336,314,337,314,328,313,327,300,327,284,325,283,325,276,324,272,324,265,323,252,321,251,321,239,320,229,319,227,336,224,355,223,362,221,376,220,386,219,394,218,400">
+<area shape="POLY" title="New Jersey" coords="692,255,693,251,694,250,696,249,696,248,698,246,699,245,699,244,701,243,700,242,697,241,697,240,695,240,695,237,694,237,693,237,692,236,693,235,692,235,692,234,693,233,693,232,694,232,692,230,693,228,695,226,695,223,696,222,708,226,708,231,707,232,707,233,706,233,706,232,706,233,706,236,706,237,707,236,708,236,709,237,709,235,709,236,710,238,711,248,710,243,709,243,710,243,710,244,709,244,710,245,709,245,710,245,710,247,709,248,709,247,709,249,710,249,709,251,708,252,709,253,708,253,707,253,708,254,708,255,707,255,707,256,708,256,707,258,705,260,704,264,704,265,702,265,702,261,700,261,699,261,699,262,698,261,697,260,696,260,694,258,693,258,692,256">
+<area shape="POLY" title="New Hampshire" coords="717,176,717,174,718,172,718,170,719,169,718,169,718,168,719,167,719,166,719,165,718,165,718,164,718,163,718,162,720,161,721,160,722,160,722,159,723,158,723,157,722,157,723,156,722,155,721,154,722,153,722,152,722,151,721,149,722,149,721,149,721,148,722,147,722,146,722,145,721,145,722,145,722,144,723,143,724,144,725,144,725,142,731,160,733,168,735,172,735,174,735,175,736,176,737,177,738,177,738,179,739,179,740,180,740,184,738,184,737,184,737,185,736,186,735,186,736,187,735,187,734,188,727,190,726,190,722,191,720,191,719,191,718,190,718,188,719,187,718,186,718,185,718,184,718,183,718,181,718,180,717,180,717,178">
+<area shape="POLY" title="Nevada" coords="86,254,87,255,90,260,93,264,95,267,102,278,109,288,116,298,130,319,133,324,144,341,144,340,145,339,144,339,145,338,146,338,146,335,145,332,146,330,146,328,146,326,146,325,147,325,146,323,146,322,146,321,147,321,149,320,150,321,151,321,152,321,153,323,152,323,153,324,155,324,155,322,157,321,159,310,159,307,161,296,163,287,165,279,165,277,168,262,169,256,170,252,173,236,176,219,173,218,163,216,138,211,122,207,108,204,107,204,99,202,96,216,89,241,88,246,87,248,87,251,86,252,86,253">
+<area shape="POLY" title="Nebraska" coords="306,255,333,257,331,275,357,276,377,277,401,277,423,277,422,277,422,275,421,274,421,273,420,273,420,272,418,272,419,271,418,270,419,270,418,269,419,268,418,267,418,268,417,268,417,267,417,266,416,265,415,264,416,263,416,262,416,261,415,259,416,258,415,257,416,256,415,256,415,254,415,255,416,254,414,253,415,251,414,251,414,250,413,250,413,249,412,249,413,248,412,247,413,247,412,246,413,245,412,243,412,242,411,242,411,241,411,242,411,241,410,241,410,240,409,239,409,238,410,237,408,235,409,233,408,233,407,233,407,232,406,233,405,231,405,230,403,230,403,229,402,228,401,229,401,228,399,228,399,227,398,227,398,226,397,226,392,226,389,226,389,227,387,228,386,226,382,224,381,223,346,222,309,219,306,248">
+<area shape="POLY" title="Montana" coords="172,110,174,113,174,114,175,115,175,117,174,118,175,119,176,119,174,120,176,121,177,123,179,124,179,125,180,127,181,130,182,131,182,132,182,133,183,134,183,135,184,135,185,137,188,137,188,139,187,139,187,140,186,141,186,143,185,143,185,145,184,145,185,146,184,147,185,148,185,150,185,151,183,150,183,151,183,153,183,154,182,154,182,155,183,155,184,158,185,157,186,156,186,157,188,156,189,154,190,154,190,156,191,156,191,158,192,158,191,160,192,163,193,165,194,167,194,168,193,169,193,170,194,172,196,171,197,172,198,178,199,180,200,180,200,179,201,178,205,180,206,178,207,178,209,179,212,179,213,180,214,179,217,180,217,179,217,177,218,177,219,177,221,179,220,180,222,182,224,173,254,177,284,181,312,184,318,113,281,110,239,104,199,97,176,92,173,106">
+<area shape="POLY" title="Missouri" coords="417,267,441,267,471,265,474,268,474,269,476,269,475,272,475,275,477,281,481,284,482,286,486,289,487,292,487,293,488,295,489,296,490,294,495,296,494,298,494,300,492,305,492,307,495,309,498,312,499,312,498,312,499,313,500,312,502,314,503,315,505,316,505,318,506,321,505,323,506,324,507,327,509,328,508,327,509,327,510,329,511,328,512,329,511,331,511,332,510,333,511,334,510,336,509,335,508,335,507,338,507,336,506,336,505,336,506,340,505,341,506,342,504,342,506,344,504,346,494,347,495,345,498,342,499,340,497,339,497,338,460,340,433,340,433,293,430,292,429,290,429,288,428,288,426,286,428,282,429,282,429,281,428,281,429,281,428,280,428,279,426,280,423,277,422,277,422,275,421,274,421,273,418,272,419,270,418,269,419,268,418,267,418,268,417,268">
+<area shape="POLY" title="Mississippi" coords="480,433,482,432,481,430,482,431,483,430,482,428,483,427,482,426,483,426,484,424,485,424,484,424,484,422,485,423,486,420,488,419,487,418,488,418,489,416,487,417,487,416,488,415,489,416,491,412,489,413,489,411,487,411,487,409,489,410,488,410,488,408,487,409,486,408,488,406,486,405,487,403,487,402,486,403,485,403,486,400,485,399,487,399,487,396,486,397,486,395,487,394,485,394,485,393,484,394,484,391,486,391,484,390,485,389,487,389,485,388,488,387,487,386,487,385,486,384,489,383,488,380,490,381,488,379,489,380,491,377,492,376,492,378,493,375,493,372,493,371,494,372,495,371,493,370,493,369,494,370,495,370,494,367,495,368,497,367,498,366,496,365,527,363,529,365,527,419,531,446,526,447,524,446,522,446,517,448,516,447,515,450,513,450,508,442,510,436,480,438,481,437,481,434">
+<area shape="POLY" title="Minnesota" coords="399,118,401,123,400,125,400,126,400,132,404,142,404,152,405,154,404,159,405,163,406,165,407,169,407,173,403,177,405,181,407,181,408,183,408,215,446,214,476,213,475,211,475,208,473,205,467,201,466,199,462,197,461,195,458,195,455,192,455,188,454,186,456,180,455,177,453,177,453,175,456,171,457,170,458,170,459,169,460,169,460,168,460,158,461,158,462,156,463,157,462,156,471,148,478,140,481,138,486,136,490,134,491,133,492,133,493,132,489,132,488,133,486,131,485,131,480,132,480,131,478,132,476,129,471,132,468,133,468,132,466,132,466,130,463,130,462,128,459,128,459,130,458,130,457,127,456,126,454,127,454,126,455,125,453,125,451,123,447,123,445,124,445,125,441,126,440,124,435,123,435,122,432,123,430,121,428,112,426,111,425,111,424,111,424,117,399,117">
+<area shape="POLY" title="Michigan" coords="531,172,532,172,531,173">
+<area shape="POLY" title="Michigan" coords="583,228,583,229,583,227">
+<area shape="POLY" title="Michigan" coords="540,179,541,180,540,180">
+<area shape="POLY" title="Michigan" coords="529,155,530,155,530,156,530,157">
+<area shape="POLY" title="Michigan" coords="557,165,559,165,560,165,559,166,558,166">
+<area shape="POLY" title="Michigan" coords="544,171,545,171,546,170,546,168,545,168">
+<area shape="POLY" title="Michigan" coords="565,162,566,161,566,162,567,162,568,162,569,162,570,162,570,161,569,161,569,159,567,159,567,160,568,160,567,160,568,160,567,161,566,161,565,161">
+<area shape="POLY" title="Michigan" coords="496,135,497,133,501,131,503,129,506,128,506,129,504,130,504,131,502,132,500,133,499,134,500,134,498,135,497,135,496,134">
+<area shape="POLY" title="Michigan" coords="483,158,488,156,491,153,495,153,499,150,500,150,507,143,509,141,512,140,515,140,515,141,512,142,513,143,509,145,507,150,507,153,508,151,511,149,510,151,514,150,516,151,517,151,520,155,521,155,521,157,524,157,525,156,527,157,529,156,530,158,532,155,536,152,544,151,547,150,550,149,549,150,550,154,553,155,555,154,556,155,557,153,559,153,561,157,560,158,563,159,563,160,565,161,565,162,564,162,562,162,559,163,557,162,557,163,557,162,555,161,555,165,551,163,547,161,545,162,543,164,541,164,540,165,538,165,536,165,535,168,532,170,532,172,530,171,532,167,531,168,530,167,530,169,527,171,527,167,526,170,525,171,520,181,520,182,518,181,519,177,516,178,517,172,516,171,512,170,513,168,507,166,506,167,504,167,501,166,487,162,486,159,484,159,483,159">
+<area shape="POLY" title="Michigan" coords="536,240,562,237,562,239,580,236,580,234,583,230,583,226,584,225,586,224,586,221,587,220,586,219,588,217,589,218,588,219,588,220,590,218,591,212,589,209,586,197,584,194,581,193,580,195,576,197,577,197,576,198,575,198,575,200,575,201,573,203,570,202,569,201,570,197,572,196,572,195,573,195,573,191,574,191,576,189,576,183,575,180,573,179,573,178,573,177,575,177,573,174,573,173,571,172,570,172,566,170,564,170,562,168,560,168,559,168,555,166,554,167,551,167,553,167,551,170,551,172,554,173,550,174,548,176,548,181,547,185,546,185,547,184,547,181,546,185,545,183,546,182,546,181,545,181,546,180,545,179,546,178,546,179,546,177,543,182,542,182,541,183,540,183,540,187,538,187,538,193,536,199,537,203,536,206,541,215,542,222,542,228,538,238">
+<area shape="POLY" title="Massachusetts" coords="755,209,758,209,758,208,756,206,757,207,756,208,757,207,757,208,756,209,756,208">
+<area shape="POLY" title="Massachusetts" coords="746,210,747,210,748,210,751,209,751,208,750,208,750,207,749,207,749,208,749,207,748,207,748,208,747,210">
+<area shape="POLY" title="Massachusetts" coords="709,206,718,204,718,205,719,204,736,200,738,204,740,205,741,204,740,205,741,205,742,208,742,207,743,208,744,207,744,205,745,206,745,205,746,205,746,203,747,204,746,202,747,203,747,202,748,206,749,205,750,205,751,203,751,204,752,203,753,203,753,202,756,201,756,202,756,200,756,202,756,201,756,199,755,199,755,197,752,195,751,196,752,196,752,195,753,195,754,198,754,197,755,197,755,199,751,202,752,201,749,201,748,199,745,198,745,197,746,198,744,195,741,193,742,194,740,195,740,194,739,192,740,191,741,192,740,191,741,190,740,190,743,187,743,188,744,187,743,186,742,187,740,186,740,185,741,186,740,184,740,185,739,185,740,184,737,184,734,188,709,194,709,198,738,194,738,195,738,194">
+<area shape="POLY" title="Maryland" coords="639,263,640,273,644,267,647,267,648,263,650,265,653,265,653,263,656,261,661,261,663,266,668,267,667,269,676,272,673,281,676,279,678,282,677,280,680,283,682,281,681,283,685,284,685,282,687,285,685,281,684,281,680,277,684,280,685,279,681,273,682,270,680,269,682,270,683,268,679,264,681,265,682,261,683,263,683,260,684,262,685,260,684,257,686,258,687,257,686,259,688,256,688,259,686,260,688,261,684,262,685,267,685,265,685,266,687,264,686,268,684,267,684,271,685,268,687,271,687,272,685,270,685,274,685,271,687,274,688,272,688,274,689,275,690,273,689,275,685,275,688,276,687,278,685,277,688,281,687,278,690,281,690,278,691,281,692,278,692,280,693,280,692,282,695,281,693,283,695,283,694,286,700,283,702,274,694,276,688,254,640,263">
+<area shape="POLY" title="Maine" coords="748,162,749,163,749,164,749,163,749,164,749,165,748,164">
+<area shape="POLY" title="Maine" coords="762,150,764,152,764,151,764,152,764,151,763,149,764,150,765,150,765,149,764,148,763,148,763,149,762,149,763,150">
+<area shape="POLY" title="Maine" coords="725,142,735,175,740,180,741,175,743,172,742,170,744,169,743,168,743,166,746,163,746,166,747,163,748,166,749,165,746,161,747,160,748,162,749,161,749,163,749,161,750,164,750,160,752,162,752,158,753,160,754,159,754,160,755,157,754,160,755,160,756,152,755,150,757,148,758,152,758,151,762,152,760,149,761,148,762,149,761,148,762,147,762,149,764,145,764,146,766,147,767,149,768,147,766,146,767,145,768,147,768,145,769,147,768,144,769,144,769,143,769,145,770,143,770,145,771,143,772,144,771,141,773,142,773,141,774,142,773,140,775,141,778,136,777,136,777,137,776,136,775,137,775,135,777,135,774,132,772,131,772,133,769,131,768,125,763,125,756,101,750,98,743,103,741,102,740,100,737,100,732,115,733,120,731,125,733,130,729,138,730,140,728,139,729,143,727,141,726,142">
+<area shape="POLY" title="Louisiana" coords="443,403,486,401,486,403,487,402,486,408,488,408,489,410,487,409,487,411,491,412,489,416,487,416,489,417,485,423,484,422,485,424,482,426,483,427,483,431,481,430,482,432,480,433,480,438,510,436,508,442,512,451,503,447,500,453,505,454,510,451,511,453,509,454,512,456,514,452,519,450,518,457,516,457,515,460,514,459,515,460,511,459,511,461,514,465,517,464,518,466,519,465,522,468,521,471,519,469,517,473,519,469,517,470,513,466,510,466,507,461,507,463,505,463,503,457,503,460,501,460,504,460,503,463,506,464,506,469,504,470,503,467,502,466,501,468,500,466,494,471,487,468,486,467,488,466,490,468,488,465,483,464,481,460,478,461,478,459,472,460,476,462,471,464,457,460,447,462,448,447,452,438,443,421,443,405,479,437,480,438,480,437,479,437">
+<area shape="POLY" title="Kentucky" coords="505,336,506,336,507,336,507,337,506,337">
+<area shape="POLY" title="Kentucky" coords="508,337,527,336,527,333,530,333,589,328,591,326,596,324,597,322,600,321,599,319,601,318,601,316,606,313,611,308,608,308,608,306,607,306,606,306,605,304,603,302,603,301,600,298,600,295,599,292,596,290,595,288,590,291,586,290,584,291,581,289,577,289,575,285,573,285,573,284,570,285,569,284,567,286,568,287,567,289,568,289,568,290,563,293,562,292,560,292,560,296,558,298,557,300,555,301,554,306,553,307,552,306,550,306,548,303,549,304,547,305,547,308,545,309,545,310,545,309,543,309,542,307,539,309,538,312,534,309,533,310,531,309,531,312,530,310,528,311,527,310,527,312,527,313,526,313,524,315,525,318,520,320,519,322,521,325,520,326,519,326,514,324,512,324,510,327,512,329,511,331,511,332,510,333,511,334,510,336,509,335,508,335">
+<area shape="POLY" title="Kansas" coords="328,329,329,322,329,317,330,306,330,298,330,292,330,290,331,282,331,275,340,275,341,275,349,276,357,276,364,276,371,277,372,277,377,277,380,277,387,277,389,277,395,277,401,277,411,277,417,277,423,277,424,278,425,279,426,280,427,280,428,279,428,280,429,281,428,281,429,282,429,281,429,282,428,282,428,283,427,283,427,284,427,285,426,285,426,286,428,288,429,288,429,289,429,290,430,291,430,292,431,292,432,292,432,293,433,292,433,293,433,298,433,300,433,305,433,313,433,319,433,325,433,330,433,331,428,331,422,331,420,331,417,331,414,331,406,331,403,331,397,331,393,331,384,331,380,331,378,331,371,331,363,330,357,330,356,330,348,330,344,329,342,329,335,329">
+<area shape="POLY" title="Iowa" coords="406,228,407,230,408,233,409,233,408,235,410,237,409,239,410,240,410,241,411,241,411,242,411,241,411,242,412,242,412,243,413,245,412,246,413,247,412,247,413,250,414,250,414,251,415,251,414,253,416,254,415,255,415,254,415,256,416,256,415,257,415,259,416,261,416,263,415,264,417,266,417,267,441,267,471,265,472,266,473,267,474,268,474,269,476,269,477,267,476,266,477,265,479,264,480,263,480,261,482,259,482,257,481,255,480,255,479,254,480,250,485,249,486,248,488,248,489,247,489,244,491,243,491,241,491,237,488,236,487,233,484,231,483,228,481,228,479,227,477,221,477,220,478,218,478,217,476,216,476,213,440,215,406,215,406,216,407,217,407,218,406,218,406,219,407,220,408,220,408,222,407,223,407,224,407,227">
+<area shape="POLY" title="Indiana" coords="524,311,526,311,525,310,525,309,525,308,526,308,526,307,525,307,527,306,526,305,525,304,526,305,526,304,527,303,527,304,529,301,528,300,530,299,530,297,531,295,531,293,531,291,530,291,530,289,529,288,530,287,529,285,530,284,526,242,527,243,528,242,528,243,531,243,536,240,562,237,568,285,567,286,568,287,567,289,568,289,568,290,567,290,566,291,563,293,562,292,560,292,560,296,559,297,558,298,557,300,557,301,555,301,555,303,555,306,553,306,553,307,552,306,550,306,549,304,548,303,549,304,548,305,547,305,547,306,546,306,547,308,545,309,545,310,545,309,543,309,542,307,539,309,538,312,538,311,534,309,533,310,531,309,531,310,532,311,531,312,530,312,530,310,528,311,527,310,527,311,527,312,527,313,525,312">
+<area shape="POLY" title="Illinois" coords="475,273,477,281,482,286,486,289,487,293,488,295,489,296,490,294,495,296,494,298,494,300,492,305,492,307,495,309,498,312,499,312,498,312,499,313,500,312,502,314,503,315,505,316,505,318,506,321,505,323,506,324,507,327,509,328,508,327,509,327,510,329,511,328,510,327,512,324,514,324,519,326,520,326,521,325,519,322,520,320,525,318,524,315,526,313,525,312,524,311,526,311,525,310,525,309,525,308,526,308,526,307,525,307,527,306,525,304,526,305,527,303,527,304,528,300,530,299,530,297,531,295,531,293,531,291,529,288,530,287,529,285,530,284,526,242,521,232,522,228,484,231,487,233,488,236,491,237,491,243,489,244,489,247,488,248,486,248,485,249,480,250,479,254,482,257,482,259,480,261,480,263,476,266,476,269,475,272">
+<area shape="POLY" title="Idaho" coords="138,211,145,179,146,176,146,175,148,174,147,172,146,172,146,171,145,171,144,169,148,163,150,163,151,160,152,159,154,157,155,154,159,149,158,147,156,145,155,143,154,140,155,139,154,135,165,90,176,92,172,110,175,115,175,117,174,118,176,119,174,120,176,121,177,123,179,124,181,130,182,131,182,133,183,134,183,135,184,135,185,137,188,137,188,139,187,139,187,140,185,143,185,145,184,145,185,150,185,151,183,150,183,151,183,153,182,155,183,155,184,158,186,156,186,157,188,156,189,154,190,154,190,156,191,156,191,158,192,158,191,160,192,163,194,167,194,168,193,169,193,170,194,172,196,171,197,172,198,178,199,180,201,178,205,180,207,178,209,179,212,179,213,180,214,179,217,180,217,179,217,177,219,177,221,179,220,180,222,182,215,226,176,219">
+<area shape="POLY" title="Hawaii" coords="183,478,183,477,185,475,185,474,185,475,186,475,185,476,185,477,184,477,184,479,183,479">
+<area shape="POLY" title="Hawaii" coords="226,497,227,496,228,497,230,498,230,499,229,500,228,500,227,499,226,498">
+<area shape="POLY" title="Hawaii" coords="223,493,223,492,224,491,227,491,228,491,228,492,230,491,231,492,230,493,229,494,228,494,226,493">
+<area shape="POLY" title="Hawaii" coords="189,474,190,475,191,476,192,477,194,477,195,476,195,474,196,472,196,471,195,471,194,470,193,471,192,470,190,472,190,473,189,473">
+<area shape="POLY" title="Hawaii" coords="210,484,212,483,213,481,214,481,215,482,215,483,216,485,215,485,216,486,217,486,217,487,218,488,218,489,218,488,218,489,218,490,217,489,216,490,215,489,214,489,212,489,212,488,211,487,211,486,210,485">
+<area shape="POLY" title="Hawaii" coords="231,496,232,495,233,494,233,495,234,495,234,497,236,497,236,496,237,496,238,496,239,498,240,499,241,499,241,500,240,502,239,502,239,503,238,502,237,503,235,503,235,502,235,501,234,499,233,500,232,499,231,497">
+<area shape="POLY" title="Hawaii" coords="240,520,241,521,241,522,241,523,242,525,243,528,242,532,242,533,243,534,245,536,246,537,247,535,247,534,247,533,248,532,250,531,251,529,252,530,255,528,257,525,257,524,256,523,256,522,255,522,255,521,255,520,253,520,253,517,251,515,248,513,247,512,246,512,244,510,243,510,242,511,242,512,243,513,243,514,243,515,242,516,242,518,241,518,240,519">
+<area shape="POLY" title="Georgia" coords="636,416,637,416,636,415">
+<area shape="POLY" title="Georgia" coords="635,421,636,422,636,420">
+<area shape="POLY" title="Georgia" coords="638,410,638,409,639,411,638,412">
+<area shape="POLY" title="Georgia" coords="639,403,639,404,640,405,640,404,640,403">
+<area shape="POLY" title="Georgia" coords="638,407,639,407,639,408,638,409,638,408">
+<area shape="POLY" title="Georgia" coords="637,415,638,413,638,412,637,413">
+<area shape="POLY" title="Georgia" coords="635,424,636,425,636,427,636,426,636,423">
+<area shape="POLY" title="Georgia" coords="635,418,636,418,636,417,637,417,637,418,636,420">
+<area shape="POLY" title="Georgia" coords="565,360,601,355,601,356,598,359,598,361,600,362,601,362,603,364,605,364,609,369,611,372,615,375,618,378,622,380,622,382,623,382,624,384,625,384,625,385,629,387,629,388,631,390,632,394,635,396,635,397,637,399,637,401,637,402,639,402,639,403,640,405,639,406,638,405,638,406,637,405,638,406,637,406,638,407,637,408,638,409,636,409,637,409,637,410,638,412,636,412,636,413,637,413,636,414,636,416,635,416,635,420,634,420,634,419,634,420,635,422,635,423,633,423,636,423,635,425,636,427,635,428,633,428,633,427,632,428,629,426,628,427,628,428,627,427,628,435,626,435,625,432,584,434,580,426,580,420,578,416,578,410,581,407,579,406,579,404,577,401,575,397,565,362">
+<area shape="POLY" title="Florida" coords="542,436,546,439,547,443,544,446,548,445,549,440,551,443,552,440,554,442,549,445,558,442,560,440,561,441,564,440,566,442,561,443,572,446,570,443,572,444,574,442,572,445,577,447,576,448,573,446,578,449,579,454,583,454,581,453,586,451,586,452,591,448,594,448,593,446,596,443,604,446,609,450,609,453,615,457,615,459,619,458,623,468,622,481,625,483,626,480,624,479,624,477,627,479,627,481,629,478,630,480,626,486,629,486,626,487,628,488,633,497,636,498,634,495,636,496,638,494,636,496,638,502,642,499,638,503,641,503,645,513,647,513,652,515,656,521,656,524,664,523,667,521,670,509,671,511,669,493,657,472,656,463,643,445,637,428,628,427,628,435,626,435,625,432,584,434,582,430,542,434,652,493,656,488,658,489,659,491,659,496,657,496,655,496,654,494,652,494,652,493">
+<area shape="POLY" title="District of Columbia" coords="673,271,674,270,676,272,675,273,674,272,673,272">
+<area shape="POLY" title="Delaware" coords="688,254,690,260,690,261,690,262,691,264,692,269,693,273,694,274,694,276,699,275,702,274,703,274,702,274,703,273,702,273,703,273,703,274,702,271,702,272,701,272,701,273,701,272,700,273,701,272,699,272,702,271,701,271,701,270,700,270,701,270,702,270,702,271,701,268,700,268,698,267,697,266,697,265,696,264,695,261,694,260,693,259,692,258,692,257,692,256,691,256,693,252,693,251,692,251,690,251,689,252">
+<area shape="POLY" title="Connecticut" coords="709,206,715,205,718,204,718,205,719,205,719,204,722,204,727,202,731,201,731,202,732,207,733,208,733,209,734,212,733,212,734,213,733,214,733,213,733,214,732,214,732,215,731,214,731,215,731,214,731,215,730,213,730,215,729,215,729,216,729,215,728,216,726,214,725,214,726,214,726,215,727,215,727,216,725,217,724,217,723,218,722,218,720,219,720,218,719,220,718,219,718,220,718,221,717,221,716,221,716,222,715,223,715,222,715,223,714,222,714,223,714,224,714,223,714,224,713,224,712,225,712,224,712,225,711,225,710,224,713,221,712,220,711,218,711,216,710,213">
+<area shape="POLY" title="Colorado" coords="229,319,239,320,251,321,252,321,265,323,272,324,276,324,283,325,284,325,300,327,313,327,314,328,328,329,329,322,329,317,329,315,330,306,330,300,330,298,330,292,330,290,331,282,331,275,332,269,332,267,332,262,332,261,333,257,325,256,315,256,312,255,306,255,294,254,289,253,277,252,275,252,268,251,262,250,254,249,239,247,238,254,237,261,236,271,235,274,235,276,233,292,232,298,231,303,230,310">
+<area shape="POLY" title="California" coords="79,362,80,366,81,367,82,367,80,365,80,363">
+<area shape="POLY" title="California" coords="81,355,82,355,84,357,85,358,85,359,83,358,83,356,82,356">
+<area shape="POLY" title="California" coords="34,216,37,219,39,225,39,230,37,233,37,239,36,241,43,256,41,260,43,260,46,265,47,265,48,263,48,262,48,260,52,262,48,263,50,264,49,266,50,268,50,272,51,273,47,269,48,266,47,265,45,270,46,273,45,276,48,281,51,282,51,284,50,288,49,288,48,288,47,293,52,300,53,307,54,308,56,312,57,313,56,316,59,318,58,322,59,323,58,326,57,328,59,330,59,331,64,332,67,334,71,335,75,339,75,341,81,345,85,345,86,349,85,351,87,352,89,352,97,361,98,365,98,373,99,374,99,376,138,380,139,377,136,374,137,371,137,370,137,368,139,368,141,366,142,360,144,357,149,355,148,353,146,351,145,346,144,343,144,341,86,254,99,202,45,187,44,190,45,192,45,196,41,201,42,204,41,205,35,212,35,214">
+<area shape="POLY" title="Arkansas" coords="433,340,497,338,497,339,499,340,498,342,494,347,504,346,505,348,505,349,504,348,504,350,501,352,501,353,502,353,501,354,502,355,500,355,500,357,500,358,499,356,498,357,498,358,499,357,499,358,498,360,499,361,500,362,498,363,498,364,497,364,498,366,497,367,495,368,494,367,495,370,494,370,493,369,493,370,495,371,494,372,493,371,493,372,493,375,492,376,492,378,492,376,491,377,491,378,490,378,489,380,488,379,488,380,490,380,490,381,488,380,488,381,489,382,489,383,486,384,487,385,487,386,488,387,485,388,486,389,487,388,487,389,486,390,484,389,486,391,484,391,485,392,484,394,485,393,486,393,485,394,487,394,486,395,486,397,487,396,487,399,485,399,486,400,486,401,443,403,443,393,441,392,440,393,440,392,438,393,436,392,436,360,434,346">
+<area shape="POLY" title="Arizona" coords="133,384,153,396,181,412,185,415,194,416,215,419,229,319,216,317,196,313,180,311,175,310,159,307,157,321,155,322,155,324,153,324,152,323,153,323,152,321,151,321,150,321,149,320,147,321,146,321,146,322,146,323,147,325,146,325,146,326,146,328,146,330,145,332,146,335,146,338,145,338,144,339,145,339,144,340,144,341,144,343,144,344,144,345,145,346,146,348,146,350,146,351,148,353,149,354,149,355,148,355,147,356,144,357,143,358,142,360,142,361,142,364,141,364,141,365,141,366,140,367,139,368,137,368,137,369,137,370,137,371,136,374,137,375,139,376,139,377,139,379,138,380,136,381,135,380,134,382,133,382,133,383">
+<area shape="POLY" title="Alaska" coords="53,466,53,467">
+<area shape="POLY" title="Alaska" coords="39,538,40,537,40,538">
+<area shape="POLY" title="Alaska" coords="47,536,48,536">
+<area shape="POLY" title="Alaska" coords="15,540,15,541">
+<area shape="POLY" title="Alaska" coords="55,462,55,463">
+<area shape="POLY" title="Alaska" coords="55,508,56,509,55,509">
+<area shape="POLY" title="Alaska" coords="38,533,39,533,39,532,38,532">
+<area shape="POLY" title="Alaska" coords="71,533,72,534,72,533,73,532,72,532">
+<area shape="POLY" title="Alaska" coords="52,539,53,540,54,541,54,540,55,540,54,539,53,539">
+<area shape="POLY" title="Alaska" coords="66,530,67,530,67,531,68,531,68,530,67,530,68,529,67,529,66,529">
+<area shape="POLY" title="Alaska" coords="53,507,53,508,53,509,54,509,55,507,54,507">
+<area shape="POLY" title="Alaska" coords="85,507,86,508,87,508,88,507,87,506,86,506">
+<area shape="POLY" title="Alaska" coords="38,541,39,540,41,541,42,542,41,542,40,542,40,543,39,543,39,542,38,542">
+<area shape="POLY" title="Alaska" coords="28,490,29,490,30,490,31,489,32,489,33,489,34,489,34,490,35,490,35,491,35,492,35,493,35,494,35,495,34,495,33,496,32,495,31,494,30,494,29,493,29,492,28,492,28,491">
+<area shape="POLY" title="Alaska" coords="7,548,8,548,8,547,9,547,9,546,10,546,10,545,11,544,12,544,13,543,14,543,15,543,16,544,15,545,16,545,18,544,19,543,19,542,18,542,19,541,21,540,23,541,24,541,23,541,24,540,25,540,26,540,26,539,27,540,28,540,28,541,27,541,29,541,30,541,30,542,29,542,28,542,27,543,27,542,26,542,25,542,24,542,24,543,24,544,23,544,22,545,21,545,20,546,18,546,17,546,16,547,15,547,14,546,13,546,12,547,12,548,11,548,11,547,10,548,9,548,8,549">
+<area shape="POLY" title="Alaska" coords="75,520,76,520,76,519,77,518,77,517,78,517,79,515,80,515,81,515,81,514,82,513,84,510,84,509,85,509,85,508,86,509,86,510,87,510,87,511,88,512,88,511,88,512,89,513,88,513,88,514,87,513,87,514,86,514,85,514,86,515,86,516,87,516,87,517,87,518,86,519,87,520,86,520,85,521,84,521,84,522,83,523,82,523,81,523,81,524,80,525,79,526,80,526,80,527,79,527,77,527,76,528,75,528,75,527,76,527,77,526,78,526,78,525,77,524,76,523,76,522,76,521,75,521">
+<area shape="POLY" title="Alaska" coords="29,538,45,529,50,529,63,517,62,509,59,511,54,505,51,509,46,507,48,506,48,497,40,498,36,489,38,485,35,480,42,469,45,467,48,470,50,465,55,467,56,465,56,462,52,458,50,460,47,458,39,457,38,449,35,446,53,439,43,425,46,421,52,421,58,411,67,407,70,408,74,404,80,408,85,408,87,412,96,411,104,414,109,412,115,415,129,491,133,491,136,489,136,491,144,499,148,496,148,492,152,490,172,510,180,511,183,519,182,523,169,528,166,520,162,520,150,506,150,504,141,499,123,495,115,498,115,495,111,494,104,499,98,499,94,504,88,506,86,495,81,503,83,508,79,514,70,520,67,525,65,525,66,527,64,526,63,529,62,527,59,532,52,534,55,536,55,540,53,538,51,539,52,535,50,537,49,534,45,539,41,541,40,537,38,537,38,539,31,540,29,539">
+<area shape="POLY" title="Alabama" coords="527,363,530,362,541,362,547,361,565,360,565,362,566,366,568,372,574,392,575,397,576,397,575,398,576,398,576,399,576,400,577,400,577,401,579,403,579,404,579,405,579,406,581,407,580,407,580,408,578,410,579,411,579,412,578,413,578,414,578,416,578,417,579,419,580,420,580,421,580,424,579,425,580,426,581,428,582,430,574,430,566,431,556,432,554,432,542,434,542,436,544,438,546,439,546,440,545,442,545,443,546,443,546,444,545,445,545,446,540,447,537,448,538,447,539,447,540,447,541,446,539,445,538,444,538,443,538,442,538,441,537,440,536,440,536,441,535,442,535,445,535,446,534,446,532,445,532,446,531,445,531,446,529,435,528,422,527,419,528,406,528,385,528,380,529,372,529,365,528,364">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="103,578,697,594">
+</map>
+<div  class="c">
+<img src="covid19_uscounty_mapanim_cases.gif" style=" height: 600px; width: 800px;" border="0" usemap="#covid19_uscounty_map" class="c graph">
+</div>
+</body>
+</html>
