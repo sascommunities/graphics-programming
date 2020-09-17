@@ -106,6 +106,16 @@ run;
 data reported_data; set reported_data (where=(avg^=.));
 run;
 
+/* If you wanted to graph just weekly or monthly values, you could subset the data here ... */
+data reported_data; set reported_data (where=(
+ /*
+ substr(datechar,1,2)='01'
+ */
+ put(date,downame.)="Wednesday"
+ ));
+run;
+
+
 /* Get the latest/max date in the data, and save it to a macro variable */
 proc sql noprint;
 select max(date) format=date9. into :maxdate separated by ' ' from reported_data where avg^=.;
@@ -113,7 +123,7 @@ select max(date) format=date9. into :maxdate2 separated by ' ' from reported_dat
 quit; run;
 
 /* this is the 'secret sauce' that creates the gif animation */
-options dev=sasprtc printerpath=gif animduration=.6 animloop=0 
+options dev=sasprtc printerpath=gif animduration=1.20 animloop=0 
  animoverlay=no animate=start center nobyline;
 
 ODS LISTING CLOSE;
@@ -132,10 +142,12 @@ year2=.; year2=put(date,year4.);
 month2=put(date,monname3.);
 format day2 z2.;
 day2=.; day2=put(date,day.);
+length dow2 $20;
+dow2=put(date,downame.);
 run;
 
 proc sort data=reported_data out=reported_data;
-by date year2 month2 day2;
+by date year2 month2 day2 dow2;
 run;
 
 /* set the break points */
@@ -231,10 +243,11 @@ footnote1
 /* do the big date label as separate pieces via 'note', so won't visually jump around in the animation */
 
 proc gmap map=my_map data=reported_data (where=(date>="10mar2020"d)) anno=anno_outline;
-by date year2 month2 day2;
-note move=(37.5,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(month2)";
-note move=(47,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(day2),";
-note move=(54,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(year2)";
+by date year2 month2 day2 dow2;
+note move=(27,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(dow2)";
+note move=(52.5,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(month2)";
+note move=(62,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(day2),";
+note move=(69,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(year2)";
 id state county;
 choro range / midpoints=1 2 3 4 5 6 7 8
  coutline=gray99
@@ -244,21 +257,16 @@ run;
 
 /* repeat the last frame a few times, for a simulated gif animation 'pause' */
 proc gmap map=my_map data=reported_data (where=(date="&maxdate"d)) anno=anno_outline;
-by date year2 month2 day2;
-note move=(37.5,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(month2)";
-note move=(47,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(day2),";
-note move=(54,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(year2)";
+by date year2 month2 day2 dow2;
+note move=(27,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(dow2)";
+note move=(52.5,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(month2)";
+note move=(62,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(day2),";
+note move=(69,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(year2)";
 id state county;
 choro range / midpoints=1 2 3 4 5 6 7 8
  coutline=gray99
  legend=legend1
  des='' name="&name";
-run;
-run;
-run;
-run;
-run;
-run;
 run;
 run;
 run;
@@ -273,25 +281,17 @@ length html $100;
 html='title='||quote(trim(left(fipnamel(state))));
 run;
 proc gmap map=my_map data=reported_data (where=(date="&maxdate"d)) anno=anno_outline;
-by date year2 month2 day2;
-note move=(37.5,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(month2)";
-note move=(47,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(day2),";
-note move=(54,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(year2)";
+by date year2 month2 day2 dow2;
+note move=(27,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(dow2)";
+note move=(52.5,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(month2)";
+note move=(62,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(day2),";
+note move=(69,86) h=5.5 c=&colordt font='albany amt/bold' "#byval(year2)";
 id state county;
 choro range / midpoints=1 2 3 4 5 6 7 8
  coutline=gray99
  legend=legend1
  des='' name="&name";
 run;
-
-
-
-/*
-proc print data=reported_data (where=(statename='Nebraska'));
-format range comma8.0;
-var statename date cases_this_day population_mil cases_this_day_per_million avg range;
-run;
-*/
 
 quit;
 ODS HTML CLOSE;
