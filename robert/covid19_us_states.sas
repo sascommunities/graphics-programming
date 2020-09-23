@@ -33,8 +33,9 @@ run;
 %mend getdata;
 
 /* 
-In our R&D development environment...
-I have to run this with non-sdssas. I have to run the graph part with sdssas. 
+I comment this out, because you really only need to run this line once a day.
+Once you've downloaded the daily snapshot once, you don't need to run 
+this macro again.
 */
 /*
 %getdata(time_series_covid19_confirmed_US.csv);
@@ -68,6 +69,16 @@ day=.; day=scan(datestring,2,'_');
 year=.; year=2000+scan(datestring,3,'_'); 
 format date date9.;
 date=mdy(month,day,year);
+run;
+
+/* You could limit it to a certain date here */
+data reported_data; set reported_data 
+/*
+ (where=(date<='20apr2020'd))
+ (where=(date<='17jul2020'd))
+ (where=(date<='18sep2020'd))
+*/
+ ;
 run;
 
 proc sql noprint;
@@ -226,13 +237,13 @@ image='covid19_us_states_map.png';
 /*layer='back'; ... bummer - this puts it behind the black background */
 drawspace='datapercent';
 anchor='bottomleft';
-x1=27;
-y1=60;
+x1=23;
+y1=64;
 imagescale='fit';
 heightunit='pixel';
 widthunit='pixel';
-width=300*.7;  
-height=200*.7; 
+width=300*.65;  
+height=200*.65; 
 /*width=28;*/ /* percent of the available area */
 run;
 
@@ -254,7 +265,7 @@ ods graphics /
  width=950px height=600px noborder;
 
 title1 h=12pt "United States Daily Reported COVID-19 Cases per Million Persons, by State";
-title2 h=12pt ls=0.7 "Current 7 Highest States (based on &maxdate data snapshot) Plotted in Color";
+title2 h=12pt ls=0.7 "Current 7 Highest States Plotted in Color (based on &maxdate data snapshot)";
 title3 h=4pt " ";
 
 %let axismax=700;
@@ -274,12 +285,12 @@ xaxis display=(nolabel)
 /*
  values=("01mar2020"d to "01aug2020"d by month) offsetmax=.09
 */
- values=("01mar2020"d to "01sep2020"d by month) offsetmax=0
+ values=("01mar2020"d to "01oct2020"d by month) offsetmax=0
  offsetmin=0 
  valueattrs=(size=9pt)
  ;
 keylegend 'max' / title='' linelength=15px 
- position=topleft location=inside outerpad=(left=10pt top=11pt)
+ position=topright location=inside outerpad=(right=40pt top=11pt)
  valueattrs=(size=9pt weight=normal) 
  noopaque noborder across=1;
 run;
