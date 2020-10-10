@@ -1,0 +1,2258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>NC Covid-19 animation map</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+</div>
+<div class="branch">
+</div>
+<div class="branch">
+</div>
+<map name="covid19_nccounty_map">
+<area shape="POLY" title="Yancey County" coords="182,141,183,143,183,146,185,146,185,145,186,144,187,146,189,147,188,149,190,150,190,148,192,149,192,148,194,147,194,148,195,148,195,149,194,149,195,150,195,153,196,153,195,153,195,154,197,157,197,156,198,157,198,156,199,157,198,158,199,158,199,159,199,161,200,166,199,166,199,168,200,168,199,169,199,170,198,170,197,172,198,173,197,175,195,175,195,177,194,177,193,178,190,180,189,181,187,180,187,179,187,178,186,178,184,177,183,176,182,176,182,172,182,170,181,169,180,168,179,168,179,167,177,168,176,168,176,164,175,163,174,161,173,159,172,159,171,158,170,158,169,158,170,157,169,156,170,154,169,153,169,150,170,149,171,149,172,148,176,141,178,141,178,140,180,141,182,140">
+<area shape="POLY" title="Yadkin County" coords="334,122,335,121,336,121,337,121,338,121,339,122,338,123,339,124,341,124,343,124,344,124,345,124,345,125,346,126,347,127,347,128,346,129,347,131,347,132,346,132,347,133,347,134,346,135,347,137,346,138,345,138,345,139,344,139,342,139,341,140,341,141,340,141,340,142,341,144,341,145,342,146,325,146,308,145,309,126,310,126,312,125,313,124,314,124,315,124,316,124,316,125,317,124,318,124,317,122,318,122,319,122,320,123,321,122,321,121,322,122,321,122,322,123,323,122,323,123,324,123,326,123,326,124,327,124,328,124,329,124,329,123,329,122,330,122,331,122,330,121,331,121,332,121">
+<area shape="POLY" title="Wilson County" coords="579,168,579,169,582,178,587,184,584,186,579,190,573,195,573,194,558,194,553,193,552,194,547,192,544,182,544,181,543,181,543,180,542,180,542,179,541,179,541,178,542,178,545,177,557,171,566,166,567,166,568,166,570,166,571,167,572,164,573,164,574,165">
+<area shape="POLY" title="Wilkes County" coords="292,105,292,106,295,107,295,109,296,111,298,111,299,111,300,111,300,110,302,108,304,110,305,112,306,112,307,113,308,114,310,116,308,145,300,145,294,146,293,148,290,148,289,147,288,147,286,147,284,148,282,147,281,147,279,148,278,147,277,148,275,148,274,149,272,150,271,150,270,151,269,148,267,147,266,146,266,147,265,146,264,146,265,145,263,143,262,143,262,142,260,143,259,141,258,141,257,140,255,140,254,140,251,138,255,135,257,131,258,130,259,129,257,125,258,123,259,124,260,123,262,122,262,121,263,121,263,119,266,121,267,120,267,118,268,118,267,117,268,113,269,112,269,113,270,111,271,110,271,111,272,111,274,111,275,112,276,112,278,112,282,108,285,105,287,107,288,105,289,105,290,104">
+<area shape="POLY" title="Wayne County" coords="573,194,573,195,573,203,573,210,573,211,574,212,575,213,575,214,576,215,575,216,575,217,574,218,574,219,573,237,569,239,568,240,568,241,568,240,567,239,566,238,565,238,564,238,563,238,563,239,561,239,560,238,560,237,559,237,559,236,558,236,557,236,556,236,555,236,553,237,552,238,544,236,545,235,537,233,532,226,533,223,535,223,535,222,536,222,537,223,540,221,539,221,540,220,540,221,541,220,542,220,543,220,544,220,544,219,545,220,545,219,544,219,545,218,544,217,545,217,546,216,546,215,545,215,545,212,552,194,553,193,558,194">
+<area shape="POLY" title="Watauga County" coords="242,112,244,113,247,116,247,117,248,118,249,119,249,120,250,121,251,121,253,122,254,123,257,125,259,129,258,130,257,131,255,135,251,138,241,137,240,137,228,138,227,133,227,132,226,131,225,129,222,130,222,129,221,128,220,127,220,126,220,125,220,124,221,124,221,123,221,122,222,122,221,122,222,122,222,121,221,120,220,119,221,118,221,117,222,117,223,116,224,115,225,114,227,113,229,112,230,112,231,111,231,112,231,113,232,113,233,113,233,114,234,114,235,114,235,113,236,114,237,114,238,114,238,113,237,113,236,112,237,112,236,111,236,110,236,109,236,108">
+<area shape="POLY" title="Washington County" coords="696,149,697,150,697,151,697,152,697,153,696,153,697,153,697,154,698,153,697,155,698,157,698,158,699,159,700,161,695,169,697,178,683,178,658,179,657,177,659,176,658,176,659,175,660,174,660,173,661,172,661,171,661,170,662,170,662,169,661,168,661,167,662,166,663,166,662,165,663,163,663,162,664,162,665,161,666,160,667,159,668,156,668,155,669,155,670,154,670,153,671,153,671,154,673,154,674,154,676,154,676,153,676,154,677,154,677,153,680,153,681,153,682,153,683,153,686,152,687,151,688,151,690,150,691,149,693,149,694,149,695,148,696,148">
+<area shape="POLY" title="Warren County" coords="564,92,565,96,564,97,564,99,564,103,563,103,563,104,564,105,564,109,561,118,556,128,555,128,554,128,554,127,554,128,553,128,553,127,552,127,552,128,551,127,550,127,549,127,549,128,548,128,547,128,547,127,546,126,546,125,545,124,546,124,545,124,544,124,543,124,542,124,542,123,541,123,540,124,539,123,539,124,538,123,537,123,536,123,530,122,530,121,531,120,531,119,533,118,528,92,552,92">
+<area shape="POLY" title="Wake County" coords="498,143,505,146,510,148,514,150,520,153,523,157,527,158,527,160,528,160,529,161,530,162,530,161,531,161,531,162,532,163,533,164,534,165,534,167,535,169,535,170,524,178,518,182,517,182,513,186,511,188,509,190,507,192,506,192,496,202,491,200,489,199,487,199,486,198,484,197,482,197,479,195,472,193,475,180,476,175,477,173,477,172,479,168,479,165,485,165,486,163,488,159,489,159,492,160,492,158,493,158,495,155,496,154,497,150,496,149,495,148,493,148,492,147,492,145,492,143,495,143">
+<area shape="POLY" title="Vance County" coords="528,92,533,118,531,119,531,120,530,121,530,122,529,123,528,125,527,125,524,125,521,132,521,133,520,133,519,133,520,133,518,133,517,133,517,132,516,132,515,132,514,131,514,132,513,131,513,122,512,102,513,99,513,98,513,97,514,96,513,96,514,96,514,95,514,96,515,95,516,95,516,94,517,94,517,93">
+<area shape="POLY" title="Union County" coords="342,239,343,239,343,240,344,240,345,240,346,241,348,239,348,240,349,240,350,240,351,240,352,239,353,240,354,240,355,239,356,239,357,239,358,238,359,237,360,237,356,278,335,277,315,277,316,264,311,257,312,256,313,256,314,255,316,254,317,254,323,249,336,236,340,238,341,238,341,239">
+<area shape="POLY" title="Tyrrell County" coords="727,174,726,174">
+<area shape="POLY" title="Tyrrell County" coords="725,151,725,150">
+<area shape="POLY" title="Tyrrell County" coords="718,146,724,146,728,148,729,150,727,151,725,149,724,150,724,152,725,153,724,153,720,151,719,151,720,151,724,155,726,152,727,153,728,152,729,153,726,156,725,159,723,159,722,159,723,160,725,161,725,163,726,166,726,170,725,170,725,168,724,170,724,169,723,170,721,167,720,167,720,169,722,169,724,171,725,170,726,173,725,176,726,177,726,176,727,177,727,180,725,179,724,179,723,179,723,180,722,179,721,179,721,178,720,178,719,177,717,178,716,178,715,179,716,180,716,181,715,181,715,182,714,183,714,186,713,188,709,188,708,188,708,187,706,188,705,187,707,179,697,178,695,169,700,161,697,155,698,153,700,152,703,153,703,154,705,153,705,155,707,154,708,155,707,154,706,154,705,153,703,152,703,151,706,149,711,147,714,147,715,146,717,146">
+<area shape="POLY" title="Transylvania County" coords="157,222,156,223,157,224,157,227,158,227,158,231,159,238,159,239,160,239,160,240,159,240,158,240,157,240,156,240,155,241,154,241,153,241,153,242,152,242,151,242,151,241,149,242,150,243,149,244,148,245,147,244,145,246,144,246,144,247,143,247,142,247,142,246,141,245,122,251,121,250,120,249,120,250,119,248,118,248,118,247,119,245,124,240,125,240,125,238,124,238,123,237,123,236,125,236,124,235,124,234,125,234,126,233,127,232,127,231,128,230,129,230,130,226,130,223,132,221,133,221,134,221,135,221,135,220,136,221,136,220,137,220,138,220,139,219,140,219,140,218,141,217,142,215,142,214,143,212,146,211,146,210,146,209">
+<area shape="POLY" title="Swain County" coords="104,179,106,179,107,181,109,182,107,185,108,185,109,186,108,191,110,192,111,194,108,198,107,198,106,198,105,197,104,197,101,198,99,201,97,202,96,203,95,202,93,203,92,207,92,209,93,209,94,211,95,215,94,218,92,218,89,218,88,219,86,218,83,221,81,220,80,220,64,222,63,220,64,218,65,217,70,215,72,212,73,208,73,206,71,206,70,205,68,205,67,206,63,204,60,204,58,204,57,204,54,203,54,204,53,203,51,203,49,203,48,202,45,201,43,203,41,202,43,201,45,200,48,196,53,195,57,193,57,192,59,191,59,192,61,191,62,192,64,191,68,191,69,192,72,190,74,192,75,192,81,192,82,192,83,190,86,187,88,187,90,186,91,185,93,185,95,182,97,182,98,183,99,183,100,181,103,179">
+<area shape="POLY" title="Surry County" coords="324,91,332,92,347,93,346,106,346,123,346,126,345,125,345,124,344,124,343,124,341,124,339,124,338,123,339,122,338,121,337,121,336,121,335,121,334,122,332,121,331,121,330,121,331,122,330,122,329,122,329,123,329,124,328,124,327,124,326,124,326,123,324,123,323,123,323,122,322,123,321,122,322,122,321,121,321,122,320,123,319,122,318,122,317,122,318,124,317,124,316,125,316,124,315,124,314,124,313,124,312,125,310,126,309,126,310,116,309,116,309,115,308,114,307,114,307,113,306,112,305,112,304,110,302,108,303,106,301,103,302,102,305,97,306,97,306,96,306,95,306,93,307,92,307,91,313,92">
+<area shape="POLY" title="Stokes County" coords="359,93,380,94,382,94,382,115,382,120,381,124,346,123,346,106,347,93">
+<area shape="POLY" title="Stanly County" coords="369,204,369,206,370,207,371,208,372,207,373,208,374,208,375,209,375,211,376,211,376,212,377,214,376,215,377,216,378,216,379,216,380,218,380,219,379,220,379,222,377,224,377,225,376,227,376,229,376,230,376,233,378,234,378,235,379,237,379,238,380,239,379,240,378,241,378,243,377,241,375,239,375,238,375,237,374,237,373,238,374,239,373,239,373,240,372,240,371,239,371,240,370,241,370,242,369,242,368,241,367,240,366,241,365,241,363,239,363,238,362,235,361,236,360,237,359,237,358,238,357,239,356,239,355,239,354,240,353,240,352,239,350,240,349,240,348,239,346,241,345,240,344,240,343,240,343,239,342,239,340,238,340,237,342,236,342,235,343,233,359,204">
+<area shape="POLY" title="Scotland County" coords="432,254,432,255,433,255,433,256,434,256,435,257,435,258,436,258,437,258,437,259,438,260,439,260,439,261,439,262,440,262,440,263,441,264,441,265,441,266,441,267,441,268,441,269,442,271,442,272,442,273,442,274,442,275,441,275,441,277,441,278,441,279,442,280,442,281,443,282,432,297,413,279,412,279,412,278,413,278,415,278,416,277,417,277,418,278,418,277,417,277,417,276,418,276,418,275,417,275,418,274,417,274,418,272,423,267,422,267,422,265,421,265,421,264,421,263,421,262,421,261,421,260,422,259,423,257,426,256,427,255,431,254,432,253">
+<area shape="POLY" title="Sampson County" coords="511,224,516,229,523,230,532,226,537,233,545,235,545,241,544,247,545,248,546,267,542,285,546,286,548,288,550,286,550,288,546,291,538,304,537,304,538,303,536,301,534,299,533,299,533,298,532,298,532,297,532,296,532,295,531,294,531,292,529,291,529,290,528,290,528,289,528,290,527,289,527,288,526,287,526,286,525,286,525,284,524,283,524,282,523,282,522,282,522,280,521,280,520,277,519,277,519,275,517,275,516,272,514,271,514,270,513,270,513,269,512,269,512,268,511,266,510,266,509,265,509,264,508,264,507,262,506,262,503,258,503,256,501,253,502,252,501,250,501,249,500,248,500,247,501,247,502,245,503,245,503,244,502,245,502,244,503,243,503,241,504,240,503,239,504,239,503,238,503,237,502,236,503,236,504,236,504,235,505,233,505,231,508,228,508,226">
+<area shape="POLY" title="Rutherford County" coords="233,192,234,192,235,192,236,192,236,193,237,195,237,194,237,195,238,195,236,218,231,233,230,237,213,236,213,234,213,232,213,230,214,230,213,229,212,228,211,227,210,226,209,225,209,224,208,224,208,223,206,222,206,221,206,220,205,220,204,220,204,219,204,218,203,218,202,216,201,217,201,215,200,214,199,214,198,213,197,212,196,212,195,213,194,213,193,213,192,213,191,214,191,213,190,213,189,213,188,214,187,213,187,212,187,210,186,208,188,206,189,206,190,206,191,202,191,201,191,200,196,199,198,201,205,199,209,199,210,198,211,197,212,198,213,200,225,199,225,197,226,195,227,195,227,194,228,195,229,193,231,193,231,192,232,191,233,191">
+<area shape="POLY" title="Rowan County" coords="326,167,326,166,327,166,327,167,326,168,327,168,328,168,329,168,330,168,331,168,332,169,332,170,333,170,333,171,334,170,333,170,334,170,335,171,336,172,336,173,337,173,338,174,338,173,338,174,339,174,340,175,341,174,342,174,342,175,342,176,343,175,344,176,344,177,344,178,345,180,346,180,349,181,350,181,351,181,352,182,355,181,356,181,356,182,356,183,356,184,356,185,356,186,357,186,358,187,358,188,359,189,359,190,360,190,361,191,362,191,362,192,363,192,364,193,364,194,366,196,366,199,367,200,367,201,368,202,368,203,368,204,369,204,359,204,337,204,320,204,320,202,320,200,318,186,323,167,324,167,325,167,325,166,326,166">
+<area shape="POLY" title="Rockingham County" coords="409,94,427,94,426,102,426,104,425,125,425,126,400,125,381,124,382,120,382,115,382,94">
+<area shape="POLY" title="Robeson County" coords="478,270,479,271,478,272,481,275,481,277,482,278,482,279,484,281,484,283,485,284,485,286,486,287,486,288,487,287,489,290,489,292,489,293,488,293,488,294,489,295,488,295,488,296,487,296,487,297,487,300,486,300,487,300,487,301,486,301,486,303,485,303,485,304,485,305,485,307,485,309,486,310,486,311,485,311,484,311,484,312,481,315,480,316,480,315,479,316,478,316,477,316,476,317,475,319,475,320,475,322,474,322,475,322,474,323,474,322,473,322,472,323,471,324,472,325,472,326,472,327,471,327,470,327,470,328,469,329,469,330,469,331,468,331,467,331,468,331,466,331,466,332,432,297,443,282,441,277,441,275,455,275,469,263,476,267,477,268">
+<area shape="POLY" title="Richmond County" coords="397,238,399,239,400,239,401,239,403,239,405,239,406,239,406,240,408,239,409,239,411,239,413,239,416,241,418,240,419,242,419,243,420,243,421,244,421,245,421,247,421,249,422,251,425,251,426,251,427,251,428,251,429,252,429,251,429,252,430,252,431,253,432,253,431,254,427,255,422,259,421,260,421,261,421,263,421,264,421,265,422,265,422,267,423,267,418,272,417,274,418,274,417,275,418,275,417,277,418,278,417,277,416,277,415,278,413,278,412,278,412,279,391,279,392,277,393,273,394,273,396,271,398,268,397,265,396,263,396,260,395,259,393,257,394,256,395,254,395,253,392,251,392,248,391,246,389,245,388,246,386,247,386,249,384,249,382,248,381,247,378,246,378,243,381,243,382,243,386,241,387,241,389,241,389,240,393,241">
+<area shape="POLY" title="Randolph County" coords="424,162,424,168,423,203,404,203,379,204,379,185,380,160">
+<area shape="POLY" title="Polk County" coords="196,212,197,212,198,213,199,214,200,214,201,215,201,217,202,216,203,218,204,218,204,219,204,220,205,220,206,220,206,221,206,222,207,222,208,223,208,224,209,224,209,225,210,226,211,227,212,228,213,229,214,230,213,230,213,232,213,234,213,236,191,235,186,234,184,235,183,235,182,236,181,235,180,235,179,235,180,231,179,231,179,229,180,229,180,225,181,225,181,224,182,223,182,222,183,223,183,222,183,221,184,221,184,220,185,220,185,218,186,217,186,216,187,215,188,214,189,213,190,213,191,213,191,214,192,213,193,213,194,213,195,213">
+<area shape="POLY" title="Pitt County" coords="613,168,622,171,621,172,621,173,623,174,625,174,627,175,628,176,629,178,628,178,627,180,628,181,629,181,629,182,630,182,630,183,629,184,629,187,630,187,632,189,632,190,631,191,632,191,633,191,634,191,634,192,635,192,634,193,635,193,635,194,636,194,637,194,637,196,635,196,634,196,629,199,629,201,630,202,630,203,630,206,629,206,629,208,628,208,629,210,628,212,626,212,626,213,625,212,625,213,625,216,623,218,622,217,622,216,619,215,615,220,614,220,612,220,610,218,608,218,608,216,607,216,606,216,606,215,606,214,606,213,605,213,604,212,604,208,603,208,603,207,602,206,602,205,600,202,601,200,599,200,599,199,596,199,593,196,592,195,587,190,586,189,585,187,584,186,599,174,603,170,605,170,605,169,607,170,608,167,609,167,610,167">
+<area shape="POLY" title="Person County" coords="488,93,488,95,488,126,475,126,457,125,458,93">
+<area shape="POLY" title="Perquimans County" coords="694,114,695,116,696,117,696,119,699,119,699,120,700,120,701,120,702,122,704,122,704,125,705,125,705,127,703,127,704,127,705,127,706,127,708,129,708,130,709,132,712,134,711,135,709,135,708,135,708,134,707,135,707,134,706,134,704,133,702,133,701,132,700,131,699,131,698,131,697,131,695,129,695,127,695,128,694,128,693,127,692,127,691,126,690,126,689,126,689,125,689,127,691,128,691,129,692,129,694,131,696,133,697,134,699,133,700,134,702,135,703,135,703,136,702,136,701,137,699,137,694,138,694,137,693,137,693,135,693,137,692,137,693,137,694,138,692,138,691,138,690,137,690,138,689,137,688,137,688,136,687,137,686,137,684,136,683,137,681,136,680,135,678,121,678,120,679,119,680,115,679,114,680,109,689,106">
+<area shape="POLY" title="Pender County" coords="600,315">
+<area shape="POLY" title="Pender County" coords="600,316,600,315">
+<area shape="POLY" title="Pender County" coords="601,315,600,315">
+<area shape="POLY" title="Pender County" coords="595,321,595,320">
+<area shape="POLY" title="Pender County" coords="600,315">
+<area shape="POLY" title="Pender County" coords="594,320">
+<area shape="POLY" title="Pender County" coords="601,313,601,314">
+<area shape="POLY" title="Pender County" coords="593,323,593,322">
+<area shape="POLY" title="Pender County" coords="596,318">
+<area shape="POLY" title="Pender County" coords="599,316">
+<area shape="POLY" title="Pender County" coords="594,321">
+<area shape="POLY" title="Pender County" coords="597,318,596,318">
+<area shape="POLY" title="Pender County" coords="594,322,594,321">
+<area shape="POLY" title="Pender County" coords="594,321">
+<area shape="POLY" title="Pender County" coords="586,330">
+<area shape="POLY" title="Pender County" coords="593,323">
+<area shape="POLY" title="Pender County" coords="596,319">
+<area shape="POLY" title="Pender County" coords="597,317,597,318">
+<area shape="POLY" title="Pender County" coords="597,318,597,319">
+<area shape="POLY" title="Pender County" coords="599,317,599,316">
+<area shape="POLY" title="Pender County" coords="586,331,585,331">
+<area shape="POLY" title="Pender County" coords="600,316,599,316">
+<area shape="POLY" title="Pender County" coords="600,316,600,315">
+<area shape="POLY" title="Pender County" coords="601,314,601,315">
+<area shape="POLY" title="Pender County" coords="597,318,596,319,597,319,596,319,596,318">
+<area shape="POLY" title="Pender County" coords="584,331,583,331,584,330">
+<area shape="POLY" title="Pender County" coords="596,319,596,320,595,320,595,319,595,320,595,319">
+<area shape="POLY" title="Pender County" coords="589,324,590,324,590,325,589,325,588,325">
+<area shape="POLY" title="Pender County" coords="595,320,596,320,595,321,594,320,595,321,594,321,595,321,594,321,594,320,594,321,593,321,594,321,594,322,593,322,592,321,595,319">
+<area shape="POLY" title="Pender County" coords="584,331,584,330,584,329,585,328,586,329,585,330,585,331">
+<area shape="POLY" title="Pender County" coords="592,322,593,322,594,322,593,322,593,323,592,323,592,324,590,325,590,324,590,325,590,324,589,324,591,323">
+<area shape="POLY" title="Pender County" coords="597,319,594,322,591,326,590,326,592,324,593,323,594,322,594,321,595,322,594,321,595,322,594,321,595,321,596,320,597,320,596,319,597,318,598,318,599,317,598,317,598,318,598,317,598,318,597,318,596,318,599,316,600,317,600,316,602,314,603,315">
+<area shape="POLY" title="Pender County" coords="589,325,590,325,590,326,587,329,586,330,586,329,586,328,585,328,586,327,587,327,587,326,588,325">
+<area shape="POLY" title="Pender County" coords="559,285,560,287,561,287,562,286,563,286,564,287,565,286,566,286,588,286,597,311,598,312,599,312,601,313,600,315,600,316,598,316,597,316,598,317,596,318,595,317,596,318,587,326,586,325,586,327,583,330,582,330,577,324,577,323,577,322,576,321,573,322,570,324,569,324,569,322,568,323,567,324,566,324,566,325,566,323,565,323,565,324,564,323,564,322,562,323,561,323,561,324,562,325,561,326,561,327,557,328,556,328,555,326,555,327,554,327,553,325,553,326,551,325,550,324,549,324,548,324,547,324,546,325,545,326,545,325,543,326,542,324,540,323,538,321,545,314,542,312,542,311,541,311,540,311,539,311,538,310,538,308,537,308,536,306,546,291,550,288,550,286,552,286,554,285,556,286,556,285,557,286,558,285">
+<area shape="POLY" title="Pasquotank County" coords="691,97,693,98,694,98,694,99,695,99,696,99,696,100,697,101,698,100,698,101,700,100,700,102,703,105,703,104,704,105,704,104,706,105,706,107,708,106,708,108,710,109,710,111,712,111,713,111,712,112,711,112,711,113,710,113,709,114,711,114,711,115,712,115,714,117,715,117,716,118,718,121,718,122,716,121,715,122,716,123,716,122,717,122,718,123,719,123,722,124,721,126,722,126,723,127,724,129,724,130,720,131,719,130,718,130,717,129,716,129,716,130,717,129,717,131,718,131,719,131,716,132,715,132,713,132,711,131,708,127,707,127,707,126,706,126,704,122,702,122,701,120,700,120,699,120,699,119,696,119,696,117,695,116,694,115,690,108,685,97,685,92,690,96">
+<area shape="POLY" title="Pamlico County" coords="684,241,684,242">
+<area shape="POLY" title="Pamlico County" coords="685,218,686,218,685,219">
+<area shape="POLY" title="Pamlico County" coords="682,218,685,218,682,219,686,220,686,223,687,220,688,221,686,219,690,219,688,224,691,222,692,225,689,225,691,227,689,227,686,226,690,229,685,227,684,228,681,227,683,230,685,229,687,231,687,233,682,232,681,229,679,230,682,232,680,231,680,232,678,231,680,234,677,234,675,232,676,233,674,237,669,238,671,242,670,239,673,239,676,236,677,238,679,236,679,237,681,237,680,241,682,237,684,239,682,235,686,237,684,241,682,240,684,243,682,243,681,241,679,243,678,241,678,243,676,245,679,244,679,245,679,244,680,245,681,243,681,245,676,247,677,248,675,249,675,248,673,251,671,248,672,251,670,249,671,251,669,251,672,251,671,253,664,258,658,254,658,251,657,254,652,250,653,248,651,249,652,243,647,238,655,227,659,231,678,228,679,224,681,226,682,224,679,223,680,222,683,222,679,221,680,218">
+<area shape="POLY" title="Orange County" coords="457,125,475,126,473,136,471,155,470,165,469,166,464,166,452,165,449,164,449,163,449,162,448,161,448,125">
+<area shape="POLY" title="Onslow County" coords="601,314,601,313">
+<area shape="POLY" title="Onslow County" coords="604,313">
+<area shape="POLY" title="Onslow County" coords="606,312">
+<area shape="POLY" title="Onslow County" coords="601,313">
+<area shape="POLY" title="Onslow County" coords="633,289,633,288">
+<area shape="POLY" title="Onslow County" coords="616,302">
+<area shape="POLY" title="Onslow County" coords="604,313">
+<area shape="POLY" title="Onslow County" coords="633,289,634,289">
+<area shape="POLY" title="Onslow County" coords="631,295">
+<area shape="POLY" title="Onslow County" coords="605,312,605,311">
+<area shape="POLY" title="Onslow County" coords="604,312,603,312">
+<area shape="POLY" title="Onslow County" coords="616,303">
+<area shape="POLY" title="Onslow County" coords="619,303,618,303">
+<area shape="POLY" title="Onslow County" coords="607,310,607,309,608,310">
+<area shape="POLY" title="Onslow County" coords="632,294,631,294">
+<area shape="POLY" title="Onslow County" coords="638,287">
+<area shape="POLY" title="Onslow County" coords="617,302">
+<area shape="POLY" title="Onslow County" coords="605,312,604,312,606,312">
+<area shape="POLY" title="Onslow County" coords="631,295">
+<area shape="POLY" title="Onslow County" coords="627,298,626,298,627,297,628,297">
+<area shape="POLY" title="Onslow County" coords="630,295,631,296,630,296,629,295,629,294">
+<area shape="POLY" title="Onslow County" coords="631,294,632,294,631,295,630,295,630,294,632,293">
+<area shape="POLY" title="Onslow County" coords="639,290,638,291,637,291,637,292,636,292,636,291,637,290,637,289,636,289,637,288,637,289">
+<area shape="POLY" title="Onslow County" coords="626,298,627,298,626,299,621,303,618,305,618,304,617,303,620,303,620,304,620,303,623,301,627,298">
+<area shape="POLY" title="Onslow County" coords="636,291,636,292,635,291,636,292,637,293,634,294,633,295,632,295,633,294,632,294,632,293,635,290,636,290,636,289,637,290">
+<area shape="POLY" title="Onslow County" coords="618,304,618,306,617,306,607,312,603,315,602,314,603,312,603,313,604,313,603,314,604,314,604,313,605,313,604,313,605,313,605,312,606,312,607,312,607,311,608,311,607,311,606,311,605,311,606,311,607,311,608,310,607,310,608,310,609,310,608,310,608,309,611,308,611,309,610,309,611,309,612,308,611,309,612,308,613,308,614,307,615,307,614,307,615,307,616,306,616,305,616,306,617,305,617,306,617,305,617,304,616,304,617,303,616,304,616,303,617,303">
+<area shape="POLY" title="Onslow County" coords="615,265,615,263,618,262,619,262,620,262,623,263,626,267,627,267,629,272,631,272,630,275,632,276,632,278,634,278,633,279,636,281,635,284,637,285,637,288,635,288,636,290,635,290,630,286,633,289,632,289,634,291,628,295,624,301,620,303,619,303,618,303,618,301,616,301,615,299,614,300,613,299,613,298,613,300,612,299,613,298,615,298,618,294,619,294,618,293,616,290,614,290,616,289,612,285,613,285,616,284,616,283,614,284,612,284,611,285,610,283,609,283,610,285,609,289,611,287,615,294,613,296,610,296,608,297,611,301,610,302,613,300,613,301,614,301,616,303,616,304,615,304,614,304,613,305,615,304,615,306,616,306,612,308,613,307,611,307,611,308,609,309,608,309,607,309,607,310,604,311,605,311,601,313,599,312,598,312,587,284,590,264,587,259,591,257,603,259">
+<area shape="POLY" title="Northampton County" coords="628,91,629,91,629,92,630,93,631,93,631,92,632,93,633,93,634,93,635,93,635,94,634,95,635,95,636,95,636,97,636,96,636,97,635,97,635,98,634,97,634,98,633,97,632,97,630,100,631,102,625,122,623,126,622,126,621,125,619,126,618,126,617,126,617,128,617,129,617,130,618,131,617,131,616,130,616,129,615,129,614,128,613,128,612,128,609,126,610,122,607,121,607,118,604,114,602,115,601,115,600,116,597,116,596,117,594,117,593,116,592,113,593,111,595,109,595,107,595,105,594,105,593,104,592,104,591,103,590,103,589,102,588,102,586,98,583,98,581,97,580,97,578,98,577,98,576,98,575,98,574,97,572,96,570,96,568,96,567,96,566,96,565,95,565,96,564,92,624,90,627,90">
+<area shape="POLY" title="New Hanover County" coords="571,357">
+<area shape="POLY" title="New Hanover County" coords="567,354,567,353">
+<area shape="POLY" title="New Hanover County" coords="579,336">
+<area shape="POLY" title="New Hanover County" coords="579,337">
+<area shape="POLY" title="New Hanover County" coords="567,349">
+<area shape="POLY" title="New Hanover County" coords="566,366">
+<area shape="POLY" title="New Hanover County" coords="567,368,567,369">
+<area shape="POLY" title="New Hanover County" coords="567,369,567,370">
+<area shape="POLY" title="New Hanover County" coords="579,339">
+<area shape="POLY" title="New Hanover County" coords="567,369">
+<area shape="POLY" title="New Hanover County" coords="567,361">
+<area shape="POLY" title="New Hanover County" coords="567,356">
+<area shape="POLY" title="New Hanover County" coords="578,341,577,340,578,340">
+<area shape="POLY" title="New Hanover County" coords="579,339,578,339">
+<area shape="POLY" title="New Hanover County" coords="577,341,576,341">
+<area shape="POLY" title="New Hanover County" coords="567,353,567,352,567,351,567,352">
+<area shape="POLY" title="New Hanover County" coords="565,347,565,346,564,346,565,345">
+<area shape="POLY" title="New Hanover County" coords="577,340,578,340">
+<area shape="POLY" title="New Hanover County" coords="567,368,567,369,566,369,566,368">
+<area shape="POLY" title="New Hanover County" coords="567,362,567,363,567,364,566,364">
+<area shape="POLY" title="New Hanover County" coords="578,339,579,339,578,340,578,341,578,340,577,340,577,339">
+<area shape="POLY" title="New Hanover County" coords="578,341,577,342,576,342,576,341,577,341">
+<area shape="POLY" title="New Hanover County" coords="576,342,577,343,576,344,575,344,576,343">
+<area shape="POLY" title="New Hanover County" coords="582,334,582,335,581,335,581,337,580,336,581,334">
+<area shape="POLY" title="New Hanover County" coords="580,336,580,337,579,337,580,337,580,338,578,343,577,343,578,341,579,340,579,339,579,338,578,338,579,339,578,339,578,338,579,338,579,339,580,338,579,339,579,338">
+<area shape="POLY" title="New Hanover County" coords="584,332,584,331,585,331,586,331,584,333,581,337,581,336,581,335,582,335,582,334,581,334,583,331">
+<area shape="POLY" title="New Hanover County" coords="577,343,577,344,576,345,575,348,572,354,571,354,573,349,574,346,575,345,575,344,576,344">
+<area shape="POLY" title="New Hanover County" coords="576,322,577,322,577,323,577,324,582,330,581,330,583,330,583,331,580,336,579,336,576,340,576,342,575,344,575,343,574,345,573,347,571,352,571,353,570,356,571,359,571,355,572,354,572,355,569,365,567,370,567,368,568,367,567,368,566,367,567,366,568,366,568,364,568,362,568,360,569,360,568,360,568,358,568,357,568,355,567,349,565,347,566,347,566,346,565,344,565,338,564,337,563,337,563,336,563,337,562,335,562,334,560,334,561,333,560,333,560,332,559,332,559,330,560,329,559,328,558,329,558,328,561,327,561,326,562,325,561,324,561,323,562,323,564,322,564,323,565,324,565,323,566,323,566,324,566,325,566,324,567,324,568,323,569,322,569,324,570,324,573,322,574,322,576,321">
+<area shape="POLY" title="Nash County" coords="556,129,557,129,557,130,558,130,558,131,559,131,559,130,559,129,561,131,561,130,561,129,562,129,563,130,564,131,563,132,564,132,565,132,565,133,566,134,567,134,568,134,569,134,570,134,572,134,573,135,574,134,575,134,576,134,577,134,578,133,579,133,580,134,580,135,581,135,581,134,582,134,582,133,583,133,582,134,582,137,579,143,577,149,576,151,573,162,571,167,570,166,568,166,567,166,566,166,557,171,545,177,542,178,541,178,541,179,540,179,539,179,539,178,539,176,538,176,538,177,537,177,537,175,536,175,536,174,536,172,536,170,535,170,542,155,556,128">
+<area shape="POLY" title="Moore County" coords="441,203,442,205,441,207,440,207,440,208,441,208,441,209,443,211,443,213,444,213,445,215,446,215,448,219,448,220,448,221,449,221,452,223,455,225,452,229,454,230,455,231,456,231,457,232,458,233,458,235,459,235,460,236,461,236,463,237,463,239,462,239,462,240,461,239,461,240,460,239,459,240,459,239,458,239,458,238,457,239,457,238,456,237,456,238,455,237,454,237,453,237,451,235,451,236,450,235,449,236,448,237,446,238,444,240,443,240,443,241,442,241,432,253,431,253,430,252,428,251,426,251,425,251,422,251,421,249,421,247,421,245,420,243,419,243,419,242,417,240,417,239,416,239,414,237,413,232,411,231,410,231,409,229,410,226,405,207,404,203">
+<area shape="POLY" title="Montgomery County" coords="404,203,405,207,406,211,410,226,409,229,410,229,410,230,411,231,412,231,412,232,413,232,413,233,414,234,414,235,414,236,414,237,415,238,416,239,417,239,417,240,418,240,417,241,416,241,414,240,413,240,413,239,412,239,411,239,409,239,408,239,407,239,406,240,406,239,405,239,403,239,401,239,400,239,399,239,398,239,397,238,393,241,389,240,389,241,387,241,386,241,385,242,383,243,382,243,381,243,378,243,378,241,379,240,380,239,379,238,379,237,378,235,378,234,376,233,376,230,376,229,376,227,377,225,377,224,379,222,379,220,380,219,380,218,379,216,378,216,377,216,376,215,377,214,376,212,376,211,375,211,375,209,374,208,373,208,372,207,371,208,370,207,369,206,369,204,379,204">
+<area shape="POLY" title="Mitchell County" coords="195,132,196,133,197,134,198,134,199,134,200,133,201,138,202,138,203,138,205,138,206,141,206,142,209,149,208,149,207,150,208,153,209,156,213,159,214,160,213,162,212,163,211,162,210,162,209,164,207,165,205,166,203,165,203,166,201,167,201,168,199,168,199,166,200,166,199,161,199,159,199,158,198,158,199,157,198,156,198,157,197,156,197,157,195,154,195,153,196,153,195,153,195,150,194,149,195,149,195,148,194,148,194,147,192,148,192,149,190,148,190,150,188,149,189,147,187,146,186,144,185,145,185,146,184,146,183,146,183,143,182,140,180,141,178,140,177,140,178,141,176,141,177,139,179,138,180,138,181,137,182,136,183,137,187,134,188,135,189,135,190,135,191,135,193,132,194,132">
+<area shape="POLY" title="Mecklenburg County" coords="316,204,316,205,317,206,317,207,317,208,317,209,319,213,318,214,318,215,319,216,320,217,321,218,324,221,326,229,336,236,323,249,317,254,316,254,314,255,313,256,312,256,311,257,303,246,301,248,293,253,292,251,292,248,293,247,294,246,294,245,294,244,293,243,293,242,295,242,296,241,297,241,297,240,297,239,297,238,297,237,297,235,296,234,297,231,296,230,296,229,297,227,297,225,298,224,298,223,299,223,299,222,299,221,300,221,300,220,301,220,302,220,303,219,304,219,303,219,302,219,302,218,301,218,301,217,300,218,300,219,299,219,299,218,299,217,301,216,301,215,301,213,301,211,302,210,303,209,302,208,302,206,305,203">
+<area shape="POLY" title="Martin County" coords="615,143,623,147,625,147,625,148,625,149,626,149,627,152,626,152,627,153,626,153,627,154,626,154,627,156,629,156,629,155,631,155,632,154,633,156,634,156,635,155,635,156,636,155,637,155,638,155,637,154,638,154,639,154,640,154,640,155,641,155,641,158,642,159,641,159,640,160,641,161,640,161,640,162,640,163,641,163,642,163,643,163,644,162,645,161,646,160,647,160,649,158,650,158,651,159,652,162,653,162,652,165,653,166,652,166,653,167,654,168,658,163,658,160,660,160,663,162,664,162,663,162,662,163,662,165,663,166,661,168,662,170,661,170,661,172,660,173,660,174,657,177,658,179,646,184,631,176,630,176,629,177,627,175,625,174,623,174,621,173,621,172,622,171,613,168,614,159,608,149,615,141">
+<area shape="POLY" title="Madison County" coords="158,141,159,142,159,143,161,145,160,146,159,148,159,149,160,150,159,152,160,152,162,152,162,153,164,153,165,152,168,151,169,153,170,154,169,156,170,157,169,158,170,158,171,158,172,159,173,160,174,161,175,163,176,164,175,166,176,168,174,169,173,169,172,169,171,170,170,170,167,169,165,171,154,176,153,176,153,177,152,177,151,176,150,176,150,178,148,178,148,179,147,178,146,179,145,180,143,180,142,181,139,180,138,179,135,182,133,181,134,179,133,178,133,176,132,175,130,175,129,175,129,174,129,171,128,169,130,166,131,166,131,165,132,164,132,161,133,161,134,160,133,160,134,159,132,155,134,155,134,153,136,153,139,153,141,156,142,156,142,154,144,153,144,152,145,151,144,150,144,149,145,148,147,147,148,146,150,146,150,145,153,144,154,143,157,141">
+<area shape="POLY" title="Macon County" coords="94,218,95,219,96,220,95,221,96,223,96,225,97,226,98,228,99,229,102,228,104,228,104,231,104,233,103,236,104,236,107,239,107,242,110,243,110,245,109,245,108,246,108,247,110,248,111,249,111,252,112,252,113,252,113,253,80,253,80,252,78,252,77,253,76,251,77,250,76,248,74,248,73,247,74,246,73,244,72,244,72,243,72,242,69,241,69,238,68,238,68,239,67,239,67,238,67,237,66,237,67,236,67,235,65,235,65,236,64,235,63,235,62,235,61,235,60,236,59,235,59,232,61,231,61,230,60,231,60,230,63,227,63,226,62,225,64,222,65,222,80,220,81,220,83,221,86,218,87,219,88,219,89,218,91,218,92,218">
+<area shape="POLY" title="McDowell County" coords="217,154,218,155,218,156,218,157,219,158,219,159,219,160,220,161,220,162,218,166,217,167,216,168,215,169,214,169,213,170,223,180,226,195,225,197,225,199,213,200,212,198,211,197,210,198,209,199,205,199,198,201,193,197,192,197,189,196,186,192,187,191,188,190,187,189,188,188,187,187,186,186,186,185,187,184,187,183,186,183,186,181,187,180,189,181,190,180,193,178,194,177,195,177,195,175,197,175,198,173,197,172,198,171,198,170,199,170,199,169,200,168,201,168,201,167,203,166,203,165,204,165,205,166,206,165,207,165,208,164,209,164,209,162,210,162,211,162,212,163,213,162,213,159,215,158,216,157,215,156">
+<area shape="POLY" title="Lincoln County" coords="251,196,254,196,278,198,301,199,301,200,302,200,303,201,302,201,301,201,302,202,301,204,301,205,302,205,302,206,302,208,303,209,302,210,301,211,301,213,301,215,258,212,256,207,253,201,254,199,253,197,251,197">
+<area shape="POLY" title="Lenoir County" coords="604,212,605,213,606,214,606,213,606,214,606,213,606,214,606,215,606,216,607,216,608,216,608,217,608,218,609,218,610,218,611,218,611,219,610,219,610,220,609,220,608,220,608,222,607,222,607,223,606,223,607,224,607,226,608,226,608,228,608,229,605,230,604,231,600,230,602,237,594,248,583,255,581,254,581,250,581,244,579,241,573,237,574,219,574,218,575,217,578,217,584,215,585,216,586,219,587,219,587,218,588,218,589,218,590,218,592,215,593,216,594,216,594,215,595,215,596,215,599,213,599,211,600,211,601,211,602,211,602,212,603,211,603,210,604,210">
+<area shape="POLY" title="Lee County" coords="461,191,462,191,463,192,465,193,467,194,467,195,467,196,467,197,468,198,469,199,470,200,471,200,472,200,473,201,474,202,455,225,452,223,449,221,448,221,448,220,448,219,446,215,445,215,445,214,444,214,444,213,443,213,443,212,443,211,442,210,441,209,441,208,440,208,440,207,441,207,441,206,442,205,442,204,441,203,441,202,442,202,443,202,444,201,443,200,444,200,445,199,446,199,447,199,446,200,447,201,448,201,450,199,450,198,450,197,451,197,452,197,452,198,452,199,453,199,454,198,454,196,455,196,455,195,457,193,458,192,459,191,460,191">
+<area shape="POLY" title="Jones County" coords="631,249,632,248,633,248,633,249,635,246,636,247,637,247,637,250,637,251,638,252,637,252,637,273,643,272,642,273,642,274,641,273,640,275,639,275,639,276,638,276,637,276,636,277,636,276,635,276,634,277,633,277,632,277,633,277,632,278,632,277,632,276,630,276,630,275,630,274,631,274,631,273,631,272,630,272,630,273,629,272,628,271,628,270,628,269,628,268,627,267,626,267,626,266,625,265,625,264,624,265,624,264,623,263,622,263,622,262,621,262,620,262,619,262,618,262,617,262,616,263,615,263,615,265,603,259,591,257,587,259,583,255,594,248,602,237,600,230,604,231,607,232,617,239,630,246,630,248">
+<area shape="POLY" title="Johnston County" coords="536,171,536,172,536,174,537,175,537,177,538,177,538,176,539,176,539,178,539,179,540,179,541,179,542,179,542,180,543,181,544,181,544,182,547,192,552,194,545,212,545,215,546,215,544,217,545,218,544,219,545,219,545,220,544,219,544,220,543,220,542,220,541,220,540,221,540,220,540,221,537,223,536,222,535,222,535,223,533,223,532,226,527,228,523,230,516,229,511,224,512,223,512,222,512,221,511,220,510,219,509,219,509,218,509,216,508,216,507,215,506,213,505,212,505,211,504,210,504,208,503,208,502,207,502,206,501,204,499,204,498,204,498,202,496,202,506,192,507,192,517,182,518,182,524,178,535,170,536,170">
+<area shape="POLY" title="Jackson County" coords="105,197,106,198,107,198,108,199,110,199,110,200,112,201,112,204,115,204,116,205,116,206,117,206,117,207,119,208,120,209,120,212,122,213,123,214,124,215,126,217,127,218,127,220,128,221,130,222,130,223,130,226,129,230,127,231,126,233,124,234,125,236,123,236,123,237,124,238,125,238,125,240,124,240,119,245,118,248,119,248,120,250,120,249,121,250,122,251,113,253,113,252,112,252,111,252,111,249,110,248,108,247,108,246,109,245,110,245,110,243,107,242,107,239,104,236,103,236,104,233,104,231,104,228,102,228,99,229,98,228,97,226,96,225,96,223,95,221,96,220,95,219,94,218,95,215,94,212,94,211,93,209,92,209,92,207,93,203,95,202,96,203,97,202,99,201,100,200,101,199,101,198,102,198,104,197">
+<area shape="POLY" title="Iredell County" coords="325,146,323,167,318,186,320,200,320,202,320,204,316,204,305,203,302,206,302,205,301,205,301,204,302,202,301,201,302,201,303,201,302,200,301,200,301,199,302,199,301,197,302,196,302,195,303,195,303,194,303,193,303,192,304,192,304,191,303,190,302,189,301,187,301,186,300,185,299,185,299,184,299,183,298,183,298,182,296,182,294,182,292,182,292,181,292,180,292,179,290,177,290,176,290,175,289,176,288,174,291,172,291,171,292,170,293,168,294,166,298,155,298,152,296,146,300,145,308,145">
+<area shape="POLY" title="Hyde County" coords="702,214">
+<area shape="POLY" title="Hyde County" coords="737,194,738,194">
+<area shape="POLY" title="Hyde County" coords="749,232">
+<area shape="POLY" title="Hyde County" coords="727,212">
+<area shape="POLY" title="Hyde County" coords="733,235,732,235">
+<area shape="POLY" title="Hyde County" coords="754,229,753,229">
+<area shape="POLY" title="Hyde County" coords="697,216,696,216,696,215,697,215">
+<area shape="POLY" title="Hyde County" coords="726,209,725,209">
+<area shape="POLY" title="Hyde County" coords="754,230,755,230">
+<area shape="POLY" title="Hyde County" coords="702,216,701,216,700,217,699,216,700,216,701,216,702,215">
+<area shape="POLY" title="Hyde County" coords="708,217,709,217,709,218,710,219,709,219,708,219,708,218">
+<area shape="POLY" title="Hyde County" coords="752,230,753,231,753,230,753,231,751,232,743,236,738,239,736,241,734,243,733,243,734,242,735,241,734,240,735,240,734,240,734,239,735,238,735,239,735,238,736,239,737,239,739,238,739,237,739,238,739,237,740,237,741,237,741,236,742,236,743,235,743,236,743,235,744,235,744,234,745,235,745,234,747,233,748,233,748,232,749,233,749,232,750,232,751,232,751,231,752,231,751,230">
+<area shape="POLY" title="Hyde County" coords="683,178,707,179,705,187,713,188,716,178,718,177,723,181,726,180,728,183,730,180,739,180,741,184,740,187,741,190,738,191,739,193,736,194,735,196,733,195,734,196,732,196,732,197,735,198,731,201,732,202,730,208,729,206,727,205,727,207,725,210,727,211,726,212,722,214,720,214,719,217,717,215,713,216,710,211,710,216,706,215,708,213,704,213,705,211,703,211,701,209,702,215,699,214,697,215,696,213,701,214,696,205,698,204,697,203,696,205,694,203,693,204,695,204,694,206,696,207,694,207,695,208,693,210,694,211,692,211,692,207,692,210,690,209,691,213,688,212,689,210,687,211,686,210,686,208,687,207,688,209,688,208,686,206,686,207,683,205,684,204,684,205,685,203,689,204,685,201,684,204,681,199,689,199,689,200,690,198,691,199,692,193,692,194,682,189,675,178">
+<area shape="POLY" title="Hoke County" coords="450,235,451,236,451,235,452,236,453,237,454,237,455,237,456,238,456,237,456,238,457,238,457,239,458,238,458,239,458,238,458,239,459,239,459,240,460,239,461,240,461,239,462,240,462,239,463,239,462,244,462,245,463,245,463,248,463,249,464,250,464,252,464,253,465,256,466,257,467,258,467,259,468,260,468,261,469,262,469,263,455,275,441,275,442,273,441,269,441,266,441,265,441,264,440,263,440,262,439,262,439,260,438,260,437,259,436,258,435,258,434,256,433,256,432,255,432,253,442,241,443,241,443,240,444,240,444,239,445,239,446,238,447,237,448,237,449,236">
+<area shape="POLY" title="Hertford County" coords="633,90,649,90,648,90,648,91,649,91,650,92,650,93,649,94,648,96,647,96,647,97,646,97,646,98,647,104,648,105,650,106,651,106,652,107,653,107,655,107,656,108,657,109,660,109,661,109,663,110,664,111,663,111,664,113,666,113,667,115,668,116,668,118,668,119,667,120,666,121,651,122,649,122,647,122,645,122,644,122,642,122,627,122,625,122,631,102,630,100,631,98,632,98,632,97,633,97,634,98,634,97,635,98,635,97,636,97,636,96,636,97,636,95,635,95,634,95,634,94,635,94,635,93,634,93,633,93,632,93,631,92,631,93,630,93,629,92,629,91,628,91,629,91,628,91,627,90,628,90">
+<area shape="POLY" title="Henderson County" coords="188,206,186,208,187,210,187,213,188,214,186,216,185,220,184,220,183,222,183,223,182,223,180,225,180,229,179,229,179,231,180,231,179,235,178,236,177,235,177,234,177,233,176,232,175,233,174,234,173,235,173,236,172,237,170,238,171,236,169,236,168,236,167,238,166,237,166,238,165,238,163,238,162,237,162,238,162,239,161,239,160,239,159,238,158,231,158,227,157,227,157,224,156,223,157,222,146,209,149,206,152,206,154,206,155,207,157,208,158,208,159,208,160,208,160,209,161,209,162,208,163,208,164,209,163,210,164,210,164,211,165,208,164,208,170,208,171,207,172,206,173,206,175,205,176,205,177,205,178,206,179,206,179,205,179,204,180,204,180,203,181,203,182,202">
+<area shape="POLY" title="Haywood County" coords="129,170,129,171,129,174,129,175,130,175,132,175,133,176,133,178,134,179,133,181,135,182,134,182,135,183,136,187,137,187,137,188,138,189,139,188,141,187,142,191,143,192,144,193,145,194,144,195,144,197,143,198,143,202,141,204,143,206,143,208,146,209,146,211,143,212,142,214,142,215,138,220,135,220,135,221,134,221,133,221,132,221,131,223,130,222,128,221,127,220,127,218,124,215,123,214,122,213,120,212,120,209,119,208,117,207,117,206,116,206,116,205,115,204,112,204,112,201,110,200,110,199,108,199,111,194,110,192,108,191,109,186,108,185,107,185,108,183,109,182,107,181,106,179,103,179,102,178,103,177,104,176,106,176,109,175,111,172,115,172,118,169,120,170,121,170,122,170,125,171,128,170">
+<area shape="POLY" title="Harnett County" coords="491,200,496,202,498,202,498,204,499,204,501,204,502,206,502,207,503,208,504,208,505,211,505,212,506,213,507,215,508,216,509,216,509,218,509,219,511,220,512,221,512,222,512,223,511,224,510,224,510,225,509,225,508,226,508,228,506,229,506,230,505,231,497,230,496,230,496,229,495,229,494,229,493,229,493,230,493,229,492,230,492,229,492,230,491,229,490,230,490,229,489,229,489,230,488,230,487,230,486,231,486,230,485,231,484,232,483,231,482,232,482,233,481,233,480,233,478,234,477,234,473,235,472,235,463,237,461,236,460,236,459,235,458,235,458,233,457,232,456,231,455,231,454,230,452,229,474,202,479,195,489,199">
+<area shape="POLY" title="Halifax County" coords="566,96,572,96,575,98,577,98,580,97,583,98,586,98,588,102,591,103,592,104,593,104,595,105,595,109,593,111,592,113,593,116,596,117,600,116,602,115,604,114,607,118,607,121,610,122,609,126,612,128,614,128,615,129,616,129,616,131,617,131,618,130,619,132,620,132,620,133,621,134,621,135,622,136,621,136,623,137,622,138,620,138,616,139,609,148,607,148,605,147,602,145,598,145,598,144,597,143,598,142,597,141,597,139,595,138,595,139,592,138,591,137,590,138,589,137,587,135,585,135,584,133,583,133,581,134,581,135,580,135,580,134,578,133,576,134,574,134,573,135,572,134,569,134,567,134,566,134,565,132,563,132,563,130,561,129,561,131,559,129,559,130,559,131,556,128,561,118,564,109,564,105,563,103,564,103,564,99,565,96,565,95">
+<area shape="POLY" title="Guilford County" coords="400,125,425,126,424,143,424,162,380,160,381,150,381,134,381,124">
+<area shape="POLY" title="Greene County" coords="585,187,585,188,586,189,587,190,590,193,591,194,592,195,593,195,593,196,594,197,595,197,596,198,596,199,598,199,599,199,599,200,600,200,601,200,601,201,600,201,601,202,600,202,601,203,601,204,602,204,602,205,602,206,603,207,603,208,604,208,603,209,604,209,604,210,603,210,603,211,602,212,602,211,601,211,600,211,599,211,599,213,596,215,595,215,594,215,594,216,593,216,592,215,591,216,591,217,590,218,589,218,588,218,587,218,587,219,586,219,585,217,585,216,584,215,578,217,575,217,576,215,575,213,573,211,573,210,573,195,579,190,584,186">
+<area shape="POLY" title="Granville County" coords="517,93,517,94,516,94,516,95,515,95,514,96,514,95,514,96,513,96,514,96,513,97,513,98,513,99,512,102,513,122,513,131,514,132,510,142,510,148,505,146,498,143,495,143,492,143,490,143,489,143,488,143,489,142,488,142,487,142,488,141,487,141,488,126,488,95,488,93,493,93,512,93">
+<area shape="POLY" title="Graham County" coords="46,202,47,202,48,202,49,203,51,203,52,203,53,203,54,204,54,203,57,204,58,204,60,204,62,204,63,204,66,205,66,206,67,206,68,206,68,205,70,205,71,206,73,206,73,207,73,208,72,212,70,215,68,216,66,216,65,217,64,218,63,220,64,222,62,225,62,224,59,225,57,226,57,225,56,225,54,224,53,224,52,225,51,224,50,224,49,225,47,225,46,226,45,226,44,226,42,227,41,227,40,227,40,228,38,227,38,226,36,226,36,225,36,224,35,223,36,221,34,219,35,218,34,218,33,217,34,215,33,214,33,213,34,213,35,213,36,211,36,209,35,208,35,207,36,207,37,205,37,204,38,204,39,204,39,203,40,203,40,202,41,201,42,203,43,203,45,201">
+<area shape="POLY" title="Gates County" coords="658,89,681,88,685,92,685,97,689,106,682,109,680,109,679,111,678,111,677,112,676,112,675,112,674,112,673,112,673,113,672,113,672,114,672,113,672,114,671,114,671,113,671,114,671,113,670,114,670,115,669,114,669,115,668,114,668,113,667,113,667,112,668,112,667,111,666,111,667,111,667,113,668,113,668,114,667,114,668,114,668,115,666,113,665,113,665,112,664,111,663,110,662,109,661,109,660,109,657,109,656,108,655,107,653,107,652,107,651,106,650,106,648,105,647,104,646,103,647,101,646,99,646,98,646,97,647,97,647,96,648,96,649,94,650,92,649,91,648,91,648,90,649,90,649,89">
+<area shape="POLY" title="Gaston County" coords="301,215,301,216,299,217,299,218,299,219,300,219,300,218,301,217,301,218,302,218,302,219,303,219,304,219,303,219,302,220,301,220,300,220,300,221,299,221,299,222,299,223,298,223,298,224,297,225,297,227,296,229,296,230,297,231,296,234,297,235,297,237,297,238,297,239,297,240,297,241,296,241,295,242,294,242,288,241,269,240,269,237,269,231,270,229,267,228,266,227,266,225,266,223,266,222,263,219,258,212">
+<area shape="POLY" title="Franklin County" coords="536,123,537,123,538,123,539,124,539,123,540,124,541,123,542,123,542,124,543,124,544,124,545,124,546,124,545,124,546,125,546,126,547,127,547,128,548,128,549,128,549,127,550,127,551,127,552,128,553,127,553,128,554,128,554,127,554,128,555,128,556,128,542,155,535,170,535,169,534,167,534,165,533,164,532,163,531,161,530,161,530,162,529,161,528,160,527,160,527,158,523,157,520,153,514,150,510,148,510,142,514,131,515,132,516,132,517,132,517,133,518,133,520,133,519,133,520,133,521,133,521,132,524,125,527,125,530,122">
+<area shape="POLY" title="Forsyth County" coords="346,123,381,124,381,134,381,150,372,149,366,149,366,152,357,152,355,152,350,154,349,153,348,153,348,152,349,151,348,150,346,148,346,147,345,146,345,145,344,145,344,146,343,147,342,147,342,146,341,145,341,144,340,142,340,141,341,141,341,140,342,139,344,139,345,139,345,138,346,138,347,137,346,135,347,134,347,133,346,132,347,132,347,131,346,129,347,128,347,127,346,126">
+<area shape="POLY" title="Edgecombe County" coords="584,133,585,133,585,134,585,135,586,135,586,134,587,135,588,135,588,136,589,137,590,138,590,137,590,138,591,137,592,138,593,138,593,139,594,139,595,139,595,138,596,139,597,139,597,140,597,141,598,142,597,142,597,143,597,144,598,144,598,145,599,145,602,145,603,146,604,146,605,147,606,147,606,148,607,148,608,148,609,148,608,149,614,159,614,162,613,163,613,168,610,167,609,167,608,167,608,169,607,170,605,169,605,170,603,170,599,174,587,184,582,178,579,168,574,165,573,164,572,164,576,151,577,149,582,137,582,134,583,133">
+<area shape="POLY" title="Durham County" coords="488,126,487,141,488,141,487,142,488,142,489,142,488,143,489,143,490,143,492,143,492,145,492,147,493,148,495,148,496,149,497,150,496,154,495,155,493,158,492,158,492,160,489,159,488,159,486,163,485,165,479,165,469,166,470,165,471,155,473,136,475,126">
+<area shape="POLY" title="Duplin County" coords="557,236,558,236,559,236,559,237,560,237,560,238,561,239,563,239,563,238,564,238,565,238,566,238,567,239,568,241,568,240,569,239,573,237,579,241,581,244,581,254,583,255,587,259,589,262,590,264,587,283,587,284,588,286,569,286,566,286,565,286,564,286,564,287,563,286,563,287,563,286,562,286,562,287,561,287,561,286,560,287,560,286,559,286,559,285,558,285,557,285,557,286,557,285,556,286,556,285,556,286,556,285,556,286,554,285,553,286,552,286,551,286,550,286,548,288,547,287,546,286,542,285,546,267,546,259,546,256,545,251,545,248,544,247,545,241,544,236,552,238,553,237,555,236,556,236">
+<area shape="POLY" title="Davie County" coords="346,147,346,148,348,150,349,151,348,152,348,153,349,153,351,154,351,155,352,155,352,156,352,158,353,159,352,161,353,163,352,164,351,163,349,163,349,164,351,165,351,167,351,168,350,168,349,167,348,167,348,169,347,170,346,169,345,170,343,168,342,169,343,169,343,170,344,172,343,173,343,174,345,176,345,179,344,177,344,176,343,175,342,176,342,174,341,174,340,175,339,174,338,174,338,173,338,174,337,173,336,173,335,171,334,170,333,171,333,170,332,170,332,169,331,168,330,168,329,168,328,168,327,168,326,168,326,167,327,166,326,167,326,166,326,167,326,166,325,166,325,167,324,167,323,167,325,146,342,146,342,147,343,147,344,146,344,145,345,145,345,146">
+<area shape="POLY" title="Davidson County" coords="372,149,381,150,379,204,369,204,368,203,368,202,367,201,367,200,366,199,366,196,364,194,364,193,363,192,362,192,362,191,361,191,360,190,359,190,358,188,358,187,357,186,356,186,356,185,356,184,356,183,356,182,356,181,355,181,352,182,351,181,350,181,349,181,346,180,345,180,345,179,345,178,345,177,345,176,345,175,344,174,343,174,343,173,344,172,343,170,343,169,342,169,343,168,345,170,346,169,347,170,348,169,348,167,349,167,349,168,350,168,351,168,351,167,351,165,349,164,349,163,351,163,352,164,353,163,352,161,353,159,352,158,352,156,352,155,351,155,350,154,355,152,357,152,366,152,366,149">
+<area shape="POLY" title="Dare County" coords="768,163">
+<area shape="POLY" title="Dare County" coords="776,180">
+<area shape="POLY" title="Dare County" coords="777,190">
+<area shape="POLY" title="Dare County" coords="760,161,759,161">
+<area shape="POLY" title="Dare County" coords="775,178">
+<area shape="POLY" title="Dare County" coords="763,163">
+<area shape="POLY" title="Dare County" coords="746,120">
+<area shape="POLY" title="Dare County" coords="760,162">
+<area shape="POLY" title="Dare County" coords="747,120,746,120">
+<area shape="POLY" title="Dare County" coords="776,180,775,180">
+<area shape="POLY" title="Dare County" coords="761,219,761,218">
+<area shape="POLY" title="Dare County" coords="775,177">
+<area shape="POLY" title="Dare County" coords="774,220">
+<area shape="POLY" title="Dare County" coords="746,121">
+<area shape="POLY" title="Dare County" coords="769,165">
+<area shape="POLY" title="Dare County" coords="763,163">
+<area shape="POLY" title="Dare County" coords="756,142,757,142">
+<area shape="POLY" title="Dare County" coords="747,121">
+<area shape="POLY" title="Dare County" coords="763,163">
+<area shape="POLY" title="Dare County" coords="761,163">
+<area shape="POLY" title="Dare County" coords="763,164">
+<area shape="POLY" title="Dare County" coords="775,211,775,210">
+<area shape="POLY" title="Dare County" coords="776,195">
+<area shape="POLY" title="Dare County" coords="768,165">
+<area shape="POLY" title="Dare County" coords="747,120">
+<area shape="POLY" title="Dare County" coords="757,142,756,142">
+<area shape="POLY" title="Dare County" coords="763,163">
+<area shape="POLY" title="Dare County" coords="762,163,763,163">
+<area shape="POLY" title="Dare County" coords="777,190,777,189">
+<area shape="POLY" title="Dare County" coords="766,163,765,163">
+<area shape="POLY" title="Dare County" coords="764,155">
+<area shape="POLY" title="Dare County" coords="773,172">
+<area shape="POLY" title="Dare County" coords="747,120,747,121">
+<area shape="POLY" title="Dare County" coords="775,179">
+<area shape="POLY" title="Dare County" coords="775,178,776,178">
+<area shape="POLY" title="Dare County" coords="765,161,764,161,764,160">
+<area shape="POLY" title="Dare County" coords="775,178,775,177">
+<area shape="POLY" title="Dare County" coords="774,220,774,221">
+<area shape="POLY" title="Dare County" coords="764,156">
+<area shape="POLY" title="Dare County" coords="775,178,775,177,774,177,775,177">
+<area shape="POLY" title="Dare County" coords="766,169,766,168">
+<area shape="POLY" title="Dare County" coords="759,161,759,162,758,162,759,162">
+<area shape="POLY" title="Dare County" coords="763,162,763,163">
+<area shape="POLY" title="Dare County" coords="763,155">
+<area shape="POLY" title="Dare County" coords="774,176,774,177,773,176">
+<area shape="POLY" title="Dare County" coords="766,168,766,167">
+<area shape="POLY" title="Dare County" coords="766,164,766,163">
+<area shape="POLY" title="Dare County" coords="760,161,760,162,759,161">
+<area shape="POLY" title="Dare County" coords="775,178,775,179">
+<area shape="POLY" title="Dare County" coords="760,162,760,163,759,162">
+<area shape="POLY" title="Dare County" coords="755,140,756,141,755,141">
+<area shape="POLY" title="Dare County" coords="755,140">
+<area shape="POLY" title="Dare County" coords="768,164,767,164,767,163,768,163">
+<area shape="POLY" title="Dare County" coords="763,154,763,155,762,154">
+<area shape="POLY" title="Dare County" coords="773,199,773,200">
+<area shape="POLY" title="Dare County" coords="766,165,765,165,765,164">
+<area shape="POLY" title="Dare County" coords="763,163,763,164,762,163">
+<area shape="POLY" title="Dare County" coords="761,162,761,163,760,163">
+<area shape="POLY" title="Dare County" coords="769,164,769,165,768,165,768,164">
+<area shape="POLY" title="Dare County" coords="769,167,768,167,767,167,768,167">
+<area shape="POLY" title="Dare County" coords="755,140,755,141,754,141,754,140">
+<area shape="POLY" title="Dare County" coords="764,155,764,156,763,155">
+<area shape="POLY" title="Dare County" coords="773,171,772,171,772,170">
+<area shape="POLY" title="Dare County" coords="755,141,756,141,755,142,754,141">
+<area shape="POLY" title="Dare County" coords="756,141,756,142,757,143,756,143,756,144,754,144,753,144,753,143,753,142,753,141,754,142,755,143,755,142,756,142,755,142,756,142">
+<area shape="POLY" title="Dare County" coords="741,147,741,148,741,149,740,149,739,149,738,150,738,149,738,150,738,151,737,151,736,151,736,150,734,149,736,148,738,147,739,147,738,148,739,148,740,148,740,147">
+<area shape="POLY" title="Dare County" coords="755,150,758,151,759,152,759,153,758,154,759,154,759,155,759,154,760,154,760,153,761,154,761,155,762,155,762,156,763,158,763,159,762,158,762,157,761,158,761,157,761,156,761,157,761,158,761,159,762,159,763,160,763,161,763,162,763,163,762,163,762,162,761,163,761,162,760,162,760,161,759,160,760,161,760,160,759,160,759,159,759,158,759,157,758,156,757,156,758,156,756,154,756,153,755,153,754,152,753,151,754,150">
+<area shape="POLY" title="Dare County" coords="773,169,775,174,776,178,778,188,777,198,777,206,774,227,773,226,772,225,768,225,764,226,756,230,755,230,754,230,755,230,756,229,757,229,759,228,759,227,760,225,761,227,760,227,761,227,762,227,763,226,764,226,766,224,767,223,768,222,768,221,768,222,769,222,773,221,774,221,775,215,774,215,774,212,775,211,775,210,776,209,776,201,776,196,776,195,777,195,776,194,776,193,777,193,777,192,777,188,777,186,777,183,776,182,776,181,776,182,776,181,775,181,776,180,775,180,775,179,776,179,775,178,776,178,775,177,775,176,775,177,774,176,774,175,774,174,773,174,773,173,773,172,773,173,773,171,772,170,772,169,771,168,771,167,772,167">
+<area shape="POLY" title="Dare County" coords="751,128,754,133,758,141,767,157,771,166,771,167,770,167,770,166,770,167,769,166,770,166,769,165,769,164,769,163,768,164,768,163,767,163,767,162,767,161,766,160,765,159,765,158,764,156,765,156,764,155,765,155,764,155,765,155,764,155,765,155,764,154,763,154,764,153,764,154,764,153,764,152,760,147,758,147,758,146,759,146,758,146,758,145,757,145,758,144,757,144,756,143,757,143,756,142,757,142,755,138,755,137,754,138,753,139,752,139,753,139,752,140,751,135,750,131,751,131,751,133,751,129,750,126,750,125,748,120,748,119">
+<area shape="POLY" title="Dare County" coords="744,148,746,149,745,149,745,150,746,149,746,151,746,150,748,151,750,156,752,156,751,160,754,163,753,168,753,170,754,172,755,177,754,178,753,178,753,176,752,176,751,175,750,178,751,178,751,179,751,180,752,181,753,181,754,184,753,185,753,186,750,187,751,189,745,190,747,188,747,187,747,188,746,188,745,188,744,189,744,187,742,186,743,186,742,186,742,184,743,185,743,184,742,184,742,183,741,183,739,180,730,180,730,179,730,175,732,169,731,165,732,162,731,159,732,159,731,157,736,152,737,153,736,154,737,154,738,154,738,157,739,156,739,157,740,156,741,157,742,157,742,158,741,157,743,155,742,156,741,157,740,156,739,156,739,154,737,152,739,151,742,153,743,152,744,152,744,153,745,152,746,153,743,150,741,151,741,150,742,150,743,148,742,147">
+<area shape="POLY" title="Currituck County" coords="746,120">
+<area shape="POLY" title="Currituck County" coords="739,98">
+<area shape="POLY" title="Currituck County" coords="736,86">
+<area shape="POLY" title="Currituck County" coords="733,106">
+<area shape="POLY" title="Currituck County" coords="745,118">
+<area shape="POLY" title="Currituck County" coords="740,115">
+<area shape="POLY" title="Currituck County" coords="747,118">
+<area shape="POLY" title="Currituck County" coords="737,87">
+<area shape="POLY" title="Currituck County" coords="737,87">
+<area shape="POLY" title="Currituck County" coords="744,115">
+<area shape="POLY" title="Currituck County" coords="744,117,744,116">
+<area shape="POLY" title="Currituck County" coords="737,94,736,94">
+<area shape="POLY" title="Currituck County" coords="745,118">
+<area shape="POLY" title="Currituck County" coords="744,117,744,116">
+<area shape="POLY" title="Currituck County" coords="744,113">
+<area shape="POLY" title="Currituck County" coords="747,120,746,120">
+<area shape="POLY" title="Currituck County" coords="738,95,739,95">
+<area shape="POLY" title="Currituck County" coords="733,102,733,101">
+<area shape="POLY" title="Currituck County" coords="745,117,745,116">
+<area shape="POLY" title="Currituck County" coords="745,118,745,119">
+<area shape="POLY" title="Currituck County" coords="733,106">
+<area shape="POLY" title="Currituck County" coords="745,119">
+<area shape="POLY" title="Currituck County" coords="735,88">
+<area shape="POLY" title="Currituck County" coords="744,117,744,118">
+<area shape="POLY" title="Currituck County" coords="745,117">
+<area shape="POLY" title="Currituck County" coords="744,114">
+<area shape="POLY" title="Currituck County" coords="744,116,744,117">
+<area shape="POLY" title="Currituck County" coords="736,90">
+<area shape="POLY" title="Currituck County" coords="736,90,736,89">
+<area shape="POLY" title="Currituck County" coords="741,103,742,103">
+<area shape="POLY" title="Currituck County" coords="735,87">
+<area shape="POLY" title="Currituck County" coords="739,101">
+<area shape="POLY" title="Currituck County" coords="744,114">
+<area shape="POLY" title="Currituck County" coords="733,106,732,106,732,105,733,105">
+<area shape="POLY" title="Currituck County" coords="736,94">
+<area shape="POLY" title="Currituck County" coords="742,113">
+<area shape="POLY" title="Currituck County" coords="743,116">
+<area shape="POLY" title="Currituck County" coords="744,115,744,114">
+<area shape="POLY" title="Currituck County" coords="733,102">
+<area shape="POLY" title="Currituck County" coords="735,87,735,88">
+<area shape="POLY" title="Currituck County" coords="744,116,745,116,744,117">
+<area shape="POLY" title="Currituck County" coords="745,118,744,118">
+<area shape="POLY" title="Currituck County" coords="736,89,736,90">
+<area shape="POLY" title="Currituck County" coords="745,118,745,119">
+<area shape="POLY" title="Currituck County" coords="733,99,732,99">
+<area shape="POLY" title="Currituck County" coords="737,89">
+<area shape="POLY" title="Currituck County" coords="736,86,736,87">
+<area shape="POLY" title="Currituck County" coords="741,110,741,111">
+<area shape="POLY" title="Currituck County" coords="741,113">
+<area shape="POLY" title="Currituck County" coords="744,117">
+<area shape="POLY" title="Currituck County" coords="737,97">
+<area shape="POLY" title="Currituck County" coords="737,94">
+<area shape="POLY" title="Currituck County" coords="737,87">
+<area shape="POLY" title="Currituck County" coords="745,116,744,116">
+<area shape="POLY" title="Currituck County" coords="737,94,738,94">
+<area shape="POLY" title="Currituck County" coords="736,87">
+<area shape="POLY" title="Currituck County" coords="737,95">
+<area shape="POLY" title="Currituck County" coords="732,102,732,103,731,102">
+<area shape="POLY" title="Currituck County" coords="736,94,737,95,736,95">
+<area shape="POLY" title="Currituck County" coords="736,87,735,87,735,86">
+<area shape="POLY" title="Currituck County" coords="741,112,741,113">
+<area shape="POLY" title="Currituck County" coords="744,116,743,117,743,116">
+<area shape="POLY" title="Currituck County" coords="746,118,746,119,745,118">
+<area shape="POLY" title="Currituck County" coords="742,113,743,114,742,114">
+<area shape="POLY" title="Currituck County" coords="741,117,741,118,740,117">
+<area shape="POLY" title="Currituck County" coords="742,115,743,115">
+<area shape="POLY" title="Currituck County" coords="738,98,738,97">
+<area shape="POLY" title="Currituck County" coords="737,89,737,90,736,89,737,88">
+<area shape="POLY" title="Currituck County" coords="737,87,737,88,738,88,737,88,738,88,738,89,737,88">
+<area shape="POLY" title="Currituck County" coords="740,114,740,115,741,114,740,115">
+<area shape="POLY" title="Currituck County" coords="738,96,738,97,737,97,737,96">
+<area shape="POLY" title="Currituck County" coords="737,88,737,89,736,88,736,89,736,90,736,89,736,88">
+<area shape="POLY" title="Currituck County" coords="736,88,736,89,735,89,736,89,735,89">
+<area shape="POLY" title="Currituck County" coords="722,91,723,91,724,91,723,91,721,90,722,90">
+<area shape="POLY" title="Currituck County" coords="742,109,741,109,742,110,743,110,743,111,743,110,743,111,744,111,743,112,742,112,743,112,743,113,742,113,743,113,741,112,742,112,742,111,742,112,742,111,742,110,741,110,741,109">
+<area shape="POLY" title="Currituck County" coords="734,86,734,87,735,87,735,86,735,87,735,88,735,89,735,90,735,91,735,92,736,92,736,93,735,93,734,93,733,93,733,92,732,92,731,92,730,92,730,93,729,93,728,92,729,91,729,90,730,90,729,90,730,90,731,89,730,89,728,89,727,88,727,87,726,86,729,86,729,87,730,87,730,86,733,86">
+<area shape="POLY" title="Currituck County" coords="739,86,744,107,748,119,747,120,747,119,746,120,747,119,746,119,747,119,746,119,746,118,746,119,746,118,745,118,745,117,745,118,745,117,745,116,746,117,746,118,746,117,747,118,746,117,745,116,745,113,744,113,743,108,742,106,743,105,742,104,741,104,742,103,742,102,741,101,741,102,741,101,741,99,740,99,740,98,740,99,739,99,740,98,739,98,739,97,739,98,739,97,738,97,738,96,739,96,739,97,739,96,739,95,738,96,738,95,739,95,739,94,738,95,738,94,739,94,737,93,737,94,736,93,737,94,737,93,737,92,737,93,738,93,737,91,738,89,737,88,738,87,737,87,738,86,736,86,737,86,736,87,737,86">
+<area shape="POLY" title="Currituck County" coords="717,87,724,86,725,90,724,90,723,89,724,90,723,91,721,90,720,91,721,91,720,92,722,92,724,91,727,97,729,98,730,98,731,100,729,99,728,99,728,100,728,101,731,104,732,106,733,106,732,102,733,103,734,103,734,101,732,101,734,100,733,99,734,99,735,103,734,106,737,110,738,114,739,114,739,117,740,115,740,116,739,116,739,117,739,116,740,116,739,118,743,123,743,124,742,122,742,124,743,127,744,127,744,129,746,132,747,137,743,134,741,132,741,127,739,125,737,123,737,122,737,123,736,122,735,119,736,118,735,117,735,119,733,117,734,116,732,116,733,117,732,117,733,116,733,115,734,114,733,113,733,114,732,114,731,111,732,110,730,110,730,111,729,112,728,110,727,110,727,108,725,109,725,107,724,107,722,108,718,107,714,103,714,100,700,87">
+<area shape="POLY" title="Cumberland County" coords="496,229,497,230,505,231,505,233,504,235,504,236,503,236,502,236,503,237,503,238,504,239,503,239,504,240,503,241,503,243,502,244,502,245,503,244,503,245,502,245,501,247,500,247,500,248,501,249,501,250,502,252,501,253,503,256,503,258,506,262,507,262,508,264,509,264,509,265,510,266,511,266,512,267,512,268,512,269,513,269,513,270,514,270,514,271,516,272,514,274,513,273,489,273,486,274,480,275,478,272,479,271,477,268,469,263,467,259,464,253,463,248,463,245,462,244,463,237,472,235,473,235,477,234,478,234,480,233,481,233,482,233,482,232,483,231,484,232,485,231,486,231,487,230,488,230,489,229,490,229,490,230,491,229,492,230,492,229,492,230,493,229,493,230,493,229,494,229,495,229">
+<area shape="POLY" title="Craven County" coords="670,261,669,261">
+<area shape="POLY" title="Craven County" coords="643,244,643,245,644,245,645,246,645,247,646,248,647,250,648,253,648,254,651,256,652,257,653,257,654,258,655,258,656,259,658,260,659,260,659,261,660,261,662,260,663,260,664,261,665,261,666,262,668,263,667,263,667,264,666,265,667,264,667,267,667,268,668,268,667,265,668,262,669,262,669,261,670,261,671,261,671,260,672,258,673,258,674,258,676,260,676,261,676,262,676,263,675,263,674,264,674,265,674,266,674,267,668,270,667,270,657,271,651,273,651,274,639,276,639,275,640,275,641,273,642,274,642,273,643,272,637,273,637,252,638,252,637,251,637,250,637,247,636,247,637,247,639,247,640,247,641,247,641,246,642,245,642,244">
+<area shape="POLY" title="Craven County" coords="629,210,649,222,655,227,654,229,652,230,651,230,650,232,649,233,649,235,648,235,648,237,648,238,647,238,648,240,651,241,652,243,651,243,651,245,652,245,652,246,650,248,649,248,649,247,647,246,649,247,649,248,647,247,646,246,645,243,644,243,644,242,643,240,640,238,639,238,639,237,638,237,639,238,639,239,638,238,639,239,641,240,641,241,642,241,643,242,643,243,642,243,641,246,640,247,639,247,635,246,633,249,632,248,631,249,630,248,630,246,617,239,604,231,605,230,608,229,608,228,608,226,607,226,607,224,606,223,607,223,607,222,608,222,608,220,609,220,610,220,610,219,611,219,612,220,614,220,615,220,619,215,621,215,622,216,622,217,623,218,625,216,625,213,625,212,626,213,626,212,628,212,628,210">
+<area shape="POLY" title="Columbus County" coords="485,313,488,315,501,314,502,315,503,315,502,316,503,315,505,316,505,315,508,318,510,318,521,323,525,324,528,324,531,324,538,321,540,323,542,324,542,325,543,326,545,325,545,326,546,325,538,340,528,342,528,343,526,345,523,349,519,347,518,347,516,346,515,346,513,348,513,350,513,351,513,350,512,350,512,351,512,352,512,353,513,353,511,354,512,355,511,355,512,356,512,357,511,358,510,358,510,359,509,360,509,361,508,361,507,361,506,362,504,363,506,367,505,366,504,367,504,368,504,370,466,332,466,331,468,331,469,331,469,329,470,327,471,327,472,327,472,325,471,324,473,322,474,322,474,323,474,322,475,322,475,319,476,317,477,316,480,316,483,313,484,313">
+<area shape="POLY" title="Cleveland County" coords="238,195,239,195,239,196,240,196,241,197,242,197,243,196,244,196,245,196,246,196,246,197,247,196,248,196,248,197,249,197,250,197,251,197,253,197,254,199,253,201,256,207,258,212,263,219,266,222,266,223,266,225,266,227,267,228,270,229,269,231,269,237,269,240,265,239,230,237,231,233,236,218,238,194">
+<area shape="POLY" title="Clay County" coords="58,234,60,236,61,235,62,235,63,235,64,235,65,236,65,235,66,235,67,235,66,236,67,236,66,237,67,237,67,238,67,239,68,239,68,238,69,238,69,239,69,240,69,241,70,241,71,242,72,242,72,243,72,244,73,244,73,245,74,246,73,247,74,248,75,248,76,248,77,250,77,251,76,251,77,253,78,252,79,252,80,252,80,253,68,253,35,252,35,251,37,250,39,248,39,247,38,246,39,246,39,245,40,245,41,243,42,244,42,243,43,243,44,243,44,242,45,241,47,239,48,238,47,237,48,236,50,236,52,236,53,236,54,236,55,236,55,235,56,235,57,235,57,234">
+<area shape="POLY" title="Chowan County" coords="670,117,669,117,669,116">
+<area shape="POLY" title="Chowan County" coords="680,112,679,114,680,115,679,119,678,120,678,121,680,135,681,136,682,136,683,137,684,136,686,137,687,137,688,137,689,137,690,138,691,138,692,138,692,139,693,138,693,139,694,138,694,139,693,139,691,141,689,144,686,145,685,146,682,145,680,146,679,146,677,143,677,141,676,140,676,141,675,141,676,141,676,142,674,143,673,143,672,142,671,142,670,141,670,140,670,138,669,137,670,137,670,135,669,135,668,135,668,132,667,131,667,130,667,126,667,123,669,122,669,121,671,118,670,117,670,115,670,114,671,113,671,114,671,113,672,114,672,113,672,114,672,113,673,113,673,112,675,112,676,112,677,112,678,111,679,111,680,109,680,111">
+<area shape="POLY" title="Cherokee County" coords="36,221,35,223,36,224,36,225,36,226,38,226,38,227,40,228,40,227,41,227,42,227,44,226,45,226,46,226,47,225,49,225,50,224,51,224,52,225,53,224,54,224,56,225,57,225,57,226,59,225,60,225,62,224,62,225,63,226,63,227,62,228,60,229,60,230,60,231,61,230,61,231,59,232,59,235,58,234,57,234,57,235,56,235,55,235,54,236,53,236,52,236,50,236,48,236,47,237,48,238,44,242,44,243,42,243,42,244,41,243,40,245,39,245,39,246,39,248,37,250,35,251,35,252,7,251,11,225,12,225,17,221,18,221,19,224,20,224,21,224,22,224,23,224,25,224,25,223,26,223,26,224,27,223,28,224,29,223,29,222,31,222,34,219,35,221">
+<area shape="POLY" title="Chatham County" coords="452,165,464,166,469,166,479,165,479,168,477,172,477,173,476,175,475,180,472,193,479,195,474,202,473,201,472,200,471,200,470,200,469,199,468,198,467,197,467,196,467,195,467,194,465,193,463,192,462,191,461,191,460,191,459,191,458,192,457,193,455,195,455,196,454,196,454,197,454,198,453,199,452,199,452,198,452,197,451,197,450,197,450,198,450,199,449,200,448,201,447,201,446,200,447,199,446,199,445,199,444,200,443,200,444,201,443,202,442,202,441,202,441,203,423,203,424,168,450,168,450,167,449,167,449,166,449,165,449,164">
+<area shape="POLY" title="Catawba County" coords="286,169,286,171,287,172,287,173,288,174,289,176,290,175,290,176,290,177,292,179,292,180,292,181,292,182,294,182,296,182,298,182,298,183,299,183,299,184,299,185,300,185,301,186,301,187,302,189,303,190,304,191,304,192,303,192,303,193,303,194,303,195,302,195,302,196,301,197,302,199,301,199,278,198,254,196,251,196,254,192,262,183,266,175,267,175,267,174,268,173,268,172,269,172,271,172,272,172,273,172,273,171,274,171,275,171,276,171,276,170,277,171,278,171,279,170,280,170,281,170,283,170,283,169,284,169,285,169">
+<area shape="POLY" title="Caswell County" coords="458,93,457,125,448,125,428,125,425,125,426,104,426,102,427,94,430,94,441,94,452,94">
+<area shape="POLY" title="Carteret County" coords="694,284">
+<area shape="POLY" title="Carteret County" coords="697,271">
+<area shape="POLY" title="Carteret County" coords="724,249">
+<area shape="POLY" title="Carteret County" coords="684,288">
+<area shape="POLY" title="Carteret County" coords="681,282">
+<area shape="POLY" title="Carteret County" coords="648,287">
+<area shape="POLY" title="Carteret County" coords="684,287">
+<area shape="POLY" title="Carteret County" coords="650,286">
+<area shape="POLY" title="Carteret County" coords="717,257">
+<area shape="POLY" title="Carteret County" coords="681,283,680,283,680,282">
+<area shape="POLY" title="Carteret County" coords="692,286">
+<area shape="POLY" title="Carteret County" coords="681,284">
+<area shape="POLY" title="Carteret County" coords="643,289,644,289">
+<area shape="POLY" title="Carteret County" coords="698,277">
+<area shape="POLY" title="Carteret County" coords="684,283">
+<area shape="POLY" title="Carteret County" coords="717,256">
+<area shape="POLY" title="Carteret County" coords="696,281">
+<area shape="POLY" title="Carteret County" coords="696,282,695,282">
+<area shape="POLY" title="Carteret County" coords="691,286">
+<area shape="POLY" title="Carteret County" coords="711,252,710,252">
+<area shape="POLY" title="Carteret County" coords="642,289">
+<area shape="POLY" title="Carteret County" coords="689,284,689,283">
+<area shape="POLY" title="Carteret County" coords="671,285">
+<area shape="POLY" title="Carteret County" coords="725,248,724,248">
+<area shape="POLY" title="Carteret County" coords="697,244">
+<area shape="POLY" title="Carteret County" coords="727,240">
+<area shape="POLY" title="Carteret County" coords="700,254">
+<area shape="POLY" title="Carteret County" coords="647,288,646,288">
+<area shape="POLY" title="Carteret County" coords="691,287">
+<area shape="POLY" title="Carteret County" coords="716,253,715,253">
+<area shape="POLY" title="Carteret County" coords="689,288">
+<area shape="POLY" title="Carteret County" coords="690,290">
+<area shape="POLY" title="Carteret County" coords="686,284,686,285,685,285">
+<area shape="POLY" title="Carteret County" coords="724,248">
+<area shape="POLY" title="Carteret County" coords="694,284,694,285,693,285,694,285,693,284">
+<area shape="POLY" title="Carteret County" coords="709,264">
+<area shape="POLY" title="Carteret County" coords="684,288,683,288,683,287">
+<area shape="POLY" title="Carteret County" coords="729,241">
+<area shape="POLY" title="Carteret County" coords="651,286,650,286,651,285">
+<area shape="POLY" title="Carteret County" coords="716,257,716,258">
+<area shape="POLY" title="Carteret County" coords="718,256,717,256">
+<area shape="POLY" title="Carteret County" coords="645,289,644,289,645,288">
+<area shape="POLY" title="Carteret County" coords="649,286">
+<area shape="POLY" title="Carteret County" coords="692,287,691,287">
+<area shape="POLY" title="Carteret County" coords="702,249,701,249">
+<area shape="POLY" title="Carteret County" coords="675,282,674,282">
+<area shape="POLY" title="Carteret County" coords="677,285,678,285">
+<area shape="POLY" title="Carteret County" coords="693,284,694,284">
+<area shape="POLY" title="Carteret County" coords="639,288,639,287">
+<area shape="POLY" title="Carteret County" coords="704,250,704,249">
+<area shape="POLY" title="Carteret County" coords="683,283,684,283">
+<area shape="POLY" title="Carteret County" coords="711,252">
+<area shape="POLY" title="Carteret County" coords="691,288">
+<area shape="POLY" title="Carteret County" coords="642,289">
+<area shape="POLY" title="Carteret County" coords="669,284,669,285">
+<area shape="POLY" title="Carteret County" coords="679,285">
+<area shape="POLY" title="Carteret County" coords="698,276,699,276">
+<area shape="POLY" title="Carteret County" coords="692,286">
+<area shape="POLY" title="Carteret County" coords="689,290,689,291">
+<area shape="POLY" title="Carteret County" coords="693,286">
+<area shape="POLY" title="Carteret County" coords="683,288,684,288">
+<area shape="POLY" title="Carteret County" coords="676,284,676,283">
+<area shape="POLY" title="Carteret County" coords="647,289">
+<area shape="POLY" title="Carteret County" coords="702,272">
+<area shape="POLY" title="Carteret County" coords="710,252">
+<area shape="POLY" title="Carteret County" coords="646,288,645,288">
+<area shape="POLY" title="Carteret County" coords="676,284,675,284">
+<area shape="POLY" title="Carteret County" coords="675,278">
+<area shape="POLY" title="Carteret County" coords="695,283,694,283,694,282">
+<area shape="POLY" title="Carteret County" coords="673,280">
+<area shape="POLY" title="Carteret County" coords="681,283,681,284,680,283">
+<area shape="POLY" title="Carteret County" coords="673,280,674,280">
+<area shape="POLY" title="Carteret County" coords="689,289,689,290">
+<area shape="POLY" title="Carteret County" coords="702,273,702,272">
+<area shape="POLY" title="Carteret County" coords="693,284,693,285">
+<area shape="POLY" title="Carteret County" coords="718,255,718,256,717,256">
+<area shape="POLY" title="Carteret County" coords="711,252,712,252">
+<area shape="POLY" title="Carteret County" coords="694,283,694,284">
+<area shape="POLY" title="Carteret County" coords="647,287,647,288,646,288,648,287">
+<area shape="POLY" title="Carteret County" coords="673,284,672,284,673,283">
+<area shape="POLY" title="Carteret County" coords="719,254,718,255">
+<area shape="POLY" title="Carteret County" coords="692,278,692,279">
+<area shape="POLY" title="Carteret County" coords="643,289,643,288">
+<area shape="POLY" title="Carteret County" coords="691,280,691,281,690,280,691,281,690,281">
+<area shape="POLY" title="Carteret County" coords="712,254,712,253">
+<area shape="POLY" title="Carteret County" coords="708,252,708,251">
+<area shape="POLY" title="Carteret County" coords="697,279,696,279,696,278">
+<area shape="POLY" title="Carteret County" coords="727,244">
+<area shape="POLY" title="Carteret County" coords="691,281,691,282">
+<area shape="POLY" title="Carteret County" coords="673,283,673,282,674,283">
+<area shape="POLY" title="Carteret County" coords="703,271,703,272,702,272,703,272,702,271">
+<area shape="POLY" title="Carteret County" coords="668,285,668,284,669,284">
+<area shape="POLY" title="Carteret County" coords="711,254,711,255,710,254">
+<area shape="POLY" title="Carteret County" coords="696,246,695,246,695,245">
+<area shape="POLY" title="Carteret County" coords="702,249,703,249">
+<area shape="POLY" title="Carteret County" coords="678,284,677,284,676,284,677,284">
+<area shape="POLY" title="Carteret County" coords="638,289,639,289,639,290,637,289">
+<area shape="POLY" title="Carteret County" coords="712,252,712,253,711,254,712,253,711,253,711,252">
+<area shape="POLY" title="Carteret County" coords="682,283,683,283,683,284,682,284">
+<area shape="POLY" title="Carteret County" coords="679,284,681,284,681,285,680,285,679,285,678,284">
+<area shape="POLY" title="Carteret County" coords="709,252,709,251,710,252,710,254,709,253,708,253,709,251">
+<area shape="POLY" title="Carteret County" coords="681,282,682,282,682,283,683,283,682,283,681,284,681,283,682,283">
+<area shape="POLY" title="Carteret County" coords="728,244,729,244,729,245,728,245,727,245,727,244">
+<area shape="POLY" title="Carteret County" coords="682,287,681,287,680,286,682,285,683,285">
+<area shape="POLY" title="Carteret County" coords="675,281,674,282,673,282,673,281,674,281,675,280">
+<area shape="POLY" title="Carteret County" coords="676,282,676,283,675,283,675,284,675,285,675,284,674,284,674,283,675,283,675,282">
+<area shape="POLY" title="Carteret County" coords="688,284,689,284,689,285,688,285,687,285,687,284">
+<area shape="POLY" title="Carteret County" coords="684,284,685,284,686,284,685,285,686,285,687,285,689,286,689,287,688,286,684,285,683,284">
+<area shape="POLY" title="Carteret County" coords="678,287,680,287,681,288,683,288,684,288,684,289,685,289,686,290,687,290,688,290,688,291,689,291,689,292,688,292,687,291,686,290,682,288,677,287,677,286">
+<area shape="POLY" title="Carteret County" coords="704,270,700,277,692,289,689,295,688,297,687,294,687,292,687,294,688,294,688,295,689,294,691,289,692,288,691,288,691,287,692,288,692,287,692,286,693,286,693,285,693,286,693,285,694,285,694,284,694,283,695,283,695,282,696,282,695,283,696,282,696,281,696,280,697,280,696,280,696,279,697,279,697,280,696,278,697,278,698,279,698,278,699,277,698,277,699,276,699,277,699,276,699,277,700,276,699,276,699,275,700,275,700,276,700,275,702,273,703,272,703,271,704,271,706,269,706,268">
+<area shape="POLY" title="Carteret County" coords="729,244,731,245,730,245,728,246,727,248,707,268,706,268,708,266,709,264,709,265,711,263,712,262,714,260,716,258,716,257,717,257,717,256,718,256,718,255,719,255,719,254,720,254,719,254,720,253,720,254,720,253,721,253,721,252,721,251,722,251,721,251,722,251,722,250,722,251,722,250,723,251,722,250,723,251,723,249,724,250,724,249,724,248,725,249,725,248,725,247,726,247,726,246,726,247,726,246,727,246,726,245,727,245,726,248,729,245,730,245">
+<area shape="POLY" title="Carteret County" coords="670,284,671,285,672,285,673,285,674,285,673,285,673,284,674,284,675,286,675,285,676,286,669,286,663,286,657,287,648,290,641,292,639,293,638,292,638,291,639,291,639,290,639,289,640,289,640,290,641,289,643,289,643,290,646,289,647,289,648,289,649,289,652,288,655,288,657,287,658,287,659,287,660,287,661,286,662,285,663,286,663,285,664,285,666,285,667,285,667,286,668,286,668,285,669,285,669,284,669,285,670,285">
+<area shape="POLY" title="Carteret County" coords="693,245,694,246,694,247,695,246,695,247,696,248,695,249,696,249,697,250,696,250,695,250,696,251,695,251,696,252,695,253,696,253,697,253,696,254,697,255,696,255,696,256,696,257,695,256,694,257,694,256,694,257,691,256,692,256,692,255,692,254,692,255,692,253,691,254,691,253,690,253,690,252,691,252,690,252,690,251,691,252,691,251,692,251,692,252,692,251,691,250,691,251,691,250,691,248,692,248,692,249,693,249,693,250,694,250,693,250,694,249,693,249,692,248,693,248,694,248,694,247,694,248,693,247,692,247,693,246,692,246,692,247,692,245">
+<area shape="POLY" title="Carteret County" coords="704,250,706,250,707,251,708,251,708,253,707,253,708,252,707,252,707,251,707,252,707,251,706,251,707,251,706,251,707,253,707,254,708,255,710,257,709,258,709,257,708,257,709,257,708,258,709,258,710,259,709,259,708,259,708,260,707,260,705,259,704,259,703,260,702,260,701,260,701,259,700,258,700,257,702,258,701,256,700,255,701,255,702,256,702,255,703,256,703,255,704,256,705,256,705,255,705,256,706,257,706,256,706,255,704,253,703,250,702,250,703,250,704,251,706,252,705,251,705,250">
+<area shape="POLY" title="Carteret County" coords="689,253,688,255,691,254,690,258,691,256,694,258,695,262,695,259,699,257,698,259,705,261,704,262,707,262,700,268,699,264,698,271,697,270,696,272,694,271,695,273,693,278,691,276,692,273,690,276,691,277,689,277,691,278,689,279,690,283,688,281,689,283,687,283,687,281,686,282,684,282,685,275,683,278,680,274,679,283,681,284,676,283,677,280,675,275,674,278,671,276,667,280,670,280,671,279,673,280,671,283,674,284,666,283,656,283,653,284,652,284,652,285,647,287,646,286,645,288,642,287,642,288,638,289,637,288,641,285,640,284,638,285,635,279,633,279,633,277,651,274,651,273,657,271,668,270,674,267,676,263,679,264,676,263,678,261,675,257,679,254,682,255,682,259,685,259,685,263,686,262,688,265,686,261,688,260,684,258,683,254,685,253,685,255,685,253">
+<area shape="POLY" title="Camden County" coords="685,88,700,87,714,100,714,103,717,106,718,107,720,108,721,108,722,108,723,108,724,107,725,107,726,108,725,109,727,108,727,110,728,110,727,111,728,111,728,112,730,112,731,112,729,113,728,114,730,113,731,114,732,114,733,114,733,115,731,115,731,116,732,118,731,119,732,119,732,118,733,120,733,123,732,123,731,122,730,121,729,124,731,122,733,124,732,125,733,124,734,126,736,127,735,127,729,126,727,125,726,123,725,123,724,120,723,120,721,120,721,119,720,118,719,116,717,115,717,114,717,115,716,115,714,114,713,113,711,114,710,114,710,113,711,113,711,112,712,112,713,111,712,111,710,111,710,109,708,108,708,106,706,107,706,105,704,104,703,105,700,102,700,100,698,101,698,100,697,101,696,100,696,99,695,99,690,96,681,88">
+<area shape="POLY" title="Caldwell County" coords="241,137,251,138,254,139,254,140,255,140,256,140,257,140,258,141,259,141,260,142,260,143,260,142,261,142,262,142,262,143,263,143,264,144,265,145,264,146,265,146,266,147,266,146,267,147,269,148,270,151,269,159,269,163,268,169,269,169,269,170,269,171,269,172,268,172,267,174,267,175,266,175,265,176,264,176,263,176,263,175,261,175,260,174,259,173,257,173,256,174,253,174,251,174,250,174,246,169,245,169,244,168,243,168,243,166,237,163,236,162,235,162,235,160,234,160,233,158,232,158,232,157,231,158,231,157,231,156,230,155,229,155,228,154,235,143,234,142,233,142,233,140,232,139,231,139,230,138,228,138,240,137">
+<area shape="POLY" title="Cabarrus County" coords="337,204,359,204,343,233,342,235,342,236,341,237,340,237,340,238,336,236,326,229,324,221,321,218,320,217,319,216,318,215,318,214,319,213,317,209,317,208,317,207,317,206,316,205,316,204,320,204">
+<area shape="POLY" title="Burke County" coords="223,152,225,153,225,152,226,153,228,153,229,155,230,155,231,156,231,158,232,157,232,158,233,158,234,160,237,163,243,166,243,168,244,168,245,169,246,169,250,174,253,174,256,174,259,173,260,174,261,175,263,176,265,176,266,175,262,183,254,192,251,197,249,197,248,197,248,196,246,197,246,196,245,196,243,196,241,197,240,196,239,196,238,194,238,195,237,195,237,194,237,195,236,193,236,192,235,192,234,192,233,192,232,191,231,192,231,193,229,193,228,195,227,194,227,195,226,195,223,180,213,170,214,169,215,169,216,168,217,167,218,166,220,162,220,161,219,160,219,159,219,158,218,157,218,156,218,155,217,154,221,150,222,150">
+<area shape="POLY" title="Buncombe County" coords="179,168,180,168,182,170,182,172,182,176,184,177,186,178,187,179,187,180,186,181,186,183,187,184,186,186,188,190,187,191,186,192,189,196,192,197,196,199,191,200,191,202,189,206,182,202,181,203,180,203,180,204,179,204,179,206,178,206,177,205,175,205,172,206,171,207,170,208,164,208,165,208,164,211,163,210,163,208,162,208,161,209,160,209,160,208,159,208,158,208,157,208,154,206,152,206,150,206,149,207,146,209,143,208,143,206,141,204,143,202,143,198,144,197,144,195,145,194,143,192,142,191,141,187,139,188,138,189,137,188,137,187,136,187,135,183,134,182,135,182,138,179,139,180,142,181,143,180,145,180,147,178,148,179,148,178,150,178,150,176,151,176,152,177,153,177,153,176,154,176,167,169,170,170,171,170,172,169,174,169,175,168,176,169,179,167">
+<area shape="POLY" title="Brunswick County" coords="542,371">
+<area shape="POLY" title="Brunswick County" coords="528,371,528,372">
+<area shape="POLY" title="Brunswick County" coords="541,371">
+<area shape="POLY" title="Brunswick County" coords="563,374">
+<area shape="POLY" title="Brunswick County" coords="561,373,561,372">
+<area shape="POLY" title="Brunswick County" coords="529,372">
+<area shape="POLY" title="Brunswick County" coords="520,376,521,376">
+<area shape="POLY" title="Brunswick County" coords="561,372">
+<area shape="POLY" title="Brunswick County" coords="529,372">
+<area shape="POLY" title="Brunswick County" coords="520,376">
+<area shape="POLY" title="Brunswick County" coords="565,373">
+<area shape="POLY" title="Brunswick County" coords="565,373">
+<area shape="POLY" title="Brunswick County" coords="564,373">
+<area shape="POLY" title="Brunswick County" coords="542,371,541,371">
+<area shape="POLY" title="Brunswick County" coords="566,372,566,371">
+<area shape="POLY" title="Brunswick County" coords="542,371">
+<area shape="POLY" title="Brunswick County" coords="529,369">
+<area shape="POLY" title="Brunswick County" coords="542,371">
+<area shape="POLY" title="Brunswick County" coords="566,369,566,368">
+<area shape="POLY" title="Brunswick County" coords="529,372">
+<area shape="POLY" title="Brunswick County" coords="543,372,542,372">
+<area shape="POLY" title="Brunswick County" coords="562,373,561,373,561,372">
+<area shape="POLY" title="Brunswick County" coords="529,372,529,373">
+<area shape="POLY" title="Brunswick County" coords="554,371,555,371,554,372">
+<area shape="POLY" title="Brunswick County" coords="567,360">
+<area shape="POLY" title="Brunswick County" coords="529,371">
+<area shape="POLY" title="Brunswick County" coords="566,362">
+<area shape="POLY" title="Brunswick County" coords="529,372,528,372">
+<area shape="POLY" title="Brunswick County" coords="564,370,563,370">
+<area shape="POLY" title="Brunswick County" coords="566,355">
+<area shape="POLY" title="Brunswick County" coords="541,368,541,369">
+<area shape="POLY" title="Brunswick County" coords="563,374,563,373">
+<area shape="POLY" title="Brunswick County" coords="566,370,566,369">
+<area shape="POLY" title="Brunswick County" coords="523,374,523,375,522,374">
+<area shape="POLY" title="Brunswick County" coords="564,373,563,373">
+<area shape="POLY" title="Brunswick County" coords="562,373,561,373">
+<area shape="POLY" title="Brunswick County" coords="528,373">
+<area shape="POLY" title="Brunswick County" coords="564,373,563,373">
+<area shape="POLY" title="Brunswick County" coords="564,367,564,366">
+<area shape="POLY" title="Brunswick County" coords="563,371,563,372">
+<area shape="POLY" title="Brunswick County" coords="565,348,564,347,565,347">
+<area shape="POLY" title="Brunswick County" coords="529,372,528,372,528,371,529,371">
+<area shape="POLY" title="Brunswick County" coords="542,371,543,371">
+<area shape="POLY" title="Brunswick County" coords="542,369,542,368">
+<area shape="POLY" title="Brunswick County" coords="564,373,563,373">
+<area shape="POLY" title="Brunswick County" coords="544,372,543,372">
+<area shape="POLY" title="Brunswick County" coords="563,372">
+<area shape="POLY" title="Brunswick County" coords="566,369,566,368">
+<area shape="POLY" title="Brunswick County" coords="563,372,563,373,562,372">
+<area shape="POLY" title="Brunswick County" coords="563,368,563,367,564,368">
+<area shape="POLY" title="Brunswick County" coords="564,371,564,372,563,372,563,371">
+<area shape="POLY" title="Brunswick County" coords="567,359,567,358,567,357">
+<area shape="POLY" title="Brunswick County" coords="566,354,566,353,566,352,566,353">
+<area shape="POLY" title="Brunswick County" coords="561,372,560,373,560,372">
+<area shape="POLY" title="Brunswick County" coords="564,368,565,367,565,366,565,367,565,368">
+<area shape="POLY" title="Brunswick County" coords="554,371,554,372,553,372,554,372">
+<area shape="POLY" title="Brunswick County" coords="565,373,564,373,564,372">
+<area shape="POLY" title="Brunswick County" coords="558,372,559,372,559,373,558,373">
+<area shape="POLY" title="Brunswick County" coords="542,371,542,372,541,372,542,372,541,372">
+<area shape="POLY" title="Brunswick County" coords="565,371,566,371,565,372">
+<area shape="POLY" title="Brunswick County" coords="567,369,567,370,566,370,566,371,566,370">
+<area shape="POLY" title="Brunswick County" coords="564,371,565,372,565,373,564,372">
+<area shape="POLY" title="Brunswick County" coords="557,372,558,372,558,373">
+<area shape="POLY" title="Brunswick County" coords="566,349,566,350,566,351,565,350,565,349,566,350">
+<area shape="POLY" title="Brunswick County" coords="564,368,563,367,564,367,564,366,565,366,565,367">
+<area shape="POLY" title="Brunswick County" coords="518,376,519,376,518,377,517,376">
+<area shape="POLY" title="Brunswick County" coords="522,375,521,375,521,376,520,376,519,377,519,376,519,377,519,376,518,376,520,375">
+<area shape="POLY" title="Brunswick County" coords="564,374,564,375,565,375,564,376,564,375,563,375,562,374,563,374,562,374,563,374">
+<area shape="POLY" title="Brunswick County" coords="527,374,521,376,519,377,520,377,520,376,522,375,524,375,526,374">
+<area shape="POLY" title="Brunswick County" coords="540,372,532,373,529,374,528,374,527,373,528,373,528,374,528,373,528,374,528,373,529,373,532,373,537,372,538,372,539,372">
+<area shape="POLY" title="Brunswick County" coords="517,376,518,377,517,377,518,377,519,377,518,377,516,378,513,380,513,379,514,379,513,378,513,379,512,378,513,377,515,377">
+<area shape="POLY" title="Brunswick County" coords="567,370,565,375,565,376,565,379,565,380,564,379,563,379,561,378,560,377,561,376,562,376,562,375,563,375,564,376,565,375,564,375,565,374,565,373,566,372,566,371,567,371">
+<area shape="POLY" title="Brunswick County" coords="546,371,552,372,552,371,553,371,554,372,553,372,554,372,554,371,554,372,555,371,555,372,555,371,556,372,557,372,557,373,556,373,557,373,557,372,557,373,558,373,558,374,559,374,560,374,560,375,555,373,550,373,546,372,541,373,540,372,541,372,542,372,543,372,544,372,545,372,546,372,545,372,544,372,545,371">
+<area shape="POLY" title="Brunswick County" coords="549,324,550,324,552,326,553,325,554,327,555,327,555,326,556,328,558,328,558,329,560,329,559,332,560,332,560,333,561,333,560,334,562,334,562,335,563,337,563,336,563,337,564,337,565,338,564,343,562,338,566,351,566,360,565,361,565,366,564,366,561,371,559,372,546,371,544,372,543,372,542,368,541,369,540,368,542,370,541,371,537,372,533,372,529,373,529,371,531,371,531,370,529,371,529,368,529,370,528,370,529,370,528,373,527,373,526,371,526,372,525,372,527,373,523,374,522,375,514,377,512,378,511,377,512,377,512,376,514,376,512,375,510,376,504,370,504,367,506,367,504,363,508,361,509,361,509,360,510,359,512,357,511,354,513,353,512,351,512,350,513,350,513,348,516,346,523,349,528,343,528,342,538,340,546,325,548,324">
+<area shape="POLY" title="Bladen County" coords="516,273,517,275,519,275,519,277,520,277,521,280,522,280,522,282,524,282,524,283,525,284,525,286,526,286,526,287,527,288,527,289,528,290,529,290,529,291,531,292,531,294,532,295,532,296,532,297,533,299,534,299,536,301,538,303,537,304,538,304,536,306,537,308,538,308,538,310,539,311,540,311,541,311,542,311,542,312,545,314,538,321,531,324,528,324,525,324,521,323,510,318,508,318,505,315,505,316,503,315,502,316,503,315,502,315,501,314,488,315,485,313,484,313,483,313,484,311,485,311,486,311,486,310,485,309,485,307,485,305,485,304,486,303,487,301,486,300,487,300,487,298,489,295,488,294,489,293,489,291,488,288,487,287,486,288,486,287,485,286,484,281,481,275,486,274,489,273,513,273,514,274,516,272">
+<area shape="POLY" title="Bertie County" coords="667,154,666,154">
+<area shape="POLY" title="Bertie County" coords="627,122,644,122,645,122,651,122,666,121,666,122,665,122,664,125,664,131,667,137,667,141,668,143,669,146,668,147,669,146,670,146,671,148,668,151,666,154,668,154,669,153,670,153,669,155,668,156,665,161,663,162,660,160,659,159,658,160,658,163,655,167,653,167,652,166,653,166,652,165,653,162,651,159,649,158,647,160,645,161,643,163,642,163,641,163,640,161,641,161,640,160,642,159,641,155,640,155,640,154,639,154,638,154,637,154,638,155,636,155,635,156,635,155,633,156,632,154,631,155,629,155,629,156,627,156,626,154,627,154,626,153,627,153,626,152,627,152,626,149,625,149,625,148,615,143,615,141,616,139,620,138,622,138,623,137,621,136,622,136,621,135,621,134,620,133,620,132,619,132,617,130,617,126,621,125,623,126,625,122">
+<area shape="POLY" title="Beaufort County" coords="686,192,686,191">
+<area shape="POLY" title="Beaufort County" coords="687,192,686,192">
+<area shape="POLY" title="Beaufort County" coords="679,205,679,204">
+<area shape="POLY" title="Beaufort County" coords="688,192">
+<area shape="POLY" title="Beaufort County" coords="676,215,675,215">
+<area shape="POLY" title="Beaufort County" coords="638,181,646,184,658,179,675,178,681,188,690,193,689,196,685,196,685,194,685,197,680,196,681,195,678,196,674,194,675,192,674,195,671,195,676,196,677,198,672,200,669,198,672,202,676,199,680,202,679,205,677,204,679,205,682,212,675,210,675,208,677,209,676,205,674,208,673,207,673,209,670,208,666,209,662,207,661,204,664,204,663,203,661,204,662,199,660,206,658,205,653,205,651,204,652,203,650,204,648,201,647,203,643,199,643,201,639,200,646,204,648,211,648,208,651,206,660,210,657,215,661,213,661,214,661,211,672,215,667,216,663,220,665,223,664,220,667,220,669,217,672,217,670,220,672,218,673,219,673,216,678,217,675,219,678,219,676,221,679,222,677,223,674,222,679,224,678,228,659,231,649,222,629,210,629,199,634,196,637,196,629,187,627,180,631,176">
+<area shape="POLY" title="Avery County" coords="221,120,222,121,222,122,221,122,222,122,221,122,221,123,221,124,220,124,220,125,220,126,220,127,221,128,222,129,222,130,225,129,226,131,227,132,227,133,228,138,230,138,231,139,232,139,232,140,233,140,233,141,233,142,234,142,235,143,229,154,228,154,228,153,226,153,225,152,225,153,223,152,223,151,222,150,221,150,217,154,215,156,216,157,215,158,214,159,213,159,209,156,208,153,207,151,207,150,208,149,209,149,206,142,206,141,206,140,206,139,205,139,205,138,207,137,208,136,209,137,210,136,216,125,218,121,220,119">
+<area shape="POLY" title="Ashe County" coords="241,87,248,88,254,88,258,89,261,89,267,89,268,89,269,89,269,91,268,92,269,92,269,93,271,95,271,98,273,100,273,101,274,101,275,103,276,105,276,107,278,109,278,111,277,112,276,112,275,112,274,111,274,112,273,111,272,111,271,111,271,110,270,111,269,112,269,113,269,112,268,113,267,117,268,117,268,118,267,118,267,120,266,120,266,121,265,120,263,119,263,121,262,121,262,122,260,123,259,124,258,123,257,125,254,123,253,122,251,121,250,121,248,118,244,113,242,112,236,108,235,108,235,106,236,106,237,105,237,104,237,103,237,101,238,101,239,101,239,100,239,98,239,97,239,96,239,94,238,94,238,93,239,93,240,91,240,90,241,89,241,88">
+<area shape="POLY" title="Anson County" coords="363,236,363,238,363,239,364,240,365,241,366,241,367,240,367,241,368,241,369,242,370,242,370,241,370,240,371,240,371,239,372,240,373,240,373,239,374,239,373,238,374,237,375,237,375,238,375,239,377,241,378,242,378,243,378,244,378,245,378,246,381,247,382,248,384,249,385,249,386,249,386,248,386,247,388,246,389,245,391,246,391,247,392,248,392,250,392,251,393,252,395,253,395,254,394,256,393,257,395,259,396,260,396,261,396,263,396,264,397,265,397,267,398,268,397,269,396,271,394,273,393,273,392,275,392,277,391,278,391,279,356,278,360,237,361,236,362,235">
+<area shape="POLY" title="Alleghany County" coords="275,89,291,90,295,90,298,91,307,91,307,92,306,93,306,95,306,96,306,97,305,97,302,102,301,103,303,106,302,108,301,109,300,109,300,110,300,111,299,111,298,111,296,111,295,109,295,107,292,106,292,105,291,104,290,104,289,105,288,105,288,106,287,107,286,106,286,105,285,105,282,108,280,110,279,111,278,112,277,112,277,111,278,111,278,110,278,109,277,108,276,108,276,107,276,106,276,105,276,104,275,103,274,101,273,101,273,100,271,98,271,97,271,95,270,95,269,93,269,92,268,92,269,91,269,90,269,89">
+<area shape="POLY" title="Alexander County" coords="296,146,298,152,298,155,294,166,293,168,292,170,291,171,291,172,288,174,287,173,287,172,286,171,286,169,285,169,284,169,283,169,283,170,281,170,280,170,279,170,278,171,277,171,276,170,276,171,275,171,274,171,273,171,273,172,272,172,271,172,269,172,269,171,269,170,269,169,268,169,269,163,269,159,270,151,271,151,271,150,272,150,274,149,275,148,276,148,277,148,278,148,278,147,279,148,280,147,281,147,282,147,283,147,283,148,284,148,286,147,288,147,289,147,290,148,293,148,294,146">
+<area shape="POLY" title="Alamance County" coords="428,125,448,125,448,161,449,162,449,163,449,164,449,165,449,166,449,167,450,167,450,168,424,168,424,162,424,143,425,126,425,125">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+<area shape="RECT" href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv" coords="95,428,705,445">
+</map>
+<div  class="c">
+<img src="covid19_nccounty_mapanim_cases.gif" style=" height: 450px; width: 800px;" border="0" usemap="#covid19_nccounty_map" class="c graph">
+</div>
+</body>
+</html>
