@@ -24,10 +24,10 @@ data _null_;
 run;
 %mend getdata;
 
-/*
 %getdata(time_series_covid19_confirmed_global.csv);
 %getdata(time_series_covid19_deaths_global.csv);
 %getdata(time_series_covid19_recovered_global.csv);
+/*
 */
 
 
@@ -397,7 +397,7 @@ function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="Total Deaths"; output;
 html='title='||quote(trim(left(put(sum_deaths,comma12.0)))||" deaths from COVID-19 Coronavirus worldwide");
-style='albany amt/bold'; color="white"; size=38;
+style='albany amt/bold'; color="white"; size=28;
 x=50; y=50; text=trim(left(put(sum_deaths,comma12.0))); output;
 run;
 data anno_deaths_total; set anno_gray_background anno_deaths_total;
@@ -444,7 +444,7 @@ function='label'; position='5';
 style='albany amt/bold'; color="graycc"; size=11;
 x=50; y=84; text="New Cases Today"; output;
 html='title='||quote(trim(left(put(sum_increase,comma12.0)))||" increase in COVID-19 Coronavirus cases worldwide on &datestr");
-style='albany amt/bold'; color="orange"; size=38;
+style='albany amt/bold'; color="orange"; size=28;
 x=50; y=50; text=trim(left(put(sum_increase,comma12.0))); output;
 run;
 data anno_increase_total; set anno_gray_background anno_increase_total;
@@ -561,7 +561,7 @@ id;
 run;
 
 /* these control the size of the blue bubbles */
-%let max_val=3000000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
+%let max_val=3500000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
 %let max_area=100; /* maximum bubble size (area) */
 proc sort data=map_data out=anno_bubbles;
 by descending confirmed;
@@ -829,7 +829,9 @@ title1 h=2pct ' ';
 footnote1 h=2pct ' ';
 data anno_mouseover; set anno_mouseover anno_gray_background;
 run;
+/* ----------------------------------------------- */
 /* not using this one anymore (see the next gplot) */
+/* ----------------------------------------------- */
 proc gplot data=summarized_series anno=anno_mouseover;
 format confirmed comma12.0;
 format snapshot nldate20.;
@@ -838,6 +840,9 @@ plot confirmed*snapshot /
  vaxis=axis1 haxis=axis2
  des='' name="series";
 run;
+/* ----------------------------------------------- */
+/* not using this one anymore (see the next gplot) */
+/* ----------------------------------------------- */
 
 
 /* Rather than cumulative line, create daily bar */
@@ -871,26 +876,23 @@ data anno_mouseover; set anno_mouseover anno_gray_background;
 run;
 
 axis1 value=(c=graycc h=11pt) label=none major=none minor=none offset=(0,0)
- order=(0 to 300000 by 50000) style=0;
+ order=(0 to 400000 by 50000) style=0;
 
 axis2 label=none 
 /*
  order=("&mindate"d to "&maxdate"d by &byval)
 */
- order=('01feb2020'd to '01sep2020'd by month)
+ order=('01feb2020'd to '01nov2020'd by month)
  major=(height=4pt) value=(c=graycc h=11pt font='albany amt')
  offset=(0,0);
 
-symbol1 interpol=needle width=3 color=orange value=circle height=9pt cv=graycc mode=include;
+symbol1 interpol=needle width=1 color=orange value=circle height=9pt cv=graycc mode=include;
 
 title1 h=2pct ' ';
 footnote1 h=2pct ' ';
 
 proc gplot data=bar_confirmed anno=anno_mouseover;
 format on_this_day comma8.0;
-/*
-format snapshot nldate20.;
-*/
 format snapshot monname3.;
 note move=(15,81) font='albany amt/bold' "Daily New Reported Cases Worldwide";
 plot on_this_day*snapshot / noframe
@@ -1099,9 +1101,9 @@ format snapshot monname3.;
 format confirmed recovered deaths daily comma10.0;
 styleattrs datacontrastcolors=(orange gray99);
 needle y=daily x=snapshot / name='daily'
- group=day_color
- lineattrs=(/*color=orange*/ thickness=2px) 
- markers markerattrs=(color=gray77 symbol=circle size=4pt);
+ group=day_color lineattrs=(thickness=1px) 
+ markers markerattrs=(color=gray77 symbol=circle size=4pt)
+ tip=(snapshot daily) tipformat=(weekdate30. comma8.0);
 series y=avg_7 x=snapshot / name='avg'
  lineattrs=(color=dodgerblue thickness=3) tip=none;
 yaxis display=(nolabel noline noticks) min=0
@@ -1111,7 +1113,7 @@ xaxis display=(nolabel) type=time
 /*
  values=("&mindate"d to "&maxdate"d by &byval)
 */
- values=('01feb2020'd to '01sep2020'd by month) 
+ values=('01feb2020'd to '01nov2020'd by month) 
  valueattrs=(color=gray33 size=10pt);
 keylegend 'avg' 'daily' / title='' position=bottom location=outside 
  valueattrs=(color=gray33 size=11pt weight=normal)
