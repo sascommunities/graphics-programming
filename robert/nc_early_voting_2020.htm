@@ -1,0 +1,2450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>Early Voting in NC</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="nc_early_voting_2020">
+<Area shape="poly" href="https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2020_11_03/absentee_20201103.zip" target="_BLANK" coords="18.0,518.296875,489.0,518.296875,489.0,537.703125,18.0,537.703125,18.0,518.296875,18.0,518.296875"/>
+<Area shape="poly" href="https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2016_11_08/absentee_20161108.zip" target="_BLANK" coords="18.0,501.796875,489.0,501.796875,489.0,521.203125,18.0,521.203125,18.0,501.796875,18.0,501.796875"/>
+<Area shape="poly" alt=" days_before_election = 0 
+ 2016 = 3,126,595" title=" days_before_election = 0 
+ 2016 = 3,126,595" coords="846,111,853,111,853,118,846,118,846,111,"/>
+<Area shape="poly" alt=" days_before_election = 1 
+ 2016 = 3,111,556" title=" days_before_election = 1 
+ 2016 = 3,111,556" coords="831,113,838,113,838,120,831,120,831,113,"/>
+<Area shape="poly" alt=" days_before_election = 2 
+ 2016 = 3,110,935" title=" days_before_election = 2 
+ 2016 = 3,110,935" coords="816,113,823,113,823,120,816,120,816,113,"/>
+<Area shape="poly" alt=" days_before_election = 3 
+ 2016 = 2,911,015" title=" days_before_election = 3 
+ 2016 = 2,911,015" coords="801,133,808,133,808,140,801,140,801,133,"/>
+<Area shape="poly" alt=" days_before_election = 4 
+ 2016 = 2,598,993" title=" days_before_election = 4 
+ 2016 = 2,598,993" coords="786,165,793,165,793,172,786,172,786,165,"/>
+<Area shape="poly" alt=" days_before_election = 5 
+ 2016 = 2,350,278" title=" days_before_election = 5 
+ 2016 = 2,350,278" coords="772,191,779,191,779,198,772,198,772,191,"/>
+<Area shape="poly" alt=" days_before_election = 6 
+ 2016 = 2,106,350" title=" days_before_election = 6 
+ 2016 = 2,106,350" coords="757,216,764,216,764,223,757,223,757,216,"/>
+<Area shape="poly" alt=" days_before_election = 7 
+ 2016 = 1,879,689" title=" days_before_election = 7 
+ 2016 = 1,879,689" coords="742,239,749,239,749,246,742,246,742,239,"/>
+<Area shape="poly" alt=" days_before_election = 8 
+ 2016 = 1,653,216" title=" days_before_election = 8 
+ 2016 = 1,653,216" coords="727,262,734,262,734,269,727,269,727,262,"/>
+<Area shape="poly" alt=" days_before_election = 9 
+ 2016 = 1,609,971" title=" days_before_election = 9 
+ 2016 = 1,609,971" coords="712,266,719,266,719,273,712,273,712,266,"/>
+<Area shape="poly" alt=" days_before_election = 10 
+ 2016 = 1,463,285" title=" days_before_election = 10 
+ 2016 = 1,463,285" coords="697,281,704,281,704,288,697,288,697,281,"/>
+<Area shape="poly" alt=" days_before_election = 11 
+ 2016 = 1,217,960" title=" days_before_election = 11 
+ 2016 = 1,217,960" coords="682,307,689,307,689,314,682,314,682,307,"/>
+<Area shape="poly" alt=" days_before_election = 12 
+ 2016 = 972,625" title=" days_before_election = 12 
+ 2016 = 972,625" coords="667,332,674,332,674,339,667,339,667,332,"/>
+<Area shape="poly" alt=" days_before_election = 13 
+ 2016 = 818,927" title=" days_before_election = 13 
+ 2016 = 818,927" coords="652,347,659,347,659,354,652,354,652,347,"/>
+<Area shape="poly" alt=" days_before_election = 14 
+ 2016 = 657,203" title=" days_before_election = 14 
+ 2016 = 657,203" coords="637,364,644,364,644,371,637,371,637,364,"/>
+<Area shape="poly" alt=" days_before_election = 15 
+ 2016 = 478,550" title=" days_before_election = 15 
+ 2016 = 478,550" coords="622,382,629,382,629,389,622,389,622,382,"/>
+<Area shape="poly" alt=" days_before_election = 16 
+ 2016 = 458,606" title=" days_before_election = 16 
+ 2016 = 458,606" coords="608,384,615,384,615,391,608,391,608,384,"/>
+<Area shape="poly" alt=" days_before_election = 17 
+ 2016 = 387,023" title=" days_before_election = 17 
+ 2016 = 387,023" coords="593,392,600,392,600,399,593,399,593,392,"/>
+<Area shape="poly" alt=" days_before_election = 18 
+ 2016 = 226,213" title=" days_before_election = 18 
+ 2016 = 226,213" coords="578,408,585,408,585,415,578,415,578,408,"/>
+<Area shape="poly" alt=" days_before_election = 19 
+ 2016 = 55,458" title=" days_before_election = 19 
+ 2016 = 55,458" coords="563,426,570,426,570,433,563,433,563,426,"/>
+<Area shape="poly" alt=" days_before_election = 20 
+ 2016 = 49,866" title=" days_before_election = 20 
+ 2016 = 49,866" coords="548,426,555,426,555,433,548,433,548,426,"/>
+<Area shape="poly" alt=" days_before_election = 21 
+ 2016 = 47,214" title=" days_before_election = 21 
+ 2016 = 47,214" coords="533,426,540,426,540,433,533,433,533,426,"/>
+<Area shape="poly" alt=" days_before_election = 22 
+ 2016 = 41,655" title=" days_before_election = 22 
+ 2016 = 41,655" coords="518,427,525,427,525,434,518,434,518,427,"/>
+<Area shape="poly" alt=" days_before_election = 23 
+ 2016 = 41,082" title=" days_before_election = 23 
+ 2016 = 41,082" coords="503,427,510,427,510,434,503,434,503,427,"/>
+<Area shape="poly" alt=" days_before_election = 24 
+ 2016 = 39,598" title=" days_before_election = 24 
+ 2016 = 39,598" coords="488,427,495,427,495,434,488,434,488,427,"/>
+<Area shape="poly" alt=" days_before_election = 25 
+ 2016 = 34,991" title=" days_before_election = 25 
+ 2016 = 34,991" coords="473,428,480,428,480,435,473,435,473,428,"/>
+<Area shape="poly" alt=" days_before_election = 26 
+ 2016 = 31,806" title=" days_before_election = 26 
+ 2016 = 31,806" coords="459,428,466,428,466,435,459,435,459,428,"/>
+<Area shape="poly" alt=" days_before_election = 27 
+ 2016 = 29,265" title=" days_before_election = 27 
+ 2016 = 29,265" coords="444,428,451,428,451,435,444,435,444,428,"/>
+<Area shape="poly" alt=" days_before_election = 28 
+ 2016 = 26,627" title=" days_before_election = 28 
+ 2016 = 26,627" coords="429,428,436,428,436,435,429,435,429,428,"/>
+<Area shape="poly" alt=" days_before_election = 29 
+ 2016 = 25,226" title=" days_before_election = 29 
+ 2016 = 25,226" coords="414,429,421,429,421,436,414,436,414,429,"/>
+<Area shape="poly" alt=" days_before_election = 30 
+ 2016 = 25,186" title=" days_before_election = 30 
+ 2016 = 25,186" coords="399,429,406,429,406,436,399,436,399,429,"/>
+<Area shape="poly" alt=" days_before_election = 31 
+ 2016 = 24,217" title=" days_before_election = 31 
+ 2016 = 24,217" coords="384,429,391,429,391,436,384,436,384,429,"/>
+<Area shape="poly" alt=" days_before_election = 32 
+ 2016 = 22,261" title=" days_before_election = 32 
+ 2016 = 22,261" coords="369,429,376,429,376,436,369,436,369,429,"/>
+<Area shape="poly" alt=" days_before_election = 33 
+ 2016 = 20,211" title=" days_before_election = 33 
+ 2016 = 20,211" coords="354,429,361,429,361,436,354,436,354,429,"/>
+<Area shape="poly" alt=" days_before_election = 34 
+ 2016 = 17,726" title=" days_before_election = 34 
+ 2016 = 17,726" coords="339,429,346,429,346,436,339,436,339,429,"/>
+<Area shape="poly" alt=" days_before_election = 35 
+ 2016 = 16,275" title=" days_before_election = 35 
+ 2016 = 16,275" coords="324,430,331,430,331,436,324,436,324,430,"/>
+<Area shape="poly" alt=" days_before_election = 36 
+ 2016 = 13,900" title=" days_before_election = 36 
+ 2016 = 13,900" coords="310,430,317,430,317,436,310,436,310,430,"/>
+<Area shape="poly" alt=" days_before_election = 37 
+ 2016 = 13,874" title=" days_before_election = 37 
+ 2016 = 13,874" coords="295,430,302,430,302,436,295,436,295,430,"/>
+<Area shape="poly" alt=" days_before_election = 38 
+ 2016 = 13,651" title=" days_before_election = 38 
+ 2016 = 13,651" coords="280,430,287,430,287,436,280,436,280,430,"/>
+<Area shape="poly" alt=" days_before_election = 39 
+ 2016 = 12,374" title=" days_before_election = 39 
+ 2016 = 12,374" coords="265,430,272,430,272,436,265,436,265,430,"/>
+<Area shape="poly" alt=" days_before_election = 40 
+ 2016 = 11,001" title=" days_before_election = 40 
+ 2016 = 11,001" coords="250,430,257,430,257,436,250,436,250,430,"/>
+<Area shape="poly" alt=" days_before_election = 41 
+ 2016 = 9,579" title=" days_before_election = 41 
+ 2016 = 9,579" coords="235,430,242,430,242,436,235,436,235,430,"/>
+<Area shape="poly" alt=" days_before_election = 42 
+ 2016 = 8,689" title=" days_before_election = 42 
+ 2016 = 8,689" coords="220,430,227,430,227,436,220,436,220,430,"/>
+<Area shape="poly" alt=" days_before_election = 43 
+ 2016 = 6,912" title=" days_before_election = 43 
+ 2016 = 6,912" coords="205,430,212,430,212,436,205,436,205,430,"/>
+<Area shape="poly" alt=" days_before_election = 44 
+ 2016 = 6,907" title=" days_before_election = 44 
+ 2016 = 6,907" coords="190,430,197,430,197,436,190,436,190,430,"/>
+<Area shape="poly" alt=" days_before_election = 45 
+ 2016 = 6,727" title=" days_before_election = 45 
+ 2016 = 6,727" coords="175,431,182,431,182,436,175,436,175,431,"/>
+<Area shape="poly" alt=" days_before_election = 46 
+ 2016 = 5,727" title=" days_before_election = 46 
+ 2016 = 5,727" coords="161,431,168,431,168,436,161,436,161,431,"/>
+<Area shape="poly" alt=" days_before_election = 47 
+ 2016 = 4,707" title=" days_before_election = 47 
+ 2016 = 4,707" coords="146,431,153,431,153,436,146,436,146,431,"/>
+<Area shape="poly" alt=" days_before_election = 48 
+ 2016 = 3,740" title=" days_before_election = 48 
+ 2016 = 3,740" coords="131,431,138,431,138,436,131,436,131,431,"/>
+<Area shape="poly" alt=" days_before_election = 49 
+ 2016 = 3,139" title=" days_before_election = 49 
+ 2016 = 3,139" coords="116,431,123,431,123,436,116,436,116,431,"/>
+<Area shape="poly" alt=" days_before_election = 50 
+ 2016 = 1,687" title=" days_before_election = 50 
+ 2016 = 1,687" coords="105,431,108,431,108,436,105,436,105,431,"/>
+<Area shape="poly" alt=" days_before_election = 0 
+ 2016 = 3,126,595" title=" days_before_election = 0 
+ 2016 = 3,126,595" coords="842,114,850,114,850,116,842,116,"/>
+<Area shape="poly" alt=" days_before_election = 1 
+ 2016 = 3,111,556" title=" days_before_election = 1 
+ 2016 = 3,111,556" coords="835,115,842,114,842,116,835,117,"/>
+<Area shape="poly" alt=" days_before_election = 1 
+ 2016 = 3,111,556" title=" days_before_election = 1 
+ 2016 = 3,111,556" coords="827,115,835,115,835,117,827,117,"/>
+<Area shape="poly" alt=" days_before_election = 2 
+ 2016 = 3,110,935" title=" days_before_election = 2 
+ 2016 = 3,110,935" coords="820,115,827,115,827,117,820,117,"/>
+<Area shape="poly" alt=" days_before_election = 2 
+ 2016 = 3,110,935" title=" days_before_election = 2 
+ 2016 = 3,110,935" coords="811,125,819,115,821,117,813,127,"/>
+<Area shape="poly" alt=" days_before_election = 3 
+ 2016 = 2,911,015" title=" days_before_election = 3 
+ 2016 = 2,911,015" coords="804,136,811,125,813,127,806,138,"/>
+<Area shape="poly" alt=" days_before_election = 3 
+ 2016 = 2,911,015" title=" days_before_election = 3 
+ 2016 = 2,911,015" coords="796,153,804,137,806,137,798,153,"/>
+<Area shape="poly" alt=" days_before_election = 4 
+ 2016 = 2,598,993" title=" days_before_election = 4 
+ 2016 = 2,598,993" coords="789,169,796,153,798,153,791,169,"/>
+<Area shape="poly" alt=" days_before_election = 4 
+ 2016 = 2,598,993" title=" days_before_election = 4 
+ 2016 = 2,598,993" coords="781,180,789,168,791,170,783,182,"/>
+<Area shape="poly" alt=" days_before_election = 5 
+ 2016 = 2,350,278" title=" days_before_election = 5 
+ 2016 = 2,350,278" coords="774,194,781,181,783,181,776,194,"/>
+<Area shape="poly" alt=" days_before_election = 5 
+ 2016 = 2,350,278" title=" days_before_election = 5 
+ 2016 = 2,350,278" coords="767,207,774,194,776,194,769,207,"/>
+<Area shape="poly" alt=" days_before_election = 6 
+ 2016 = 2,106,350" title=" days_before_election = 6 
+ 2016 = 2,106,350" coords="759,218,767,206,769,208,761,220,"/>
+<Area shape="poly" alt=" days_before_election = 6 
+ 2016 = 2,106,350" title=" days_before_election = 6 
+ 2016 = 2,106,350" coords="752,230,759,218,761,220,754,232,"/>
+<Area shape="poly" alt=" days_before_election = 7 
+ 2016 = 1,879,689" title=" days_before_election = 7 
+ 2016 = 1,879,689" coords="744,241,752,230,754,232,746,243,"/>
+<Area shape="poly" alt=" days_before_election = 7 
+ 2016 = 1,879,689" title=" days_before_election = 7 
+ 2016 = 1,879,689" coords="737,253,744,241,746,243,739,255,"/>
+<Area shape="poly" alt=" days_before_election = 8 
+ 2016 = 1,653,216" title=" days_before_election = 8 
+ 2016 = 1,653,216" coords="729,264,737,253,739,255,731,266,"/>
+<Area shape="poly" alt=" days_before_election = 8 
+ 2016 = 1,653,216" title=" days_before_election = 8 
+ 2016 = 1,653,216" coords="723,267,730,264,730,266,723,269,"/>
+<Area shape="poly" alt=" days_before_election = 9 
+ 2016 = 1,609,971" title=" days_before_election = 9 
+ 2016 = 1,609,971" coords="715,269,723,267,723,269,715,271,"/>
+<Area shape="poly" alt=" days_before_election = 9 
+ 2016 = 1,609,971" title=" days_before_election = 9 
+ 2016 = 1,609,971" coords="707,276,714,269,716,271,709,278,"/>
+<Area shape="poly" alt=" days_before_election = 10 
+ 2016 = 1,463,285" title=" days_before_election = 10 
+ 2016 = 1,463,285" coords="700,284,707,276,709,278,702,286,"/>
+<Area shape="poly" alt=" days_before_election = 10 
+ 2016 = 1,463,285" title=" days_before_election = 10 
+ 2016 = 1,463,285" coords="692,296,700,284,702,286,694,298,"/>
+<Area shape="poly" alt=" days_before_election = 11 
+ 2016 = 1,217,960" title=" days_before_election = 11 
+ 2016 = 1,217,960" coords="685,310,692,297,694,297,687,310,"/>
+<Area shape="poly" alt=" days_before_election = 11 
+ 2016 = 1,217,960" title=" days_before_election = 11 
+ 2016 = 1,217,960" coords="677,322,685,309,687,311,679,324,"/>
+<Area shape="poly" alt=" days_before_election = 12 
+ 2016 = 972,625" title=" days_before_election = 12 
+ 2016 = 972,625" coords="670,334,677,322,679,324,672,336,"/>
+<Area shape="poly" alt=" days_before_election = 12 
+ 2016 = 972,625" title=" days_before_election = 12 
+ 2016 = 972,625" coords="662,342,670,334,672,336,664,344,"/>
+<Area shape="poly" alt=" days_before_election = 13 
+ 2016 = 818,927" title=" days_before_election = 13 
+ 2016 = 818,927" coords="655,350,662,342,664,344,657,352,"/>
+<Area shape="poly" alt=" days_before_election = 13 
+ 2016 = 818,927" title=" days_before_election = 13 
+ 2016 = 818,927" coords="647,358,655,350,657,352,649,360,"/>
+<Area shape="poly" alt=" days_before_election = 14 
+ 2016 = 657,203" title=" days_before_election = 14 
+ 2016 = 657,203" coords="640,366,647,358,649,360,642,368,"/>
+<Area shape="poly" alt=" days_before_election = 14 
+ 2016 = 657,203" title=" days_before_election = 14 
+ 2016 = 657,203" coords="632,376,640,366,642,368,634,378,"/>
+<Area shape="poly" alt=" days_before_election = 15 
+ 2016 = 478,550" title=" days_before_election = 15 
+ 2016 = 478,550" coords="625,385,632,376,634,378,627,387,"/>
+<Area shape="poly" alt=" days_before_election = 15 
+ 2016 = 478,550" title=" days_before_election = 15 
+ 2016 = 478,550" coords="619,386,626,385,626,387,619,388,"/>
+<Area shape="poly" alt=" days_before_election = 16 
+ 2016 = 458,606" title=" days_before_election = 16 
+ 2016 = 458,606" coords="611,387,619,386,619,388,611,389,"/>
+<Area shape="poly" alt=" days_before_election = 16 
+ 2016 = 458,606" title=" days_before_election = 16 
+ 2016 = 458,606" coords="604,390,611,387,611,389,604,392,"/>
+<Area shape="poly" alt=" days_before_election = 17 
+ 2016 = 387,023" title=" days_before_election = 17 
+ 2016 = 387,023" coords="596,394,604,390,604,392,596,396,"/>
+<Area shape="poly" alt=" days_before_election = 17 
+ 2016 = 387,023" title=" days_before_election = 17 
+ 2016 = 387,023" coords="588,402,595,394,597,396,590,404,"/>
+<Area shape="poly" alt=" days_before_election = 18 
+ 2016 = 226,213" title=" days_before_election = 18 
+ 2016 = 226,213" coords="580,411,588,402,590,404,582,413,"/>
+<Area shape="poly" alt=" days_before_election = 18 
+ 2016 = 226,213" title=" days_before_election = 18 
+ 2016 = 226,213" coords="573,419,580,411,582,413,575,421,"/>
+<Area shape="poly" alt=" days_before_election = 19 
+ 2016 = 55,458" title=" days_before_election = 19 
+ 2016 = 55,458" coords="565,428,573,419,575,421,567,430,"/>
+<Area shape="poly" alt=" days_before_election = 19 
+ 2016 = 55,458" title=" days_before_election = 19 
+ 2016 = 55,458" coords="559,428,566,428,566,430,559,430,"/>
+<Area shape="poly" alt=" days_before_election = 20 
+ 2016 = 49,866" title=" days_before_election = 20 
+ 2016 = 49,866" coords="551,429,559,428,559,430,551,431,"/>
+<Area shape="poly" alt=" days_before_election = 20 
+ 2016 = 49,866" title=" days_before_election = 20 
+ 2016 = 49,866" coords="544,429,551,429,551,431,544,431,"/>
+<Area shape="poly" alt=" days_before_election = 21 
+ 2016 = 47,214" title=" days_before_election = 21 
+ 2016 = 47,214" coords="537,429,544,429,544,431,537,431,"/>
+<Area shape="poly" alt=" days_before_election = 21 
+ 2016 = 47,214" title=" days_before_election = 21 
+ 2016 = 47,214" coords="529,429,537,429,537,431,529,431,"/>
+<Area shape="poly" alt=" days_before_election = 22 
+ 2016 = 41,655" title=" days_before_election = 22 
+ 2016 = 41,655" coords="522,429,529,429,529,431,522,431,"/>
+<Area shape="poly" alt=" days_before_election = 22 
+ 2016 = 41,655" title=" days_before_election = 22 
+ 2016 = 41,655" coords="514,429,522,429,522,431,514,431,"/>
+<Area shape="poly" alt=" days_before_election = 23 
+ 2016 = 41,082" title=" days_before_election = 23 
+ 2016 = 41,082" coords="507,429,514,429,514,431,507,431,"/>
+<Area shape="poly" alt=" days_before_election = 23 
+ 2016 = 41,082" title=" days_before_election = 23 
+ 2016 = 41,082" coords="499,430,507,429,507,431,499,432,"/>
+<Area shape="poly" alt=" days_before_election = 24 
+ 2016 = 39,598" title=" days_before_election = 24 
+ 2016 = 39,598" coords="492,430,499,430,499,432,492,432,"/>
+<Area shape="poly" alt=" days_before_election = 24 
+ 2016 = 39,598" title=" days_before_election = 24 
+ 2016 = 39,598" coords="484,430,492,430,492,432,484,432,"/>
+<Area shape="poly" alt=" days_before_election = 25 
+ 2016 = 34,991" title=" days_before_election = 25 
+ 2016 = 34,991" coords="477,430,484,430,484,432,477,432,"/>
+<Area shape="poly" alt=" days_before_election = 25 
+ 2016 = 34,991" title=" days_before_election = 25 
+ 2016 = 34,991" coords="470,430,477,430,477,432,470,432,"/>
+<Area shape="poly" alt=" days_before_election = 26 
+ 2016 = 31,806" title=" days_before_election = 26 
+ 2016 = 31,806" coords="462,430,470,430,470,432,462,432,"/>
+<Area shape="poly" alt=" days_before_election = 26 
+ 2016 = 31,806" title=" days_before_election = 26 
+ 2016 = 31,806" coords="455,431,462,430,462,432,455,433,"/>
+<Area shape="poly" alt=" days_before_election = 27 
+ 2016 = 29,265" title=" days_before_election = 27 
+ 2016 = 29,265" coords="447,431,455,431,455,433,447,433,"/>
+<Area shape="poly" alt=" days_before_election = 27 
+ 2016 = 29,265" title=" days_before_election = 27 
+ 2016 = 29,265" coords="440,431,447,431,447,433,440,433,"/>
+<Area shape="poly" alt=" days_before_election = 28 
+ 2016 = 26,627" title=" days_before_election = 28 
+ 2016 = 26,627" coords="432,431,440,431,440,433,432,433,"/>
+<Area shape="poly" alt=" days_before_election = 28 
+ 2016 = 26,627" title=" days_before_election = 28 
+ 2016 = 26,627" coords="425,431,432,431,432,433,425,433,"/>
+<Area shape="poly" alt=" days_before_election = 29 
+ 2016 = 25,226" title=" days_before_election = 29 
+ 2016 = 25,226" coords="417,431,425,431,425,433,417,433,"/>
+<Area shape="poly" alt=" days_before_election = 29 
+ 2016 = 25,226" title=" days_before_election = 29 
+ 2016 = 25,226" coords="410,431,417,431,417,433,410,433,"/>
+<Area shape="poly" alt=" days_before_election = 30 
+ 2016 = 25,186" title=" days_before_election = 30 
+ 2016 = 25,186" coords="402,431,410,431,410,433,402,433,"/>
+<Area shape="poly" alt=" days_before_election = 30 
+ 2016 = 25,186" title=" days_before_election = 30 
+ 2016 = 25,186" coords="395,431,402,431,402,433,395,433,"/>
+<Area shape="poly" alt=" days_before_election = 31 
+ 2016 = 24,217" title=" days_before_election = 31 
+ 2016 = 24,217" coords="388,431,395,431,395,433,388,433,"/>
+<Area shape="poly" alt=" days_before_election = 31 
+ 2016 = 24,217" title=" days_before_election = 31 
+ 2016 = 24,217" coords="380,431,388,431,388,433,380,433,"/>
+<Area shape="poly" alt=" days_before_election = 32 
+ 2016 = 22,261" title=" days_before_election = 32 
+ 2016 = 22,261" coords="373,431,380,431,380,433,373,433,"/>
+<Area shape="poly" alt=" days_before_election = 32 
+ 2016 = 22,261" title=" days_before_election = 32 
+ 2016 = 22,261" coords="365,432,373,431,373,433,365,434,"/>
+<Area shape="poly" alt=" days_before_election = 33 
+ 2016 = 20,211" title=" days_before_election = 33 
+ 2016 = 20,211" coords="358,432,365,432,365,434,358,434,"/>
+<Area shape="poly" alt=" days_before_election = 33 
+ 2016 = 20,211" title=" days_before_election = 33 
+ 2016 = 20,211" coords="350,432,358,432,358,434,350,434,"/>
+<Area shape="poly" alt=" days_before_election = 34 
+ 2016 = 17,726" title=" days_before_election = 34 
+ 2016 = 17,726" coords="343,432,350,432,350,434,343,434,"/>
+<Area shape="poly" alt=" days_before_election = 34 
+ 2016 = 17,726" title=" days_before_election = 34 
+ 2016 = 17,726" coords="335,432,343,432,343,434,335,434,"/>
+<Area shape="poly" alt=" days_before_election = 35 
+ 2016 = 16,275" title=" days_before_election = 35 
+ 2016 = 16,275" coords="328,432,335,432,335,434,328,434,"/>
+<Area shape="poly" alt=" days_before_election = 35 
+ 2016 = 16,275" title=" days_before_election = 35 
+ 2016 = 16,275" coords="320,432,328,432,328,434,320,434,"/>
+<Area shape="poly" alt=" days_before_election = 36 
+ 2016 = 13,900" title=" days_before_election = 36 
+ 2016 = 13,900" coords="313,432,320,432,320,434,313,434,"/>
+<Area shape="poly" alt=" days_before_election = 36 
+ 2016 = 13,900" title=" days_before_election = 36 
+ 2016 = 13,900" coords="306,432,313,432,313,434,306,434,"/>
+<Area shape="poly" alt=" days_before_election = 37 
+ 2016 = 13,874" title=" days_before_election = 37 
+ 2016 = 13,874" coords="298,432,306,432,306,434,298,434,"/>
+<Area shape="poly" alt=" days_before_election = 37 
+ 2016 = 13,874" title=" days_before_election = 37 
+ 2016 = 13,874" coords="291,432,298,432,298,434,291,434,"/>
+<Area shape="poly" alt=" days_before_election = 38 
+ 2016 = 13,651" title=" days_before_election = 38 
+ 2016 = 13,651" coords="283,432,291,432,291,434,283,434,"/>
+<Area shape="poly" alt=" days_before_election = 38 
+ 2016 = 13,651" title=" days_before_election = 38 
+ 2016 = 13,651" coords="276,432,283,432,283,434,276,434,"/>
+<Area shape="poly" alt=" days_before_election = 39 
+ 2016 = 12,374" title=" days_before_election = 39 
+ 2016 = 12,374" coords="268,432,276,432,276,434,268,434,"/>
+<Area shape="poly" alt=" days_before_election = 39 
+ 2016 = 12,374" title=" days_before_election = 39 
+ 2016 = 12,374" coords="261,433,268,432,268,434,261,435,"/>
+<Area shape="poly" alt=" days_before_election = 40 
+ 2016 = 11,001" title=" days_before_election = 40 
+ 2016 = 11,001" coords="253,433,261,433,261,435,253,435,"/>
+<Area shape="poly" alt=" days_before_election = 40 
+ 2016 = 11,001" title=" days_before_election = 40 
+ 2016 = 11,001" coords="246,433,253,433,253,435,246,435,"/>
+<Area shape="poly" alt=" days_before_election = 41 
+ 2016 = 9,579" title=" days_before_election = 41 
+ 2016 = 9,579" coords="239,433,246,433,246,435,239,435,"/>
+<Area shape="poly" alt=" days_before_election = 41 
+ 2016 = 9,579" title=" days_before_election = 41 
+ 2016 = 9,579" coords="231,433,239,433,239,435,231,435,"/>
+<Area shape="poly" alt=" days_before_election = 42 
+ 2016 = 8,689" title=" days_before_election = 42 
+ 2016 = 8,689" coords="224,433,231,433,231,435,224,435,"/>
+<Area shape="poly" alt=" days_before_election = 42 
+ 2016 = 8,689" title=" days_before_election = 42 
+ 2016 = 8,689" coords="216,433,224,433,224,435,216,435,"/>
+<Area shape="poly" alt=" days_before_election = 43 
+ 2016 = 6,912" title=" days_before_election = 43 
+ 2016 = 6,912" coords="209,433,216,433,216,435,209,435,"/>
+<Area shape="poly" alt=" days_before_election = 43 
+ 2016 = 6,912" title=" days_before_election = 43 
+ 2016 = 6,912" coords="201,433,209,433,209,435,201,435,"/>
+<Area shape="poly" alt=" days_before_election = 44 
+ 2016 = 6,907" title=" days_before_election = 44 
+ 2016 = 6,907" coords="194,433,201,433,201,435,194,435,"/>
+<Area shape="poly" alt=" days_before_election = 44 
+ 2016 = 6,907" title=" days_before_election = 44 
+ 2016 = 6,907" coords="186,433,194,433,194,435,186,435,"/>
+<Area shape="poly" alt=" days_before_election = 45 
+ 2016 = 6,727" title=" days_before_election = 45 
+ 2016 = 6,727" coords="179,433,186,433,186,435,179,435,"/>
+<Area shape="poly" alt=" days_before_election = 45 
+ 2016 = 6,727" title=" days_before_election = 45 
+ 2016 = 6,727" coords="171,433,179,433,179,435,171,435,"/>
+<Area shape="poly" alt=" days_before_election = 46 
+ 2016 = 5,727" title=" days_before_election = 46 
+ 2016 = 5,727" coords="164,433,171,433,171,435,164,435,"/>
+<Area shape="poly" alt=" days_before_election = 46 
+ 2016 = 5,727" title=" days_before_election = 46 
+ 2016 = 5,727" coords="157,433,164,433,164,435,157,435,"/>
+<Area shape="poly" alt=" days_before_election = 47 
+ 2016 = 4,707" title=" days_before_election = 47 
+ 2016 = 4,707" coords="149,433,157,433,157,435,149,435,"/>
+<Area shape="poly" alt=" days_before_election = 47 
+ 2016 = 4,707" title=" days_before_election = 47 
+ 2016 = 4,707" coords="142,433,149,433,149,435,142,435,"/>
+<Area shape="poly" alt=" days_before_election = 48 
+ 2016 = 3,740" title=" days_before_election = 48 
+ 2016 = 3,740" coords="134,433,142,433,142,435,134,435,"/>
+<Area shape="poly" alt=" days_before_election = 48 
+ 2016 = 3,740" title=" days_before_election = 48 
+ 2016 = 3,740" coords="127,433,134,433,134,435,127,435,"/>
+<Area shape="poly" alt=" days_before_election = 49 
+ 2016 = 3,139" title=" days_before_election = 49 
+ 2016 = 3,139" coords="119,433,127,433,127,435,119,435,"/>
+<Area shape="poly" alt=" days_before_election = 49 
+ 2016 = 3,139" title=" days_before_election = 49 
+ 2016 = 3,139" coords="112,433,119,433,119,435,112,435,"/>
+<Area shape="poly" alt=" days_before_election = 50 
+ 2016 = 1,687" title=" days_before_election = 50 
+ 2016 = 1,687" coords="105,434,112,433,112,435,105,436,"/>
+<Area shape="poly" alt=" days_before_election = 14 
+ 2020 = 1,851,801" title=" days_before_election = 14 
+ 2020 = 1,851,801" coords="637,242,644,242,644,249,637,249,637,242,"/>
+<Area shape="poly" alt=" days_before_election = 15 
+ 2020 = 1,536,142" title=" days_before_election = 15 
+ 2020 = 1,536,142" coords="622,274,629,274,629,281,622,281,622,274,"/>
+<Area shape="poly" alt=" days_before_election = 16 
+ 2020 = 1,448,559" title=" days_before_election = 16 
+ 2020 = 1,448,559" coords="608,283,615,283,615,290,608,290,608,283,"/>
+<Area shape="poly" alt=" days_before_election = 17 
+ 2020 = 1,266,438" title=" days_before_election = 17 
+ 2020 = 1,266,438" coords="593,302,600,302,600,309,593,309,593,302,"/>
+<Area shape="poly" alt=" days_before_election = 18 
+ 2020 = 914,360" title=" days_before_election = 18 
+ 2020 = 914,360" coords="578,338,585,338,585,345,578,345,578,338,"/>
+<Area shape="poly" alt=" days_before_election = 19 
+ 2020 = 541,832" title=" days_before_election = 19 
+ 2020 = 541,832" coords="563,376,570,376,570,383,563,383,563,376,"/>
+<Area shape="poly" alt=" days_before_election = 20 
+ 2020 = 513,519" title=" days_before_election = 20 
+ 2020 = 513,519" coords="548,379,555,379,555,386,548,386,548,379,"/>
+<Area shape="poly" alt=" days_before_election = 21 
+ 2020 = 496,041" title=" days_before_election = 21 
+ 2020 = 496,041" coords="533,380,540,380,540,387,533,387,533,380,"/>
+<Area shape="poly" alt=" days_before_election = 22 
+ 2020 = 484,253" title=" days_before_election = 22 
+ 2020 = 484,253" coords="518,382,525,382,525,389,518,389,518,382,"/>
+<Area shape="poly" alt=" days_before_election = 23 
+ 2020 = 481,039" title=" days_before_election = 23 
+ 2020 = 481,039" coords="503,382,510,382,510,389,503,389,503,382,"/>
+<Area shape="poly" alt=" days_before_election = 24 
+ 2020 = 472,949" title=" days_before_election = 24 
+ 2020 = 472,949" coords="488,383,495,383,495,390,488,390,488,383,"/>
+<Area shape="poly" alt=" days_before_election = 25 
+ 2020 = 450,481" title=" days_before_election = 25 
+ 2020 = 450,481" coords="473,385,480,385,480,392,473,392,473,385,"/>
+<Area shape="poly" alt=" days_before_election = 26 
+ 2020 = 429,305" title=" days_before_election = 26 
+ 2020 = 429,305" coords="459,387,466,387,466,394,459,394,459,387,"/>
+<Area shape="poly" alt=" days_before_election = 27 
+ 2020 = 404,149" title=" days_before_election = 27 
+ 2020 = 404,149" coords="444,390,451,390,451,397,444,397,444,390,"/>
+<Area shape="poly" alt=" days_before_election = 28 
+ 2020 = 392,293" title=" days_before_election = 28 
+ 2020 = 392,293" coords="429,391,436,391,436,398,429,398,429,391,"/>
+<Area shape="poly" alt=" days_before_election = 29 
+ 2020 = 366,409" title=" days_before_election = 29 
+ 2020 = 366,409" coords="414,394,421,394,421,401,414,401,414,394,"/>
+<Area shape="poly" alt=" days_before_election = 30 
+ 2020 = 365,035" title=" days_before_election = 30 
+ 2020 = 365,035" coords="399,394,406,394,406,401,399,401,399,394,"/>
+<Area shape="poly" alt=" days_before_election = 31 
+ 2020 = 355,731" title=" days_before_election = 31 
+ 2020 = 355,731" coords="384,395,391,395,391,402,384,402,384,395,"/>
+<Area shape="poly" alt=" days_before_election = 32 
+ 2020 = 334,324" title=" days_before_election = 32 
+ 2020 = 334,324" coords="369,397,376,397,376,404,369,404,369,397,"/>
+<Area shape="poly" alt=" days_before_election = 33 
+ 2020 = 319,249" title=" days_before_election = 33 
+ 2020 = 319,249" coords="354,399,361,399,361,406,354,406,354,399,"/>
+<Area shape="poly" alt=" days_before_election = 34 
+ 2020 = 291,060" title=" days_before_election = 34 
+ 2020 = 291,060" coords="339,401,346,401,346,408,339,408,339,401,"/>
+<Area shape="poly" alt=" days_before_election = 35 
+ 2020 = 282,813" title=" days_before_election = 35 
+ 2020 = 282,813" coords="324,402,331,402,331,409,324,409,324,402,"/>
+<Area shape="poly" alt=" days_before_election = 36 
+ 2020 = 258,032" title=" days_before_election = 36 
+ 2020 = 258,032" coords="310,405,317,405,317,412,310,412,310,405,"/>
+<Area shape="poly" alt=" days_before_election = 37 
+ 2020 = 257,409" title=" days_before_election = 37 
+ 2020 = 257,409" coords="295,405,302,405,302,412,295,412,295,405,"/>
+<Area shape="poly" alt=" days_before_election = 38 
+ 2020 = 250,216" title=" days_before_election = 38 
+ 2020 = 250,216" coords="280,406,287,406,287,413,280,413,280,406,"/>
+<Area shape="poly" alt=" days_before_election = 39 
+ 2020 = 231,767" title=" days_before_election = 39 
+ 2020 = 231,767" coords="265,407,272,407,272,414,265,414,265,407,"/>
+<Area shape="poly" alt=" days_before_election = 40 
+ 2020 = 208,293" title=" days_before_election = 40 
+ 2020 = 208,293" coords="250,410,257,410,257,417,250,417,250,410,"/>
+<Area shape="poly" alt=" days_before_election = 41 
+ 2020 = 182,466" title=" days_before_election = 41 
+ 2020 = 182,466" coords="235,413,242,413,242,420,235,420,235,413,"/>
+<Area shape="poly" alt=" days_before_election = 42 
+ 2020 = 163,775" title=" days_before_election = 42 
+ 2020 = 163,775" coords="220,414,227,414,227,421,220,421,220,414,"/>
+<Area shape="poly" alt=" days_before_election = 43 
+ 2020 = 132,964" title=" days_before_election = 43 
+ 2020 = 132,964" coords="205,418,212,418,212,425,205,425,205,418,"/>
+<Area shape="poly" alt=" days_before_election = 44 
+ 2020 = 132,572" title=" days_before_election = 44 
+ 2020 = 132,572" coords="190,418,197,418,197,425,190,425,190,418,"/>
+<Area shape="poly" alt=" days_before_election = 45 
+ 2020 = 127,966" title=" days_before_election = 45 
+ 2020 = 127,966" coords="175,418,182,418,182,425,175,425,175,418,"/>
+<Area shape="poly" alt=" days_before_election = 46 
+ 2020 = 109,585" title=" days_before_election = 46 
+ 2020 = 109,585" coords="161,420,168,420,168,427,161,427,161,420,"/>
+<Area shape="poly" alt=" days_before_election = 47 
+ 2020 = 90,705" title=" days_before_election = 47 
+ 2020 = 90,705" coords="146,422,153,422,153,429,146,429,146,422,"/>
+<Area shape="poly" alt=" days_before_election = 48 
+ 2020 = 66,615" title=" days_before_election = 48 
+ 2020 = 66,615" coords="131,424,138,424,138,431,131,431,131,424,"/>
+<Area shape="poly" alt=" days_before_election = 49 
+ 2020 = 51,440" title=" days_before_election = 49 
+ 2020 = 51,440" coords="116,426,123,426,123,433,116,433,116,426,"/>
+<Area shape="poly" alt=" days_before_election = 50 
+ 2020 = 29,074" title=" days_before_election = 50 
+ 2020 = 29,074" coords="105,428,108,428,108,435,105,435,105,428,"/>
+<Area shape="poly" alt=" days_before_election = 14 
+ 2020 = 1,851,801" title=" days_before_election = 14 
+ 2020 = 1,851,801" coords="632,261,640,245,642,245,634,261,"/>
+<Area shape="poly" alt=" days_before_election = 15 
+ 2020 = 1,536,142" title=" days_before_election = 15 
+ 2020 = 1,536,142" coords="625,277,632,261,634,261,627,277,"/>
+<Area shape="poly" alt=" days_before_election = 15 
+ 2020 = 1,536,142" title=" days_before_election = 15 
+ 2020 = 1,536,142" coords="618,281,625,276,627,278,620,283,"/>
+<Area shape="poly" alt=" days_before_election = 16 
+ 2020 = 1,448,559" title=" days_before_election = 16 
+ 2020 = 1,448,559" coords="611,285,619,281,619,283,611,287,"/>
+<Area shape="poly" alt=" days_before_election = 16 
+ 2020 = 1,448,559" title=" days_before_election = 16 
+ 2020 = 1,448,559" coords="603,295,610,285,612,287,605,297,"/>
+<Area shape="poly" alt=" days_before_election = 17 
+ 2020 = 1,266,438" title=" days_before_election = 17 
+ 2020 = 1,266,438" coords="595,304,603,295,605,297,597,306,"/>
+<Area shape="poly" alt=" days_before_election = 17 
+ 2020 = 1,266,438" title=" days_before_election = 17 
+ 2020 = 1,266,438" coords="588,323,595,305,597,305,590,323,"/>
+<Area shape="poly" alt=" days_before_election = 18 
+ 2020 = 914,360" title=" days_before_election = 18 
+ 2020 = 914,360" coords="580,341,588,323,590,323,582,341,"/>
+<Area shape="poly" alt=" days_before_election = 18 
+ 2020 = 914,360" title=" days_before_election = 18 
+ 2020 = 914,360" coords="573,360,580,341,582,341,575,360,"/>
+<Area shape="poly" alt=" days_before_election = 19 
+ 2020 = 541,832" title=" days_before_election = 19 
+ 2020 = 541,832" coords="565,379,573,360,575,360,567,379,"/>
+<Area shape="poly" alt=" days_before_election = 19 
+ 2020 = 541,832" title=" days_before_election = 19 
+ 2020 = 541,832" coords="559,380,566,378,566,380,559,382,"/>
+<Area shape="poly" alt=" days_before_election = 20 
+ 2020 = 513,519" title=" days_before_election = 20 
+ 2020 = 513,519" coords="551,381,559,380,559,382,551,383,"/>
+<Area shape="poly" alt=" days_before_election = 20 
+ 2020 = 513,519" title=" days_before_election = 20 
+ 2020 = 513,519" coords="544,382,551,381,551,383,544,384,"/>
+<Area shape="poly" alt=" days_before_election = 21 
+ 2020 = 496,041" title=" days_before_election = 21 
+ 2020 = 496,041" coords="537,383,544,382,544,384,537,385,"/>
+<Area shape="poly" alt=" days_before_election = 21 
+ 2020 = 496,041" title=" days_before_election = 21 
+ 2020 = 496,041" coords="529,384,537,383,537,385,529,386,"/>
+<Area shape="poly" alt=" days_before_election = 22 
+ 2020 = 484,253" title=" days_before_election = 22 
+ 2020 = 484,253" coords="522,384,529,384,529,386,522,386,"/>
+<Area shape="poly" alt=" days_before_election = 22 
+ 2020 = 484,253" title=" days_before_election = 22 
+ 2020 = 484,253" coords="514,384,522,384,522,386,514,386,"/>
+<Area shape="poly" alt=" days_before_election = 23 
+ 2020 = 481,039" title=" days_before_election = 23 
+ 2020 = 481,039" coords="507,384,514,384,514,386,507,386,"/>
+<Area shape="poly" alt=" days_before_election = 23 
+ 2020 = 481,039" title=" days_before_election = 23 
+ 2020 = 481,039" coords="499,385,507,384,507,386,499,387,"/>
+<Area shape="poly" alt=" days_before_election = 24 
+ 2020 = 472,949" title=" days_before_election = 24 
+ 2020 = 472,949" coords="492,385,499,385,499,387,492,387,"/>
+<Area shape="poly" alt=" days_before_election = 24 
+ 2020 = 472,949" title=" days_before_election = 24 
+ 2020 = 472,949" coords="484,386,492,385,492,387,484,388,"/>
+<Area shape="poly" alt=" days_before_election = 25 
+ 2020 = 450,481" title=" days_before_election = 25 
+ 2020 = 450,481" coords="477,388,484,386,484,388,477,390,"/>
+<Area shape="poly" alt=" days_before_election = 25 
+ 2020 = 450,481" title=" days_before_election = 25 
+ 2020 = 450,481" coords="470,389,477,388,477,390,470,391,"/>
+<Area shape="poly" alt=" days_before_election = 26 
+ 2020 = 429,305" title=" days_before_election = 26 
+ 2020 = 429,305" coords="462,390,470,389,470,391,462,392,"/>
+<Area shape="poly" alt=" days_before_election = 26 
+ 2020 = 429,305" title=" days_before_election = 26 
+ 2020 = 429,305" coords="455,391,462,390,462,392,455,393,"/>
+<Area shape="poly" alt=" days_before_election = 27 
+ 2020 = 404,149" title=" days_before_election = 27 
+ 2020 = 404,149" coords="447,392,455,391,455,393,447,394,"/>
+<Area shape="poly" alt=" days_before_election = 27 
+ 2020 = 404,149" title=" days_before_election = 27 
+ 2020 = 404,149" coords="440,393,447,392,447,394,440,395,"/>
+<Area shape="poly" alt=" days_before_election = 28 
+ 2020 = 392,293" title=" days_before_election = 28 
+ 2020 = 392,293" coords="432,394,440,393,440,395,432,396,"/>
+<Area shape="poly" alt=" days_before_election = 28 
+ 2020 = 392,293" title=" days_before_election = 28 
+ 2020 = 392,293" coords="425,395,432,394,432,396,425,397,"/>
+<Area shape="poly" alt=" days_before_election = 29 
+ 2020 = 366,409" title=" days_before_election = 29 
+ 2020 = 366,409" coords="417,396,425,395,425,397,417,398,"/>
+<Area shape="poly" alt=" days_before_election = 29 
+ 2020 = 366,409" title=" days_before_election = 29 
+ 2020 = 366,409" coords="410,396,417,396,417,398,410,398,"/>
+<Area shape="poly" alt=" days_before_election = 30 
+ 2020 = 365,035" title=" days_before_election = 30 
+ 2020 = 365,035" coords="402,396,410,396,410,398,402,398,"/>
+<Area shape="poly" alt=" days_before_election = 30 
+ 2020 = 365,035" title=" days_before_election = 30 
+ 2020 = 365,035" coords="395,397,402,396,402,398,395,399,"/>
+<Area shape="poly" alt=" days_before_election = 31 
+ 2020 = 355,731" title=" days_before_election = 31 
+ 2020 = 355,731" coords="388,397,395,397,395,399,388,399,"/>
+<Area shape="poly" alt=" days_before_election = 31 
+ 2020 = 355,731" title=" days_before_election = 31 
+ 2020 = 355,731" coords="380,398,388,397,388,399,380,400,"/>
+<Area shape="poly" alt=" days_before_election = 32 
+ 2020 = 334,324" title=" days_before_election = 32 
+ 2020 = 334,324" coords="373,399,380,398,380,400,373,401,"/>
+<Area shape="poly" alt=" days_before_election = 32 
+ 2020 = 334,324" title=" days_before_election = 32 
+ 2020 = 334,324" coords="365,400,373,399,373,401,365,402,"/>
+<Area shape="poly" alt=" days_before_election = 33 
+ 2020 = 319,249" title=" days_before_election = 33 
+ 2020 = 319,249" coords="358,401,365,400,365,402,358,403,"/>
+<Area shape="poly" alt=" days_before_election = 33 
+ 2020 = 319,249" title=" days_before_election = 33 
+ 2020 = 319,249" coords="350,402,358,401,358,403,350,404,"/>
+<Area shape="poly" alt=" days_before_election = 34 
+ 2020 = 291,060" title=" days_before_election = 34 
+ 2020 = 291,060" coords="343,404,350,402,350,404,343,406,"/>
+<Area shape="poly" alt=" days_before_election = 34 
+ 2020 = 291,060" title=" days_before_election = 34 
+ 2020 = 291,060" coords="335,404,343,404,343,406,335,406,"/>
+<Area shape="poly" alt=" days_before_election = 35 
+ 2020 = 282,813" title=" days_before_election = 35 
+ 2020 = 282,813" coords="328,405,335,404,335,406,328,407,"/>
+<Area shape="poly" alt=" days_before_election = 35 
+ 2020 = 282,813" title=" days_before_election = 35 
+ 2020 = 282,813" coords="320,406,328,405,328,407,320,408,"/>
+<Area shape="poly" alt=" days_before_election = 36 
+ 2020 = 258,032" title=" days_before_election = 36 
+ 2020 = 258,032" coords="313,407,320,406,320,408,313,409,"/>
+<Area shape="poly" alt=" days_before_election = 36 
+ 2020 = 258,032" title=" days_before_election = 36 
+ 2020 = 258,032" coords="306,407,313,407,313,409,306,409,"/>
+<Area shape="poly" alt=" days_before_election = 37 
+ 2020 = 257,409" title=" days_before_election = 37 
+ 2020 = 257,409" coords="298,407,306,407,306,409,298,409,"/>
+<Area shape="poly" alt=" days_before_election = 37 
+ 2020 = 257,409" title=" days_before_election = 37 
+ 2020 = 257,409" coords="291,408,298,407,298,409,291,410,"/>
+<Area shape="poly" alt=" days_before_election = 38 
+ 2020 = 250,216" title=" days_before_election = 38 
+ 2020 = 250,216" coords="283,408,291,408,291,410,283,410,"/>
+<Area shape="poly" alt=" days_before_election = 38 
+ 2020 = 250,216" title=" days_before_election = 38 
+ 2020 = 250,216" coords="276,409,283,408,283,410,276,411,"/>
+<Area shape="poly" alt=" days_before_election = 39 
+ 2020 = 231,767" title=" days_before_election = 39 
+ 2020 = 231,767" coords="268,410,276,409,276,411,268,412,"/>
+<Area shape="poly" alt=" days_before_election = 39 
+ 2020 = 231,767" title=" days_before_election = 39 
+ 2020 = 231,767" coords="261,411,268,410,268,412,261,413,"/>
+<Area shape="poly" alt=" days_before_election = 40 
+ 2020 = 208,293" title=" days_before_election = 40 
+ 2020 = 208,293" coords="253,412,261,411,261,413,253,414,"/>
+<Area shape="poly" alt=" days_before_election = 40 
+ 2020 = 208,293" title=" days_before_election = 40 
+ 2020 = 208,293" coords="246,414,253,412,253,414,246,416,"/>
+<Area shape="poly" alt=" days_before_election = 41 
+ 2020 = 182,466" title=" days_before_election = 41 
+ 2020 = 182,466" coords="239,415,246,414,246,416,239,417,"/>
+<Area shape="poly" alt=" days_before_election = 41 
+ 2020 = 182,466" title=" days_before_election = 41 
+ 2020 = 182,466" coords="231,416,239,415,239,417,231,418,"/>
+<Area shape="poly" alt=" days_before_election = 42 
+ 2020 = 163,775" title=" days_before_election = 42 
+ 2020 = 163,775" coords="224,417,231,416,231,418,224,419,"/>
+<Area shape="poly" alt=" days_before_election = 42 
+ 2020 = 163,775" title=" days_before_election = 42 
+ 2020 = 163,775" coords="216,419,224,417,224,419,216,421,"/>
+<Area shape="poly" alt=" days_before_election = 43 
+ 2020 = 132,964" title=" days_before_election = 43 
+ 2020 = 132,964" coords="209,420,216,419,216,421,209,422,"/>
+<Area shape="poly" alt=" days_before_election = 43 
+ 2020 = 132,964" title=" days_before_election = 43 
+ 2020 = 132,964" coords="201,420,209,420,209,422,201,422,"/>
+<Area shape="poly" alt=" days_before_election = 44 
+ 2020 = 132,572" title=" days_before_election = 44 
+ 2020 = 132,572" coords="194,420,201,420,201,422,194,422,"/>
+<Area shape="poly" alt=" days_before_election = 44 
+ 2020 = 132,572" title=" days_before_election = 44 
+ 2020 = 132,572" coords="186,420,194,420,194,422,186,422,"/>
+<Area shape="poly" alt=" days_before_election = 45 
+ 2020 = 127,966" title=" days_before_election = 45 
+ 2020 = 127,966" coords="179,421,186,420,186,422,179,423,"/>
+<Area shape="poly" alt=" days_before_election = 45 
+ 2020 = 127,966" title=" days_before_election = 45 
+ 2020 = 127,966" coords="171,422,179,421,179,423,171,424,"/>
+<Area shape="poly" alt=" days_before_election = 46 
+ 2020 = 109,585" title=" days_before_election = 46 
+ 2020 = 109,585" coords="164,422,171,422,171,424,164,424,"/>
+<Area shape="poly" alt=" days_before_election = 46 
+ 2020 = 109,585" title=" days_before_election = 46 
+ 2020 = 109,585" coords="157,423,164,422,164,424,157,425,"/>
+<Area shape="poly" alt=" days_before_election = 47 
+ 2020 = 90,705" title=" days_before_election = 47 
+ 2020 = 90,705" coords="149,424,157,423,157,425,149,426,"/>
+<Area shape="poly" alt=" days_before_election = 47 
+ 2020 = 90,705" title=" days_before_election = 47 
+ 2020 = 90,705" coords="142,426,149,424,149,426,142,428,"/>
+<Area shape="poly" alt=" days_before_election = 48 
+ 2020 = 66,615" title=" days_before_election = 48 
+ 2020 = 66,615" coords="134,427,142,426,142,428,134,429,"/>
+<Area shape="poly" alt=" days_before_election = 48 
+ 2020 = 66,615" title=" days_before_election = 48 
+ 2020 = 66,615" coords="127,428,134,427,134,429,127,430,"/>
+<Area shape="poly" alt=" days_before_election = 49 
+ 2020 = 51,440" title=" days_before_election = 49 
+ 2020 = 51,440" coords="119,428,127,428,127,430,119,430,"/>
+<Area shape="poly" alt=" days_before_election = 49 
+ 2020 = 51,440" title=" days_before_election = 49 
+ 2020 = 51,440" coords="112,430,119,428,119,430,112,432,"/>
+<Area shape="poly" alt=" days_before_election = 50 
+ 2020 = 29,074" title=" days_before_election = 50 
+ 2020 = 29,074" coords="105,431,112,430,112,432,105,433,"/>
+</map>
+<div  class="c">
+<img alt="The SGPlot Procedure" src="nc_early_voting_2020.png" style=" height: 550px; width: 900px;" border="0" usemap="#nc_early_voting_2020" class="c">
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
