@@ -6,13 +6,8 @@ Set your current-working-directory (to read/write files), if you need to ...
 */
 filename odsout '.';
 
-data nc_map; set mapsgfk.us_counties (where=(statecode='NC' and density<=3));
-run;
 
-proc gproject data=nc_map latlong eastlong degrees dupok out=nc_map (drop=lat long);
-id statecode;
-run;
-
+/* You could download the data ... */
 %macro getdata(csvname);
 %let csvurl=https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series;
 filename csvfile url "&csvurl./&csvname";
@@ -29,26 +24,43 @@ run;
 %getdata(time_series_covid19_confirmed_US.csv);
 */
 
+/* Or you could point to the data location on the web ... */
 /*
 filename confcsv "\\sashq\root\u\realliso\public_html\ods10\time_series_covid19_confirmed_US.csv";
 */
+
 filename confcsv "time_series_covid19_confirmed_US.csv";
-proc import datafile=confcsv
- out=reported_data dbms=csv replace;
+
+proc import datafile=confcsv out=raw_data dbms=csv replace;
 getnames=yes;
 guessingrows=all;
 run;
 
-/* limit it to just the 100 NC counties */
+
+
+%macro do_map(state);
+
+proc sql noprint;
+select statename into :stname separated by ' ' from sashelp.us_data where statecode="&state";
+quit; run;
+
+data state_map; set mapsgfk.us_counties (where=(statecode="&state" and density<=3));
+run;
+
+proc gproject data=state_map latlong eastlong degrees dupok out=state_map (drop=lat long);
+id statecode;
+run;
+
+/* limit it to just the selected state's counties */
 data reported_data (
   drop = uid iso2 iso3 code3 admin2 country_region lat long_ combined_key 
   rename=(province_state=statename)
   ); 
- set reported_data (where=(
+ set raw_data (where=(
  iso2='US' and 
  fips^=. and 
  fips not in (80037 90037) and
- province_state='North Carolina'
+ province_state="&stname"
  ));
 run;
 
@@ -148,25 +160,16 @@ run;
 
 
 
-ODS LISTING CLOSE;
-ODS HTML path=odsout body="&name..htm" 
- (title="NC County Covid Percent") 
- style=htmlblue;
 
-ods graphics /
- imagemap tipmax=2500 
- imagefmt=png imagename="&name"
- width=900px height=525px noborder; 
-
-title1 c=gray33 h=14pt "North Carolina: Percent of population reporting positive COVID-19 results";
+title1 c=gray33 h=14pt "&stname: Percent of population reporting positive COVID-19 results";
 title2 c=gray77 h=12pt ls=0.8 "Using data from Johns Hopkins CSSE (&mindate - &maxdate)";
 
 /*
-proc sgmap mapdata=nc_map maprespdata=latest_reported_data;
+proc sgmap mapdata=state_map maprespdata=latest_reported_data;
 choromap percent_reported_positive / mapid=county;
 run;
 
-proc sgmap mapdata=nc_map maprespdata=latest_reported_data;
+proc sgmap mapdata=state_map maprespdata=latest_reported_data;
 choromap percent_reported_positive / mapid=county
  numlevels=5 leveltype=interval;
 run;
@@ -177,8 +180,8 @@ proc sort data=latest_reported_data out=latest_reported_data;
 by legend_bucket;
 run;
 
-proc sgmap mapdata=nc_map maprespdata=latest_reported_data;
-styleattrs datacolors=(cx4dac26 cxb8e186 cxfffff3 cxf1b6da cxd01c8b);
+proc sgmap mapdata=state_map maprespdata=latest_reported_data;
+styleattrs datacolors=(cx4dac26 cxb8e186 cxfffff0 cxf1b6da cxd01c8b);
 choromap legend_bucket / discrete mapid=county 
  lineattrs=(thickness=1 color=grayaa)
  tip=(County_name reported_cumulative population percent_reported_positive)
@@ -187,7 +190,7 @@ run;
 
 /* Overlay % values on each county */
 %annomac;
-%centroid(nc_map,overlay_text,county,segonly=1);
+%centroid(state_map,overlay_text,county,segonly=1);
 
 proc sql noprint;
 create table overlay_text as
@@ -196,8 +199,8 @@ from overlay_text left join latest_reported_data
 on overlay_text.county=latest_reported_data.county;
 quit; run;
 
-proc sgmap mapdata=nc_map maprespdata=latest_reported_data plotdata=overlay_text;
-styleattrs datacolors=(cx4dac26 cxb8e186 cxfffff3 cxf1b6da cxd01c8b);
+proc sgmap mapdata=state_map maprespdata=latest_reported_data plotdata=overlay_text;
+styleattrs datacolors=(cx4dac26 cxb8e186 cxfffff0 cxf1b6da cxd01c8b);
 choromap legend_bucket / discrete mapid=county
  lineattrs=(thickness=1 color=grayaa)
  tip=(County_name reported_cumulative population percent_reported_positive)
@@ -207,7 +210,7 @@ run;
 
 
 
-proc sort data=latest_reported_data (where=(county^=.))
+proc sort data=latest_reported_data (where=(county^=. and county_name^=''))
  out=latest_reported_data;
 by county_name;
 run;
@@ -215,6 +218,27 @@ run;
 proc print data=latest_reported_data label; 
 var County_name reported_cumulative population percent_reported_positive;
 run;
+
+%mend do_map;
+
+
+
+ODS LISTING CLOSE;
+ODS HTML path=odsout body="&name..htm" 
+ (title="County Covid Percent") 
+ style=htmlblue;
+
+ods graphics /
+ imagemap tipmax=2500 
+ imagefmt=png imagename="&name"
+ width=900px height=525px noborder; 
+
+%do_map(NC);
+/*
+%do_map(NY);
+%do_map(TX);
+%do_map(VA);
+*/
 
 quit;
 ODS HTML CLOSE;
