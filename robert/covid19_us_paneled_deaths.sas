@@ -109,59 +109,31 @@ data reported_data; set reported_data (where=(avg^=.));
 run;
 */
 
-/* Get the latext/max date in the data, and save it to a macro variable */
-proc sql noprint;
-select max(date) format=date9. into :maxdate1 separated by ' ' from reported_data where avg^=.;
-select max(date) format=date9. into :maxdate2 separated by ' ' from reported_data;
-quit; run;
-
-/* Get the latest value for each state */
-proc sql noprint;
-create table current_highest as
-select unique statename, date, avg as latest_avg
-from reported_data
-where date="&maxdate1"d
-order by latest_avg desc;
-quit; run;
-
-/* assign numeric rank to each state, based on the (descending) sorted data */
-/* create extra variables to control color of lines for the max 7 states */
-data current_highest; set current_highest;
-rank=_n_;
-run;
-
-/* merge the rank back the main dataset, and order by the rank (to assign colors in desired order) */
+/* 
+Calculate the sum of the deaths, so you can calculate the
+total deaths per capita for each state, so you can sort by that.
+*/
 proc sql noprint;
 create table reported_data as
-select unique reported_data.*, current_highest.rank
-from reported_data left join current_highest
-on reported_data.statename=current_highest.statename
-order by rank, statename, date;
+select reported_data.*, sum(deaths_this_day) as sum_deaths
+from reported_data
+group by statename;
+quit; run;
+data reported_data; set reported_data;
+sum_deaths_per_million=sum_deaths/population_mil;
+run;
+proc sort data=reported_data out=reported_data;
+by descending sum_deaths_per_million statename date;
+run;
+data reported_data; set reported_data;
+by statename notsorted;
+if first.statename then rank+1;
+run;
+
+proc sql noprint;
+select max(date) format=date9. into :maxdate separated by ' ' from reported_data;
 quit; run;
 
-
-/*
-Since ods graphics footnote does not support url links yet,
-annotate the footnote (annotated text supports url links).
-This also allows me to control the position/alighment of
-the legend better than the footnote statement.
-*/
-data anno_footnote;
-length label $300 anchor x1space y1space function $50 textcolor $12;
-layer='front';
-function='text';
-x1=10; 
-x1space='wallpercent'; y1space='graphpercent';
-anchor='left';
-textsize=9; textweight='normal';
-width=100; widthunit='percent';
-url="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/";
-y1=6.5; label="Raw data downloaded from GitHub (https://raw.githubusercontent.com/CSSEGISandData/COVID-19/)";
-output;
-url="";
-y1=y1-3; label="COVID-19 case data courtesy of the Johns Hopkins University Center for Systems Science and Engineering (CSSE)";
-output;
-run;
 
 /* There's no title statement option to 'unbold' the title text, therefore do it in an ods style */
 proc template;
@@ -188,35 +160,56 @@ ods graphics /
 %let axismax=600;
 
 title1 h=13pt c=gray33 "US States Daily Reported COVID-19 Deaths per Million Persons";
-title2 h=11pt c=gray77 "Red line is 7-day moving average. States sorted by most recent moving average value.";
-title3 h=11pt c=gray77 "Data courtesy of the Johns Hopkins University CSSE (01MAR2020 to &maxdate2)";
+title2 h=11pt c=gray77 "Red line is 7-day moving average. States sorted by total deaths per million (dpm).";
+title3 h=11pt c=gray77 "Data courtesy of the Johns Hopkins University CSSE (01MAR2020 to &maxdate)";
 
 data reported_data; set reported_data (where=(date>='01mar2020'd));
 /* this is a bit 'deceptive', but the way Johns Hopkins reports data & corrections, there 
 can be some negative numbers. I include them in the moving average line, but I don't want
 to show needles going below zero. So, I delete those obsns here, to make the graph look cleaner.  */
 if deaths_this_day_per_million<0 then deaths_this_day_per_million=.;
+length statename_plus $100;
+statename_plus=trim(left(statename))||' ('||trim(left(put(sum_deaths_per_million,comma12.0)))||' dpm)';
 run;
 
 proc sgpanel data=reported_data noautolegend;
-format date monname3.;
+format date monname1.;
 panelby statename / columns=5 rows=5 sort=data novarname noheader spacing=10 border uniscale=all;
 needle y=deaths_this_day_per_million x=date / displaybaseline=off
  lineattrs=(color=cx82CFFD) tip=none;
 series y=avg x=date / group=statename  
  lineattrs=(color=red thickness=2 pattern=solid) tip=none;
+/*
 inset statename / position=top nolabel textattrs=(color=gray33 size=10pt);
+*/
+inset statename_plus / position=top nolabel textattrs=(color=gray33 size=10pt);
 rowaxis display=(nolabel noline noticks)
  values=(0 to 60 by 20)
 /*
- valuesdisplay=(' ' '200' '400' '600' '800')
+ valuesdisplay=(' ' '20' '40' '60')
 */
  valueattrs=(color=gray33) grid 
  offsetmin=0 offsetmax=0;
-colaxis display=(nolabel noline noticks novalues) 
- values=('01mar2020'd to '01aug2020'd by month) 
- valueattrs=(color=gray33) grid 
+colaxis display=(nolabel noline noticks /*novalues*/) 
+ values=('01mar2020'd to '01nov2020'd by month) 
+ valueattrs=(color=gray33 size=7pt) grid 
  offsetmin=0 offsetmax=0;
+run;
+
+proc sql noprint;
+create table reported_summary as
+select unique statename, sum_deaths_per_million
+from reported_data
+order by sum_deaths_per_million descending;
+quit; run;
+
+title2 c=gray33 "Total deaths per capita in each state (as of &maxdate)";
+proc print data=reported_summary label
+ style(data)={font_size=11pt}
+ style(header)={font_size=11pt};
+label statename='State';
+label sum_deaths_per_million='Deaths per Million';
+format sum_deaths_per_million comma10.0;
 run;
 
 quit;
