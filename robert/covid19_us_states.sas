@@ -237,7 +237,7 @@ image='covid19_us_states_map.png';
 /*layer='back'; ... bummer - this puts it behind the black background */
 drawspace='datapercent';
 anchor='bottomleft';
-x1=23;
+x1=18;
 y1=64;
 imagescale='fit';
 heightunit='pixel';
@@ -262,13 +262,13 @@ ods graphics /
  maxlegendarea=100
  imagemap tipmax=25000 
  imagefmt=png imagename="&name"
- width=950px height=600px noborder;
+ width=1000px height=600px noborder;
 
 title1 h=12pt "United States Daily Reported COVID-19 Cases per Million Persons, by State";
 title2 h=12pt ls=0.7 "Current 7 Highest States Plotted in Color (based on &maxdate data snapshot)";
 title3 h=4pt " ";
 
-%let axismax=700;
+%let axismax=2000;
 
 /* first, plot all the states, as gray lines */
 proc sgplot data=reported_data noautolegend pad=(left=3pct right=5pct bottom=12pct) sganno=anno_all;;
@@ -279,18 +279,18 @@ series y=avg x=date / break lineattrs=(color=gray77 thickness=1) tip=none;
 styleattrs datacontrastcolors=(gray red orange yellow lime dodgerblue purple violet);
 series y=avg x=date / group=statename_color nomissinggroup name='max' 
  lineattrs=(thickness=2 pattern=solid) tip=none y2axis;
-yaxis  labelattrs=(size=11.5pt weight=normal) offsetmin=0 offsetmax=.05 values=(0 to &axismax by 100);
-y2axis offsetmin=0 offsetmax=.05 values=(0 to &axismax by 100) display=(nolabel);
+yaxis  labelattrs=(size=11.5pt weight=normal) offsetmin=0 offsetmax=.05 values=(0 to &axismax by 200);
+y2axis offsetmin=0 offsetmax=.05 values=(0 to &axismax by 200) display=(nolabel);
 xaxis display=(nolabel) 
 /*
  values=("01mar2020"d to "01aug2020"d by month) offsetmax=.09
 */
- values=("01mar2020"d to "01oct2020"d by month) offsetmax=0
+ values=("01mar2020"d to "01dec2020"d by month) offsetmax=0
  offsetmin=0 
  valueattrs=(size=9pt)
  ;
 keylegend 'max' / title='' linelength=15px 
- position=topright location=inside outerpad=(right=40pt top=11pt)
+ position=topright location=inside outerpad=(right=125pt top=11pt)
  valueattrs=(size=9pt weight=normal) 
  noopaque noborder across=1;
 run;
