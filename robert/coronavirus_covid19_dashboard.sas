@@ -24,10 +24,10 @@ data _null_;
 run;
 %mend getdata;
 
+/*
 %getdata(time_series_covid19_confirmed_global.csv);
 %getdata(time_series_covid19_deaths_global.csv);
 %getdata(time_series_covid19_recovered_global.csv);
-/*
 */
 
 
@@ -497,7 +497,7 @@ html=
  'title='||quote(
   trim(left(country_region))||'0d'x||
   trim(left(put(confirmed,comma12.0)))||' reported cases')||
- ' href='||quote('#'||trim(left(country_region)));
+ ' href='||quote('#'||translate(translate(trim(left(country_region)),'_',' '),'_',','));
 run;
 
 /* The country names have to match in the data & map, for the choro map */
@@ -538,6 +538,7 @@ if idname='Gambia' then country_region='Gambia, The';
 if idname='Congo' then country_region='Republic of the Congo';
 */
 run;
+
 /*
 if idname='China/Taiwan_POC' then country_region='Taiwan';
 if idname='Moldova' then country_region='Republic of Moldova';
@@ -555,13 +556,14 @@ proc gproject data=my_map out=my_map latlong eastlong degrees
 id country_region;
 run;
 /* Project the bubble lat/longs the same way you did the map */
-proc gproject data=map_data out=map_data latlong eastlong degrees
+proc gproject data=map_data (where=(lat^=. and long^=. and country_region^='')) 
+ out=map_data latlong eastlong degrees
  parmin=projparm parmentry=my_map;
 id;
 run;
 
 /* these control the size of the blue bubbles */
-%let max_val=3500000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
+%let max_val=5000000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
 %let max_area=100; /* maximum bubble size (area) */
 proc sort data=map_data out=anno_bubbles;
 by descending confirmed;
@@ -626,7 +628,7 @@ text=trim(left(put(confirmed,comma12.0))); x=35; position='4'; color="red"; outp
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
 html='title='||quote(trim(left(put(confirmed,comma12.0)))||" Reported cases of COVID-19 Coronavirus in "||trim(left(country_region)))||
- ' href='||quote('#'||trim(left(country_region)));
+ ' href='||quote('#'||translate(translate(trim(left(country_region)),'_',' '),'_',','));
 function='move'; x=0; y=y-3; output;
 function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
 run;
@@ -672,7 +674,7 @@ text=trim(left(put(deaths,comma12.0))); x=28; position='4'; color="white"; outpu
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
 html='title='||quote(trim(left(put(deaths,comma12.0)))||" deaths from COVID-19 Coronavirus in "||trim(left(country_region)))||
- ' href='||quote('#'||trim(left(country_region)));
+ ' href='||quote('#'||translate(translate(trim(left(country_region)),'_',' '),'_',','));
 function='move'; x=0; y=y-3; output;
 function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
 run;
@@ -714,7 +716,7 @@ text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
 html='title='||quote(trim(left(put(confirmed_this_day,comma12.0)))||
  " increase in COVID-19 Coronavirus in "||trim(left(country_region))||' on '||trim(left(put(snapshot,nldate20.))))||
- ' href='||quote('#'||trim(left(country_region)));
+ ' href='||quote('#'||translate(translate(trim(left(country_region)),'_',' '),'_',','));
 function='move'; x=0; y=y-3; output;
 function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
 run;
@@ -760,7 +762,7 @@ text=trim(left(put(recovered,comma12.0))); x=28; position='4'; color="cx71a81e";
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
 html='title='||quote(trim(left(put(recovered,comma12.0)))||" recovered from COVID-19 Coronavirus in "||trim(left(country_region)))||
- ' href='||quote('#'||trim(left(country_region)));
+ ' href='||quote('#'||translate(translate(trim(left(country_region)),'_',' '),'_',','));
 function='move'; x=0; y=y-3; output;
 function='bar'; x=100; y=y+5; style='empty'; line=3; size=.001; color="pink"; output;
 run;
@@ -876,13 +878,13 @@ data anno_mouseover; set anno_mouseover anno_gray_background;
 run;
 
 axis1 value=(c=graycc h=11pt) label=none major=none minor=none offset=(0,0)
- order=(0 to 400000 by 50000) style=0;
+ order=(0 to 700000 by 100000) style=0;
 
 axis2 label=none 
 /*
  order=("&mindate"d to "&maxdate"d by &byval)
 */
- order=('01feb2020'd to '01nov2020'd by month)
+ order=('01mar2020'd to '01dec2020'd by month)
  major=(height=4pt) value=(c=graycc h=11pt font='albany amt')
  offset=(0,0);
 
@@ -1068,33 +1070,174 @@ by country_region snapshot;
 run;
 
 data graph_all; set graph_all;
-if country_region^=lag(country_region) then daily=.;
-else daily=confirmed-lag(confirmed);
+
+if country_region^=lag(country_region) then daily_cases=.;
+else daily_cases=confirmed-lag(confirmed);
+
+if country_region^=lag(country_region) then daily_deaths=.;
+else daily_deaths=deaths-lag(deaths);
+
 length day_color $100;
 if trim(left(put(snapshot,downame.))) in ('Saturday' 'Sunday') then day_color='Weekends';
 else day_color='Weekdays';
+
 run;
 
+/* Without getting rid of the blank ones, the SAS job hung on 11/4 */
+data graph_all; set graph_all (where=(country_region^=''));
+run;
+
+/* Calculate moving avg for cases */
 proc expand data=graph_all out=graph_all;
 by country_region;
-label avg_7='7-day moving average (centered)';
-convert daily=avg_7 / method=none transformout=(cmovave 7 trim 3);
+label avg_cases_7='7-day moving average (centered)';
+convert daily_cases=avg_cases_7 / method=none transformout=(cmovave 7 trim 3);
 run;
 
+/* Calculate moving avg for deaths */
+proc expand data=graph_all out=graph_all;
+by country_region;
+label avg_deaths_7='7-day moving average (centered)';
+convert daily_deaths=avg_deaths_7 / method=none transformout=(cmovave 7 trim 3);
+run;
+
+
+%macro plot_two(cntry);
+
+data tempdata1; set graph_all (where=(country_region="&cntry" and snapshot>='01mar2020'd and daily_cases>=0));
+run;
+data tempdata2; set graph_all (where=(country_region="&cntry" and snapshot>='01mar2020'd and daily_deaths>=0));
+run;
+
+proc sql noprint;
+select unique translate(translate(trim(left(country_region)),'_',' '),'_',',') into :cntry2 separated by ' ' from tempdata1;
+quit; run;
+
+/* It's difficult to overlay a "plot y*x=foo" and a "plot y*x=3" on the same plot, therefore annotate the average */
+data anno_avg_cases; set tempdata1 (where=(avg_cases_7>=0));
+xsys='2'; ysys='2'; hsys='3'; when='a';
+x=snapshot; y=avg_cases_7;
+if _n_=1 then do;
+ function='move'; output;
+ end;
+function='draw'; 
+color='dodgerblue';
+output;
+run;
+
+/* Changed to sas/graph proc gplot, so I can use greplay and put 2 graphs on 1 page */
+goptions nodisplay;
+goptions ctext=gray33 htitle=12pt htext=10pt;
+goptions cback=white;
+goptions xpixels=800 ypixels=300;
+
+axis3 label=none order=('01mar2020'd to '01dec2020'd by month);
+axis4 label=(a=90 'Reported per Day') major=none minor=none style=0 offset=(0,0);
+symbol1 interpol=needle ci=orange value=circle h=3.0 cv=gray;
+symbol2 interpol=needle ci=gray77 value=circle h=3.0 cv=gray;
+options nobyline;
+title1 h=16pt f='albany amt/bold' ls=1.5 "COVID-19 Data for: &cntry";
+title2 h=11pt f='albany amt' c=gray77 ls=0.8 
+ link="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series" 
+ "Data source: Johns Hopkins CSSE (&datestr snapshot)";
+footnote;
+proc gplot data=tempdata1 anno=anno_avg_cases;
+format snapshot monname3.;
+format daily_cases comma8.0;
+note move=(48,73) h=13pt c=orange f='albany amt/bold' "Cases";
+plot daily_cases*snapshot=day_color / nolegend
+ noframe
+ haxis=axis3
+ vaxis=axis4
+ autovref cvref=gray77 lvref=33
+ des='' name="cases";
+run;
+
+data anno_avg_deaths; set tempdata2 (where=(avg_deaths_7>=0));
+xsys='2'; ysys='2'; hsys='3'; when='a';
+x=snapshot; y=avg_deaths_7;
+if _n_=1 then do;
+ function='move'; output;
+ end;
+function='draw'; 
+color='dodgerblue';
+output;
+run;
+
+axis5 label=(a=90 'Reported per Day') major=none minor=none style=0 offset=(0,0);
+symbol1 interpol=needle ci=hotpink value=circle h=3.0 cv=gray;
+symbol2 interpol=needle ci=gray77 value=circle h=3.0 cv=gray;
+options nobyline;
+title1 h=10pt ' ';
+footnote1 h=5pt ' ';
+footnote2 c=dodgerblue ls=1.5 "Blue line is 7-day centered moving average," c=gray77 " Gray bars are weekends";
+proc gplot data=tempdata2 anno=anno_avg_deaths;
+format snapshot monname3.;
+format daily_deaths comma8.0;
+note move=(48,80) h=13pt c=hotpink f='albany amt/bold' "Deaths";
+plot daily_deaths*snapshot=day_color / nolegend
+ noframe
+ haxis=axis3
+ vaxis=axis5
+ autovref cvref=gray77 lvref=33
+ des='' name="deaths";
+run;
+
+
+ods html anchor="&cntry2";
+goptions display;
+%let border=gray44;
+goptions xpixels=800 ypixels=600;
+proc greplay nofs igout=work.gseg tc=tempcat;
+   tdef dash2 des='Over and Under plot'
+   1/ llx=0       lly=50
+      ulx=0       uly=100
+      urx=100     ury=100
+      lrx=100     lry=50
+   2/ llx=0       lly=0
+      ulx=0       uly=50
+      urx=100     ury=50
+      lrx=100     lry=0
+   ;
+   template dash2;
+   treplay
+    1:cases
+    2:deaths
+    des='' name="&name._&cntry";
+run;
+
+/* Delete these 2 gsegs, so you can re-use the same names with the next country */
+proc greplay nofs igout=work.gseg;
+delete _all_;
+run;
+
+%mend plot_two;
+
+
+proc sql noprint;
+create table loop as
+select unique country_region
+from graph_all;
+quit; run;
+data _null_; set loop
+/*
+ (where=(country_region in ('Saudi Arabia' 'Mexico' 'US')))
+ (where=(country_region in ('US')))
+ (where=(country_region in ('Mexico')))
+*/
+ ;
+call execute('%plot_two(%str('|| trim(left(country_region)) ||'));');
+run;
+
+/*
 ods html anchor="#byval(country_region)";
 ods graphics / imagename="coronavirus_covid19_#byval(country_region)";
-
 options nobyline;
-/* bummer - sgplot doesn't support most of these title options */
 title1 ls=1.5 h=18pt font='albany amt/bold' c=gray33 "Daily New Reported COVID-19 cases in: #byval(country_region)";
 title2 ls=0.8 h=11pt font='albany amt' c=gray77 link="&csvurl" "Data source: Johns Hopkins CSSE (&datestr snapshot)";
 title3 h=2pt ' ';
-
 ods graphics / width=800px height=600px;
 proc sgplot data=graph_all 
-/*
- (where=(country_region='US'))
-*/
  noborder;
 by country_region;
 format snapshot monname3.;
@@ -1104,21 +1247,20 @@ needle y=daily x=snapshot / name='daily'
  group=day_color lineattrs=(thickness=1px) 
  markers markerattrs=(color=gray77 symbol=circle size=4pt)
  tip=(snapshot daily) tipformat=(weekdate30. comma8.0);
-series y=avg_7 x=snapshot / name='avg'
+series y=avg_cases_7 x=snapshot / name='avg'
  lineattrs=(color=dodgerblue thickness=3) tip=none;
 yaxis display=(nolabel noline noticks) min=0
  integer thresholdmax=1 grid gridattrs=(pattern=dot color=gray88)
  valueattrs=(color=gray33 size=10pt);
 xaxis display=(nolabel) type=time 
-/*
- values=("&mindate"d to "&maxdate"d by &byval)
-*/
- values=('01feb2020'd to '01nov2020'd by month) 
+ values=('01feb2020'd to '01dec2020'd by month) 
  valueattrs=(color=gray33 size=10pt);
 keylegend 'avg' 'daily' / title='' position=bottom location=outside 
  valueattrs=(color=gray33 size=11pt weight=normal)
- /*opaque*/ noborder across=3 outerpad=(left=10pt top=8pt);
+ noborder across=3 outerpad=(left=10pt top=8pt);
 run;
+*/
+
 /*
 proc print data=graph_all (where=(country_region='Germany')) noobs;
 format snapshot date9.;
