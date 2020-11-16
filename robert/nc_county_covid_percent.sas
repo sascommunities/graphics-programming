@@ -124,21 +124,21 @@ to do a discrete map, rather than continuous color ramp.
 */
 proc format;
    value bkt_fmt
-   1='0-1%'
-   2='1-2%'
-   3='2-3%'
-   4='3-4%'
-   5='>4%'
+   1='0-2%'
+   2='2-3%'
+   3='3-4%'
+   4='4-5%'
+   5='>5%'
    ;
 run;
 
 data latest_reported_data; set latest_reported_data;
 label legend_bucket='% of population reported positive';
 format legend_bucket bkt_fmt.;
-     if percent_reported_positive<=.01 then legend_bucket=1;
-else if percent_reported_positive<=.02 then legend_bucket=2;
-else if percent_reported_positive<=.03 then legend_bucket=3;
-else if percent_reported_positive<=.04 then legend_bucket=4;
+     if percent_reported_positive<=.02 then legend_bucket=1;
+else if percent_reported_positive<=.03 then legend_bucket=2;
+else if percent_reported_positive<=.04 then legend_bucket=3;
+else if percent_reported_positive<=.05 then legend_bucket=4;
 else legend_bucket=5;
 run;
 
