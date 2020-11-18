@@ -430,7 +430,7 @@ run;
 proc gslide anno=anno_recovered_total des='' name='recosum';
 run;
 
-/*------------------------------incsum-------------------------------------*/
+/*------------------------------incrsum-------------------------------------*/
 
 goptions xpixels=203 ypixels=98;
 proc sql noprint;
@@ -449,7 +449,7 @@ x=50; y=50; text=trim(left(put(sum_increase,comma12.0))); output;
 run;
 data anno_increase_total; set anno_gray_background anno_increase_total;
 run;
-proc gslide anno=anno_increase_total des='' name='incsum';
+proc gslide anno=anno_increase_total des='' name='incrsum';
 run;
 
 
@@ -563,8 +563,8 @@ id;
 run;
 
 /* these control the size of the blue bubbles */
-%let max_val=5000000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
-%let max_area=100; /* maximum bubble size (area) */
+%let max_val=10000000;  /* maximum number of confirmed cases (will correspond to maximum bubble size) */
+%let max_area=150; /* maximum bubble size (area) */
 proc sort data=map_data out=anno_bubbles;
 by descending confirmed;
 run;
@@ -604,8 +604,9 @@ quit; run;
 
 /* confirmed table */
 
-/* xpixels=(15-.5)/100*1400 ypixels=(74-1)/100*700 */
-goptions xpixels=203 ypixels=511;
+/* xpixels=(84.5-70)/100*1400 ypixels=(74-16)/100*700 */
+goptions xpixels=203 ypixels=406;
+
 proc sql noprint;
 create table anno_table_confirmed as
 select unique country_region, sum(confirmed) as confirmed
@@ -615,7 +616,7 @@ quit; run;
 proc sort data=anno_table_confirmed out=anno_table_confirmed;
 by descending confirmed country_region;
 run;
-data anno_table_confirmed; set anno_table_confirmed (obs=16);
+data anno_table_confirmed; set anno_table_confirmed (obs=13);
 if country_region='United Arab Emirates' then country_region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 run;
@@ -623,8 +624,8 @@ data anno_table_confirmed; set anno_table_confirmed;
 length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; style='albany amt/bold'; size=11;
-y=99-(_n_*6);
-text=trim(left(put(confirmed,comma12.0))); x=35; position='4'; color="red"; output;
+y=98-(_n_*7);
+text=trim(left(put(confirmed,comma12.0))); x=37; position='4'; color="red"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
 html='title='||quote(trim(left(put(confirmed,comma12.0)))||" Reported cases of COVID-19 Coronavirus in "||trim(left(country_region)))||
@@ -635,7 +636,7 @@ run;
 data anno_table_confirmed; set anno_table_confirmed;
 output;
 if _n_=1 then do;
- style='albany amt'; color="graycc"; text='- top 16 -'; x=50; y=y+5;  position='5'; output;
+ style='albany amt'; color="graycc"; text='- top 13 -'; x=50; y=y+6;  position='5'; output;
  end;
 run;
 data anno_table_confirmed; set anno_gray_background anno_table_confirmed;
@@ -670,7 +671,7 @@ length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; style='albany amt/bold'; size=11;
 y=98-(_n_*7);
-text=trim(left(put(deaths,comma12.0))); x=28; position='4'; color="white"; output;
+text=trim(left(put(deaths,comma12.0))); x=37; position='4'; color="white"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
 html='title='||quote(trim(left(put(deaths,comma12.0)))||" deaths from COVID-19 Coronavirus in "||trim(left(country_region)))||
@@ -690,17 +691,18 @@ proc gslide anno=anno_table_deaths des='' name='deadtab';
 run;
 
 
-/*---------------------------inctab----------------------------------------*/
+/*---------------------------incrtab----------------------------------------*/
 
 /* daily increase table */
 
-goptions xpixels=203 ypixels=406;
+/* xpixels=(15-.5)/100*1400 ypixels=(74-1)/100*700 */
+goptions xpixels=203 ypixels=511;
 proc sort data=latest_increase out=anno_table_increase;
 by descending confirmed_this_day country_region;
 run;
 data anno_table_increase; set anno_table_increase (where=(confirmed_this_day>0));
 run;
-data anno_table_increase; set anno_table_increase (obs=13);
+data anno_table_increase; set anno_table_increase (obs=16);
 if country_region='United Arab Emirates' then country_region='UAE';
 if country_region='Iran (Islamic Republic of)' then country_region='Iran';
 run;
@@ -709,8 +711,7 @@ data anno_table_increase; set anno_table_increase;
 length function $8 color $12 style $35 text $300 html $300;
 xsys='3'; ysys='3'; when='a'; hsys='d';
 function='label'; style='albany amt/bold'; size=11;
-y=98-(_n_*7);
-/* green was cx71a81e */
+y=99-(_n_*6);
 text=trim(left(put(confirmed_this_day,comma12.0))); x=28; position='4'; color="orange"; output;
 text=trim(left(country_region)); x=x+5; position='6'; color="graycc"; output;
 /* annotate an invisible box, for the html= mouse-over text */
@@ -723,7 +724,7 @@ run;
 data anno_table_increase; set anno_table_increase;
 output;
 if _n_=1 then do;
- style='albany amt'; color="graycc"; text='- top 13 -'; x=50; y=y+6;  position='5'; output;
+ style='albany amt'; color="graycc"; text='- top 16 -'; x=50; y=y+5;  position='5'; output;
  end;
 run;
 data anno_table_increase; set anno_gray_background anno_table_increase;
@@ -996,15 +997,12 @@ proc greplay nofs igout=work.gseg tc=tempcat;
    treplay
     0:back
     1:title
-    2:confsum
-    3:conftab 
-    4:incsum
-    5:incrtab
+    2:incrsum 
+    3:incrtab 
+    4:confsum
+    5:conftab
     6:deadsum
     7:deadtab
-/*
-    7:recotab
-*/
     8:map  
     9:series2
    10:info
@@ -1226,6 +1224,9 @@ data _null_; set loop
  (where=(country_region in ('Mexico')))
 */
  ;
+/* foofoo */
+/*
+*/
 call execute('%plot_two(%str('|| trim(left(country_region)) ||'));');
 run;
 
