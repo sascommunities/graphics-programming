@@ -1,0 +1,3462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>US Population Centers</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="us_population_centers">
+<Area shape="poly" alt="statename = Wyoming
+year = 2010" title="statename = Wyoming
+year = 2010" coords="331.19,244.2,331.19,239.85,335.55,239.85,335.55,244.2,331.19,244.2"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 2000" title="statename = Wyoming
+year = 2000" coords="331.3,244.67,331.3,240.31,335.66,240.31,335.66,244.67,331.3,244.67"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1990" title="statename = Wyoming
+year = 1990" coords="331.67,245.55,331.67,241.2,336.03,241.2,336.03,245.55,331.67,245.55"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1980" title="statename = Wyoming
+year = 1980" coords="332.43,245.21,332.43,240.86,336.79,240.86,336.79,245.21,332.43,245.21"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1970" title="statename = Wyoming
+year = 1970" coords="334.87,245.22,334.87,240.87,339.23,240.87,339.23,245.22,334.87,245.22"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1960" title="statename = Wyoming
+year = 1960" coords="335.23,245.59,335.23,241.23,339.58,241.23,339.58,245.59,335.23,245.59"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1950" title="statename = Wyoming
+year = 1950" coords="334.01,246,334.01,241.65,338.37,241.65,338.37,246,334.01,246"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1940" title="statename = Wyoming
+year = 1940" coords="332.78,241.82,332.78,237.46,337.14,237.46,337.14,241.82,332.78,241.82"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1930" title="statename = Wyoming
+year = 1930" coords="333.38,241.92,333.38,237.56,337.74,237.56,337.74,241.92,333.38,241.92"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1920" title="statename = Wyoming
+year = 1920" coords="333.22,241.86,333.22,237.5,337.57,237.5,337.57,241.86,333.22,241.86"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1910" title="statename = Wyoming
+year = 1910" coords="331.47,244.17,331.47,239.81,335.83,239.81,335.83,244.17,331.47,244.17"/>
+<Area shape="poly" alt="statename = Wyoming
+year = 1900" title="statename = Wyoming
+year = 1900" coords="333.04,247.87,333.04,243.51,337.4,243.51,337.4,247.87,333.04,247.87"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 2010" title="statename = Wisconsin
+year = 2010" coords="617.14,228.71,617.14,224.35,621.5,224.35,621.5,228.71,617.14,228.71"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 2000" title="statename = Wisconsin
+year = 2000" coords="617.41,228.54,617.41,224.19,621.77,224.19,621.77,228.54,617.41,228.54"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1990" title="statename = Wisconsin
+year = 1990" coords="617.71,228.68,617.71,224.33,622.06,224.33,622.06,228.68,617.71,228.68"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1980" title="statename = Wisconsin
+year = 1980" coords="617.83,228.72,617.83,224.36,622.18,224.36,622.18,228.72,617.83,228.72"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1970" title="statename = Wisconsin
+year = 1970" coords="618.79,229.44,618.79,225.09,623.15,225.09,623.15,229.44,618.79,229.44"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1960" title="statename = Wisconsin
+year = 1960" coords="618.79,229.11,618.79,224.75,623.14,224.75,623.14,229.11,618.79,229.11"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1950" title="statename = Wisconsin
+year = 1950" coords="616.74,227.06,616.74,222.7,621.1,222.7,621.1,227.06,616.74,227.06"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1940" title="statename = Wisconsin
+year = 1940" coords="615.47,226.37,615.47,222.02,619.82,222.02,619.82,226.37,615.47,226.37"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1930" title="statename = Wisconsin
+year = 1930" coords="615.38,226.4,615.38,222.04,619.74,222.04,619.74,226.4,615.38,226.4"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1920" title="statename = Wisconsin
+year = 1920" coords="613.78,224.51,613.78,220.15,618.14,220.15,618.14,224.51,613.78,224.51"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1910" title="statename = Wisconsin
+year = 1910" coords="613.38,224.11,613.38,219.76,617.74,219.76,617.74,224.11,613.38,224.11"/>
+<Area shape="poly" alt="statename = Wisconsin
+year = 1900" title="statename = Wisconsin
+year = 1900" coords="612.18,223.98,612.18,219.62,616.54,219.62,616.54,223.98,612.18,223.98"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 2010" title="statename = West Virginia
+year = 2010" coords="763.84,318.65,763.84,314.29,768.19,314.29,768.19,318.65,763.84,318.65"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 2000" title="statename = West Virginia
+year = 2000" coords="762.45,319.48,762.45,315.13,766.81,315.13,766.81,319.48,762.45,319.48"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1990" title="statename = West Virginia
+year = 1990" coords="761.56,320.08,761.56,315.73,765.92,315.73,765.92,320.08,761.56,320.08"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1980" title="statename = West Virginia
+year = 1980" coords="760.6,320.8,760.6,316.44,764.95,316.44,764.95,320.8,760.6,320.8"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1970" title="statename = West Virginia
+year = 1970" coords="759.94,320.71,759.94,316.35,764.3,316.35,764.3,320.71,759.94,320.71"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1960" title="statename = West Virginia
+year = 1960" coords="759.5,322.06,759.5,317.71,763.86,317.71,763.86,322.06,759.5,322.06"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1950" title="statename = West Virginia
+year = 1950" coords="759.77,323.46,759.77,319.11,764.12,319.11,764.12,323.46,759.77,323.46"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1940" title="statename = West Virginia
+year = 1940" coords="760.73,322.48,760.73,318.12,765.08,318.12,765.08,322.48,760.73,322.48"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1930" title="statename = West Virginia
+year = 1930" coords="761.04,321.75,761.04,317.39,765.39,317.39,765.39,321.75,761.04,321.75"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1920" title="statename = West Virginia
+year = 1920" coords="761.62,320.86,761.62,316.51,765.97,316.51,765.97,320.86,761.62,320.86"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1910" title="statename = West Virginia
+year = 1910" coords="762.48,319.66,762.48,315.3,766.84,315.3,766.84,319.66,762.48,319.66"/>
+<Area shape="poly" alt="statename = West Virginia
+year = 1900" title="statename = West Virginia
+year = 1900" coords="763.68,318.53,763.68,314.18,768.04,314.18,768.04,318.53,763.68,318.53"/>
+<Area shape="poly" alt="statename = Washington
+year = 2010" title="statename = Washington
+year = 2010" coords="128.81,104.88,128.81,100.52,133.16,100.52,133.16,104.88,128.81,104.88"/>
+<Area shape="poly" alt="statename = Washington
+year = 2000" title="statename = Washington
+year = 2000" coords="128.81,104.64,128.81,100.28,133.16,100.28,133.16,104.64,128.81,104.64"/>
+<Area shape="poly" alt="statename = Washington
+year = 1990" title="statename = Washington
+year = 1990" coords="129.04,104.46,129.04,100.11,133.39,100.11,133.39,104.46,129.04,104.46"/>
+<Area shape="poly" alt="statename = Washington
+year = 1980" title="statename = Washington
+year = 1980" coords="130.1,105.11,130.1,100.75,134.46,100.75,134.46,105.11,130.1,105.11"/>
+<Area shape="poly" alt="statename = Washington
+year = 1970" title="statename = Washington
+year = 1970" coords="130.2,104.77,130.2,100.42,134.55,100.42,134.55,104.77,130.2,104.77"/>
+<Area shape="poly" alt="statename = Washington
+year = 1960" title="statename = Washington
+year = 1960" coords="132.09,105.28,132.09,100.92,136.45,100.92,136.45,105.28,132.09,105.28"/>
+<Area shape="poly" alt="statename = Washington
+year = 1950" title="statename = Washington
+year = 1950" coords="132.26,105.6,132.26,101.24,136.62,101.24,136.62,105.6,132.26,105.6"/>
+<Area shape="poly" alt="statename = Washington
+year = 1940" title="statename = Washington
+year = 1940" coords="135.45,106.68,135.45,102.32,139.8,102.32,139.8,106.68,135.45,106.68"/>
+<Area shape="poly" alt="statename = Washington
+year = 1930" title="statename = Washington
+year = 1930" coords="135.61,106.43,135.61,102.07,139.97,102.07,139.97,106.43,135.61,106.43"/>
+<Area shape="poly" alt="statename = Washington
+year = 1920" title="statename = Washington
+year = 1920" coords="134.69,104.91,134.69,100.55,139.04,100.55,139.04,104.91,134.69,104.91"/>
+<Area shape="poly" alt="statename = Washington
+year = 1910" title="statename = Washington
+year = 1910" coords="137.03,105.89,137.03,101.54,141.39,101.54,141.39,105.89,137.03,105.89"/>
+<Area shape="poly" alt="statename = Washington
+year = 1900" title="statename = Washington
+year = 1900" coords="140.98,108.13,140.98,103.77,145.34,103.77,145.34,108.13,140.98,108.13"/>
+<Area shape="poly" alt="statename = Virginia
+year = 2010" title="statename = Virginia
+year = 2010" coords="816.47,331.17,816.47,326.81,820.83,326.81,820.83,331.17,816.47,331.17"/>
+<Area shape="poly" alt="statename = Virginia
+year = 2000" title="statename = Virginia
+year = 2000" coords="816.3,332.52,816.3,328.16,820.66,328.16,820.66,332.52,816.3,332.52"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1990" title="statename = Virginia
+year = 1990" coords="815.86,333.75,815.86,329.39,820.22,329.39,820.22,333.75,815.86,333.75"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1980" title="statename = Virginia
+year = 1980" coords="813.98,335.4,813.98,331.05,818.33,331.05,818.33,335.4,813.98,335.4"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1970" title="statename = Virginia
+year = 1970" coords="814.52,336.03,814.52,331.67,818.88,331.67,818.88,336.03,814.52,336.03"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1960" title="statename = Virginia
+year = 1960" coords="812.69,338.33,812.69,333.97,817.05,333.97,817.05,338.33,812.69,338.33"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1950" title="statename = Virginia
+year = 1950" coords="808.62,340.72,808.62,336.36,812.98,336.36,812.98,340.72,808.62,340.72"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1940" title="statename = Virginia
+year = 1940" coords="802.96,341.44,802.96,337.09,807.31,337.09,807.31,341.44,802.96,341.44"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1930" title="statename = Virginia
+year = 1930" coords="803.66,341.71,803.66,337.36,808.02,337.36,808.02,341.71,803.66,341.71"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1920" title="statename = Virginia
+year = 1920" coords="806.41,342.15,806.41,337.8,810.77,337.8,810.77,342.15,806.41,342.15"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1910" title="statename = Virginia
+year = 1910" coords="805.31,341.82,805.31,337.46,809.66,337.46,809.66,341.82,805.31,341.82"/>
+<Area shape="poly" alt="statename = Virginia
+year = 1900" title="statename = Virginia
+year = 1900" coords="805.53,341.33,805.53,336.97,809.88,336.97,809.88,341.33,805.53,341.33"/>
+<Area shape="poly" alt="statename = Vermont
+year = 2010" title="statename = Vermont
+year = 2010" coords="867.31,182,867.31,177.65,871.66,177.65,871.66,182,867.31,182"/>
+<Area shape="poly" alt="statename = Vermont
+year = 2000" title="statename = Vermont
+year = 2000" coords="867.41,182.28,867.41,177.93,871.77,177.93,871.77,182.28,867.41,182.28"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1990" title="statename = Vermont
+year = 1990" coords="867.55,182.61,867.55,178.26,871.91,178.26,871.91,182.61,867.55,182.61"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1980" title="statename = Vermont
+year = 1980" coords="867.67,182.76,867.67,178.41,872.02,178.41,872.02,182.76,867.67,182.76"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1970" title="statename = Vermont
+year = 1970" coords="867.71,182.99,867.71,178.63,872.07,178.63,872.07,182.99,867.71,182.99"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1960" title="statename = Vermont
+year = 1960" coords="868.27,183.47,868.27,179.11,872.63,179.11,872.63,183.47,868.27,183.47"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1950" title="statename = Vermont
+year = 1950" coords="868.06,182.85,868.06,178.49,872.42,178.49,872.42,182.85,868.06,182.85"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1940" title="statename = Vermont
+year = 1940" coords="868.73,182.83,868.73,178.47,873.09,178.47,873.09,182.83,868.73,182.83"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1930" title="statename = Vermont
+year = 1930" coords="868.85,182.64,868.85,178.29,873.2,178.29,873.2,182.64,868.85,182.64"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1920" title="statename = Vermont
+year = 1920" coords="868.56,182.78,868.56,178.42,872.92,178.42,872.92,182.78,868.56,182.78"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1910" title="statename = Vermont
+year = 1910" coords="868.57,182.69,868.57,178.33,872.93,178.33,872.93,182.69,868.57,182.69"/>
+<Area shape="poly" alt="statename = Vermont
+year = 1900" title="statename = Vermont
+year = 1900" coords="870.05,182.22,870.05,177.87,874.4,177.87,874.4,182.22,870.05,182.22"/>
+<Area shape="poly" alt="statename = Utah
+year = 2010" title="statename = Utah
+year = 2010" coords="245.08,281.91,245.08,277.56,249.43,277.56,249.43,281.91,245.08,281.91"/>
+<Area shape="poly" alt="statename = Utah
+year = 2000" title="statename = Utah
+year = 2000" coords="245.65,281.19,245.65,276.83,250,276.83,250,281.19,245.65,281.19"/>
+<Area shape="poly" alt="statename = Utah
+year = 1990" title="statename = Utah
+year = 1990" coords="246.43,280.17,246.43,275.82,250.78,275.82,250.78,280.17,246.43,280.17"/>
+<Area shape="poly" alt="statename = Utah
+year = 1980" title="statename = Utah
+year = 1980" coords="247.14,279.75,247.14,275.39,251.5,275.39,251.5,279.75,247.14,279.75"/>
+<Area shape="poly" alt="statename = Utah
+year = 1970" title="statename = Utah
+year = 1970" coords="247.27,278.72,247.27,274.37,251.63,274.37,251.63,278.72,247.27,278.72"/>
+<Area shape="poly" alt="statename = Utah
+year = 1960" title="statename = Utah
+year = 1960" coords="247.06,279.3,247.06,274.95,251.42,274.95,251.42,279.3,247.06,279.3"/>
+<Area shape="poly" alt="statename = Utah
+year = 1950" title="statename = Utah
+year = 1950" coords="247.58,280.92,247.58,276.57,251.93,276.57,251.93,280.92,247.58,280.92"/>
+<Area shape="poly" alt="statename = Utah
+year = 1940" title="statename = Utah
+year = 1940" coords="246.78,282.95,246.78,278.59,251.14,278.59,251.14,282.95,246.78,282.95"/>
+<Area shape="poly" alt="statename = Utah
+year = 1930" title="statename = Utah
+year = 1930" coords="246.72,282.79,246.72,278.43,251.08,278.43,251.08,282.79,246.72,282.79"/>
+<Area shape="poly" alt="statename = Utah
+year = 1920" title="statename = Utah
+year = 1920" coords="247.29,282.92,247.29,278.57,251.65,278.57,251.65,282.92,247.29,282.92"/>
+<Area shape="poly" alt="statename = Utah
+year = 1910" title="statename = Utah
+year = 1910" coords="247.15,282.62,247.15,278.26,251.51,278.26,251.51,282.62,247.15,282.62"/>
+<Area shape="poly" alt="statename = Utah
+year = 1900" title="statename = Utah
+year = 1900" coords="247.34,285.22,247.34,280.86,251.7,280.86,251.7,285.22,247.34,285.22"/>
+<Area shape="poly" alt="statename = Texas
+year = 2010" title="statename = Texas
+year = 2010" coords="481.16,508.1,481.16,503.75,485.52,503.75,485.52,508.1,481.16,508.1"/>
+<Area shape="poly" alt="statename = Texas
+year = 2000" title="statename = Texas
+year = 2000" coords="480.74,507.28,480.74,502.93,485.1,502.93,485.1,507.28,480.74,507.28"/>
+<Area shape="poly" alt="statename = Texas
+year = 1990" title="statename = Texas
+year = 1990" coords="479.76,506.45,479.76,502.1,484.12,502.1,484.12,506.45,479.76,506.45"/>
+<Area shape="poly" alt="statename = Texas
+year = 1980" title="statename = Texas
+year = 1980" coords="479.49,506.2,479.49,501.85,483.84,501.85,483.84,506.2,479.49,506.2"/>
+<Area shape="poly" alt="statename = Texas
+year = 1970" title="statename = Texas
+year = 1970" coords="478.25,504.28,478.25,499.93,482.6,499.93,482.6,504.28,478.25,504.28"/>
+<Area shape="poly" alt="statename = Texas
+year = 1960" title="statename = Texas
+year = 1960" coords="475.31,503.85,475.31,499.49,479.66,499.49,479.66,503.85,475.31,503.85"/>
+<Area shape="poly" alt="statename = Texas
+year = 1950" title="statename = Texas
+year = 1950" coords="477.13,503.32,477.13,498.96,481.48,498.96,481.48,503.32,477.13,503.32"/>
+<Area shape="poly" alt="statename = Texas
+year = 1940" title="statename = Texas
+year = 1940" coords="479.24,500.37,479.24,496.01,483.59,496.01,483.59,500.37,479.24,500.37"/>
+<Area shape="poly" alt="statename = Texas
+year = 1930" title="statename = Texas
+year = 1930" coords="477.53,497.82,477.53,493.47,481.89,493.47,481.89,497.82,477.53,497.82"/>
+<Area shape="poly" alt="statename = Texas
+year = 1920" title="statename = Texas
+year = 1920" coords="482.21,495.87,482.21,491.51,486.56,491.51,486.56,495.87,482.21,495.87"/>
+<Area shape="poly" alt="statename = Texas
+year = 1910" title="statename = Texas
+year = 1910" coords="483.45,494.88,483.45,490.52,487.8,490.52,487.8,494.88,483.45,494.88"/>
+<Area shape="poly" alt="statename = Texas
+year = 1900" title="statename = Texas
+year = 1900" coords="490.49,495.97,490.49,491.61,494.84,491.61,494.84,495.97,490.49,495.97"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 2010" title="statename = Tennessee
+year = 2010" coords="676.04,394.73,676.04,390.37,680.39,390.37,680.39,394.73,676.04,394.73"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 2000" title="statename = Tennessee
+year = 2000" coords="675.39,395.06,675.39,390.7,679.74,390.7,679.74,395.06,675.39,395.06"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1990" title="statename = Tennessee
+year = 1990" coords="674.83,395.38,674.83,391.03,679.19,391.03,679.19,395.38,674.83,395.38"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1980" title="statename = Tennessee
+year = 1980" coords="675.01,395.45,675.01,391.09,679.36,391.09,679.36,395.45,675.01,395.45"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1970" title="statename = Tennessee
+year = 1970" coords="673.64,395.95,673.64,391.59,678,391.59,678,395.95,673.64,395.95"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1960" title="statename = Tennessee
+year = 1960" coords="674.68,395.81,674.68,391.46,679.03,391.46,679.03,395.81,674.68,395.81"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1950" title="statename = Tennessee
+year = 1950" coords="674.34,395.21,674.34,390.86,678.7,390.86,678.7,395.21,674.34,395.21"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1940" title="statename = Tennessee
+year = 1940" coords="675.08,394.64,675.08,390.29,679.43,390.29,679.43,394.64,675.08,394.64"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1930" title="statename = Tennessee
+year = 1930" coords="674.32,394.71,674.32,390.35,678.68,390.35,678.68,394.71,674.32,394.71"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1920" title="statename = Tennessee
+year = 1920" coords="672.97,394.88,672.97,390.53,677.33,390.53,677.33,394.88,672.97,394.88"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1910" title="statename = Tennessee
+year = 1910" coords="672.44,394.79,672.44,390.44,676.8,390.44,676.8,394.79,672.44,394.79"/>
+<Area shape="poly" alt="statename = Tennessee
+year = 1900" title="statename = Tennessee
+year = 1900" coords="671.68,394.57,671.68,390.21,676.03,390.21,676.03,394.57,671.68,394.57"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 2010" title="statename = South Dakota
+year = 2010" coords="460.03,225.41,460.03,221.05,464.38,221.05,464.38,225.41,460.03,225.41"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 2000" title="statename = South Dakota
+year = 2000" coords="459.4,224.68,459.4,220.32,463.75,220.32,463.75,224.68,459.4,224.68"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1990" title="statename = South Dakota
+year = 1990" coords="458.66,223.79,458.66,219.43,463.02,219.43,463.02,223.79,458.66,223.79"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1980" title="statename = South Dakota
+year = 1980" coords="459.25,223.3,459.25,218.94,463.6,218.94,463.6,223.3,459.25,223.3"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1970" title="statename = South Dakota
+year = 1970" coords="460.7,222.71,460.7,218.36,465.05,218.36,465.05,222.71,460.7,222.71"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1960" title="statename = South Dakota
+year = 1960" coords="460.81,222.67,460.81,218.31,465.17,218.31,465.17,222.67,460.81,222.67"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1950" title="statename = South Dakota
+year = 1950" coords="462.77,220,462.77,215.64,467.12,215.64,467.12,220,462.77,220"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1940" title="statename = South Dakota
+year = 1940" coords="463.66,220.85,463.66,216.49,468.01,216.49,468.01,220.85,463.66,220.85"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1930" title="statename = South Dakota
+year = 1930" coords="463.74,220.46,463.74,216.11,468.1,216.11,468.1,220.46,463.74,220.46"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1920" title="statename = South Dakota
+year = 1920" coords="465.32,218.95,465.32,214.6,469.68,214.6,469.68,218.95,465.32,218.95"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1910" title="statename = South Dakota
+year = 1910" coords="462.86,218.74,462.86,214.39,467.22,214.39,467.22,218.74,462.86,218.74"/>
+<Area shape="poly" alt="statename = South Dakota
+year = 1900" title="statename = South Dakota
+year = 1900" coords="469.38,218.38,469.38,214.03,473.73,214.03,473.73,218.38,469.38,218.38"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 2010" title="statename = South Carolina
+year = 2010" coords="775.28,420.99,775.28,416.63,779.64,416.63,779.64,420.99,775.28,420.99"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 2000" title="statename = South Carolina
+year = 2000" coords="774.87,420.85,774.87,416.5,779.23,416.5,779.23,420.85,774.87,420.85"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1990" title="statename = South Carolina
+year = 1990" coords="774.97,420.87,774.97,416.52,779.33,416.52,779.33,420.87,774.97,420.87"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1980" title="statename = South Carolina
+year = 1980" coords="774.78,420.59,774.78,416.23,779.13,416.23,779.13,420.59,774.78,420.59"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1970" title="statename = South Carolina
+year = 1970" coords="774.5,420.36,774.5,416,778.86,416,778.86,420.36,774.5,420.36"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1960" title="statename = South Carolina
+year = 1960" coords="774.82,420.25,774.82,415.89,779.18,415.89,779.18,420.25,774.82,420.25"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1950" title="statename = South Carolina
+year = 1950" coords="774.66,420.05,774.66,415.69,779.01,415.69,779.01,420.05,774.66,420.05"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1940" title="statename = South Carolina
+year = 1940" coords="774.3,419.72,774.3,415.37,778.65,415.37,778.65,419.72,774.3,419.72"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1930" title="statename = South Carolina
+year = 1930" coords="773.84,419.81,773.84,415.46,778.2,415.46,778.2,419.81,773.84,419.81"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1920" title="statename = South Carolina
+year = 1920" coords="774.33,420.75,774.33,416.39,778.68,416.39,778.68,420.75,774.33,420.75"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1910" title="statename = South Carolina
+year = 1910" coords="774.26,420.96,774.26,416.6,778.62,416.6,778.62,420.96,774.26,420.96"/>
+<Area shape="poly" alt="statename = South Carolina
+year = 1900" title="statename = South Carolina
+year = 1900" coords="775.61,421.38,775.61,417.03,779.96,417.03,779.96,421.38,775.61,421.38"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 2010" title="statename = Rhode Island
+year = 2010" coords="900.93,225.45,900.93,221.09,905.28,221.09,905.28,225.45,900.93,225.45"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 2000" title="statename = Rhode Island
+year = 2000" coords="900.96,225.45,900.96,221.09,905.32,221.09,905.32,225.45,900.96,225.45"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1990" title="statename = Rhode Island
+year = 1990" coords="900.99,225.41,900.99,221.06,905.35,221.06,905.35,225.41,900.99,225.41"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1980" title="statename = Rhode Island
+year = 1980" coords="901.04,225.29,901.04,220.94,905.39,220.94,905.39,225.29,901.04,225.29"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1970" title="statename = Rhode Island
+year = 1970" coords="901.15,225.23,901.15,220.87,905.51,220.87,905.51,225.23,901.15,225.23"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1960" title="statename = Rhode Island
+year = 1960" coords="901.15,225.02,901.15,220.67,905.5,220.67,905.5,225.02,901.15,225.02"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1950" title="statename = Rhode Island
+year = 1950" coords="900.99,224.85,900.99,220.5,905.35,220.5,905.35,224.85,900.99,224.85"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1940" title="statename = Rhode Island
+year = 1940" coords="899.32,224.61,899.32,220.25,903.68,220.25,903.68,224.61,899.32,224.61"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1930" title="statename = Rhode Island
+year = 1930" coords="899.28,224.53,899.28,220.17,903.64,220.17,903.64,224.53,899.28,224.53"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1920" title="statename = Rhode Island
+year = 1920" coords="900.86,224.54,900.86,220.19,905.21,220.19,905.21,224.54,900.86,224.54"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1910" title="statename = Rhode Island
+year = 1910" coords="900.57,224.73,900.57,220.38,904.92,220.38,904.92,224.73,900.57,224.73"/>
+<Area shape="poly" alt="statename = Rhode Island
+year = 1900" title="statename = Rhode Island
+year = 1900" coords="900.59,224.85,900.59,220.49,904.94,220.49,904.94,224.85,900.59,224.85"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 2010" title="statename = Pennsylvania
+year = 2010" coords="818.61,272.65,818.61,268.29,822.97,268.29,822.97,272.65,818.61,272.65"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 2000" title="statename = Pennsylvania
+year = 2000" coords="817.51,272.71,817.51,268.35,821.87,268.35,821.87,272.71,817.51,272.71"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1990" title="statename = Pennsylvania
+year = 1990" coords="816.76,272.84,816.76,268.48,821.11,268.48,821.11,272.84,816.76,272.84"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1980" title="statename = Pennsylvania
+year = 1980" coords="815.44,272.97,815.44,268.62,819.79,268.62,819.79,272.97,815.44,272.97"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1970" title="statename = Pennsylvania
+year = 1970" coords="815.54,273.29,815.54,268.93,819.9,268.93,819.9,273.29,815.54,273.29"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1960" title="statename = Pennsylvania
+year = 1960" coords="814.46,273.38,814.46,269.03,818.81,269.03,818.81,273.38,814.46,273.38"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1950" title="statename = Pennsylvania
+year = 1950" coords="813.62,272.52,813.62,268.16,817.98,268.16,817.98,272.52,813.62,272.52"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1940" title="statename = Pennsylvania
+year = 1940" coords="813.12,272.64,813.12,268.28,817.47,268.28,817.47,272.64,813.12,272.64"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1930" title="statename = Pennsylvania
+year = 1930" coords="813.39,272.56,813.39,268.2,817.75,268.2,817.75,272.56,813.39,272.56"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1920" title="statename = Pennsylvania
+year = 1920" coords="813.45,271.94,813.45,267.58,817.8,267.58,817.8,271.94,813.45,271.94"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1910" title="statename = Pennsylvania
+year = 1910" coords="813.63,271.9,813.63,267.55,817.98,267.55,817.98,271.9,813.63,271.9"/>
+<Area shape="poly" alt="statename = Pennsylvania
+year = 1900" title="statename = Pennsylvania
+year = 1900" coords="814.11,270.44,814.11,266.08,818.46,266.08,818.46,270.44,814.11,270.44"/>
+<Area shape="poly" alt="statename = Oregon
+year = 2010" title="statename = Oregon
+year = 2010" coords="99.501,153.96,99.501,149.6,103.86,149.6,103.86,153.96,99.501,153.96"/>
+<Area shape="poly" alt="statename = Oregon
+year = 2000" title="statename = Oregon
+year = 2000" coords="99.521,154.21,99.521,149.85,103.88,149.85,103.88,154.21,99.521,154.21"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1990" title="statename = Oregon
+year = 1990" coords="99.345,154.54,99.345,150.18,103.7,150.18,103.7,154.54,99.345,154.54"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1980" title="statename = Oregon
+year = 1980" coords="99.514,155.05,99.514,150.7,103.87,150.7,103.87,155.05,99.514,155.05"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1970" title="statename = Oregon
+year = 1970" coords="99.981,154.11,99.981,149.76,104.34,149.76,104.34,154.11,99.981,154.11"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1960" title="statename = Oregon
+year = 1960" coords="100.8,154.5,100.8,150.15,105.16,150.15,105.16,154.5,100.8,154.5"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1950" title="statename = Oregon
+year = 1950" coords="101.62,154.45,101.62,150.09,105.98,150.09,105.98,154.45,101.62,154.45"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1940" title="statename = Oregon
+year = 1940" coords="104.28,154,104.28,149.64,108.64,149.64,108.64,154,104.28,154"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1930" title="statename = Oregon
+year = 1930" coords="104.76,152.93,104.76,148.57,109.12,148.57,109.12,152.93,104.76,152.93"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1920" title="statename = Oregon
+year = 1920" coords="105.96,151.66,105.96,147.31,110.32,147.31,110.32,151.66,105.96,151.66"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1910" title="statename = Oregon
+year = 1910" coords="105.99,152.96,105.99,148.6,110.34,148.6,110.34,152.96,105.99,152.96"/>
+<Area shape="poly" alt="statename = Oregon
+year = 1900" title="statename = Oregon
+year = 1900" coords="110.35,152.77,110.35,148.42,114.71,148.42,114.71,152.77,110.35,152.77"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 2010" title="statename = Oklahoma
+year = 2010" coords="492.11,407.27,492.11,402.91,496.47,402.91,496.47,407.27,492.11,407.27"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 2000" title="statename = Oklahoma
+year = 2000" coords="492.15,407.28,492.15,402.92,496.5,402.92,496.5,407.28,492.15,407.28"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1990" title="statename = Oklahoma
+year = 1990" coords="491.62,407.46,491.62,403.1,495.97,403.1,495.97,407.46,491.62,407.46"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1980" title="statename = Oklahoma
+year = 1980" coords="491.21,407.48,491.21,403.13,495.57,403.13,495.57,407.48,491.21,407.48"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1970" title="statename = Oklahoma
+year = 1970" coords="490.31,407.56,490.31,403.21,494.66,403.21,494.66,407.56,490.31,407.56"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1960" title="statename = Oklahoma
+year = 1960" coords="491.25,407.54,491.25,403.19,495.6,403.19,495.6,407.54,491.25,407.54"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1950" title="statename = Oklahoma
+year = 1950" coords="490.49,407.97,490.49,403.62,494.84,403.62,494.84,407.97,490.49,407.97"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1940" title="statename = Oklahoma
+year = 1940" coords="491.4,409.42,491.4,405.07,495.76,405.07,495.76,409.42,491.4,409.42"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1930" title="statename = Oklahoma
+year = 1930" coords="489.54,409.12,489.54,404.77,493.9,404.77,493.9,409.12,489.54,409.12"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1920" title="statename = Oklahoma
+year = 1920" coords="491.32,409.9,491.32,405.55,495.68,405.55,495.68,409.9,491.32,409.9"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1910" title="statename = Oklahoma
+year = 1910" coords="487.59,409.94,487.59,405.59,491.95,405.59,491.95,409.94,487.59,409.94"/>
+<Area shape="poly" alt="statename = Oklahoma
+year = 1900" title="statename = Oklahoma
+year = 1900" coords="489.94,409.22,489.94,404.86,494.29,404.86,494.29,409.22,489.94,409.22"/>
+<Area shape="poly" alt="statename = Ohio
+year = 2010" title="statename = Ohio
+year = 2010" coords="724.78,288.19,724.78,283.83,729.13,283.83,729.13,288.19,724.78,288.19"/>
+<Area shape="poly" alt="statename = Ohio
+year = 2000" title="statename = Ohio
+year = 2000" coords="725.09,287.59,725.09,283.24,729.45,283.24,729.45,287.59,725.09,287.59"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1990" title="statename = Ohio
+year = 1990" coords="725.23,287.24,725.23,282.89,729.58,282.89,729.58,287.24,725.23,287.24"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1980" title="statename = Ohio
+year = 1980" coords="725.77,286.65,725.77,282.29,730.13,282.29,730.13,286.65,725.77,286.65"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1970" title="statename = Ohio
+year = 1970" coords="726.05,286.07,726.05,281.71,730.4,281.71,730.4,286.07,726.05,286.07"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1960" title="statename = Ohio
+year = 1960" coords="726.43,286.01,726.43,281.66,730.79,281.66,730.79,286.01,726.43,286.01"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1950" title="statename = Ohio
+year = 1950" coords="725.91,286.5,725.91,282.15,730.27,282.15,730.27,286.5,725.91,286.5"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1940" title="statename = Ohio
+year = 1940" coords="726.77,286.48,726.77,282.12,731.13,282.12,731.13,286.48,726.77,286.48"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1930" title="statename = Ohio
+year = 1930" coords="726.87,286.14,726.87,281.78,731.23,281.78,731.23,286.14,726.87,286.14"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1920" title="statename = Ohio
+year = 1920" coords="725.79,285.93,725.79,281.57,730.15,281.57,730.15,285.93,725.79,285.93"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1910" title="statename = Ohio
+year = 1910" coords="724.15,287.74,724.15,283.38,728.51,283.38,728.51,287.74,724.15,287.74"/>
+<Area shape="poly" alt="statename = Ohio
+year = 1900" title="statename = Ohio
+year = 1900" coords="722.65,289.6,722.65,285.25,727.01,285.25,727.01,289.6,722.65,289.6"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 2010" title="statename = North Dakota
+year = 2010" coords="457.81,154.28,457.81,149.93,462.17,149.93,462.17,154.28,457.81,154.28"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 2000" title="statename = North Dakota
+year = 2000" coords="457.46,153.7,457.46,149.34,461.81,149.34,461.81,153.7,457.46,153.7"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1990" title="statename = North Dakota
+year = 1990" coords="456.28,152.84,456.28,148.48,460.64,148.48,460.64,152.84,456.28,152.84"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1980" title="statename = North Dakota
+year = 1980" coords="454.88,152.49,454.88,148.14,459.23,148.14,459.23,152.49,454.88,152.49"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1970" title="statename = North Dakota
+year = 1970" coords="454.83,151.74,454.83,147.38,459.18,147.38,459.18,151.74,454.83,151.74"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1960" title="statename = North Dakota
+year = 1960" coords="454.09,151.57,454.09,147.22,458.44,147.22,458.44,151.57,454.09,151.57"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1950" title="statename = North Dakota
+year = 1950" coords="453.64,151.79,453.64,147.43,458,147.43,458,151.79,453.64,151.79"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1940" title="statename = North Dakota
+year = 1940" coords="452.53,151.49,452.53,147.14,456.89,147.14,456.89,151.49,452.53,151.49"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1930" title="statename = North Dakota
+year = 1930" coords="450.76,151.38,450.76,147.03,455.12,147.03,455.12,151.38,450.76,151.38"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1920" title="statename = North Dakota
+year = 1920" coords="450.99,151.26,450.99,146.91,455.34,146.91,455.34,151.26,450.99,151.26"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1910" title="statename = North Dakota
+year = 1910" coords="452.67,150.69,452.67,146.33,457.03,146.33,457.03,150.69,452.67,150.69"/>
+<Area shape="poly" alt="statename = North Dakota
+year = 1900" title="statename = North Dakota
+year = 1900" coords="466.92,150.78,466.92,146.42,471.28,146.42,471.28,150.78,466.92,150.78"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 2010" title="statename = North Carolina
+year = 2010" coords="793.71,384.89,793.71,380.54,798.06,380.54,798.06,384.89,793.71,384.89"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 2000" title="statename = North Carolina
+year = 2000" coords="793.5,384.7,793.5,380.35,797.86,380.35,797.86,384.7,793.5,384.7"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1990" title="statename = North Carolina
+year = 1990" coords="793.71,384.55,793.71,380.2,798.07,380.2,798.07,384.55,793.71,384.55"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1980" title="statename = North Carolina
+year = 1980" coords="793.31,384.42,793.31,380.07,797.67,380.07,797.67,384.42,793.31,384.42"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1970" title="statename = North Carolina
+year = 1970" coords="793.39,384.26,793.39,379.9,797.74,379.9,797.74,384.26,793.39,384.26"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1960" title="statename = North Carolina
+year = 1960" coords="794.74,383.85,794.74,379.49,799.1,379.49,799.1,383.85,794.74,383.85"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1950" title="statename = North Carolina
+year = 1950" coords="794.21,383.36,794.21,379.01,798.56,379.01,798.56,383.36,794.21,383.36"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1940" title="statename = North Carolina
+year = 1940" coords="793.71,383.48,793.71,379.12,798.07,379.12,798.07,383.48,793.71,383.48"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1930" title="statename = North Carolina
+year = 1930" coords="794.32,383.26,794.32,378.91,798.67,378.91,798.67,383.26,794.32,383.26"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1920" title="statename = North Carolina
+year = 1920" coords="795.78,383.01,795.78,378.65,800.13,378.65,800.13,383.01,795.78,383.01"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1910" title="statename = North Carolina
+year = 1910" coords="796.21,382.72,796.21,378.36,800.57,378.36,800.57,382.72,796.21,382.72"/>
+<Area shape="poly" alt="statename = North Carolina
+year = 1900" title="statename = North Carolina
+year = 1900" coords="796.51,382.37,796.51,378.01,800.87,378.01,800.87,382.37,796.51,382.37"/>
+<Area shape="poly" alt="statename = New York
+year = 2010" title="statename = New York
+year = 2010" coords="852.18,242.66,852.18,238.31,856.54,238.31,856.54,242.66,852.18,242.66"/>
+<Area shape="poly" alt="statename = New York
+year = 2000" title="statename = New York
+year = 2000" coords="851.77,242.62,851.77,238.26,856.12,238.26,856.12,242.62,851.77,242.62"/>
+<Area shape="poly" alt="statename = New York
+year = 1990" title="statename = New York
+year = 1990" coords="850.82,242.03,850.82,237.68,855.18,237.68,855.18,242.03,850.82,242.03"/>
+<Area shape="poly" alt="statename = New York
+year = 1980" title="statename = New York
+year = 1980" coords="850.42,242.07,850.42,237.72,854.78,237.72,854.78,242.07,850.42,242.07"/>
+<Area shape="poly" alt="statename = New York
+year = 1970" title="statename = New York
+year = 1970" coords="850.59,242.74,850.59,238.39,854.95,238.39,854.95,242.74,850.59,242.74"/>
+<Area shape="poly" alt="statename = New York
+year = 1960" title="statename = New York
+year = 1960" coords="850.59,242.92,850.59,238.56,854.94,238.56,854.94,242.92,850.59,242.92"/>
+<Area shape="poly" alt="statename = New York
+year = 1950" title="statename = New York
+year = 1950" coords="850.24,242.98,850.24,238.63,854.59,238.63,854.59,242.98,850.24,242.98"/>
+<Area shape="poly" alt="statename = New York
+year = 1940" title="statename = New York
+year = 1940" coords="850.48,243.13,850.48,238.77,854.84,238.77,854.84,243.13,850.48,243.13"/>
+<Area shape="poly" alt="statename = New York
+year = 1930" title="statename = New York
+year = 1930" coords="849.75,242.67,849.75,238.31,854.1,238.31,854.1,242.67,849.75,242.67"/>
+<Area shape="poly" alt="statename = New York
+year = 1920" title="statename = New York
+year = 1920" coords="848.06,241.32,848.06,236.96,852.42,236.96,852.42,241.32,848.06,241.32"/>
+<Area shape="poly" alt="statename = New York
+year = 1910" title="statename = New York
+year = 1910" coords="847.58,240.22,847.58,235.87,851.93,235.87,851.93,240.22,847.58,240.22"/>
+<Area shape="poly" alt="statename = New York
+year = 1900" title="statename = New York
+year = 1900" coords="848.48,236.9,848.48,232.54,852.84,232.54,852.84,236.9,848.48,236.9"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 2010" title="statename = New Mexico
+year = 2010" coords="322.43,418.06,322.43,413.7,326.79,413.7,326.79,418.06,322.43,418.06"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 2000" title="statename = New Mexico
+year = 2000" coords="322.62,418.29,322.62,413.94,326.98,413.94,326.98,418.29,322.62,418.29"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1990" title="statename = New Mexico
+year = 1990" coords="323.7,418.65,323.7,414.3,328.06,414.3,328.06,418.65,323.7,418.65"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1980" title="statename = New Mexico
+year = 1980" coords="324.45,418.55,324.45,414.2,328.81,414.2,328.81,418.55,324.45,418.55"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1970" title="statename = New Mexico
+year = 1970" coords="326.56,419.66,326.56,415.31,330.91,415.31,330.91,419.66,326.56,419.66"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1960" title="statename = New Mexico
+year = 1960" coords="328.19,420.85,328.19,416.5,332.54,416.5,332.54,420.85,328.19,420.85"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1950" title="statename = New Mexico
+year = 1950" coords="330.39,420.29,330.39,415.94,334.75,415.94,334.75,420.29,330.39,420.29"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1940" title="statename = New Mexico
+year = 1940" coords="331.47,419.33,331.47,414.98,335.83,414.98,335.83,419.33,331.47,419.33"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1930" title="statename = New Mexico
+year = 1930" coords="330.66,418.12,330.66,413.77,335.01,413.77,335.01,418.12,330.66,418.12"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1920" title="statename = New Mexico
+year = 1920" coords="330.39,416.52,330.39,412.16,334.74,412.16,334.74,416.52,330.39,416.52"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1910" title="statename = New Mexico
+year = 1910" coords="334.12,415.27,334.12,410.92,338.48,410.92,338.48,415.27,334.12,415.27"/>
+<Area shape="poly" alt="statename = New Mexico
+year = 1900" title="statename = New Mexico
+year = 1900" coords="326.52,412.35,326.52,407.99,330.88,407.99,330.88,412.35,326.52,412.35"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 2010" title="statename = New Jersey
+year = 2010" coords="860.36,264.44,860.36,260.08,864.72,260.08,864.72,264.44,860.36,264.44"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 2000" title="statename = New Jersey
+year = 2000" coords="860.4,264.29,860.4,259.93,864.75,259.93,864.75,264.29,860.4,264.29"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1990" title="statename = New Jersey
+year = 1990" coords="860.36,264.25,860.36,259.9,864.72,259.9,864.72,264.25,860.36,264.25"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1980" title="statename = New Jersey
+year = 1980" coords="860.45,263.71,860.45,259.36,864.8,259.36,864.8,263.71,860.45,263.71"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1970" title="statename = New Jersey
+year = 1970" coords="860.55,262.98,860.55,258.63,864.91,258.63,864.91,262.98,860.55,262.98"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1960" title="statename = New Jersey
+year = 1960" coords="860.72,262.79,860.72,258.44,865.08,258.44,865.08,262.79,860.72,262.79"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1950" title="statename = New Jersey
+year = 1950" coords="860.33,264.24,860.33,259.88,864.68,259.88,864.68,264.24,860.33,264.24"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1940" title="statename = New Jersey
+year = 1940" coords="860.43,262.07,860.43,257.72,864.79,257.72,864.79,262.07,860.43,262.07"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1930" title="statename = New Jersey
+year = 1930" coords="860.5,262.06,860.5,257.7,864.85,257.7,864.85,262.06,860.5,262.06"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1920" title="statename = New Jersey
+year = 1920" coords="860.53,263.52,860.53,259.16,864.89,259.16,864.89,263.52,860.53,263.52"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1910" title="statename = New Jersey
+year = 1910" coords="859.97,263.24,859.97,258.89,864.33,258.89,864.33,263.24,859.97,263.24"/>
+<Area shape="poly" alt="statename = New Jersey
+year = 1900" title="statename = New Jersey
+year = 1900" coords="859.21,263.96,859.21,259.61,863.57,259.61,863.57,263.96,859.21,263.96"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 2010" title="statename = New Hampshire
+year = 2010" coords="893.06,196.38,893.06,192.02,897.41,192.02,897.41,196.38,893.06,196.38"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 2000" title="statename = New Hampshire
+year = 2000" coords="893.05,196.42,893.05,192.06,897.4,192.06,897.4,196.42,893.05,196.42"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1990" title="statename = New Hampshire
+year = 1990" coords="892.97,196.25,892.97,191.89,897.32,191.89,897.32,196.25,892.97,196.25"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1980" title="statename = New Hampshire
+year = 1980" coords="892.75,195.93,892.75,191.57,897.1,191.57,897.1,195.93,892.75,195.93"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1970" title="statename = New Hampshire
+year = 1970" coords="892.58,195.65,892.58,191.3,896.94,191.3,896.94,195.65,892.58,195.65"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1960" title="statename = New Hampshire
+year = 1960" coords="892.3,194.68,892.3,190.32,896.65,190.32,896.65,194.68,892.3,194.68"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1950" title="statename = New Hampshire
+year = 1950" coords="890.92,192.81,890.92,188.46,895.28,188.46,895.28,192.81,890.92,192.81"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1940" title="statename = New Hampshire
+year = 1940" coords="890.27,192.9,890.27,188.55,894.62,188.55,894.62,192.9,890.27,192.9"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1930" title="statename = New Hampshire
+year = 1930" coords="890.16,192.85,890.16,188.5,894.52,188.5,894.52,192.85,890.16,192.85"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1920" title="statename = New Hampshire
+year = 1920" coords="890.77,192.45,890.77,188.1,895.13,188.1,895.13,192.45,890.77,192.45"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1910" title="statename = New Hampshire
+year = 1910" coords="890.82,192.51,890.82,188.16,895.18,188.16,895.18,192.51,890.82,192.51"/>
+<Area shape="poly" alt="statename = New Hampshire
+year = 1900" title="statename = New Hampshire
+year = 1900" coords="889.74,191.05,889.74,186.69,894.09,186.69,894.09,191.05,889.74,191.05"/>
+<Area shape="poly" alt="statename = Nevada
+year = 2010" title="statename = Nevada
+year = 2010" coords="160.37,339.57,160.37,335.22,164.73,335.22,164.73,339.57,160.37,339.57"/>
+<Area shape="poly" alt="statename = Nevada
+year = 2000" title="statename = Nevada
+year = 2000" coords="159.03,336.59,159.03,332.23,163.38,332.23,163.38,336.59,159.03,336.59"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1990" title="statename = Nevada
+year = 1990" coords="155.7,330.25,155.7,325.89,160.05,325.89,160.05,330.25,155.7,330.25"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1980" title="statename = Nevada
+year = 1980" coords="153.24,326.8,153.24,322.44,157.6,322.44,157.6,326.8,153.24,326.8"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1970" title="statename = Nevada
+year = 1970" coords="153.72,325.02,153.72,320.67,158.08,320.67,158.08,325.02,153.72,325.02"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1960" title="statename = Nevada
+year = 1960" coords="149.84,315.75,149.84,311.4,154.2,311.4,154.2,315.75,149.84,315.75"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1950" title="statename = Nevada
+year = 1950" coords="150.31,302.76,150.31,298.41,154.66,298.41,154.66,302.76,150.31,302.76"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1940" title="statename = Nevada
+year = 1940" coords="151.42,287.09,151.42,282.73,155.78,282.73,155.78,287.09,151.42,287.09"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1930" title="statename = Nevada
+year = 1930" coords="151.21,282.63,151.21,278.28,155.56,278.28,155.56,282.63,151.21,282.63"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1920" title="statename = Nevada
+year = 1920" coords="149.21,286.29,149.21,281.93,153.57,281.93,153.57,286.29,149.21,286.29"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1910" title="statename = Nevada
+year = 1910" coords="148.37,287.53,148.37,283.17,152.73,283.17,152.73,287.53,148.37,287.53"/>
+<Area shape="poly" alt="statename = Nevada
+year = 1900" title="statename = Nevada
+year = 1900" coords="146.88,274.36,146.88,270,151.23,270,151.23,274.36,146.88,274.36"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 2010" title="statename = Nebraska
+year = 2010" coords="485.55,286.99,485.55,282.64,489.91,282.64,489.91,286.99,485.55,286.99"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 2000" title="statename = Nebraska
+year = 2000" coords="484.11,286.76,484.11,282.4,488.47,282.4,488.47,286.76,484.11,286.76"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1990" title="statename = Nebraska
+year = 1990" coords="482.95,286.58,482.95,282.22,487.31,282.22,487.31,286.58,482.95,286.58"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1980" title="statename = Nebraska
+year = 1980" coords="481.41,286.39,481.41,282.03,485.76,282.03,485.76,286.39,481.41,286.39"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1970" title="statename = Nebraska
+year = 1970" coords="481.78,286.44,481.78,282.08,486.13,282.08,486.13,286.44,481.78,286.44"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1960" title="statename = Nebraska
+year = 1960" coords="478.22,286.17,478.22,281.82,482.57,281.82,482.57,286.17,478.22,286.17"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1950" title="statename = Nebraska
+year = 1950" coords="476.55,286.22,476.55,281.86,480.91,281.86,480.91,286.22,476.55,286.22"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1940" title="statename = Nebraska
+year = 1940" coords="474.76,285.77,474.76,281.41,479.11,281.41,479.11,285.77,474.76,285.77"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1930" title="statename = Nebraska
+year = 1930" coords="474.16,285.89,474.16,281.54,478.52,281.54,478.52,285.89,474.16,285.89"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1920" title="statename = Nebraska
+year = 1920" coords="475.2,286.05,475.2,281.7,479.55,281.7,479.55,286.05,475.2,286.05"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1910" title="statename = Nebraska
+year = 1910" coords="477.02,286.57,477.02,282.21,481.37,282.21,481.37,286.57,477.02,286.57"/>
+<Area shape="poly" alt="statename = Nebraska
+year = 1900" title="statename = Nebraska
+year = 1900" coords="479.21,287.51,479.21,283.15,483.56,283.15,483.56,287.51,479.21,287.51"/>
+<Area shape="poly" alt="statename = Montana
+year = 2010" title="statename = Montana
+year = 2010" coords="277.67,148.67,277.67,144.31,282.03,144.31,282.03,148.67,277.67,148.67"/>
+<Area shape="poly" alt="statename = Montana
+year = 2000" title="statename = Montana
+year = 2000" coords="279.05,148.32,279.05,143.96,283.4,143.96,283.4,148.32,279.05,148.32"/>
+<Area shape="poly" alt="statename = Montana
+year = 1990" title="statename = Montana
+year = 1990" coords="281.87,148.19,281.87,143.83,286.22,143.83,286.22,148.19,281.87,148.19"/>
+<Area shape="poly" alt="statename = Montana
+year = 1980" title="statename = Montana
+year = 1980" coords="283.59,148.01,283.59,143.66,287.94,143.66,287.94,148.01,283.59,148.01"/>
+<Area shape="poly" alt="statename = Montana
+year = 1970" title="statename = Montana
+year = 1970" coords="285.06,147.45,285.06,143.09,289.41,143.09,289.41,147.45,285.06,147.45"/>
+<Area shape="poly" alt="statename = Montana
+year = 1960" title="statename = Montana
+year = 1960" coords="288.52,147.53,288.52,143.18,292.88,143.18,292.88,147.53,288.52,147.53"/>
+<Area shape="poly" alt="statename = Montana
+year = 1950" title="statename = Montana
+year = 1950" coords="288.68,147.23,288.68,142.87,293.03,142.87,293.03,147.23,288.68,147.23"/>
+<Area shape="poly" alt="statename = Montana
+year = 1940" title="statename = Montana
+year = 1940" coords="289.73,147.91,289.73,143.55,294.09,143.55,294.09,147.91,289.73,147.91"/>
+<Area shape="poly" alt="statename = Montana
+year = 1930" title="statename = Montana
+year = 1930" coords="293.09,148.74,293.09,144.38,297.44,144.38,297.44,148.74,293.09,148.74"/>
+<Area shape="poly" alt="statename = Montana
+year = 1920" title="statename = Montana
+year = 1920" coords="293.78,149.23,293.78,144.87,298.14,144.87,298.14,149.23,293.78,149.23"/>
+<Area shape="poly" alt="statename = Montana
+year = 1910" title="statename = Montana
+year = 1910" coords="281.8,151.36,281.8,147.01,286.16,147.01,286.16,151.36,281.8,151.36"/>
+<Area shape="poly" alt="statename = Montana
+year = 1900" title="statename = Montana
+year = 1900" coords="272.34,152.28,272.34,147.92,276.7,147.92,276.7,152.28,272.34,152.28"/>
+<Area shape="poly" alt="statename = Missouri
+year = 2010" title="statename = Missouri
+year = 2010" coords="571.49,345.27,571.49,340.91,575.84,340.91,575.84,345.27,571.49,345.27"/>
+<Area shape="poly" alt="statename = Missouri
+year = 2000" title="statename = Missouri
+year = 2000" coords="572.23,344.94,572.23,340.58,576.58,340.58,576.58,344.94,572.23,344.94"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1990" title="statename = Missouri
+year = 1990" coords="573.13,344.36,573.13,340,577.48,340,577.48,344.36,573.13,344.36"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1980" title="statename = Missouri
+year = 1980" coords="573.44,343.95,573.44,339.59,577.8,339.59,577.8,343.95,573.44,343.95"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1970" title="statename = Missouri
+year = 1970" coords="574.31,342.99,574.31,338.64,578.67,338.64,578.67,342.99,574.31,342.99"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1960" title="statename = Missouri
+year = 1960" coords="574.11,343.58,574.11,339.23,578.47,339.23,578.47,343.58,574.11,343.58"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1950" title="statename = Missouri
+year = 1950" coords="572.61,343.55,572.61,339.19,576.96,339.19,576.96,343.55,572.61,343.55"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1940" title="statename = Missouri
+year = 1940" coords="573.42,343.88,573.42,339.52,577.78,339.52,577.78,343.88,573.42,343.88"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1930" title="statename = Missouri
+year = 1930" coords="572.15,342.77,572.15,338.42,576.5,338.42,576.5,342.77,572.15,342.77"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1920" title="statename = Missouri
+year = 1920" coords="570.11,342.49,570.11,338.14,574.47,338.14,574.47,342.49,570.11,342.49"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1910" title="statename = Missouri
+year = 1910" coords="569.54,342.62,569.54,338.26,573.9,338.26,573.9,342.62,569.54,342.62"/>
+<Area shape="poly" alt="statename = Missouri
+year = 1900" title="statename = Missouri
+year = 1900" coords="567.38,341.55,567.38,337.19,571.74,337.19,571.74,341.55,567.38,341.55"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 2010" title="statename = Mississippi
+year = 2010" coords="624.23,468.44,624.23,464.08,628.59,464.08,628.59,468.44,624.23,468.44"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 2000" title="statename = Mississippi
+year = 2000" coords="624.02,468.98,624.02,464.62,628.37,464.62,628.37,468.98,624.02,468.98"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1990" title="statename = Mississippi
+year = 1990" coords="623.72,469.08,623.72,464.72,628.08,464.72,628.08,469.08,623.72,469.08"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1980" title="statename = Mississippi
+year = 1980" coords="623.43,468.77,623.43,464.41,627.79,464.41,627.79,468.77,623.43,468.77"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1970" title="statename = Mississippi
+year = 1970" coords="622.82,467.99,622.82,463.64,627.17,463.64,627.17,467.99,622.82,467.99"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1960" title="statename = Mississippi
+year = 1960" coords="622.32,466.39,622.32,462.04,626.68,462.04,626.68,466.39,622.32,466.39"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1950" title="statename = Mississippi
+year = 1950" coords="620.84,464.12,620.84,459.76,625.19,459.76,625.19,464.12,620.84,464.12"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1940" title="statename = Mississippi
+year = 1940" coords="620.55,462.15,620.55,457.8,624.91,457.8,624.91,462.15,620.55,462.15"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1930" title="statename = Mississippi
+year = 1930" coords="620.46,461.56,620.46,457.2,624.82,457.2,624.82,461.56,620.46,461.56"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1920" title="statename = Mississippi
+year = 1920" coords="620.46,461.45,620.46,457.09,624.82,457.09,624.82,461.45,620.46,461.45"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1910" title="statename = Mississippi
+year = 1910" coords="620.57,461.97,620.57,457.61,624.93,457.61,624.93,461.97,620.57,461.97"/>
+<Area shape="poly" alt="statename = Mississippi
+year = 1900" title="statename = Mississippi
+year = 1900" coords="620.72,461.42,620.72,457.06,625.08,457.06,625.08,461.42,620.72,461.42"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 2010" title="statename = Minnesota
+year = 2010" coords="544.67,200.39,544.67,196.04,549.03,196.04,549.03,200.39,544.67,200.39"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 2000" title="statename = Minnesota
+year = 2000" coords="544.49,200.24,544.49,195.89,548.85,195.89,548.85,200.24,544.49,200.24"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1990" title="statename = Minnesota
+year = 1990" coords="544.09,200.02,544.09,195.66,548.45,195.66,548.45,200.02,544.09,200.02"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1980" title="statename = Minnesota
+year = 1980" coords="543.46,199.34,543.46,194.98,547.81,194.98,547.81,199.34,543.46,199.34"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1970" title="statename = Minnesota
+year = 1970" coords="543.44,199.72,543.44,195.36,547.8,195.36,547.8,199.72,543.44,199.72"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1960" title="statename = Minnesota
+year = 1960" coords="542.56,198.88,542.56,194.53,546.91,194.53,546.91,198.88,542.56,198.88"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1950" title="statename = Minnesota
+year = 1950" coords="541.61,197.55,541.61,193.2,545.96,193.2,545.96,197.55,541.61,197.55"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1940" title="statename = Minnesota
+year = 1940" coords="539.71,195.66,539.71,191.3,544.06,191.3,544.06,195.66,539.71,195.66"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1930" title="statename = Minnesota
+year = 1930" coords="539.77,195.69,539.77,191.34,544.13,191.34,544.13,195.69,539.77,195.69"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1920" title="statename = Minnesota
+year = 1920" coords="540.28,195.79,540.28,191.43,544.63,191.43,544.63,195.79,540.28,195.79"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1910" title="statename = Minnesota
+year = 1910" coords="540.18,196.88,540.18,192.52,544.53,192.52,544.53,196.88,540.18,196.88"/>
+<Area shape="poly" alt="statename = Minnesota
+year = 1900" title="statename = Minnesota
+year = 1900" coords="538.2,199.37,538.2,195.01,542.55,195.01,542.55,199.37,538.2,199.37"/>
+<Area shape="poly" alt="statename = Michigan
+year = 2010" title="statename = Michigan
+year = 2010" coords="694.96,239.58,694.96,235.23,699.31,235.23,699.31,239.58,694.96,239.58"/>
+<Area shape="poly" alt="statename = Michigan
+year = 2000" title="statename = Michigan
+year = 2000" coords="695.49,239.66,695.49,235.31,699.85,235.31,699.85,239.66,695.49,239.66"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1990" title="statename = Michigan
+year = 1990" coords="695.95,239.88,695.95,235.53,700.31,235.53,700.31,239.88,695.95,239.88"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1980" title="statename = Michigan
+year = 1980" coords="696.55,240.08,696.55,235.73,700.9,235.73,700.9,240.08,696.55,240.08"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1970" title="statename = Michigan
+year = 1970" coords="697.57,240.72,697.57,236.36,701.93,236.36,701.93,240.72,697.57,240.72"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1960" title="statename = Michigan
+year = 1960" coords="697.79,240.6,697.79,236.25,702.15,236.25,702.15,240.6,697.79,240.6"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1950" title="statename = Michigan
+year = 1950" coords="696.71,239.86,696.71,235.51,701.06,235.51,701.06,239.86,696.71,239.86"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1940" title="statename = Michigan
+year = 1940" coords="695.02,239.13,695.02,234.77,699.38,234.77,699.38,239.13,695.02,239.13"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1930" title="statename = Michigan
+year = 1930" coords="694.6,238.97,694.6,234.62,698.95,234.62,698.95,238.97,694.6,238.97"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1920" title="statename = Michigan
+year = 1920" coords="690.98,235.05,690.98,230.7,695.34,230.7,695.34,235.05,690.98,235.05"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1910" title="statename = Michigan
+year = 1910" coords="685.14,230.82,685.14,226.47,689.49,226.47,689.49,230.82,685.14,230.82"/>
+<Area shape="poly" alt="statename = Michigan
+year = 1900" title="statename = Michigan
+year = 1900" coords="684.75,230.48,684.75,226.12,689.1,226.12,689.1,230.48,684.75,230.48"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 2010" title="statename = Massachusetts
+year = 2010" coords="899.44,214.31,899.44,209.96,903.79,209.96,903.79,214.31,899.44,214.31"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 2000" title="statename = Massachusetts
+year = 2000" coords="899.44,214.32,899.44,209.97,903.79,209.97,903.79,214.32,899.44,214.32"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1990" title="statename = Massachusetts
+year = 1990" coords="899.2,214.32,899.2,209.97,903.55,209.97,903.55,214.32,899.2,214.32"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1980" title="statename = Massachusetts
+year = 1980" coords="899.07,214.25,899.07,209.9,903.43,209.9,903.43,214.25,899.07,214.25"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1970" title="statename = Massachusetts
+year = 1970" coords="898.85,214.06,898.85,209.7,903.21,209.7,903.21,214.06,898.85,214.06"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1960" title="statename = Massachusetts
+year = 1960" coords="898.19,214.09,898.19,209.74,902.55,209.74,902.55,214.09,898.19,214.09"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1950" title="statename = Massachusetts
+year = 1950" coords="897.79,212.63,897.79,208.27,902.14,208.27,902.14,212.63,897.79,212.63"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1940" title="statename = Massachusetts
+year = 1940" coords="897.88,213.86,897.88,209.51,902.23,209.51,902.23,213.86,897.88,213.86"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1930" title="statename = Massachusetts
+year = 1930" coords="897.85,213.85,897.85,209.5,902.2,209.5,902.2,213.85,897.85,213.85"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1920" title="statename = Massachusetts
+year = 1920" coords="897.87,212.51,897.87,208.16,902.22,208.16,902.22,212.51,897.87,212.51"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1910" title="statename = Massachusetts
+year = 1910" coords="898.02,212.44,898.02,208.09,902.37,208.09,902.37,212.44,898.02,212.44"/>
+<Area shape="poly" alt="statename = Massachusetts
+year = 1900" title="statename = Massachusetts
+year = 1900" coords="897.25,212.66,897.25,208.31,901.6,208.31,901.6,212.66,897.25,212.66"/>
+<Area shape="poly" alt="statename = Maryland
+year = 2010" title="statename = Maryland
+year = 2010" coords="827.73,299.76,827.73,295.41,832.09,295.41,832.09,299.76,827.73,299.76"/>
+<Area shape="poly" alt="statename = Maryland
+year = 2000" title="statename = Maryland
+year = 2000" coords="827.72,299.66,827.72,295.31,832.07,295.31,832.07,299.66,827.72,299.66"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1990" title="statename = Maryland
+year = 1990" coords="827.73,299.54,827.73,295.19,832.09,295.19,832.09,299.54,827.73,299.54"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1980" title="statename = Maryland
+year = 1980" coords="827.78,299.34,827.78,294.98,832.13,294.98,832.13,299.34,827.78,299.34"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1970" title="statename = Maryland
+year = 1970" coords="827.82,299.23,827.82,294.88,832.18,294.88,832.18,299.23,827.82,299.23"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1960" title="statename = Maryland
+year = 1960" coords="827.94,298.7,827.94,294.34,832.3,294.34,832.3,298.7,827.94,298.7"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1950" title="statename = Maryland
+year = 1950" coords="828.67,298.82,828.67,294.46,833.02,294.46,833.02,298.82,828.67,298.82"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1940" title="statename = Maryland
+year = 1940" coords="827.66,298.09,827.66,293.74,832.02,293.74,832.02,298.09,827.66,298.09"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1930" title="statename = Maryland
+year = 1930" coords="827.9,298.03,827.9,293.68,832.26,293.68,832.26,298.03,827.9,298.03"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1920" title="statename = Maryland
+year = 1920" coords="828.7,298.62,828.7,294.26,833.06,294.26,833.06,298.62,828.7,298.62"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1910" title="statename = Maryland
+year = 1910" coords="829.07,298.92,829.07,294.57,833.42,294.57,833.42,298.92,829.07,298.92"/>
+<Area shape="poly" alt="statename = Maryland
+year = 1900" title="statename = Maryland
+year = 1900" coords="829.19,299.05,829.19,294.7,833.55,294.7,833.55,299.05,829.19,299.05"/>
+<Area shape="poly" alt="statename = Maine
+year = 2010" title="statename = Maine
+year = 2010" coords="912.84,165.73,912.84,161.37,917.19,161.37,917.19,165.73,912.84,165.73"/>
+<Area shape="poly" alt="statename = Maine
+year = 2000" title="statename = Maine
+year = 2000" coords="913,165.38,913,161.02,917.36,161.02,917.36,165.38,913,165.38"/>
+<Area shape="poly" alt="statename = Maine
+year = 1990" title="statename = Maine
+year = 1990" coords="913.35,164.01,913.35,159.66,917.7,159.66,917.7,164.01,913.35,164.01"/>
+<Area shape="poly" alt="statename = Maine
+year = 1980" title="statename = Maine
+year = 1980" coords="913.62,163.02,913.62,158.67,917.97,158.67,917.97,163.02,913.62,163.02"/>
+<Area shape="poly" alt="statename = Maine
+year = 1970" title="statename = Maine
+year = 1970" coords="913.68,162.18,913.68,157.83,918.03,157.83,918.03,162.18,913.68,162.18"/>
+<Area shape="poly" alt="statename = Maine
+year = 1960" title="statename = Maine
+year = 1960" coords="914.31,160.75,914.31,156.39,918.67,156.39,918.67,160.75,914.31,160.75"/>
+<Area shape="poly" alt="statename = Maine
+year = 1950" title="statename = Maine
+year = 1950" coords="912.36,155.5,912.36,151.14,916.71,151.14,916.71,155.5,912.36,155.5"/>
+<Area shape="poly" alt="statename = Maine
+year = 1940" title="statename = Maine
+year = 1940" coords="912.8,157.1,912.8,152.74,917.16,152.74,917.16,157.1,912.8,157.1"/>
+<Area shape="poly" alt="statename = Maine
+year = 1930" title="statename = Maine
+year = 1930" coords="912.91,156.72,912.91,152.37,917.27,152.37,917.27,156.72,912.91,156.72"/>
+<Area shape="poly" alt="statename = Maine
+year = 1920" title="statename = Maine
+year = 1920" coords="913.31,154.97,913.31,150.61,917.67,150.61,917.67,154.97,913.31,154.97"/>
+<Area shape="poly" alt="statename = Maine
+year = 1910" title="statename = Maine
+year = 1910" coords="913.59,154.78,913.59,150.42,917.94,150.42,917.94,154.78,913.59,154.78"/>
+<Area shape="poly" alt="statename = Maine
+year = 1900" title="statename = Maine
+year = 1900" coords="911.71,151.29,911.71,146.94,916.07,146.94,916.07,151.29,911.71,151.29"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 2010" title="statename = Louisiana
+year = 2010" coords="590.8,510.43,590.8,506.07,595.16,506.07,595.16,510.43,590.8,510.43"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 2000" title="statename = Louisiana
+year = 2000" coords="591.79,510.89,591.79,506.54,596.15,506.54,596.15,510.89,591.79,510.89"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1990" title="statename = Louisiana
+year = 1990" coords="591.64,510.69,591.64,506.33,596,506.33,596,510.69,591.64,510.69"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1980" title="statename = Louisiana
+year = 1980" coords="591.62,510.5,591.62,506.15,595.97,506.15,595.97,510.5,591.62,510.5"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1970" title="statename = Louisiana
+year = 1970" coords="591.37,510.27,591.37,505.92,595.73,505.92,595.73,510.27,591.37,510.27"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1960" title="statename = Louisiana
+year = 1960" coords="590.5,509.25,590.5,504.89,594.85,504.89,594.85,509.25,590.5,509.25"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1950" title="statename = Louisiana
+year = 1950" coords="589.61,508.69,589.61,504.33,593.97,504.33,593.97,508.69,589.61,508.69"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1940" title="statename = Louisiana
+year = 1940" coords="589.33,506.26,589.33,501.9,593.69,501.9,593.69,506.26,589.33,506.26"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1930" title="statename = Louisiana
+year = 1930" coords="589.57,506.08,589.57,501.73,593.93,501.73,593.93,506.08,589.57,506.08"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1920" title="statename = Louisiana
+year = 1920" coords="588.76,507.62,588.76,503.27,593.11,503.27,593.11,507.62,588.76,507.62"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1910" title="statename = Louisiana
+year = 1910" coords="589.68,508.54,589.68,504.19,594.04,504.19,594.04,508.54,589.68,508.54"/>
+<Area shape="poly" alt="statename = Louisiana
+year = 1900" title="statename = Louisiana
+year = 1900" coords="590.32,508.46,590.32,504.1,594.68,504.1,594.68,508.46,590.32,508.46"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 2010" title="statename = Kentucky
+year = 2010" coords="690.58,349.5,690.58,345.14,694.93,345.14,694.93,349.5,690.58,349.5"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 2000" title="statename = Kentucky
+year = 2000" coords="690.73,349.84,690.73,345.48,695.08,345.48,695.08,349.84,690.73,349.84"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1990" title="statename = Kentucky
+year = 1990" coords="690.8,350.06,690.8,345.7,695.15,345.7,695.15,350.06,690.8,350.06"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1980" title="statename = Kentucky
+year = 1980" coords="691.09,350.15,691.09,345.79,695.45,345.79,695.45,350.15,691.09,350.15"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1970" title="statename = Kentucky
+year = 1970" coords="690.02,349.77,690.02,345.41,694.37,345.41,694.37,349.77,690.02,349.77"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1960" title="statename = Kentucky
+year = 1960" coords="691.05,350.24,691.05,345.89,695.41,345.89,695.41,350.24,691.05,350.24"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1950" title="statename = Kentucky
+year = 1950" coords="693.2,350.74,693.2,346.39,697.56,346.39,697.56,350.74,693.2,350.74"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1940" title="statename = Kentucky
+year = 1940" coords="693.49,352.34,693.49,347.98,697.85,347.98,697.85,352.34,693.49,352.34"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1930" title="statename = Kentucky
+year = 1930" coords="692.78,352.07,692.78,347.72,697.13,347.72,697.13,352.07,692.78,352.07"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1920" title="statename = Kentucky
+year = 1920" coords="690.72,352.06,690.72,347.7,695.08,347.7,695.08,352.06,690.72,352.06"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1910" title="statename = Kentucky
+year = 1910" coords="688.99,352.2,688.99,347.84,693.34,347.84,693.34,352.2,688.99,352.2"/>
+<Area shape="poly" alt="statename = Kentucky
+year = 1900" title="statename = Kentucky
+year = 1900" coords="688.09,352.38,688.09,348.02,692.45,348.02,692.45,352.38,688.09,352.38"/>
+<Area shape="poly" alt="statename = Kansas
+year = 2010" title="statename = Kansas
+year = 2010" coords="499.11,345.5,499.11,341.15,503.46,341.15,503.46,345.5,499.11,345.5"/>
+<Area shape="poly" alt="statename = Kansas
+year = 2000" title="statename = Kansas
+year = 2000" coords="497.86,345.73,497.86,341.37,502.22,341.37,502.22,345.73,497.86,345.73"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1990" title="statename = Kansas
+year = 1990" coords="497.06,345.64,497.06,341.28,501.42,341.28,501.42,345.64,497.06,345.64"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1980" title="statename = Kansas
+year = 1980" coords="496.13,345.71,496.13,341.35,500.49,341.35,500.49,345.71,496.13,345.71"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1970" title="statename = Kansas
+year = 1970" coords="495.71,345.57,495.71,341.21,500.07,341.21,500.07,345.57,495.71,345.57"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1960" title="statename = Kansas
+year = 1960" coords="495.85,346.15,495.85,341.8,500.2,341.8,500.2,346.15,495.85,346.15"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1950" title="statename = Kansas
+year = 1950" coords="492.38,345.92,492.38,341.57,496.74,341.57,496.74,345.92,492.38,345.92"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1940" title="statename = Kansas
+year = 1940" coords="492.5,345.83,492.5,341.47,496.85,341.47,496.85,345.83,492.5,345.83"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1930" title="statename = Kansas
+year = 1930" coords="491.66,345.82,491.66,341.47,496.01,341.47,496.01,345.82,491.66,345.82"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1920" title="statename = Kansas
+year = 1920" coords="492.78,345.58,492.78,341.22,497.13,341.22,497.13,345.58,492.78,345.58"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1910" title="statename = Kansas
+year = 1910" coords="492.92,344.87,492.92,340.52,497.27,340.52,497.27,344.87,492.92,344.87"/>
+<Area shape="poly" alt="statename = Kansas
+year = 1900" title="statename = Kansas
+year = 1900" coords="494.72,343.85,494.72,339.49,499.07,339.49,499.07,343.85,494.72,343.85"/>
+<Area shape="poly" alt="statename = Iowa
+year = 2010" title="statename = Iowa
+year = 2010" coords="555,269.92,555,265.57,559.36,265.57,559.36,269.92,555,269.92"/>
+<Area shape="poly" alt="statename = Iowa
+year = 2000" title="statename = Iowa
+year = 2000" coords="554.79,269.62,554.79,265.27,559.15,265.27,559.15,269.62,554.79,269.62"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1990" title="statename = Iowa
+year = 1990" coords="554.7,269.38,554.7,265.03,559.06,265.03,559.06,269.38,554.7,269.38"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1980" title="statename = Iowa
+year = 1980" coords="554.63,269.07,554.63,264.72,558.98,264.72,558.98,269.07,554.63,269.07"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1970" title="statename = Iowa
+year = 1970" coords="554.16,268.87,554.16,264.52,558.51,264.52,558.51,268.87,554.16,268.87"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1960" title="statename = Iowa
+year = 1960" coords="553.42,268.97,553.42,264.61,557.78,264.61,557.78,268.97,553.42,268.97"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1950" title="statename = Iowa
+year = 1950" coords="552.14,268.93,552.14,264.57,556.49,264.57,556.49,268.93,552.14,268.93"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1940" title="statename = Iowa
+year = 1940" coords="551.07,268.82,551.07,264.47,555.43,264.47,555.43,268.82,551.07,268.82"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1930" title="statename = Iowa
+year = 1930" coords="550.63,269.11,550.63,264.75,554.98,264.75,554.98,269.11,550.63,269.11"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1920" title="statename = Iowa
+year = 1920" coords="550.8,269.33,550.8,264.97,555.16,264.97,555.16,269.33,550.8,269.33"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1910" title="statename = Iowa
+year = 1910" coords="551.46,269.68,551.46,265.32,555.82,265.32,555.82,269.68,551.46,269.68"/>
+<Area shape="poly" alt="statename = Iowa
+year = 1900" title="statename = Iowa
+year = 1900" coords="551.52,270.38,551.52,266.03,555.87,266.03,555.87,270.38,551.52,270.38"/>
+<Area shape="poly" alt="statename = Indiana
+year = 2010" title="statename = Indiana
+year = 2010" coords="668.28,301.43,668.28,297.07,672.64,297.07,672.64,301.43,668.28,301.43"/>
+<Area shape="poly" alt="statename = Indiana
+year = 2000" title="statename = Indiana
+year = 2000" coords="668.22,301.11,668.22,296.76,672.57,296.76,672.57,301.11,668.22,301.11"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1990" title="statename = Indiana
+year = 1990" coords="668.05,301.04,668.05,296.68,672.41,296.68,672.41,301.04,668.05,301.04"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1980" title="statename = Indiana
+year = 1980" coords="667.83,300.9,667.83,296.54,672.18,296.54,672.18,300.9,667.83,300.9"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1970" title="statename = Indiana
+year = 1970" coords="667.65,300.46,667.65,296.11,672,296.11,672,300.46,667.65,300.46"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1960" title="statename = Indiana
+year = 1960" coords="667.26,300.49,667.26,296.13,671.61,296.13,671.61,300.49,667.26,300.49"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1950" title="statename = Indiana
+year = 1950" coords="667.46,302.11,667.46,297.75,671.81,297.75,671.81,302.11,667.46,302.11"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1940" title="statename = Indiana
+year = 1940" coords="667.51,302.89,667.51,298.54,671.87,298.54,671.87,302.89,667.51,302.89"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1930" title="statename = Indiana
+year = 1930" coords="667.57,302.96,667.57,298.61,671.92,298.61,671.92,302.96,667.57,302.96"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1920" title="statename = Indiana
+year = 1920" coords="668.13,304.59,668.13,300.23,672.49,300.23,672.49,304.59,668.13,304.59"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1910" title="statename = Indiana
+year = 1910" coords="668.66,305.77,668.66,301.41,673.02,301.41,673.02,305.77,668.66,305.77"/>
+<Area shape="poly" alt="statename = Indiana
+year = 1900" title="statename = Indiana
+year = 1900" coords="669.22,306.51,669.22,302.16,673.58,302.16,673.58,306.51,669.22,306.51"/>
+<Area shape="poly" alt="statename = Illinois
+year = 2010" title="statename = Illinois
+year = 2010" coords="631.15,280.1,631.15,275.75,635.51,275.75,635.51,280.1,631.15,280.1"/>
+<Area shape="poly" alt="statename = Illinois
+year = 2000" title="statename = Illinois
+year = 2000" coords="631.33,280.27,631.33,275.91,635.69,275.91,635.69,280.27,631.33,280.27"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1990" title="statename = Illinois
+year = 1990" coords="631.15,281.24,631.15,276.88,635.5,276.88,635.5,281.24,631.15,281.24"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1980" title="statename = Illinois
+year = 1980" coords="631.02,281.82,631.02,277.46,635.37,277.46,635.37,281.82,631.02,281.82"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1970" title="statename = Illinois
+year = 1970" coords="631.33,281.58,631.33,277.23,635.69,277.23,635.69,281.58,631.33,281.58"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1960" title="statename = Illinois
+year = 1960" coords="631.46,282.36,631.46,278,635.82,278,635.82,282.36,631.46,282.36"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1950" title="statename = Illinois
+year = 1950" coords="631.41,283.89,631.41,279.53,635.76,279.53,635.76,283.89,631.41,283.89"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1940" title="statename = Illinois
+year = 1940" coords="629.36,285.87,629.36,281.51,633.72,281.51,633.72,285.87,629.36,285.87"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1930" title="statename = Illinois
+year = 1930" coords="629.46,285.67,629.46,281.32,633.82,281.32,633.82,285.67,629.46,285.67"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1920" title="statename = Illinois
+year = 1920" coords="630.21,287.53,630.21,283.17,634.56,283.17,634.56,287.53,630.21,287.53"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1910" title="statename = Illinois
+year = 1910" coords="629.19,289.5,629.19,285.15,633.54,285.15,633.54,289.5,629.19,289.5"/>
+<Area shape="poly" alt="statename = Illinois
+year = 1900" title="statename = Illinois
+year = 1900" coords="628.25,291.26,628.25,286.9,632.61,286.9,632.61,291.26,628.25,291.26"/>
+<Area shape="poly" alt="statename = Idaho
+year = 2010" title="statename = Idaho
+year = 2010" coords="208.96,191.9,208.96,187.54,213.31,187.54,213.31,191.9,208.96,191.9"/>
+<Area shape="poly" alt="statename = Idaho
+year = 2000" title="statename = Idaho
+year = 2000" coords="209.75,191.54,209.75,187.18,214.11,187.18,214.11,191.54,209.75,191.54"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1990" title="statename = Idaho
+year = 1990" coords="212.09,192.84,212.09,188.48,216.44,188.48,216.44,192.84,212.09,192.84"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1980" title="statename = Idaho
+year = 1980" coords="212.63,192.88,212.63,188.53,216.99,188.53,216.99,192.88,212.63,192.88"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1970" title="statename = Idaho
+year = 1970" coords="214.19,193.35,214.19,188.99,218.54,188.99,218.54,193.35,214.19,193.35"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1960" title="statename = Idaho
+year = 1960" coords="214.18,193.87,214.18,189.52,218.53,189.52,218.53,193.87,214.18,193.87"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1950" title="statename = Idaho
+year = 1950" coords="215.19,193.56,215.19,189.21,219.55,189.21,219.55,193.56,215.19,193.56"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1940" title="statename = Idaho
+year = 1940" coords="216.41,192.53,216.41,188.18,220.77,188.18,220.77,192.53,216.41,192.53"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1930" title="statename = Idaho
+year = 1930" coords="217.48,192.26,217.48,187.91,221.84,187.91,221.84,192.26,217.48,192.26"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1920" title="statename = Idaho
+year = 1920" coords="218.1,193.32,218.1,188.96,222.45,188.96,222.45,193.32,218.1,193.32"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1910" title="statename = Idaho
+year = 1910" coords="216.12,186.88,216.12,182.53,220.48,182.53,220.48,186.88,216.12,186.88"/>
+<Area shape="poly" alt="statename = Idaho
+year = 1900" title="statename = Idaho
+year = 1900" coords="219.13,185.51,219.13,181.16,223.49,181.16,223.49,185.51,219.13,185.51"/>
+<Area shape="poly" alt="statename = Georgia
+year = 2010" title="statename = Georgia
+year = 2010" coords="725.92,441.92,725.92,437.56,730.27,437.56,730.27,441.92,725.92,441.92"/>
+<Area shape="poly" alt="statename = Georgia
+year = 2000" title="statename = Georgia
+year = 2000" coords="726.29,442.84,726.29,438.49,730.64,438.49,730.64,442.84,726.29,442.84"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1990" title="statename = Georgia
+year = 1990" coords="727.13,444.31,727.13,439.95,731.48,439.95,731.48,444.31,727.13,444.31"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1980" title="statename = Georgia
+year = 1980" coords="727.75,445.82,727.75,441.46,732.1,441.46,732.1,445.82,727.75,445.82"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1970" title="statename = Georgia
+year = 1970" coords="727.97,446.63,727.97,442.28,732.32,442.28,732.32,446.63,727.97,446.63"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1960" title="statename = Georgia
+year = 1960" coords="729.03,448.37,729.03,444.01,733.39,444.01,733.39,448.37,729.03,448.37"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1950" title="statename = Georgia
+year = 1950" coords="730,449.45,730,445.09,734.35,445.09,734.35,449.45,730,449.45"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1940" title="statename = Georgia
+year = 1940" coords="730.5,450.06,730.5,445.7,734.85,445.7,734.85,450.06,730.5,450.06"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1930" title="statename = Georgia
+year = 1930" coords="731.26,450.81,731.26,446.45,735.62,446.45,735.62,450.81,731.26,450.81"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1920" title="statename = Georgia
+year = 1920" coords="732.16,451.38,732.16,447.02,736.51,447.02,736.51,451.38,732.16,451.38"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1910" title="statename = Georgia
+year = 1910" coords="731.97,451.36,731.97,447,736.33,447,736.33,451.36,731.97,451.36"/>
+<Area shape="poly" alt="statename = Georgia
+year = 1900" title="statename = Georgia
+year = 1900" coords="731.48,450.62,731.48,446.26,735.84,446.26,735.84,450.62,731.48,450.62"/>
+<Area shape="poly" alt="statename = Florida
+year = 2010" title="statename = Florida
+year = 2010" coords="784.17,554.17,784.17,549.82,788.52,549.82,788.52,554.17,784.17,554.17"/>
+<Area shape="poly" alt="statename = Florida
+year = 2000" title="statename = Florida
+year = 2000" coords="784.25,554.74,784.25,550.38,788.61,550.38,788.61,554.74,784.25,554.74"/>
+<Area shape="poly" alt="statename = Florida
+year = 1990" title="statename = Florida
+year = 1990" coords="783.89,554.7,783.89,550.35,788.25,550.35,788.25,554.7,783.89,554.7"/>
+<Area shape="poly" alt="statename = Florida
+year = 1980" title="statename = Florida
+year = 1980" coords="783.51,554.87,783.51,550.52,787.86,550.52,787.86,554.87,783.51,554.87"/>
+<Area shape="poly" alt="statename = Florida
+year = 1970" title="statename = Florida
+year = 1970" coords="782.29,553.57,782.29,549.21,786.65,549.21,786.65,553.57,782.29,553.57"/>
+<Area shape="poly" alt="statename = Florida
+year = 1960" title="statename = Florida
+year = 1960" coords="782.82,548.36,782.82,544.01,787.18,544.01,787.18,548.36,782.82,548.36"/>
+<Area shape="poly" alt="statename = Florida
+year = 1950" title="statename = Florida
+year = 1950" coords="773.98,546.39,773.98,542.03,778.33,542.03,778.33,546.39,773.98,546.39"/>
+<Area shape="poly" alt="statename = Florida
+year = 1940" title="statename = Florida
+year = 1940" coords="770.26,542.12,770.26,537.76,774.62,537.76,774.62,542.12,770.26,542.12"/>
+<Area shape="poly" alt="statename = Florida
+year = 1930" title="statename = Florida
+year = 1930" coords="767.19,538.27,767.19,533.92,771.55,533.92,771.55,538.27,767.19,538.27"/>
+<Area shape="poly" alt="statename = Florida
+year = 1920" title="statename = Florida
+year = 1920" coords="758.51,530.76,758.51,526.4,762.87,526.4,762.87,530.76,758.51,530.76"/>
+<Area shape="poly" alt="statename = Florida
+year = 1910" title="statename = Florida
+year = 1910" coords="753.43,526.08,753.43,521.72,757.78,521.72,757.78,526.08,753.43,526.08"/>
+<Area shape="poly" alt="statename = Florida
+year = 1900" title="statename = Florida
+year = 1900" coords="750.85,523.12,750.85,518.77,755.21,518.77,755.21,523.12,750.85,523.12"/>
+<Area shape="poly" alt="statename = Delaware
+year = 2010" title="statename = Delaware
+year = 2010" coords="847.16,290.99,847.16,286.63,851.51,286.63,851.51,290.99,847.16,290.99"/>
+<Area shape="poly" alt="statename = Delaware
+year = 2000" title="statename = Delaware
+year = 2000" coords="846.9,290.19,846.9,285.84,851.25,285.84,851.25,290.19,846.9,290.19"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1990" title="statename = Delaware
+year = 1990" coords="846.66,289.44,846.66,285.09,851.01,285.09,851.01,289.44,846.66,289.44"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1980" title="statename = Delaware
+year = 1980" coords="846.65,289.19,846.65,284.84,851.01,284.84,851.01,289.19,846.65,289.19"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1970" title="statename = Delaware
+year = 1970" coords="846.57,288.46,846.57,284.11,850.92,284.11,850.92,288.46,846.57,288.46"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1960" title="statename = Delaware
+year = 1960" coords="846.77,288.75,846.77,284.39,851.13,284.39,851.13,288.75,846.77,288.75"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1950" title="statename = Delaware
+year = 1950" coords="846.96,289.86,846.96,285.5,851.32,285.5,851.32,289.86,846.96,289.86"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1940" title="statename = Delaware
+year = 1940" coords="847.38,291.45,847.38,287.09,851.73,287.09,851.73,291.45,847.38,291.45"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1930" title="statename = Delaware
+year = 1930" coords="847.34,291.38,847.34,287.02,851.7,287.02,851.7,291.38,847.34,291.38"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1920" title="statename = Delaware
+year = 1920" coords="847.22,289.61,847.22,285.26,851.57,285.26,851.57,289.61,847.22,289.61"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1910" title="statename = Delaware
+year = 1910" coords="847.44,294.5,847.44,290.14,851.8,290.14,851.8,294.5,847.44,294.5"/>
+<Area shape="poly" alt="statename = Delaware
+year = 1900" title="statename = Delaware
+year = 1900" coords="847.44,294.58,847.44,290.22,851.8,290.22,851.8,294.58,847.44,294.58"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 2010" title="statename = Connecticut
+year = 2010" coords="879.94,236.35,879.94,231.99,884.3,231.99,884.3,236.35,879.94,236.35"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 2000" title="statename = Connecticut
+year = 2000" coords="879.89,236.41,879.89,232.06,884.24,232.06,884.24,236.41,879.89,236.41"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1990" title="statename = Connecticut
+year = 1990" coords="879.95,236.35,879.95,231.99,884.31,231.99,884.31,236.35,879.95,236.35"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1980" title="statename = Connecticut
+year = 1980" coords="879.88,236.51,879.88,232.15,884.24,232.15,884.24,236.51,879.88,236.51"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1970" title="statename = Connecticut
+year = 1970" coords="879.88,236.56,879.88,232.21,884.23,232.21,884.23,236.56,879.88,236.56"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1960" title="statename = Connecticut
+year = 1960" coords="879.53,235.58,879.53,231.22,883.89,231.22,883.89,235.58,879.53,235.58"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1950" title="statename = Connecticut
+year = 1950" coords="879.68,236.14,879.68,231.78,884.04,231.78,884.04,236.14,879.68,236.14"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1940" title="statename = Connecticut
+year = 1940" coords="879.4,235.6,879.4,231.24,883.76,231.24,883.76,235.6,879.4,235.6"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1930" title="statename = Connecticut
+year = 1930" coords="879.43,235.6,879.43,231.24,883.79,231.24,883.79,235.6,879.43,235.6"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1920" title="statename = Connecticut
+year = 1920" coords="880.03,236.21,880.03,231.86,884.38,231.86,884.38,236.21,880.03,236.21"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1910" title="statename = Connecticut
+year = 1910" coords="880.34,235.85,880.34,231.5,884.7,231.5,884.7,235.85,880.34,235.85"/>
+<Area shape="poly" alt="statename = Connecticut
+year = 1900" title="statename = Connecticut
+year = 1900" coords="880.63,235.61,880.63,231.25,884.98,231.25,884.98,235.61,880.63,235.61"/>
+<Area shape="poly" alt="statename = Colorado
+year = 2010" title="statename = Colorado
+year = 2010" coords="353.21,315.41,353.21,311.06,357.57,311.06,357.57,315.41,353.21,315.41"/>
+<Area shape="poly" alt="statename = Colorado
+year = 2000" title="statename = Colorado
+year = 2000" coords="353.26,315.69,353.26,311.34,357.61,311.34,357.61,315.69,353.26,315.69"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1990" title="statename = Colorado
+year = 1990" coords="353.5,315.89,353.5,311.53,357.85,311.53,357.85,315.89,353.5,315.89"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1980" title="statename = Colorado
+year = 1980" coords="353.6,316.03,353.6,311.68,357.96,311.68,357.96,316.03,353.6,316.03"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1970" title="statename = Colorado
+year = 1970" coords="354.42,317.04,354.42,312.68,358.78,312.68,358.78,317.04,354.42,317.04"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1960" title="statename = Colorado
+year = 1960" coords="354.15,318.44,354.15,314.08,358.51,314.08,358.51,318.44,354.15,318.44"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1950" title="statename = Colorado
+year = 1950" coords="354.66,319.26,354.66,314.9,359.02,314.9,359.02,319.26,354.66,319.26"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1940" title="statename = Colorado
+year = 1940" coords="354.47,321.71,354.47,317.35,358.83,317.35,358.83,321.71,354.47,321.71"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1930" title="statename = Colorado
+year = 1930" coords="356.51,322.11,356.51,317.75,360.86,317.75,360.86,322.11,356.51,322.11"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1920" title="statename = Colorado
+year = 1920" coords="355.73,321.4,355.73,317.04,360.09,317.04,360.09,321.4,355.73,321.4"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1910" title="statename = Colorado
+year = 1910" coords="352.82,322.2,352.82,317.85,357.18,317.85,357.18,322.2,352.82,322.2"/>
+<Area shape="poly" alt="statename = Colorado
+year = 1900" title="statename = Colorado
+year = 1900" coords="351.32,324.27,351.32,319.92,355.67,319.92,355.67,324.27,351.32,324.27"/>
+<Area shape="poly" alt="statename = California
+year = 2010" title="statename = California
+year = 2010" coords="99.194,360.54,99.194,356.18,103.55,356.18,103.55,360.54,99.194,360.54"/>
+<Area shape="poly" alt="statename = California
+year = 2000" title="statename = California
+year = 2000" coords="98.653,360.52,98.653,356.16,103.01,356.16,103.01,360.52,98.653,360.52"/>
+<Area shape="poly" alt="statename = California
+year = 1990" title="statename = California
+year = 1990" coords="98.452,360.81,98.452,356.46,102.81,356.46,102.81,360.81,98.452,360.81"/>
+<Area shape="poly" alt="statename = California
+year = 1980" title="statename = California
+year = 1980" coords="97.322,359.83,97.322,355.48,101.68,355.48,101.68,359.83,97.322,359.83"/>
+<Area shape="poly" alt="statename = California
+year = 1970" title="statename = California
+year = 1970" coords="96.646,359.82,96.646,355.47,101,355.47,101,359.82,96.646,359.82"/>
+<Area shape="poly" alt="statename = California
+year = 1960" title="statename = California
+year = 1960" coords="96.069,358.88,96.069,354.52,100.43,354.52,100.43,358.88,96.069,358.88"/>
+<Area shape="poly" alt="statename = California
+year = 1950" title="statename = California
+year = 1950" coords="95.152,353.26,95.152,348.9,99.508,348.9,99.508,353.26,95.152,353.26"/>
+<Area shape="poly" alt="statename = California
+year = 1940" title="statename = California
+year = 1940" coords="95.642,355.72,95.642,351.37,99.998,351.37,99.998,355.72,95.642,355.72"/>
+<Area shape="poly" alt="statename = California
+year = 1930" title="statename = California
+year = 1930" coords="94.419,353.66,94.419,349.3,98.775,349.3,98.775,353.66,94.419,353.66"/>
+<Area shape="poly" alt="statename = California
+year = 1920" title="statename = California
+year = 1920" coords="89.367,338.58,89.367,334.23,93.723,334.23,93.723,338.58,89.367,338.58"/>
+<Area shape="poly" alt="statename = California
+year = 1910" title="statename = California
+year = 1910" coords="85.659,329.42,85.659,325.06,90.015,325.06,90.015,329.42,85.659,329.42"/>
+<Area shape="poly" alt="statename = California
+year = 1900" title="statename = California
+year = 1900" coords="82.575,316.73,82.575,312.37,86.931,312.37,86.931,316.73,82.575,316.73"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 2010" title="statename = Arkansas
+year = 2010" coords="566.13,416.26,566.13,411.91,570.48,411.91,570.48,416.26,566.13,416.26"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 2000" title="statename = Arkansas
+year = 2000" coords="567.56,417.56,567.56,413.2,571.92,413.2,571.92,417.56,567.56,417.56"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1990" title="statename = Arkansas
+year = 1990" coords="569.2,418.99,569.2,414.64,573.55,414.64,573.55,418.99,569.2,418.99"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1980" title="statename = Arkansas
+year = 1980" coords="570.18,419.81,570.18,415.45,574.53,415.45,574.53,419.81,570.18,419.81"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1970" title="statename = Arkansas
+year = 1970" coords="571.69,420.99,571.69,416.63,576.05,416.63,576.05,420.99,571.69,420.99"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1960" title="statename = Arkansas
+year = 1960" coords="574.77,421.79,574.77,417.44,579.13,417.44,579.13,421.79,574.77,421.79"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1950" title="statename = Arkansas
+year = 1950" coords="573.87,420.9,573.87,416.54,578.23,416.54,578.23,420.9,573.87,420.9"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1940" title="statename = Arkansas
+year = 1940" coords="570.15,420.08,570.15,415.73,574.51,415.73,574.51,420.08,570.15,420.08"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1930" title="statename = Arkansas
+year = 1930" coords="571.7,421.27,571.7,416.91,576.06,416.91,576.06,421.27,571.7,421.27"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1920" title="statename = Arkansas
+year = 1920" coords="571.77,420.85,571.77,416.5,576.13,416.5,576.13,420.85,571.77,420.85"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1910" title="statename = Arkansas
+year = 1910" coords="570.49,420.89,570.49,416.53,574.84,416.53,574.84,420.89,570.49,420.89"/>
+<Area shape="poly" alt="statename = Arkansas
+year = 1900" title="statename = Arkansas
+year = 1900" coords="569.49,420.55,569.49,416.19,573.85,416.19,573.85,420.55,569.49,420.55"/>
+<Area shape="poly" alt="statename = Arizona
+year = 2010" title="statename = Arizona
+year = 2010" coords="220.46,431.56,220.46,427.21,224.81,427.21,224.81,431.56,220.46,431.56"/>
+<Area shape="poly" alt="statename = Arizona
+year = 2000" title="statename = Arizona
+year = 2000" coords="221.12,431.56,221.12,427.2,225.47,427.2,225.47,431.56,221.12,431.56"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1990" title="statename = Arizona
+year = 1990" coords="222.08,432.18,222.08,427.83,226.44,427.83,226.44,432.18,222.08,432.18"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1980" title="statename = Arizona
+year = 1980" coords="222.91,432.92,222.91,428.56,227.27,428.56,227.27,432.92,222.91,432.92"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1970" title="statename = Arizona
+year = 1970" coords="223.32,433.84,223.32,429.48,227.68,429.48,227.68,433.84,223.32,433.84"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1960" title="statename = Arizona
+year = 1960" coords="226.5,434.89,226.5,430.53,230.86,430.53,230.86,434.89,226.5,434.89"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1950" title="statename = Arizona
+year = 1950" coords="226.41,432.51,226.41,428.15,230.76,428.15,230.76,432.51,226.41,432.51"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1940" title="statename = Arizona
+year = 1940" coords="221.08,432.28,221.08,427.93,225.43,427.93,225.43,432.28,221.08,432.28"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1930" title="statename = Arizona
+year = 1930" coords="222.58,433.16,222.58,428.81,226.94,428.81,226.94,433.16,222.58,433.16"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1920" title="statename = Arizona
+year = 1920" coords="232.01,433.82,232.01,429.47,236.36,429.47,236.36,433.82,232.01,433.82"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1910" title="statename = Arizona
+year = 1910" coords="236.16,433.3,236.16,428.94,240.52,428.94,240.52,433.3,236.16,433.3"/>
+<Area shape="poly" alt="statename = Arizona
+year = 1900" title="statename = Arizona
+year = 1900" coords="231.87,428.97,231.87,424.62,236.23,424.62,236.23,428.97,231.87,428.97"/>
+<Area shape="poly" alt="statename = Alabama
+year = 2010" title="statename = Alabama
+year = 2010" coords="674.88,455.44,674.88,451.08,679.24,451.08,679.24,455.44,674.88,455.44"/>
+<Area shape="poly" alt="statename = Alabama
+year = 2000" title="statename = Alabama
+year = 2000" coords="674.73,455.6,674.73,451.24,679.09,451.24,679.09,455.6,674.73,455.6"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1990" title="statename = Alabama
+year = 1990" coords="674.59,455.71,674.59,451.36,678.95,451.36,678.95,455.71,674.59,455.71"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1980" title="statename = Alabama
+year = 1980" coords="674.59,455.81,674.59,451.45,678.94,451.45,678.94,455.81,674.59,455.81"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1970" title="statename = Alabama
+year = 1970" coords="674.54,455.84,674.54,451.48,678.9,451.48,678.9,455.84,674.54,455.84"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1960" title="statename = Alabama
+year = 1960" coords="674.35,456.65,674.35,452.29,678.71,452.29,678.71,456.65,674.35,456.65"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1950" title="statename = Alabama
+year = 1950" coords="674.96,460.23,674.96,455.88,679.31,455.88,679.31,460.23,674.96,460.23"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1940" title="statename = Alabama
+year = 1940" coords="674.98,455.81,674.98,451.46,679.34,451.46,679.34,455.81,674.98,455.81"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1930" title="statename = Alabama
+year = 1930" coords="675.18,455.94,675.18,451.58,679.54,451.58,679.54,455.94,675.18,455.94"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1920" title="statename = Alabama
+year = 1920" coords="675.61,456.47,675.61,452.11,679.97,452.11,679.97,456.47,675.61,456.47"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1910" title="statename = Alabama
+year = 1910" coords="675.99,457.63,675.99,453.27,680.35,453.27,680.35,457.63,675.99,457.63"/>
+<Area shape="poly" alt="statename = Alabama
+year = 1900" title="statename = Alabama
+year = 1900" coords="676.08,457.94,676.08,453.59,680.43,453.59,680.43,457.94,676.08,457.94"/>
+</map>
+<div  class="c">
+<img alt="The SGMap Procedure" src="us_population_centers.png" style=" height: 675px; width: 1000px;" border="0" usemap="#us_population_centers" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX1"></a>
+<div>
+<map name="us_population_centers1">
+<Area shape="poly" alt="statename = Alaska
+year = 2010" title="statename = Alaska
+year = 2010" coords="359.73,290.35,359.73,286.31,363.77,286.31,363.77,290.35,359.73,290.35"/>
+<Area shape="poly" alt="statename = Alaska
+year = 2000" title="statename = Alaska
+year = 2000" coords="361.4,292.44,361.4,288.4,365.44,288.4,365.44,292.44,361.4,292.44"/>
+<Area shape="poly" alt="statename = Alaska
+year = 1990" title="statename = Alaska
+year = 1990" coords="361.4,294.26,361.4,290.22,365.44,290.22,365.44,294.26,361.4,294.26"/>
+<Area shape="poly" alt="statename = Alaska
+year = 1980" title="statename = Alaska
+year = 1980" coords="363.45,290.64,363.45,286.6,367.5,286.6,367.5,290.64,363.45,290.64"/>
+<Area shape="poly" alt="statename = Alaska
+year = 1970" title="statename = Alaska
+year = 1970" coords="359.14,295.59,359.14,291.55,363.18,291.55,363.18,295.59,359.14,295.59"/>
+<Area shape="poly" alt="statename = Alaska
+year = 1960" title="statename = Alaska
+year = 1960" coords="362.61,293.83,362.61,289.79,366.65,289.79,366.65,293.83,362.61,293.83"/>
+</map>
+<div  class="c">
+<img alt="The SGMap Procedure" src="us_population_centers1.png" style=" height: 500px; width: 600px;" border="0" usemap="#us_population_centers1" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX2"></a>
+<div>
+<map name="us_population_centers2">
+<Area shape="poly" alt="statename = Hawaii
+year = 2010" title="statename = Hawaii
+year = 2010" coords="300.55,211.11,300.55,207.07,304.59,207.07,304.59,211.11,300.55,211.11"/>
+<Area shape="poly" alt="statename = Hawaii
+year = 2000" title="statename = Hawaii
+year = 2000" coords="296.45,207.68,296.45,203.64,300.49,203.64,300.49,207.68,296.45,207.68"/>
+<Area shape="poly" alt="statename = Hawaii
+year = 1990" title="statename = Hawaii
+year = 1990" coords="291.73,204.46,291.73,200.41,295.77,200.41,295.77,204.46,291.73,204.46"/>
+<Area shape="poly" alt="statename = Hawaii
+year = 1980" title="statename = Hawaii
+year = 1980" coords="287.43,201.72,287.43,197.68,291.47,197.68,291.47,201.72,287.43,201.72"/>
+<Area shape="poly" alt="statename = Hawaii
+year = 1970" title="statename = Hawaii
+year = 1970" coords="283.02,198.86,283.02,194.81,287.06,194.81,287.06,198.86,283.02,198.86"/>
+<Area shape="poly" alt="statename = Hawaii
+year = 1960" title="statename = Hawaii
+year = 1960" coords="286.92,200.32,286.92,196.28,290.96,196.28,290.96,200.32,286.92,200.32"/>
+<Area shape="poly" alt="statename = Hawaii
+year = 1940" title="statename = Hawaii
+year = 1940" coords="298.67,210.39,298.67,206.34,302.71,206.34,302.71,210.39,298.67,210.39"/>
+<Area shape="poly" alt="statename = Hawaii
+year = 1930" title="statename = Hawaii
+year = 1930" coords="305.79,216.16,305.79,212.12,309.83,212.12,309.83,216.16,305.79,216.16"/>
+</map>
+<div  class="c">
+<img alt="The SGMap Procedure" src="us_population_centers2.png" style=" height: 500px; width: 600px;" border="0" usemap="#us_population_centers2" class="c">
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
