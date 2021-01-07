@@ -1,0 +1,4201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>Box Office Flops</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="box_office_movie_flops">
+<Area shape="poly" alt=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " title=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " href="http://www.google.com/search?q=Cats, 2019 " target="_BLANK" coords="863,278,863,300,876,300,876,278,863,278,"/>
+<Area shape="poly" alt=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " title=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " href="http://www.google.com/search?q=Terminator: Dark Fate, 2019 " target="_BLANK" coords="858,197,858,300,871,300,871,197,858,197,"/>
+<Area shape="poly" alt=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " title=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " href="http://www.google.com/search?q=Gemini Man, 2019 " target="_BLANK" coords="856,245,856,300,869,300,869,245,856,245,"/>
+<Area shape="poly" alt=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " title=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " href="http://www.google.com/search?q=Dark Phoenix, 2019 " target="_BLANK" coords="846,237,846,300,859,300,859,237,846,237,"/>
+<Area shape="poly" alt=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " title=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Missing Link, 2019 " target="_BLANK" coords="841,242,841,300,854,300,854,242,841,242,"/>
+<Area shape="poly" alt=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " title=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Hellboy, 2019 " target="_BLANK" coords="841,265,841,300,854,300,854,265,841,265,"/>
+<Area shape="poly" alt=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " title=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " href="http://www.google.com/search?q=The Lego Movie 2: The Second Part, 2019 " target="_BLANK" coords="835,129,835,300,848,300,848,129,835,129,"/>
+<Area shape="poly" alt=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " title=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " href="http://www.google.com/search?q=Mortal Engines, 2018 " target="_BLANK" coords="829,230,829,300,842,300,842,230,829,230,"/>
+<Area shape="poly" alt=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " title=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " href="http://www.google.com/search?q=Robin Hood (2018), 2018 " target="_BLANK" coords="828,210,828,300,841,300,841,210,828,210,"/>
+<Area shape="poly" alt=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " title=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " href="http://www.google.com/search?q=Solo: A Star Wars Story, 2018 " target="_BLANK" coords="811,184,811,300,824,300,824,184,811,184,"/>
+<Area shape="poly" alt=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " title=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " href="http://www.google.com/search?q=A Wrinkle in Time, 2018 " target="_BLANK" coords="804,218,804,300,817,300,817,218,804,218,"/>
+<Area shape="poly" alt=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " title=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " href="http://www.google.com/search?q=Blade Runner 2049, 2017 " target="_BLANK" coords="792,208,792,300,805,300,805,208,792,208,"/>
+<Area shape="poly" alt=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " title=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " href="http://www.google.com/search?q=Valerian and the City of a Thousand Planets, 2017 " target="_BLANK" coords="785,89,785,300,798,300,798,89,785,89,"/>
+<Area shape="poly" alt=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " title=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " href="http://www.google.com/search?q=Transformers: The Last Knight, 2017 " target="_BLANK" coords="782,153,782,300,795,300,795,153,782,153,"/>
+<Area shape="poly" alt=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " title=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " href="http://www.google.com/search?q=The Mummy, 2017 " target="_BLANK" coords="781,243,781,300,794,300,794,243,781,243,"/>
+<Area shape="poly" alt=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " title=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " href="http://www.google.com/search?q=King Arthur: Legend of the Sword, 2017 " target="_BLANK" coords="778,136,778,300,791,300,791,136,778,136,"/>
+<Area shape="poly" alt=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " title=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " href="http://www.google.com/search?q=Power Rangers, 2017 " target="_BLANK" coords="774,224,774,300,787,300,787,224,774,224,"/>
+<Area shape="poly" alt=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " title=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " href="http://www.google.com/search?q=Monster Trucks, 2017 " target="_BLANK" coords="772,225,772,300,785,300,785,225,772,225,"/>
+<Area shape="poly" alt=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " title=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " href="http://www.google.com/search?q=The Great Wall, 2016 " target="_BLANK" coords="764,229,764,300,777,300,777,229,764,229,"/>
+<Area shape="poly" alt=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " title=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " href="http://www.google.com/search?q=Allied, 2016 " target="_BLANK" coords="762,274,762,300,775,300,775,274,762,274,"/>
+<Area shape="poly" alt=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " title=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " href="http://www.google.com/search?q=Deepwater Horizon, 2016 " target="_BLANK" coords="758,206,758,300,771,300,771,206,758,206,"/>
+<Area shape="poly" alt=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " title=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " href="http://www.google.com/search?q=The Promise, 2016 " target="_BLANK" coords="757,241,757,300,770,300,770,241,757,241,"/>
+<Area shape="poly" alt=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " title=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " href="http://www.google.com/search?q=Ben-Hur, 2016 " target="_BLANK" coords="755,260,755,300,768,300,768,260,755,260,"/>
+<Area shape="poly" alt=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " title=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " href="http://www.google.com/search?q=Ghostbusters, 2016 " target="_BLANK" coords="751,234,751,300,764,300,764,234,751,234,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="750,258,750,300,763,300,763,258,750,258,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="750,258,750,300,763,300,763,258,750,258,"/>
+<Area shape="poly" alt=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " title=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " href="http://www.google.com/search?q=Teenage Mutant Ninja Turtles: Out of the Shadows, 2016 " target="_BLANK" coords="748,57,748,300,761,300,761,57,748,57,"/>
+<Area shape="poly" alt=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " title=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " href="http://www.google.com/search?q=Alice Through the Looking Glass, 2016 " target="_BLANK" coords="747,144,747,300,760,300,760,144,747,144,"/>
+<Area shape="poly" alt=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " title=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " href="http://www.google.com/search?q=Gods of Egypt, 2016 " target="_BLANK" coords="739,231,739,300,752,300,752,231,739,231,"/>
+<Area shape="poly" alt=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " title=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " href="http://www.google.com/search?q=The Good Dinosaur, 2015 " target="_BLANK" coords="731,207,731,300,744,300,744,207,731,207,"/>
+<Area shape="poly" alt=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " title=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " href="http://www.google.com/search?q=Pan, 2015 " target="_BLANK" coords="725,282,725,300,738,300,738,282,725,282,"/>
+<Area shape="poly" alt=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " title=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " href="http://www.google.com/search?q=Fantastic Four, 2015 " target="_BLANK" coords="721,231,721,300,734,300,734,231,721,231,"/>
+<Area shape="poly" alt=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " title=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " href="http://www.google.com/search?q=Pixels, 2015 " target="_BLANK" coords="720,272,720,300,733,300,733,272,720,272,"/>
+<Area shape="poly" alt=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " title=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " href="http://www.google.com/search?q=Tomorrowland, 2015 " target="_BLANK" coords="714,230,714,300,727,300,727,230,714,230,"/>
+<Area shape="poly" alt=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " title=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " href="http://www.google.com/search?q=Jupiter Ascending, 2015 " target="_BLANK" coords="705,213,705,300,718,300,718,213,705,213,"/>
+<Area shape="poly" alt=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " title=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " href="http://www.google.com/search?q=Seventh Son, 2014 " target="_BLANK" coords="700,238,700,300,713,300,713,238,700,238,"/>
+<Area shape="poly" alt=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " title=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " href="http://www.google.com/search?q=47 Ronin, 2013 " target="_BLANK" coords="668,258,668,300,681,300,681,258,668,258,"/>
+<Area shape="poly" alt=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " title=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " href="http://www.google.com/search?q=The Lone Ranger, 2013 " target="_BLANK" coords="652,217,652,300,665,300,665,217,652,217,"/>
+<Area shape="poly" alt=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " title=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " href="http://www.google.com/search?q=R.I.P.D., 2013 " target="_BLANK" coords="651,266,651,300,664,300,664,266,651,266,"/>
+<Area shape="poly" alt=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " title=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " href="http://www.google.com/search?q=Jack the Giant Slayer, 2013 " target="_BLANK" coords="642,198,642,300,655,300,655,198,642,198,"/>
+<Area shape="poly" alt=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " title=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " href="http://www.google.com/search?q=Rise of the Guardians, 2012 " target="_BLANK" coords="633,195,633,300,646,300,646,195,633,195,"/>
+<Area shape="poly" alt=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " title=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " href="http://www.google.com/search?q=John Carter, 2012 " target="_BLANK" coords="610,244,610,300,623,300,623,244,610,244,"/>
+<Area shape="poly" alt=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " title=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " href="http://www.google.com/search?q=Hugo, 2011 " target="_BLANK" coords="600,275,600,300,613,300,613,275,600,275,"/>
+<Area shape="poly" alt=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " title=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " href="http://www.google.com/search?q=Cowboys and Aliens, 2011 " target="_BLANK" coords="590,199,590,300,603,300,603,199,590,199,"/>
+<Area shape="poly" alt=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " title=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " href="http://www.google.com/search?q=Green Lantern, 2011 " target="_BLANK" coords="586,230,586,300,599,300,599,230,586,230,"/>
+<Area shape="poly" alt=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " title=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " href="http://www.google.com/search?q=Mars Needs Moms, 2011 " target="_BLANK" coords="577,211,577,300,590,300,590,211,577,211,"/>
+<Area shape="poly" alt=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " title=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " href="http://www.google.com/search?q=How Do You Know, 2010 " target="_BLANK" coords="570,206,570,300,583,300,583,206,570,206,"/>
+<Area shape="poly" alt=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " title=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " href="http://www.google.com/search?q=The Nutcracker in 3D, 2010 " target="_BLANK" coords="568,199,568,300,581,300,581,199,568,199,"/>
+<Area shape="poly" alt=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " title=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " href="http://www.google.com/search?q=The Wolfman, 2010 " target="_BLANK" coords="542,237,542,300,555,300,555,237,542,237,"/>
+<Area shape="poly" alt=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " title=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " href="http://www.google.com/search?q=Delgo, 2008 " target="_BLANK" coords="504,273,504,300,517,300,517,273,504,273,"/>
+<Area shape="poly" alt=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " title=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " href="http://www.google.com/search?q=Speed Racer, 2008 " target="_BLANK" coords="485,237,485,300,498,300,498,237,485,237,"/>
+<Area shape="poly" alt=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " title=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " href="http://www.google.com/search?q=Evan Almighty, 2007 " target="_BLANK" coords="456,232,456,300,469,300,469,232,456,232,"/>
+<Area shape="poly" alt=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " title=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " href="http://www.google.com/search?q=Basic Instinct 2, 2006 " target="_BLANK" coords="416,227,416,300,429,300,429,227,416,227,"/>
+<Area shape="poly" alt=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " title=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " href="http://www.google.com/search?q=A Sound of Thunder, 2005 " target="_BLANK" coords="397,202,397,300,410,300,410,202,397,202,"/>
+<Area shape="poly" alt=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " title=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " href="http://www.google.com/search?q=Stealth, 2005 " target="_BLANK" coords="394,267,394,300,407,300,407,267,394,267,"/>
+<Area shape="poly" alt=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " title=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " href="http://www.google.com/search?q=Sahara, 2005 " target="_BLANK" coords="384,265,384,300,397,300,397,265,384,265,"/>
+<Area shape="poly" alt=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " title=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " href="http://www.google.com/search?q=Alexander, 2004 " target="_BLANK" coords="372,250,372,300,385,300,385,250,372,250,"/>
+<Area shape="poly" alt=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " title=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " href="http://www.google.com/search?q=Gigli, 2003 " target="_BLANK" coords="329,280,329,300,342,300,342,280,329,280,"/>
+<Area shape="poly" alt=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " title=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " href="http://www.google.com/search?q=Sinbad: Legend of the Seven Seas, 2003 " target="_BLANK" coords="327,132,327,300,340,300,340,132,327,132,"/>
+<Area shape="poly" alt=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " title=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " href="http://www.google.com/search?q=Treasure Planet, 2002 " target="_BLANK" coords="307,224,307,300,320,300,320,224,307,224,"/>
+<Area shape="poly" alt=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " title=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " href="http://www.google.com/search?q=The Adventures of Pluto Nash, 2002 " target="_BLANK" coords="298,155,298,300,311,300,311,155,298,155,"/>
+<Area shape="poly" alt=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " title=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " href="http://www.google.com/search?q=K-19: The Widowmaker, 2002 " target="_BLANK" coords="295,187,295,300,308,300,308,187,295,187,"/>
+<Area shape="poly" alt=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " title=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " href="http://www.google.com/search?q=Ali, 2001 " target="_BLANK" coords="277,288,277,300,290,300,290,288,277,288,"/>
+<Area shape="poly" alt=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " title=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " href="http://www.google.com/search?q=Osmosis Jones, 2001 " target="_BLANK" coords="265,226,265,300,278,300,278,226,265,226,"/>
+<Area shape="poly" alt=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " title=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " href="http://www.google.com/search?q=Final Fantasy: The Spirits Within, 2001 " target="_BLANK" coords="261,147,261,300,274,300,274,147,261,147,"/>
+<Area shape="poly" alt=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " title=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " href="http://www.google.com/search?q=Town and Country, 2001 " target="_BLANK" coords="255,210,255,300,268,300,268,210,255,210,"/>
+<Area shape="poly" alt=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " title=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " href="http://www.google.com/search?q=Red Planet, 2000 " target="_BLANK" coords="240,249,240,300,253,300,253,249,240,249,"/>
+<Area shape="poly" alt=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " title=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " href="http://www.google.com/search?q=Titan A.E., 2000 " target="_BLANK" coords="227,254,227,300,240,300,240,254,227,254,"/>
+<Area shape="poly" alt=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " title=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " href="http://www.google.com/search?q=Supernova, 2000 " target="_BLANK" coords="214,247,214,300,227,300,227,247,214,247,"/>
+<Area shape="poly" alt=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " title=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " href="http://www.google.com/search?q=Jack Frost, 1998 " target="_BLANK" coords="178,250,178,300,191,300,191,250,178,250,"/>
+<Area shape="poly" alt=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " title=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " href="http://www.google.com/search?q=CutThroat Island, 1995 " target="_BLANK" coords="81,222,81,300,94,300,94,222,81,222,"/>
+<Area shape="poly" alt=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " title=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " href="http://www.google.com/search?q=Cats, 2019 " target="_BLANK" coords="868,379,873,379,873,384,868,384,868,379,"/>
+<Area shape="poly" alt=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " title=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " href="http://www.google.com/search?q=Terminator: Dark Fate, 2019 " target="_BLANK" coords="863,422,868,422,868,427,863,427,863,422,"/>
+<Area shape="poly" alt=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " title=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " href="http://www.google.com/search?q=Gemini Man, 2019 " target="_BLANK" coords="861,383,866,383,866,388,861,388,861,383,"/>
+<Area shape="poly" alt=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " title=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " href="http://www.google.com/search?q=Dark Phoenix, 2019 " target="_BLANK" coords="850,388,855,388,855,393,850,393,850,388,"/>
+<Area shape="poly" alt=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " title=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Missing Link, 2019 " target="_BLANK" coords="845,411,850,411,850,416,845,416,845,411,"/>
+<Area shape="poly" alt=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " title=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Hellboy, 2019 " target="_BLANK" coords="845,345,850,345,850,350,845,350,845,345,"/>
+<Area shape="poly" alt=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " title=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " href="http://www.google.com/search?q=The Lego Movie 2: The Second Part, 2019 " target="_BLANK" coords="840,388,845,388,845,393,840,393,840,388,"/>
+<Area shape="poly" alt=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " title=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " href="http://www.google.com/search?q=Mortal Engines, 2018 " target="_BLANK" coords="833,493,838,493,838,498,833,498,833,493,"/>
+<Area shape="poly" alt=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " title=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " href="http://www.google.com/search?q=Robin Hood (2018), 2018 " target="_BLANK" coords="833,392,838,392,838,397,833,397,833,392,"/>
+<Area shape="poly" alt=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " title=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " href="http://www.google.com/search?q=Solo: A Star Wars Story, 2018 " target="_BLANK" coords="815,385,820,385,820,390,815,390,815,385,"/>
+<Area shape="poly" alt=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " title=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " href="http://www.google.com/search?q=A Wrinkle in Time, 2018 " target="_BLANK" coords="809,444,814,444,814,449,809,449,809,444,"/>
+<Area shape="poly" alt=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " title=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " href="http://www.google.com/search?q=Blade Runner 2049, 2017 " target="_BLANK" coords="796,389,801,389,801,394,796,394,796,389,"/>
+<Area shape="poly" alt=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " title=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " href="http://www.google.com/search?q=Valerian and the City of a Thousand Planets, 2017 " target="_BLANK" coords="789,391,794,391,794,396,789,396,789,391,"/>
+<Area shape="poly" alt=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " title=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " href="http://www.google.com/search?q=Transformers: The Last Knight, 2017 " target="_BLANK" coords="786,411,791,411,791,416,786,416,786,411,"/>
+<Area shape="poly" alt=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " title=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " href="http://www.google.com/search?q=The Mummy, 2017 " target="_BLANK" coords="785,405,790,405,790,410,785,410,785,405,"/>
+<Area shape="poly" alt=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " title=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " href="http://www.google.com/search?q=King Arthur: Legend of the Sword, 2017 " target="_BLANK" coords="783,466,788,466,788,471,783,471,783,466,"/>
+<Area shape="poly" alt=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " title=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " href="http://www.google.com/search?q=Power Rangers, 2017 " target="_BLANK" coords="778,385,783,385,783,390,778,390,778,385,"/>
+<Area shape="poly" alt=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " title=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " href="http://www.google.com/search?q=Monster Trucks, 2017 " target="_BLANK" coords="776,433,781,433,781,438,776,438,776,433,"/>
+<Area shape="poly" alt=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " title=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " href="http://www.google.com/search?q=The Great Wall, 2016 " target="_BLANK" coords="769,383,774,383,774,388,769,388,769,383,"/>
+<Area shape="poly" alt=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " title=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " href="http://www.google.com/search?q=Allied, 2016 " target="_BLANK" coords="767,383,772,383,772,388,767,388,767,383,"/>
+<Area shape="poly" alt=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " title=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " href="http://www.google.com/search?q=Deepwater Horizon, 2016 " target="_BLANK" coords="763,367,768,367,768,372,763,372,763,367,"/>
+<Area shape="poly" alt=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " title=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " href="http://www.google.com/search?q=The Promise, 2016 " target="_BLANK" coords="761,404,766,404,766,409,761,409,761,404,"/>
+<Area shape="poly" alt=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " title=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " href="http://www.google.com/search?q=Ben-Hur, 2016 " target="_BLANK" coords="759,385,764,385,764,390,759,390,759,385,"/>
+<Area shape="poly" alt=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " title=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " href="http://www.google.com/search?q=Ghostbusters, 2016 " target="_BLANK" coords="756,383,761,383,761,388,756,388,756,383,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="755,411,760,411,760,416,755,416,755,411,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="755,379,760,379,760,384,755,384,755,379,"/>
+<Area shape="poly" alt=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " title=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " href="http://www.google.com/search?q=Teenage Mutant Ninja Turtles: Out of the Shadows, 2016 " target="_BLANK" coords="752,383,757,383,757,388,752,388,752,383,"/>
+<Area shape="poly" alt=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " title=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " href="http://www.google.com/search?q=Alice Through the Looking Glass, 2016 " target="_BLANK" coords="752,378,757,378,757,383,752,383,752,378,"/>
+<Area shape="poly" alt=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " title=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " href="http://www.google.com/search?q=Gods of Egypt, 2016 " target="_BLANK" coords="744,388,749,388,749,393,744,393,744,388,"/>
+<Area shape="poly" alt=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " title=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " href="http://www.google.com/search?q=The Good Dinosaur, 2015 " target="_BLANK" coords="735,394,740,394,740,399,735,399,735,394,"/>
+<Area shape="poly" alt=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " title=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " href="http://www.google.com/search?q=Pan, 2015 " target="_BLANK" coords="729,444,734,444,734,449,729,449,729,444,"/>
+<Area shape="poly" alt=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " title=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " href="http://www.google.com/search?q=Fantastic Four, 2015 " target="_BLANK" coords="725,389,730,389,730,394,725,394,725,389,"/>
+<Area shape="poly" alt=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " title=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " href="http://www.google.com/search?q=Pixels, 2015 " target="_BLANK" coords="724,383,729,383,729,388,724,388,724,383,"/>
+<Area shape="poly" alt=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " title=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " href="http://www.google.com/search?q=Tomorrowland, 2015 " target="_BLANK" coords="719,389,724,389,724,394,719,394,719,389,"/>
+<Area shape="poly" alt=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " title=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " href="http://www.google.com/search?q=Jupiter Ascending, 2015 " target="_BLANK" coords="709,400,714,400,714,405,709,405,709,400,"/>
+<Area shape="poly" alt=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " title=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " href="http://www.google.com/search?q=Seventh Son, 2014 " target="_BLANK" coords="705,394,710,394,710,399,705,399,705,394,"/>
+<Area shape="poly" alt=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " title=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " href="http://www.google.com/search?q=47 Ronin, 2013 " target="_BLANK" coords="673,409,678,409,678,414,673,414,673,409,"/>
+<Area shape="poly" alt=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " title=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " href="http://www.google.com/search?q=The Lone Ranger, 2013 " target="_BLANK" coords="656,411,661,411,661,416,656,416,656,411,"/>
+<Area shape="poly" alt=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " title=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " href="http://www.google.com/search?q=R.I.P.D., 2013 " target="_BLANK" coords="656,411,661,411,661,416,656,416,656,411,"/>
+<Area shape="poly" alt=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " title=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " href="http://www.google.com/search?q=Jack the Giant Slayer, 2013 " target="_BLANK" coords="646,438,651,438,651,443,646,443,646,438,"/>
+<Area shape="poly" alt=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " title=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " href="http://www.google.com/search?q=Rise of the Guardians, 2012 " target="_BLANK" coords="637,397,642,397,642,402,637,402,637,397,"/>
+<Area shape="poly" alt=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " title=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " href="http://www.google.com/search?q=John Carter, 2012 " target="_BLANK" coords="614,521,619,521,619,526,614,526,614,521,"/>
+<Area shape="poly" alt=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " title=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " href="http://www.google.com/search?q=Hugo, 2011 " target="_BLANK" coords="605,402,610,402,610,407,605,407,605,402,"/>
+<Area shape="poly" alt=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " title=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " href="http://www.google.com/search?q=Cowboys and Aliens, 2011 " target="_BLANK" coords="594,370,599,370,599,375,594,375,594,370,"/>
+<Area shape="poly" alt=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " title=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " href="http://www.google.com/search?q=Green Lantern, 2011 " target="_BLANK" coords="590,409,595,409,595,414,590,414,590,409,"/>
+<Area shape="poly" alt=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " title=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " href="http://www.google.com/search?q=Mars Needs Moms, 2011 " target="_BLANK" coords="582,411,587,411,587,416,582,416,582,411,"/>
+<Area shape="poly" alt=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " title=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " href="http://www.google.com/search?q=How Do You Know, 2010 " target="_BLANK" coords="574,394,579,394,579,399,574,399,574,394,"/>
+<Area shape="poly" alt=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " title=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " href="http://www.google.com/search?q=The Nutcracker in 3D, 2010 " target="_BLANK" coords="572,405,577,405,577,410,572,410,572,405,"/>
+<Area shape="poly" alt=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " title=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " href="http://www.google.com/search?q=The Wolfman, 2010 " target="_BLANK" coords="547,385,552,385,552,390,547,390,547,385,"/>
+<Area shape="poly" alt=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " title=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " href="http://www.google.com/search?q=Delgo, 2008 " target="_BLANK" coords="509,344,514,344,514,349,509,349,509,344,"/>
+<Area shape="poly" alt=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " title=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " href="http://www.google.com/search?q=Speed Racer, 2008 " target="_BLANK" coords="489,381,494,381,494,386,489,386,489,381,"/>
+<Area shape="poly" alt=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " title=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " href="http://www.google.com/search?q=Evan Almighty, 2007 " target="_BLANK" coords="461,398,466,398,466,403,461,403,461,398,"/>
+<Area shape="poly" alt=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " title=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " href="http://www.google.com/search?q=Basic Instinct 2, 2006 " target="_BLANK" coords="421,336,426,336,426,341,421,341,421,336,"/>
+<Area shape="poly" alt=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " title=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " href="http://www.google.com/search?q=A Sound of Thunder, 2005 " target="_BLANK" coords="402,407,407,407,407,412,402,412,402,407,"/>
+<Area shape="poly" alt=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " title=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " href="http://www.google.com/search?q=Stealth, 2005 " target="_BLANK" coords="399,407,404,407,404,412,399,412,399,407,"/>
+<Area shape="poly" alt=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " title=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " href="http://www.google.com/search?q=Sahara, 2005 " target="_BLANK" coords="389,387,394,387,394,392,389,392,389,387,"/>
+<Area shape="poly" alt=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " title=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " href="http://www.google.com/search?q=Alexander, 2004 " target="_BLANK" coords="377,379,382,379,382,384,377,384,377,379,"/>
+<Area shape="poly" alt=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " title=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " href="http://www.google.com/search?q=Gigli, 2003 " target="_BLANK" coords="334,380,339,380,339,385,334,385,334,380,"/>
+<Area shape="poly" alt=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " title=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " href="http://www.google.com/search?q=Sinbad: Legend of the Seven Seas, 2003 " target="_BLANK" coords="331,438,336,438,336,443,331,443,331,438,"/>
+<Area shape="poly" alt=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " title=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " href="http://www.google.com/search?q=Treasure Planet, 2002 " target="_BLANK" coords="312,394,317,394,317,399,312,399,312,394,"/>
+<Area shape="poly" alt=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " title=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " href="http://www.google.com/search?q=The Adventures of Pluto Nash, 2002 " target="_BLANK" coords="302,407,307,407,307,412,302,412,302,407,"/>
+<Area shape="poly" alt=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " title=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " href="http://www.google.com/search?q=K-19: The Widowmaker, 2002 " target="_BLANK" coords="300,404,305,404,305,409,300,409,300,404,"/>
+<Area shape="poly" alt=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " title=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " href="http://www.google.com/search?q=Ali, 2001 " target="_BLANK" coords="282,370,287,370,287,375,282,375,282,370,"/>
+<Area shape="poly" alt=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " title=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " href="http://www.google.com/search?q=Osmosis Jones, 2001 " target="_BLANK" coords="269,370,274,370,274,375,269,375,269,370,"/>
+<Area shape="poly" alt=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " title=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " href="http://www.google.com/search?q=Final Fantasy: The Spirits Within, 2001 " target="_BLANK" coords="266,404,271,404,271,409,266,409,266,404,"/>
+<Area shape="poly" alt=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " title=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " href="http://www.google.com/search?q=Town and Country, 2001 " target="_BLANK" coords="260,394,265,394,265,399,260,399,260,394,"/>
+<Area shape="poly" alt=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " title=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " href="http://www.google.com/search?q=Red Planet, 2000 " target="_BLANK" coords="245,403,250,403,250,408,245,408,245,403,"/>
+<Area shape="poly" alt=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " title=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " href="http://www.google.com/search?q=Titan A.E., 2000 " target="_BLANK" coords="232,411,237,411,237,416,232,416,232,411,"/>
+<Area shape="poly" alt=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " title=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " href="http://www.google.com/search?q=Supernova, 2000 " target="_BLANK" coords="218,392,223,392,223,397,218,397,218,392,"/>
+<Area shape="poly" alt=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " title=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " href="http://www.google.com/search?q=Jack Frost, 1998 " target="_BLANK" coords="182,376,187,376,187,381,182,381,182,376,"/>
+<Area shape="poly" alt=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " title=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " href="http://www.google.com/search?q=CutThroat Island, 1995 " target="_BLANK" coords="86,399,91,399,91,404,86,404,86,399,"/>
+<Area shape="poly" alt=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " title=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " href="http://www.google.com/search?q=Cats, 2019 " target="_BLANK" coords="869,303,869,382,871,382,871,303,"/>
+<Area shape="poly" alt=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " title=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " href="http://www.google.com/search?q=Terminator: Dark Fate, 2019 " target="_BLANK" coords="864,303,864,424,866,424,866,303,"/>
+<Area shape="poly" alt=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " title=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " href="http://www.google.com/search?q=Gemini Man, 2019 " target="_BLANK" coords="862,303,862,386,864,386,864,303,"/>
+<Area shape="poly" alt=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " title=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " href="http://www.google.com/search?q=Dark Phoenix, 2019 " target="_BLANK" coords="852,303,852,390,854,390,854,303,"/>
+<Area shape="poly" alt=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " title=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Missing Link, 2019 " target="_BLANK" coords="847,303,847,413,849,413,849,303,"/>
+<Area shape="poly" alt=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " title=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Hellboy, 2019 " target="_BLANK" coords="847,303,847,347,849,347,849,303,"/>
+<Area shape="poly" alt=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " title=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " href="http://www.google.com/search?q=The Lego Movie 2: The Second Part, 2019 " target="_BLANK" coords="841,303,841,390,843,390,843,303,"/>
+<Area shape="poly" alt=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " title=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " href="http://www.google.com/search?q=Mortal Engines, 2018 " target="_BLANK" coords="835,303,835,496,837,496,837,303,"/>
+<Area shape="poly" alt=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " title=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " href="http://www.google.com/search?q=Robin Hood (2018), 2018 " target="_BLANK" coords="834,303,834,395,836,395,836,303,"/>
+<Area shape="poly" alt=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " title=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " href="http://www.google.com/search?q=Solo: A Star Wars Story, 2018 " target="_BLANK" coords="817,303,817,387,819,387,819,303,"/>
+<Area shape="poly" alt=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " title=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " href="http://www.google.com/search?q=A Wrinkle in Time, 2018 " target="_BLANK" coords="810,303,810,447,812,447,812,303,"/>
+<Area shape="poly" alt=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " title=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " href="http://www.google.com/search?q=Blade Runner 2049, 2017 " target="_BLANK" coords="798,303,798,391,800,391,800,303,"/>
+<Area shape="poly" alt=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " title=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " href="http://www.google.com/search?q=Valerian and the City of a Thousand Planets, 2017 " target="_BLANK" coords="791,303,791,394,793,394,793,303,"/>
+<Area shape="poly" alt=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " title=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " href="http://www.google.com/search?q=Transformers: The Last Knight, 2017 " target="_BLANK" coords="788,303,788,413,790,413,790,303,"/>
+<Area shape="poly" alt=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " title=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " href="http://www.google.com/search?q=The Mummy, 2017 " target="_BLANK" coords="787,303,787,408,789,408,789,303,"/>
+<Area shape="poly" alt=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " title=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " href="http://www.google.com/search?q=King Arthur: Legend of the Sword, 2017 " target="_BLANK" coords="784,303,784,469,786,469,786,303,"/>
+<Area shape="poly" alt=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " title=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " href="http://www.google.com/search?q=Power Rangers, 2017 " target="_BLANK" coords="780,303,780,387,782,387,782,303,"/>
+<Area shape="poly" alt=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " title=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " href="http://www.google.com/search?q=Monster Trucks, 2017 " target="_BLANK" coords="778,303,778,435,780,435,780,303,"/>
+<Area shape="poly" alt=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " title=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " href="http://www.google.com/search?q=The Great Wall, 2016 " target="_BLANK" coords="770,303,770,386,772,386,772,303,"/>
+<Area shape="poly" alt=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " title=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " href="http://www.google.com/search?q=Allied, 2016 " target="_BLANK" coords="768,303,768,386,770,386,770,303,"/>
+<Area shape="poly" alt=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " title=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " href="http://www.google.com/search?q=Deepwater Horizon, 2016 " target="_BLANK" coords="764,303,764,369,766,369,766,303,"/>
+<Area shape="poly" alt=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " title=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " href="http://www.google.com/search?q=The Promise, 2016 " target="_BLANK" coords="763,303,763,407,765,407,765,303,"/>
+<Area shape="poly" alt=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " title=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " href="http://www.google.com/search?q=Ben-Hur, 2016 " target="_BLANK" coords="761,303,761,387,763,387,763,303,"/>
+<Area shape="poly" alt=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " title=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " href="http://www.google.com/search?q=Ghostbusters, 2016 " target="_BLANK" coords="757,303,757,386,759,386,759,303,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="756,303,756,413,758,413,758,303,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="756,303,756,382,758,382,758,303,"/>
+<Area shape="poly" alt=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " title=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " href="http://www.google.com/search?q=Teenage Mutant Ninja Turtles: Out of the Shadows, 2016 " target="_BLANK" coords="754,303,754,386,756,386,756,303,"/>
+<Area shape="poly" alt=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " title=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " href="http://www.google.com/search?q=Alice Through the Looking Glass, 2016 " target="_BLANK" coords="753,303,753,380,755,380,755,303,"/>
+<Area shape="poly" alt=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " title=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " href="http://www.google.com/search?q=Gods of Egypt, 2016 " target="_BLANK" coords="745,303,745,390,747,390,747,303,"/>
+<Area shape="poly" alt=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " title=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " href="http://www.google.com/search?q=The Good Dinosaur, 2015 " target="_BLANK" coords="737,303,737,397,739,397,739,303,"/>
+<Area shape="poly" alt=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " title=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " href="http://www.google.com/search?q=Pan, 2015 " target="_BLANK" coords="731,303,731,447,733,447,733,303,"/>
+<Area shape="poly" alt=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " title=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " href="http://www.google.com/search?q=Fantastic Four, 2015 " target="_BLANK" coords="727,303,727,391,729,391,729,303,"/>
+<Area shape="poly" alt=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " title=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " href="http://www.google.com/search?q=Pixels, 2015 " target="_BLANK" coords="726,303,726,386,728,386,728,303,"/>
+<Area shape="poly" alt=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " title=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " href="http://www.google.com/search?q=Tomorrowland, 2015 " target="_BLANK" coords="720,303,720,391,722,391,722,303,"/>
+<Area shape="poly" alt=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " title=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " href="http://www.google.com/search?q=Jupiter Ascending, 2015 " target="_BLANK" coords="711,303,711,402,713,402,713,303,"/>
+<Area shape="poly" alt=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " title=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " href="http://www.google.com/search?q=Seventh Son, 2014 " target="_BLANK" coords="706,303,706,397,708,397,708,303,"/>
+<Area shape="poly" alt=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " title=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " href="http://www.google.com/search?q=47 Ronin, 2013 " target="_BLANK" coords="674,303,674,411,676,411,676,303,"/>
+<Area shape="poly" alt=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " title=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " href="http://www.google.com/search?q=The Lone Ranger, 2013 " target="_BLANK" coords="658,303,658,413,660,413,660,303,"/>
+<Area shape="poly" alt=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " title=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " href="http://www.google.com/search?q=R.I.P.D., 2013 " target="_BLANK" coords="657,303,657,413,659,413,659,303,"/>
+<Area shape="poly" alt=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " title=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " href="http://www.google.com/search?q=Jack the Giant Slayer, 2013 " target="_BLANK" coords="648,303,648,441,650,441,650,303,"/>
+<Area shape="poly" alt=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " title=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " href="http://www.google.com/search?q=Rise of the Guardians, 2012 " target="_BLANK" coords="639,303,639,399,641,399,641,303,"/>
+<Area shape="poly" alt=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " title=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " href="http://www.google.com/search?q=John Carter, 2012 " target="_BLANK" coords="616,303,616,524,618,524,618,303,"/>
+<Area shape="poly" alt=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " title=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " href="http://www.google.com/search?q=Hugo, 2011 " target="_BLANK" coords="606,303,606,405,608,405,608,303,"/>
+<Area shape="poly" alt=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " title=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " href="http://www.google.com/search?q=Cowboys and Aliens, 2011 " target="_BLANK" coords="596,303,596,373,598,373,598,303,"/>
+<Area shape="poly" alt=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " title=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " href="http://www.google.com/search?q=Green Lantern, 2011 " target="_BLANK" coords="592,303,592,411,594,411,594,303,"/>
+<Area shape="poly" alt=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " title=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " href="http://www.google.com/search?q=Mars Needs Moms, 2011 " target="_BLANK" coords="583,303,583,413,585,413,585,303,"/>
+<Area shape="poly" alt=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " title=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " href="http://www.google.com/search?q=How Do You Know, 2010 " target="_BLANK" coords="576,303,576,397,578,397,578,303,"/>
+<Area shape="poly" alt=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " title=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " href="http://www.google.com/search?q=The Nutcracker in 3D, 2010 " target="_BLANK" coords="574,303,574,408,576,408,576,303,"/>
+<Area shape="poly" alt=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " title=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " href="http://www.google.com/search?q=The Wolfman, 2010 " target="_BLANK" coords="548,303,548,387,550,387,550,303,"/>
+<Area shape="poly" alt=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " title=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " href="http://www.google.com/search?q=Delgo, 2008 " target="_BLANK" coords="510,303,510,346,512,346,512,303,"/>
+<Area shape="poly" alt=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " title=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " href="http://www.google.com/search?q=Speed Racer, 2008 " target="_BLANK" coords="491,303,491,384,493,384,493,303,"/>
+<Area shape="poly" alt=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " title=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " href="http://www.google.com/search?q=Evan Almighty, 2007 " target="_BLANK" coords="462,303,462,400,464,400,464,303,"/>
+<Area shape="poly" alt=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " title=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " href="http://www.google.com/search?q=Basic Instinct 2, 2006 " target="_BLANK" coords="422,303,422,339,424,339,424,303,"/>
+<Area shape="poly" alt=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " title=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " href="http://www.google.com/search?q=A Sound of Thunder, 2005 " target="_BLANK" coords="403,303,403,409,405,409,405,303,"/>
+<Area shape="poly" alt=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " title=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " href="http://www.google.com/search?q=Stealth, 2005 " target="_BLANK" coords="400,303,400,409,402,409,402,303,"/>
+<Area shape="poly" alt=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " title=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " href="http://www.google.com/search?q=Sahara, 2005 " target="_BLANK" coords="390,303,390,389,392,389,392,303,"/>
+<Area shape="poly" alt=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " title=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " href="http://www.google.com/search?q=Alexander, 2004 " target="_BLANK" coords="378,303,378,382,380,382,380,303,"/>
+<Area shape="poly" alt=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " title=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " href="http://www.google.com/search?q=Gigli, 2003 " target="_BLANK" coords="335,303,335,383,337,383,337,303,"/>
+<Area shape="poly" alt=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " title=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " href="http://www.google.com/search?q=Sinbad: Legend of the Seven Seas, 2003 " target="_BLANK" coords="333,303,333,441,335,441,335,303,"/>
+<Area shape="poly" alt=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " title=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " href="http://www.google.com/search?q=Treasure Planet, 2002 " target="_BLANK" coords="313,303,313,397,315,397,315,303,"/>
+<Area shape="poly" alt=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " title=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " href="http://www.google.com/search?q=The Adventures of Pluto Nash, 2002 " target="_BLANK" coords="304,303,304,409,306,409,306,303,"/>
+<Area shape="poly" alt=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " title=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " href="http://www.google.com/search?q=K-19: The Widowmaker, 2002 " target="_BLANK" coords="301,303,301,407,303,407,303,303,"/>
+<Area shape="poly" alt=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " title=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " href="http://www.google.com/search?q=Ali, 2001 " target="_BLANK" coords="283,303,283,373,285,373,285,303,"/>
+<Area shape="poly" alt=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " title=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " href="http://www.google.com/search?q=Osmosis Jones, 2001 " target="_BLANK" coords="271,303,271,373,273,373,273,303,"/>
+<Area shape="poly" alt=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " title=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " href="http://www.google.com/search?q=Final Fantasy: The Spirits Within, 2001 " target="_BLANK" coords="267,303,267,407,269,407,269,303,"/>
+<Area shape="poly" alt=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " title=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " href="http://www.google.com/search?q=Town and Country, 2001 " target="_BLANK" coords="261,303,261,397,263,397,263,303,"/>
+<Area shape="poly" alt=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " title=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " href="http://www.google.com/search?q=Red Planet, 2000 " target="_BLANK" coords="246,303,246,406,248,406,248,303,"/>
+<Area shape="poly" alt=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " title=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " href="http://www.google.com/search?q=Titan A.E., 2000 " target="_BLANK" coords="233,303,233,413,235,413,235,303,"/>
+<Area shape="poly" alt=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " title=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " href="http://www.google.com/search?q=Supernova, 2000 " target="_BLANK" coords="220,303,220,395,222,395,222,303,"/>
+<Area shape="poly" alt=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " title=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " href="http://www.google.com/search?q=Jack Frost, 1998 " target="_BLANK" coords="184,303,184,378,186,378,186,303,"/>
+<Area shape="poly" alt=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " title=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " href="http://www.google.com/search?q=CutThroat Island, 1995 " target="_BLANK" coords="87,303,87,401,89,401,89,303,"/>
+</map>
+<div  class="c">
+<img alt="The SGPlot Procedure" src="box_office_movie_flops.png" style=" height: 600px; width: 900px;" border="0" usemap="#box_office_movie_flops" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX1"></a>
+<div>
+<map name="box_office_movie_flops1">
+<Area shape="poly" alt=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " title=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " href="http://www.google.com/search?q=Cats, 2019 " target="_BLANK" coords="871,278,871,300,884,300,884,278,871,278,"/>
+<Area shape="poly" alt=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " title=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " href="http://www.google.com/search?q=Terminator: Dark Fate, 2019 " target="_BLANK" coords="859,197,859,300,872,300,872,197,859,197,"/>
+<Area shape="poly" alt=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " title=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " href="http://www.google.com/search?q=Gemini Man, 2019 " target="_BLANK" coords="847,245,847,300,860,300,860,245,847,245,"/>
+<Area shape="poly" alt=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " title=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " href="http://www.google.com/search?q=Dark Phoenix, 2019 " target="_BLANK" coords="835,237,835,300,848,300,848,237,835,237,"/>
+<Area shape="poly" alt=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " title=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Missing Link, 2019 " target="_BLANK" coords="824,242,824,300,837,300,837,242,824,242,"/>
+<Area shape="poly" alt=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " title=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Hellboy, 2019 " target="_BLANK" coords="812,265,812,300,825,300,825,265,812,265,"/>
+<Area shape="poly" alt=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " title=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " href="http://www.google.com/search?q=The Lego Movie 2: The Second Part, 2019 " target="_BLANK" coords="800,129,800,300,813,300,813,129,800,129,"/>
+<Area shape="poly" alt=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " title=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " href="http://www.google.com/search?q=Mortal Engines, 2018 " target="_BLANK" coords="788,230,788,300,801,300,801,230,788,230,"/>
+<Area shape="poly" alt=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " title=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " href="http://www.google.com/search?q=Robin Hood (2018), 2018 " target="_BLANK" coords="777,210,777,300,790,300,790,210,777,210,"/>
+<Area shape="poly" alt=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " title=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " href="http://www.google.com/search?q=Solo: A Star Wars Story, 2018 " target="_BLANK" coords="765,184,765,300,778,300,778,184,765,184,"/>
+<Area shape="poly" alt=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " title=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " href="http://www.google.com/search?q=A Wrinkle in Time, 2018 " target="_BLANK" coords="753,218,753,300,766,300,766,218,753,218,"/>
+<Area shape="poly" alt=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " title=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " href="http://www.google.com/search?q=Blade Runner 2049, 2017 " target="_BLANK" coords="741,208,741,300,754,300,754,208,741,208,"/>
+<Area shape="poly" alt=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " title=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " href="http://www.google.com/search?q=Valerian and the City of a Thousand Planets, 2017 " target="_BLANK" coords="730,89,730,300,743,300,743,89,730,89,"/>
+<Area shape="poly" alt=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " title=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " href="http://www.google.com/search?q=Transformers: The Last Knight, 2017 " target="_BLANK" coords="718,153,718,300,731,300,731,153,718,153,"/>
+<Area shape="poly" alt=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " title=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " href="http://www.google.com/search?q=The Mummy, 2017 " target="_BLANK" coords="706,243,706,300,719,300,719,243,706,243,"/>
+<Area shape="poly" alt=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " title=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " href="http://www.google.com/search?q=King Arthur: Legend of the Sword, 2017 " target="_BLANK" coords="695,136,695,300,708,300,708,136,695,136,"/>
+<Area shape="poly" alt=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " title=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " href="http://www.google.com/search?q=Power Rangers, 2017 " target="_BLANK" coords="683,224,683,300,696,300,696,224,683,224,"/>
+<Area shape="poly" alt=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " title=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " href="http://www.google.com/search?q=Monster Trucks, 2017 " target="_BLANK" coords="671,225,671,300,684,300,684,225,671,225,"/>
+<Area shape="poly" alt=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " title=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " href="http://www.google.com/search?q=The Great Wall, 2016 " target="_BLANK" coords="659,229,659,300,672,300,672,229,659,229,"/>
+<Area shape="poly" alt=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " title=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " href="http://www.google.com/search?q=Allied, 2016 " target="_BLANK" coords="648,274,648,300,661,300,661,274,648,274,"/>
+<Area shape="poly" alt=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " title=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " href="http://www.google.com/search?q=Deepwater Horizon, 2016 " target="_BLANK" coords="636,206,636,300,649,300,649,206,636,206,"/>
+<Area shape="poly" alt=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " title=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " href="http://www.google.com/search?q=The Promise, 2016 " target="_BLANK" coords="624,241,624,300,637,300,637,241,624,241,"/>
+<Area shape="poly" alt=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " title=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " href="http://www.google.com/search?q=Ben-Hur, 2016 " target="_BLANK" coords="612,260,612,300,625,300,625,260,612,260,"/>
+<Area shape="poly" alt=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " title=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " href="http://www.google.com/search?q=Ghostbusters, 2016 " target="_BLANK" coords="601,234,601,300,614,300,614,234,601,234,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="589,258,589,300,602,300,602,258,589,258,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="577,258,577,300,590,300,590,258,577,258,"/>
+<Area shape="poly" alt=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " title=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " href="http://www.google.com/search?q=Teenage Mutant Ninja Turtles: Out of the Shadows, 2016 " target="_BLANK" coords="566,57,566,300,579,300,579,57,566,57,"/>
+<Area shape="poly" alt=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " title=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " href="http://www.google.com/search?q=Alice Through the Looking Glass, 2016 " target="_BLANK" coords="554,144,554,300,567,300,567,144,554,144,"/>
+<Area shape="poly" alt=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " title=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " href="http://www.google.com/search?q=Gods of Egypt, 2016 " target="_BLANK" coords="542,231,542,300,555,300,555,231,542,231,"/>
+<Area shape="poly" alt=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " title=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " href="http://www.google.com/search?q=The Good Dinosaur, 2015 " target="_BLANK" coords="530,207,530,300,543,300,543,207,530,207,"/>
+<Area shape="poly" alt=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " title=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " href="http://www.google.com/search?q=Pan, 2015 " target="_BLANK" coords="519,282,519,300,532,300,532,282,519,282,"/>
+<Area shape="poly" alt=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " title=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " href="http://www.google.com/search?q=Fantastic Four, 2015 " target="_BLANK" coords="507,231,507,300,520,300,520,231,507,231,"/>
+<Area shape="poly" alt=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " title=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " href="http://www.google.com/search?q=Pixels, 2015 " target="_BLANK" coords="495,272,495,300,508,300,508,272,495,272,"/>
+<Area shape="poly" alt=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " title=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " href="http://www.google.com/search?q=Tomorrowland, 2015 " target="_BLANK" coords="483,230,483,300,496,300,496,230,483,230,"/>
+<Area shape="poly" alt=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " title=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " href="http://www.google.com/search?q=Jupiter Ascending, 2015 " target="_BLANK" coords="472,213,472,300,485,300,485,213,472,213,"/>
+<Area shape="poly" alt=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " title=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " href="http://www.google.com/search?q=Seventh Son, 2014 " target="_BLANK" coords="460,238,460,300,473,300,473,238,460,238,"/>
+<Area shape="poly" alt=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " title=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " href="http://www.google.com/search?q=47 Ronin, 2013 " target="_BLANK" coords="448,258,448,300,461,300,461,258,448,258,"/>
+<Area shape="poly" alt=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " title=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " href="http://www.google.com/search?q=The Lone Ranger, 2013 " target="_BLANK" coords="437,217,437,300,450,300,450,217,437,217,"/>
+<Area shape="poly" alt=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " title=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " href="http://www.google.com/search?q=R.I.P.D., 2013 " target="_BLANK" coords="425,266,425,300,438,300,438,266,425,266,"/>
+<Area shape="poly" alt=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " title=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " href="http://www.google.com/search?q=Jack the Giant Slayer, 2013 " target="_BLANK" coords="413,198,413,300,426,300,426,198,413,198,"/>
+<Area shape="poly" alt=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " title=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " href="http://www.google.com/search?q=Rise of the Guardians, 2012 " target="_BLANK" coords="401,195,401,300,414,300,414,195,401,195,"/>
+<Area shape="poly" alt=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " title=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " href="http://www.google.com/search?q=John Carter, 2012 " target="_BLANK" coords="390,244,390,300,403,300,403,244,390,244,"/>
+<Area shape="poly" alt=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " title=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " href="http://www.google.com/search?q=Hugo, 2011 " target="_BLANK" coords="378,275,378,300,391,300,391,275,378,275,"/>
+<Area shape="poly" alt=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " title=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " href="http://www.google.com/search?q=Cowboys and Aliens, 2011 " target="_BLANK" coords="366,199,366,300,379,300,379,199,366,199,"/>
+<Area shape="poly" alt=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " title=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " href="http://www.google.com/search?q=Green Lantern, 2011 " target="_BLANK" coords="354,230,354,300,367,300,367,230,354,230,"/>
+<Area shape="poly" alt=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " title=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " href="http://www.google.com/search?q=Mars Needs Moms, 2011 " target="_BLANK" coords="343,211,343,300,356,300,356,211,343,211,"/>
+<Area shape="poly" alt=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " title=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " href="http://www.google.com/search?q=How Do You Know, 2010 " target="_BLANK" coords="331,206,331,300,344,300,344,206,331,206,"/>
+<Area shape="poly" alt=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " title=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " href="http://www.google.com/search?q=The Nutcracker in 3D, 2010 " target="_BLANK" coords="319,199,319,300,332,300,332,199,319,199,"/>
+<Area shape="poly" alt=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " title=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " href="http://www.google.com/search?q=The Wolfman, 2010 " target="_BLANK" coords="307,237,307,300,320,300,320,237,307,237,"/>
+<Area shape="poly" alt=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " title=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " href="http://www.google.com/search?q=Delgo, 2008 " target="_BLANK" coords="296,273,296,300,309,300,309,273,296,273,"/>
+<Area shape="poly" alt=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " title=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " href="http://www.google.com/search?q=Speed Racer, 2008 " target="_BLANK" coords="284,237,284,300,297,300,297,237,284,237,"/>
+<Area shape="poly" alt=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " title=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " href="http://www.google.com/search?q=Evan Almighty, 2007 " target="_BLANK" coords="272,232,272,300,285,300,285,232,272,232,"/>
+<Area shape="poly" alt=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " title=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " href="http://www.google.com/search?q=Basic Instinct 2, 2006 " target="_BLANK" coords="261,227,261,300,274,300,274,227,261,227,"/>
+<Area shape="poly" alt=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " title=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " href="http://www.google.com/search?q=A Sound of Thunder, 2005 " target="_BLANK" coords="249,202,249,300,262,300,262,202,249,202,"/>
+<Area shape="poly" alt=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " title=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " href="http://www.google.com/search?q=Stealth, 2005 " target="_BLANK" coords="237,267,237,300,250,300,250,267,237,267,"/>
+<Area shape="poly" alt=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " title=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " href="http://www.google.com/search?q=Sahara, 2005 " target="_BLANK" coords="225,265,225,300,238,300,238,265,225,265,"/>
+<Area shape="poly" alt=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " title=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " href="http://www.google.com/search?q=Alexander, 2004 " target="_BLANK" coords="214,250,214,300,227,300,227,250,214,250,"/>
+<Area shape="poly" alt=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " title=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " href="http://www.google.com/search?q=Gigli, 2003 " target="_BLANK" coords="202,280,202,300,215,300,215,280,202,280,"/>
+<Area shape="poly" alt=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " title=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " href="http://www.google.com/search?q=Sinbad: Legend of the Seven Seas, 2003 " target="_BLANK" coords="190,132,190,300,203,300,203,132,190,132,"/>
+<Area shape="poly" alt=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " title=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " href="http://www.google.com/search?q=Treasure Planet, 2002 " target="_BLANK" coords="178,224,178,300,191,300,191,224,178,224,"/>
+<Area shape="poly" alt=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " title=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " href="http://www.google.com/search?q=The Adventures of Pluto Nash, 2002 " target="_BLANK" coords="167,155,167,300,180,300,180,155,167,155,"/>
+<Area shape="poly" alt=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " title=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " href="http://www.google.com/search?q=K-19: The Widowmaker, 2002 " target="_BLANK" coords="155,187,155,300,168,300,168,187,155,187,"/>
+<Area shape="poly" alt=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " title=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " href="http://www.google.com/search?q=Ali, 2001 " target="_BLANK" coords="143,288,143,300,156,300,156,288,143,288,"/>
+<Area shape="poly" alt=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " title=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " href="http://www.google.com/search?q=Osmosis Jones, 2001 " target="_BLANK" coords="132,226,132,300,145,300,145,226,132,226,"/>
+<Area shape="poly" alt=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " title=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " href="http://www.google.com/search?q=Final Fantasy: The Spirits Within, 2001 " target="_BLANK" coords="120,147,120,300,133,300,133,147,120,147,"/>
+<Area shape="poly" alt=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " title=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " href="http://www.google.com/search?q=Town and Country, 2001 " target="_BLANK" coords="108,210,108,300,121,300,121,210,108,210,"/>
+<Area shape="poly" alt=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " title=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " href="http://www.google.com/search?q=Red Planet, 2000 " target="_BLANK" coords="96,249,96,300,109,300,109,249,96,249,"/>
+<Area shape="poly" alt=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " title=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " href="http://www.google.com/search?q=Titan A.E., 2000 " target="_BLANK" coords="85,254,85,300,98,300,98,254,85,254,"/>
+<Area shape="poly" alt=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " title=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " href="http://www.google.com/search?q=Supernova, 2000 " target="_BLANK" coords="73,247,73,300,86,300,86,247,73,247,"/>
+<Area shape="poly" alt=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " title=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " href="http://www.google.com/search?q=Jack Frost, 1998 " target="_BLANK" coords="61,250,61,300,74,300,74,250,61,250,"/>
+<Area shape="poly" alt=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " title=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " href="http://www.google.com/search?q=CutThroat Island, 1995 " target="_BLANK" coords="49,222,49,300,62,300,62,222,49,222,"/>
+<Area shape="poly" alt=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " title=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " href="http://www.google.com/search?q=Cats, 2019 " target="_BLANK" coords="875,390,880,390,880,395,875,395,875,390,"/>
+<Area shape="poly" alt=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " title=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " href="http://www.google.com/search?q=Terminator: Dark Fate, 2019 " target="_BLANK" coords="863,438,868,438,868,443,863,443,863,438,"/>
+<Area shape="poly" alt=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " title=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " href="http://www.google.com/search?q=Gemini Man, 2019 " target="_BLANK" coords="852,395,857,395,857,400,852,400,852,395,"/>
+<Area shape="poly" alt=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " title=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " href="http://www.google.com/search?q=Dark Phoenix, 2019 " target="_BLANK" coords="840,400,845,400,845,405,840,405,840,400,"/>
+<Area shape="poly" alt=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " title=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Missing Link, 2019 " target="_BLANK" coords="828,426,833,426,833,431,828,431,828,426,"/>
+<Area shape="poly" alt=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " title=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Hellboy, 2019 " target="_BLANK" coords="816,351,821,351,821,356,816,356,816,351,"/>
+<Area shape="poly" alt=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " title=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " href="http://www.google.com/search?q=The Lego Movie 2: The Second Part, 2019 " target="_BLANK" coords="805,400,810,400,810,405,805,405,805,400,"/>
+<Area shape="poly" alt=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " title=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " href="http://www.google.com/search?q=Mortal Engines, 2018 " target="_BLANK" coords="793,519,798,519,798,524,793,524,793,519,"/>
+<Area shape="poly" alt=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " title=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " href="http://www.google.com/search?q=Robin Hood (2018), 2018 " target="_BLANK" coords="781,404,786,404,786,409,781,409,781,404,"/>
+<Area shape="poly" alt=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " title=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " href="http://www.google.com/search?q=Solo: A Star Wars Story, 2018 " target="_BLANK" coords="769,396,774,396,774,401,769,401,769,396,"/>
+<Area shape="poly" alt=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " title=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " href="http://www.google.com/search?q=A Wrinkle in Time, 2018 " target="_BLANK" coords="758,463,763,463,763,468,758,468,758,463,"/>
+<Area shape="poly" alt=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " title=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " href="http://www.google.com/search?q=Blade Runner 2049, 2017 " target="_BLANK" coords="746,401,751,401,751,406,746,406,746,401,"/>
+<Area shape="poly" alt=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " title=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " href="http://www.google.com/search?q=Valerian and the City of a Thousand Planets, 2017 " target="_BLANK" coords="734,403,739,403,739,408,734,408,734,403,"/>
+<Area shape="poly" alt=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " title=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " href="http://www.google.com/search?q=Transformers: The Last Knight, 2017 " target="_BLANK" coords="723,426,728,426,728,431,723,431,723,426,"/>
+<Area shape="poly" alt=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " title=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " href="http://www.google.com/search?q=The Mummy, 2017 " target="_BLANK" coords="711,419,716,419,716,424,711,424,711,419,"/>
+<Area shape="poly" alt=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " title=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " href="http://www.google.com/search?q=King Arthur: Legend of the Sword, 2017 " target="_BLANK" coords="699,488,704,488,704,493,699,493,699,488,"/>
+<Area shape="poly" alt=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " title=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " href="http://www.google.com/search?q=Power Rangers, 2017 " target="_BLANK" coords="687,396,692,396,692,401,687,401,687,396,"/>
+<Area shape="poly" alt=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " title=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " href="http://www.google.com/search?q=Monster Trucks, 2017 " target="_BLANK" coords="676,451,681,451,681,456,676,456,676,451,"/>
+<Area shape="poly" alt=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " title=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " href="http://www.google.com/search?q=The Great Wall, 2016 " target="_BLANK" coords="664,395,669,395,669,400,664,400,664,395,"/>
+<Area shape="poly" alt=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " title=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " href="http://www.google.com/search?q=Allied, 2016 " target="_BLANK" coords="652,395,657,395,657,400,652,400,652,395,"/>
+<Area shape="poly" alt=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " title=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " href="http://www.google.com/search?q=Deepwater Horizon, 2016 " target="_BLANK" coords="640,376,645,376,645,381,640,381,640,376,"/>
+<Area shape="poly" alt=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " title=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " href="http://www.google.com/search?q=The Promise, 2016 " target="_BLANK" coords="629,418,634,418,634,423,629,423,629,418,"/>
+<Area shape="poly" alt=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " title=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " href="http://www.google.com/search?q=Ben-Hur, 2016 " target="_BLANK" coords="617,396,622,396,622,401,617,401,617,396,"/>
+<Area shape="poly" alt=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " title=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " href="http://www.google.com/search?q=Ghostbusters, 2016 " target="_BLANK" coords="605,395,610,395,610,400,605,400,605,395,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="594,426,599,426,599,431,594,431,594,426,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="582,390,587,390,587,395,582,395,582,390,"/>
+<Area shape="poly" alt=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " title=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " href="http://www.google.com/search?q=Teenage Mutant Ninja Turtles: Out of the Shadows, 2016 " target="_BLANK" coords="570,395,575,395,575,400,570,400,570,395,"/>
+<Area shape="poly" alt=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " title=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " href="http://www.google.com/search?q=Alice Through the Looking Glass, 2016 " target="_BLANK" coords="558,388,563,388,563,393,558,393,558,388,"/>
+<Area shape="poly" alt=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " title=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " href="http://www.google.com/search?q=Gods of Egypt, 2016 " target="_BLANK" coords="547,400,552,400,552,405,547,405,547,400,"/>
+<Area shape="poly" alt=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " title=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " href="http://www.google.com/search?q=The Good Dinosaur, 2015 " target="_BLANK" coords="535,407,540,407,540,412,535,412,535,407,"/>
+<Area shape="poly" alt=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " title=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " href="http://www.google.com/search?q=Pan, 2015 " target="_BLANK" coords="523,463,528,463,528,468,523,468,523,463,"/>
+<Area shape="poly" alt=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " title=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " href="http://www.google.com/search?q=Fantastic Four, 2015 " target="_BLANK" coords="511,401,516,401,516,406,511,406,511,401,"/>
+<Area shape="poly" alt=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " title=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " href="http://www.google.com/search?q=Pixels, 2015 " target="_BLANK" coords="500,395,505,395,505,400,500,400,500,395,"/>
+<Area shape="poly" alt=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " title=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " href="http://www.google.com/search?q=Tomorrowland, 2015 " target="_BLANK" coords="488,401,493,401,493,406,488,406,488,401,"/>
+<Area shape="poly" alt=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " title=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " href="http://www.google.com/search?q=Jupiter Ascending, 2015 " target="_BLANK" coords="476,413,481,413,481,418,476,418,476,413,"/>
+<Area shape="poly" alt=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " title=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " href="http://www.google.com/search?q=Seventh Son, 2014 " target="_BLANK" coords="464,407,469,407,469,412,464,412,464,407,"/>
+<Area shape="poly" alt=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " title=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " href="http://www.google.com/search?q=47 Ronin, 2013 " target="_BLANK" coords="453,423,458,423,458,428,453,428,453,423,"/>
+<Area shape="poly" alt=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " title=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " href="http://www.google.com/search?q=The Lone Ranger, 2013 " target="_BLANK" coords="441,426,446,426,446,431,441,431,441,426,"/>
+<Area shape="poly" alt=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " title=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " href="http://www.google.com/search?q=R.I.P.D., 2013 " target="_BLANK" coords="429,426,434,426,434,431,429,431,429,426,"/>
+<Area shape="poly" alt=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " title=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " href="http://www.google.com/search?q=Jack the Giant Slayer, 2013 " target="_BLANK" coords="418,457,423,457,423,462,418,462,418,457,"/>
+<Area shape="poly" alt=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " title=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " href="http://www.google.com/search?q=Rise of the Guardians, 2012 " target="_BLANK" coords="406,409,411,409,411,414,406,414,406,409,"/>
+<Area shape="poly" alt=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " title=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " href="http://www.google.com/search?q=John Carter, 2012 " target="_BLANK" coords="394,550,399,550,399,555,394,555,394,550,"/>
+<Area shape="poly" alt=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " title=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " href="http://www.google.com/search?q=Hugo, 2011 " target="_BLANK" coords="382,416,387,416,387,421,382,421,382,416,"/>
+<Area shape="poly" alt=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " title=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " href="http://www.google.com/search?q=Cowboys and Aliens, 2011 " target="_BLANK" coords="371,380,376,380,376,385,371,385,371,380,"/>
+<Area shape="poly" alt=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " title=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " href="http://www.google.com/search?q=Green Lantern, 2011 " target="_BLANK" coords="359,423,364,423,364,428,359,428,359,423,"/>
+<Area shape="poly" alt=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " title=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " href="http://www.google.com/search?q=Mars Needs Moms, 2011 " target="_BLANK" coords="347,426,352,426,352,431,347,431,347,426,"/>
+<Area shape="poly" alt=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " title=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " href="http://www.google.com/search?q=How Do You Know, 2010 " target="_BLANK" coords="335,407,340,407,340,412,335,412,335,407,"/>
+<Area shape="poly" alt=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " title=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " href="http://www.google.com/search?q=The Nutcracker in 3D, 2010 " target="_BLANK" coords="324,419,329,419,329,424,324,424,324,419,"/>
+<Area shape="poly" alt=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " title=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " href="http://www.google.com/search?q=The Wolfman, 2010 " target="_BLANK" coords="312,396,317,396,317,401,312,401,312,396,"/>
+<Area shape="poly" alt=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " title=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " href="http://www.google.com/search?q=Delgo, 2008 " target="_BLANK" coords="300,350,305,350,305,355,300,355,300,350,"/>
+<Area shape="poly" alt=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " title=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " href="http://www.google.com/search?q=Speed Racer, 2008 " target="_BLANK" coords="289,392,294,392,294,397,289,397,289,392,"/>
+<Area shape="poly" alt=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " title=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " href="http://www.google.com/search?q=Evan Almighty, 2007 " target="_BLANK" coords="277,411,282,411,282,416,277,416,277,411,"/>
+<Area shape="poly" alt=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " title=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " href="http://www.google.com/search?q=Basic Instinct 2, 2006 " target="_BLANK" coords="265,341,270,341,270,346,265,346,265,341,"/>
+<Area shape="poly" alt=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " title=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " href="http://www.google.com/search?q=A Sound of Thunder, 2005 " target="_BLANK" coords="253,421,258,421,258,426,253,426,253,421,"/>
+<Area shape="poly" alt=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " title=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " href="http://www.google.com/search?q=Stealth, 2005 " target="_BLANK" coords="242,421,247,421,247,426,242,426,242,421,"/>
+<Area shape="poly" alt=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " title=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " href="http://www.google.com/search?q=Sahara, 2005 " target="_BLANK" coords="230,398,235,398,235,403,230,403,230,398,"/>
+<Area shape="poly" alt=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " title=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " href="http://www.google.com/search?q=Alexander, 2004 " target="_BLANK" coords="218,390,223,390,223,395,218,395,218,390,"/>
+<Area shape="poly" alt=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " title=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " href="http://www.google.com/search?q=Gigli, 2003 " target="_BLANK" coords="206,391,211,391,211,396,206,396,206,391,"/>
+<Area shape="poly" alt=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " title=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " href="http://www.google.com/search?q=Sinbad: Legend of the Seven Seas, 2003 " target="_BLANK" coords="195,457,200,457,200,462,195,462,195,457,"/>
+<Area shape="poly" alt=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " title=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " href="http://www.google.com/search?q=Treasure Planet, 2002 " target="_BLANK" coords="183,407,188,407,188,412,183,412,183,407,"/>
+<Area shape="poly" alt=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " title=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " href="http://www.google.com/search?q=The Adventures of Pluto Nash, 2002 " target="_BLANK" coords="171,421,176,421,176,426,171,426,171,421,"/>
+<Area shape="poly" alt=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " title=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " href="http://www.google.com/search?q=K-19: The Widowmaker, 2002 " target="_BLANK" coords="160,418,165,418,165,423,160,423,160,418,"/>
+<Area shape="poly" alt=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " title=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " href="http://www.google.com/search?q=Ali, 2001 " target="_BLANK" coords="148,380,153,380,153,385,148,385,148,380,"/>
+<Area shape="poly" alt=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " title=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " href="http://www.google.com/search?q=Osmosis Jones, 2001 " target="_BLANK" coords="136,380,141,380,141,385,136,385,136,380,"/>
+<Area shape="poly" alt=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " title=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " href="http://www.google.com/search?q=Final Fantasy: The Spirits Within, 2001 " target="_BLANK" coords="124,418,129,418,129,423,124,423,124,418,"/>
+<Area shape="poly" alt=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " title=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " href="http://www.google.com/search?q=Town and Country, 2001 " target="_BLANK" coords="113,407,118,407,118,412,113,412,113,407,"/>
+<Area shape="poly" alt=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " title=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " href="http://www.google.com/search?q=Red Planet, 2000 " target="_BLANK" coords="101,417,106,417,106,422,101,422,101,417,"/>
+<Area shape="poly" alt=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " title=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " href="http://www.google.com/search?q=Titan A.E., 2000 " target="_BLANK" coords="89,426,94,426,94,431,89,431,89,426,"/>
+<Area shape="poly" alt=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " title=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " href="http://www.google.com/search?q=Supernova, 2000 " target="_BLANK" coords="77,404,82,404,82,409,77,409,77,404,"/>
+<Area shape="poly" alt=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " title=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " href="http://www.google.com/search?q=Jack Frost, 1998 " target="_BLANK" coords="66,386,71,386,71,391,66,391,66,386,"/>
+<Area shape="poly" alt=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " title=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " href="http://www.google.com/search?q=CutThroat Island, 1995 " target="_BLANK" coords="54,412,59,412,59,417,54,417,54,412,"/>
+<Area shape="poly" alt=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " title=" Movie = Cats  
+ Millions Lost = $71  
+ Release Date = 20Dec2019 " href="http://www.google.com/search?q=Cats, 2019 " target="_BLANK" coords="877,304,877,392,879,392,879,304,"/>
+<Area shape="poly" alt=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " title=" Movie = Terminator: Dark Fate  
+ Millions Lost = $110  
+ Release Date = 23Oct2019 " href="http://www.google.com/search?q=Terminator: Dark Fate, 2019 " target="_BLANK" coords="865,304,865,441,867,441,867,304,"/>
+<Area shape="poly" alt=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " title=" Movie = Gemini Man  
+ Millions Lost = $75  
+ Release Date = 03Oct2019 " href="http://www.google.com/search?q=Gemini Man, 2019 " target="_BLANK" coords="853,304,853,397,855,397,855,304,"/>
+<Area shape="poly" alt=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " title=" Movie = Dark Phoenix  
+ Millions Lost = $79  
+ Release Date = 07Jun2019 " href="http://www.google.com/search?q=Dark Phoenix, 2019 " target="_BLANK" coords="841,304,841,402,843,402,843,304,"/>
+<Area shape="poly" alt=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " title=" Movie = Missing Link  
+ Millions Lost = $100  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Missing Link, 2019 " target="_BLANK" coords="830,304,830,428,832,428,832,304,"/>
+<Area shape="poly" alt=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " title=" Movie = Hellboy  
+ Millions Lost = $40  
+ Release Date = 12Apr2019 " href="http://www.google.com/search?q=Hellboy, 2019 " target="_BLANK" coords="818,304,818,353,820,353,820,304,"/>
+<Area shape="poly" alt=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " title=" Movie = The Lego Movie 2: The Second Part  
+ Millions Lost = $79  
+ Release Date = 08Feb2019 " href="http://www.google.com/search?q=The Lego Movie 2: The Second Part, 2019 " target="_BLANK" coords="806,304,806,402,808,402,808,304,"/>
+<Area shape="poly" alt=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " title=" Movie = Mortal Engines  
+ Millions Lost = $175  
+ Release Date = 27Nov2018 " href="http://www.google.com/search?q=Mortal Engines, 2018 " target="_BLANK" coords="794,304,794,521,796,521,796,304,"/>
+<Area shape="poly" alt=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " title=" Movie = Robin Hood (2018)  
+ Millions Lost = $83  
+ Release Date = 20Nov2018 " href="http://www.google.com/search?q=Robin Hood (2018), 2018 " target="_BLANK" coords="783,304,783,407,785,407,785,304,"/>
+<Area shape="poly" alt=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " title=" Movie = Solo: A Star Wars Story  
+ Millions Lost = $76  
+ Release Date = 10May2018 " href="http://www.google.com/search?q=Solo: A Star Wars Story, 2018 " target="_BLANK" coords="771,304,771,398,773,398,773,304,"/>
+<Area shape="poly" alt=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " title=" Movie = A Wrinkle in Time  
+ Millions Lost = $130  
+ Release Date = 26Feb2018 " href="http://www.google.com/search?q=A Wrinkle in Time, 2018 " target="_BLANK" coords="759,304,759,465,761,465,761,304,"/>
+<Area shape="poly" alt=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " title=" Movie = Blade Runner 2049  
+ Millions Lost = $80  
+ Release Date = 06Oct2017 " href="http://www.google.com/search?q=Blade Runner 2049, 2017 " target="_BLANK" coords="747,304,747,403,749,403,749,304,"/>
+<Area shape="poly" alt=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " title=" Movie = Valerian and the City of a Thousand Planets  
+ Millions Lost = $82  
+ Release Date = 21Jul2017 " href="http://www.google.com/search?q=Valerian and the City of a Thousand Planets, 2017 " target="_BLANK" coords="736,304,736,406,738,406,738,304,"/>
+<Area shape="poly" alt=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " title=" Movie = Transformers: The Last Knight  
+ Millions Lost = $100  
+ Release Date = 20Jun2017 " href="http://www.google.com/search?q=Transformers: The Last Knight, 2017 " target="_BLANK" coords="724,304,724,428,726,428,726,304,"/>
+<Area shape="poly" alt=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " title=" Movie = The Mummy  
+ Millions Lost = $95  
+ Release Date = 09Jun2017 " href="http://www.google.com/search?q=The Mummy, 2017 " target="_BLANK" coords="712,304,712,422,714,422,714,304,"/>
+<Area shape="poly" alt=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " title=" Movie = King Arthur: Legend of the Sword  
+ Millions Lost = $150  
+ Release Date = 08May2017 " href="http://www.google.com/search?q=King Arthur: Legend of the Sword, 2017 " target="_BLANK" coords="701,304,701,490,703,490,703,304,"/>
+<Area shape="poly" alt=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " title=" Movie = Power Rangers  
+ Millions Lost = $76  
+ Release Date = 22Mar2017 " href="http://www.google.com/search?q=Power Rangers, 2017 " target="_BLANK" coords="689,304,689,398,691,398,691,304,"/>
+<Area shape="poly" alt=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " title=" Movie = Monster Trucks  
+ Millions Lost = $120  
+ Release Date = 23Feb2017 " href="http://www.google.com/search?q=Monster Trucks, 2017 " target="_BLANK" coords="677,304,677,453,679,453,679,304,"/>
+<Area shape="poly" alt=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " title=" Movie = The Great Wall  
+ Millions Lost = $75  
+ Release Date = 05Dec2016 " href="http://www.google.com/search?q=The Great Wall, 2016 " target="_BLANK" coords="665,304,665,397,667,397,667,304,"/>
+<Area shape="poly" alt=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " title=" Movie = Allied  
+ Millions Lost = $75  
+ Release Date = 09Nov2016 " href="http://www.google.com/search?q=Allied, 2016 " target="_BLANK" coords="654,304,654,397,656,397,656,304,"/>
+<Area shape="poly" alt=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " title=" Movie = Deepwater Horizon  
+ Millions Lost = $60  
+ Release Date = 28Sep2016 " href="http://www.google.com/search?q=Deepwater Horizon, 2016 " target="_BLANK" coords="642,304,642,378,644,378,644,304,"/>
+<Area shape="poly" alt=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " title=" Movie = The Promise  
+ Millions Lost = $94  
+ Release Date = 11Sep2016 " href="http://www.google.com/search?q=The Promise, 2016 " target="_BLANK" coords="630,304,630,421,632,421,632,304,"/>
+<Area shape="poly" alt=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " title=" Movie = Ben-Hur  
+ Millions Lost = $76  
+ Release Date = 19Aug2016 " href="http://www.google.com/search?q=Ben-Hur, 2016 " target="_BLANK" coords="618,304,618,398,620,398,620,304,"/>
+<Area shape="poly" alt=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " title=" Movie = Ghostbusters  
+ Millions Lost = $75  
+ Release Date = 11Jul2016 " href="http://www.google.com/search?q=Ghostbusters, 2016 " target="_BLANK" coords="607,304,607,397,609,397,609,304,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $100  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="595,304,595,428,597,428,597,304,"/>
+<Area shape="poly" alt=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " title=" Movie = The BFG  
+ Millions Lost = $71  
+ Release Date = 30Jun2016 " href="http://www.google.com/search?q=The BFG, 2016 " target="_BLANK" coords="583,304,583,392,585,392,585,304,"/>
+<Area shape="poly" alt=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " title=" Movie = Teenage Mutant Ninja Turtles: Out of the Shadows  
+ Millions Lost = $75  
+ Release Date = 03Jun2016 " href="http://www.google.com/search?q=Teenage Mutant Ninja Turtles: Out of the Shadows, 2016 " target="_BLANK" coords="572,304,572,397,574,397,574,304,"/>
+<Area shape="poly" alt=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " title=" Movie = Alice Through the Looking Glass  
+ Millions Lost = $70  
+ Release Date = 27May2016 " href="http://www.google.com/search?q=Alice Through the Looking Glass, 2016 " target="_BLANK" coords="560,304,560,391,562,391,562,304,"/>
+<Area shape="poly" alt=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " title=" Movie = Gods of Egypt  
+ Millions Lost = $79  
+ Release Date = 26Feb2016 " href="http://www.google.com/search?q=Gods of Egypt, 2016 " target="_BLANK" coords="548,304,548,402,550,402,550,304,"/>
+<Area shape="poly" alt=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " title=" Movie = The Good Dinosaur  
+ Millions Lost = $85  
+ Release Date = 25Nov2015 " href="http://www.google.com/search?q=The Good Dinosaur, 2015 " target="_BLANK" coords="536,304,536,409,538,409,538,304,"/>
+<Area shape="poly" alt=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " title=" Movie = Pan  
+ Millions Lost = $130  
+ Release Date = 20Sep2015 " href="http://www.google.com/search?q=Pan, 2015 " target="_BLANK" coords="525,304,525,465,527,465,527,304,"/>
+<Area shape="poly" alt=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " title=" Movie = Fantastic Four  
+ Millions Lost = $80  
+ Release Date = 07Aug2015 " href="http://www.google.com/search?q=Fantastic Four, 2015 " target="_BLANK" coords="513,304,513,403,515,403,515,304,"/>
+<Area shape="poly" alt=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " title=" Movie = Pixels  
+ Millions Lost = $75  
+ Release Date = 24Jul2015 " href="http://www.google.com/search?q=Pixels, 2015 " target="_BLANK" coords="501,304,501,397,503,397,503,304,"/>
+<Area shape="poly" alt=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " title=" Movie = Tomorrowland  
+ Millions Lost = $80  
+ Release Date = 22May2015 " href="http://www.google.com/search?q=Tomorrowland, 2015 " target="_BLANK" coords="489,304,489,403,491,403,491,304,"/>
+<Area shape="poly" alt=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " title=" Movie = Jupiter Ascending  
+ Millions Lost = $90  
+ Release Date = 06Feb2015 " href="http://www.google.com/search?q=Jupiter Ascending, 2015 " target="_BLANK" coords="478,304,478,416,480,416,480,304,"/>
+<Area shape="poly" alt=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " title=" Movie = Seventh Son  
+ Millions Lost = $85  
+ Release Date = 17Dec2014 " href="http://www.google.com/search?q=Seventh Son, 2014 " target="_BLANK" coords="466,304,466,409,468,409,468,304,"/>
+<Area shape="poly" alt=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " title=" Movie = 47 Ronin  
+ Millions Lost = $98  
+ Release Date = 25Dec2013 " href="http://www.google.com/search?q=47 Ronin, 2013 " target="_BLANK" coords="454,304,454,426,456,426,456,304,"/>
+<Area shape="poly" alt=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " title=" Movie = The Lone Ranger  
+ Millions Lost = $100  
+ Release Date = 22Jun2013 " href="http://www.google.com/search?q=The Lone Ranger, 2013 " target="_BLANK" coords="443,304,443,428,445,428,445,304,"/>
+<Area shape="poly" alt=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " title=" Movie = R.I.P.D.  
+ Millions Lost = $100  
+ Release Date = 19Jun2013 " href="http://www.google.com/search?q=R.I.P.D., 2013 " target="_BLANK" coords="431,304,431,428,433,428,433,304,"/>
+<Area shape="poly" alt=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " title=" Movie = Jack the Giant Slayer  
+ Millions Lost = $125  
+ Release Date = 01Mar2013 " href="http://www.google.com/search?q=Jack the Giant Slayer, 2013 " target="_BLANK" coords="419,304,419,459,421,459,421,304,"/>
+<Area shape="poly" alt=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " title=" Movie = Rise of the Guardians  
+ Millions Lost = $87  
+ Release Date = 21Nov2012 " href="http://www.google.com/search?q=Rise of the Guardians, 2012 " target="_BLANK" coords="407,304,407,412,409,412,409,304,"/>
+<Area shape="poly" alt=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " title=" Movie = John Carter  
+ Millions Lost = $200  
+ Release Date = 09Mar2012 " href="http://www.google.com/search?q=John Carter, 2012 " target="_BLANK" coords="396,304,396,553,398,553,398,304,"/>
+<Area shape="poly" alt=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " title=" Movie = Hugo  
+ Millions Lost = $92  
+ Release Date = 23Nov2011 " href="http://www.google.com/search?q=Hugo, 2011 " target="_BLANK" coords="384,304,384,418,386,418,386,304,"/>
+<Area shape="poly" alt=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " title=" Movie = Cowboys and Aliens  
+ Millions Lost = $63  
+ Release Date = 29Jul2011 " href="http://www.google.com/search?q=Cowboys and Aliens, 2011 " target="_BLANK" coords="372,304,372,382,374,382,374,304,"/>
+<Area shape="poly" alt=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " title=" Movie = Green Lantern  
+ Millions Lost = $98  
+ Release Date = 15Jun2011 " href="http://www.google.com/search?q=Green Lantern, 2011 " target="_BLANK" coords="360,304,360,426,362,426,362,304,"/>
+<Area shape="poly" alt=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " title=" Movie = Mars Needs Moms  
+ Millions Lost = $100  
+ Release Date = 11Mar2011 " href="http://www.google.com/search?q=Mars Needs Moms, 2011 " target="_BLANK" coords="349,304,349,428,351,428,351,304,"/>
+<Area shape="poly" alt=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " title=" Movie = How Do You Know  
+ Millions Lost = $85  
+ Release Date = 17Dec2010 " href="http://www.google.com/search?q=How Do You Know, 2010 " target="_BLANK" coords="337,304,337,409,339,409,339,304,"/>
+<Area shape="poly" alt=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " title=" Movie = The Nutcracker in 3D  
+ Millions Lost = $95  
+ Release Date = 24Nov2010 " href="http://www.google.com/search?q=The Nutcracker in 3D, 2010 " target="_BLANK" coords="325,304,325,422,327,422,327,304,"/>
+<Area shape="poly" alt=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " title=" Movie = The Wolfman  
+ Millions Lost = $76  
+ Release Date = 12Feb2010 " href="http://www.google.com/search?q=The Wolfman, 2010 " target="_BLANK" coords="313,304,313,398,315,398,315,304,"/>
+<Area shape="poly" alt=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " title=" Movie = Delgo  
+ Millions Lost = $39  
+ Release Date = 12Dec2008 " href="http://www.google.com/search?q=Delgo, 2008 " target="_BLANK" coords="302,304,302,352,304,352,304,304,"/>
+<Area shape="poly" alt=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " title=" Movie = Speed Racer  
+ Millions Lost = $73  
+ Release Date = 09May2008 " href="http://www.google.com/search?q=Speed Racer, 2008 " target="_BLANK" coords="290,304,290,395,292,395,292,304,"/>
+<Area shape="poly" alt=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " title=" Movie = Evan Almighty  
+ Millions Lost = $88  
+ Release Date = 22Jun2007 " href="http://www.google.com/search?q=Evan Almighty, 2007 " target="_BLANK" coords="278,304,278,413,280,413,280,304,"/>
+<Area shape="poly" alt=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " title=" Movie = Basic Instinct 2  
+ Millions Lost = $32  
+ Release Date = 31Mar2006 " href="http://www.google.com/search?q=Basic Instinct 2, 2006 " target="_BLANK" coords="267,304,267,344,269,344,269,304,"/>
+<Area shape="poly" alt=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " title=" Movie = A Sound of Thunder  
+ Millions Lost = $96  
+ Release Date = 02Sep2005 " href="http://www.google.com/search?q=A Sound of Thunder, 2005 " target="_BLANK" coords="255,304,255,423,257,423,257,304,"/>
+<Area shape="poly" alt=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " title=" Movie = Stealth  
+ Millions Lost = $96  
+ Release Date = 29Jul2005 " href="http://www.google.com/search?q=Stealth, 2005 " target="_BLANK" coords="243,304,243,423,245,423,245,304,"/>
+<Area shape="poly" alt=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " title=" Movie = Sahara  
+ Millions Lost = $78  
+ Release Date = 08Apr2005 " href="http://www.google.com/search?q=Sahara, 2005 " target="_BLANK" coords="231,304,231,401,233,401,233,304,"/>
+<Area shape="poly" alt=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " title=" Movie = Alexander  
+ Millions Lost = $71  
+ Release Date = 24Nov2004 " href="http://www.google.com/search?q=Alexander, 2004 " target="_BLANK" coords="220,304,220,392,222,392,222,304,"/>
+<Area shape="poly" alt=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " title=" Movie = Gigli  
+ Millions Lost = $72  
+ Release Date = 01Aug2003 " href="http://www.google.com/search?q=Gigli, 2003 " target="_BLANK" coords="208,304,208,393,210,393,210,304,"/>
+<Area shape="poly" alt=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " title=" Movie = Sinbad: Legend of the Seven Seas  
+ Millions Lost = $125  
+ Release Date = 02Jul2003 " href="http://www.google.com/search?q=Sinbad: Legend of the Seven Seas, 2003 " target="_BLANK" coords="196,304,196,459,198,459,198,304,"/>
+<Area shape="poly" alt=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " title=" Movie = Treasure Planet  
+ Millions Lost = $85  
+ Release Date = 27Nov2002 " href="http://www.google.com/search?q=Treasure Planet, 2002 " target="_BLANK" coords="184,304,184,409,186,409,186,304,"/>
+<Area shape="poly" alt=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " title=" Movie = The Adventures of Pluto Nash  
+ Millions Lost = $96  
+ Release Date = 15Aug2002 " href="http://www.google.com/search?q=The Adventures of Pluto Nash, 2002 " target="_BLANK" coords="173,304,173,423,175,423,175,304,"/>
+<Area shape="poly" alt=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " title=" Movie = K-19: The Widowmaker  
+ Millions Lost = $94  
+ Release Date = 19Jul2002 " href="http://www.google.com/search?q=K-19: The Widowmaker, 2002 " target="_BLANK" coords="161,304,161,421,163,421,163,304,"/>
+<Area shape="poly" alt=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " title=" Movie = Ali  
+ Millions Lost = $63  
+ Release Date = 25Dec2001 " href="http://www.google.com/search?q=Ali, 2001 " target="_BLANK" coords="149,304,149,382,151,382,151,304,"/>
+<Area shape="poly" alt=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " title=" Movie = Osmosis Jones  
+ Millions Lost = $63  
+ Release Date = 07Aug2001 " href="http://www.google.com/search?q=Osmosis Jones, 2001 " target="_BLANK" coords="138,304,138,382,140,382,140,304,"/>
+<Area shape="poly" alt=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " title=" Movie = Final Fantasy: The Spirits Within  
+ Millions Lost = $94  
+ Release Date = 02Jul2001 " href="http://www.google.com/search?q=Final Fantasy: The Spirits Within, 2001 " target="_BLANK" coords="126,304,126,421,128,421,128,304,"/>
+<Area shape="poly" alt=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " title=" Movie = Town and Country  
+ Millions Lost = $85  
+ Release Date = 27Apr2001 " href="http://www.google.com/search?q=Town and Country, 2001 " target="_BLANK" coords="114,304,114,409,116,409,116,304,"/>
+<Area shape="poly" alt=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " title=" Movie = Red Planet  
+ Millions Lost = $93  
+ Release Date = 10Nov2000 " href="http://www.google.com/search?q=Red Planet, 2000 " target="_BLANK" coords="102,304,102,419,104,419,104,304,"/>
+<Area shape="poly" alt=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " title=" Movie = Titan A.E.  
+ Millions Lost = $100  
+ Release Date = 16Jun2000 " href="http://www.google.com/search?q=Titan A.E., 2000 " target="_BLANK" coords="91,304,91,428,93,428,93,304,"/>
+<Area shape="poly" alt=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " title=" Movie = Supernova  
+ Millions Lost = $83  
+ Release Date = 14Jan2000 " href="http://www.google.com/search?q=Supernova, 2000 " target="_BLANK" coords="79,304,79,407,81,407,81,304,"/>
+<Area shape="poly" alt=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " title=" Movie = Jack Frost  
+ Millions Lost = $68  
+ Release Date = 11Dec1998 " href="http://www.google.com/search?q=Jack Frost, 1998 " target="_BLANK" coords="67,304,67,388,69,388,69,304,"/>
+<Area shape="poly" alt=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " title=" Movie = CutThroat Island  
+ Millions Lost = $89  
+ Release Date = 22Dec1995 " href="http://www.google.com/search?q=CutThroat Island, 1995 " target="_BLANK" coords="55,304,55,414,57,414,57,304,"/>
+</map>
+<div  class="c">
+<img alt="The SGPlot Procedure" src="box_office_movie_flops1.png" style=" height: 600px; width: 900px;" border="0" usemap="#box_office_movie_flops1" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX2"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle" style=" color: #333333; font-size: 16pt;">Box Office Movie Flop Losses (In Million US$)</td>
+</tr>
+</table><br>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK.MY_DATA">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="r header" style=" font-size: 11pt;" scope="col">Release Date</th>
+<th class="r header" style=" font-size: 11pt;" scope="col">Millions Lost</th>
+<th class="l header" style=" font-size: 11pt;" scope="col">Movie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data" style=" font-size: 11pt;">20DEC2019</td>
+<td class="r data" style=" font-size: 11pt;">$71</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Cats, 2019" target="_self">Cats</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">23OCT2019</td>
+<td class="r data" style=" font-size: 11pt;">$110</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Terminator: Dark Fate, 2019" target="_self">Terminator: Dark Fate</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">03OCT2019</td>
+<td class="r data" style=" font-size: 11pt;">$75</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Gemini Man, 2019" target="_self">Gemini Man</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">07JUN2019</td>
+<td class="r data" style=" font-size: 11pt;">$79</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Dark Phoenix, 2019" target="_self">Dark Phoenix</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">12APR2019</td>
+<td class="r data" style=" font-size: 11pt;">$40</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Hellboy, 2019" target="_self">Hellboy</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">12APR2019</td>
+<td class="r data" style=" font-size: 11pt;">$100</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Missing Link, 2019" target="_self">Missing Link</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">08FEB2019</td>
+<td class="r data" style=" font-size: 11pt;">$79</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Lego Movie 2: The Second Part, 2019" target="_self">The Lego Movie 2: The Second Part</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">27NOV2018</td>
+<td class="r data" style=" font-size: 11pt;">$175</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Mortal Engines, 2018" target="_self">Mortal Engines</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">20NOV2018</td>
+<td class="r data" style=" font-size: 11pt;">$83</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Robin Hood (2018), 2018" target="_self">Robin Hood (2018)</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">10MAY2018</td>
+<td class="r data" style=" font-size: 11pt;">$76</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Solo: A Star Wars Story, 2018" target="_self">Solo: A Star Wars Story</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">26FEB2018</td>
+<td class="r data" style=" font-size: 11pt;">$130</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=A Wrinkle in Time, 2018" target="_self">A Wrinkle in Time</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">06OCT2017</td>
+<td class="r data" style=" font-size: 11pt;">$80</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Blade Runner 2049, 2017" target="_self">Blade Runner 2049</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">21JUL2017</td>
+<td class="r data" style=" font-size: 11pt;">$82</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Valerian and the City of a Thousand Planets, 2017" target="_self">Valerian and the City of a Thousand Planets</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">20JUN2017</td>
+<td class="r data" style=" font-size: 11pt;">$100</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Transformers: The Last Knight, 2017" target="_self">Transformers: The Last Knight</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">09JUN2017</td>
+<td class="r data" style=" font-size: 11pt;">$95</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Mummy, 2017" target="_self">The Mummy</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">08MAY2017</td>
+<td class="r data" style=" font-size: 11pt;">$150</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=King Arthur: Legend of the Sword, 2017" target="_self">King Arthur: Legend of the Sword</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">22MAR2017</td>
+<td class="r data" style=" font-size: 11pt;">$76</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Power Rangers, 2017" target="_self">Power Rangers</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">23FEB2017</td>
+<td class="r data" style=" font-size: 11pt;">$120</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Monster Trucks, 2017" target="_self">Monster Trucks</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">05DEC2016</td>
+<td class="r data" style=" font-size: 11pt;">$75</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Great Wall, 2016" target="_self">The Great Wall</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">09NOV2016</td>
+<td class="r data" style=" font-size: 11pt;">$75</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Allied, 2016" target="_self">Allied</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">28SEP2016</td>
+<td class="r data" style=" font-size: 11pt;">$60</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Deepwater Horizon, 2016" target="_self">Deepwater Horizon</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">11SEP2016</td>
+<td class="r data" style=" font-size: 11pt;">$94</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Promise, 2016" target="_self">The Promise</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">19AUG2016</td>
+<td class="r data" style=" font-size: 11pt;">$76</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Ben-Hur, 2016" target="_self">Ben-Hur</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">11JUL2016</td>
+<td class="r data" style=" font-size: 11pt;">$75</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Ghostbusters, 2016" target="_self">Ghostbusters</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">30JUN2016</td>
+<td class="r data" style=" font-size: 11pt;">$71</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The BFG, 2016" target="_self">The BFG</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">30JUN2016</td>
+<td class="r data" style=" font-size: 11pt;">$100</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The BFG, 2016" target="_self">The BFG</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">03JUN2016</td>
+<td class="r data" style=" font-size: 11pt;">$75</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Teenage Mutant Ninja Turtles: Out of the Shadows, 2016" target="_self">Teenage Mutant Ninja Turtles: Out of the Shadows</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">27MAY2016</td>
+<td class="r data" style=" font-size: 11pt;">$70</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Alice Through the Looking Glass, 2016" target="_self">Alice Through the Looking Glass</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">26FEB2016</td>
+<td class="r data" style=" font-size: 11pt;">$79</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Gods of Egypt, 2016" target="_self">Gods of Egypt</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">25NOV2015</td>
+<td class="r data" style=" font-size: 11pt;">$85</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Good Dinosaur, 2015" target="_self">The Good Dinosaur</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">20SEP2015</td>
+<td class="r data" style=" font-size: 11pt;">$130</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Pan, 2015" target="_self">Pan</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">07AUG2015</td>
+<td class="r data" style=" font-size: 11pt;">$80</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Fantastic Four, 2015" target="_self">Fantastic Four</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">24JUL2015</td>
+<td class="r data" style=" font-size: 11pt;">$75</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Pixels, 2015" target="_self">Pixels</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">22MAY2015</td>
+<td class="r data" style=" font-size: 11pt;">$80</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Tomorrowland, 2015" target="_self">Tomorrowland</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">06FEB2015</td>
+<td class="r data" style=" font-size: 11pt;">$90</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Jupiter Ascending, 2015" target="_self">Jupiter Ascending</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">17DEC2014</td>
+<td class="r data" style=" font-size: 11pt;">$85</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Seventh Son, 2014" target="_self">Seventh Son</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">25DEC2013</td>
+<td class="r data" style=" font-size: 11pt;">$98</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=47 Ronin, 2013" target="_self">47 Ronin</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">22JUN2013</td>
+<td class="r data" style=" font-size: 11pt;">$100</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Lone Ranger, 2013" target="_self">The Lone Ranger</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">19JUN2013</td>
+<td class="r data" style=" font-size: 11pt;">$100</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=R.I.P.D., 2013" target="_self">R.I.P.D.</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">01MAR2013</td>
+<td class="r data" style=" font-size: 11pt;">$125</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Jack the Giant Slayer, 2013" target="_self">Jack the Giant Slayer</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">21NOV2012</td>
+<td class="r data" style=" font-size: 11pt;">$87</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Rise of the Guardians, 2012" target="_self">Rise of the Guardians</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">09MAR2012</td>
+<td class="r data" style=" font-size: 11pt;">$200</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=John Carter, 2012" target="_self">John Carter</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">23NOV2011</td>
+<td class="r data" style=" font-size: 11pt;">$92</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Hugo, 2011" target="_self">Hugo</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">29JUL2011</td>
+<td class="r data" style=" font-size: 11pt;">$63</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Cowboys and Aliens, 2011" target="_self">Cowboys and Aliens</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">15JUN2011</td>
+<td class="r data" style=" font-size: 11pt;">$98</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Green Lantern, 2011" target="_self">Green Lantern</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">11MAR2011</td>
+<td class="r data" style=" font-size: 11pt;">$100</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Mars Needs Moms, 2011" target="_self">Mars Needs Moms</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">17DEC2010</td>
+<td class="r data" style=" font-size: 11pt;">$85</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=How Do You Know, 2010" target="_self">How Do You Know</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">24NOV2010</td>
+<td class="r data" style=" font-size: 11pt;">$95</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Nutcracker in 3D, 2010" target="_self">The Nutcracker in 3D</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">12FEB2010</td>
+<td class="r data" style=" font-size: 11pt;">$76</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Wolfman, 2010" target="_self">The Wolfman</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">12DEC2008</td>
+<td class="r data" style=" font-size: 11pt;">$39</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Delgo, 2008" target="_self">Delgo</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">09MAY2008</td>
+<td class="r data" style=" font-size: 11pt;">$73</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Speed Racer, 2008" target="_self">Speed Racer</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">22JUN2007</td>
+<td class="r data" style=" font-size: 11pt;">$88</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Evan Almighty, 2007" target="_self">Evan Almighty</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">31MAR2006</td>
+<td class="r data" style=" font-size: 11pt;">$32</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Basic Instinct 2, 2006" target="_self">Basic Instinct 2</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">02SEP2005</td>
+<td class="r data" style=" font-size: 11pt;">$96</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=A Sound of Thunder, 2005" target="_self">A Sound of Thunder</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">29JUL2005</td>
+<td class="r data" style=" font-size: 11pt;">$96</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Stealth, 2005" target="_self">Stealth</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">08APR2005</td>
+<td class="r data" style=" font-size: 11pt;">$78</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Sahara, 2005" target="_self">Sahara</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">24NOV2004</td>
+<td class="r data" style=" font-size: 11pt;">$71</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Alexander, 2004" target="_self">Alexander</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">01AUG2003</td>
+<td class="r data" style=" font-size: 11pt;">$72</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Gigli, 2003" target="_self">Gigli</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">02JUL2003</td>
+<td class="r data" style=" font-size: 11pt;">$125</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Sinbad: Legend of the Seven Seas, 2003" target="_self">Sinbad: Legend of the Seven Seas</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">27NOV2002</td>
+<td class="r data" style=" font-size: 11pt;">$85</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Treasure Planet, 2002" target="_self">Treasure Planet</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">15AUG2002</td>
+<td class="r data" style=" font-size: 11pt;">$96</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=The Adventures of Pluto Nash, 2002" target="_self">The Adventures of Pluto Nash</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">19JUL2002</td>
+<td class="r data" style=" font-size: 11pt;">$94</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=K-19: The Widowmaker, 2002" target="_self">K-19: The Widowmaker</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">25DEC2001</td>
+<td class="r data" style=" font-size: 11pt;">$63</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Ali, 2001" target="_self">Ali</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">07AUG2001</td>
+<td class="r data" style=" font-size: 11pt;">$63</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Osmosis Jones, 2001" target="_self">Osmosis Jones</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">02JUL2001</td>
+<td class="r data" style=" font-size: 11pt;">$94</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Final Fantasy: The Spirits Within, 2001" target="_self">Final Fantasy: The Spirits Within</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">27APR2001</td>
+<td class="r data" style=" font-size: 11pt;">$85</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Town and Country, 2001" target="_self">Town and Country</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">10NOV2000</td>
+<td class="r data" style=" font-size: 11pt;">$93</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Red Planet, 2000" target="_self">Red Planet</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">16JUN2000</td>
+<td class="r data" style=" font-size: 11pt;">$100</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Titan A.E., 2000" target="_self">Titan A.E.</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">14JAN2000</td>
+<td class="r data" style=" font-size: 11pt;">$83</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Supernova, 2000" target="_self">Supernova</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">11DEC1998</td>
+<td class="r data" style=" font-size: 11pt;">$68</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=Jack Frost, 1998" target="_self">Jack Frost</a></td>
+</tr>
+<tr>
+<td class="r data" style=" font-size: 11pt;">22DEC1995</td>
+<td class="r data" style=" font-size: 11pt;">$89</td>
+<td class="l data" style=" font-size: 11pt;"><a href="http://www.google.com/search?q=CutThroat Island, 1995" target="_self">CutThroat Island</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemfooter" style=" color: #808080; font-size: 10pt;"><a href="https://scientificfeed.com/stories/45-expensive-box-office-flops-ever-made/">Using data from: https://scientificfeed.com/stories/45-expensive-box-office-flops-ever-made/</a>
+</td>
+</tr>
+</table><br>
+</div>
+</body>
+</html>
