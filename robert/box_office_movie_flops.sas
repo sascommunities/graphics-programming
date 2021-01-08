@@ -29,7 +29,6 @@ datalines;
 27may2016|70|Alice Through the Looking Glass
 01mar2013|125|Jack the Giant Slayer
 25dec2013|98|47 Ronin
-30jun2016|100|The BFG
 17dec2010|85|How Do You Know
 22jun2013|100|The Lone Ranger
 23feb2017|120|Monster Trucks
