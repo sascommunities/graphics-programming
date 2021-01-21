@@ -1,0 +1,2182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>Phoenix, Raleigh, Minneapolis temperature</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="city_temperature_sas">
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Dec 
+ Temp. = 18.6" title=" City = Minneapolis 
+ Month = Dec 
+ Temp. = 18.6" coords="696,377,703,377,703,384,696,384,696,377,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Dec 
+ Temp. = 41.2" title=" City = Raleigh 
+ Month = Dec 
+ Temp. = 41.2" coords="696,286,703,286,703,293,696,293,696,286,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Dec 
+ Temp. = 52.5" title=" City = Phoenix 
+ Month = Dec 
+ Temp. = 52.5" coords="696,240,703,240,703,247,696,247,696,240,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Nov 
+ Temp. = 32.4" title=" City = Minneapolis 
+ Month = Nov 
+ Temp. = 32.4" coords="641,321,648,321,648,328,641,328,641,321,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Nov 
+ Temp. = 50.0" title=" City = Raleigh 
+ Month = Nov 
+ Temp. = 50.0" coords="641,250,648,250,648,257,641,257,641,250,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Nov 
+ Temp. = 59.8" title=" City = Phoenix 
+ Month = Nov 
+ Temp. = 59.8" coords="641,211,648,211,648,218,641,218,641,211,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Oct 
+ Temp. = 50.0" title=" City = Minneapolis 
+ Month = Oct 
+ Temp. = 50.0" coords="586,250,593,250,593,257,586,257,586,250,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Oct 
+ Temp. = 60.2" title=" City = Raleigh 
+ Month = Oct 
+ Temp. = 60.2" coords="586,209,593,209,593,216,586,216,586,209,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Oct 
+ Temp. = 72.2" title=" City = Phoenix 
+ Month = Oct 
+ Temp. = 72.2" coords="586,161,593,161,593,168,586,168,586,161,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Sep 
+ Temp. = 60.0" title=" City = Minneapolis 
+ Month = Sep 
+ Temp. = 60.0" coords="530,210,537,210,537,217,530,217,530,210,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Sep 
+ Temp. = 70.6" title=" City = Raleigh 
+ Month = Sep 
+ Temp. = 70.6" coords="530,167,537,167,537,174,530,174,530,167,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Sep 
+ Temp. = 83.8" title=" City = Phoenix 
+ Month = Sep 
+ Temp. = 83.8" coords="530,114,537,114,537,121,530,121,530,114,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Aug 
+ Temp. = 70.2" title=" City = Minneapolis 
+ Month = Aug 
+ Temp. = 70.2" coords="475,169,482,169,482,176,475,176,475,169,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Aug 
+ Temp. = 76.5" title=" City = Raleigh 
+ Month = Aug 
+ Temp. = 76.5" coords="475,144,482,144,482,151,475,151,475,144,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Aug 
+ Temp. = 89.1" title=" City = Phoenix 
+ Month = Aug 
+ Temp. = 89.1" coords="475,93,482,93,482,100,475,100,475,93,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Jul 
+ Temp. = 71.9" title=" City = Minneapolis 
+ Month = Jul 
+ Temp. = 71.9" coords="420,162,427,162,427,169,420,169,420,162,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Jul 
+ Temp. = 77.5" title=" City = Raleigh 
+ Month = Jul 
+ Temp. = 77.5" coords="420,140,427,140,427,147,420,147,420,140,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Jul 
+ Temp. = 91.2" title=" City = Phoenix 
+ Month = Jul 
+ Temp. = 91.2" coords="420,84,427,84,427,91,420,91,420,84,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Jun 
+ Temp. = 66.9" title=" City = Minneapolis 
+ Month = Jun 
+ Temp. = 66.9" coords="364,182,371,182,371,189,364,189,364,182,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Jun 
+ Temp. = 74.4" title=" City = Raleigh 
+ Month = Jun 
+ Temp. = 74.4" coords="364,152,371,152,371,159,364,159,364,152,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Jun 
+ Temp. = 84.6" title=" City = Phoenix 
+ Month = Jun 
+ Temp. = 84.6" coords="364,111,371,111,371,118,364,118,364,111,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = May 
+ Temp. = 57.1" title=" City = Minneapolis 
+ Month = May 
+ Temp. = 57.1" coords="309,222,316,222,316,229,309,229,309,222,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = May 
+ Temp. = 67.4" title=" City = Raleigh 
+ Month = May 
+ Temp. = 67.4" coords="309,180,316,180,316,187,309,187,309,180,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = May 
+ Temp. = 76.3" title=" City = Phoenix 
+ Month = May 
+ Temp. = 76.3" coords="309,144,316,144,316,151,309,151,309,144,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Apr 
+ Temp. = 45.1" title=" City = Minneapolis 
+ Month = Apr 
+ Temp. = 45.1" coords="254,270,261,270,261,277,254,277,254,270,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Apr 
+ Temp. = 59.5" title=" City = Raleigh 
+ Month = Apr 
+ Temp. = 59.5" coords="254,212,261,212,261,219,254,219,254,212,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Apr 
+ Temp. = 67.7" title=" City = Phoenix 
+ Month = Apr 
+ Temp. = 67.7" coords="254,179,261,179,261,186,254,186,254,179,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Mar 
+ Temp. = 28.3" title=" City = Minneapolis 
+ Month = Mar 
+ Temp. = 28.3" coords="198,338,205,338,205,345,198,345,198,338,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Mar 
+ Temp. = 49.2" title=" City = Raleigh 
+ Month = Mar 
+ Temp. = 49.2" coords="198,254,205,254,205,261,198,261,198,254,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Mar 
+ Temp. = 59.7" title=" City = Phoenix 
+ Month = Mar 
+ Temp. = 59.7" coords="198,211,205,211,205,218,198,218,198,211,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Feb 
+ Temp. = 16.5" title=" City = Minneapolis 
+ Month = Feb 
+ Temp. = 16.5" coords="143,386,150,386,150,393,143,393,143,386,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Feb 
+ Temp. = 42.2" title=" City = Raleigh 
+ Month = Feb 
+ Temp. = 42.2" coords="143,282,150,282,150,289,143,289,143,282,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Feb 
+ Temp. = 55.1" title=" City = Phoenix 
+ Month = Feb 
+ Temp. = 55.1" coords="143,230,150,230,150,237,143,237,143,230,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Jan 
+ Temp. = 12.2" title=" City = Minneapolis 
+ Month = Jan 
+ Temp. = 12.2" coords="88,403,95,403,95,410,88,410,88,403,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Jan 
+ Temp. = 40.5" title=" City = Raleigh 
+ Month = Jan 
+ Temp. = 40.5" coords="88,289,95,289,95,296,88,296,88,289,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Jan 
+ Temp. = 52.1" title=" City = Phoenix 
+ Month = Jan 
+ Temp. = 52.1" coords="88,242,95,242,95,249,88,249,88,242,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Dec 
+ Temp. = 18.6" title=" City = Minneapolis 
+ Month = Dec 
+ Temp. = 18.6" coords="670,355,698,383,702,379,674,351,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Nov 
+ Temp. = 32.4" title=" City = Minneapolis 
+ Month = Nov 
+ Temp. = 32.4" coords="642,327,670,355,674,351,646,323,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Nov 
+ Temp. = 32.4" title=" City = Minneapolis 
+ Month = Nov 
+ Temp. = 32.4" coords="615,291,642,327,646,324,619,288,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Oct 
+ Temp. = 50.0" title=" City = Minneapolis 
+ Month = Oct 
+ Temp. = 50.0" coords="587,256,615,291,619,287,591,252,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Oct 
+ Temp. = 50.0" title=" City = Minneapolis 
+ Month = Oct 
+ Temp. = 50.0" coords="560,236,588,256,590,252,562,232,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Sep 
+ Temp. = 60.0" title=" City = Minneapolis 
+ Month = Sep 
+ Temp. = 60.0" coords="533,216,560,236,562,232,535,212,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Sep 
+ Temp. = 60.0" title=" City = Minneapolis 
+ Month = Sep 
+ Temp. = 60.0" coords="505,195,533,216,536,212,508,191,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Aug 
+ Temp. = 70.2" title=" City = Minneapolis 
+ Month = Aug 
+ Temp. = 70.2" coords="477,175,505,195,507,191,479,171,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Aug 
+ Temp. = 70.2" title=" City = Minneapolis 
+ Month = Aug 
+ Temp. = 70.2" coords="451,171,478,175,478,171,451,167,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Jul 
+ Temp. = 71.9" title=" City = Minneapolis 
+ Month = Jul 
+ Temp. = 71.9" coords="423,168,451,171,451,167,423,164,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Jul 
+ Temp. = 71.9" title=" City = Minneapolis 
+ Month = Jul 
+ Temp. = 71.9" coords="395,174,422,164,424,168,397,178,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Jun 
+ Temp. = 66.9" title=" City = Minneapolis 
+ Month = Jun 
+ Temp. = 66.9" coords="367,184,395,174,397,178,369,188,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Jun 
+ Temp. = 66.9" title=" City = Minneapolis 
+ Month = Jun 
+ Temp. = 66.9" coords="339,204,367,184,369,188,341,208,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = May 
+ Temp. = 57.1" title=" City = Minneapolis 
+ Month = May 
+ Temp. = 57.1" coords="312,223,339,204,341,208,314,227,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = May 
+ Temp. = 57.1" title=" City = Minneapolis 
+ Month = May 
+ Temp. = 57.1" coords="283,248,311,223,315,227,287,252,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Apr 
+ Temp. = 45.1" title=" City = Minneapolis 
+ Month = Apr 
+ Temp. = 45.1" coords="255,272,283,248,287,252,259,276,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Apr 
+ Temp. = 45.1" title=" City = Minneapolis 
+ Month = Apr 
+ Temp. = 45.1" coords="228,306,255,272,259,276,232,310,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Mar 
+ Temp. = 28.3" title=" City = Minneapolis 
+ Month = Mar 
+ Temp. = 28.3" coords="200,339,228,306,232,310,204,343,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Mar 
+ Temp. = 28.3" title=" City = Minneapolis 
+ Month = Mar 
+ Temp. = 28.3" coords="172,363,200,339,204,343,176,367,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Feb 
+ Temp. = 16.5" title=" City = Minneapolis 
+ Month = Feb 
+ Temp. = 16.5" coords="145,387,172,363,176,367,149,391,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Feb 
+ Temp. = 16.5" title=" City = Minneapolis 
+ Month = Feb 
+ Temp. = 16.5" coords="118,396,146,387,148,391,120,400,"/>
+<Area shape="poly" alt=" City = Minneapolis 
+ Month = Jan 
+ Temp. = 12.2" title=" City = Minneapolis 
+ Month = Jan 
+ Temp. = 12.2" coords="90,404,118,396,120,400,92,408,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Dec 
+ Temp. = 41.2" title=" City = Raleigh 
+ Month = Dec 
+ Temp. = 41.2" coords="671,274,699,291,701,287,673,270,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Nov 
+ Temp. = 50.0" title=" City = Raleigh 
+ Month = Nov 
+ Temp. = 50.0" coords="643,256,671,274,673,270,645,252,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Nov 
+ Temp. = 50.0" title=" City = Raleigh 
+ Month = Nov 
+ Temp. = 50.0" coords="615,235,642,256,646,252,619,231,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Oct 
+ Temp. = 60.2" title=" City = Raleigh 
+ Month = Oct 
+ Temp. = 60.2" coords="588,215,616,235,618,231,590,211,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Oct 
+ Temp. = 60.2" title=" City = Raleigh 
+ Month = Oct 
+ Temp. = 60.2" coords="560,194,588,215,591,211,563,190,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Sep 
+ Temp. = 70.6" title=" City = Raleigh 
+ Month = Sep 
+ Temp. = 70.6" coords="532,173,559,194,563,190,536,169,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Sep 
+ Temp. = 70.6" title=" City = Raleigh 
+ Month = Sep 
+ Temp. = 70.6" coords="505,161,533,173,535,169,507,157,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Aug 
+ Temp. = 76.5" title=" City = Raleigh 
+ Month = Aug 
+ Temp. = 76.5" coords="477,149,505,161,507,157,479,145,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Aug 
+ Temp. = 76.5" title=" City = Raleigh 
+ Month = Aug 
+ Temp. = 76.5" coords="451,147,478,149,478,145,451,143,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Jul 
+ Temp. = 77.5" title=" City = Raleigh 
+ Month = Jul 
+ Temp. = 77.5" coords="423,145,451,147,451,143,423,141,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Jul 
+ Temp. = 77.5" title=" City = Raleigh 
+ Month = Jul 
+ Temp. = 77.5" coords="395,147,422,141,424,145,397,151,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Jun 
+ Temp. = 74.4" title=" City = Raleigh 
+ Month = Jun 
+ Temp. = 74.4" coords="367,154,395,147,397,151,369,158,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Jun 
+ Temp. = 74.4" title=" City = Raleigh 
+ Month = Jun 
+ Temp. = 74.4" coords="339,168,367,154,369,158,341,172,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = May 
+ Temp. = 67.4" title=" City = Raleigh 
+ Month = May 
+ Temp. = 67.4" coords="312,182,339,168,341,172,314,186,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = May 
+ Temp. = 67.4" title=" City = Raleigh 
+ Month = May 
+ Temp. = 67.4" coords="284,198,312,182,314,186,286,202,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Apr 
+ Temp. = 59.5" title=" City = Raleigh 
+ Month = Apr 
+ Temp. = 59.5" coords="256,214,284,198,286,202,258,218,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Apr 
+ Temp. = 59.5" title=" City = Raleigh 
+ Month = Apr 
+ Temp. = 59.5" coords="229,234,256,214,258,218,231,238,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Mar 
+ Temp. = 49.2" title=" City = Raleigh 
+ Month = Mar 
+ Temp. = 49.2" coords="201,255,229,234,232,238,204,259,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Mar 
+ Temp. = 49.2" title=" City = Raleigh 
+ Month = Mar 
+ Temp. = 49.2" coords="173,269,201,255,203,259,175,273,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Feb 
+ Temp. = 42.2" title=" City = Raleigh 
+ Month = Feb 
+ Temp. = 42.2" coords="146,283,173,269,175,273,148,287,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Feb 
+ Temp. = 42.2" title=" City = Raleigh 
+ Month = Feb 
+ Temp. = 42.2" coords="119,287,147,283,147,287,119,291,"/>
+<Area shape="poly" alt=" City = Raleigh 
+ Month = Jan 
+ Temp. = 40.5" title=" City = Raleigh 
+ Month = Jan 
+ Temp. = 40.5" coords="91,290,119,287,119,291,91,294,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Dec 
+ Temp. = 52.5" title=" City = Phoenix 
+ Month = Dec 
+ Temp. = 52.5" coords="671,231,699,246,701,242,673,227,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Nov 
+ Temp. = 59.8" title=" City = Phoenix 
+ Month = Nov 
+ Temp. = 59.8" coords="643,216,671,231,673,227,645,212,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Nov 
+ Temp. = 59.8" title=" City = Phoenix 
+ Month = Nov 
+ Temp. = 59.8" coords="615,191,642,216,646,212,619,187,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Oct 
+ Temp. = 72.2" title=" City = Phoenix 
+ Month = Oct 
+ Temp. = 72.2" coords="587,166,615,191,619,187,591,162,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Oct 
+ Temp. = 72.2" title=" City = Phoenix 
+ Month = Oct 
+ Temp. = 72.2" coords="559,143,587,166,591,162,563,139,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Sep 
+ Temp. = 83.8" title=" City = Phoenix 
+ Month = Sep 
+ Temp. = 83.8" coords="532,120,559,143,563,139,536,116,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Sep 
+ Temp. = 83.8" title=" City = Phoenix 
+ Month = Sep 
+ Temp. = 83.8" coords="505,109,533,120,535,116,507,105,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Aug 
+ Temp. = 89.1" title=" City = Phoenix 
+ Month = Aug 
+ Temp. = 89.1" coords="477,98,505,109,507,105,479,94,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Aug 
+ Temp. = 89.1" title=" City = Phoenix 
+ Month = Aug 
+ Temp. = 89.1" coords="451,94,478,98,478,94,451,90,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Jul 
+ Temp. = 91.2" title=" City = Phoenix 
+ Month = Jul 
+ Temp. = 91.2" coords="423,90,451,94,451,90,423,86,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Jul 
+ Temp. = 91.2" title=" City = Phoenix 
+ Month = Jul 
+ Temp. = 91.2" coords="395,99,422,86,424,90,397,103,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Jun 
+ Temp. = 84.6" title=" City = Phoenix 
+ Month = Jun 
+ Temp. = 84.6" coords="367,112,395,99,397,103,369,116,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Jun 
+ Temp. = 84.6" title=" City = Phoenix 
+ Month = Jun 
+ Temp. = 84.6" coords="339,129,367,112,369,116,341,133,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = May 
+ Temp. = 76.3" title=" City = Phoenix 
+ Month = May 
+ Temp. = 76.3" coords="312,146,339,129,341,133,314,150,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = May 
+ Temp. = 76.3" title=" City = Phoenix 
+ Month = May 
+ Temp. = 76.3" coords="284,163,312,146,314,150,286,167,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Apr 
+ Temp. = 67.7" title=" City = Phoenix 
+ Month = Apr 
+ Temp. = 67.7" coords="256,181,284,163,286,167,258,185,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Apr 
+ Temp. = 67.7" title=" City = Phoenix 
+ Month = Apr 
+ Temp. = 67.7" coords="229,197,256,181,258,185,231,201,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Mar 
+ Temp. = 59.7" title=" City = Phoenix 
+ Month = Mar 
+ Temp. = 59.7" coords="201,213,229,197,231,201,203,217,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Mar 
+ Temp. = 59.7" title=" City = Phoenix 
+ Month = Mar 
+ Temp. = 59.7" coords="173,222,201,213,203,217,175,226,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Feb 
+ Temp. = 55.1" title=" City = Phoenix 
+ Month = Feb 
+ Temp. = 55.1" coords="146,231,173,222,175,226,148,235,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Feb 
+ Temp. = 55.1" title=" City = Phoenix 
+ Month = Feb 
+ Temp. = 55.1" coords="118,237,146,231,148,235,120,241,"/>
+<Area shape="poly" alt=" City = Phoenix 
+ Month = Jan 
+ Temp. = 52.1" title=" City = Phoenix 
+ Month = Jan 
+ Temp. = 52.1" coords="90,244,118,237,120,241,92,248,"/>
+<Area shape="poly" alt=" Y = 32" title=" Y = 32" coords="67,326,712,326,712,328,67,328,"/>
+<Area shape="poly" alt=" X = 9.4" title=" X = 9.4" coords="555,456,555,53,557,53,557,456,"/>
+<Area shape="poly" alt=" X = 6.4" title=" X = 6.4" coords="389,456,389,53,391,53,391,456,"/>
+<Area shape="poly" alt=" X = 3.4" title=" X = 3.4" coords="223,456,223,53,225,53,225,456,"/>
+</map>
+<div  class="c">
+<img alt="The SGPlot Procedure" src="city_temperature_sas.png" style=" height: 500px; width: 800px;" border="0" usemap="#city_temperature_sas" class="c">
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
