@@ -105,8 +105,8 @@ format month mmm_fmt.;
 format temp comma5.1;
 label city='City' month='Month' temp='Temp.';
 styleattrs datacontrastcolors=(red cxc906c7 cx1C86EE);
-refline 3.4 6.4 9.4 / axis=x lineattrs=(color=gray22 pattern=34);
-refline 32 / axis=y lineattrs=(color=gray55 pattern=34) 
+refline 3.4 6.4 9.4 / axis=x lineattrs=(color=gray22 pattern=dot);
+refline 32 / axis=y lineattrs=(color=gray55 pattern=dot) 
  label="Freezing" labelloc=outside labelpos=min;
 series x=month y=temp / group=city lineattrs=(thickness=5)
  curvelabel curvelabelpos=max curvelabelloc=outside 
