@@ -89,10 +89,10 @@ my_plot <- plot_usmap(
 # manually set the colors & text labels for the 4 bucket values
 scale_fill_manual(name="population_bucket",
  values=c(
- '1'="#f7f7f7", 
- '2'="#cccccc", 
- '3'="#969696", 
- '4'="#525252"), 
+ '1'="#ffffcc", 
+ '2'="#a1dab4", 
+ '3'="#41b6c4", 
+ '4'="#225ea8"), 
  labels=c(
  '<=10,000,000',
  '10-20,000,000',
@@ -101,13 +101,13 @@ scale_fill_manual(name="population_bucket",
  na.translate=FALSE) + 
  # don't show 'NA' in the legend
 
+# move legend closer to the map
+theme(legend.position="bottom",legend.justification="center",
+ legend.margin=margin(0,0,0,0),legend.box.margin=margin(-20,0,0,0)) + 
 # control the label and text size of the legend
 guides(fill=guide_legend(title="Population Range: ")) +
 theme(legend.text=element_text(size=11)) +
 theme(legend.title=element_text(size=11)) +
-# move legend closer to the map
-theme(legend.position="bottom",legend.justification="center",
- legend.margin=margin(0,0,0,0),legend.box.margin=margin(-20,0,0,0)) + 
 
 # control the title
 ggtitle("State Population in Year 2010") +

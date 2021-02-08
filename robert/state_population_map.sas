@@ -68,7 +68,8 @@ ods graphics /
 title1 color=gray33 height=24pt "State Population in Year 2010";
 
 proc sgmap maprespdata=state_data mapdata=mapsgfk.us;
-styleattrs datacolors=(cxf7f7f7 cxcccccc cx969696 cx525252);
+/*styleattrs datacolors=(cxf7f7f7 cxcccccc cx969696 cx525252);*/
+styleattrs datacolors=(cxffffcc cxa1dab4 cx41b6c4 cx225ea8);
 choromap population_bucket / discrete mapid=statecode 
  lineattrs=(thickness=1 color=cx555555)
  tip=(statecode population_2010);
