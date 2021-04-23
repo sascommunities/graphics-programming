@@ -1,0 +1,2496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=windows-1252">
+<title>Largest Land Animals in US</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="us_largest_land_animals">
+<Area shape="poly" alt="x_line = 0.286
+y_line = 0.1632" title="x_line = 0.286
+y_line = 0.1632" coords="766.63,166.87,766.63,159.87,773.63,159.87,773.63,166.87,766.63,166.87"/>
+<Area shape="poly" alt="x_line = 0.3289
+y_line = 0.1584" title="x_line = 0.3289
+y_line = 0.1584" coords="813.07,171.98,813.07,164.98,820.07,164.98,820.07,171.98,813.07,171.98"/>
+<Area shape="poly" alt="x_line = 0.3128
+y_line = 0.1196" title="x_line = 0.3128
+y_line = 0.1196" coords="795.71,212.81,795.71,205.81,802.71,205.81,802.71,212.81,795.71,212.81"/>
+<Area shape="poly" alt="x_line = 0.3286
+y_line = 0.1111" title="x_line = 0.3286
+y_line = 0.1111" coords="812.8,221.75,812.8,214.75,819.8,214.75,819.8,221.75,812.8,221.75"/>
+<Area shape="poly" alt="x_line = 0.2821
+y_line = 0.085" title="x_line = 0.2821
+y_line = 0.085" coords="762.41,249.24,762.41,242.24,769.41,242.24,769.41,249.24,762.41,249.24"/>
+<Area shape="poly" alt="x_line = 0.3014
+y_line = 0.0842" title="x_line = 0.3014
+y_line = 0.0842" coords="783.34,250.12,783.34,243.12,790.34,243.12,790.34,250.12,783.34,250.12"/>
+<Area shape="poly" alt="x_line = 0.3037
+y_line = 0.1497" title="x_line = 0.3037
+y_line = 0.1497" coords="785.79,181.08,785.79,174.08,792.79,174.08,792.79,181.08,785.79,181.08"/>
+<Area shape="poly" alt="x_line = 0.3332
+y_line = 0.1433" title="x_line = 0.3332
+y_line = 0.1433" coords="817.71,187.9,817.71,180.9,824.71,180.9,824.71,187.9,817.71,187.9"/>
+<Area shape="poly" alt="x_line = 0.3048
+y_line = 0.1302" title="x_line = 0.3048
+y_line = 0.1302" coords="786.97,201.69,786.97,194.69,793.97,194.69,793.97,201.69,786.97,201.69"/>
+<Area shape="poly" alt="x_line = 0.3374
+y_line = 0.1281" title="x_line = 0.3374
+y_line = 0.1281" coords="822.36,203.85,822.36,196.85,829.36,196.85,829.36,203.85,822.36,203.85"/>
+<Area shape="poly" alt="x_line = 0.2549
+y_line = 0.0621" title="x_line = 0.2549
+y_line = 0.0621" coords="732.98,273.36,732.98,266.36,739.98,266.36,739.98,273.36,732.98,273.36"/>
+<Area shape="poly" alt="x_line = 0.3035
+y_line = 0.0468" title="x_line = 0.3035
+y_line = 0.0468" coords="785.59,289.52,785.59,282.52,792.59,282.52,792.59,289.52,785.59,289.52"/>
+<Area shape="poly" alt="x_line = 0.2723
+y_line = 0.0613" title="x_line = 0.2723
+y_line = 0.0613" coords="751.8,274.25,751.8,267.25,758.8,267.25,758.8,274.25,751.8,274.25"/>
+<Area shape="poly" alt="x_line = 0.2994
+y_line = 0.0639" title="x_line = 0.2994
+y_line = 0.0639" coords="781.18,271.54,781.18,264.54,788.18,264.54,788.18,271.54,781.18,271.54"/>
+<Area shape="poly" alt="x_line = 0.2975
+y_line = 0.1139" title="x_line = 0.2975
+y_line = 0.1139" coords="779.12,218.82,779.12,211.82,786.12,211.82,786.12,218.82,779.12,218.82"/>
+<Area shape="poly" alt="x_line = 0.3113
+y_line = 0.0993" title="x_line = 0.3113
+y_line = 0.0993" coords="794.06,234.19,794.06,227.19,801.06,227.19,801.06,234.19,794.06,234.19"/>
+<Area shape="poly" alt="State = Vermont
+Animal = Moose
+Weight = 1,543 lbs" title="State = Vermont
+Animal = Moose
+Weight = 1,543 lbs" coords="816.57,174.48,816.57,162.48,848.57,162.48,848.57,174.48,816.57,174.48"/>
+<Area shape="poly" alt="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" coords="816.3,224.25,816.3,212.25,863.3,212.25,863.3,224.25,816.3,224.25"/>
+<Area shape="poly" alt="State = New Jersey
+Animal = Gray Seal
+Weight = 680 lbs" title="State = New Jersey
+Animal = Gray Seal
+Weight = 680 lbs" coords="786.84,252.62,786.84,240.62,833.84,240.62,833.84,252.62,786.84,252.62"/>
+<Area shape="poly" alt="State = New Hampshire
+Animal = Moose
+Weight = 1,543 lbs" title="State = New Hampshire
+Animal = Moose
+Weight = 1,543 lbs" coords="821.21,190.4,821.21,178.4,853.21,178.4,853.21,190.4,821.21,190.4"/>
+<Area shape="poly" alt="State = Massachusetts
+Animal = Moose
+Weight = 1,543 lbs" title="State = Massachusetts
+Animal = Moose
+Weight = 1,543 lbs" coords="825.86,206.35,825.86,194.35,857.86,194.35,857.86,206.35,825.86,206.35"/>
+<Area shape="poly" alt="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" coords="789.09,292.02,789.09,280.02,836.09,280.02,836.09,292.02,789.09,292.02"/>
+<Area shape="poly" alt="State = Delaware
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Delaware
+Animal = Gray Seal
+Weight = 680 lbs" coords="784.68,274.04,784.68,262.04,831.68,262.04,831.68,274.04,784.68,274.04"/>
+<Area shape="poly" alt="State = Connecticut
+Animal = Moose
+Weight = 1,543 lbs" title="State = Connecticut
+Animal = Moose
+Weight = 1,543 lbs" coords="797.56,236.69,797.56,224.69,829.56,224.69,829.56,236.69,797.56,236.69"/>
+<Area shape="poly" alt="State = Indiana
+Animal = White-Tailed Deer
+Weight = 300 lbs" title="State = Indiana
+Animal = White-Tailed Deer
+Weight = 300 lbs" coords="615,243,620,291,619,292,621,297,612,299,613,302,607,308,605,314,600,310,596,317,593,314,589,319,582,316,582,318,577,317,577,319,576,320,575,318,576,318,575,315,577,313,576,311,578,310,582,302,579,294,581,290,577,247,581,248,586,245,615,243"/>
+<Area shape="poly" alt="State = Ohio
+Animal = Black Bear
+Weight = 551 lbs" title="State = Ohio
+Animal = Black Bear
+Weight = 551 lbs" coords="678,255,676,256,678,261,676,274,672,279,668,279,665,282,664,286,665,289,663,290,661,287,659,292,660,295,658,299,654,299,650,297,649,294,644,298,640,296,638,298,630,295,626,290,620,291,615,243,633,241,641,244,644,243,641,245,648,245,658,242,664,236,674,230,678,255"/>
+<Area shape="poly" alt="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" title="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" coords="266,510,267,511,265,511,265,510,266,510"/>
+<Area shape="poly" alt="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" title="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" coords="216,481,216,483,214,485,214,484,216,481"/>
+<Area shape="poly" alt="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" title="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" coords="261,503,263,504,263,506,261,507,259,504,260,503,261,503"/>
+<Area shape="poly" alt="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" title="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" coords="257,497,264,499,262,501,256,499,257,498,257,497"/>
+<Area shape="poly" alt="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" title="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" coords="226,476,227,479,225,484,220,480,221,478,223,476,224,477,225,476,226,476"/>
+<Area shape="poly" alt="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" title="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" coords="246,487,248,492,250,492,250,496,247,495,246,494,244,495,242,490,244,490,245,488,246,487"/>
+<Area shape="poly" alt="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" title="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" coords="266,501,268,504,271,503,275,508,269,510,268,506,265,503,265,501,266,501"/>
+<Area shape="poly" alt="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" title="State = Hawaii
+Animal = Hawaiian Monk Seal
+Weight = 600 lbs" coords="277,516,287,523,292,532,282,539,280,544,276,540,277,535,274,527,277,522,276,518,276,517,277,516"/>
+<Area shape="poly" alt="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" coords="801,210,802,211,801,210"/>
+<Area shape="poly" alt="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" coords="801,212,802,213,801,214,801,213,801,212"/>
+<Area shape="poly" alt="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" coords="800,219,801,220,800,220,800,219,800,218,800,219"/>
+<Area shape="poly" alt="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" coords="801,208,802,209,802,210,801,208"/>
+<Area shape="poly" alt="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" coords="805,212,804,213,803,209,805,212"/>
+<Area shape="poly" alt="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" coords="803,210,803,213,802,214,802,213,802,210,803,210"/>
+<Area shape="poly" alt="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Rhode Island
+Animal = Gray Seal
+Weight = 680 lbs" coords="801,208,801,209,799,207,801,216,796,217,793,205,799,204,801,208"/>
+<Area shape="poly" alt="State = New Jersey
+Animal = Gray Seal
+Weight = 680 lbs" title="State = New Jersey
+Animal = Gray Seal
+Weight = 680 lbs" coords="771,253,772,253,770,257,770,258,771,254,771,253"/>
+<Area shape="poly" alt="State = New Jersey
+Animal = Gray Seal
+Weight = 680 lbs" title="State = New Jersey
+Animal = Gray Seal
+Weight = 680 lbs" coords="769,230,768,237,767,237,767,236,765,241,770,241,769,242,771,242,770,243,771,242,770,241,770,240,771,242,771,244,770,245,771,245,772,253,771,248,770,248,771,254,770,258,767,258,769,260,766,263,767,263,764,270,763,271,763,266,759,267,752,263,751,260,759,250,761,248,753,242,752,239,754,236,752,234,756,226,769,230"/>
+<Area shape="poly" alt="State = Delaware
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Delaware
+Animal = Gray Seal
+Weight = 680 lbs" coords="753,256,751,260,752,263,758,272,761,274,763,277,761,276,762,277,761,278,763,277,763,280,754,282,748,259,750,257,753,256"/>
+<Area shape="poly" alt="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" coords="745,283,746,284,745,283"/>
+<Area shape="poly" alt="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" coords="743,273,744,275,743,274,743,277,743,275,743,273"/>
+<Area shape="poly" alt="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" coords="748,259,754,282,763,280,762,281,763,282,761,289,757,290,753,291,755,288,753,289,755,287,752,287,754,285,752,286,752,282,751,286,750,284,750,287,746,285,746,282,748,282,745,282,745,280,749,281,750,278,749,277,749,280,748,280,746,279,747,277,746,279,745,277,744,279,745,277,744,280,744,278,745,276,744,276,745,277,746,278,747,277,746,277,746,274,745,276,744,274,747,270,746,269,745,272,745,270,744,270,744,272,743,270,745,266,749,265,746,266,746,264,749,264,747,264,749,262,747,262,746,265,746,262,745,263,742,260,748,259"/>
+<Area shape="poly" alt="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" title="State = Maryland
+Animal = Gray Seal
+Weight = 680 lbs" coords="741,260,745,265,743,267,742,265,742,268,742,267,740,267,742,268,740,268,741,269,739,269,741,270,738,270,742,274,738,273,741,275,739,275,741,276,740,279,745,285,740,284,739,282,739,283,740,285,743,287,745,287,747,291,745,289,743,290,740,287,739,289,736,286,738,288,737,288,735,285,732,288,733,283,734,279,735,277,733,276,732,277,722,272,719,267,714,266,710,270,706,269,704,273,702,272,697,278,695,269,741,260"/>
+<Area shape="poly" alt="State = Arkansas
+Animal = American Alligator
+Weight = 770 lbs" title="State = Arkansas
+Animal = American Alligator
+Weight = 770 lbs" coords="553,355,554,356,552,357,553,358,550,360,551,361,551,364,549,363,549,366,548,364,547,366,548,366,547,368,549,371,545,374,545,376,543,376,543,379,542,378,543,379,541,380,542,384,536,388,538,389,536,390,537,391,536,393,534,393,536,396,533,398,535,399,532,399,534,400,532,403,535,403,534,411,488,412,488,402,483,403,481,401,481,368,478,348,546,346,547,349,543,355,553,355"/>
+<Area shape="poly" alt="State = Louisiana
+Animal = American Alligator
+Weight = 770 lbs" title="State = Louisiana
+Animal = American Alligator
+Weight = 770 lbs" coords="525,473,528,474,527,476,523,475,523,474,524,474,524,473,524,474,525,473"/>
+<Area shape="poly" alt="State = Louisiana
+Animal = American Alligator
+Weight = 770 lbs" title="State = Louisiana
+Animal = American Alligator
+Weight = 770 lbs" coords="534,411,533,413,535,411,535,413,534,416,536,416,534,418,536,418,535,419,537,420,535,421,539,422,537,426,534,426,537,427,535,428,536,429,533,433,532,432,533,434,529,437,531,437,529,439,530,441,529,441,530,443,527,444,529,447,528,448,559,446,557,453,562,461,552,458,548,464,554,465,560,462,560,464,558,465,561,467,565,464,564,465,567,467,565,468,568,469,565,469,564,467,566,470,562,469,564,471,560,472,564,475,563,476,568,476,569,479,570,477,569,479,566,477,568,479,566,480,564,477,554,474,553,471,552,475,555,475,556,478,554,477,556,480,553,482,550,478,550,479,549,477,546,478,542,483,541,481,535,480,534,479,536,478,537,480,538,479,535,475,531,475,529,471,525,472,526,470,520,471,523,474,518,476,503,472,493,473,492,471,494,467,494,458,498,449,492,439,492,435,489,431,488,412,534,411"/>
+<Area shape="poly" alt="State = Mississippi
+Animal = American Alligator
+Weight = 770 lbs" title="State = Mississippi
+Animal = American Alligator
+Weight = 770 lbs" coords="577,371,579,373,578,429,581,456,580,458,573,456,567,459,566,458,564,461,562,461,557,453,559,446,528,448,529,447,527,444,530,443,529,441,530,441,529,439,531,437,529,437,533,434,532,432,533,433,536,429,535,428,537,427,534,426,537,426,539,422,535,421,537,420,535,419,536,418,534,418,536,416,534,416,535,413,535,411,533,413,534,411,535,403,532,403,534,400,532,399,535,399,533,398,536,396,534,393,536,393,537,391,536,390,538,389,536,388,542,384,541,380,543,379,542,378,543,379,543,376,545,376,545,374,558,373,577,371"/>
+<Area shape="poly" alt="State = Alabama
+Animal = American Alligator
+Weight = 770 lbs" title="State = Alabama
+Animal = American Alligator
+Weight = 770 lbs" coords="633,436,635,440,593,444,593,447,597,450,596,453,596,456,594,456,595,457,587,459,592,457,589,455,587,450,586,457,581,456,578,429,579,373,577,371,617,368,628,406,633,414,632,416,634,417,632,419,631,424,633,430,633,436"/>
+<Area shape="poly" alt="State = Georgia
+Animal = American Alligator
+Weight = 770 lbs" title="State = Georgia
+Animal = American Alligator
+Weight = 770 lbs" coords="633,436,633,430,631,424,632,419,634,417,632,416,633,414,628,406,617,368,637,366,655,363,653,369,660,372,667,381,686,396,688,403,692,405,694,411,698,412,697,416,694,415,696,417,695,419,693,418,695,420,692,422,695,423,694,425,693,424,694,428,690,430,693,431,692,432,691,432,691,433,689,433,692,434,693,433,692,438,684,438,684,445,682,446,681,442,638,445,635,440,633,436"/>
+<Area shape="poly" alt="State = South Carolina
+Animal = American Alligator
+Weight = 770 lbs" title="State = South Carolina
+Animal = American Alligator
+Weight = 770 lbs" coords="728,373,723,378,721,385,719,384,721,387,718,388,720,388,719,391,715,391,716,393,712,397,712,394,711,396,710,395,712,397,710,400,705,403,700,403,704,405,701,408,700,405,700,407,698,404,699,407,701,409,699,411,698,409,698,412,694,411,692,405,688,403,686,396,667,381,660,372,653,369,655,363,666,358,687,356,687,358,688,357,691,359,691,361,708,359,728,373"/>
+<Area shape="poly" alt="State = Pennsylvania
+Animal = Elk
+Weight = 1,096 lbs" title="State = Pennsylvania
+Animal = Elk
+Weight = 1,096 lbs" coords="683,223,684,228,745,217,749,219,752,225,756,226,752,234,754,236,752,239,753,242,761,248,759,250,753,256,750,257,748,259,742,260,739,258,741,260,695,269,681,271,678,255,674,230,683,223"/>
+<Area shape="poly" alt="State = West Virginia
+Animal = Elk
+Weight = 1,096 lbs" title="State = West Virginia
+Animal = Elk
+Weight = 1,096 lbs" coords="695,269,697,278,702,272,704,273,706,269,710,270,714,266,719,267,722,272,721,275,712,271,713,276,707,285,705,284,702,292,697,290,696,296,690,308,691,309,691,311,688,313,683,314,682,316,678,318,675,317,671,320,667,318,666,314,661,313,657,308,654,304,654,299,658,299,660,295,659,292,661,287,663,290,665,289,664,286,665,282,668,279,672,279,676,274,678,261,676,256,678,255,681,271,695,269"/>
+<Area shape="poly" alt="State = Virginia
+Animal = Elk
+Weight = 1,096 lbs" title="State = Virginia
+Animal = Elk
+Weight = 1,096 lbs" coords="757,290,761,289,759,299,758,298,756,299,756,307,754,303,756,298,754,299,756,295,755,294,757,294,757,292,756,291,757,290"/>
+<Area shape="poly" alt="State = Virginia
+Animal = Elk
+Weight = 1,096 lbs" title="State = Virginia
+Animal = Elk
+Weight = 1,096 lbs" coords="722,272,732,277,734,279,733,283,731,286,732,288,735,287,737,290,742,290,743,293,749,294,747,295,748,296,749,299,748,299,738,293,745,299,749,300,747,301,750,302,750,304,747,302,747,304,748,304,747,305,749,305,747,306,742,302,746,306,749,306,748,308,751,308,749,308,751,308,751,310,749,311,745,307,740,307,745,308,746,311,749,311,748,314,750,311,750,313,753,313,751,311,754,312,756,310,759,317,757,314,757,317,673,331,643,335,651,331,656,324,666,314,667,318,671,320,675,317,678,318,682,316,683,314,688,313,691,311,691,309,690,308,696,296,697,290,702,292,705,284,707,285,713,276,712,271,721,275,722,272"/>
+<Area shape="poly" alt="State = Kentucky
+Animal = Elk
+Weight = 1,096 lbs" title="State = Kentucky
+Animal = Elk
+Weight = 1,096 lbs" coords="654,299,654,304,657,308,661,313,666,314,656,324,651,331,643,335,577,340,577,344,557,345,557,343,559,344,560,342,560,336,560,334,562,331,570,333,570,328,576,325,574,322,576,320,577,319,577,317,582,318,582,316,589,319,593,314,596,317,600,310,605,314,607,308,613,302,612,299,621,297,619,292,620,291,626,290,630,295,638,298,640,296,644,298,649,294,650,297,654,299"/>
+<Area shape="poly" alt="State = Tennessee
+Animal = Elk
+Weight = 1,096 lbs" title="State = Tennessee
+Animal = Elk
+Weight = 1,096 lbs" coords="643,335,673,331,673,336,671,336,669,340,664,341,661,345,660,343,656,346,655,349,642,355,640,360,637,361,637,366,617,368,577,371,558,373,545,374,549,371,547,368,548,366,547,366,548,364,549,366,549,363,551,364,551,361,550,360,553,358,552,357,554,356,553,355,555,352,553,350,555,350,554,348,556,348,555,345,556,345,557,345,577,344,577,340,643,335"/>
+<Area shape="poly" alt="State = North Carolina
+Animal = Elk
+Weight = 1,096 lbs" title="State = North Carolina
+Animal = Elk
+Weight = 1,096 lbs" coords="759,317,767,330,763,325,759,318,759,317"/>
+<Area shape="poly" alt="State = North Carolina
+Animal = Elk
+Weight = 1,096 lbs" title="State = North Carolina
+Animal = Elk
+Weight = 1,096 lbs" coords="673,331,757,317,762,325,759,321,760,324,755,322,758,325,752,325,755,326,751,329,749,328,747,323,749,330,759,327,758,331,760,333,758,333,760,334,760,329,762,329,762,327,764,329,765,334,762,333,760,340,756,340,755,338,754,339,753,338,754,336,753,336,750,338,753,340,745,339,752,341,751,342,755,342,752,345,755,344,751,348,746,345,746,347,747,346,752,350,754,347,756,349,756,347,759,348,757,352,755,350,755,352,754,351,753,352,754,352,748,354,747,353,748,354,745,357,744,357,745,356,744,354,743,354,744,356,743,356,744,358,739,363,738,372,736,365,737,370,728,373,708,359,691,361,691,359,688,357,687,358,687,356,666,358,655,363,637,366,637,361,640,360,642,355,655,349,656,346,660,343,661,345,664,341,669,340,671,336,673,336,673,331"/>
+<Area shape="poly" alt="State = Connecticut
+Animal = Moose
+Weight = 1,543 lbs" title="State = Connecticut
+Animal = Moose
+Weight = 1,543 lbs" coords="793,205,796,217,793,219,792,215,792,219,781,222,772,230,771,228,774,225,770,210,793,205"/>
+<Area shape="poly" alt="State = Massachusetts
+Animal = Moose
+Weight = 1,543 lbs" title="State = Massachusetts
+Animal = Moose
+Weight = 1,543 lbs" coords="821,211,822,212,818,213,821,212,820,212,820,210,821,211"/>
+<Area shape="poly" alt="State = Massachusetts
+Animal = Moose
+Weight = 1,543 lbs" title="State = Massachusetts
+Animal = Moose
+Weight = 1,543 lbs" coords="812,211,815,212,811,214,809,214,811,214,811,212,812,211"/>
+<Area shape="poly" alt="State = Massachusetts
+Animal = Moose
+Weight = 1,543 lbs" title="State = Massachusetts
+Animal = Moose
+Weight = 1,543 lbs" coords="802,187,802,189,805,191,802,193,804,193,802,195,803,196,801,196,802,198,806,197,809,201,808,202,814,206,819,203,816,199,814,199,816,198,819,201,820,204,819,203,820,205,814,207,811,210,811,206,810,207,809,206,809,208,808,210,807,208,807,211,805,212,805,210,805,212,803,209,804,206,802,209,801,208,799,204,793,205,770,210,770,197,781,195,797,191,802,187"/>
+<Area shape="poly" alt="State = Maine
+Animal = Moose
+Weight = 1,543 lbs" title="State = Maine
+Animal = Moose
+Weight = 1,543 lbs" coords="827,150,830,152,827,151,828,154,826,153,827,150"/>
+<Area shape="poly" alt="State = Maine
+Animal = Moose
+Weight = 1,543 lbs" title="State = Maine
+Animal = Moose
+Weight = 1,543 lbs" coords="801,180,797,178,787,144,788,143,790,145,790,141,792,141,791,139,795,131,793,126,795,121,794,116,800,100,802,100,803,103,805,104,813,98,820,102,827,126,832,126,833,132,836,134,838,133,842,136,839,137,840,139,841,137,843,138,840,142,837,141,838,144,836,143,836,145,835,147,833,145,833,149,832,147,832,149,831,148,832,149,831,151,828,147,827,148,828,149,827,148,828,149,826,151,824,150,826,151,824,151,826,154,822,153,822,154,821,154,821,152,822,152,822,151,821,153,821,149,819,148,821,151,818,152,820,159,818,162,818,159,817,162,815,160,815,165,813,161,814,166,812,164,812,165,812,163,811,165,812,167,810,165,811,168,810,165,808,169,809,166,807,167,805,171,807,172,805,173,803,182,801,180"/>
+<Area shape="poly" alt="State = New Hampshire
+Animal = Moose
+Weight = 1,543 lbs" title="State = New Hampshire
+Animal = Moose
+Weight = 1,543 lbs" coords="787,144,797,178,801,180,800,184,800,182,803,183,802,187,797,191,781,195,779,193,780,190,778,179,780,169,779,165,784,160,782,156,783,151,783,147,787,144"/>
+<Area shape="poly" alt="State = Vermont
+Animal = Moose
+Weight = 1,543 lbs" title="State = Vermont
+Animal = Moose
+Weight = 1,543 lbs" coords="783,151,782,156,784,160,779,165,780,169,778,179,780,190,779,193,781,195,770,197,767,183,766,181,764,182,764,179,762,174,762,167,760,164,759,157,783,151"/>
+<Area shape="poly" alt="State = New York
+Animal = Moose
+Weight = 1,543 lbs" title="State = New York
+Animal = Moose
+Weight = 1,543 lbs" coords="791,222,787,228,797,222,789,229,770,239,773,236,769,237,772,232,776,231,775,230,786,227,790,223,790,222,791,222"/>
+<Area shape="poly" alt="State = New York
+Animal = Moose
+Weight = 1,543 lbs" title="State = New York
+Animal = Moose
+Weight = 1,543 lbs" coords="759,157,760,164,762,167,762,174,764,179,764,182,766,181,767,183,770,197,770,210,774,225,771,228,772,230,769,234,769,228,766,225,769,230,756,226,752,225,749,219,745,217,684,228,683,223,694,212,690,207,690,204,702,199,707,199,711,201,713,199,719,199,727,191,727,189,725,186,728,183,726,184,727,182,725,182,724,184,723,182,729,176,734,166,739,161,741,161,759,157"/>
+<Area shape="poly" alt="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" title="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" coords="612,154,613,155,612,156,614,158,611,156,612,154"/>
+<Area shape="poly" alt="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" title="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" coords="620,161,623,163,623,164,618,164,620,163,619,162,619,161,620,161"/>
+<Area shape="poly" alt="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" title="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" coords="555,130,549,136,545,137,545,135,552,131,553,131,554,130,555,130"/>
+<Area shape="poly" alt="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" title="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" coords="570,185,568,183,569,180,566,181,567,175,562,173,562,171,535,165,534,162,531,161,549,152,556,145,562,142,565,143,562,144,559,147,556,152,556,156,560,152,558,154,564,153,571,159,576,158,581,160,586,155,602,151,602,157,607,157,611,155,613,159,612,161,615,161,617,164,607,164,606,168,603,165,596,164,594,167,586,168,582,175,581,173,583,169,580,170,578,174,577,169,570,185"/>
+<Area shape="poly" alt="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" title="State = Michigan
+Animal = Moose
+Weight = 1,543 lbs" coords="633,241,615,243,586,245,589,242,593,229,592,221,587,210,588,207,587,203,589,197,589,191,597,180,597,187,598,189,599,184,599,189,600,185,599,179,605,176,603,175,602,173,604,170,602,170,606,169,624,175,628,180,626,181,629,186,629,193,626,195,626,198,622,201,623,206,626,207,630,201,629,201,634,197,638,198,640,202,645,216,644,222,640,223,640,227,637,230,637,235,633,241"/>
+<Area shape="poly" alt="State = Wisconsin
+Animal = Moose
+Weight = 1,543 lbs" title="State = Wisconsin
+Animal = Moose
+Weight = 1,543 lbs" coords="531,161,534,162,535,165,562,171,562,173,567,175,566,181,569,180,568,183,570,185,566,192,565,195,566,196,570,190,574,190,574,187,577,181,578,182,573,195,573,201,570,206,571,211,569,219,572,228,572,233,532,235,531,233,526,231,524,225,526,222,524,220,523,217,523,212,520,208,501,195,501,186,502,183,499,180,499,178,507,171,506,160,508,159,513,159,525,154,526,155,524,161,526,159,531,161"/>
+<Area shape="poly" alt="State = Nevada
+Animal = Moose
+Weight = 1,543 lbs" title="State = Nevada
+Animal = Moose
+Weight = 1,543 lbs" coords="206,223,188,314,185,328,183,331,180,328,174,328,174,345,172,348,111,259,125,205,165,215,206,223"/>
+<Area shape="poly" alt="State = Florida
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Florida
+Animal = American Bison
+Weight = 2,599 lbs" coords="635,440,638,445,681,442,682,446,684,445,684,438,692,438,695,443,691,444,690,449,691,451,694,455,692,459,692,460,693,461,693,462,693,464,696,465,692,460,694,455,691,451,691,446,695,443,698,453,706,467,706,466,713,474,715,476,713,478,713,474,712,478,709,474,710,472,712,473,709,470,710,472,708,471,710,475,724,498,722,498,725,499,728,505,729,521,726,534,727,534,728,532,727,536,724,540,727,535,726,534,726,536,724,534,714,537,713,534,718,535,713,533,710,528,712,527,701,524,698,516,695,516,699,511,695,515,693,508,694,506,690,507,692,511,687,506,681,499,684,499,682,497,686,493,685,490,683,493,682,490,680,489,679,491,682,492,681,495,678,492,680,475,676,473,677,473,675,469,671,469,671,466,669,467,659,457,650,454,646,457,648,459,632,465,632,464,631,464,631,462,632,465,632,462,626,457,631,458,625,456,627,454,623,454,625,457,612,454,619,453,617,451,612,451,611,453,601,456,606,453,603,451,603,453,601,451,601,454,598,455,600,456,596,457,598,454,596,453,597,450,593,447,593,444,635,440"/>
+<Area shape="poly" alt="State = Oklahoma
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Oklahoma
+Animal = American Bison
+Weight = 2,599 lbs" coords="478,339,478,348,481,368,481,401,469,395,468,397,457,397,452,400,448,396,445,398,442,395,440,399,438,396,435,397,431,394,427,396,424,391,419,393,417,391,408,390,405,385,404,386,400,386,395,383,397,347,352,344,352,335,367,336,478,339"/>
+<Area shape="poly" alt="State = Kansas
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Kansas
+Animal = American Bison
+Weight = 2,599 lbs" coords="467,283,473,285,474,288,470,292,474,295,475,298,478,299,478,339,367,336,370,281,467,283"/>
+<Area shape="poly" alt="State = Nebraska
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Nebraska
+Animal = American Bison
+Weight = 2,599 lbs" coords="451,237,453,243,456,247,456,255,459,257,460,267,459,270,461,273,463,273,462,278,467,283,370,281,372,262,343,260,346,223,423,228,429,232,432,230,440,231,451,237"/>
+<Area shape="poly" alt="State = South Dakota
+Animal = American Bison
+Weight = 2,599 lbs" title="State = South Dakota
+Animal = American Bison
+Weight = 2,599 lbs" coords="450,174,446,180,452,186,451,219,449,219,450,223,452,226,449,233,451,237,440,231,432,230,429,232,423,228,346,223,350,187,351,170,450,174"/>
+<Area shape="poly" alt="State = Texas
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Texas
+Animal = American Bison
+Weight = 2,599 lbs" coords="481,401,483,403,488,402,488,412,489,431,492,435,492,439,498,449,494,458,494,467,491,471,493,474,482,477,477,476,478,472,475,474,472,471,474,474,472,476,477,480,472,483,470,482,471,483,469,487,472,485,467,489,458,492,458,493,452,497,458,493,454,494,454,491,451,493,450,490,451,493,449,494,449,492,446,491,446,494,449,495,447,496,451,496,446,499,444,496,444,500,441,502,442,500,441,502,440,501,437,502,438,502,437,502,438,502,437,502,437,503,436,503,437,505,440,503,437,508,432,507,436,510,433,517,431,517,433,517,432,514,431,515,431,513,431,515,432,515,430,517,428,515,429,517,427,518,433,518,430,525,432,527,432,532,434,534,434,537,436,540,433,542,437,540,437,542,433,544,428,540,419,540,409,534,404,533,399,521,398,511,392,507,391,504,385,498,380,483,371,474,368,470,354,467,352,469,347,469,344,478,339,482,336,482,317,468,312,450,305,445,289,426,288,422,344,427,352,344,397,347,395,383,400,386,404,386,405,385,408,390,417,391,419,393,424,391,427,396,431,394,435,397,438,396,440,399,442,395,445,398,448,396,452,400,457,397,468,397,469,395,481,401"/>
+<Area shape="poly" alt="State = Illinois
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Illinois
+Animal = American Bison
+Weight = 2,599 lbs" coords="572,233,572,237,577,247,581,290,579,294,582,302,578,310,576,311,577,313,575,315,576,318,575,318,576,320,574,322,576,325,570,328,570,333,562,331,560,334,560,336,557,335,554,331,556,329,554,323,541,314,544,302,539,300,536,302,534,295,524,287,522,280,523,275,523,272,527,269,529,264,529,261,527,259,528,256,536,253,539,248,539,242,532,235,572,233"/>
+<Area shape="poly" alt="State = Missouri
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Missouri
+Animal = American Bison
+Weight = 2,599 lbs" coords="523,275,522,280,524,287,534,295,536,302,539,300,544,302,541,314,554,323,556,329,554,331,557,335,560,336,560,342,559,344,557,343,557,345,556,345,555,344,555,345,556,348,554,348,555,350,553,350,555,352,553,355,543,355,547,349,546,346,478,348,478,339,478,299,475,298,474,295,470,292,474,288,473,285,467,283,462,278,463,273,461,273,519,271,523,275"/>
+<Area shape="poly" alt="State = Iowa
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Iowa
+Animal = American Bison
+Weight = 2,599 lbs" coords="523,217,524,220,526,222,524,225,526,231,531,233,532,235,539,242,539,248,536,253,528,256,527,259,529,261,529,264,527,269,523,272,523,275,519,271,461,273,459,270,460,267,459,257,456,255,456,247,453,243,451,237,449,233,452,226,450,223,449,219,451,219,523,217"/>
+<Area shape="poly" alt="State = Colorado
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Colorado
+Animal = American Bison
+Weight = 2,599 lbs" coords="343,260,372,262,370,281,367,336,352,335,262,326,273,252,343,260"/>
+<Area shape="poly" alt="State = Wyoming
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Wyoming
+Animal = American Bison
+Weight = 2,599 lbs" coords="350,187,346,223,343,260,273,252,245,248,248,230,255,185,257,176"/>
+<Area shape="poly" alt="State = New Mexico
+Animal = American Bison
+Weight = 2,599 lbs" title="State = New Mexico
+Animal = American Bison
+Weight = 2,599 lbs" coords="352,335,352,344,344,427,288,422,289,426,262,423,261,431,247,429,262,326,352,335"/>
+<Area shape="poly" alt="State = Arizona
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Arizona
+Animal = American Bison
+Weight = 2,599 lbs" coords="262,326,247,429,215,424,160,393,162,389,167,388,167,384,164,383,164,379,168,375,170,368,177,363,174,359,172,348,174,345,174,328,180,328,183,331,185,328,188,314,262,326"/>
+<Area shape="poly" alt="State = Utah
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Utah
+Animal = American Bison
+Weight = 2,599 lbs" coords="248,230,245,248,273,252,262,326,188,314,206,223,209,224,224,226,232,228,234,228,241,229,242,229,243,229,244,229,247,230,248,230"/>
+<Area shape="poly" alt="State = Minnesota
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Minnesota
+Animal = American Bison
+Weight = 2,599 lbs" coords="508,159,506,160,507,171,499,178,499,180,502,183,501,186,501,195,520,208,523,212,523,217,451,219,452,186,446,180,450,174,450,167,447,162,447,144,443,134,443,126,444,124,442,119,469,119,468,112,471,112,473,113,475,123,485,125,486,127,497,125,501,126,500,128,503,129,504,132,505,129,508,129,515,135,523,131,525,133,541,134,525,142,508,159"/>
+<Area shape="poly" alt="State = North Dakota
+Animal = American Bison
+Weight = 2,599 lbs" title="State = North Dakota
+Animal = American Bison
+Weight = 2,599 lbs" coords="442,119,444,124,443,126,443,134,447,144,447,162,450,167,450,174,351,170,356,114,442,119"/>
+<Area shape="poly" alt="State = Montana
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Montana
+Animal = American Bison
+Weight = 2,599 lbs" coords="356,114,351,170,350,187,257,176,255,185,251,179,249,181,250,183,239,181,237,183,232,181,231,183,229,181,228,175,224,173,225,169,221,157,215,160,212,157,213,154,216,152,215,147,219,139,214,137,209,125,204,121,206,120,204,119,205,116,202,111,206,92,356,114"/>
+<Area shape="poly" alt="State = Idaho
+Animal = American Bison
+Weight = 2,599 lbs" title="State = Idaho
+Animal = American Bison
+Weight = 2,599 lbs" coords="206,92,202,111,205,116,204,119,206,120,204,121,209,125,214,137,219,139,215,147,216,152,213,154,212,157,215,160,221,157,225,169,224,173,228,175,229,181,231,183,232,181,237,183,239,181,250,183,249,181,251,179,255,185,248,230,247,230,244,229,243,229,242,229,241,229,234,228,232,228,224,226,209,224,206,223,165,215,173,182,176,176,173,173,172,171,188,152,183,143,183,137,194,90,206,92"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="207,519,209,521,209,524,209,525,209,523,209,524,208,524,208,523,208,522,208,523,208,524,207,523,208,525,206,524,207,522,206,522,207,521,206,521,207,521,206,521,207,520,206,520,207,519"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="195,514,199,514,199,515,198,515,199,515,199,516,198,514,198,515,197,515,198,516,199,516,199,517,199,518,197,519,196,515,196,516,196,515,195,514"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="83,487,83,488,84,489,84,490,83,490,83,491,82,492,81,491,81,490,80,490,82,489,81,488,82,488,83,487"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="78,534,79,534,79,536,80,538,79,537,78,537,75,537,73,538,72,536,73,536,75,534,76,535,76,534,77,534,78,534"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="64,539,64,540,66,539,66,540,64,541,65,541,66,542,64,542,64,543,64,542,64,543,63,542,63,543,62,543,60,544,58,543,62,542,62,541,63,542,63,541,64,541,62,540,63,539,64,539"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="77,490,77,491,79,491,78,493,78,494,76,494,76,495,73,492,72,490,74,491,75,490,77,490"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="186,507,187,507,186,508,187,509,186,509,187,509,188,507,189,508,190,509,189,509,190,509,189,510,186,509,188,510,189,510,188,510,190,510,191,512,190,511,191,512,187,511,187,512,188,512,188,513,187,514,186,513,187,513,186,512,187,512,184,511,185,510,184,509,186,510,184,508,185,508,184,508,184,507,185,508,185,509,185,508,185,507,186,508,185,507,186,507"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="189,512,189,513,190,512,190,513,191,513,190,513,191,513,191,514,192,516,192,517,193,517,193,518,193,519,193,518,193,519,193,520,193,521,194,520,194,522,192,519,192,517,191,519,192,518,191,518,191,517,190,518,190,516,191,516,189,515,190,515,189,515,189,514,188,514,189,513,188,513,188,512,189,512"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="189,505,190,506,192,506,195,510,192,507,192,509,194,510,195,511,194,511,195,512,193,512,194,513,194,514,193,513,194,514,192,515,192,513,193,513,192,512,193,512,192,511,192,512,193,511,192,511,191,511,190,507,190,506,190,507,189,505"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="66,459,66,460,68,461,70,461,70,462,70,463,74,465,74,466,72,466,70,467,70,466,70,465,70,466,68,463,67,462,65,462,65,461,66,458,66,459,66,458,66,459"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="198,519,199,519,200,520,200,521,202,521,203,522,203,523,205,524,203,523,203,524,203,526,204,524,204,525,204,526,204,525,205,525,204,526,205,526,205,527,205,526,205,527,206,525,206,527,205,527,206,527,205,528,206,528,206,527,206,528,207,528,206,528,207,529,206,529,207,529,207,530,206,530,206,529,205,529,206,529,205,528,205,527,205,529,204,528,204,527,204,528,204,527,203,526,204,526,203,526,204,527,203,526,202,527,202,526,201,527,201,526,202,526,201,525,202,524,200,524,200,522,199,520,198,520,197,519,198,519,197,519,198,519"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="121,516,123,517,123,518,124,517,125,518,124,518,124,519,125,519,125,521,122,520,122,521,123,520,123,522,121,521,121,522,122,522,120,522,120,523,119,523,120,524,118,526,117,526,119,524,118,524,119,523,118,524,118,523,116,523,117,523,118,523,117,525,117,524,116,524,116,522,115,521,116,519,118,519,118,520,119,520,120,522,119,519,119,520,119,519,120,519,119,518,119,517,120,517,120,519,120,518,121,518,120,517,121,518,121,517,122,517,121,516"/>
+<Area shape="poly" alt="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Alaska
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="117,409,117,410,119,412,118,413,118,414,120,413,120,412,120,411,121,413,122,414,124,413,126,414,126,415,126,414,127,414,126,416,127,416,126,416,128,416,127,417,129,418,130,417,131,417,130,419,131,418,133,417,135,418,136,417,136,418,137,418,137,419,142,419,144,420,149,418,154,422,155,421,165,495,168,495,169,494,171,493,171,495,173,496,174,497,178,501,179,503,181,501,182,500,182,498,182,497,185,495,186,495,187,496,187,497,187,498,188,498,191,501,194,503,201,511,201,512,202,512,202,513,203,514,204,515,205,515,210,516,210,517,211,516,212,518,212,520,214,522,213,527,212,526,212,527,212,526,212,527,211,526,212,527,211,527,211,526,210,526,211,525,212,524,211,525,212,523,211,525,211,524,210,525,210,524,211,523,210,524,210,522,210,521,210,520,210,522,209,521,210,520,209,521,209,520,208,519,208,518,206,520,205,520,206,520,205,521,206,521,205,522,206,522,206,523,205,522,206,523,204,523,204,522,205,522,204,521,205,520,204,518,206,517,204,518,204,517,203,517,202,516,202,515,201,515,201,514,201,515,199,514,199,513,199,512,199,513,198,513,198,512,197,513,196,513,196,512,197,512,197,511,198,511,196,511,197,510,196,511,196,510,196,509,195,510,195,509,198,509,197,509,197,508,197,509,195,508,195,507,197,507,195,507,194,508,194,507,194,506,194,505,193,507,193,506,192,504,193,502,192,503,192,506,189,505,188,503,189,503,188,501,188,502,187,502,186,499,186,497,186,498,185,498,186,500,185,499,186,500,186,501,188,503,187,503,189,505,189,506,188,506,187,504,187,506,185,506,185,504,184,503,185,502,184,502,183,501,184,501,183,502,184,502,184,503,183,503,182,502,181,502,182,503,180,502,181,503,180,503,181,503,182,503,183,503,182,503,182,504,183,504,183,505,183,504,184,505,185,505,185,506,184,507,183,506,184,507,183,507,183,508,182,507,179,506,179,505,179,506,176,503,175,502,174,502,175,502,170,500,171,499,170,497,170,496,171,497,172,500,172,499,171,498,173,498,170,496,169,498,168,497,169,498,168,499,164,498,164,497,164,496,164,497,163,496,164,497,163,498,159,497,154,499,154,498,153,498,154,497,151,497,152,495,151,495,151,494,149,496,147,496,148,494,146,495,147,494,147,493,145,494,147,493,145,493,144,492,145,492,144,492,145,491,145,492,145,491,146,491,145,490,144,492,143,491,143,492,142,492,142,493,142,492,142,493,142,491,141,491,141,492,141,493,141,492,141,493,140,493,141,490,140,492,139,491,139,492,139,491,139,492,139,493,139,494,138,494,139,494,138,495,139,494,139,495,139,494,139,495,138,496,138,497,139,496,139,497,140,495,140,496,139,498,139,499,140,498,139,499,139,500,138,500,138,501,138,500,137,501,137,500,136,501,137,500,136,501,136,500,135,499,135,500,135,502,135,503,135,502,135,501,134,501,134,502,134,501,134,503,133,502,133,503,133,504,132,505,132,504,132,502,132,505,131,504,132,503,131,504,131,505,130,506,130,507,130,506,129,506,128,506,127,507,127,506,126,506,126,505,127,506,126,505,129,505,128,504,129,504,128,504,129,504,130,502,128,503,127,502,129,497,129,496,128,495,132,492,132,493,134,492,137,494,133,491,134,489,136,488,136,487,134,489,133,490,131,490,132,489,131,489,129,492,127,493,127,495,127,494,125,496,125,497,124,498,122,498,124,500,124,501,122,501,123,502,122,503,121,503,121,502,121,503,120,503,120,504,119,504,120,505,118,505,119,505,118,507,118,508,120,507,121,509,120,511,119,511,120,511,120,510,120,511,119,511,119,512,117,512,119,513,117,513,117,514,117,513,117,514,118,514,117,514,118,515,117,515,117,514,117,515,116,515,116,516,115,516,115,514,115,515,115,514,114,514,114,516,113,517,113,518,112,517,112,518,112,519,110,519,110,520,110,519,108,521,109,521,109,522,108,523,107,523,107,524,107,523,106,525,105,524,105,525,104,525,104,526,103,525,102,526,103,526,103,527,101,527,99,528,100,527,101,528,100,528,101,529,102,528,101,529,100,529,100,530,100,529,100,530,99,530,100,529,99,529,99,530,98,529,98,531,97,530,96,531,96,530,95,533,95,532,95,531,96,530,95,530,95,531,93,531,93,532,92,532,91,533,91,532,90,532,91,533,90,532,88,534,87,533,87,532,88,532,89,532,88,531,87,531,86,534,85,534,85,535,84,535,85,534,84,535,83,535,83,534,84,535,83,533,82,533,83,534,83,536,81,536,80,534,80,535,81,535,79,536,80,535,79,535,80,535,80,534,79,534,81,533,81,534,82,534,82,533,83,532,87,529,90,529,90,531,91,531,91,530,93,531,92,531,93,530,92,530,93,527,99,523,99,524,100,524,100,522,104,518,104,519,105,519,104,517,105,513,106,513,105,513,105,512,108,509,108,508,109,507,108,507,109,506,107,508,103,510,102,508,103,507,102,506,104,507,102,506,103,506,102,507,101,507,101,508,101,510,101,511,100,511,99,508,98,507,98,506,97,508,96,506,96,505,90,508,90,507,89,507,91,506,90,506,90,504,92,504,90,504,90,503,90,502,90,501,91,501,90,496,91,495,90,495,91,495,90,494,92,491,91,491,91,492,90,493,89,494,90,495,89,496,86,497,83,496,83,495,82,493,83,491,85,489,86,489,85,491,87,490,86,489,81,487,81,486,83,486,82,486,81,485,82,485,81,485,81,484,81,485,81,486,80,485,80,484,79,483,80,482,79,482,79,481,79,480,79,481,81,481,80,479,81,479,81,478,84,475,86,476,85,475,86,473,85,474,85,473,86,473,85,472,86,471,87,471,86,470,87,470,89,470,89,471,89,472,91,472,93,470,94,469,95,469,94,470,98,470,99,467,99,464,98,462,98,461,99,462,100,461,100,459,99,458,100,458,99,458,98,459,97,459,96,460,94,462,94,461,93,459,93,460,93,461,91,459,88,459,88,460,87,460,88,460,87,460,83,457,83,456,84,455,83,454,83,453,83,452,83,453,85,452,85,453,82,450,80,448,81,447,80,448,82,448,82,447,84,447,84,446,86,445,89,446,87,445,88,445,90,445,92,443,94,444,93,446,92,447,93,447,93,448,96,448,96,449,98,449,98,450,100,448,101,448,100,449,101,449,101,448,101,447,99,446,99,447,99,445,97,442,98,442,99,443,99,444,100,446,101,446,102,447,104,447,103,446,104,445,100,445,99,444,100,442,97,441,95,440,95,438,95,437,95,438,95,437,95,438,94,435,90,429,88,428,90,428,90,427,91,424,96,425,98,424,99,422,100,421,100,420,100,419,101,419,102,418,103,416,104,416,103,417,108,414,108,415,107,416,108,416,107,417,108,416,109,418,108,416,110,415,109,415,109,414,108,414,109,414,111,412,110,413,110,414,111,414,110,413,111,413,114,413,115,412,116,410,117,409"/>
+<Area shape="poly" alt="State = California
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = California
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="125,205,111,259,172,348,174,359,177,363,170,368,168,375,164,379,164,383,167,384,167,388,162,389,124,385,122,370,115,359,110,359,109,353,100,350,95,342,82,339,80,336,83,325,80,323,80,319,76,313,74,307,70,300,70,294,72,294,74,291,73,288,70,287,68,283,67,275,69,271,70,271,70,275,75,279,71,268,74,267,75,268,81,270,82,269,83,271,84,269,80,269,83,267,80,269,78,267,75,268,74,264,74,267,71,265,70,269,69,270,64,264,63,265,64,261,66,264,65,261,58,246,61,229,56,220,57,216,64,207,67,199,66,193,68,189,125,205"/>
+<Area shape="poly" alt="State = Oregon
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Oregon
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="104,120,107,123,107,131,112,134,119,133,127,137,134,136,137,138,157,137,183,143,188,152,172,171,173,173,176,176,173,182,165,215,125,205,68,189,67,187,69,178,68,173,73,165,76,165,76,164,74,165,84,148,83,146,85,144,84,144,89,135,90,129,91,128,92,129,91,128,93,126,92,124,94,120,94,116,104,120"/>
+<Area shape="poly" alt="State = Washington
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Washington
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="123,83,124,85,120,86,122,87,122,90,122,89,124,90,123,93,121,91,122,87,120,86,122,83,123,83"/>
+<Area shape="poly" alt="State = Washington
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" title="State = Washington
+Animal = Northern Elephant Seal
+Weight = 5,100 lbs" coords="194,90,183,137,183,143,157,137,137,138,134,136,127,137,119,133,112,134,107,131,107,123,104,120,98,116,93,115,95,109,95,114,97,109,99,108,96,107,96,104,101,104,97,101,96,103,97,88,95,83,97,76,105,82,116,85,117,89,118,87,120,87,120,92,117,95,117,92,111,99,115,99,111,99,120,93,120,91,121,95,119,94,119,97,118,96,118,98,117,98,119,97,120,99,117,103,116,102,118,100,115,104,115,100,113,103,111,102,113,103,110,104,113,103,111,105,112,104,112,106,113,104,115,106,117,104,118,102,119,104,121,103,121,98,122,98,121,97,123,98,123,100,124,99,124,96,123,97,122,96,126,91,125,87,123,88,124,90,123,88,123,86,125,86,124,84,124,80,126,80,126,77,124,77,123,73,124,72,136,76,194,90"/>
+</map>
+<div  class="c">
+<img alt="The SGMap Procedure" src="us_largest_land_animals.png" style=" height: 600px; width: 900px;" border="0" usemap="#us_largest_land_animals" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX1"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle" style=" color: #333333; font-size: 20pt;">Largest Land Animal (by Weight) in Each US State</td>
+</tr>
+</table><br>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK.MY_DATA">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l header" scope="col">Animal</th>
+<th class="l header" scope="col">Weight</th>
+<th class="l header" scope="col">State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="l data">American Alligator</td>
+<td class="l data">770 lbs</td>
+<td class="l data">Alabama</td>
+</tr>
+<tr>
+<td class="l data">American Alligator</td>
+<td class="l data">770 lbs</td>
+<td class="l data">Arkansas</td>
+</tr>
+<tr>
+<td class="l data">American Alligator</td>
+<td class="l data">770 lbs</td>
+<td class="l data">Georgia</td>
+</tr>
+<tr>
+<td class="l data">American Alligator</td>
+<td class="l data">770 lbs</td>
+<td class="l data">Louisiana</td>
+</tr>
+<tr>
+<td class="l data">American Alligator</td>
+<td class="l data">770 lbs</td>
+<td class="l data">Mississippi</td>
+</tr>
+<tr>
+<td class="l data">American Alligator</td>
+<td class="l data">770 lbs</td>
+<td class="l data">South Carolina</td>
+</tr>
+<tr>
+<td class="l data">Gray Seal</td>
+<td class="l data">680 lbs</td>
+<td class="l data">Delaware</td>
+</tr>
+<tr>
+<td class="l data">Gray Seal</td>
+<td class="l data">680 lbs</td>
+<td class="l data">Maryland</td>
+</tr>
+<tr>
+<td class="l data">Gray Seal</td>
+<td class="l data">680 lbs</td>
+<td class="l data">New Jersey</td>
+</tr>
+<tr>
+<td class="l data">Gray Seal</td>
+<td class="l data">680 lbs</td>
+<td class="l data">Rhode Island</td>
+</tr>
+<tr>
+<td class="l data">Hawaiian Monk Seal</td>
+<td class="l data">600 lbs</td>
+<td class="l data">Hawaii</td>
+</tr>
+<tr>
+<td class="l data">Black Bear</td>
+<td class="l data">551 lbs</td>
+<td class="l data">Ohio</td>
+</tr>
+<tr>
+<td class="l data">Northern Elephant Seal</td>
+<td class="l data">5,100 lbs</td>
+<td class="l data">Alaska</td>
+</tr>
+<tr>
+<td class="l data">Northern Elephant Seal</td>
+<td class="l data">5,100 lbs</td>
+<td class="l data">California</td>
+</tr>
+<tr>
+<td class="l data">Northern Elephant Seal</td>
+<td class="l data">5,100 lbs</td>
+<td class="l data">Oregon</td>
+</tr>
+<tr>
+<td class="l data">Northern Elephant Seal</td>
+<td class="l data">5,100 lbs</td>
+<td class="l data">Washington</td>
+</tr>
+<tr>
+<td class="l data">White-Tailed Deer</td>
+<td class="l data">300 lbs</td>
+<td class="l data">Indiana</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Arizona</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Colorado</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Florida</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Idaho</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Illinois</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Iowa</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Kansas</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Minnesota</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Missouri</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Montana</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Nebraska</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">New Mexico</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">North Dakota</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Oklahoma</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">South Dakota</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Texas</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Utah</td>
+</tr>
+<tr>
+<td class="l data">American Bison</td>
+<td class="l data">2,599 lbs</td>
+<td class="l data">Wyoming</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">Connecticut</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">Maine</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">Massachusetts</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">Michigan</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">Nevada</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">New Hampshire</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">New York</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">Vermont</td>
+</tr>
+<tr>
+<td class="l data">Moose</td>
+<td class="l data">1,543 lbs</td>
+<td class="l data">Wisconsin</td>
+</tr>
+<tr>
+<td class="l data">Elk</td>
+<td class="l data">1,096 lbs</td>
+<td class="l data">Kentucky</td>
+</tr>
+<tr>
+<td class="l data">Elk</td>
+<td class="l data">1,096 lbs</td>
+<td class="l data">North Carolina</td>
+</tr>
+<tr>
+<td class="l data">Elk</td>
+<td class="l data">1,096 lbs</td>
+<td class="l data">Pennsylvania</td>
+</tr>
+<tr>
+<td class="l data">Elk</td>
+<td class="l data">1,096 lbs</td>
+<td class="l data">Tennessee</td>
+</tr>
+<tr>
+<td class="l data">Elk</td>
+<td class="l data">1,096 lbs</td>
+<td class="l data">Virginia</td>
+</tr>
+<tr>
+<td class="l data">Elk</td>
+<td class="l data">1,096 lbs</td>
+<td class="l data">West Virginia</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemfooter" style=" color: #777777; font-size: 10pt;">Based on iNaturalist Data of Non-Domesticated Animals</td>
+</tr>
+</table><br>
+</div>
+</body>
+</html>
