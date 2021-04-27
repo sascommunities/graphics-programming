@@ -149,12 +149,12 @@ series x=x_line y=y_line / lineattrs=(color=gray33);
 run;
 
 proc sort data=my_data out=my_data;
-by descending weight animal state_name;
+by state_name;
 run;
 
 proc print data=my_data label noobs;
 label state_name='State' animal='Animal' weight='Weight';
-var animal weight state_name;
+var state_name animal weight;
 run;
 
 quit;
