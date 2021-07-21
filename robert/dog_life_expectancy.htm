@@ -1,0 +1,2784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Generator" content="SAS Software Version 9.4, see www.sas.com">
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Dog Life Expectancy</title>
+<style type="text/css">
+<!--
+.accessiblecaption
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.activelink
+{
+  color: #800080;
+}
+.aftercaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 4pt;
+}
+.batch
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  padding: 7px;
+}
+.beforecaption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.body
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.bodydate
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+}
+.bycontentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.byline
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.bylinecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.caption
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.cell
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.container
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.contentfolder
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.contentproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contentprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.contents
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.contentsdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.contenttitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.continued
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  width: 100%;
+}
+.data
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasis
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.dataemphasisfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.dataempty
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datafixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.datastrong
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.datastrongfixed
+{
+  background-color: #FFFFFF;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.date
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.document
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+a:link {
+color:#0000FF
+}
+a:visited {
+color:#800080
+}
+a:active {
+color:#800080
+}
+.errorbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.errorcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.errorcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.extendedpage
+{
+  background-color: #FAFBFE;
+  border: 1pt solid #000000;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+.fatalbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.fatalcontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.fatalcontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.folderaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.footer
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footeremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footeremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.footerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.footerstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.footerstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.frame
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.graph
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.header
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headeremphasis
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headeremphasisfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.headerempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.headersandfooters
+{
+  background-color: #EDF2F9;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrong
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.headerstrongfixed
+{
+  background-color: #D8DBD3;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.heading1
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading2
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading3
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading4
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading5
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading6
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.index
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.indexaction
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.indexprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.indextitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.layoutcontainer
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.layoutregion
+{
+  border: 0px solid #000000;
+  border-spacing: 30px;
+}
+.linecontent
+{
+  background-color: #FAFBFE;
+  border-bottom-width: 1px;
+  border-color: #C1C1C1;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.link
+{
+  color: #0000FF;
+}
+.list
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.list10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.list3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.list9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.listitem10
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem2
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: circle;
+}
+.listitem3
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem4
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem5
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem6
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem7
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem8
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.listitem9
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: square;
+}
+.note
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notebanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.notecontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.notecontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.output
+{
+  background-color: #FAFBFE;
+  border: 1px solid #C1C1C1;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.pageno
+{
+  background-color: #FAFBFE;
+  border-spacing: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top;
+}
+.pages
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: decimal;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.pagesdate
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.pagesitem
+{
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  list-style-type: none;
+  margin-left: 6pt;
+}
+.pagesproclabel
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagesprocname
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.pagestitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph
+{
+  background-color: #FAFBFE;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.parskip
+{
+  border: 0px solid #000000;
+  border-spacing: 0px;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.prepage
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+.proctitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.proctitlefixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooter
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooteremphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooteremphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowfooterempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowfooterstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowfooterstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheader
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderemphasis
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderemphasisfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: italic;
+  font-weight: normal;
+}
+.rowheaderempty
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.rowheaderstrong
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.rowheaderstrongfixed
+{
+  background-color: #EDF2F9;
+  border-bottom-width: 1px;
+  border-color: #B0B7BB;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+  color: #112277;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemfooter
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemfooter9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.systemtitle
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle10
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle2
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle3
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle4
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle5
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle6
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle7
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle8
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systemtitle9
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: small;
+  font-style: normal;
+  font-weight: bold;
+}
+.systitleandfootercontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.table
+{
+  border-bottom-width: 0px;
+  border-collapse: collapse;
+  border-color: #C1C1C1;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+.top_stacked_value
+{
+  padding-bottom: 1px;
+  border: 0;
+}
+.middle_stacked_value
+{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 0;
+}
+.bottom_stacked_value
+{
+  padding-top: 1px;
+  border: 0;
+}
+.titleandnotecontainer
+{
+  background-color: #FAFBFE;
+  border: 0px solid #000000;
+  border-spacing: 1px;
+  color: #000000;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+}
+.titlesandfooters
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.usertext
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.visitedlink
+{
+  color: #800080;
+}
+.warnbanner
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: bold;
+}
+.warncontent
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: Arial, 'Albany AMT', Helvetica, Helv;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.warncontentfixed
+{
+  background-color: #FAFBFE;
+  color: #112277;
+  font-family: 'Courier New', Courier;
+  font-size: x-small;
+  font-style: normal;
+  font-weight: normal;
+}
+.l {text-align: left }
+.c {text-align: center }
+.r {text-align: right }
+.d {text-align: right }
+.j {text-align: justify }
+.t {vertical-align: top }
+.m {vertical-align: middle }
+.b {vertical-align: bottom }
+TD, TH {vertical-align: top }
+.stacked_cell{padding: 0 }
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!-- 
+function startup(){
+
+}
+function shutdown(){
+
+}
+
+//-->
+</script>
+
+</head>
+<body onload="startup()" onunload="shutdown()" class="body">
+
+<script language="javascript" type="text/javascript">
+<!-- 
+var _info = navigator.userAgent
+var _ie = (_info.indexOf("MSIE") > 0
+          && _info.indexOf("Win") > 0
+          && _info.indexOf("Windows 3.1") < 0);
+var _ie64 = _info.indexOf("x64") > 0
+
+//-->
+</script>
+
+<div class="branch">
+<a name="IDX"></a>
+<div>
+<map name="dog_life_expectancy">
+<Area shape="poly" alt=" Breed = Yorkshire Terrier  
+ Weight Range (pounds) = 4.4 - 6.6  
+ Life Expectancy (years) = 12.8 " title=" Breed = Yorkshire Terrier  
+ Weight Range (pounds) = 4.4 - 6.6  
+ Life Expectancy (years) = 12.8 " href="http://images.google.com/images?q=Yorkshire Terrier dogs " target="_self" coords="88,298,96,298,96,306,88,306,88,298,"/>
+<Area shape="poly" alt=" Breed = Wire Fox Terrier  
+ Weight Range (pounds) = 16.94 - 18.92  
+ Life Expectancy (years) = 13 " title=" Breed = Wire Fox Terrier  
+ Weight Range (pounds) = 16.94 - 18.92  
+ Life Expectancy (years) = 13 " href="http://images.google.com/images?q=Wire Fox Terrier dogs " target="_self" coords="132,286,140,286,140,294,132,294,132,286,"/>
+<Area shape="poly" alt=" Breed = West Highland White Terrier  
+ Weight Range (pounds) = 14.96 - 20.02  
+ Life Expectancy (years) = 12.8 " title=" Breed = West Highland White Terrier  
+ Weight Range (pounds) = 14.96 - 20.02  
+ Life Expectancy (years) = 12.8 " href="http://images.google.com/images?q=West Highland White Terrier dogs " target="_self" coords="130,298,138,298,138,306,130,306,130,298,"/>
+<Area shape="poly" alt=" Breed = Welsh Springer Spaniel  
+ Weight Range (pounds) = 35.2 - 44  
+ Life Expectancy (years) = 11.5 " title=" Breed = Welsh Springer Spaniel  
+ Weight Range (pounds) = 35.2 - 44  
+ Life Expectancy (years) = 11.5 " href="http://images.google.com/images?q=Welsh Springer Spaniel dogs " target="_self" coords="208,383,216,383,216,391,208,391,208,383,"/>
+<Area shape="poly" alt=" Breed = Welsh Corgi  
+ Weight Range (pounds) = 30.8 - 37.4  
+ Life Expectancy (years) = 11.3 " title=" Breed = Welsh Corgi  
+ Weight Range (pounds) = 30.8 - 37.4  
+ Life Expectancy (years) = 11.3 " href="http://images.google.com/images?q=Welsh Corgi dogs " target="_self" coords="189,396,197,396,197,404,189,404,189,396,"/>
+<Area shape="poly" alt=" Breed = Weimaraner  
+ Weight Range (pounds) = 66 - 88  
+ Life Expectancy (years) = 10 " title=" Breed = Weimaraner  
+ Weight Range (pounds) = 66 - 88  
+ Life Expectancy (years) = 10 " href="http://images.google.com/images?q=Weimaraner dogs " target="_self" coords="340,480,348,480,348,488,340,488,340,480,"/>
+<Area shape="poly" alt=" Breed = Vizsla  
+ Weight Range (pounds) = 44 - 66  
+ Life Expectancy (years) = 12.5 " title=" Breed = Vizsla  
+ Weight Range (pounds) = 44 - 66  
+ Life Expectancy (years) = 12.5 " href="http://images.google.com/images?q=Vizsla dogs " target="_self" coords="263,318,271,318,271,326,263,326,263,318,"/>
+<Area shape="poly" alt=" Breed = Toy Poodle  
+ Weight Range (pounds) = 14.3 - 16.5  
+ Life Expectancy (years) = 14.4 " title=" Breed = Toy Poodle  
+ Weight Range (pounds) = 14.3 - 16.5  
+ Life Expectancy (years) = 14.4 " href="http://images.google.com/images?q=Toy Poodle dogs " target="_self" coords="123,195,131,195,131,203,123,203,123,195,"/>
+<Area shape="poly" alt=" Breed = Tibetan Terrier  
+ Weight Range (pounds) = 20.9 - 24.2  
+ Life Expectancy (years) = 14.3 " title=" Breed = Tibetan Terrier  
+ Weight Range (pounds) = 20.9 - 24.2  
+ Life Expectancy (years) = 14.3 " href="http://images.google.com/images?q=Tibetan Terrier dogs " target="_self" coords="148,201,156,201,156,209,148,209,148,201,"/>
+<Area shape="poly" alt=" Breed = Standard Poodle  
+ Weight Range (pounds) = 44 - 70.4  
+ Life Expectancy (years) = 12 " title=" Breed = Standard Poodle  
+ Weight Range (pounds) = 44 - 70.4  
+ Life Expectancy (years) = 12 " href="http://images.google.com/images?q=Standard Poodle dogs " target="_self" coords="270,350,278,350,278,358,270,358,270,350,"/>
+<Area shape="poly" alt=" Breed = Staffordshire Bull Terrier  
+ Weight Range (pounds) = 28.6 - 37.4  
+ Life Expectancy (years) = 14 " title=" Breed = Staffordshire Bull Terrier  
+ Weight Range (pounds) = 28.6 - 37.4  
+ Life Expectancy (years) = 14 " href="http://images.google.com/images?q=Staffordshire Bull Terrier dogs " target="_self" coords="185,221,193,221,193,229,185,229,185,221,"/>
+<Area shape="poly" alt=" Breed = Soft Coated Wheaten Terrier  
+ Weight Range (pounds) = 30.8 - 44  
+ Life Expectancy (years) = 13.2 " title=" Breed = Soft Coated Wheaten Terrier  
+ Weight Range (pounds) = 30.8 - 44  
+ Life Expectancy (years) = 13.2 " href="http://images.google.com/images?q=Soft Coated Wheaten Terrier dogs " target="_self" coords="200,273,208,273,208,281,200,281,200,273,"/>
+<Area shape="poly" alt=" Breed = Siberian Husky  
+ Weight Range (pounds) = 44 - 59.4  
+ Life Expectancy (years) = 13.5 " title=" Breed = Siberian Husky  
+ Weight Range (pounds) = 44 - 59.4  
+ Life Expectancy (years) = 13.5 " href="http://images.google.com/images?q=Siberian Husky dogs " target="_self" coords="251,253,259,253,259,261,251,261,251,253,"/>
+<Area shape="poly" alt=" Breed = Shih Tzu  
+ Weight Range (pounds) = 8.8 - 16.5  
+ Life Expectancy (years) = 13.4 " title=" Breed = Shih Tzu  
+ Weight Range (pounds) = 8.8 - 16.5  
+ Life Expectancy (years) = 13.4 " href="http://images.google.com/images?q=Shih Tzu dogs " target="_self" coords="113,260,121,260,121,268,113,268,113,260,"/>
+<Area shape="poly" alt=" Breed = Shiba Inu  
+ Weight Range (pounds) = 19.8 - 24.2  
+ Life Expectancy (years) = 14 " title=" Breed = Shiba Inu  
+ Weight Range (pounds) = 19.8 - 24.2  
+ Life Expectancy (years) = 14 " href="http://images.google.com/images?q=Shiba Inu dogs " target="_self" coords="146,221,154,221,154,229,146,229,146,221,"/>
+<Area shape="poly" alt=" Breed = Shetland Sheepdog  
+ Weight Range (pounds) = 11 - 23.98  
+ Life Expectancy (years) = 13.3 " title=" Breed = Shetland Sheepdog  
+ Weight Range (pounds) = 11 - 23.98  
+ Life Expectancy (years) = 13.3 " href="http://images.google.com/images?q=Shetland Sheepdog dogs " target="_self" coords="130,266,138,266,138,274,130,274,130,266,"/>
+<Area shape="poly" alt=" Breed = Scottish Terrier  
+ Weight Range (pounds) = 18.7 - 22  
+ Life Expectancy (years) = 12 " title=" Breed = Scottish Terrier  
+ Weight Range (pounds) = 18.7 - 22  
+ Life Expectancy (years) = 12 " href="http://images.google.com/images?q=Scottish Terrier dogs " target="_self" coords="140,350,148,350,148,358,140,358,140,350,"/>
+<Area shape="poly" alt=" Breed = Scottish Deerhound  
+ Weight Range (pounds) = 85.8 - 110  
+ Life Expectancy (years) = 9.5 " title=" Breed = Scottish Deerhound  
+ Weight Range (pounds) = 85.8 - 110  
+ Life Expectancy (years) = 9.5 " href="http://images.google.com/images?q=Scottish Deerhound dogs " target="_self" coords="414,512,422,512,422,520,414,520,414,512,"/>
+<Area shape="poly" alt=" Breed = Samoyed  
+ Weight Range (pounds) = 44 - 66  
+ Life Expectancy (years) = 11 " title=" Breed = Samoyed  
+ Weight Range (pounds) = 44 - 66  
+ Life Expectancy (years) = 11 " href="http://images.google.com/images?q=Samoyed dogs " target="_self" coords="263,415,271,415,271,423,263,423,263,415,"/>
+<Area shape="poly" alt=" Breed = Rough Collie  
+ Weight Range (pounds) = 44 - 74.8  
+ Life Expectancy (years) = 12.2 " title=" Breed = Rough Collie  
+ Weight Range (pounds) = 44 - 74.8  
+ Life Expectancy (years) = 12.2 " href="http://images.google.com/images?q=Rough Collie dogs " target="_self" coords="278,337,286,337,286,345,278,345,278,337,"/>
+<Area shape="poly" alt=" Breed = Rottweiler  
+ Weight Range (pounds) = 110 - 132  
+ Life Expectancy (years) = 9.8 " title=" Breed = Rottweiler  
+ Weight Range (pounds) = 110 - 132  
+ Life Expectancy (years) = 9.8 " href="http://images.google.com/images?q=Rottweiler dogs " target="_self" coords="496,493,504,493,504,501,496,501,496,493,"/>
+<Area shape="poly" alt=" Breed = Rhodesian Ridgeback  
+ Weight Range (pounds) = 88 - 110  
+ Life Expectancy (years) = 9.1 " title=" Breed = Rhodesian Ridgeback  
+ Weight Range (pounds) = 88 - 110  
+ Life Expectancy (years) = 9.1 " href="http://images.google.com/images?q=Rhodesian Ridgeback dogs " target="_self" coords="418,538,426,538,426,546,418,546,418,538,"/>
+<Area shape="poly" alt=" Breed = Rajapalayam hound  
+ Weight Range (pounds) = 68.2 - 70.4  
+ Life Expectancy (years) = 11.2 " title=" Breed = Rajapalayam hound  
+ Weight Range (pounds) = 68.2 - 70.4  
+ Life Expectancy (years) = 11.2 " href="http://images.google.com/images?q=Rajapalayam hound dogs " target="_self" coords="313,402,321,402,321,410,313,410,313,402,"/>
+<Area shape="poly" alt=" Breed = Pug  
+ Weight Range (pounds) = 13.2 - 17.6  
+ Life Expectancy (years) = 16 " title=" Breed = Pug  
+ Weight Range (pounds) = 13.2 - 17.6  
+ Life Expectancy (years) = 16 " href="http://images.google.com/images?q=Pug dogs " target="_self" coords="123,91,131,91,131,99,123,99,123,91,"/>
+<Area shape="poly" alt=" Breed = Pomeranian  
+ Weight Range (pounds) = 3.08 - 7.04  
+ Life Expectancy (years) = 14.5 " title=" Breed = Pomeranian  
+ Weight Range (pounds) = 3.08 - 7.04  
+ Life Expectancy (years) = 14.5 " href="http://images.google.com/images?q=Pomeranian dogs " target="_self" coords="86,188,94,188,94,196,86,196,86,188,"/>
+<Area shape="poly" alt=" Breed = Pekingese  
+ Weight Range (pounds) = 7.04 - 14.08  
+ Life Expectancy (years) = 13.3 " title=" Breed = Pekingese  
+ Weight Range (pounds) = 7.04 - 14.08  
+ Life Expectancy (years) = 13.3 " href="http://images.google.com/images?q=Pekingese dogs " target="_self" coords="106,266,114,266,114,274,106,274,106,266,"/>
+<Area shape="poly" alt=" Breed = Old English Sheepdog  
+ Weight Range (pounds) = 79.2 - 101.2  
+ Life Expectancy (years) = 11.8 " title=" Breed = Old English Sheepdog  
+ Weight Range (pounds) = 79.2 - 101.2  
+ Life Expectancy (years) = 11.8 " href="http://images.google.com/images?q=Old English Sheepdog dogs " target="_self" coords="387,363,395,363,395,371,387,371,387,363,"/>
+<Area shape="poly" alt=" Breed = Norfolk Terrier  
+ Weight Range (pounds) = 11 - 13.2  
+ Life Expectancy (years) = 14 " title=" Breed = Norfolk Terrier  
+ Weight Range (pounds) = 11 - 13.2  
+ Life Expectancy (years) = 14 " href="http://images.google.com/images?q=Norfolk Terrier dogs " target="_self" coords="111,221,119,221,119,229,111,229,111,221,"/>
+<Area shape="poly" alt=" Breed = Newfoundland  
+ Weight Range (pounds) = 143 - 176  
+ Life Expectancy (years) = 10 " title=" Breed = Newfoundland  
+ Weight Range (pounds) = 143 - 176  
+ Life Expectancy (years) = 10 " href="http://images.google.com/images?q=Newfoundland dogs " target="_self" coords="632,480,640,480,640,488,632,488,632,480,"/>
+<Area shape="poly" alt=" Breed = Miniature Poodle  
+ Weight Range (pounds) = 26.4 - 30.8  
+ Life Expectancy (years) = 14.8 " title=" Breed = Miniature Poodle  
+ Weight Range (pounds) = 26.4 - 30.8  
+ Life Expectancy (years) = 14.8 " href="http://images.google.com/images?q=Miniature Poodle dogs " target="_self" coords="169,169,177,169,177,177,169,177,169,169,"/>
+<Area shape="poly" alt=" Breed = Miniature Pinscher  
+ Weight Range (pounds) = 7.92 - 9.9  
+ Life Expectancy (years) = 14.9 " title=" Breed = Miniature Pinscher  
+ Weight Range (pounds) = 7.92 - 9.9  
+ Life Expectancy (years) = 14.9 " href="http://images.google.com/images?q=Miniature Pinscher dogs " target="_self" coords="100,163,108,163,108,171,100,171,100,163,"/>
+<Area shape="poly" alt=" Breed = Miniature Dachshund  
+ Weight Range (pounds) = 11 - 13.2  
+ Life Expectancy (years) = 14.4 " title=" Breed = Miniature Dachshund  
+ Weight Range (pounds) = 11 - 13.2  
+ Life Expectancy (years) = 14.4 " href="http://images.google.com/images?q=Miniature Dachshund dogs " target="_self" coords="111,195,119,195,119,203,111,203,111,195,"/>
+<Area shape="poly" alt=" Breed = Lurcher  
+ Weight Range (pounds) = 59.4 - 70.4  
+ Life Expectancy (years) = 12.6 " title=" Breed = Lurcher  
+ Weight Range (pounds) = 59.4 - 70.4  
+ Life Expectancy (years) = 12.6 " href="http://images.google.com/images?q=Lurcher dogs " target="_self" coords="298,311,306,311,306,319,298,319,298,311,"/>
+<Area shape="poly" alt=" Breed = Labrador Retriever  
+ Weight Range (pounds) = 63.8 - 79.2  
+ Life Expectancy (years) = 12.6 " title=" Breed = Labrador Retriever  
+ Weight Range (pounds) = 63.8 - 79.2  
+ Life Expectancy (years) = 12.6 " href="http://images.google.com/images?q=Labrador Retriever dogs " target="_self" coords="321,311,329,311,329,319,321,319,321,311,"/>
+<Area shape="poly" alt=" Breed = Jack Russell Terrier  
+ Weight Range (pounds) = 13.2 - 17.6  
+ Life Expectancy (years) = 13.6 " title=" Breed = Jack Russell Terrier  
+ Weight Range (pounds) = 13.2 - 17.6  
+ Life Expectancy (years) = 13.6 " href="http://images.google.com/images?q=Jack Russell Terrier dogs " target="_self" coords="123,247,131,247,131,255,123,255,123,247,"/>
+<Area shape="poly" alt=" Breed = Irish Wolfhound  
+ Weight Range (pounds) = 118.8 - 121  
+ Life Expectancy (years) = 6.2 " title=" Breed = Irish Wolfhound  
+ Weight Range (pounds) = 118.8 - 121  
+ Life Expectancy (years) = 6.2 " href="http://images.google.com/images?q=Irish Wolfhound dogs " target="_self" coords="492,726,500,726,500,734,492,734,492,726,"/>
+<Area shape="poly" alt=" Breed = Irish Setter  
+ Weight Range (pounds) = 63.8 - 74.8  
+ Life Expectancy (years) = 11.8 " title=" Breed = Irish Setter  
+ Weight Range (pounds) = 63.8 - 74.8  
+ Life Expectancy (years) = 11.8 " href="http://images.google.com/images?q=Irish Setter dogs " target="_self" coords="313,363,321,363,321,371,313,371,313,363,"/>
+<Area shape="poly" alt=" Breed = Irish Red and White Setter  
+ Weight Range (pounds) = 50.6 - 70.4  
+ Life Expectancy (years) = 12.9 " title=" Breed = Irish Red and White Setter  
+ Weight Range (pounds) = 50.6 - 70.4  
+ Life Expectancy (years) = 12.9 " href="http://images.google.com/images?q=Irish Red and White Setter dogs " target="_self" coords="282,292,290,292,290,300,282,300,282,292,"/>
+<Area shape="poly" alt=" Breed = Greyhound  
+ Weight Range (pounds) = 59.4 - 88  
+ Life Expectancy (years) = 13.2 " title=" Breed = Greyhound  
+ Weight Range (pounds) = 59.4 - 88  
+ Life Expectancy (years) = 13.2 " href="http://images.google.com/images?q=Greyhound dogs " target="_self" coords="329,273,337,273,337,281,329,281,329,273,"/>
+<Area shape="poly" alt=" Breed = Great Dane  
+ Weight Range (pounds) = 110 - 180.4  
+ Life Expectancy (years) = 8.4 " title=" Breed = Great Dane  
+ Weight Range (pounds) = 110 - 180.4  
+ Life Expectancy (years) = 8.4 " href="http://images.google.com/images?q=Great Dane dogs " target="_self" coords="581,583,589,583,589,591,581,591,581,583,"/>
+<Area shape="poly" alt=" Breed = Gordon Setter  
+ Weight Range (pounds) = 55 - 79.2  
+ Life Expectancy (years) = 11.3 " title=" Breed = Gordon Setter  
+ Weight Range (pounds) = 55 - 79.2  
+ Life Expectancy (years) = 11.3 " href="http://images.google.com/images?q=Gordon Setter dogs " target="_self" coords="305,396,313,396,313,404,305,404,305,396,"/>
+<Area shape="poly" alt=" Breed = Golden Retrievers  
+ Weight Range (pounds) = 63.8 - 74.8  
+ Life Expectancy (years) = 12 " title=" Breed = Golden Retrievers  
+ Weight Range (pounds) = 63.8 - 74.8  
+ Life Expectancy (years) = 12 " href="http://images.google.com/images?q=Golden Retrievers dogs " target="_self" coords="313,350,321,350,321,358,313,358,313,350,"/>
+<Area shape="poly" alt=" Breed = German Shorthaired Pointer  
+ Weight Range (pounds) = 55 - 70.4  
+ Life Expectancy (years) = 12.3 " title=" Breed = German Shorthaired Pointer  
+ Weight Range (pounds) = 55 - 70.4  
+ Life Expectancy (years) = 12.3 " href="http://images.google.com/images?q=German Shorthaired Pointer dogs " target="_self" coords="290,331,298,331,298,339,290,339,290,331,"/>
+<Area shape="poly" alt=" Breed = German Shepherd  
+ Weight Range (pounds) = 66 - 88  
+ Life Expectancy (years) = 10.3 " title=" Breed = German Shepherd  
+ Weight Range (pounds) = 66 - 88  
+ Life Expectancy (years) = 10.3 " href="http://images.google.com/images?q=German Shepherd dogs " target="_self" coords="340,460,348,460,348,468,340,468,340,460,"/>
+<Area shape="poly" alt=" Breed = Flat-Coated Retriever  
+ Weight Range (pounds) = 59.4 - 79.2  
+ Life Expectancy (years) = 9.5 " title=" Breed = Flat-Coated Retriever  
+ Weight Range (pounds) = 59.4 - 79.2  
+ Life Expectancy (years) = 9.5 " href="http://images.google.com/images?q=Flat-Coated Retriever dogs " target="_self" coords="313,512,321,512,321,520,313,520,313,512,"/>
+<Area shape="poly" alt=" Breed = English Toy Spaniel  
+ Weight Range (pounds) = 7.92 - 14.08  
+ Life Expectancy (years) = 10.1 " title=" Breed = English Toy Spaniel  
+ Weight Range (pounds) = 7.92 - 14.08  
+ Life Expectancy (years) = 10.1 " href="http://images.google.com/images?q=English Toy Spaniel dogs " target="_self" coords="107,473,115,473,115,481,107,481,107,473,"/>
+<Area shape="poly" alt=" Breed = English Springer Spaniel  
+ Weight Range (pounds) = 39.6 - 59.4  
+ Life Expectancy (years) = 13 " title=" Breed = English Springer Spaniel  
+ Weight Range (pounds) = 39.6 - 59.4  
+ Life Expectancy (years) = 13 " href="http://images.google.com/images?q=English Springer Spaniel dogs " target="_self" coords="243,286,251,286,251,294,243,294,243,286,"/>
+<Area shape="poly" alt=" Breed = English Setter  
+ Weight Range (pounds) = 63.8 - 79.2  
+ Life Expectancy (years) = 11.2 " title=" Breed = English Setter  
+ Weight Range (pounds) = 63.8 - 79.2  
+ Life Expectancy (years) = 11.2 " href="http://images.google.com/images?q=English Setter dogs " target="_self" coords="321,402,329,402,329,410,321,410,321,402,"/>
+<Area shape="poly" alt=" Breed = English Cocker Spaniel  
+ Weight Range (pounds) = 28.6 - 30.8  
+ Life Expectancy (years) = 11.8 " title=" Breed = English Cocker Spaniel  
+ Weight Range (pounds) = 28.6 - 30.8  
+ Life Expectancy (years) = 11.8 " href="http://images.google.com/images?q=English Cocker Spaniel dogs " target="_self" coords="173,363,181,363,181,371,173,371,173,363,"/>
+<Area shape="poly" alt=" Breed = Doberman Pinscher  
+ Weight Range (pounds) = 88 - 99  
+ Life Expectancy (years) = 9.8 " title=" Breed = Doberman Pinscher  
+ Weight Range (pounds) = 88 - 99  
+ Life Expectancy (years) = 9.8 " href="http://images.google.com/images?q=Doberman Pinscher dogs " target="_self" coords="399,493,407,493,407,501,399,501,399,493,"/>
+<Area shape="poly" alt=" Breed = Dalmatian  
+ Weight Range (pounds) = 33 - 70.4  
+ Life Expectancy (years) = 13 " title=" Breed = Dalmatian  
+ Weight Range (pounds) = 33 - 70.4  
+ Life Expectancy (years) = 13 " href="http://images.google.com/images?q=Dalmatian dogs " target="_self" coords="251,286,259,286,259,294,251,294,251,286,"/>
+<Area shape="poly" alt=" Breed = Dachshund  
+ Weight Range (pounds) = 16.5 - 31.9  
+ Life Expectancy (years) = 12.2 " title=" Breed = Dachshund  
+ Weight Range (pounds) = 16.5 - 31.9  
+ Life Expectancy (years) = 12.2 " href="http://images.google.com/images?q=Dachshund dogs " target="_self" coords="154,337,162,337,162,345,154,345,154,337,"/>
+<Area shape="poly" alt=" Breed = American Cocker Spaniel  
+ Weight Range (pounds) = 24.2 - 30.8  
+ Life Expectancy (years) = 12.5 " title=" Breed = American Cocker Spaniel  
+ Weight Range (pounds) = 24.2 - 30.8  
+ Life Expectancy (years) = 12.5 " href="http://images.google.com/images?q=American Cocker Spaniel dogs " target="_self" coords="166,318,174,318,174,326,166,326,166,318,"/>
+<Area shape="poly" alt=" Breed = Chow Chow  
+ Weight Range (pounds) = 39.6 - 90.2  
+ Life Expectancy (years) = 13.5 " title=" Breed = Chow Chow  
+ Weight Range (pounds) = 39.6 - 90.2  
+ Life Expectancy (years) = 13.5 " href="http://images.google.com/images?q=Chow Chow dogs " target="_self" coords="298,253,306,253,306,261,298,261,298,253,"/>
+<Area shape="poly" alt=" Breed = Chihuahua  
+ Weight Range (pounds) = 3.96 - 5.94  
+ Life Expectancy (years) = 15 " title=" Breed = Chihuahua  
+ Weight Range (pounds) = 3.96 - 5.94  
+ Life Expectancy (years) = 15 " href="http://images.google.com/images?q=Chihuahua dogs " target="_self" coords="86,156,94,156,94,164,86,164,86,156,"/>
+<Area shape="poly" alt=" Breed = Cavalier King Charles Spaniel  
+ Weight Range (pounds) = 12.98 - 27.94  
+ Life Expectancy (years) = 10.7 " title=" Breed = Cavalier King Charles Spaniel  
+ Weight Range (pounds) = 12.98 - 27.94  
+ Life Expectancy (years) = 10.7 " href="http://images.google.com/images?q=Cavalier King Charles Spaniel dogs " target="_self" coords="141,434,149,434,149,442,141,442,141,434,"/>
+<Area shape="poly" alt=" Breed = Cairn Terrier  
+ Weight Range (pounds) = 9.9 - 16.06  
+ Life Expectancy (years) = 13.2 " title=" Breed = Cairn Terrier  
+ Weight Range (pounds) = 9.9 - 16.06  
+ Life Expectancy (years) = 13.2 " href="http://images.google.com/images?q=Cairn Terrier dogs " target="_self" coords="114,273,122,273,122,281,114,281,114,273,"/>
+<Area shape="poly" alt=" Breed = Bullmastiff  
+ Weight Range (pounds) = 110 - 129.8  
+ Life Expectancy (years) = 8.6 " title=" Breed = Bullmastiff  
+ Weight Range (pounds) = 110 - 129.8  
+ Life Expectancy (years) = 8.6 " href="http://images.google.com/images?q=Bullmastiff dogs " target="_self" coords="492,570,500,570,500,578,492,578,492,570,"/>
+<Area shape="poly" alt=" Breed = Bulldog  
+ Weight Range (pounds) = 52.8 - 57.2  
+ Life Expectancy (years) = 6.7 " title=" Breed = Bulldog  
+ Weight Range (pounds) = 52.8 - 57.2  
+ Life Expectancy (years) = 6.7 " href="http://images.google.com/images?q=Bulldog dogs " target="_self" coords="263,693,271,693,271,701,263,701,263,693,"/>
+<Area shape="poly" alt=" Breed = Bull Terrier  
+ Weight Range (pounds) = 48.4 - 83.6  
+ Life Expectancy (years) = 12.9 " title=" Breed = Bull Terrier  
+ Weight Range (pounds) = 48.4 - 83.6  
+ Life Expectancy (years) = 12.9 " href="http://images.google.com/images?q=Bull Terrier dogs " target="_self" coords="301,292,309,292,309,300,301,300,301,292,"/>
+<Area shape="poly" alt=" Breed = Boxer  
+ Weight Range (pounds) = 63.8 - 74.8  
+ Life Expectancy (years) = 10.4 " title=" Breed = Boxer  
+ Weight Range (pounds) = 63.8 - 74.8  
+ Life Expectancy (years) = 10.4 " href="http://images.google.com/images?q=Boxer dogs " target="_self" coords="313,454,321,454,321,462,313,462,313,454,"/>
+<Area shape="poly" alt=" Breed = Boston Terrier  
+ Weight Range (pounds) = 6.6 - 24.2  
+ Life Expectancy (years) = 15 " title=" Breed = Boston Terrier  
+ Weight Range (pounds) = 6.6 - 24.2  
+ Life Expectancy (years) = 15 " href="http://images.google.com/images?q=Boston Terrier dogs " target="_self" coords="123,156,131,156,131,164,123,164,123,156,"/>
+<Area shape="poly" alt=" Breed = Border Terrier  
+ Weight Range (pounds) = 13.2 - 15.4  
+ Life Expectancy (years) = 13.8 " title=" Breed = Border Terrier  
+ Weight Range (pounds) = 13.2 - 15.4  
+ Life Expectancy (years) = 13.8 " href="http://images.google.com/images?q=Border Terrier dogs " target="_self" coords="119,234,127,234,127,242,119,242,119,234,"/>
+<Area shape="poly" alt=" Breed = Border Collie  
+ Weight Range (pounds) = 30.8 - 44  
+ Life Expectancy (years) = 13 " title=" Breed = Border Collie  
+ Weight Range (pounds) = 30.8 - 44  
+ Life Expectancy (years) = 13 " href="http://images.google.com/images?q=Border Collie dogs " target="_self" coords="200,286,208,286,208,294,200,294,200,286,"/>
+<Area shape="poly" alt=" Breed = Bernese Mountain Dog  
+ Weight Range (pounds) = 77 - 154  
+ Life Expectancy (years) = 7 " title=" Breed = Bernese Mountain Dog  
+ Weight Range (pounds) = 77 - 154  
+ Life Expectancy (years) = 7 " href="http://images.google.com/images?q=Bernese Mountain Dog dogs " target="_self" coords="476,674,484,674,484,682,476,682,476,674,"/>
+<Area shape="poly" alt=" Breed = Bedlington Terrier  
+ Weight Range (pounds) = 16.94 - 22.88  
+ Life Expectancy (years) = 14.3 " title=" Breed = Bedlington Terrier  
+ Weight Range (pounds) = 16.94 - 22.88  
+ Life Expectancy (years) = 14.3 " href="http://images.google.com/images?q=Bedlington Terrier dogs " target="_self" coords="139,201,147,201,147,209,139,209,139,201,"/>
+<Area shape="poly" alt=" Breed = Bearded Collie  
+ Weight Range (pounds) = 39.6 - 59.4  
+ Life Expectancy (years) = 12.3 " title=" Breed = Bearded Collie  
+ Weight Range (pounds) = 39.6 - 59.4  
+ Life Expectancy (years) = 12.3 " href="http://images.google.com/images?q=Bearded Collie dogs " target="_self" coords="243,331,251,331,251,339,243,339,243,331,"/>
+<Area shape="poly" alt=" Breed = Beagle  
+ Weight Range (pounds) = 22 - 24.86  
+ Life Expectancy (years) = 13.3 " title=" Breed = Beagle  
+ Weight Range (pounds) = 22 - 24.86  
+ Life Expectancy (years) = 13.3 " href="http://images.google.com/images?q=Beagle dogs " target="_self" coords="151,266,159,266,159,274,151,274,151,266,"/>
+<Area shape="poly" alt=" Breed = Basset Hound  
+ Weight Range (pounds) = 55 - 74.8  
+ Life Expectancy (years) = 12.8 " title=" Breed = Basset Hound  
+ Weight Range (pounds) = 55 - 74.8  
+ Life Expectancy (years) = 12.8 " href="http://images.google.com/images?q=Basset Hound dogs " target="_self" coords="298,298,306,298,306,306,298,306,298,298,"/>
+<Area shape="poly" alt=" Breed = American Staffordshire Terrier  
+ Weight Range (pounds) = 50.6 - 79.2  
+ Life Expectancy (years) = 12.3 " title=" Breed = American Staffordshire Terrier  
+ Weight Range (pounds) = 50.6 - 79.2  
+ Life Expectancy (years) = 12.3 " href="http://images.google.com/images?q=American Staffordshire Terrier dogs " target="_self" coords="298,331,306,331,306,339,298,339,298,331,"/>
+<Area shape="poly" alt=" Breed = Airedale Terrier  
+ Weight Range (pounds) = 39.6 - 50.6  
+ Life Expectancy (years) = 11.2 " title=" Breed = Airedale Terrier  
+ Weight Range (pounds) = 39.6 - 50.6  
+ Life Expectancy (years) = 11.2 " href="http://images.google.com/images?q=Airedale Terrier dogs " target="_self" coords="228,402,236,402,236,410,228,410,228,402,"/>
+<Area shape="poly" alt=" Breed = Afghan Hound  
+ Weight Range (pounds) = 44 - 59.4  
+ Life Expectancy (years) = 12 " title=" Breed = Afghan Hound  
+ Weight Range (pounds) = 44 - 59.4  
+ Life Expectancy (years) = 12 " href="http://images.google.com/images?q=Afghan Hound dogs " target="_self" coords="251,350,259,350,259,358,251,358,251,350,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.8 
+ weight_max_lb = 6.6 
+ weight_min_lb = 4.4" title=" Life Expectancy (years) = 12.8 
+ weight_max_lb = 6.6 
+ weight_min_lb = 4.4" coords="88,301,96,301,96,303,88,303,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13 
+ weight_max_lb = 18.92 
+ weight_min_lb = 16.94" title=" Life Expectancy (years) = 13 
+ weight_max_lb = 18.92 
+ weight_min_lb = 16.94" coords="132,289,139,289,139,291,132,291,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.8 
+ weight_max_lb = 20.02 
+ weight_min_lb = 14.96" title=" Life Expectancy (years) = 12.8 
+ weight_max_lb = 20.02 
+ weight_min_lb = 14.96" coords="125,301,143,301,143,303,125,303,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.5 
+ weight_max_lb = 44 
+ weight_min_lb = 35.2" title=" Life Expectancy (years) = 11.5 
+ weight_max_lb = 44 
+ weight_min_lb = 35.2" coords="197,386,228,386,228,388,197,388,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.3 
+ weight_max_lb = 37.4 
+ weight_min_lb = 30.8" title=" Life Expectancy (years) = 11.3 
+ weight_max_lb = 37.4 
+ weight_min_lb = 30.8" coords="181,399,204,399,204,401,181,401,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 10 
+ weight_max_lb = 88 
+ weight_min_lb = 66" title=" Life Expectancy (years) = 10 
+ weight_max_lb = 88 
+ weight_min_lb = 66" coords="305,483,383,483,383,485,305,485,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.5 
+ weight_max_lb = 66 
+ weight_min_lb = 44" title=" Life Expectancy (years) = 12.5 
+ weight_max_lb = 66 
+ weight_min_lb = 44" coords="228,321,305,321,305,323,228,323,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14.4 
+ weight_max_lb = 16.5 
+ weight_min_lb = 14.3" title=" Life Expectancy (years) = 14.4 
+ weight_max_lb = 16.5 
+ weight_min_lb = 14.3" coords="123,198,131,198,131,200,123,200,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14.3 
+ weight_max_lb = 24.2 
+ weight_min_lb = 20.9" title=" Life Expectancy (years) = 14.3 
+ weight_max_lb = 24.2 
+ weight_min_lb = 20.9" coords="146,204,158,204,158,206,146,206,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12 
+ weight_max_lb = 70.4 
+ weight_min_lb = 44" title=" Life Expectancy (years) = 12 
+ weight_max_lb = 70.4 
+ weight_min_lb = 44" coords="228,353,321,353,321,355,228,355,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14 
+ weight_max_lb = 37.4 
+ weight_min_lb = 28.6" title=" Life Expectancy (years) = 14 
+ weight_max_lb = 37.4 
+ weight_min_lb = 28.6" coords="173,224,204,224,204,226,173,226,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.2 
+ weight_max_lb = 44 
+ weight_min_lb = 30.8" title=" Life Expectancy (years) = 13.2 
+ weight_max_lb = 44 
+ weight_min_lb = 30.8" coords="181,276,228,276,228,278,181,278,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.5 
+ weight_max_lb = 59.4 
+ weight_min_lb = 44" title=" Life Expectancy (years) = 13.5 
+ weight_max_lb = 59.4 
+ weight_min_lb = 44" coords="228,256,282,256,282,258,228,258,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.4 
+ weight_max_lb = 16.5 
+ weight_min_lb = 8.8" title=" Life Expectancy (years) = 13.4 
+ weight_max_lb = 16.5 
+ weight_min_lb = 8.8" coords="103,263,131,263,131,265,103,265,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14 
+ weight_max_lb = 24.2 
+ weight_min_lb = 19.8" title=" Life Expectancy (years) = 14 
+ weight_max_lb = 24.2 
+ weight_min_lb = 19.8" coords="142,224,158,224,158,226,142,226,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.3 
+ weight_max_lb = 23.98 
+ weight_min_lb = 11" title=" Life Expectancy (years) = 13.3 
+ weight_max_lb = 23.98 
+ weight_min_lb = 11" coords="111,269,157,269,157,271,111,271,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12 
+ weight_max_lb = 22 
+ weight_min_lb = 18.7" title=" Life Expectancy (years) = 12 
+ weight_max_lb = 22 
+ weight_min_lb = 18.7" coords="138,353,150,353,150,355,138,355,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 9.5 
+ weight_max_lb = 110 
+ weight_min_lb = 85.8" title=" Life Expectancy (years) = 9.5 
+ weight_max_lb = 110 
+ weight_min_lb = 85.8" coords="375,515,461,515,461,517,375,517,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11 
+ weight_max_lb = 66 
+ weight_min_lb = 44" title=" Life Expectancy (years) = 11 
+ weight_max_lb = 66 
+ weight_min_lb = 44" coords="228,418,305,418,305,420,228,420,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.2 
+ weight_max_lb = 74.8 
+ weight_min_lb = 44" title=" Life Expectancy (years) = 12.2 
+ weight_max_lb = 74.8 
+ weight_min_lb = 44" coords="228,340,336,340,336,342,228,342,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 9.8 
+ weight_max_lb = 132 
+ weight_min_lb = 110" title=" Life Expectancy (years) = 9.8 
+ weight_max_lb = 132 
+ weight_min_lb = 110" coords="461,496,538,496,538,498,461,498,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 9.1 
+ weight_max_lb = 110 
+ weight_min_lb = 88" title=" Life Expectancy (years) = 9.1 
+ weight_max_lb = 110 
+ weight_min_lb = 88" coords="383,541,461,541,461,543,383,543,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.2 
+ weight_max_lb = 70.4 
+ weight_min_lb = 68.2" title=" Life Expectancy (years) = 11.2 
+ weight_max_lb = 70.4 
+ weight_min_lb = 68.2" coords="313,405,321,405,321,407,313,407,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 16 
+ weight_max_lb = 17.6 
+ weight_min_lb = 13.2" title=" Life Expectancy (years) = 16 
+ weight_max_lb = 17.6 
+ weight_min_lb = 13.2" coords="119,94,135,94,135,96,119,96,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14.5 
+ weight_max_lb = 7.04 
+ weight_min_lb = 3.08" title=" Life Expectancy (years) = 14.5 
+ weight_max_lb = 7.04 
+ weight_min_lb = 3.08" coords="83,191,97,191,97,193,83,193,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.3 
+ weight_max_lb = 14.08 
+ weight_min_lb = 7.04" title=" Life Expectancy (years) = 13.3 
+ weight_max_lb = 14.08 
+ weight_min_lb = 7.04" coords="97,269,122,269,122,271,97,271,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.8 
+ weight_max_lb = 101.2 
+ weight_min_lb = 79.2" title=" Life Expectancy (years) = 11.8 
+ weight_max_lb = 101.2 
+ weight_min_lb = 79.2" coords="352,366,430,366,430,368,352,368,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14 
+ weight_max_lb = 13.2 
+ weight_min_lb = 11" title=" Life Expectancy (years) = 14 
+ weight_max_lb = 13.2 
+ weight_min_lb = 11" coords="111,224,119,224,119,226,111,226,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 10 
+ weight_max_lb = 176 
+ weight_min_lb = 143" title=" Life Expectancy (years) = 10 
+ weight_max_lb = 176 
+ weight_min_lb = 143" coords="577,483,694,483,694,485,577,485,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14.8 
+ weight_max_lb = 30.8 
+ weight_min_lb = 26.4" title=" Life Expectancy (years) = 14.8 
+ weight_max_lb = 30.8 
+ weight_min_lb = 26.4" coords="166,172,181,172,181,174,166,174,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14.9 
+ weight_max_lb = 9.9 
+ weight_min_lb = 7.92" title=" Life Expectancy (years) = 14.9 
+ weight_max_lb = 9.9 
+ weight_min_lb = 7.92" coords="100,166,107,166,107,168,100,168,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14.4 
+ weight_max_lb = 13.2 
+ weight_min_lb = 11" title=" Life Expectancy (years) = 14.4 
+ weight_max_lb = 13.2 
+ weight_min_lb = 11" coords="111,198,119,198,119,200,111,200,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.6 
+ weight_max_lb = 70.4 
+ weight_min_lb = 59.4" title=" Life Expectancy (years) = 12.6 
+ weight_max_lb = 70.4 
+ weight_min_lb = 59.4" coords="282,314,321,314,321,316,282,316,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.6 
+ weight_max_lb = 79.2 
+ weight_min_lb = 63.8" title=" Life Expectancy (years) = 12.6 
+ weight_max_lb = 79.2 
+ weight_min_lb = 63.8" coords="298,314,352,314,352,316,298,316,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.6 
+ weight_max_lb = 17.6 
+ weight_min_lb = 13.2" title=" Life Expectancy (years) = 13.6 
+ weight_max_lb = 17.6 
+ weight_min_lb = 13.2" coords="119,250,135,250,135,252,119,252,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 6.2 
+ weight_max_lb = 121 
+ weight_min_lb = 118.8" title=" Life Expectancy (years) = 6.2 
+ weight_max_lb = 121 
+ weight_min_lb = 118.8" coords="492,729,500,729,500,731,492,731,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.8 
+ weight_max_lb = 74.8 
+ weight_min_lb = 63.8" title=" Life Expectancy (years) = 11.8 
+ weight_max_lb = 74.8 
+ weight_min_lb = 63.8" coords="298,366,336,366,336,368,298,368,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.9 
+ weight_max_lb = 70.4 
+ weight_min_lb = 50.6" title=" Life Expectancy (years) = 12.9 
+ weight_max_lb = 70.4 
+ weight_min_lb = 50.6" coords="251,295,321,295,321,297,251,297,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.2 
+ weight_max_lb = 88 
+ weight_min_lb = 59.4" title=" Life Expectancy (years) = 13.2 
+ weight_max_lb = 88 
+ weight_min_lb = 59.4" coords="282,276,383,276,383,278,282,278,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 8.4 
+ weight_max_lb = 180.4 
+ weight_min_lb = 110" title=" Life Expectancy (years) = 8.4 
+ weight_max_lb = 180.4 
+ weight_min_lb = 110" coords="461,586,709,586,709,588,461,588,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.3 
+ weight_max_lb = 79.2 
+ weight_min_lb = 55" title=" Life Expectancy (years) = 11.3 
+ weight_max_lb = 79.2 
+ weight_min_lb = 55" coords="267,399,352,399,352,401,267,401,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12 
+ weight_max_lb = 74.8 
+ weight_min_lb = 63.8" title=" Life Expectancy (years) = 12 
+ weight_max_lb = 74.8 
+ weight_min_lb = 63.8" coords="298,353,336,353,336,355,298,355,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.3 
+ weight_max_lb = 70.4 
+ weight_min_lb = 55" title=" Life Expectancy (years) = 12.3 
+ weight_max_lb = 70.4 
+ weight_min_lb = 55" coords="267,334,321,334,321,336,267,336,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 10.3 
+ weight_max_lb = 88 
+ weight_min_lb = 66" title=" Life Expectancy (years) = 10.3 
+ weight_max_lb = 88 
+ weight_min_lb = 66" coords="305,463,383,463,383,465,305,465,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 9.5 
+ weight_max_lb = 79.2 
+ weight_min_lb = 59.4" title=" Life Expectancy (years) = 9.5 
+ weight_max_lb = 79.2 
+ weight_min_lb = 59.4" coords="282,515,352,515,352,517,282,517,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 10.1 
+ weight_max_lb = 14.08 
+ weight_min_lb = 7.92" title=" Life Expectancy (years) = 10.1 
+ weight_max_lb = 14.08 
+ weight_min_lb = 7.92" coords="100,476,122,476,122,478,100,478,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13 
+ weight_max_lb = 59.4 
+ weight_min_lb = 39.6" title=" Life Expectancy (years) = 13 
+ weight_max_lb = 59.4 
+ weight_min_lb = 39.6" coords="212,289,282,289,282,291,212,291,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.2 
+ weight_max_lb = 79.2 
+ weight_min_lb = 63.8" title=" Life Expectancy (years) = 11.2 
+ weight_max_lb = 79.2 
+ weight_min_lb = 63.8" coords="298,405,352,405,352,407,298,407,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.8 
+ weight_max_lb = 30.8 
+ weight_min_lb = 28.6" title=" Life Expectancy (years) = 11.8 
+ weight_max_lb = 30.8 
+ weight_min_lb = 28.6" coords="173,366,181,366,181,368,173,368,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 9.8 
+ weight_max_lb = 99 
+ weight_min_lb = 88" title=" Life Expectancy (years) = 9.8 
+ weight_max_lb = 99 
+ weight_min_lb = 88" coords="383,496,422,496,422,498,383,498,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13 
+ weight_max_lb = 70.4 
+ weight_min_lb = 33" title=" Life Expectancy (years) = 13 
+ weight_max_lb = 70.4 
+ weight_min_lb = 33" coords="189,289,321,289,321,291,189,291,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.2 
+ weight_max_lb = 31.9 
+ weight_min_lb = 16.5" title=" Life Expectancy (years) = 12.2 
+ weight_max_lb = 31.9 
+ weight_min_lb = 16.5" coords="131,340,185,340,185,342,131,342,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.5 
+ weight_max_lb = 30.8 
+ weight_min_lb = 24.2" title=" Life Expectancy (years) = 12.5 
+ weight_max_lb = 30.8 
+ weight_min_lb = 24.2" coords="158,321,181,321,181,323,158,323,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.5 
+ weight_max_lb = 90.2 
+ weight_min_lb = 39.6" title=" Life Expectancy (years) = 13.5 
+ weight_max_lb = 90.2 
+ weight_min_lb = 39.6" coords="212,256,391,256,391,258,212,258,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 15 
+ weight_max_lb = 5.94 
+ weight_min_lb = 3.96" title=" Life Expectancy (years) = 15 
+ weight_max_lb = 5.94 
+ weight_min_lb = 3.96" coords="86,159,93,159,93,161,86,161,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 10.7 
+ weight_max_lb = 27.94 
+ weight_min_lb = 12.98" title=" Life Expectancy (years) = 10.7 
+ weight_max_lb = 27.94 
+ weight_min_lb = 12.98" coords="118,437,171,437,171,439,118,439,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.2 
+ weight_max_lb = 16.06 
+ weight_min_lb = 9.9" title=" Life Expectancy (years) = 13.2 
+ weight_max_lb = 16.06 
+ weight_min_lb = 9.9" coords="107,276,129,276,129,278,107,278,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 8.6 
+ weight_max_lb = 129.8 
+ weight_min_lb = 110" title=" Life Expectancy (years) = 8.6 
+ weight_max_lb = 129.8 
+ weight_min_lb = 110" coords="461,573,531,573,531,575,461,575,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 6.7 
+ weight_max_lb = 57.2 
+ weight_min_lb = 52.8" title=" Life Expectancy (years) = 6.7 
+ weight_max_lb = 57.2 
+ weight_min_lb = 52.8" coords="259,696,274,696,274,698,259,698,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.9 
+ weight_max_lb = 83.6 
+ weight_min_lb = 48.4" title=" Life Expectancy (years) = 12.9 
+ weight_max_lb = 83.6 
+ weight_min_lb = 48.4" coords="243,295,368,295,368,297,243,297,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 10.4 
+ weight_max_lb = 74.8 
+ weight_min_lb = 63.8" title=" Life Expectancy (years) = 10.4 
+ weight_max_lb = 74.8 
+ weight_min_lb = 63.8" coords="298,457,336,457,336,459,298,459,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 15 
+ weight_max_lb = 24.2 
+ weight_min_lb = 6.6" title=" Life Expectancy (years) = 15 
+ weight_max_lb = 24.2 
+ weight_min_lb = 6.6" coords="96,159,158,159,158,161,96,161,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.8 
+ weight_max_lb = 15.4 
+ weight_min_lb = 13.2" title=" Life Expectancy (years) = 13.8 
+ weight_max_lb = 15.4 
+ weight_min_lb = 13.2" coords="119,237,127,237,127,239,119,239,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13 
+ weight_max_lb = 44 
+ weight_min_lb = 30.8" title=" Life Expectancy (years) = 13 
+ weight_max_lb = 44 
+ weight_min_lb = 30.8" coords="181,289,228,289,228,291,181,291,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 7 
+ weight_max_lb = 154 
+ weight_min_lb = 77" title=" Life Expectancy (years) = 7 
+ weight_max_lb = 154 
+ weight_min_lb = 77" coords="344,677,616,677,616,679,344,679,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 14.3 
+ weight_max_lb = 22.88 
+ weight_min_lb = 16.94" title=" Life Expectancy (years) = 14.3 
+ weight_max_lb = 22.88 
+ weight_min_lb = 16.94" coords="132,204,153,204,153,206,132,206,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.3 
+ weight_max_lb = 59.4 
+ weight_min_lb = 39.6" title=" Life Expectancy (years) = 12.3 
+ weight_max_lb = 59.4 
+ weight_min_lb = 39.6" coords="212,334,282,334,282,336,212,336,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 13.3 
+ weight_max_lb = 24.86 
+ weight_min_lb = 22" title=" Life Expectancy (years) = 13.3 
+ weight_max_lb = 24.86 
+ weight_min_lb = 22" coords="150,269,160,269,160,271,150,271,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.8 
+ weight_max_lb = 74.8 
+ weight_min_lb = 55" title=" Life Expectancy (years) = 12.8 
+ weight_max_lb = 74.8 
+ weight_min_lb = 55" coords="267,301,336,301,336,303,267,303,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12.3 
+ weight_max_lb = 79.2 
+ weight_min_lb = 50.6" title=" Life Expectancy (years) = 12.3 
+ weight_max_lb = 79.2 
+ weight_min_lb = 50.6" coords="251,334,352,334,352,336,251,336,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 11.2 
+ weight_max_lb = 50.6 
+ weight_min_lb = 39.6" title=" Life Expectancy (years) = 11.2 
+ weight_max_lb = 50.6 
+ weight_min_lb = 39.6" coords="212,405,251,405,251,407,212,407,"/>
+<Area shape="poly" alt=" Life Expectancy (years) = 12 
+ weight_max_lb = 59.4 
+ weight_min_lb = 44" title=" Life Expectancy (years) = 12 
+ weight_max_lb = 59.4 
+ weight_min_lb = 44" coords="228,353,282,353,282,355,228,355,"/>
+</map>
+<div  class="c">
+<img alt="The SGPlot Procedure" src="dog_life_expectancy.png" style=" height: 800px; width: 800px;" border="0" usemap="#dog_life_expectancy" class="c">
+</div>
+</div>
+<br>
+</div>
+<div class="branch">
+<p style="page-break-after: always;"><br/></p><hr size="3"/>
+<a name="IDX1"></a>
+<table class="systitleandfootercontainer" width="100%" cellspacing="1" cellpadding="1" rules="none" frame="void" border="0" summary="Page Layout">
+<tr>
+<td class="c systemtitle" style=" color: #333333; font-size: 18pt;">Dog Life Expectancy, by Breed</td>
+</tr>
+<tr>
+<td class="c systemtitle2" style=" color: #666666; font-size: 12pt;">Using data from Wikipedia (compiled by reddit user the_guruji)</td>
+</tr>
+<tr>
+<td class="c systemtitle3" style=" font-size: 3pt;"> </td>
+</tr>
+</table><br>
+<div>
+<div align="center">
+<table class="table" cellspacing="0" cellpadding="5" rules="all" frame="box" bordercolor="#C1C1C1" summary="Procedure Print: Data Set WORK.MY_DATA">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="l header" scope="col">Breed</th>
+<th class="r header" scope="col">Life Expectancy<br/>(years)</th>
+<th class="l header" scope="col">Weight Range (pounds)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="l data">Afghan Hound</td>
+<td class="r data">12.0</td>
+<td class="l data">44 - 59.4</td>
+</tr>
+<tr>
+<td class="l data">Airedale Terrier</td>
+<td class="r data">11.2</td>
+<td class="l data">39.6 - 50.6</td>
+</tr>
+<tr>
+<td class="l data">American Cocker Spaniel</td>
+<td class="r data">12.5</td>
+<td class="l data">24.2 - 30.8</td>
+</tr>
+<tr>
+<td class="l data">American Staffordshire Terrier</td>
+<td class="r data">12.3</td>
+<td class="l data">50.6 - 79.2</td>
+</tr>
+<tr>
+<td class="l data">Basset Hound</td>
+<td class="r data">12.8</td>
+<td class="l data">55 - 74.8</td>
+</tr>
+<tr>
+<td class="l data">Beagle</td>
+<td class="r data">13.3</td>
+<td class="l data">22 - 24.86</td>
+</tr>
+<tr>
+<td class="l data">Bearded Collie</td>
+<td class="r data">12.3</td>
+<td class="l data">39.6 - 59.4</td>
+</tr>
+<tr>
+<td class="l data">Bedlington Terrier</td>
+<td class="r data">14.3</td>
+<td class="l data">16.94 - 22.88</td>
+</tr>
+<tr>
+<td class="l data">Bernese Mountain Dog</td>
+<td class="r data">7.0</td>
+<td class="l data">77 - 154</td>
+</tr>
+<tr>
+<td class="l data">Border Collie</td>
+<td class="r data">13.0</td>
+<td class="l data">30.8 - 44</td>
+</tr>
+<tr>
+<td class="l data">Border Terrier</td>
+<td class="r data">13.8</td>
+<td class="l data">13.2 - 15.4</td>
+</tr>
+<tr>
+<td class="l data">Boston Terrier</td>
+<td class="r data">15.0</td>
+<td class="l data">6.6 - 24.2</td>
+</tr>
+<tr>
+<td class="l data">Boxer</td>
+<td class="r data">10.4</td>
+<td class="l data">63.8 - 74.8</td>
+</tr>
+<tr>
+<td class="l data">Bull Terrier</td>
+<td class="r data">12.9</td>
+<td class="l data">48.4 - 83.6</td>
+</tr>
+<tr>
+<td class="l data">Bulldog</td>
+<td class="r data">6.7</td>
+<td class="l data">52.8 - 57.2</td>
+</tr>
+<tr>
+<td class="l data">Bullmastiff</td>
+<td class="r data">8.6</td>
+<td class="l data">110 - 129.8</td>
+</tr>
+<tr>
+<td class="l data">Cairn Terrier</td>
+<td class="r data">13.2</td>
+<td class="l data">9.9 - 16.06</td>
+</tr>
+<tr>
+<td class="l data">Cavalier King Charles Spaniel</td>
+<td class="r data">10.7</td>
+<td class="l data">12.98 - 27.94</td>
+</tr>
+<tr>
+<td class="l data">Chihuahua</td>
+<td class="r data">15.0</td>
+<td class="l data">3.96 - 5.94</td>
+</tr>
+<tr>
+<td class="l data">Chow Chow</td>
+<td class="r data">13.5</td>
+<td class="l data">39.6 - 90.2</td>
+</tr>
+<tr>
+<td class="l data">Dachshund</td>
+<td class="r data">12.2</td>
+<td class="l data">16.5 - 31.9</td>
+</tr>
+<tr>
+<td class="l data">Dalmatian</td>
+<td class="r data">13.0</td>
+<td class="l data">33 - 70.4</td>
+</tr>
+<tr>
+<td class="l data">Doberman Pinscher</td>
+<td class="r data">9.8</td>
+<td class="l data">88 - 99</td>
+</tr>
+<tr>
+<td class="l data">English Cocker Spaniel</td>
+<td class="r data">11.8</td>
+<td class="l data">28.6 - 30.8</td>
+</tr>
+<tr>
+<td class="l data">English Setter</td>
+<td class="r data">11.2</td>
+<td class="l data">63.8 - 79.2</td>
+</tr>
+<tr>
+<td class="l data">English Springer Spaniel</td>
+<td class="r data">13.0</td>
+<td class="l data">39.6 - 59.4</td>
+</tr>
+<tr>
+<td class="l data">English Toy Spaniel</td>
+<td class="r data">10.1</td>
+<td class="l data">7.92 - 14.08</td>
+</tr>
+<tr>
+<td class="l data">Flat-Coated Retriever</td>
+<td class="r data">9.5</td>
+<td class="l data">59.4 - 79.2</td>
+</tr>
+<tr>
+<td class="l data">German Shepherd</td>
+<td class="r data">10.3</td>
+<td class="l data">66 - 88</td>
+</tr>
+<tr>
+<td class="l data">German Shorthaired Pointer</td>
+<td class="r data">12.3</td>
+<td class="l data">55 - 70.4</td>
+</tr>
+<tr>
+<td class="l data">Golden Retrievers</td>
+<td class="r data">12.0</td>
+<td class="l data">63.8 - 74.8</td>
+</tr>
+<tr>
+<td class="l data">Gordon Setter</td>
+<td class="r data">11.3</td>
+<td class="l data">55 - 79.2</td>
+</tr>
+<tr>
+<td class="l data">Great Dane</td>
+<td class="r data">8.4</td>
+<td class="l data">110 - 180.4</td>
+</tr>
+<tr>
+<td class="l data">Greyhound</td>
+<td class="r data">13.2</td>
+<td class="l data">59.4 - 88</td>
+</tr>
+<tr>
+<td class="l data">Irish Red and White Setter</td>
+<td class="r data">12.9</td>
+<td class="l data">50.6 - 70.4</td>
+</tr>
+<tr>
+<td class="l data">Irish Setter</td>
+<td class="r data">11.8</td>
+<td class="l data">63.8 - 74.8</td>
+</tr>
+<tr>
+<td class="l data">Irish Wolfhound</td>
+<td class="r data">6.2</td>
+<td class="l data">118.8 - 121</td>
+</tr>
+<tr>
+<td class="l data">Jack Russell Terrier</td>
+<td class="r data">13.6</td>
+<td class="l data">13.2 - 17.6</td>
+</tr>
+<tr>
+<td class="l data">Labrador Retriever</td>
+<td class="r data">12.6</td>
+<td class="l data">63.8 - 79.2</td>
+</tr>
+<tr>
+<td class="l data">Lurcher</td>
+<td class="r data">12.6</td>
+<td class="l data">59.4 - 70.4</td>
+</tr>
+<tr>
+<td class="l data">Miniature Dachshund</td>
+<td class="r data">14.4</td>
+<td class="l data">11 - 13.2</td>
+</tr>
+<tr>
+<td class="l data">Miniature Pinscher</td>
+<td class="r data">14.9</td>
+<td class="l data">7.92 - 9.9</td>
+</tr>
+<tr>
+<td class="l data">Miniature Poodle</td>
+<td class="r data">14.8</td>
+<td class="l data">26.4 - 30.8</td>
+</tr>
+<tr>
+<td class="l data">Newfoundland</td>
+<td class="r data">10.0</td>
+<td class="l data">143 - 176</td>
+</tr>
+<tr>
+<td class="l data">Norfolk Terrier</td>
+<td class="r data">14.0</td>
+<td class="l data">11 - 13.2</td>
+</tr>
+<tr>
+<td class="l data">Old English Sheepdog</td>
+<td class="r data">11.8</td>
+<td class="l data">79.2 - 101.2</td>
+</tr>
+<tr>
+<td class="l data">Pekingese</td>
+<td class="r data">13.3</td>
+<td class="l data">7.04 - 14.08</td>
+</tr>
+<tr>
+<td class="l data">Pomeranian</td>
+<td class="r data">14.5</td>
+<td class="l data">3.08 - 7.04</td>
+</tr>
+<tr>
+<td class="l data">Pug</td>
+<td class="r data">16.0</td>
+<td class="l data">13.2 - 17.6</td>
+</tr>
+<tr>
+<td class="l data">Rajapalayam hound</td>
+<td class="r data">11.2</td>
+<td class="l data">68.2 - 70.4</td>
+</tr>
+<tr>
+<td class="l data">Rhodesian Ridgeback</td>
+<td class="r data">9.1</td>
+<td class="l data">88 - 110</td>
+</tr>
+<tr>
+<td class="l data">Rottweiler</td>
+<td class="r data">9.8</td>
+<td class="l data">110 - 132</td>
+</tr>
+<tr>
+<td class="l data">Rough Collie</td>
+<td class="r data">12.2</td>
+<td class="l data">44 - 74.8</td>
+</tr>
+<tr>
+<td class="l data">Samoyed</td>
+<td class="r data">11.0</td>
+<td class="l data">44 - 66</td>
+</tr>
+<tr>
+<td class="l data">Scottish Deerhound</td>
+<td class="r data">9.5</td>
+<td class="l data">85.8 - 110</td>
+</tr>
+<tr>
+<td class="l data">Scottish Terrier</td>
+<td class="r data">12.0</td>
+<td class="l data">18.7 - 22</td>
+</tr>
+<tr>
+<td class="l data">Shetland Sheepdog</td>
+<td class="r data">13.3</td>
+<td class="l data">11 - 23.98</td>
+</tr>
+<tr>
+<td class="l data">Shiba Inu</td>
+<td class="r data">14.0</td>
+<td class="l data">19.8 - 24.2</td>
+</tr>
+<tr>
+<td class="l data">Shih Tzu</td>
+<td class="r data">13.4</td>
+<td class="l data">8.8 - 16.5</td>
+</tr>
+<tr>
+<td class="l data">Siberian Husky</td>
+<td class="r data">13.5</td>
+<td class="l data">44 - 59.4</td>
+</tr>
+<tr>
+<td class="l data">Soft Coated Wheaten Terrier</td>
+<td class="r data">13.2</td>
+<td class="l data">30.8 - 44</td>
+</tr>
+<tr>
+<td class="l data">Staffordshire Bull Terrier</td>
+<td class="r data">14.0</td>
+<td class="l data">28.6 - 37.4</td>
+</tr>
+<tr>
+<td class="l data">Standard Poodle</td>
+<td class="r data">12.0</td>
+<td class="l data">44 - 70.4</td>
+</tr>
+<tr>
+<td class="l data">Tibetan Terrier</td>
+<td class="r data">14.3</td>
+<td class="l data">20.9 - 24.2</td>
+</tr>
+<tr>
+<td class="l data">Toy Poodle</td>
+<td class="r data">14.4</td>
+<td class="l data">14.3 - 16.5</td>
+</tr>
+<tr>
+<td class="l data">Vizsla</td>
+<td class="r data">12.5</td>
+<td class="l data">44 - 66</td>
+</tr>
+<tr>
+<td class="l data">Weimaraner</td>
+<td class="r data">10.0</td>
+<td class="l data">66 - 88</td>
+</tr>
+<tr>
+<td class="l data">Welsh Corgi</td>
+<td class="r data">11.3</td>
+<td class="l data">30.8 - 37.4</td>
+</tr>
+<tr>
+<td class="l data">Welsh Springer Spaniel</td>
+<td class="r data">11.5</td>
+<td class="l data">35.2 - 44</td>
+</tr>
+<tr>
+<td class="l data">West Highland White Terrier</td>
+<td class="r data">12.8</td>
+<td class="l data">14.96 - 20.02</td>
+</tr>
+<tr>
+<td class="l data">Wire Fox Terrier</td>
+<td class="r data">13.0</td>
+<td class="l data">16.94 - 18.92</td>
+</tr>
+<tr>
+<td class="l data">Yorkshire Terrier</td>
+<td class="r data">12.8</td>
+<td class="l data">4.4 - 6.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+</div>
+</body>
+</html>
