@@ -201,15 +201,41 @@ proc sort data=my_data out=my_data;
 by pctui;
 run;
 data my_data; set my_data;
-county_order_num+1;
+county_order+1;
+if county_order<=629 then colorbin=1;
+else if county_order<=629*2 then colorbin=2;
+else if county_order<=629*3 then colorbin=3;
+else if county_order<=629*4 then colorbin=4;
+else colorbin=5;
 run;
+
 title;
 ods graphics / noborder;
-proc sgplot data=my_data;
-needle x=county_order_num y=pctui;
-refline .162 / axis=y label='16.2%';
+title "Approximation of Quintile Binning";
+proc sgplot data=my_data noautolegend;
+styleattrs datacontrastcolors=(cxf9ece1 cxfbc088 cxfc9036 cxe1540b cxa43800);
+needle x=county_order y=pctui / group=colorbin;
+run;
+
+data my_data; set my_data;
+if pctui<=.06 then colorbin=1;
+else if pctui<=.12 then colorbin=2;
+else if pctui<=.18 then colorbin=3;
+else if pctui<=.24 then colorbin=4;
+else colorbin=5;
+run;
+
+title "Approximation of Interval Binning";
+proc sgplot data=my_data noautolegend;
+styleattrs datacontrastcolors=(cxf9ece1 cxfbc088 cxfc9036 cxe1540b cxa43800);
+needle x=county_order y=pctui / group=colorbin;
+refline .06 / axis=y label='6%';
+refline .12 / axis=y label='12%';
+refline .18 / axis=y label='18%';
+refline .24 / axis=y label='24%';
 run;
 */
+
 
 title1 color=gray33 height=16pt "Percent of population under age 65 without Health Insurance (2019)";
 title2 color=gray55 height=12pt "Data Source: US Census Bureau, Small Area Health Insurance Estimates (SAHIE)";
