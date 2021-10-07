@@ -77,7 +77,7 @@ run;
 
 data dive_data; set dive_data;
 length table_link $300 href $300;
-href='href='||quote(trim(left(url)));
+href='href='||quote(trim(left(search_link)));
 table_link = '<a ' || trim(href) || ' target="_self">' || htmlencode(trim(site)) || '</a>';
 numeric_depth=.; numeric_depth=scan(depth,1,' -f');
 run;
