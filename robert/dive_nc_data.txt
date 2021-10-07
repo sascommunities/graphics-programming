@@ -1,0 +1,61 @@
+Aeolus (AR-305) :Cable Repair:34:16.672:76:38.661:90-110ft:July, 1988
+Alexander Ramsey (AR-370) :Liberty ship:34:10.5:77:45.1:50ft:August, 1974
+Ario        :Tanker:34.49897:0:76.89784:0:70ft:Mar 15, 1942
+Ashkhabad   :Tanker:34:21.000:76:20.000:55ft:April 29, 1942
+Atlas       :Tanker:34:31.689:76:14.501:80-125ft:April 9, 1942
+Australia   :Tanker:35:7.377:75:21.176:90-110ft:Mar 16, 1942
+Bedfordshire :Fishing trawler:34.31415:0:76.45254:0:105ft:May 12, 1942
+Box Wreck   :Tow Schooner/Barge:34:11.665:76:22.564:100-110ft:1930s?
+British Splendour  :Tanker:34:49.1382:75:54.159:85-100ft:April 7, 1942
+Caribsea    :Freighter:34:36.414:76:18.846:70-90ft:Mar 11, 1942
+Cassimer (WR-2):Tanker:33:57.938:77:1.829:90-115ft:Feb 26, 1942
+Catherine M. Monohan :Wooden Schooner:34:56.900:75:42.879:95-100ft:Aug 24, 1910
+City of Houston      :Passenger/Freighter:33:24.5:77:42.7:95-100ft:Oct 23, 1878
+Dionysus (AR-160) :Liberty ship:35:44:75:26.73:65ft:November, 1978
+Dixie Arrow :Tanker:34:54.011:75:44.972:70-90ft:Mar 26, 1942
+Empire Gem  :Tanker:35:01.783:75:28.502:120-150ft:Jan 24, 1942
+Esso Nashville:Steam Tanker:33:51.80:77:12.00:100-120ft:Mar 21, 1942
+F.W. Abrams :Tanker:34:57.458:75:47.920:80-90ft:Jun 15, 1942
+Fenwick Island :Trawler:34:36.238:76:29.499:50-65ft:Dec 7, 1968
+George Weems :Wooden hulled freighter:33.62834199:0:77.87521362:0:40-45ft:May 20, 1909
+Hardee's wreck  :Oiler:34.33663247:0:76.35635376:0:100ft:Jan 1989
+Hesperides :Freighter:35.19625601:0:75.48156738:0:25-35ft:Oct 9, 1897
+Indra (AR-330) :Wreck:34:33.730:76:51.104:30-60ft:Aug 5, 1992
+John D. Gill :Large:33:52.35:77:29.01:70-90ft:Mar 12, 1942
+Kassandra Louloudis :Freighter:35.17095:0:75.35816:0:70ft:Mar 17, 1942
+Keshena     :Tug:34:59.610:75:45.718:75-90ft:Jul 19, 1942
+Lancing     :Whaling Factory/Tanker:35.0297:0:75.4417:0:140-160ft:Apr 7, 1942
+Liberator   :Freighter:35.07988:0:75.39113:0:100-110ft:Mar 19, 1942
+Malchace :Freighter:34.60427:0:75.78703:0:185-200ft:Apr 9, 1942
+Manuela     :Freighter:34:40.615:75:47.135:140-160ft:Jun 25, 1942
+Mirlo :Tanker:35.65729625:0:75.34698486:0:120ft:Aug 16, 1918
+Naeco       :Tanker:34:1.520:76:38.878:125-145ft:Mar 23, 1942
+Normannia   :Freighter:33:51.552:77:9.373:90-110ft:Jan 17, 1924
+Queen Annes Revenge :Blackbeard's Ship:34.6748:0:76.6824:0:20ft:1718
+Papoose     :Tanker:34:8.670:76:39.120:90-120ft:Mar 19, 1942
+Porta Allegra (Lobster Wreck) :Dredge:33:51.280:76:57.860:115-125ft:Dec 13, 1909
+Proteus     :Passenger:34:45.918:75:47.010:110-120ft:Aug 19, 1918
+Schurz      :Gunboat:34:11.218:76:36.127:95-110ft:Jun 21, 1918
+Spar        :Ocean going buoy tender:34.2777166666667:0:76.64475:0:85-110ft:June, 2004
+Tamaulipas (aka Far East) :Tanker:34.53880:0:76.01559:0:135-160ft:April 10, 1942
+Tarpon      :Submarine:34:45.195:75:46.025:130-140ft:Aug 26, 1957
+Theodore Parker:Liberty Ship:34:40.35:76:44.717:25-50ft:June 1974
+Titan (AR-345) :Tug Boat:34.53568:0:76.97455:0:40-60ft:Jul 27, 2004
+U-352       :Submarine (VII-C):34:13.655:76:33.913:110-115ft:May 9, 1942
+U-701       :Submarine (VII-C):35:14.330:75:6.690:115ft:Jul 7, 1942
+U-85        :Submarine (VII-B):35.91341:0:75.28694:0:90-100ft:Apr 14, 1942
+USS Monitor :Civil War Ironclad:35.00195:0:75.40633:0:240ft:Dec 31, 1862
+Venturia    :Freighter:35:8.335:75:24.450:30-45ft:Feb 20, 1918
+W.E. Hutton :Tanker:34:29.937:76:53.863:65-75ft:Mar 18, 1942
+Yancey (AR-302) :Amphibious Cargo Ship:34:10.27:76:13.70:120-160ft:1990
+Zane Gray (AR-160) :Liberty Ship:35:43:75:26.77:65ft:1974
+Markham / Hyde:Dredge:33:57.5:77:33.3:60-85ft:Markham 1995, Hyde 1988
+Suloide     :Freighter:34:32.706:76:53.700:65ft:Mar 26, 1943
+Frying Pan Tower :Tower:33.483333:0:77.583333:0:45ft:built 1966
+Fantasy Lake :Quarry:35.9109:0:78.427649:0:80ft:-
+Acapulco Lake:Quarry:35.4150:0:78.833588:0:51-60ft:-
+Meg Ledge:Megalodon Teeth:33:46:77:36:87ft:-
+Mount Dirfys:Freighter:33.70720508:0:77.95761108:0:45ft:Dec 29, 1936
+Raritan:Freighter:33.63291574:0:78.08258057:0:90ft:Feb 1942
+Rosin (SS Runa):Freighter:33.6118:0:77.7694:0:85-115ft:Dec 15, 1923
+Pocahontas (AR-386):Transport Steamer:33:58.583:77:40.915:58ft:Jan 18, 1862
