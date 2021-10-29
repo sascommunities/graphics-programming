@@ -222,7 +222,7 @@ ods graphics /
 title1 h=14pt c=gray33 "COVID-19 Deaths vs Infections, by state";
 title2 h=11pt c=gray33 "Based on Johns Hopkins data, through &maxdate";
 
-/8
+/*
 proc sgplot data=my_data noautolegend nowall;
 scatter x=latest_infected y=latest_deaths / markerattrs=(color=red);
 yaxis offsetmin=0 offsetmax=.05 values=(0 to 3500 by 500);
