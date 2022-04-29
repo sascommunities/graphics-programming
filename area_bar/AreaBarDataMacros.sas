@@ -15,7 +15,7 @@
 /*  response - variable for the length of each bar */
 /*  width - variable for the width of each bar     */
 /***************************************************/
-%macro genAreaBarDataSimple(input, output, category, response, width);
+%macro genAreaBarDataBasic(input, output, category, response, width);
 proc summary data=&input nway;
 class &category;
 var &response &width;
