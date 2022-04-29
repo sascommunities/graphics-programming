@@ -7,22 +7,22 @@ data totals;
 input Site $ Quarter Sales Salespersons;
 format Sales dollar12.2;
 datalines;
-Lima   1 4043.97   4
-NY      1 8225.26  12
-Rome 1 3543.97    6
-Lima  2 3723.44    5
-NY     2 8595.07   18
-Rome  2 5558.29   10
-Lima  3 4437.96    8
-NY     3 9847.91   24
-Rome 3 6789.85   14
-Lima 4 6065.57   10
-NY     4 11388.51  26
-Rome 4 8509.08   16
+Lima 1  4043.97   4
+NY   1  8225.26  12
+Rome 1  3543.97   6
+Lima 2  3723.44   5
+NY   2  8595.07  18
+Rome 2  5558.29  10
+Lima 3  4437.96   8
+NY   3  9847.91  24
+Rome 3  6789.85  14
+Lima 4  6065.57  10
+NY   4 11388.51  26
+Rome 4  8509.08  16
 ;
 run;
 
-%genAreaBarDataSimple(totals, poly_data, Site, sales, Salespersons);
+%genAreaBarDataBasic(totals, poly_data, Site, sales, Salespersons);
 title "Basic Area Bar Chart";
 title2 h=9pt "with Category Labels";
 
