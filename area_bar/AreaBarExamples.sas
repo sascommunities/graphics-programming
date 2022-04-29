@@ -55,7 +55,7 @@ run;
 /* Horizontal */
 ods graphics / imagename="CRHorizontalAB";
 proc sgplot data=poly_data;
-yaxis offsetmin=0;
+xaxis offsetmin=0;
 polygon x=y y=x id=ID / colorResponse=colorResponse label=ID fill
                 labelattrs=GraphDataText colormodel=twocolorramp;
 run;
