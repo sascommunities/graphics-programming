@@ -72,7 +72,7 @@ format sublabel f8.2;
 yaxis offsetmin=0;
 polygon x=x y=y id=ID / group=ID fill;
 text x=subLabelX y=subLabelY text=subLabel / contributeoffsets=none;
-text x=labelX y=labelY text=label / contributeoffsets=none position=top;
+text x=labelX y=labelY text=label / contributeoffsets=(ymax) position=top;
 run;
 
 /* Horizontal */
