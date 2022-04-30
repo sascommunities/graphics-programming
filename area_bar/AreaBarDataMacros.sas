@@ -6,7 +6,11 @@
 /*  Basic area bar chart                           */
 /*  notes:                                         */
 /*  - The values for the response and width        */
-/*    variables are summed.                        */
+/*    input variables are summed.                  */
+/*  - The response output column contains the      */
+/*    response values for labeling.                */
+/*  - The width output column contains the width   */
+/*    values for labeling.                         */
 /*                                                 */
 /*  args:                                          */
 /*  input - input data set name                    */
@@ -27,6 +31,8 @@ retain x 0;
 label x="&width" y="&response" ID="&category";
 set _out_totals_;
 ID=&category;
+response=&response;
+width=&width;
 y=0;
 x=x;
 output;
@@ -39,14 +45,17 @@ output;
 run;
 %mend;
 
-
 /***************************************************************/
 /*  Area bar chart with color response                         */
 /*  notes:                                                     */
-/*  - The values for the response and width                    */
+/*  - The values for the response and width input              */
 /*    variables are summed.                                    */
 /*  - The color response is summed by default, but supports    */
 /*    PROC SUMMARY statistics via the colorStat argument.      */
+/*  - The response output column contains the                  */
+/*    response values for labeling.                            */
+/*  - The width output column contains the width               */
+/*    values for labeling.                                     */
 /*                                                             */
 /*  args:                                                      */
 /*  input - input data set name                                */
@@ -57,7 +66,6 @@ run;
 /*  colorResp - continuous variable used to represent color    */
 /*  colorStat (optional) - the SUMMARY statistic for colorResp */
 /***************************************************************/
-
 %macro genAreaBarDataColorResponse(input, output, category, response, width, colorResp, colorStat=sum);
 proc summary data=&input nway;
 class &category;
@@ -82,6 +90,8 @@ label x="&width" y="&response" ID="&category" colorResponse="&colorResp";
 set _merged_;
 colorResponse=_colorResponse_;
 ID=&category;
+response=&response;
+width=&width;
 y=0;
 x=x;
 output;
